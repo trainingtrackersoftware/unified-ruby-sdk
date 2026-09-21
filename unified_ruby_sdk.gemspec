@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency('base64', ['>= 0.2.0', '< 1.0'])
   s.add_dependency('faraday')
   s.add_dependency('faraday-multipart')
-  s.add_dependency('faraday-retry', '~> 2.2.1')
+  s.add_dependency('faraday-retry', '>= 2.2.1', '< 3')
   s.add_dependency('sorbet-runtime')
   s.add_development_dependency('minitest')
   s.add_development_dependency('minitest-focus')
