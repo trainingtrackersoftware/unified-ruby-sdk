@@ -5,20 +5,22 @@
 
 ### Available Operations
 
-* [create_accounting_order](#create_accounting_order) - Create an order
+* [~~create_accounting_order~~](#create_accounting_order) - Create an order :warning: **Deprecated**
 * [create_assessment_order](#create_assessment_order) - Create an order
-* [get_accounting_order](#get_accounting_order) - Retrieve an order
+* [~~get_accounting_order~~](#get_accounting_order) - Retrieve an order :warning: **Deprecated**
 * [get_assessment_order](#get_assessment_order) - Retrieve an order
-* [list_accounting_orders](#list_accounting_orders) - List all orders
-* [patch_accounting_order](#patch_accounting_order) - Update an order
+* [~~list_accounting_orders~~](#list_accounting_orders) - List all orders :warning: **Deprecated**
+* [~~patch_accounting_order~~](#patch_accounting_order) - Update an order :warning: **Deprecated**
 * [patch_assessment_order](#patch_assessment_order) - Update an order
-* [remove_accounting_order](#remove_accounting_order) - Remove an order
-* [update_accounting_order](#update_accounting_order) - Update an order
+* [~~remove_accounting_order~~](#remove_accounting_order) - Remove an order :warning: **Deprecated**
+* [~~update_accounting_order~~](#update_accounting_order) - Update an order :warning: **Deprecated**
 * [update_assessment_order](#update_assessment_order) - Update an order
 
-## create_accounting_order
+## ~~create_accounting_order~~
 
-Create an order
+Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -35,32 +37,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.order.create_accounting_order(accounting_order: Models::Shared::AccountingOrder.new(
   billing_address: Models::Shared::PropertyAccountingOrderBillingAddress.new(
-    address1: '802 Bechtelar Park',
-    address2: 'Apt. 436',
-    city: 'Daniellaville',
+    address1: '7654 Treutel Square',
+    city: 'Forrestport',
     country_code: 'US',
-    postal_code: '36947',
-    region: 'Wisconsin',
-    region_code: 'NY',
+    postal_code: '42190-3694',
+    region: 'Maine',
+    region_code: 'OR',
   ),
   created_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
-  currency: 'USD',
-  id: '7076518a-2762-43cc-b62f-1fca5b3421fa',
+  currency: 'GBP',
+  id: '8c3cf509-050d-41a9-8ce6-6d17f6f33e31',
   lineitems: [],
   metadata: [],
-  posted_at: DateTime.iso8601('2022-04-05T17:22:19.726Z'),
+  posted_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
   shipping_address: Models::Shared::PropertyAccountingOrderShippingAddress.new(
-    address1: '9745 Betty Shore',
-    city: 'South Alainaland',
+    address1: '4974 Beatty Corners',
+    city: 'Alizeport',
     country_code: 'US',
-    postal_code: '25274-7654',
-    region: 'New Hampshire',
-    region_code: 'LA',
+    postal_code: '56252',
+    region: 'Alaska',
+    region_code: 'VT',
   ),
-  status: Models::Shared::AccountingOrderStatus::SUBMITTED,
+  status: Models::Shared::AccountingOrderStatus::AUTHORIZED,
   total_amount: 0.0,
-  type: Models::Shared::AccountingOrderType::PURCHASE,
-  updated_at: DateTime.iso8601('2021-06-18T05:51:10.099Z'),
+  type: Models::Shared::AccountingOrderType::SALES,
+  updated_at: DateTime.iso8601('2022-02-08T17:08:09.733Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_order.nil?
@@ -90,7 +91,7 @@ end
 
 ## create_assessment_order
 
-Create an order
+Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
 
 ### Example Usage
 
@@ -108,12 +109,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.order.create_assessment_order(assessment_order: Models::Shared::AssessmentOrder.new(
   connection_id: '<id>',
   created_at: DateTime.iso8601('2021-09-18T10:33:57.803Z'),
-  id: '56621e09-aa10-4e42-aab5-4e92ebfc91ac',
+  id: 'e4deecb5-a978-419b-ab61-a80ca92420ed',
+  metadata: [],
   parameters: [],
   profile_addresses: [],
   profile_date_of_birth: '1989-07-22T16:18:37.650Z',
   profile_emails: [
-    'Cleta.Daugherty@gmail.com',
+    'amy.kris.windler@icloud.com',
   ],
   profile_first_name: 'Amy',
   profile_gender: Models::Shared::ProfileGender::NON_BINARY,
@@ -122,19 +124,19 @@ res = s.order.create_assessment_order(assessment_order: Models::Shared::Assessme
   profile_resume_url: 'https://enchanted-cycle.biz/',
   profile_social_media_urls: [],
   profile_telephones: [
-    '(828) 263-1594 x5248',
+    '(341) 425-5828',
   ],
   reference: 'ab',
   response_attributes: [],
   response_details: [],
   response_download_urls: [],
-  response_max_score: 82.0,
-  response_score: 92.0,
-  response_status: Models::Shared::ResponseStatus::FAILED,
-  response_url: 'https://irresponsible-trench.info/',
+  response_max_score: 84.0,
+  response_score: 82.0,
+  response_status: Models::Shared::ResponseStatus::REJECTED,
+  response_url: 'https://rowdy-fisherman.biz/',
   status: Models::Shared::AssessmentOrderStatus::REJECTED,
   target_url: 'https://cautious-turret.info',
-  updated_at: DateTime.iso8601('2023-01-17T21:13:52.935Z'),
+  updated_at: DateTime.iso8601('2023-01-26T09:15:43.301Z'),
   workspace_id: '<id>',
 ), connection_id: '<id>')
 
@@ -163,9 +165,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## get_accounting_order
+## ~~get_accounting_order~~
 
-Retrieve an order
+Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -209,7 +213,7 @@ end
 
 ## get_assessment_order
 
-Retrieve an order
+Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -251,9 +255,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## list_accounting_orders
+## ~~list_accounting_orders~~
 
-List all orders
+Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -296,9 +302,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## patch_accounting_order
+## ~~patch_accounting_order~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -316,32 +324,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingOrderRequest.new(
   accounting_order: Models::Shared::AccountingOrder.new(
     billing_address: Models::Shared::PropertyAccountingOrderBillingAddress.new(
-      address1: '802 Bechtelar Park',
-      address2: 'Apt. 436',
-      city: 'Daniellaville',
+      address1: '7654 Treutel Square',
+      city: 'Forrestport',
       country_code: 'US',
-      postal_code: '36947',
-      region: 'Wisconsin',
-      region_code: 'NY',
+      postal_code: '42190-3694',
+      region: 'Maine',
+      region_code: 'OR',
     ),
     created_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
-    currency: 'USD',
-    id: '5d099f4f-0732-4ed8-bab2-99111982e74c',
+    currency: 'GBP',
+    id: '282ec9b9-dd69-4acf-922e-27d049792b63',
     lineitems: [],
     metadata: [],
-    posted_at: DateTime.iso8601('2022-04-05T17:22:19.738Z'),
+    posted_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
     shipping_address: Models::Shared::PropertyAccountingOrderShippingAddress.new(
-      address1: '9745 Betty Shore',
-      city: 'South Alainaland',
+      address1: '4974 Beatty Corners',
+      city: 'Alizeport',
       country_code: 'US',
-      postal_code: '25274-7654',
-      region: 'New Hampshire',
-      region_code: 'LA',
+      postal_code: '56252',
+      region: 'Alaska',
+      region_code: 'VT',
     ),
-    status: Models::Shared::AccountingOrderStatus::SUBMITTED,
+    status: Models::Shared::AccountingOrderStatus::AUTHORIZED,
     total_amount: 0.0,
-    type: Models::Shared::AccountingOrderType::PURCHASE,
-    updated_at: DateTime.iso8601('2021-06-18T05:51:10.104Z'),
+    type: Models::Shared::AccountingOrderType::SALES,
+    updated_at: DateTime.iso8601('2022-02-08T17:08:09.741Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -373,7 +380,7 @@ end
 
 ## patch_assessment_order
 
-Update an order
+Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
 
 ### Example Usage
 
@@ -392,12 +399,13 @@ req = Models::Operations::PatchAssessmentOrderRequest.new(
   assessment_order: Models::Shared::AssessmentOrder.new(
     connection_id: '<id>',
     created_at: DateTime.iso8601('2021-09-18T10:33:57.803Z'),
-    id: 'e1404ad8-0ded-4d74-96fb-b1bb7333dbff',
+    id: '79bbd734-8e01-4ed4-93cb-acf9e73a268a',
+    metadata: [],
     parameters: [],
     profile_addresses: [],
     profile_date_of_birth: '1989-07-22T16:18:37.650Z',
     profile_emails: [
-      'Cleta.Daugherty@gmail.com',
+      'amy.kris.windler@icloud.com',
     ],
     profile_first_name: 'Amy',
     profile_gender: Models::Shared::ProfileGender::NON_BINARY,
@@ -406,19 +414,19 @@ req = Models::Operations::PatchAssessmentOrderRequest.new(
     profile_resume_url: 'https://enchanted-cycle.biz/',
     profile_social_media_urls: [],
     profile_telephones: [
-      '(828) 263-1594 x5248',
+      '(341) 425-5828',
     ],
     reference: 'ab',
     response_attributes: [],
     response_details: [],
     response_download_urls: [],
-    response_max_score: 82.0,
-    response_score: 92.0,
-    response_status: Models::Shared::ResponseStatus::FAILED,
-    response_url: 'https://irresponsible-trench.info/',
+    response_max_score: 84.0,
+    response_score: 82.0,
+    response_status: Models::Shared::ResponseStatus::REJECTED,
+    response_url: 'https://rowdy-fisherman.biz/',
     status: Models::Shared::AssessmentOrderStatus::REJECTED,
     target_url: 'https://cautious-turret.info',
-    updated_at: DateTime.iso8601('2023-01-17T21:13:52.948Z'),
+    updated_at: DateTime.iso8601('2023-01-26T09:15:43.311Z'),
     workspace_id: '<id>',
   ),
   connection_id: '<id>',
@@ -449,9 +457,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## remove_accounting_order
+## ~~remove_accounting_order~~
 
-Remove an order
+Deletes the AccountingOrder identified by `id`.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -491,9 +501,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## update_accounting_order
+## ~~update_accounting_order~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -511,32 +523,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingOrderRequest.new(
   accounting_order: Models::Shared::AccountingOrder.new(
     billing_address: Models::Shared::PropertyAccountingOrderBillingAddress.new(
-      address1: '802 Bechtelar Park',
-      address2: 'Apt. 436',
-      city: 'Daniellaville',
+      address1: '7654 Treutel Square',
+      city: 'Forrestport',
       country_code: 'US',
-      postal_code: '36947',
-      region: 'Wisconsin',
-      region_code: 'NY',
+      postal_code: '42190-3694',
+      region: 'Maine',
+      region_code: 'OR',
     ),
     created_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
-    currency: 'USD',
-    id: '5d099f4f-0732-4ed8-bab2-99111982e74c',
+    currency: 'GBP',
+    id: '282ec9b9-dd69-4acf-922e-27d049792b63',
     lineitems: [],
     metadata: [],
-    posted_at: DateTime.iso8601('2022-04-05T17:22:19.738Z'),
+    posted_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
     shipping_address: Models::Shared::PropertyAccountingOrderShippingAddress.new(
-      address1: '9745 Betty Shore',
-      city: 'South Alainaland',
+      address1: '4974 Beatty Corners',
+      city: 'Alizeport',
       country_code: 'US',
-      postal_code: '25274-7654',
-      region: 'New Hampshire',
-      region_code: 'LA',
+      postal_code: '56252',
+      region: 'Alaska',
+      region_code: 'VT',
     ),
-    status: Models::Shared::AccountingOrderStatus::SUBMITTED,
+    status: Models::Shared::AccountingOrderStatus::AUTHORIZED,
     total_amount: 0.0,
-    type: Models::Shared::AccountingOrderType::PURCHASE,
-    updated_at: DateTime.iso8601('2021-06-18T05:51:10.104Z'),
+    type: Models::Shared::AccountingOrderType::SALES,
+    updated_at: DateTime.iso8601('2022-02-08T17:08:09.741Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -568,7 +579,7 @@ end
 
 ## update_assessment_order
 
-Update an order
+Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
 
 ### Example Usage
 
@@ -587,12 +598,13 @@ req = Models::Operations::UpdateAssessmentOrderRequest.new(
   assessment_order: Models::Shared::AssessmentOrder.new(
     connection_id: '<id>',
     created_at: DateTime.iso8601('2021-09-18T10:33:57.803Z'),
-    id: 'e1404ad8-0ded-4d74-96fb-b1bb7333dbff',
+    id: '79bbd734-8e01-4ed4-93cb-acf9e73a268a',
+    metadata: [],
     parameters: [],
     profile_addresses: [],
     profile_date_of_birth: '1989-07-22T16:18:37.650Z',
     profile_emails: [
-      'Cleta.Daugherty@gmail.com',
+      'amy.kris.windler@icloud.com',
     ],
     profile_first_name: 'Amy',
     profile_gender: Models::Shared::ProfileGender::NON_BINARY,
@@ -601,19 +613,19 @@ req = Models::Operations::UpdateAssessmentOrderRequest.new(
     profile_resume_url: 'https://enchanted-cycle.biz/',
     profile_social_media_urls: [],
     profile_telephones: [
-      '(828) 263-1594 x5248',
+      '(341) 425-5828',
     ],
     reference: 'ab',
     response_attributes: [],
     response_details: [],
     response_download_urls: [],
-    response_max_score: 82.0,
-    response_score: 92.0,
-    response_status: Models::Shared::ResponseStatus::FAILED,
-    response_url: 'https://irresponsible-trench.info/',
+    response_max_score: 84.0,
+    response_score: 82.0,
+    response_status: Models::Shared::ResponseStatus::REJECTED,
+    response_url: 'https://rowdy-fisherman.biz/',
     status: Models::Shared::AssessmentOrderStatus::REJECTED,
     target_url: 'https://cautious-turret.info',
-    updated_at: DateTime.iso8601('2023-01-17T21:13:52.948Z'),
+    updated_at: DateTime.iso8601('2023-01-26T09:15:43.311Z'),
     workspace_id: '<id>',
   ),
   connection_id: '<id>',

@@ -14,7 +14,7 @@
 
 ## create_repo_repository
 
-Create a repository
+Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
 
 ### Example Usage
 
@@ -31,13 +31,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.repository.create_repo_repository(repo_repository: Models::Shared::RepoRepository.new(
   created_at: DateTime.iso8601('2023-06-12T09:42:00.080Z'),
-  description: 'Tribuo torqueo aetas ustulo illum.',
-  id: 'a4fc6163-e469-412e-b3f6-551d0f2d249c',
+  description: 'Sed somnus crastinus armarium.',
+  id: '0fbc916a-99b9-4067-ba05-7206e1cdce19',
   is_private: false,
-  name: 'suggero',
-  owner: 'Marcella Kuhic',
-  updated_at: DateTime.iso8601('2024-02-23T16:02:35.089Z'),
-  web_url: 'https://brown-phrase.info',
+  metadata: [],
+  name: 'bah-bogus',
+  updated_at: DateTime.iso8601('2024-03-01T12:17:41.904Z'),
+  web_url: 'https://neat-birdbath.org',
 ), connection_id: '<id>')
 
 unless res.repo_repository.nil?
@@ -67,7 +67,7 @@ end
 
 ## get_repo_repository
 
-Retrieve a repository
+Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -111,7 +111,7 @@ end
 
 ## list_repo_repositories
 
-List all repositories
+Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -156,7 +156,7 @@ end
 
 ## patch_repo_repository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -174,13 +174,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchRepoRepositoryRequest.new(
   repo_repository: Models::Shared::RepoRepository.new(
     created_at: DateTime.iso8601('2023-06-12T09:42:00.080Z'),
-    description: 'Tribuo torqueo aetas ustulo illum.',
-    id: '9ac1fb21-d48d-4b83-95bf-8f91bf536e52',
+    description: 'Sed somnus crastinus armarium.',
+    id: '5f0aab62-1abe-43d2-9a1f-c0df5d83c73b',
     is_private: false,
-    name: 'suggero',
-    owner: 'Marcella Kuhic',
-    updated_at: DateTime.iso8601('2024-02-23T16:02:35.091Z'),
-    web_url: 'https://brown-phrase.info',
+    metadata: [],
+    name: 'bah-bogus',
+    updated_at: DateTime.iso8601('2024-03-01T12:17:41.906Z'),
+    web_url: 'https://neat-birdbath.org',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -212,7 +212,7 @@ end
 
 ## remove_repo_repository
 
-Remove a repository
+Deletes the RepoRepository identified by `id`.
 
 ### Example Usage
 
@@ -254,7 +254,7 @@ end
 
 ## update_repo_repository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -272,13 +272,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateRepoRepositoryRequest.new(
   repo_repository: Models::Shared::RepoRepository.new(
     created_at: DateTime.iso8601('2023-06-12T09:42:00.080Z'),
-    description: 'Tribuo torqueo aetas ustulo illum.',
-    id: '9ac1fb21-d48d-4b83-95bf-8f91bf536e52',
+    description: 'Sed somnus crastinus armarium.',
+    id: '5f0aab62-1abe-43d2-9a1f-c0df5d83c73b',
     is_private: false,
-    name: 'suggero',
-    owner: 'Marcella Kuhic',
-    updated_at: DateTime.iso8601('2024-02-23T16:02:35.091Z'),
-    web_url: 'https://brown-phrase.info',
+    metadata: [],
+    name: 'bah-bogus',
+    updated_at: DateTime.iso8601('2024-03-01T12:17:41.906Z'),
+    web_url: 'https://neat-birdbath.org',
   ),
   connection_id: '<id>',
   id: '<id>',

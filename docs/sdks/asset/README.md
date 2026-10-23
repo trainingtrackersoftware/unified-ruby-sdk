@@ -11,7 +11,7 @@
 
 ## create_ads_asset
 
-Create an asset
+Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
 
 ### Example Usage
 
@@ -29,11 +29,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.asset.create_ads_asset(ads_asset: Models::Shared::AdsAsset.new(
   created_at: DateTime.iso8601('2020-03-27T20:14:38.603Z'),
   height: 400.0,
-  id: 'b7274982-02b1-4236-9bf8-bfaa36d461cb',
+  id: '695af8bf-8c69-475e-ba14-5a05cc1a6016',
+  metadata: [],
   mime_type: 'IMAGE_PNG',
   name: 'Lockman - DuBuque',
   type: Models::Shared::AdsAssetType::IMAGE,
-  updated_at: DateTime.iso8601('2022-03-16T02:29:32.674Z'),
+  updated_at: DateTime.iso8601('2022-03-25T19:06:38.960Z'),
   url: 'https://informal-perfection.com/',
   width: 600.0,
 ), connection_id: '<id>')
@@ -65,7 +66,7 @@ end
 
 ## get_ads_asset
 
-Retrieve an asset
+Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -109,7 +110,7 @@ end
 
 ## list_ads_assets
 
-List all assets
+Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

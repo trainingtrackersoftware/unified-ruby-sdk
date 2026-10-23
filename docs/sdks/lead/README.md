@@ -14,7 +14,7 @@
 
 ## create_crm_lead
 
-Create a lead
+Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
 
 ### Example Usage
 
@@ -31,32 +31,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.lead.create_crm_lead(crm_lead: Models::Shared::CrmLead.new(
   address: Models::Shared::PropertyCrmLeadAddress.new(
-    address1: '528 Forest Road',
-    address2: 'Apt. 643',
-    city: 'Palm Springs',
+    address1: '87206 Hudson Street',
+    city: 'Leslieboro',
     country_code: 'US',
-    postal_code: '55624-6499',
-    region: 'New Jersey',
-    region_code: 'LA',
+    postal_code: '49909-1183',
+    region: 'Michigan',
+    region_code: 'MO',
   ),
   company_name: 'Tillman - Wiegand',
   created_at: DateTime.iso8601('2019-10-12T11:27:59.003Z'),
   emails: [
     Models::Shared::CrmEmail.new(
-      email: 'Velda.Sporer16@yahoo.com',
-      type: Models::Shared::CrmEmailType::OTHER,
-    ),
-    Models::Shared::CrmEmail.new(
-      email: 'Velda.Sporer@yahoo.com',
-      type: Models::Shared::CrmEmailType::HOME,
+      email: 'velda.sporer@icloud.com',
+      type: Models::Shared::CrmEmailType::WORK,
     ),
   ],
   first_name: 'Velda',
-  id: 'd4cb6aca-1880-4725-9cb8-629d9cbf435e',
+  id: '9fe7c268-bd08-4ad3-ac2c-2727d15d4431',
   is_active: true,
   last_name: 'Sporer',
   link_urls: [
-    'https://classic-sightseeing.com/',
+    'https://www.linkedin.com/in/velda-sporer',
   ],
   metadata: [
     Models::Shared::CrmMetadata.new(
@@ -64,26 +59,31 @@ res = s.lead.create_crm_lead(crm_lead: Models::Shared::CrmLead.new(
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CrmMetadataFormat::TEXT,
-      id: '463a4237-e0b4-43f0-8bf9-9bd031047f8c',
+      id: '54aeb03f-4ba1-4459-ba0c-46112f0a9f34',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'sublime',
+      value: 'vitiosus',
     ),
   ],
   name: 'Velda Sporer',
-  source: 'aetas',
-  status: 'vesco',
+  source: 'Advertisement',
+  status: 'New',
   telephones: [
     Models::Shared::CrmTelephone.new(
-      telephone: '(955) 643-9849',
-      type: Models::Shared::CrmTelephoneType::OTHER,
+      telephone: '(841) 271-0595',
+      type: Models::Shared::CrmTelephoneType::FAX,
     ),
     Models::Shared::CrmTelephone.new(
-      telephone: '(621) 811-8800',
-      type: Models::Shared::CrmTelephoneType::WORK,
+      telephone: '(664) 498-4952',
+      type: Models::Shared::CrmTelephoneType::HOME,
+    ),
+    Models::Shared::CrmTelephone.new(
+      telephone: '(281) 288-0037',
+      type: Models::Shared::CrmTelephoneType::OTHER,
     ),
   ],
-  updated_at: DateTime.iso8601('2020-05-15T08:20:31.030Z'),
+  title: 'International Factors Administrator',
+  updated_at: DateTime.iso8601('2020-05-18T01:38:22.223Z'),
 ), connection_id: '<id>')
 
 unless res.crm_lead.nil?
@@ -113,7 +113,7 @@ end
 
 ## get_crm_lead
 
-Retrieve a lead
+Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -157,7 +157,7 @@ end
 
 ## list_crm_leads
 
-List all leads
+Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -202,7 +202,7 @@ end
 
 ## patch_crm_lead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -220,32 +220,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCrmLeadRequest.new(
   crm_lead: Models::Shared::CrmLead.new(
     address: Models::Shared::PropertyCrmLeadAddress.new(
-      address1: '528 Forest Road',
-      address2: 'Apt. 643',
-      city: 'Palm Springs',
+      address1: '87206 Hudson Street',
+      city: 'Leslieboro',
       country_code: 'US',
-      postal_code: '55624-6499',
-      region: 'New Jersey',
-      region_code: 'LA',
+      postal_code: '49909-1183',
+      region: 'Michigan',
+      region_code: 'MO',
     ),
     company_name: 'Tillman - Wiegand',
     created_at: DateTime.iso8601('2019-10-12T11:27:59.003Z'),
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Velda.Sporer16@yahoo.com',
-        type: Models::Shared::CrmEmailType::OTHER,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Velda.Sporer@yahoo.com',
-        type: Models::Shared::CrmEmailType::HOME,
+        email: 'velda.sporer@icloud.com',
+        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
     first_name: 'Velda',
-    id: '2177b1e1-dd39-4571-b135-943ed6c6fd45',
+    id: 'ecf163f3-cd60-45c4-91be-4aa8e2a444bc',
     is_active: true,
     last_name: 'Sporer',
     link_urls: [
-      'https://classic-sightseeing.com/',
+      'https://www.linkedin.com/in/velda-sporer',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -253,26 +248,31 @@ req = Models::Operations::PatchCrmLeadRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '470ce16e-9651-4ec0-8553-548e8cf4d373',
+        id: '3aab5cee-ff6b-4cf7-b5f2-162847cd7a90',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'sublime',
+        value: 'vitiosus',
       ),
     ],
     name: 'Velda Sporer',
-    source: 'aetas',
-    status: 'vesco',
+    source: 'Advertisement',
+    status: 'New',
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(955) 643-9849',
-        type: Models::Shared::CrmTelephoneType::OTHER,
+        telephone: '(841) 271-0595',
+        type: Models::Shared::CrmTelephoneType::FAX,
       ),
       Models::Shared::CrmTelephone.new(
-        telephone: '(621) 811-8800',
-        type: Models::Shared::CrmTelephoneType::WORK,
+        telephone: '(664) 498-4952',
+        type: Models::Shared::CrmTelephoneType::HOME,
+      ),
+      Models::Shared::CrmTelephone.new(
+        telephone: '(281) 288-0037',
+        type: Models::Shared::CrmTelephoneType::OTHER,
       ),
     ],
-    updated_at: DateTime.iso8601('2020-05-15T08:20:31.031Z'),
+    title: 'International Factors Administrator',
+    updated_at: DateTime.iso8601('2020-05-18T01:38:22.226Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -304,7 +304,7 @@ end
 
 ## remove_crm_lead
 
-Remove a lead
+Deletes the CrmLead identified by `id`.
 
 ### Example Usage
 
@@ -346,7 +346,7 @@ end
 
 ## update_crm_lead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -364,32 +364,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCrmLeadRequest.new(
   crm_lead: Models::Shared::CrmLead.new(
     address: Models::Shared::PropertyCrmLeadAddress.new(
-      address1: '528 Forest Road',
-      address2: 'Apt. 643',
-      city: 'Palm Springs',
+      address1: '87206 Hudson Street',
+      city: 'Leslieboro',
       country_code: 'US',
-      postal_code: '55624-6499',
-      region: 'New Jersey',
-      region_code: 'LA',
+      postal_code: '49909-1183',
+      region: 'Michigan',
+      region_code: 'MO',
     ),
     company_name: 'Tillman - Wiegand',
     created_at: DateTime.iso8601('2019-10-12T11:27:59.003Z'),
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Velda.Sporer16@yahoo.com',
-        type: Models::Shared::CrmEmailType::OTHER,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Velda.Sporer@yahoo.com',
-        type: Models::Shared::CrmEmailType::HOME,
+        email: 'velda.sporer@icloud.com',
+        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
     first_name: 'Velda',
-    id: '2177b1e1-dd39-4571-b135-943ed6c6fd45',
+    id: 'ecf163f3-cd60-45c4-91be-4aa8e2a444bc',
     is_active: true,
     last_name: 'Sporer',
     link_urls: [
-      'https://classic-sightseeing.com/',
+      'https://www.linkedin.com/in/velda-sporer',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -397,26 +392,31 @@ req = Models::Operations::UpdateCrmLeadRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '470ce16e-9651-4ec0-8553-548e8cf4d373',
+        id: '3aab5cee-ff6b-4cf7-b5f2-162847cd7a90',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'sublime',
+        value: 'vitiosus',
       ),
     ],
     name: 'Velda Sporer',
-    source: 'aetas',
-    status: 'vesco',
+    source: 'Advertisement',
+    status: 'New',
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(955) 643-9849',
-        type: Models::Shared::CrmTelephoneType::OTHER,
+        telephone: '(841) 271-0595',
+        type: Models::Shared::CrmTelephoneType::FAX,
       ),
       Models::Shared::CrmTelephone.new(
-        telephone: '(621) 811-8800',
-        type: Models::Shared::CrmTelephoneType::WORK,
+        telephone: '(664) 498-4952',
+        type: Models::Shared::CrmTelephoneType::HOME,
+      ),
+      Models::Shared::CrmTelephone.new(
+        telephone: '(281) 288-0037',
+        type: Models::Shared::CrmTelephoneType::OTHER,
       ),
     ],
-    updated_at: DateTime.iso8601('2020-05-15T08:20:31.031Z'),
+    title: 'International Factors Administrator',
+    updated_at: DateTime.iso8601('2020-05-18T01:38:22.226Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

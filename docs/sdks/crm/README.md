@@ -45,7 +45,7 @@
 
 ## create_crm_company
 
-Create a company
+Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
 
 ### Example Usage
 
@@ -62,43 +62,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.crm.create_crm_company(crm_company: Models::Shared::CrmCompany.new(
   address: Models::Shared::PropertyCrmCompanyAddress.new(
-    address1: '7261 Salisbury Road',
-    address2: 'Apt. 778',
-    city: 'Harrisburg',
+    address1: '3328 Wunsch Flat',
+    address2: 'Suite 905',
+    city: 'New Ryderfort',
     country_code: 'US',
-    postal_code: '56293-3678',
-    region: 'Pennsylvania',
-    region_code: 'ID',
+    postal_code: '04674',
+    region: 'Delaware',
+    region_code: 'NY',
   ),
   created_at: DateTime.iso8601('2020-05-11T18:26:32.925Z'),
-  description: 'Balbus crapula spiculum.',
+  description: 'Venustas cruentus votum patruus terebro.',
   domains: [
-    'fussy-nerve.info',
-    'sturdy-lobster.org',
-    'greedy-offset.name',
+    'goodwinsons.com',
   ],
   emails: [
     Models::Shared::CrmEmail.new(
-      email: 'Sandrine_Jacobi@hotmail.com',
+      email: 'info@goodwinsons.com',
       type: Models::Shared::CrmEmailType::WORK,
     ),
     Models::Shared::CrmEmail.new(
-      email: 'Sandrine_Jacobi@gmail.com',
+      email: 'sales@goodwinsons.com',
       type: Models::Shared::CrmEmailType::WORK,
     ),
     Models::Shared::CrmEmail.new(
-      email: 'Sandrine.Jacobi@yahoo.com',
-      type: Models::Shared::CrmEmailType::OTHER,
+      email: 'support@goodwinsons.com',
+      type: Models::Shared::CrmEmailType::WORK,
     ),
   ],
-  employees: 967.0,
-  id: '0567cfb8-6154-4978-93a3-743b1c88e669',
-  industry: 'Infrastructure',
+  employees: 4177.0,
+  id: '6a388d88-c09e-4d11-976a-d3c2920ffbf8',
+  industry: 'Metrics',
   is_active: true,
   link_urls: [
-    'https://blue-license.org',
-    'https://minor-formation.com',
-    'https://ecstatic-hammock.com',
+    'https://www.linkedin.com/company/goodwin-and-sons',
   ],
   metadata: [
     Models::Shared::CrmMetadata.new(
@@ -106,35 +102,28 @@ res = s.crm.create_crm_company(crm_company: Models::Shared::CrmCompany.new(
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CrmMetadataFormat::TEXT,
-      id: '6f98be97-88f2-4f7a-9315-a237e1600d65',
+      id: '4535e03c-2a68-45e9-a8de-edb61c2de92f',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'esse',
+      value: 'unde',
     ),
   ],
   name: 'Goodwin and Sons',
   tags: [
-    'quaerat',
-    'valeo',
+    'censura',
+    'abstergo',
+    'ipsam',
   ],
   telephones: [
     Models::Shared::CrmTelephone.new(
-      telephone: '(432) 849-2690',
-      type: Models::Shared::CrmTelephoneType::MOBILE,
-    ),
-    Models::Shared::CrmTelephone.new(
-      telephone: '(606) 871-2046',
-      type: Models::Shared::CrmTelephoneType::OTHER,
-    ),
-    Models::Shared::CrmTelephone.new(
-      telephone: '(842) 258-9395',
-      type: Models::Shared::CrmTelephoneType::MOBILE,
+      telephone: '(667) 607-5872',
+      type: Models::Shared::CrmTelephoneType::HOME,
     ),
   ],
-  timezone: 'Europe/San_Marino',
-  updated_at: DateTime.iso8601('2025-02-08T18:52:45.950Z'),
+  timezone: 'Atlantic/Azores',
+  updated_at: DateTime.iso8601('2025-03-04T15:19:25.848Z'),
   websites: [
-    'https://wise-possession.org',
+    'https://www.goodwinsons.com',
   ],
 ), connection_id: '<id>')
 
@@ -165,7 +154,7 @@ end
 
 ## create_crm_contact
 
-Create a contact
+Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
 
 ### Example Usage
 
@@ -182,38 +171,28 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.crm.create_crm_contact(crm_contact: Models::Shared::CrmContact.new(
   address: Models::Shared::PropertyCrmContactAddress.new(
-    address1: '518 Brannon Burg',
-    city: 'East Helenebury',
+    address1: '65838 College Avenue',
+    address2: 'Apt. 335',
+    city: 'Fort Alexandratown',
     country_code: 'US',
-    postal_code: '92622-2406',
-    region: 'Vermont',
-    region_code: 'AZ',
+    postal_code: '80888-6094',
+    region: 'Montana',
+    region_code: 'NM',
   ),
-  company: 'Lowe - Jakubowski',
   created_at: DateTime.iso8601('2021-01-02T00:41:38.885Z'),
-  department: 'systematic',
+  department: 'Beauty',
   emails: [
     Models::Shared::CrmEmail.new(
-      email: 'Mohammad.Bartell45@hotmail.com',
+      email: 'mohammad.bartell@hotmail.com',
       type: Models::Shared::CrmEmailType::HOME,
-    ),
-    Models::Shared::CrmEmail.new(
-      email: 'Mohammad.Bartell90@hotmail.com',
-      type: Models::Shared::CrmEmailType::HOME,
-    ),
-    Models::Shared::CrmEmail.new(
-      email: 'Mohammad_Bartell@hotmail.com',
-      type: Models::Shared::CrmEmailType::WORK,
     ),
   ],
   first_name: 'Mohammad',
-  id: 'b55b499a-6e6c-4781-88b5-c4f74733ac20',
-  image_url: 'https://picsum.photos/seed/zmbPeg/2905/378',
+  id: '48a0c9cc-8014-4a2e-953b-b0c9467b9378',
+  image_url: 'https://avatars.githubusercontent.com/u/26803724',
   last_name: 'Bartell',
   link_urls: [
-    'https://limited-parade.info',
-    'https://faint-papa.com/',
-    'https://windy-accountability.name',
+    'https://www.linkedin.com/in/mohammad-bartell',
   ],
   metadata: [
     Models::Shared::CrmMetadata.new(
@@ -221,29 +200,25 @@ res = s.crm.create_crm_contact(crm_contact: Models::Shared::CrmContact.new(
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CrmMetadataFormat::TEXT,
-      id: 'eaefef1f-44cc-4e97-a6cd-bf001d40b644',
+      id: '784d14cf-1653-45f0-848d-230754e0364a',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'autem',
+      value: 'antiquus',
     ),
   ],
   name: 'Mohammad Bartell',
   telephones: [
     Models::Shared::CrmTelephone.new(
-      telephone: '(975) 986-1658',
+      telephone: '(254) 404-3529',
+      type: Models::Shared::CrmTelephoneType::OTHER,
+    ),
+    Models::Shared::CrmTelephone.new(
+      telephone: '(469) 989-7588',
       type: Models::Shared::CrmTelephoneType::WORK,
-    ),
-    Models::Shared::CrmTelephone.new(
-      telephone: '(489) 332-3509',
-      type: Models::Shared::CrmTelephoneType::HOME,
-    ),
-    Models::Shared::CrmTelephone.new(
-      telephone: '(205) 880-8886',
-      type: Models::Shared::CrmTelephoneType::HOME,
     ),
   ],
   title: 'National Tactics Analyst',
-  updated_at: DateTime.iso8601('2021-02-23T11:02:48.853Z'),
+  updated_at: DateTime.iso8601('2021-02-24T06:18:22.018Z'),
 ), connection_id: '<id>')
 
 unless res.crm_contact.nil?
@@ -273,7 +248,7 @@ end
 
 ## create_crm_deal
 
-Create a deal
+Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
 
 ### Example Usage
 
@@ -290,48 +265,32 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.crm.create_crm_deal(crm_deal: Models::Shared::CrmDeal.new(
   amount: 98_162.0,
-  closed_at: DateTime.iso8601('2024-03-04T04:52:45.184Z'),
-  closing_at: DateTime.iso8601('2025-08-11T21:27:05.965Z'),
+  closed_at: DateTime.iso8601('2024-03-10T20:00:03.839Z'),
+  closing_at: DateTime.iso8601('2025-09-01T19:51:42.365Z'),
   created_at: DateTime.iso8601('2023-07-04T12:48:48.470Z'),
-  currency: 'IQD',
-  description: 'Tabula cicuta sophismata comis tepidus sit cavus.',
-  id: '9689b96a-d592-4f79-a5fe-135c4d6513a5',
+  currency: 'USD',
+  description: 'Comis tepidus sit cavus crustulum trans tubineus adfectus.',
+  id: 'db0996f8-591a-4180-915e-36f7b36d5fca',
   metadata: [
     Models::Shared::CrmMetadata.new(
       extra_data: {
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CrmMetadataFormat::TEXT,
-      id: 'ad78ae38-8a8e-4db3-8f01-1f7626875ae9',
+      id: '164a3241-1d61-41e7-a0f7-b87756af05a1',
       namespace: 'custom',
       slug: 'custom_property',
       value: 'conatus',
     ),
   ],
-  name: 'Frozen Silk Chicken',
-  pipelines: [
-    Models::Shared::CrmReference.new(
-      id: 'c5a28957-e430-4421-a5dc-b1050cfb95b3',
-      name: 'trans',
-    ),
-  ],
-  probability: 65.0,
+  name: 'Stoltenberg - Funk - Luxurious Rubber Chicken',
+  probability: 42.0,
   source: 'cubo',
-  stages: [
-    Models::Shared::CrmReference.new(
-      id: '610bcccf-57af-47d9-ad95-2c03a7e78b82',
-      name: 'tubineus',
-    ),
-    Models::Shared::CrmReference.new(
-      id: '575a04a3-e38f-4e7e-8a88-1dfc938ba1a7',
-      name: 'adfectus',
-    ),
-  ],
   tags: [
     'causa',
     'suus',
   ],
-  updated_at: DateTime.iso8601('2024-09-30T07:18:46.400Z'),
+  updated_at: DateTime.iso8601('2024-10-12T15:38:09.209Z'),
   won_reason: 'Usque libero soleo.',
 ), connection_id: '<id>')
 
@@ -362,7 +321,7 @@ end
 
 ## create_crm_event
 
-Create an event
+Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
 
 ### Example Usage
 
@@ -381,12 +340,13 @@ res = s.crm.create_crm_event(crm_event: Models::Shared::CrmEvent.new(
   call: Models::Shared::PropertyCrmEventCall.new(
     description: 'Arbitro aptus.',
     duration: 64.0,
-    start_at: DateTime.iso8601('2024-11-19T22:47:44.563Z'),
+    start_at: DateTime.iso8601('2024-12-12T10:20:39.481Z'),
   ),
   created_at: DateTime.iso8601('2020-07-14T04:53:23.784Z'),
-  id: '25382d58-6da0-4c2c-8e51-5df8743006ad',
+  id: '45b31b2f-b15d-42fd-8142-e262e5f9b3e0',
+  metadata: [],
   type: Models::Shared::CrmEventType::CALL,
-  updated_at: DateTime.iso8601('2026-09-11T16:36:26.692Z'),
+  updated_at: DateTime.iso8601('2026-10-13T12:24:26.001Z'),
 ), connection_id: '<id>')
 
 unless res.crm_event.nil?
@@ -416,7 +376,7 @@ end
 
 ## create_crm_lead
 
-Create a lead
+Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
 
 ### Example Usage
 
@@ -433,32 +393,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.crm.create_crm_lead(crm_lead: Models::Shared::CrmLead.new(
   address: Models::Shared::PropertyCrmLeadAddress.new(
-    address1: '528 Forest Road',
-    address2: 'Apt. 643',
-    city: 'Palm Springs',
+    address1: '87206 Hudson Street',
+    city: 'Leslieboro',
     country_code: 'US',
-    postal_code: '55624-6499',
-    region: 'New Jersey',
-    region_code: 'LA',
+    postal_code: '49909-1183',
+    region: 'Michigan',
+    region_code: 'MO',
   ),
   company_name: 'Tillman - Wiegand',
   created_at: DateTime.iso8601('2019-10-12T11:27:59.003Z'),
   emails: [
     Models::Shared::CrmEmail.new(
-      email: 'Velda.Sporer16@yahoo.com',
-      type: Models::Shared::CrmEmailType::OTHER,
-    ),
-    Models::Shared::CrmEmail.new(
-      email: 'Velda.Sporer@yahoo.com',
-      type: Models::Shared::CrmEmailType::HOME,
+      email: 'velda.sporer@icloud.com',
+      type: Models::Shared::CrmEmailType::WORK,
     ),
   ],
   first_name: 'Velda',
-  id: 'd4cb6aca-1880-4725-9cb8-629d9cbf435e',
+  id: '9fe7c268-bd08-4ad3-ac2c-2727d15d4431',
   is_active: true,
   last_name: 'Sporer',
   link_urls: [
-    'https://classic-sightseeing.com/',
+    'https://www.linkedin.com/in/velda-sporer',
   ],
   metadata: [
     Models::Shared::CrmMetadata.new(
@@ -466,26 +421,31 @@ res = s.crm.create_crm_lead(crm_lead: Models::Shared::CrmLead.new(
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CrmMetadataFormat::TEXT,
-      id: '463a4237-e0b4-43f0-8bf9-9bd031047f8c',
+      id: '54aeb03f-4ba1-4459-ba0c-46112f0a9f34',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'sublime',
+      value: 'vitiosus',
     ),
   ],
   name: 'Velda Sporer',
-  source: 'aetas',
-  status: 'vesco',
+  source: 'Advertisement',
+  status: 'New',
   telephones: [
     Models::Shared::CrmTelephone.new(
-      telephone: '(955) 643-9849',
-      type: Models::Shared::CrmTelephoneType::OTHER,
+      telephone: '(841) 271-0595',
+      type: Models::Shared::CrmTelephoneType::FAX,
     ),
     Models::Shared::CrmTelephone.new(
-      telephone: '(621) 811-8800',
-      type: Models::Shared::CrmTelephoneType::WORK,
+      telephone: '(664) 498-4952',
+      type: Models::Shared::CrmTelephoneType::HOME,
+    ),
+    Models::Shared::CrmTelephone.new(
+      telephone: '(281) 288-0037',
+      type: Models::Shared::CrmTelephoneType::OTHER,
     ),
   ],
-  updated_at: DateTime.iso8601('2020-05-15T08:20:31.030Z'),
+  title: 'International Factors Administrator',
+  updated_at: DateTime.iso8601('2020-05-18T01:38:22.223Z'),
 ), connection_id: '<id>')
 
 unless res.crm_lead.nil?
@@ -515,7 +475,7 @@ end
 
 ## create_crm_pipeline
 
-Create a pipeline
+Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
 
 ### Example Usage
 
@@ -534,8 +494,9 @@ res = s.crm.create_crm_pipeline(crm_pipeline: Models::Shared::CrmPipeline.new(
   created_at: DateTime.iso8601('2022-12-28T13:45:38.446Z'),
   deal_probability: 99.0,
   display_order: 8.0,
-  id: 'f159f4f5-7a4f-4834-9062-e7a1b9834ac7',
+  id: 'c5e67335-1f8b-4355-8bc8-cadbcccf6276',
   is_active: true,
+  metadata: [],
   name: 'Small Steel Bacon',
   stages: [
     Models::Shared::CrmStage.new(
@@ -543,13 +504,13 @@ res = s.crm.create_crm_pipeline(crm_pipeline: Models::Shared::CrmPipeline.new(
       created_at: DateTime.iso8601('2022-12-28T13:45:38.446Z'),
       deal_probability: 84.0,
       display_order: 72.0,
-      id: '929095cd-f2fc-4ec6-9856-6d8551bfa222',
+      id: 'a770f718-f6ac-468b-afb5-1566779943b6',
       is_closed: true,
       name: 'Veniam.',
-      updated_at: DateTime.iso8601('2025-09-18T15:08:37.752Z'),
+      updated_at: DateTime.iso8601('2025-10-11T23:17:41.777Z'),
     ),
   ],
-  updated_at: DateTime.iso8601('2025-10-09T21:21:32.845Z'),
+  updated_at: DateTime.iso8601('2025-11-02T17:28:39.451Z'),
 ), connection_id: '<id>')
 
 unless res.crm_pipeline.nil?
@@ -579,7 +540,7 @@ end
 
 ## get_crm_company
 
-Retrieve a company
+Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -623,7 +584,7 @@ end
 
 ## get_crm_contact
 
-Retrieve a contact
+Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -667,7 +628,7 @@ end
 
 ## get_crm_deal
 
-Retrieve a deal
+Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -711,7 +672,7 @@ end
 
 ## get_crm_event
 
-Retrieve an event
+Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -755,7 +716,7 @@ end
 
 ## get_crm_lead
 
-Retrieve a lead
+Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -799,7 +760,7 @@ end
 
 ## get_crm_pipeline
 
-Retrieve a pipeline
+Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -843,7 +804,7 @@ end
 
 ## list_crm_companies
 
-List all companies
+Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -888,7 +849,7 @@ end
 
 ## list_crm_contacts
 
-List all contacts
+Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -933,7 +894,7 @@ end
 
 ## list_crm_deals
 
-List all deals
+Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -978,7 +939,7 @@ end
 
 ## list_crm_events
 
-List all events
+Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1023,7 +984,7 @@ end
 
 ## list_crm_leads
 
-List all leads
+Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1068,7 +1029,7 @@ end
 
 ## list_crm_pipelines
 
-List all pipelines
+Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1113,7 +1074,7 @@ end
 
 ## list_crm_taxonomies
 
-List all taxonomies
+Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1158,7 +1119,7 @@ end
 
 ## patch_crm_company
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1176,43 +1137,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCrmCompanyRequest.new(
   crm_company: Models::Shared::CrmCompany.new(
     address: Models::Shared::PropertyCrmCompanyAddress.new(
-      address1: '7261 Salisbury Road',
-      address2: 'Apt. 778',
-      city: 'Harrisburg',
+      address1: '3328 Wunsch Flat',
+      address2: 'Suite 905',
+      city: 'New Ryderfort',
       country_code: 'US',
-      postal_code: '56293-3678',
-      region: 'Pennsylvania',
-      region_code: 'ID',
+      postal_code: '04674',
+      region: 'Delaware',
+      region_code: 'NY',
     ),
     created_at: DateTime.iso8601('2020-05-11T18:26:32.925Z'),
-    description: 'Balbus crapula spiculum.',
+    description: 'Venustas cruentus votum patruus terebro.',
     domains: [
-      'fussy-nerve.info',
-      'sturdy-lobster.org',
-      'greedy-offset.name',
+      'goodwinsons.com',
     ],
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine_Jacobi@hotmail.com',
+        email: 'info@goodwinsons.com',
         type: Models::Shared::CrmEmailType::WORK,
       ),
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine_Jacobi@gmail.com',
+        email: 'sales@goodwinsons.com',
         type: Models::Shared::CrmEmailType::WORK,
       ),
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine.Jacobi@yahoo.com',
-        type: Models::Shared::CrmEmailType::OTHER,
+        email: 'support@goodwinsons.com',
+        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
-    employees: 967.0,
-    id: '78c9de98-3738-4fda-8dc5-f353c2ae9d13',
-    industry: 'Infrastructure',
+    employees: 4177.0,
+    id: '5a27ccfb-b0fb-49cd-8739-5707c69b2474',
+    industry: 'Metrics',
     is_active: true,
     link_urls: [
-      'https://blue-license.org',
-      'https://minor-formation.com',
-      'https://ecstatic-hammock.com',
+      'https://www.linkedin.com/company/goodwin-and-sons',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -1220,35 +1177,28 @@ req = Models::Operations::PatchCrmCompanyRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '024cb77c-3ee1-4c81-91c9-80f9a64e7559',
+        id: 'cb79908e-7d5f-4534-a067-1e54a01d8df9',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'esse',
+        value: 'unde',
       ),
     ],
     name: 'Goodwin and Sons',
     tags: [
-      'quaerat',
-      'valeo',
+      'censura',
+      'abstergo',
+      'ipsam',
     ],
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(432) 849-2690',
-        type: Models::Shared::CrmTelephoneType::MOBILE,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(606) 871-2046',
-        type: Models::Shared::CrmTelephoneType::OTHER,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(842) 258-9395',
-        type: Models::Shared::CrmTelephoneType::MOBILE,
+        telephone: '(667) 607-5872',
+        type: Models::Shared::CrmTelephoneType::HOME,
       ),
     ],
-    timezone: 'Europe/San_Marino',
-    updated_at: DateTime.iso8601('2025-02-08T18:52:45.974Z'),
+    timezone: 'Atlantic/Azores',
+    updated_at: DateTime.iso8601('2025-03-04T15:19:25.864Z'),
     websites: [
-      'https://wise-possession.org',
+      'https://www.goodwinsons.com',
     ],
   ),
   connection_id: '<id>',
@@ -1281,7 +1231,7 @@ end
 
 ## patch_crm_contact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1299,38 +1249,28 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCrmContactRequest.new(
   crm_contact: Models::Shared::CrmContact.new(
     address: Models::Shared::PropertyCrmContactAddress.new(
-      address1: '518 Brannon Burg',
-      city: 'East Helenebury',
+      address1: '65838 College Avenue',
+      address2: 'Apt. 335',
+      city: 'Fort Alexandratown',
       country_code: 'US',
-      postal_code: '92622-2406',
-      region: 'Vermont',
-      region_code: 'AZ',
+      postal_code: '80888-6094',
+      region: 'Montana',
+      region_code: 'NM',
     ),
-    company: 'Lowe - Jakubowski',
     created_at: DateTime.iso8601('2021-01-02T00:41:38.885Z'),
-    department: 'systematic',
+    department: 'Beauty',
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Mohammad.Bartell45@hotmail.com',
+        email: 'mohammad.bartell@hotmail.com',
         type: Models::Shared::CrmEmailType::HOME,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Mohammad.Bartell90@hotmail.com',
-        type: Models::Shared::CrmEmailType::HOME,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Mohammad_Bartell@hotmail.com',
-        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
     first_name: 'Mohammad',
-    id: 'f3de8ccf-d21c-4b0c-ad59-265b6103644a',
-    image_url: 'https://picsum.photos/seed/zmbPeg/2905/378',
+    id: '1dff9988-3de3-4a49-8737-02b13264dd45',
+    image_url: 'https://avatars.githubusercontent.com/u/26803724',
     last_name: 'Bartell',
     link_urls: [
-      'https://limited-parade.info',
-      'https://faint-papa.com/',
-      'https://windy-accountability.name',
+      'https://www.linkedin.com/in/mohammad-bartell',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -1338,29 +1278,25 @@ req = Models::Operations::PatchCrmContactRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '2020b0dc-6195-4cf7-841e-18acc42a2106',
+        id: '26983265-291b-4cc5-9f7c-2a36d0e8021c',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'autem',
+        value: 'antiquus',
       ),
     ],
     name: 'Mohammad Bartell',
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(975) 986-1658',
+        telephone: '(254) 404-3529',
+        type: Models::Shared::CrmTelephoneType::OTHER,
+      ),
+      Models::Shared::CrmTelephone.new(
+        telephone: '(469) 989-7588',
         type: Models::Shared::CrmTelephoneType::WORK,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(489) 332-3509',
-        type: Models::Shared::CrmTelephoneType::HOME,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(205) 880-8886',
-        type: Models::Shared::CrmTelephoneType::HOME,
       ),
     ],
     title: 'National Tactics Analyst',
-    updated_at: DateTime.iso8601('2021-02-23T11:02:48.854Z'),
+    updated_at: DateTime.iso8601('2021-02-24T06:18:22.019Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1392,7 +1328,7 @@ end
 
 ## patch_crm_deal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -1410,48 +1346,32 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCrmDealRequest.new(
   crm_deal: Models::Shared::CrmDeal.new(
     amount: 98_162.0,
-    closed_at: DateTime.iso8601('2024-03-04T04:52:45.189Z'),
-    closing_at: DateTime.iso8601('2025-08-11T21:27:05.982Z'),
+    closed_at: DateTime.iso8601('2024-03-10T20:00:03.843Z'),
+    closing_at: DateTime.iso8601('2025-09-01T19:51:42.377Z'),
     created_at: DateTime.iso8601('2023-07-04T12:48:48.470Z'),
-    currency: 'IQD',
-    description: 'Tabula cicuta sophismata comis tepidus sit cavus.',
-    id: 'eca91fc8-268f-48aa-b4fc-40876d7e99d2',
+    currency: 'USD',
+    description: 'Comis tepidus sit cavus crustulum trans tubineus adfectus.',
+    id: 'efa37fe6-046f-4d86-91c0-ba3c80dd24c5',
     metadata: [
       Models::Shared::CrmMetadata.new(
         extra_data: {
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '616e5b7c-048b-4ead-a41d-96b2f577ff2f',
+        id: '8d93e4ba-3524-4e12-bae9-a3be00587a63',
         namespace: 'custom',
         slug: 'custom_property',
         value: 'conatus',
       ),
     ],
-    name: 'Frozen Silk Chicken',
-    pipelines: [
-      Models::Shared::CrmReference.new(
-        id: '49a14ddb-9302-4085-955b-c8352da61177',
-        name: 'trans',
-      ),
-    ],
-    probability: 65.0,
+    name: 'Stoltenberg - Funk - Luxurious Rubber Chicken',
+    probability: 42.0,
     source: 'cubo',
-    stages: [
-      Models::Shared::CrmReference.new(
-        id: 'ceb00378-fc25-4e33-b374-3adcfb536f9e',
-        name: 'tubineus',
-      ),
-      Models::Shared::CrmReference.new(
-        id: '93a3a6e9-45ae-4848-aae0-1123e67cf320',
-        name: 'adfectus',
-      ),
-    ],
     tags: [
       'causa',
       'suus',
     ],
-    updated_at: DateTime.iso8601('2024-09-30T07:18:46.410Z'),
+    updated_at: DateTime.iso8601('2024-10-12T15:38:09.216Z'),
     won_reason: 'Usque libero soleo.',
   ),
   connection_id: '<id>',
@@ -1484,7 +1404,7 @@ end
 
 ## patch_crm_event
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1504,12 +1424,13 @@ req = Models::Operations::PatchCrmEventRequest.new(
     call: Models::Shared::PropertyCrmEventCall.new(
       description: 'Arbitro aptus.',
       duration: 64.0,
-      start_at: DateTime.iso8601('2024-11-19T22:47:44.599Z'),
+      start_at: DateTime.iso8601('2024-12-12T10:20:39.517Z'),
     ),
     created_at: DateTime.iso8601('2020-07-14T04:53:23.784Z'),
-    id: '200527a2-28e1-463d-9623-bb202008737a',
+    id: '7834c7a8-3797-4d94-895a-aea0407eba75',
+    metadata: [],
     type: Models::Shared::CrmEventType::CALL,
-    updated_at: DateTime.iso8601('2026-09-11T16:36:26.741Z'),
+    updated_at: DateTime.iso8601('2026-10-13T12:24:26.051Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1541,7 +1462,7 @@ end
 
 ## patch_crm_lead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -1559,32 +1480,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCrmLeadRequest.new(
   crm_lead: Models::Shared::CrmLead.new(
     address: Models::Shared::PropertyCrmLeadAddress.new(
-      address1: '528 Forest Road',
-      address2: 'Apt. 643',
-      city: 'Palm Springs',
+      address1: '87206 Hudson Street',
+      city: 'Leslieboro',
       country_code: 'US',
-      postal_code: '55624-6499',
-      region: 'New Jersey',
-      region_code: 'LA',
+      postal_code: '49909-1183',
+      region: 'Michigan',
+      region_code: 'MO',
     ),
     company_name: 'Tillman - Wiegand',
     created_at: DateTime.iso8601('2019-10-12T11:27:59.003Z'),
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Velda.Sporer16@yahoo.com',
-        type: Models::Shared::CrmEmailType::OTHER,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Velda.Sporer@yahoo.com',
-        type: Models::Shared::CrmEmailType::HOME,
+        email: 'velda.sporer@icloud.com',
+        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
     first_name: 'Velda',
-    id: '2177b1e1-dd39-4571-b135-943ed6c6fd45',
+    id: 'ecf163f3-cd60-45c4-91be-4aa8e2a444bc',
     is_active: true,
     last_name: 'Sporer',
     link_urls: [
-      'https://classic-sightseeing.com/',
+      'https://www.linkedin.com/in/velda-sporer',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -1592,26 +1508,31 @@ req = Models::Operations::PatchCrmLeadRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '470ce16e-9651-4ec0-8553-548e8cf4d373',
+        id: '3aab5cee-ff6b-4cf7-b5f2-162847cd7a90',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'sublime',
+        value: 'vitiosus',
       ),
     ],
     name: 'Velda Sporer',
-    source: 'aetas',
-    status: 'vesco',
+    source: 'Advertisement',
+    status: 'New',
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(955) 643-9849',
-        type: Models::Shared::CrmTelephoneType::OTHER,
+        telephone: '(841) 271-0595',
+        type: Models::Shared::CrmTelephoneType::FAX,
       ),
       Models::Shared::CrmTelephone.new(
-        telephone: '(621) 811-8800',
-        type: Models::Shared::CrmTelephoneType::WORK,
+        telephone: '(664) 498-4952',
+        type: Models::Shared::CrmTelephoneType::HOME,
+      ),
+      Models::Shared::CrmTelephone.new(
+        telephone: '(281) 288-0037',
+        type: Models::Shared::CrmTelephoneType::OTHER,
       ),
     ],
-    updated_at: DateTime.iso8601('2020-05-15T08:20:31.031Z'),
+    title: 'International Factors Administrator',
+    updated_at: DateTime.iso8601('2020-05-18T01:38:22.226Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1643,7 +1564,7 @@ end
 
 ## patch_crm_pipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -1663,8 +1584,9 @@ req = Models::Operations::PatchCrmPipelineRequest.new(
     created_at: DateTime.iso8601('2022-12-28T13:45:38.446Z'),
     deal_probability: 99.0,
     display_order: 8.0,
-    id: 'c45bf95f-85a6-4ff7-b09c-5b17583ac1a8',
+    id: '78700093-007c-47ef-8444-7f97f7cd7570',
     is_active: true,
+    metadata: [],
     name: 'Small Steel Bacon',
     stages: [
       Models::Shared::CrmStage.new(
@@ -1672,13 +1594,13 @@ req = Models::Operations::PatchCrmPipelineRequest.new(
         created_at: DateTime.iso8601('2022-12-28T13:45:38.446Z'),
         deal_probability: 84.0,
         display_order: 72.0,
-        id: '06153832-efa3-43b6-969f-2fdc6059759f',
+        id: '329e10dc-d8b6-43f4-be7f-78c9effa5f78',
         is_closed: true,
         name: 'Veniam.',
-        updated_at: DateTime.iso8601('2025-09-18T15:08:37.759Z'),
+        updated_at: DateTime.iso8601('2025-10-11T23:17:41.790Z'),
       ),
     ],
-    updated_at: DateTime.iso8601('2025-10-09T21:21:32.853Z'),
+    updated_at: DateTime.iso8601('2025-11-02T17:28:39.464Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1710,7 +1632,7 @@ end
 
 ## remove_crm_company
 
-Remove a company
+Deletes the CrmCompany identified by `id`.
 
 ### Example Usage
 
@@ -1752,7 +1674,7 @@ end
 
 ## remove_crm_contact
 
-Remove a contact
+Deletes the CrmContact identified by `id`.
 
 ### Example Usage
 
@@ -1794,7 +1716,7 @@ end
 
 ## remove_crm_deal
 
-Remove a deal
+Deletes the CrmDeal identified by `id`.
 
 ### Example Usage
 
@@ -1836,7 +1758,7 @@ end
 
 ## remove_crm_event
 
-Remove an event
+Deletes the CrmEvent identified by `id`.
 
 ### Example Usage
 
@@ -1878,7 +1800,7 @@ end
 
 ## remove_crm_lead
 
-Remove a lead
+Deletes the CrmLead identified by `id`.
 
 ### Example Usage
 
@@ -1920,7 +1842,7 @@ end
 
 ## remove_crm_pipeline
 
-Remove a pipeline
+Deletes the CrmPipeline identified by `id`.
 
 ### Example Usage
 
@@ -1962,7 +1884,7 @@ end
 
 ## update_crm_company
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1980,43 +1902,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCrmCompanyRequest.new(
   crm_company: Models::Shared::CrmCompany.new(
     address: Models::Shared::PropertyCrmCompanyAddress.new(
-      address1: '7261 Salisbury Road',
-      address2: 'Apt. 778',
-      city: 'Harrisburg',
+      address1: '3328 Wunsch Flat',
+      address2: 'Suite 905',
+      city: 'New Ryderfort',
       country_code: 'US',
-      postal_code: '56293-3678',
-      region: 'Pennsylvania',
-      region_code: 'ID',
+      postal_code: '04674',
+      region: 'Delaware',
+      region_code: 'NY',
     ),
     created_at: DateTime.iso8601('2020-05-11T18:26:32.925Z'),
-    description: 'Balbus crapula spiculum.',
+    description: 'Venustas cruentus votum patruus terebro.',
     domains: [
-      'fussy-nerve.info',
-      'sturdy-lobster.org',
-      'greedy-offset.name',
+      'goodwinsons.com',
     ],
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine_Jacobi@hotmail.com',
+        email: 'info@goodwinsons.com',
         type: Models::Shared::CrmEmailType::WORK,
       ),
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine_Jacobi@gmail.com',
+        email: 'sales@goodwinsons.com',
         type: Models::Shared::CrmEmailType::WORK,
       ),
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine.Jacobi@yahoo.com',
-        type: Models::Shared::CrmEmailType::OTHER,
+        email: 'support@goodwinsons.com',
+        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
-    employees: 967.0,
-    id: '78c9de98-3738-4fda-8dc5-f353c2ae9d13',
-    industry: 'Infrastructure',
+    employees: 4177.0,
+    id: '5a27ccfb-b0fb-49cd-8739-5707c69b2474',
+    industry: 'Metrics',
     is_active: true,
     link_urls: [
-      'https://blue-license.org',
-      'https://minor-formation.com',
-      'https://ecstatic-hammock.com',
+      'https://www.linkedin.com/company/goodwin-and-sons',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -2024,35 +1942,28 @@ req = Models::Operations::UpdateCrmCompanyRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '024cb77c-3ee1-4c81-91c9-80f9a64e7559',
+        id: 'cb79908e-7d5f-4534-a067-1e54a01d8df9',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'esse',
+        value: 'unde',
       ),
     ],
     name: 'Goodwin and Sons',
     tags: [
-      'quaerat',
-      'valeo',
+      'censura',
+      'abstergo',
+      'ipsam',
     ],
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(432) 849-2690',
-        type: Models::Shared::CrmTelephoneType::MOBILE,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(606) 871-2046',
-        type: Models::Shared::CrmTelephoneType::OTHER,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(842) 258-9395',
-        type: Models::Shared::CrmTelephoneType::MOBILE,
+        telephone: '(667) 607-5872',
+        type: Models::Shared::CrmTelephoneType::HOME,
       ),
     ],
-    timezone: 'Europe/San_Marino',
-    updated_at: DateTime.iso8601('2025-02-08T18:52:45.974Z'),
+    timezone: 'Atlantic/Azores',
+    updated_at: DateTime.iso8601('2025-03-04T15:19:25.864Z'),
     websites: [
-      'https://wise-possession.org',
+      'https://www.goodwinsons.com',
     ],
   ),
   connection_id: '<id>',
@@ -2085,7 +1996,7 @@ end
 
 ## update_crm_contact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -2103,38 +2014,28 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCrmContactRequest.new(
   crm_contact: Models::Shared::CrmContact.new(
     address: Models::Shared::PropertyCrmContactAddress.new(
-      address1: '518 Brannon Burg',
-      city: 'East Helenebury',
+      address1: '65838 College Avenue',
+      address2: 'Apt. 335',
+      city: 'Fort Alexandratown',
       country_code: 'US',
-      postal_code: '92622-2406',
-      region: 'Vermont',
-      region_code: 'AZ',
+      postal_code: '80888-6094',
+      region: 'Montana',
+      region_code: 'NM',
     ),
-    company: 'Lowe - Jakubowski',
     created_at: DateTime.iso8601('2021-01-02T00:41:38.885Z'),
-    department: 'systematic',
+    department: 'Beauty',
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Mohammad.Bartell45@hotmail.com',
+        email: 'mohammad.bartell@hotmail.com',
         type: Models::Shared::CrmEmailType::HOME,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Mohammad.Bartell90@hotmail.com',
-        type: Models::Shared::CrmEmailType::HOME,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Mohammad_Bartell@hotmail.com',
-        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
     first_name: 'Mohammad',
-    id: 'f3de8ccf-d21c-4b0c-ad59-265b6103644a',
-    image_url: 'https://picsum.photos/seed/zmbPeg/2905/378',
+    id: '1dff9988-3de3-4a49-8737-02b13264dd45',
+    image_url: 'https://avatars.githubusercontent.com/u/26803724',
     last_name: 'Bartell',
     link_urls: [
-      'https://limited-parade.info',
-      'https://faint-papa.com/',
-      'https://windy-accountability.name',
+      'https://www.linkedin.com/in/mohammad-bartell',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -2142,29 +2043,25 @@ req = Models::Operations::UpdateCrmContactRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '2020b0dc-6195-4cf7-841e-18acc42a2106',
+        id: '26983265-291b-4cc5-9f7c-2a36d0e8021c',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'autem',
+        value: 'antiquus',
       ),
     ],
     name: 'Mohammad Bartell',
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(975) 986-1658',
+        telephone: '(254) 404-3529',
+        type: Models::Shared::CrmTelephoneType::OTHER,
+      ),
+      Models::Shared::CrmTelephone.new(
+        telephone: '(469) 989-7588',
         type: Models::Shared::CrmTelephoneType::WORK,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(489) 332-3509',
-        type: Models::Shared::CrmTelephoneType::HOME,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(205) 880-8886',
-        type: Models::Shared::CrmTelephoneType::HOME,
       ),
     ],
     title: 'National Tactics Analyst',
-    updated_at: DateTime.iso8601('2021-02-23T11:02:48.854Z'),
+    updated_at: DateTime.iso8601('2021-02-24T06:18:22.019Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2196,7 +2093,7 @@ end
 
 ## update_crm_deal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -2214,48 +2111,32 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCrmDealRequest.new(
   crm_deal: Models::Shared::CrmDeal.new(
     amount: 98_162.0,
-    closed_at: DateTime.iso8601('2024-03-04T04:52:45.189Z'),
-    closing_at: DateTime.iso8601('2025-08-11T21:27:05.982Z'),
+    closed_at: DateTime.iso8601('2024-03-10T20:00:03.843Z'),
+    closing_at: DateTime.iso8601('2025-09-01T19:51:42.377Z'),
     created_at: DateTime.iso8601('2023-07-04T12:48:48.470Z'),
-    currency: 'IQD',
-    description: 'Tabula cicuta sophismata comis tepidus sit cavus.',
-    id: 'eca91fc8-268f-48aa-b4fc-40876d7e99d2',
+    currency: 'USD',
+    description: 'Comis tepidus sit cavus crustulum trans tubineus adfectus.',
+    id: 'efa37fe6-046f-4d86-91c0-ba3c80dd24c5',
     metadata: [
       Models::Shared::CrmMetadata.new(
         extra_data: {
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '616e5b7c-048b-4ead-a41d-96b2f577ff2f',
+        id: '8d93e4ba-3524-4e12-bae9-a3be00587a63',
         namespace: 'custom',
         slug: 'custom_property',
         value: 'conatus',
       ),
     ],
-    name: 'Frozen Silk Chicken',
-    pipelines: [
-      Models::Shared::CrmReference.new(
-        id: '49a14ddb-9302-4085-955b-c8352da61177',
-        name: 'trans',
-      ),
-    ],
-    probability: 65.0,
+    name: 'Stoltenberg - Funk - Luxurious Rubber Chicken',
+    probability: 42.0,
     source: 'cubo',
-    stages: [
-      Models::Shared::CrmReference.new(
-        id: 'ceb00378-fc25-4e33-b374-3adcfb536f9e',
-        name: 'tubineus',
-      ),
-      Models::Shared::CrmReference.new(
-        id: '93a3a6e9-45ae-4848-aae0-1123e67cf320',
-        name: 'adfectus',
-      ),
-    ],
     tags: [
       'causa',
       'suus',
     ],
-    updated_at: DateTime.iso8601('2024-09-30T07:18:46.410Z'),
+    updated_at: DateTime.iso8601('2024-10-12T15:38:09.216Z'),
     won_reason: 'Usque libero soleo.',
   ),
   connection_id: '<id>',
@@ -2288,7 +2169,7 @@ end
 
 ## update_crm_event
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2308,12 +2189,13 @@ req = Models::Operations::UpdateCrmEventRequest.new(
     call: Models::Shared::PropertyCrmEventCall.new(
       description: 'Arbitro aptus.',
       duration: 64.0,
-      start_at: DateTime.iso8601('2024-11-19T22:47:44.599Z'),
+      start_at: DateTime.iso8601('2024-12-12T10:20:39.517Z'),
     ),
     created_at: DateTime.iso8601('2020-07-14T04:53:23.784Z'),
-    id: '200527a2-28e1-463d-9623-bb202008737a',
+    id: '7834c7a8-3797-4d94-895a-aea0407eba75',
+    metadata: [],
     type: Models::Shared::CrmEventType::CALL,
-    updated_at: DateTime.iso8601('2026-09-11T16:36:26.741Z'),
+    updated_at: DateTime.iso8601('2026-10-13T12:24:26.051Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2345,7 +2227,7 @@ end
 
 ## update_crm_lead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -2363,32 +2245,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCrmLeadRequest.new(
   crm_lead: Models::Shared::CrmLead.new(
     address: Models::Shared::PropertyCrmLeadAddress.new(
-      address1: '528 Forest Road',
-      address2: 'Apt. 643',
-      city: 'Palm Springs',
+      address1: '87206 Hudson Street',
+      city: 'Leslieboro',
       country_code: 'US',
-      postal_code: '55624-6499',
-      region: 'New Jersey',
-      region_code: 'LA',
+      postal_code: '49909-1183',
+      region: 'Michigan',
+      region_code: 'MO',
     ),
     company_name: 'Tillman - Wiegand',
     created_at: DateTime.iso8601('2019-10-12T11:27:59.003Z'),
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Velda.Sporer16@yahoo.com',
-        type: Models::Shared::CrmEmailType::OTHER,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Velda.Sporer@yahoo.com',
-        type: Models::Shared::CrmEmailType::HOME,
+        email: 'velda.sporer@icloud.com',
+        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
     first_name: 'Velda',
-    id: '2177b1e1-dd39-4571-b135-943ed6c6fd45',
+    id: 'ecf163f3-cd60-45c4-91be-4aa8e2a444bc',
     is_active: true,
     last_name: 'Sporer',
     link_urls: [
-      'https://classic-sightseeing.com/',
+      'https://www.linkedin.com/in/velda-sporer',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -2396,26 +2273,31 @@ req = Models::Operations::UpdateCrmLeadRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '470ce16e-9651-4ec0-8553-548e8cf4d373',
+        id: '3aab5cee-ff6b-4cf7-b5f2-162847cd7a90',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'sublime',
+        value: 'vitiosus',
       ),
     ],
     name: 'Velda Sporer',
-    source: 'aetas',
-    status: 'vesco',
+    source: 'Advertisement',
+    status: 'New',
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(955) 643-9849',
-        type: Models::Shared::CrmTelephoneType::OTHER,
+        telephone: '(841) 271-0595',
+        type: Models::Shared::CrmTelephoneType::FAX,
       ),
       Models::Shared::CrmTelephone.new(
-        telephone: '(621) 811-8800',
-        type: Models::Shared::CrmTelephoneType::WORK,
+        telephone: '(664) 498-4952',
+        type: Models::Shared::CrmTelephoneType::HOME,
+      ),
+      Models::Shared::CrmTelephone.new(
+        telephone: '(281) 288-0037',
+        type: Models::Shared::CrmTelephoneType::OTHER,
       ),
     ],
-    updated_at: DateTime.iso8601('2020-05-15T08:20:31.031Z'),
+    title: 'International Factors Administrator',
+    updated_at: DateTime.iso8601('2020-05-18T01:38:22.226Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2447,7 +2329,7 @@ end
 
 ## update_crm_pipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -2467,8 +2349,9 @@ req = Models::Operations::UpdateCrmPipelineRequest.new(
     created_at: DateTime.iso8601('2022-12-28T13:45:38.446Z'),
     deal_probability: 99.0,
     display_order: 8.0,
-    id: 'c45bf95f-85a6-4ff7-b09c-5b17583ac1a8',
+    id: '78700093-007c-47ef-8444-7f97f7cd7570',
     is_active: true,
+    metadata: [],
     name: 'Small Steel Bacon',
     stages: [
       Models::Shared::CrmStage.new(
@@ -2476,13 +2359,13 @@ req = Models::Operations::UpdateCrmPipelineRequest.new(
         created_at: DateTime.iso8601('2022-12-28T13:45:38.446Z'),
         deal_probability: 84.0,
         display_order: 72.0,
-        id: '06153832-efa3-43b6-969f-2fdc6059759f',
+        id: '329e10dc-d8b6-43f4-be7f-78c9effa5f78',
         is_closed: true,
         name: 'Veniam.',
-        updated_at: DateTime.iso8601('2025-09-18T15:08:37.759Z'),
+        updated_at: DateTime.iso8601('2025-10-11T23:17:41.790Z'),
       ),
     ],
-    updated_at: DateTime.iso8601('2025-10-09T21:21:32.853Z'),
+    updated_at: DateTime.iso8601('2025-11-02T17:28:39.464Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

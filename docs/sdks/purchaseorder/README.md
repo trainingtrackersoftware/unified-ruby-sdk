@@ -14,7 +14,7 @@
 
 ## create_accounting_purchaseorder
 
-Create a purchaseorder
+Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
 
 ### Example Usage
 
@@ -30,32 +30,34 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.purchaseorder.create_accounting_purchaseorder(accounting_purchaseorder: Models::Shared::AccountingPurchaseorder.new(
+  attachments: [],
   billing_address: Models::Shared::PropertyAccountingPurchaseorderBillingAddress.new(
-    address1: '37214 Tanya Walks',
+    address1: '72142 Willow Street',
+    address2: 'Apt. 967',
     city: 'South Annabelleton',
     country_code: 'US',
     postal_code: '30337',
     region: 'Nevada',
-    region_code: 'MA',
+    region_code: 'FL',
   ),
   category_ids: [],
   created_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
-  currency: 'ZMW',
-  id: 'f7dde434-bbb1-4325-ae3c-a9403bede977',
+  currency: 'EUR',
+  id: '76a1091d-72ea-4bf1-9efa-fa5e21952343',
   lineitems: [],
   metadata: [],
-  posted_at: DateTime.iso8601('2025-04-27T10:38:53.396Z'),
+  posted_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
   shipping_address: Models::Shared::PropertyAccountingPurchaseorderShippingAddress.new(
-    address1: '649 Maggio Overpass',
-    city: 'Lake Jaylan',
+    address1: '76494 Medhurst Club',
+    city: 'Kshlerinfurt',
     country_code: 'US',
-    postal_code: '99211-6547',
-    region: 'North Carolina',
-    region_code: 'ID',
+    postal_code: '92116-5474',
+    region: 'Oregon',
+    region_code: 'WY',
   ),
-  status: Models::Shared::AccountingPurchaseorderStatus::PARTIALLY_REFUNDED,
+  status: Models::Shared::AccountingPurchaseorderStatus::SUBMITTED,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2021-02-26T05:56:03.104Z'),
+  updated_at: DateTime.iso8601('2021-08-11T11:24:00.096Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_purchaseorder.nil?
@@ -85,7 +87,7 @@ end
 
 ## get_accounting_purchaseorder
 
-Retrieve a purchaseorder
+Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -129,7 +131,7 @@ end
 
 ## list_accounting_purchaseorders
 
-List all purchaseorders
+Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -174,7 +176,7 @@ end
 
 ## patch_accounting_purchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -191,32 +193,34 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingPurchaseorderRequest.new(
   accounting_purchaseorder: Models::Shared::AccountingPurchaseorder.new(
+    attachments: [],
     billing_address: Models::Shared::PropertyAccountingPurchaseorderBillingAddress.new(
-      address1: '37214 Tanya Walks',
+      address1: '72142 Willow Street',
+      address2: 'Apt. 967',
       city: 'South Annabelleton',
       country_code: 'US',
       postal_code: '30337',
       region: 'Nevada',
-      region_code: 'MA',
+      region_code: 'FL',
     ),
     category_ids: [],
     created_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
-    currency: 'ZMW',
-    id: 'd118cce2-44a0-4328-bf59-7259e05d3180',
+    currency: 'EUR',
+    id: 'c3032a3a-85c9-4eab-a1f6-59691af444f7',
     lineitems: [],
     metadata: [],
-    posted_at: DateTime.iso8601('2025-04-27T10:38:53.438Z'),
+    posted_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
     shipping_address: Models::Shared::PropertyAccountingPurchaseorderShippingAddress.new(
-      address1: '649 Maggio Overpass',
-      city: 'Lake Jaylan',
+      address1: '76494 Medhurst Club',
+      city: 'Kshlerinfurt',
       country_code: 'US',
-      postal_code: '99211-6547',
-      region: 'North Carolina',
-      region_code: 'ID',
+      postal_code: '92116-5474',
+      region: 'Oregon',
+      region_code: 'WY',
     ),
-    status: Models::Shared::AccountingPurchaseorderStatus::PARTIALLY_REFUNDED,
+    status: Models::Shared::AccountingPurchaseorderStatus::SUBMITTED,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2021-02-26T05:56:03.106Z'),
+    updated_at: DateTime.iso8601('2021-08-11T11:24:00.103Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -248,7 +252,7 @@ end
 
 ## remove_accounting_purchaseorder
 
-Remove a purchaseorder
+Deletes the AccountingPurchaseorder identified by `id`.
 
 ### Example Usage
 
@@ -290,7 +294,7 @@ end
 
 ## update_accounting_purchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -307,32 +311,34 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingPurchaseorderRequest.new(
   accounting_purchaseorder: Models::Shared::AccountingPurchaseorder.new(
+    attachments: [],
     billing_address: Models::Shared::PropertyAccountingPurchaseorderBillingAddress.new(
-      address1: '37214 Tanya Walks',
+      address1: '72142 Willow Street',
+      address2: 'Apt. 967',
       city: 'South Annabelleton',
       country_code: 'US',
       postal_code: '30337',
       region: 'Nevada',
-      region_code: 'MA',
+      region_code: 'FL',
     ),
     category_ids: [],
     created_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
-    currency: 'ZMW',
-    id: 'd118cce2-44a0-4328-bf59-7259e05d3180',
+    currency: 'EUR',
+    id: 'c3032a3a-85c9-4eab-a1f6-59691af444f7',
     lineitems: [],
     metadata: [],
-    posted_at: DateTime.iso8601('2025-04-27T10:38:53.438Z'),
+    posted_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
     shipping_address: Models::Shared::PropertyAccountingPurchaseorderShippingAddress.new(
-      address1: '649 Maggio Overpass',
-      city: 'Lake Jaylan',
+      address1: '76494 Medhurst Club',
+      city: 'Kshlerinfurt',
       country_code: 'US',
-      postal_code: '99211-6547',
-      region: 'North Carolina',
-      region_code: 'ID',
+      postal_code: '92116-5474',
+      region: 'Oregon',
+      region_code: 'WY',
     ),
-    status: Models::Shared::AccountingPurchaseorderStatus::PARTIALLY_REFUNDED,
+    status: Models::Shared::AccountingPurchaseorderStatus::SUBMITTED,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2021-02-26T05:56:03.106Z'),
+    updated_at: DateTime.iso8601('2021-08-11T11:24:00.103Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

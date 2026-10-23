@@ -14,7 +14,7 @@
 
 ## create_datastore_database
 
-Create a database
+Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
 
 ### Example Usage
 
@@ -32,12 +32,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.database.create_datastore_database(datastore_database: Models::Shared::DatastoreDatabase.new(
   created_at: DateTime.iso8601('2019-03-05T14:31:00.223Z'),
   description: 'Substantia tantillus coniuratio repellat coerceo amet vito vorago.',
-  id: '38f39d2c-30a2-4f25-bf3b-acfa5fae1136',
+  id: 'd28e9097-c155-4984-9b60-97192f466090',
   is_active: true,
+  metadata: [],
   name: 'Rau - O\'Reilly',
   password: 'iYLhYwOHm0NLDvI',
   region: 'France',
-  updated_at: DateTime.iso8601('2023-06-13T20:24:10.814Z'),
+  updated_at: DateTime.iso8601('2023-07-01T22:48:57.105Z'),
   web_url: 'https://optimal-signature.name',
 ), connection_id: '<id>')
 
@@ -68,7 +69,7 @@ end
 
 ## get_datastore_database
 
-Retrieve a database
+Retrieves a single DatastoreDatabase by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -112,7 +113,7 @@ end
 
 ## list_datastore_databases
 
-List all databases
+Returns a list of DatastoreDatabases. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -157,7 +158,7 @@ end
 
 ## patch_datastore_database
 
-Update a database
+Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
 
 ### Example Usage
 
@@ -176,12 +177,13 @@ req = Models::Operations::PatchDatastoreDatabaseRequest.new(
   datastore_database: Models::Shared::DatastoreDatabase.new(
     created_at: DateTime.iso8601('2019-03-05T14:31:00.223Z'),
     description: 'Substantia tantillus coniuratio repellat coerceo amet vito vorago.',
-    id: '7d867943-794a-4a40-8753-9df9bdbcde66',
+    id: 'bb1b6296-f585-4de3-a982-e4650d57c1a5',
     is_active: true,
+    metadata: [],
     name: 'Rau - O\'Reilly',
     password: 'iYLhYwOHm0NLDvI',
     region: 'France',
-    updated_at: DateTime.iso8601('2023-06-13T20:24:10.819Z'),
+    updated_at: DateTime.iso8601('2023-07-01T22:48:57.113Z'),
     web_url: 'https://optimal-signature.name',
   ),
   connection_id: '<id>',
@@ -214,7 +216,7 @@ end
 
 ## remove_datastore_database
 
-Remove a database
+Deletes the DatastoreDatabase identified by `id`.
 
 ### Example Usage
 
@@ -256,7 +258,7 @@ end
 
 ## update_datastore_database
 
-Update a database
+Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
 
 ### Example Usage
 
@@ -275,12 +277,13 @@ req = Models::Operations::UpdateDatastoreDatabaseRequest.new(
   datastore_database: Models::Shared::DatastoreDatabase.new(
     created_at: DateTime.iso8601('2019-03-05T14:31:00.223Z'),
     description: 'Substantia tantillus coniuratio repellat coerceo amet vito vorago.',
-    id: '7d867943-794a-4a40-8753-9df9bdbcde66',
+    id: 'bb1b6296-f585-4de3-a982-e4650d57c1a5',
     is_active: true,
+    metadata: [],
     name: 'Rau - O\'Reilly',
     password: 'iYLhYwOHm0NLDvI',
     region: 'France',
-    updated_at: DateTime.iso8601('2023-06-13T20:24:10.819Z'),
+    updated_at: DateTime.iso8601('2023-07-01T22:48:57.113Z'),
     web_url: 'https://optimal-signature.name',
   ),
   connection_id: '<id>',

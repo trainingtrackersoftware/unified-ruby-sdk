@@ -14,7 +14,7 @@
 
 ## create_crm_deal
 
-Create a deal
+Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
 
 ### Example Usage
 
@@ -31,48 +31,32 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.deal.create_crm_deal(crm_deal: Models::Shared::CrmDeal.new(
   amount: 98_162.0,
-  closed_at: DateTime.iso8601('2024-03-04T04:52:45.184Z'),
-  closing_at: DateTime.iso8601('2025-08-11T21:27:05.965Z'),
+  closed_at: DateTime.iso8601('2024-03-10T20:00:03.839Z'),
+  closing_at: DateTime.iso8601('2025-09-01T19:51:42.365Z'),
   created_at: DateTime.iso8601('2023-07-04T12:48:48.470Z'),
-  currency: 'IQD',
-  description: 'Tabula cicuta sophismata comis tepidus sit cavus.',
-  id: '9689b96a-d592-4f79-a5fe-135c4d6513a5',
+  currency: 'USD',
+  description: 'Comis tepidus sit cavus crustulum trans tubineus adfectus.',
+  id: 'db0996f8-591a-4180-915e-36f7b36d5fca',
   metadata: [
     Models::Shared::CrmMetadata.new(
       extra_data: {
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CrmMetadataFormat::TEXT,
-      id: 'ad78ae38-8a8e-4db3-8f01-1f7626875ae9',
+      id: '164a3241-1d61-41e7-a0f7-b87756af05a1',
       namespace: 'custom',
       slug: 'custom_property',
       value: 'conatus',
     ),
   ],
-  name: 'Frozen Silk Chicken',
-  pipelines: [
-    Models::Shared::CrmReference.new(
-      id: 'c5a28957-e430-4421-a5dc-b1050cfb95b3',
-      name: 'trans',
-    ),
-  ],
-  probability: 65.0,
+  name: 'Stoltenberg - Funk - Luxurious Rubber Chicken',
+  probability: 42.0,
   source: 'cubo',
-  stages: [
-    Models::Shared::CrmReference.new(
-      id: '610bcccf-57af-47d9-ad95-2c03a7e78b82',
-      name: 'tubineus',
-    ),
-    Models::Shared::CrmReference.new(
-      id: '575a04a3-e38f-4e7e-8a88-1dfc938ba1a7',
-      name: 'adfectus',
-    ),
-  ],
   tags: [
     'causa',
     'suus',
   ],
-  updated_at: DateTime.iso8601('2024-09-30T07:18:46.400Z'),
+  updated_at: DateTime.iso8601('2024-10-12T15:38:09.209Z'),
   won_reason: 'Usque libero soleo.',
 ), connection_id: '<id>')
 
@@ -103,7 +87,7 @@ end
 
 ## get_crm_deal
 
-Retrieve a deal
+Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -147,7 +131,7 @@ end
 
 ## list_crm_deals
 
-List all deals
+Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -192,7 +176,7 @@ end
 
 ## patch_crm_deal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -210,48 +194,32 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCrmDealRequest.new(
   crm_deal: Models::Shared::CrmDeal.new(
     amount: 98_162.0,
-    closed_at: DateTime.iso8601('2024-03-04T04:52:45.189Z'),
-    closing_at: DateTime.iso8601('2025-08-11T21:27:05.982Z'),
+    closed_at: DateTime.iso8601('2024-03-10T20:00:03.843Z'),
+    closing_at: DateTime.iso8601('2025-09-01T19:51:42.377Z'),
     created_at: DateTime.iso8601('2023-07-04T12:48:48.470Z'),
-    currency: 'IQD',
-    description: 'Tabula cicuta sophismata comis tepidus sit cavus.',
-    id: 'eca91fc8-268f-48aa-b4fc-40876d7e99d2',
+    currency: 'USD',
+    description: 'Comis tepidus sit cavus crustulum trans tubineus adfectus.',
+    id: 'efa37fe6-046f-4d86-91c0-ba3c80dd24c5',
     metadata: [
       Models::Shared::CrmMetadata.new(
         extra_data: {
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '616e5b7c-048b-4ead-a41d-96b2f577ff2f',
+        id: '8d93e4ba-3524-4e12-bae9-a3be00587a63',
         namespace: 'custom',
         slug: 'custom_property',
         value: 'conatus',
       ),
     ],
-    name: 'Frozen Silk Chicken',
-    pipelines: [
-      Models::Shared::CrmReference.new(
-        id: '49a14ddb-9302-4085-955b-c8352da61177',
-        name: 'trans',
-      ),
-    ],
-    probability: 65.0,
+    name: 'Stoltenberg - Funk - Luxurious Rubber Chicken',
+    probability: 42.0,
     source: 'cubo',
-    stages: [
-      Models::Shared::CrmReference.new(
-        id: 'ceb00378-fc25-4e33-b374-3adcfb536f9e',
-        name: 'tubineus',
-      ),
-      Models::Shared::CrmReference.new(
-        id: '93a3a6e9-45ae-4848-aae0-1123e67cf320',
-        name: 'adfectus',
-      ),
-    ],
     tags: [
       'causa',
       'suus',
     ],
-    updated_at: DateTime.iso8601('2024-09-30T07:18:46.410Z'),
+    updated_at: DateTime.iso8601('2024-10-12T15:38:09.216Z'),
     won_reason: 'Usque libero soleo.',
   ),
   connection_id: '<id>',
@@ -284,7 +252,7 @@ end
 
 ## remove_crm_deal
 
-Remove a deal
+Deletes the CrmDeal identified by `id`.
 
 ### Example Usage
 
@@ -326,7 +294,7 @@ end
 
 ## update_crm_deal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -344,48 +312,32 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCrmDealRequest.new(
   crm_deal: Models::Shared::CrmDeal.new(
     amount: 98_162.0,
-    closed_at: DateTime.iso8601('2024-03-04T04:52:45.189Z'),
-    closing_at: DateTime.iso8601('2025-08-11T21:27:05.982Z'),
+    closed_at: DateTime.iso8601('2024-03-10T20:00:03.843Z'),
+    closing_at: DateTime.iso8601('2025-09-01T19:51:42.377Z'),
     created_at: DateTime.iso8601('2023-07-04T12:48:48.470Z'),
-    currency: 'IQD',
-    description: 'Tabula cicuta sophismata comis tepidus sit cavus.',
-    id: 'eca91fc8-268f-48aa-b4fc-40876d7e99d2',
+    currency: 'USD',
+    description: 'Comis tepidus sit cavus crustulum trans tubineus adfectus.',
+    id: 'efa37fe6-046f-4d86-91c0-ba3c80dd24c5',
     metadata: [
       Models::Shared::CrmMetadata.new(
         extra_data: {
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '616e5b7c-048b-4ead-a41d-96b2f577ff2f',
+        id: '8d93e4ba-3524-4e12-bae9-a3be00587a63',
         namespace: 'custom',
         slug: 'custom_property',
         value: 'conatus',
       ),
     ],
-    name: 'Frozen Silk Chicken',
-    pipelines: [
-      Models::Shared::CrmReference.new(
-        id: '49a14ddb-9302-4085-955b-c8352da61177',
-        name: 'trans',
-      ),
-    ],
-    probability: 65.0,
+    name: 'Stoltenberg - Funk - Luxurious Rubber Chicken',
+    probability: 42.0,
     source: 'cubo',
-    stages: [
-      Models::Shared::CrmReference.new(
-        id: 'ceb00378-fc25-4e33-b374-3adcfb536f9e',
-        name: 'tubineus',
-      ),
-      Models::Shared::CrmReference.new(
-        id: '93a3a6e9-45ae-4848-aae0-1123e67cf320',
-        name: 'adfectus',
-      ),
-    ],
     tags: [
       'causa',
       'suus',
     ],
-    updated_at: DateTime.iso8601('2024-09-30T07:18:46.410Z'),
+    updated_at: DateTime.iso8601('2024-10-12T15:38:09.216Z'),
     won_reason: 'Usque libero soleo.',
   ),
   connection_id: '<id>',

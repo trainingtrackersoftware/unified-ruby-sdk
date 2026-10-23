@@ -26,7 +26,7 @@
 
 ## create_accounting_contact
 
-Create a contact
+Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
 
 ### Example Usage
 
@@ -42,74 +42,65 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.contact.create_accounting_contact(accounting_contact: Models::Shared::AccountingContact.new(
-  associated_contacts: [
-    Models::Shared::AccountingAssociatedContact.new(
-      id: 'aed4a25a-a941-4154-854f-32113e8dd6ca',
-      name: 'Delores Reynolds',
-    ),
-    Models::Shared::AccountingAssociatedContact.new(
-      id: '5a725f40-c54e-4aa5-a55d-353408faa333',
-      name: 'Delores Reynolds',
-    ),
-  ],
+  associated_contacts: [],
+  balance_amount: 55_574.0,
   billing_address: Models::Shared::PropertyAccountingContactBillingAddress.new(
-    address1: '2633 Stoney Lane',
-    address2: 'Suite 176',
-    city: 'Ladariusboro',
+    address1: '4091 Tromp Coves',
+    city: 'Lake Emmybury',
     country_code: 'US',
-    postal_code: '70131-2908',
-    region: 'Illinois',
-    region_code: 'NV',
+    postal_code: '50764-5226',
+    region: 'Washington',
+    region_code: 'CA',
   ),
-  company_name: 'Marquardt Inc',
+  company_name: 'Kertzmann Group',
   created_at: DateTime.iso8601('2021-08-15T14:56:50.258Z'),
-  currency: 'ISK',
+  currency: 'AUD',
   emails: [
     Models::Shared::AccountingEmail.new(
-      email: 'Delores.Reynolds10@hotmail.com',
-      type: Models::Shared::AccountingEmailType::HOME,
+      email: 'delores.reynolds@kertzmanngroup.com',
+      type: Models::Shared::AccountingEmailType::WORK,
+    ),
+    Models::Shared::AccountingEmail.new(
+      email: 'accounts@kertzmanngroup.com',
+      type: Models::Shared::AccountingEmailType::OTHER,
     ),
   ],
   first_name: 'Delores',
-  id: 'c6a1cc7a-b779-4420-a19a-0d6b905137af',
-  identification: 'amicitia',
+  id: 'c04f80fa-bfbe-4fd4-a019-dfc193c87147',
+  identification: '531850872',
   is_active: true,
   is_customer: true,
   last_name: 'Reynolds',
-  name: 'Delores Reynolds',
-  notes: 'Caput accusamus et videlicet.',
+  metadata: [],
+  name: 'Kertzmann Group',
+  notes: 'Et videlicet pauci.',
   payment_methods: [
     Models::Shared::AccountingContactPaymentMethod.new(
       default: true,
-      id: '00dadef0-7876-4af4-be59-5aa5a33c1ee3',
-      name: 'Visa 1234',
+      id: 'c5fb38a5-69ba-40a8-9a69-99562f8b4059',
+      name: 'Visa 7844',
       type: Models::Shared::AccountingContactPaymentMethodType::CARD,
     ),
   ],
-  portal_url: 'https://scented-t-shirt.info/',
+  portal_url: 'https://kertzmanngroup.com/billing',
   shipping_address: Models::Shared::PropertyAccountingContactShippingAddress.new(
-    address1: '786 Renner Stream',
-    address2: 'Apt. 555',
-    city: 'Roanoke',
+    address1: '23129 Rebekah Mews',
+    city: 'Mortimerhaven',
     country_code: 'US',
-    postal_code: '80686-7556',
-    region: 'Vermont',
-    region_code: 'NE',
+    postal_code: '55878-6806',
+    region: 'Florida',
+    region_code: 'OK',
   ),
-  tax_exemption: Models::Shared::TaxExemption::RESALE,
-  tax_number: 'amplexus',
+  tax_exemption: Models::Shared::TaxExemption::FOREIGN,
+  tax_number: '867556410',
   telephones: [
     Models::Shared::AccountingTelephone.new(
-      telephone: '(427) 701-7160',
-      type: Models::Shared::AccountingTelephoneType::HOME,
-    ),
-    Models::Shared::AccountingTelephone.new(
-      telephone: '(540) 913-9171',
+      telephone: '(432) 760-1716',
       type: Models::Shared::AccountingTelephoneType::FAX,
     ),
   ],
-  updated_at: DateTime.iso8601('2023-12-06T07:23:48.157Z'),
-  website: 'https://noxious-advertisement.org',
+  updated_at: DateTime.iso8601('2023-12-20T18:25:43.215Z'),
+  website: 'https://kertzmanngroup.com',
 ), connection_id: '<id>')
 
 unless res.accounting_contact.nil?
@@ -139,7 +130,7 @@ end
 
 ## create_crm_contact
 
-Create a contact
+Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
 
 ### Example Usage
 
@@ -156,38 +147,28 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.contact.create_crm_contact(crm_contact: Models::Shared::CrmContact.new(
   address: Models::Shared::PropertyCrmContactAddress.new(
-    address1: '518 Brannon Burg',
-    city: 'East Helenebury',
+    address1: '65838 College Avenue',
+    address2: 'Apt. 335',
+    city: 'Fort Alexandratown',
     country_code: 'US',
-    postal_code: '92622-2406',
-    region: 'Vermont',
-    region_code: 'AZ',
+    postal_code: '80888-6094',
+    region: 'Montana',
+    region_code: 'NM',
   ),
-  company: 'Lowe - Jakubowski',
   created_at: DateTime.iso8601('2021-01-02T00:41:38.885Z'),
-  department: 'systematic',
+  department: 'Beauty',
   emails: [
     Models::Shared::CrmEmail.new(
-      email: 'Mohammad.Bartell45@hotmail.com',
+      email: 'mohammad.bartell@hotmail.com',
       type: Models::Shared::CrmEmailType::HOME,
-    ),
-    Models::Shared::CrmEmail.new(
-      email: 'Mohammad.Bartell90@hotmail.com',
-      type: Models::Shared::CrmEmailType::HOME,
-    ),
-    Models::Shared::CrmEmail.new(
-      email: 'Mohammad_Bartell@hotmail.com',
-      type: Models::Shared::CrmEmailType::WORK,
     ),
   ],
   first_name: 'Mohammad',
-  id: 'b55b499a-6e6c-4781-88b5-c4f74733ac20',
-  image_url: 'https://picsum.photos/seed/zmbPeg/2905/378',
+  id: '48a0c9cc-8014-4a2e-953b-b0c9467b9378',
+  image_url: 'https://avatars.githubusercontent.com/u/26803724',
   last_name: 'Bartell',
   link_urls: [
-    'https://limited-parade.info',
-    'https://faint-papa.com/',
-    'https://windy-accountability.name',
+    'https://www.linkedin.com/in/mohammad-bartell',
   ],
   metadata: [
     Models::Shared::CrmMetadata.new(
@@ -195,29 +176,25 @@ res = s.contact.create_crm_contact(crm_contact: Models::Shared::CrmContact.new(
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CrmMetadataFormat::TEXT,
-      id: 'eaefef1f-44cc-4e97-a6cd-bf001d40b644',
+      id: '784d14cf-1653-45f0-848d-230754e0364a',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'autem',
+      value: 'antiquus',
     ),
   ],
   name: 'Mohammad Bartell',
   telephones: [
     Models::Shared::CrmTelephone.new(
-      telephone: '(975) 986-1658',
+      telephone: '(254) 404-3529',
+      type: Models::Shared::CrmTelephoneType::OTHER,
+    ),
+    Models::Shared::CrmTelephone.new(
+      telephone: '(469) 989-7588',
       type: Models::Shared::CrmTelephoneType::WORK,
-    ),
-    Models::Shared::CrmTelephone.new(
-      telephone: '(489) 332-3509',
-      type: Models::Shared::CrmTelephoneType::HOME,
-    ),
-    Models::Shared::CrmTelephone.new(
-      telephone: '(205) 880-8886',
-      type: Models::Shared::CrmTelephoneType::HOME,
     ),
   ],
   title: 'National Tactics Analyst',
-  updated_at: DateTime.iso8601('2021-02-23T11:02:48.853Z'),
+  updated_at: DateTime.iso8601('2021-02-24T06:18:22.018Z'),
 ), connection_id: '<id>')
 
 unless res.crm_contact.nil?
@@ -247,7 +224,7 @@ end
 
 ## create_uc_contact
 
-Create a contact
+Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
 
 ### Example Usage
 
@@ -272,8 +249,9 @@ res = s.contact.create_uc_contact(uc_contact: Models::Shared::UcContact.new(
     ),
   ],
   first_name: 'Luther',
-  id: 'b6f1a80e-606a-4fd0-b071-56e392552c22',
+  id: 'fa41b6a2-8e93-42a0-81fa-c6c20dd65f16',
   last_name: 'Rogahn',
+  metadata: [],
   name: 'Luther Rogahn',
   telephones: [
     Models::Shared::UcTelephone.new(
@@ -290,7 +268,7 @@ res = s.contact.create_uc_contact(uc_contact: Models::Shared::UcContact.new(
     ),
   ],
   title: 'Chief Optimization Executive',
-  updated_at: DateTime.iso8601('2023-11-20T17:22:46.770Z'),
+  updated_at: DateTime.iso8601('2023-12-09T13:11:45.837Z'),
 ), connection_id: '<id>')
 
 unless res.uc_contact.nil?
@@ -320,7 +298,7 @@ end
 
 ## get_accounting_contact
 
-Retrieve a contact
+Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -364,7 +342,7 @@ end
 
 ## get_crm_contact
 
-Retrieve a contact
+Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -408,7 +386,7 @@ end
 
 ## get_uc_contact
 
-Retrieve a contact
+Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -452,7 +430,7 @@ end
 
 ## list_accounting_contacts
 
-List all contacts
+Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -497,7 +475,7 @@ end
 
 ## list_crm_contacts
 
-List all contacts
+Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -542,7 +520,7 @@ end
 
 ## list_uc_contacts
 
-List all contacts
+Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -587,7 +565,7 @@ end
 
 ## patch_accounting_contact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -604,74 +582,65 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingContactRequest.new(
   accounting_contact: Models::Shared::AccountingContact.new(
-    associated_contacts: [
-      Models::Shared::AccountingAssociatedContact.new(
-        id: '32bde497-bc3f-4491-ba2c-fb650eccb8d1',
-        name: 'Delores Reynolds',
-      ),
-      Models::Shared::AccountingAssociatedContact.new(
-        id: '2a3996a2-f5d4-46b3-bf49-8127eab40cc2',
-        name: 'Delores Reynolds',
-      ),
-    ],
+    associated_contacts: [],
+    balance_amount: 55_574.0,
     billing_address: Models::Shared::PropertyAccountingContactBillingAddress.new(
-      address1: '2633 Stoney Lane',
-      address2: 'Suite 176',
-      city: 'Ladariusboro',
+      address1: '4091 Tromp Coves',
+      city: 'Lake Emmybury',
       country_code: 'US',
-      postal_code: '70131-2908',
-      region: 'Illinois',
-      region_code: 'NV',
+      postal_code: '50764-5226',
+      region: 'Washington',
+      region_code: 'CA',
     ),
-    company_name: 'Marquardt Inc',
+    company_name: 'Kertzmann Group',
     created_at: DateTime.iso8601('2021-08-15T14:56:50.258Z'),
-    currency: 'ISK',
+    currency: 'AUD',
     emails: [
       Models::Shared::AccountingEmail.new(
-        email: 'Delores.Reynolds10@hotmail.com',
-        type: Models::Shared::AccountingEmailType::HOME,
+        email: 'delores.reynolds@kertzmanngroup.com',
+        type: Models::Shared::AccountingEmailType::WORK,
+      ),
+      Models::Shared::AccountingEmail.new(
+        email: 'accounts@kertzmanngroup.com',
+        type: Models::Shared::AccountingEmailType::OTHER,
       ),
     ],
     first_name: 'Delores',
-    id: 'eb2d42b7-7120-4cde-9354-5e8775fd6701',
-    identification: 'amicitia',
+    id: '812919c1-537e-4487-aea9-bf5b7ca3ce68',
+    identification: '531850872',
     is_active: true,
     is_customer: true,
     last_name: 'Reynolds',
-    name: 'Delores Reynolds',
-    notes: 'Caput accusamus et videlicet.',
+    metadata: [],
+    name: 'Kertzmann Group',
+    notes: 'Et videlicet pauci.',
     payment_methods: [
       Models::Shared::AccountingContactPaymentMethod.new(
         default: true,
-        id: '60ce8459-b72d-4dc8-a716-ba5c44475ca2',
-        name: 'Visa 1234',
+        id: 'e6bbcdbb-20f0-4d79-a5a9-b2666b6f950e',
+        name: 'Visa 7844',
         type: Models::Shared::AccountingContactPaymentMethodType::CARD,
       ),
     ],
-    portal_url: 'https://scented-t-shirt.info/',
+    portal_url: 'https://kertzmanngroup.com/billing',
     shipping_address: Models::Shared::PropertyAccountingContactShippingAddress.new(
-      address1: '786 Renner Stream',
-      address2: 'Apt. 555',
-      city: 'Roanoke',
+      address1: '23129 Rebekah Mews',
+      city: 'Mortimerhaven',
       country_code: 'US',
-      postal_code: '80686-7556',
-      region: 'Vermont',
-      region_code: 'NE',
+      postal_code: '55878-6806',
+      region: 'Florida',
+      region_code: 'OK',
     ),
-    tax_exemption: Models::Shared::TaxExemption::RESALE,
-    tax_number: 'amplexus',
+    tax_exemption: Models::Shared::TaxExemption::FOREIGN,
+    tax_number: '867556410',
     telephones: [
       Models::Shared::AccountingTelephone.new(
-        telephone: '(427) 701-7160',
-        type: Models::Shared::AccountingTelephoneType::HOME,
-      ),
-      Models::Shared::AccountingTelephone.new(
-        telephone: '(540) 913-9171',
+        telephone: '(432) 760-1716',
         type: Models::Shared::AccountingTelephoneType::FAX,
       ),
     ],
-    updated_at: DateTime.iso8601('2023-12-06T07:23:48.180Z'),
-    website: 'https://noxious-advertisement.org',
+    updated_at: DateTime.iso8601('2023-12-20T18:25:43.240Z'),
+    website: 'https://kertzmanngroup.com',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -703,7 +672,7 @@ end
 
 ## patch_crm_contact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -721,38 +690,28 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCrmContactRequest.new(
   crm_contact: Models::Shared::CrmContact.new(
     address: Models::Shared::PropertyCrmContactAddress.new(
-      address1: '518 Brannon Burg',
-      city: 'East Helenebury',
+      address1: '65838 College Avenue',
+      address2: 'Apt. 335',
+      city: 'Fort Alexandratown',
       country_code: 'US',
-      postal_code: '92622-2406',
-      region: 'Vermont',
-      region_code: 'AZ',
+      postal_code: '80888-6094',
+      region: 'Montana',
+      region_code: 'NM',
     ),
-    company: 'Lowe - Jakubowski',
     created_at: DateTime.iso8601('2021-01-02T00:41:38.885Z'),
-    department: 'systematic',
+    department: 'Beauty',
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Mohammad.Bartell45@hotmail.com',
+        email: 'mohammad.bartell@hotmail.com',
         type: Models::Shared::CrmEmailType::HOME,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Mohammad.Bartell90@hotmail.com',
-        type: Models::Shared::CrmEmailType::HOME,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Mohammad_Bartell@hotmail.com',
-        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
     first_name: 'Mohammad',
-    id: 'f3de8ccf-d21c-4b0c-ad59-265b6103644a',
-    image_url: 'https://picsum.photos/seed/zmbPeg/2905/378',
+    id: '1dff9988-3de3-4a49-8737-02b13264dd45',
+    image_url: 'https://avatars.githubusercontent.com/u/26803724',
     last_name: 'Bartell',
     link_urls: [
-      'https://limited-parade.info',
-      'https://faint-papa.com/',
-      'https://windy-accountability.name',
+      'https://www.linkedin.com/in/mohammad-bartell',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -760,29 +719,25 @@ req = Models::Operations::PatchCrmContactRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '2020b0dc-6195-4cf7-841e-18acc42a2106',
+        id: '26983265-291b-4cc5-9f7c-2a36d0e8021c',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'autem',
+        value: 'antiquus',
       ),
     ],
     name: 'Mohammad Bartell',
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(975) 986-1658',
+        telephone: '(254) 404-3529',
+        type: Models::Shared::CrmTelephoneType::OTHER,
+      ),
+      Models::Shared::CrmTelephone.new(
+        telephone: '(469) 989-7588',
         type: Models::Shared::CrmTelephoneType::WORK,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(489) 332-3509',
-        type: Models::Shared::CrmTelephoneType::HOME,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(205) 880-8886',
-        type: Models::Shared::CrmTelephoneType::HOME,
       ),
     ],
     title: 'National Tactics Analyst',
-    updated_at: DateTime.iso8601('2021-02-23T11:02:48.854Z'),
+    updated_at: DateTime.iso8601('2021-02-24T06:18:22.019Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -814,7 +769,7 @@ end
 
 ## patch_uc_contact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -840,8 +795,9 @@ req = Models::Operations::PatchUcContactRequest.new(
       ),
     ],
     first_name: 'Luther',
-    id: 'b02e5795-1218-412d-93ee-a303bcae9d79',
+    id: '1e48d49c-5c49-4401-9d4f-8dce4db19741',
     last_name: 'Rogahn',
+    metadata: [],
     name: 'Luther Rogahn',
     telephones: [
       Models::Shared::UcTelephone.new(
@@ -858,7 +814,7 @@ req = Models::Operations::PatchUcContactRequest.new(
       ),
     ],
     title: 'Chief Optimization Executive',
-    updated_at: DateTime.iso8601('2023-11-20T17:22:46.775Z'),
+    updated_at: DateTime.iso8601('2023-12-09T13:11:45.848Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -890,7 +846,7 @@ end
 
 ## remove_accounting_contact
 
-Remove a contact
+Deletes the AccountingContact identified by `id`.
 
 ### Example Usage
 
@@ -932,7 +888,7 @@ end
 
 ## remove_crm_contact
 
-Remove a contact
+Deletes the CrmContact identified by `id`.
 
 ### Example Usage
 
@@ -974,7 +930,7 @@ end
 
 ## remove_uc_contact
 
-Remove a contact
+Deletes the UcContact identified by `id`.
 
 ### Example Usage
 
@@ -1016,7 +972,7 @@ end
 
 ## update_accounting_contact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1033,74 +989,65 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingContactRequest.new(
   accounting_contact: Models::Shared::AccountingContact.new(
-    associated_contacts: [
-      Models::Shared::AccountingAssociatedContact.new(
-        id: '32bde497-bc3f-4491-ba2c-fb650eccb8d1',
-        name: 'Delores Reynolds',
-      ),
-      Models::Shared::AccountingAssociatedContact.new(
-        id: '2a3996a2-f5d4-46b3-bf49-8127eab40cc2',
-        name: 'Delores Reynolds',
-      ),
-    ],
+    associated_contacts: [],
+    balance_amount: 55_574.0,
     billing_address: Models::Shared::PropertyAccountingContactBillingAddress.new(
-      address1: '2633 Stoney Lane',
-      address2: 'Suite 176',
-      city: 'Ladariusboro',
+      address1: '4091 Tromp Coves',
+      city: 'Lake Emmybury',
       country_code: 'US',
-      postal_code: '70131-2908',
-      region: 'Illinois',
-      region_code: 'NV',
+      postal_code: '50764-5226',
+      region: 'Washington',
+      region_code: 'CA',
     ),
-    company_name: 'Marquardt Inc',
+    company_name: 'Kertzmann Group',
     created_at: DateTime.iso8601('2021-08-15T14:56:50.258Z'),
-    currency: 'ISK',
+    currency: 'AUD',
     emails: [
       Models::Shared::AccountingEmail.new(
-        email: 'Delores.Reynolds10@hotmail.com',
-        type: Models::Shared::AccountingEmailType::HOME,
+        email: 'delores.reynolds@kertzmanngroup.com',
+        type: Models::Shared::AccountingEmailType::WORK,
+      ),
+      Models::Shared::AccountingEmail.new(
+        email: 'accounts@kertzmanngroup.com',
+        type: Models::Shared::AccountingEmailType::OTHER,
       ),
     ],
     first_name: 'Delores',
-    id: 'eb2d42b7-7120-4cde-9354-5e8775fd6701',
-    identification: 'amicitia',
+    id: '812919c1-537e-4487-aea9-bf5b7ca3ce68',
+    identification: '531850872',
     is_active: true,
     is_customer: true,
     last_name: 'Reynolds',
-    name: 'Delores Reynolds',
-    notes: 'Caput accusamus et videlicet.',
+    metadata: [],
+    name: 'Kertzmann Group',
+    notes: 'Et videlicet pauci.',
     payment_methods: [
       Models::Shared::AccountingContactPaymentMethod.new(
         default: true,
-        id: '60ce8459-b72d-4dc8-a716-ba5c44475ca2',
-        name: 'Visa 1234',
+        id: 'e6bbcdbb-20f0-4d79-a5a9-b2666b6f950e',
+        name: 'Visa 7844',
         type: Models::Shared::AccountingContactPaymentMethodType::CARD,
       ),
     ],
-    portal_url: 'https://scented-t-shirt.info/',
+    portal_url: 'https://kertzmanngroup.com/billing',
     shipping_address: Models::Shared::PropertyAccountingContactShippingAddress.new(
-      address1: '786 Renner Stream',
-      address2: 'Apt. 555',
-      city: 'Roanoke',
+      address1: '23129 Rebekah Mews',
+      city: 'Mortimerhaven',
       country_code: 'US',
-      postal_code: '80686-7556',
-      region: 'Vermont',
-      region_code: 'NE',
+      postal_code: '55878-6806',
+      region: 'Florida',
+      region_code: 'OK',
     ),
-    tax_exemption: Models::Shared::TaxExemption::RESALE,
-    tax_number: 'amplexus',
+    tax_exemption: Models::Shared::TaxExemption::FOREIGN,
+    tax_number: '867556410',
     telephones: [
       Models::Shared::AccountingTelephone.new(
-        telephone: '(427) 701-7160',
-        type: Models::Shared::AccountingTelephoneType::HOME,
-      ),
-      Models::Shared::AccountingTelephone.new(
-        telephone: '(540) 913-9171',
+        telephone: '(432) 760-1716',
         type: Models::Shared::AccountingTelephoneType::FAX,
       ),
     ],
-    updated_at: DateTime.iso8601('2023-12-06T07:23:48.180Z'),
-    website: 'https://noxious-advertisement.org',
+    updated_at: DateTime.iso8601('2023-12-20T18:25:43.240Z'),
+    website: 'https://kertzmanngroup.com',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1132,7 +1079,7 @@ end
 
 ## update_crm_contact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1150,38 +1097,28 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCrmContactRequest.new(
   crm_contact: Models::Shared::CrmContact.new(
     address: Models::Shared::PropertyCrmContactAddress.new(
-      address1: '518 Brannon Burg',
-      city: 'East Helenebury',
+      address1: '65838 College Avenue',
+      address2: 'Apt. 335',
+      city: 'Fort Alexandratown',
       country_code: 'US',
-      postal_code: '92622-2406',
-      region: 'Vermont',
-      region_code: 'AZ',
+      postal_code: '80888-6094',
+      region: 'Montana',
+      region_code: 'NM',
     ),
-    company: 'Lowe - Jakubowski',
     created_at: DateTime.iso8601('2021-01-02T00:41:38.885Z'),
-    department: 'systematic',
+    department: 'Beauty',
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Mohammad.Bartell45@hotmail.com',
+        email: 'mohammad.bartell@hotmail.com',
         type: Models::Shared::CrmEmailType::HOME,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Mohammad.Bartell90@hotmail.com',
-        type: Models::Shared::CrmEmailType::HOME,
-      ),
-      Models::Shared::CrmEmail.new(
-        email: 'Mohammad_Bartell@hotmail.com',
-        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
     first_name: 'Mohammad',
-    id: 'f3de8ccf-d21c-4b0c-ad59-265b6103644a',
-    image_url: 'https://picsum.photos/seed/zmbPeg/2905/378',
+    id: '1dff9988-3de3-4a49-8737-02b13264dd45',
+    image_url: 'https://avatars.githubusercontent.com/u/26803724',
     last_name: 'Bartell',
     link_urls: [
-      'https://limited-parade.info',
-      'https://faint-papa.com/',
-      'https://windy-accountability.name',
+      'https://www.linkedin.com/in/mohammad-bartell',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -1189,29 +1126,25 @@ req = Models::Operations::UpdateCrmContactRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '2020b0dc-6195-4cf7-841e-18acc42a2106',
+        id: '26983265-291b-4cc5-9f7c-2a36d0e8021c',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'autem',
+        value: 'antiquus',
       ),
     ],
     name: 'Mohammad Bartell',
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(975) 986-1658',
+        telephone: '(254) 404-3529',
+        type: Models::Shared::CrmTelephoneType::OTHER,
+      ),
+      Models::Shared::CrmTelephone.new(
+        telephone: '(469) 989-7588',
         type: Models::Shared::CrmTelephoneType::WORK,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(489) 332-3509',
-        type: Models::Shared::CrmTelephoneType::HOME,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(205) 880-8886',
-        type: Models::Shared::CrmTelephoneType::HOME,
       ),
     ],
     title: 'National Tactics Analyst',
-    updated_at: DateTime.iso8601('2021-02-23T11:02:48.854Z'),
+    updated_at: DateTime.iso8601('2021-02-24T06:18:22.019Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1243,7 +1176,7 @@ end
 
 ## update_uc_contact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1269,8 +1202,9 @@ req = Models::Operations::UpdateUcContactRequest.new(
       ),
     ],
     first_name: 'Luther',
-    id: 'b02e5795-1218-412d-93ee-a303bcae9d79',
+    id: '1e48d49c-5c49-4401-9d4f-8dce4db19741',
     last_name: 'Rogahn',
+    metadata: [],
     name: 'Luther Rogahn',
     telephones: [
       Models::Shared::UcTelephone.new(
@@ -1287,7 +1221,7 @@ req = Models::Operations::UpdateUcContactRequest.new(
       ),
     ],
     title: 'Chief Optimization Executive',
-    updated_at: DateTime.iso8601('2023-11-20T17:22:46.775Z'),
+    updated_at: DateTime.iso8601('2023-12-09T13:11:45.848Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -14,7 +14,7 @@
 
 ## create_messaging_message
 
-Create a message
+Creates a MessagingMessage. Provide the unified MessagingMessage fields in the request body; they are mapped to the provider's API. Returns the created MessagingMessage.
 
 ### Example Usage
 
@@ -32,34 +32,34 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.message.create_messaging_message(messaging_message: Models::Shared::MessagingMessage.new(
   attachments: [
     Models::Shared::MessagingAttachment.new(
-      content_identifier: '23825071-d25d-418c-a445-3e7257ee8df0',
+      content_identifier: 'fd7f4098-5522-45f3-aa2c-6dea3f7535a7',
       content_type: 'coaegresco',
       download_url: 'https://rotating-advertisement.org',
       filename: 'super',
-      message_id: 'bf1dc4a5-0de1-4281-a36f-357e768726c6',
+      message_id: '7d22bbc3-085b-4643-9022-b34cd227d62e',
       size: 327.0,
     ),
   ],
   buttons: [
     Models::Shared::MessagingButton.new(
-      id: '4fe14d23-bf03-4fa2-a408-d70dd5ba545c',
-      text: 'denuo',
+      id: '58db3fcc-8190-4ca3-8063-b3aa2465254e',
+      text: 'comparo',
     ),
   ],
   created_at: DateTime.iso8601('2021-11-26T09:26:33.973Z'),
   destination_members: [],
   has_children: true,
   hidden_members: [],
-  id: 'bf1dc4a5-0de1-4281-a36f-357e768726c6',
+  id: '7d22bbc3-085b-4643-9022-b34cd227d62e',
   is_unread: false,
   mentioned_members: [],
   message: 'Sum utique aliquid.',
   message_html: 'Articulus tardus tergiversatio.',
   message_markdown: 'Territo uterque tergo curiositas.',
+  metadata: [],
   reactions: [],
-  reference: '571483f2-d95b-4f06-8b78-d35e7046bb74',
   subject: 'Cernuus optio cohaero summisse in.',
-  updated_at: DateTime.iso8601('2023-07-07T11:32:51.267Z'),
+  updated_at: DateTime.iso8601('2023-07-18T03:52:35.710Z'),
   web_url: 'https://grumpy-kit.net',
 ), connection_id: '<id>')
 
@@ -90,7 +90,7 @@ end
 
 ## get_messaging_message
 
-Retrieve a message
+Retrieves a single MessagingMessage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -134,7 +134,7 @@ end
 
 ## list_messaging_messages
 
-List all messages
+Returns a list of MessagingMessages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -179,7 +179,7 @@ end
 
 ## patch_messaging_message
 
-Update a message
+Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
 
 ### Example Usage
 
@@ -198,34 +198,34 @@ req = Models::Operations::PatchMessagingMessageRequest.new(
   messaging_message: Models::Shared::MessagingMessage.new(
     attachments: [
       Models::Shared::MessagingAttachment.new(
-        content_identifier: 'eb73a22c-eb69-4b62-85e3-6fd5c44529b6',
+        content_identifier: 'f6dae411-bf06-4e36-a01a-a60a1ff8491d',
         content_type: 'coaegresco',
         download_url: 'https://rotating-advertisement.org',
         filename: 'super',
-        message_id: 'f1640470-1e2e-414c-96a7-53d8bc6bb5c2',
+        message_id: 'f98cb815-bd1d-4fb6-9053-11ee68e37ad7',
         size: 327.0,
       ),
     ],
     buttons: [
       Models::Shared::MessagingButton.new(
-        id: '5d57e161-10c0-47ea-8b11-3a977358a83c',
-        text: 'denuo',
+        id: 'bfbe12c0-567f-4fa1-83f1-0dd63a630518',
+        text: 'comparo',
       ),
     ],
     created_at: DateTime.iso8601('2021-11-26T09:26:33.973Z'),
     destination_members: [],
     has_children: true,
     hidden_members: [],
-    id: 'f1640470-1e2e-414c-96a7-53d8bc6bb5c2',
+    id: 'f98cb815-bd1d-4fb6-9053-11ee68e37ad7',
     is_unread: false,
     mentioned_members: [],
     message: 'Sum utique aliquid.',
     message_html: 'Articulus tardus tergiversatio.',
     message_markdown: 'Territo uterque tergo curiositas.',
+    metadata: [],
     reactions: [],
-    reference: '571483f2-d95b-4f06-8b78-d35e7046bb74',
     subject: 'Cernuus optio cohaero summisse in.',
-    updated_at: DateTime.iso8601('2023-07-07T11:32:51.279Z'),
+    updated_at: DateTime.iso8601('2023-07-18T03:52:35.720Z'),
     web_url: 'https://grumpy-kit.net',
   ),
   connection_id: '<id>',
@@ -258,7 +258,7 @@ end
 
 ## remove_messaging_message
 
-Remove a message
+Deletes the MessagingMessage identified by `id`.
 
 ### Example Usage
 
@@ -300,7 +300,7 @@ end
 
 ## update_messaging_message
 
-Update a message
+Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
 
 ### Example Usage
 
@@ -319,34 +319,34 @@ req = Models::Operations::UpdateMessagingMessageRequest.new(
   messaging_message: Models::Shared::MessagingMessage.new(
     attachments: [
       Models::Shared::MessagingAttachment.new(
-        content_identifier: 'eb73a22c-eb69-4b62-85e3-6fd5c44529b6',
+        content_identifier: 'f6dae411-bf06-4e36-a01a-a60a1ff8491d',
         content_type: 'coaegresco',
         download_url: 'https://rotating-advertisement.org',
         filename: 'super',
-        message_id: 'f1640470-1e2e-414c-96a7-53d8bc6bb5c2',
+        message_id: 'f98cb815-bd1d-4fb6-9053-11ee68e37ad7',
         size: 327.0,
       ),
     ],
     buttons: [
       Models::Shared::MessagingButton.new(
-        id: '5d57e161-10c0-47ea-8b11-3a977358a83c',
-        text: 'denuo',
+        id: 'bfbe12c0-567f-4fa1-83f1-0dd63a630518',
+        text: 'comparo',
       ),
     ],
     created_at: DateTime.iso8601('2021-11-26T09:26:33.973Z'),
     destination_members: [],
     has_children: true,
     hidden_members: [],
-    id: 'f1640470-1e2e-414c-96a7-53d8bc6bb5c2',
+    id: 'f98cb815-bd1d-4fb6-9053-11ee68e37ad7',
     is_unread: false,
     mentioned_members: [],
     message: 'Sum utique aliquid.',
     message_html: 'Articulus tardus tergiversatio.',
     message_markdown: 'Territo uterque tergo curiositas.',
+    metadata: [],
     reactions: [],
-    reference: '571483f2-d95b-4f06-8b78-d35e7046bb74',
     subject: 'Cernuus optio cohaero summisse in.',
-    updated_at: DateTime.iso8601('2023-07-07T11:32:51.279Z'),
+    updated_at: DateTime.iso8601('2023-07-18T03:52:35.720Z'),
     web_url: 'https://grumpy-kit.net',
   ),
   connection_id: '<id>',

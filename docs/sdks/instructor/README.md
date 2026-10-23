@@ -14,7 +14,7 @@
 
 ## create_lms_instructor
 
-Create an instructor
+Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
 
 ### Example Usage
 
@@ -33,21 +33,25 @@ res = s.instructor.create_lms_instructor(lms_instructor: Models::Shared::LmsInst
   created_at: DateTime.iso8601('2021-10-12T16:38:54.979Z'),
   emails: [
     Models::Shared::LmsEmail.new(),
-    Models::Shared::LmsEmail.new(),
   ],
   first_name: 'Deangelo',
-  id: '290442f0-3bd4-4743-83d3-9c33c10f7ae0',
-  image_url: 'https://avatars.githubusercontent.com/u/20232618',
+  id: '72169b55-08d3-486b-af7d-12f838260457',
+  image_url: 'https://avatars.githubusercontent.com/u/95131132',
   last_name: 'Ritchie',
+  metadata: [],
   name: 'Deangelo Ritchie',
   telephones: [
     Models::Shared::LmsTelephone.new(
-      telephone: '(352) 551-7989',
+      telephone: '(605) 752-8163',
+      type: Models::Shared::LmsTelephoneType::WORK,
+    ),
+    Models::Shared::LmsTelephone.new(
+      telephone: '(430) 415-2451',
       type: Models::Shared::LmsTelephoneType::HOME,
     ),
   ],
-  title: 'Product Solutions Engineer',
-  updated_at: DateTime.iso8601('2025-07-01T20:53:44.388Z'),
+  title: 'Regional Security Agent',
+  updated_at: DateTime.iso8601('2025-07-25T22:13:02.082Z'),
 ), connection_id: '<id>')
 
 unless res.lms_instructor.nil?
@@ -77,7 +81,7 @@ end
 
 ## get_lms_instructor
 
-Retrieve an instructor
+Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -121,7 +125,7 @@ end
 
 ## list_lms_instructors
 
-List all instructors
+Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -166,7 +170,7 @@ end
 
 ## patch_lms_instructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -186,21 +190,25 @@ req = Models::Operations::PatchLmsInstructorRequest.new(
     created_at: DateTime.iso8601('2021-10-12T16:38:54.979Z'),
     emails: [
       Models::Shared::LmsEmail.new(),
-      Models::Shared::LmsEmail.new(),
     ],
     first_name: 'Deangelo',
-    id: 'da7712af-9bf9-4756-9098-68d148fe961e',
-    image_url: 'https://avatars.githubusercontent.com/u/20232618',
+    id: 'c4c38d07-3d05-4d98-adfd-910b8c1bbe76',
+    image_url: 'https://avatars.githubusercontent.com/u/95131132',
     last_name: 'Ritchie',
+    metadata: [],
     name: 'Deangelo Ritchie',
     telephones: [
       Models::Shared::LmsTelephone.new(
-        telephone: '(352) 551-7989',
+        telephone: '(605) 752-8163',
+        type: Models::Shared::LmsTelephoneType::WORK,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(430) 415-2451',
         type: Models::Shared::LmsTelephoneType::HOME,
       ),
     ],
-    title: 'Product Solutions Engineer',
-    updated_at: DateTime.iso8601('2025-07-01T20:53:44.397Z'),
+    title: 'Regional Security Agent',
+    updated_at: DateTime.iso8601('2025-07-25T22:13:02.094Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -232,7 +240,7 @@ end
 
 ## remove_lms_instructor
 
-Remove an instructor
+Deletes the LmsInstructor identified by `id`.
 
 ### Example Usage
 
@@ -274,7 +282,7 @@ end
 
 ## update_lms_instructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -294,21 +302,25 @@ req = Models::Operations::UpdateLmsInstructorRequest.new(
     created_at: DateTime.iso8601('2021-10-12T16:38:54.979Z'),
     emails: [
       Models::Shared::LmsEmail.new(),
-      Models::Shared::LmsEmail.new(),
     ],
     first_name: 'Deangelo',
-    id: 'da7712af-9bf9-4756-9098-68d148fe961e',
-    image_url: 'https://avatars.githubusercontent.com/u/20232618',
+    id: 'c4c38d07-3d05-4d98-adfd-910b8c1bbe76',
+    image_url: 'https://avatars.githubusercontent.com/u/95131132',
     last_name: 'Ritchie',
+    metadata: [],
     name: 'Deangelo Ritchie',
     telephones: [
       Models::Shared::LmsTelephone.new(
-        telephone: '(352) 551-7989',
+        telephone: '(605) 752-8163',
+        type: Models::Shared::LmsTelephoneType::WORK,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(430) 415-2451',
         type: Models::Shared::LmsTelephoneType::HOME,
       ),
     ],
-    title: 'Product Solutions Engineer',
-    updated_at: DateTime.iso8601('2025-07-01T20:53:44.397Z'),
+    title: 'Regional Security Agent',
+    updated_at: DateTime.iso8601('2025-07-25T22:13:02.094Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

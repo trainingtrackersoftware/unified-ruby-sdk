@@ -17,25 +17,29 @@ module UnifiedRubySDK
         field :call_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('call_id') } }
 
         field :contacts, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::UcContact)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('contacts') } }
-
+        # opaque identifier shared across legs of one interaction
+        field :conversation_identifier, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('conversation_identifier') } }
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :end_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('end_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :expires_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('expires_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
 
         field :media, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::UcRecordingMedia)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('media') } }
 
-        field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::UcMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
 
+        field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :start_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('start_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :type, Crystalline::Nilable.new(Models::Shared::UcRecordingType), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Shared::UcRecordingType, true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # reference to HrisEmployee (reference to HrisEmployee)
         field :user_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('user_id') } }
 
         field :user_name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('user_name') } }
@@ -44,15 +48,17 @@ module UnifiedRubySDK
 
         field :web_url, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('web_url') } }
 
-        sig { params(call_id: T.nilable(::String), contacts: T.nilable(T::Array[Models::Shared::UcContact]), created_at: T.nilable(::DateTime), end_at: T.nilable(::DateTime), expires_at: T.nilable(::DateTime), id: T.nilable(::String), media: T.nilable(T::Array[Models::Shared::UcRecordingMedia]), raw: T.nilable(T::Hash[Symbol, ::Object]), start_at: T.nilable(::DateTime), type: T.nilable(Models::Shared::UcRecordingType), updated_at: T.nilable(::DateTime), user_id: T.nilable(::String), user_name: T.nilable(::String), user_phone: T.nilable(::String), web_url: T.nilable(::String)).void }
-        def initialize(call_id: nil, contacts: nil, created_at: nil, end_at: nil, expires_at: nil, id: nil, media: nil, raw: nil, start_at: nil, type: nil, updated_at: nil, user_id: nil, user_name: nil, user_phone: nil, web_url: nil)
+        sig { params(call_id: T.nilable(::String), contacts: T.nilable(T::Array[Models::Shared::UcContact]), conversation_identifier: T.nilable(::String), created_at: T.nilable(::DateTime), end_at: T.nilable(::DateTime), expires_at: T.nilable(::DateTime), id: T.nilable(::String), media: T.nilable(T::Array[Models::Shared::UcRecordingMedia]), metadata: T.nilable(T::Array[Models::Shared::UcMetadata]), raw: T.nilable(T::Hash[Symbol, ::Object]), start_at: T.nilable(::DateTime), type: T.nilable(Models::Shared::UcRecordingType), updated_at: T.nilable(::DateTime), user_id: T.nilable(::String), user_name: T.nilable(::String), user_phone: T.nilable(::String), web_url: T.nilable(::String)).void }
+        def initialize(call_id: nil, contacts: nil, conversation_identifier: nil, created_at: nil, end_at: nil, expires_at: nil, id: nil, media: nil, metadata: nil, raw: nil, start_at: nil, type: nil, updated_at: nil, user_id: nil, user_name: nil, user_phone: nil, web_url: nil)
           @call_id = call_id
           @contacts = contacts
+          @conversation_identifier = conversation_identifier
           @created_at = created_at
           @end_at = end_at
           @expires_at = expires_at
           @id = id
           @media = media
+          @metadata = metadata
           @raw = raw
           @start_at = start_at
           @type = type
@@ -68,11 +74,13 @@ module UnifiedRubySDK
           return false unless other.is_a? self.class
           return false unless @call_id == other.call_id
           return false unless @contacts == other.contacts
+          return false unless @conversation_identifier == other.conversation_identifier
           return false unless @created_at == other.created_at
           return false unless @end_at == other.end_at
           return false unless @expires_at == other.expires_at
           return false unless @id == other.id
           return false unless @media == other.media
+          return false unless @metadata == other.metadata
           return false unless @raw == other.raw
           return false unless @start_at == other.start_at
           return false unless @type == other.type

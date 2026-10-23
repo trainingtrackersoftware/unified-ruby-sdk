@@ -14,7 +14,7 @@
 
 ## create_accounting_paymentterm
 
-Create a paymentterm
+Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
 
 ### Example Usage
 
@@ -39,12 +39,12 @@ res = s.paymentterm.create_accounting_paymentterm(accounting_paymentterm: Models
   discount_percent: 5.0,
   due_days: 57.0,
   due_next_month_days: 9.0,
-  id: '7dc32579-8321-4cc9-a89d-fe7aa2787ab4',
+  id: '42ba22f9-17b1-462e-96dc-6a5cd1dd6193',
   is_active: false,
   metadata: [],
   name: 'Net 30',
   type: Models::Shared::AccountingPaymenttermType::NET_15,
-  updated_at: DateTime.iso8601('2025-12-14T00:52:14.687Z'),
+  updated_at: DateTime.iso8601('2026-01-10T03:39:59.459Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_paymentterm.nil?
@@ -74,7 +74,7 @@ end
 
 ## get_accounting_paymentterm
 
-Retrieve a paymentterm
+Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -118,7 +118,7 @@ end
 
 ## list_accounting_paymentterms
 
-List all paymentterms
+Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -163,7 +163,7 @@ end
 
 ## patch_accounting_paymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -189,12 +189,12 @@ req = Models::Operations::PatchAccountingPaymenttermRequest.new(
     discount_percent: 5.0,
     due_days: 57.0,
     due_next_month_days: 9.0,
-    id: 'acdabe07-04be-4f73-a80f-0e0c44a47e72',
+    id: '5ed65666-06fc-4b4e-b933-47edea610552',
     is_active: false,
     metadata: [],
     name: 'Net 30',
     type: Models::Shared::AccountingPaymenttermType::NET_15,
-    updated_at: DateTime.iso8601('2025-12-14T00:52:14.701Z'),
+    updated_at: DateTime.iso8601('2026-01-10T03:39:59.475Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -226,7 +226,7 @@ end
 
 ## remove_accounting_paymentterm
 
-Remove a paymentterm
+Deletes the AccountingPaymentterm identified by `id`.
 
 ### Example Usage
 
@@ -268,7 +268,7 @@ end
 
 ## update_accounting_paymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -294,12 +294,12 @@ req = Models::Operations::UpdateAccountingPaymenttermRequest.new(
     discount_percent: 5.0,
     due_days: 57.0,
     due_next_month_days: 9.0,
-    id: 'acdabe07-04be-4f73-a80f-0e0c44a47e72',
+    id: '5ed65666-06fc-4b4e-b933-47edea610552',
     is_active: false,
     metadata: [],
     name: 'Net 30',
     type: Models::Shared::AccountingPaymenttermType::NET_15,
-    updated_at: DateTime.iso8601('2025-12-14T00:52:14.701Z'),
+    updated_at: DateTime.iso8601('2026-01-10T03:39:59.475Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

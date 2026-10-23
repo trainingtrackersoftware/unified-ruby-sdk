@@ -52,7 +52,7 @@
 
 ## create_ads_ad
 
-Create an ad
+Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
 
 ### Example Usage
 
@@ -75,10 +75,11 @@ res = s.ads.create_ads_ad(ads_ad: Models::Shared::AdsAd.new(
   creative_asset_url: 'https://picsum.photos/seed/LwOzrpr9/948/2793',
   description: 'Accedo vespillo carpo dolor decet stillicidium comptus tenuis.',
   final_url: 'https://improbable-sanity.com',
-  id: 'e614be9a-9778-471f-8819-aeb323c8ff8c',
+  id: '12a559b2-074c-49d5-8f7a-75cb170bce8f',
+  metadata: [],
   name: 'Hermiston Group',
   status: Models::Shared::AdsAdStatus::ARCHIVED,
-  updated_at: DateTime.iso8601('2024-06-06T08:19:09.244Z'),
+  updated_at: DateTime.iso8601('2024-06-19T09:06:11.794Z'),
 ), connection_id: '<id>')
 
 unless res.ads_ad.nil?
@@ -108,7 +109,7 @@ end
 
 ## create_ads_asset
 
-Create an asset
+Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
 
 ### Example Usage
 
@@ -126,11 +127,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.ads.create_ads_asset(ads_asset: Models::Shared::AdsAsset.new(
   created_at: DateTime.iso8601('2020-03-27T20:14:38.603Z'),
   height: 400.0,
-  id: 'b7274982-02b1-4236-9bf8-bfaa36d461cb',
+  id: '695af8bf-8c69-475e-ba14-5a05cc1a6016',
+  metadata: [],
   mime_type: 'IMAGE_PNG',
   name: 'Lockman - DuBuque',
   type: Models::Shared::AdsAssetType::IMAGE,
-  updated_at: DateTime.iso8601('2022-03-16T02:29:32.674Z'),
+  updated_at: DateTime.iso8601('2022-03-25T19:06:38.960Z'),
   url: 'https://informal-perfection.com/',
   width: 600.0,
 ), connection_id: '<id>')
@@ -162,7 +164,7 @@ end
 
 ## create_ads_campaign
 
-Create a campaign
+Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
 
 ### Example Usage
 
@@ -184,17 +186,18 @@ res = s.ads.create_ads_campaign(ads_campaign: Models::Shared::AdsCampaign.new(
   created_at: DateTime.iso8601('2022-05-21T08:51:41.868Z'),
   currency: 'USD',
   effective_status: Models::Shared::EffectiveStatus::NOT_ELIGIBLE,
-  end_at: DateTime.iso8601('2025-05-11T10:13:16.657Z'),
-  id: 'b7845a2b-55ce-4073-a0ed-06c84d3fc889',
+  end_at: DateTime.iso8601('2025-06-02T08:12:06.694Z'),
+  id: '7734a920-8b81-4528-ad2c-7f85f1886802',
   labels: [
     'comedo',
   ],
+  metadata: [],
   name: 'Emard Inc',
-  start_at: DateTime.iso8601('2022-07-20T07:36:39.670Z'),
+  start_at: DateTime.iso8601('2022-07-21T12:38:38.281Z'),
   status: Models::Shared::AdsCampaignStatus::PROCESSING_FAILED,
   targeting: Models::Shared::PropertyAdsCampaignTargeting.new(),
   total_spend_amount: 2_349.8_642_875_347_286,
-  updated_at: DateTime.iso8601('2025-12-08T01:10:49.698Z'),
+  updated_at: DateTime.iso8601('2026-01-03T05:09:59.570Z'),
 ), connection_id: '<id>')
 
 unless res.ads_campaign.nil?
@@ -224,7 +227,7 @@ end
 
 ## create_ads_creative
 
-Create a creative
+Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
 
 ### Example Usage
 
@@ -241,15 +244,16 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.ads.create_ads_creative(ads_creative: Models::Shared::AdsCreative.new(
   created_at: DateTime.iso8601('2020-02-17T11:24:51.093Z'),
-  id: '082b8a90-b91f-4b51-bc46-6b47d673a630',
+  id: '7b494a4d-e1ed-4d02-bb74-46560b62deee',
   labels: [
     'coma',
     'accedo',
     'termes',
   ],
+  metadata: [],
   name: 'Brekke, Bradtke and Robel',
   status: Models::Shared::AdsCreativeStatus::PAUSED,
-  updated_at: DateTime.iso8601('2021-06-21T15:50:31.757Z'),
+  updated_at: DateTime.iso8601('2021-06-28T03:59:57.030Z'),
 ), connection_id: '<id>')
 
 unless res.ads_creative.nil?
@@ -279,7 +283,7 @@ end
 
 ## create_ads_group
 
-Create a group
+Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
 
 ### Example Usage
 
@@ -301,14 +305,15 @@ res = s.ads.create_ads_group(ads_group: Models::Shared::AdsGroup.new(
   created_at: DateTime.iso8601('2019-08-29T17:59:41.045Z'),
   currency: 'USD',
   effective_status: Models::Shared::AdsGroupEffectiveStatus::PAUSED,
-  end_at: DateTime.iso8601('2026-05-27T10:47:54.397Z'),
-  id: 'a78580ac-5f27-4480-8b54-5f6b61a3d2db',
+  end_at: DateTime.iso8601('2026-06-26T23:06:05.743Z'),
+  id: '1da91fc0-7434-448a-a919-f0b108796366',
   language_locale: 'fr-FR',
+  metadata: [],
   name: 'Stark - Baumbach',
-  start_at: DateTime.iso8601('2025-12-13T14:00:50.313Z'),
+  start_at: DateTime.iso8601('2026-01-11T01:17:34.538Z'),
   status: Models::Shared::AdsGroupStatus::PROCESSING,
   targeting: Models::Shared::PropertyAdsGroupTargeting.new(),
-  updated_at: DateTime.iso8601('2022-01-03T16:58:18.363Z'),
+  updated_at: DateTime.iso8601('2022-01-14T08:05:31.572Z'),
 ), connection_id: '<id>')
 
 unless res.ads_group.nil?
@@ -338,7 +343,7 @@ end
 
 ## create_ads_insertionorder
 
-Create an insertionorder
+Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
 
 ### Example Usage
 
@@ -355,10 +360,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.ads.create_ads_insertionorder(ads_insertionorder: Models::Shared::AdsInsertionorder.new(
   created_at: DateTime.iso8601('2021-04-10T06:57:36.611Z'),
-  id: '745b46bb-9ac8-4af3-b576-ba43a8ab604f',
+  id: '09ee7e7a-562c-4409-b688-8dd41a1b2946',
+  metadata: [],
   name: 'Kunde, Smith and Reinger',
   status: Models::Shared::AdsInsertionorderStatus::UNSPECIFIED,
-  updated_at: DateTime.iso8601('2021-04-28T13:11:26.449Z'),
+  updated_at: DateTime.iso8601('2021-04-28T20:13:44.671Z'),
 ), connection_id: '<id>')
 
 unless res.ads_insertionorder.nil?
@@ -388,7 +394,7 @@ end
 
 ## create_ads_organization
 
-Create an organization
+Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
 
 ### Example Usage
 
@@ -407,17 +413,13 @@ res = s.ads.create_ads_organization(ads_organization: Models::Shared::AdsOrganiz
   account_number: 'LQUJx8zQBW',
   created_at: DateTime.iso8601('2020-07-23T21:47:11.440Z'),
   currency: 'USD',
-  id: 'e3012e78-dbb9-43c3-b089-c52634a97002',
-  managers: [
-    Models::Shared::AdsManager.new(
-      id: 'e4fd87df-9f8b-4fa0-a77b-b7d18669e350',
-      name: 'Parker, Leannon and Gibson',
-    ),
-  ],
+  id: '0022ef1b-7963-403f-a55a-e49b6a97ce92',
+  managers: [],
+  metadata: [],
   name: 'Ankunding Inc',
   status: Models::Shared::AdsOrganizationStatus::PROCESSING,
   timezone: 'Europe/Chisinau',
-  updated_at: DateTime.iso8601('2026-03-01T20:43:52.695Z'),
+  updated_at: DateTime.iso8601('2026-03-30T22:27:01.491Z'),
 ), connection_id: '<id>')
 
 unless res.ads_organization.nil?
@@ -447,7 +449,7 @@ end
 
 ## get_ads_ad
 
-Retrieve an ad
+Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -491,7 +493,7 @@ end
 
 ## get_ads_asset
 
-Retrieve an asset
+Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -535,7 +537,7 @@ end
 
 ## get_ads_campaign
 
-Retrieve a campaign
+Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -579,7 +581,7 @@ end
 
 ## get_ads_creative
 
-Retrieve a creative
+Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -623,7 +625,7 @@ end
 
 ## get_ads_group
 
-Retrieve a group
+Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -667,7 +669,7 @@ end
 
 ## get_ads_insertionorder
 
-Retrieve an insertionorder
+Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -711,7 +713,7 @@ end
 
 ## get_ads_organization
 
-Retrieve an organization
+Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -755,7 +757,7 @@ end
 
 ## get_ads_promoted
 
-Retrieve a promoted
+Retrieves a single AdsPromoted by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -799,7 +801,7 @@ end
 
 ## get_ads_target
 
-Retrieve a target
+Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -843,7 +845,7 @@ end
 
 ## list_ads_ads
 
-List all ads
+Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -888,7 +890,7 @@ end
 
 ## list_ads_assets
 
-List all assets
+Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -933,7 +935,7 @@ end
 
 ## list_ads_campaigns
 
-List all campaigns
+Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -978,7 +980,7 @@ end
 
 ## list_ads_creatives
 
-List all creatives
+Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1023,7 +1025,7 @@ end
 
 ## list_ads_groups
 
-List all groups
+Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1068,7 +1070,7 @@ end
 
 ## list_ads_insertionorders
 
-List all insertionorders
+Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1113,7 +1115,7 @@ end
 
 ## list_ads_organizations
 
-List all organizations
+Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1158,7 +1160,7 @@ end
 
 ## list_ads_promoteds
 
-List all promoteds
+Returns a list of AdsPromoteds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1203,7 +1205,7 @@ end
 
 ## list_ads_reports
 
-List all reports
+Returns a list of AdsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1248,7 +1250,7 @@ end
 
 ## list_ads_targets
 
-List all targets
+Returns a list of AdsTargets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1293,7 +1295,7 @@ end
 
 ## patch_ads_ad
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -1317,10 +1319,11 @@ req = Models::Operations::PatchAdsAdRequest.new(
     creative_asset_url: 'https://picsum.photos/seed/LwOzrpr9/948/2793',
     description: 'Accedo vespillo carpo dolor decet stillicidium comptus tenuis.',
     final_url: 'https://improbable-sanity.com',
-    id: '7f9acd34-3955-412f-9c47-9fb5cebefc72',
+    id: 'b0b0524c-8867-4742-8522-90e7adb683a9',
+    metadata: [],
     name: 'Hermiston Group',
     status: Models::Shared::AdsAdStatus::ARCHIVED,
-    updated_at: DateTime.iso8601('2024-06-06T08:19:09.255Z'),
+    updated_at: DateTime.iso8601('2024-06-19T09:06:11.812Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1352,7 +1355,7 @@ end
 
 ## patch_ads_campaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -1375,17 +1378,18 @@ req = Models::Operations::PatchAdsCampaignRequest.new(
     created_at: DateTime.iso8601('2022-05-21T08:51:41.868Z'),
     currency: 'USD',
     effective_status: Models::Shared::EffectiveStatus::NOT_ELIGIBLE,
-    end_at: DateTime.iso8601('2025-05-11T10:13:16.729Z'),
-    id: '9d5b5933-d96e-4219-abbd-af2e7056899b',
+    end_at: DateTime.iso8601('2025-06-02T08:12:06.805Z'),
+    id: 'a9072f26-4981-4c59-a064-9f4778c74f87',
     labels: [
       'comedo',
     ],
+    metadata: [],
     name: 'Emard Inc',
-    start_at: DateTime.iso8601('2022-07-20T07:36:39.674Z'),
+    start_at: DateTime.iso8601('2022-07-21T12:38:38.287Z'),
     status: Models::Shared::AdsCampaignStatus::PROCESSING_FAILED,
     targeting: Models::Shared::PropertyAdsCampaignTargeting.new(),
     total_spend_amount: 2_349.8_642_875_347_286,
-    updated_at: DateTime.iso8601('2025-12-08T01:10:49.785Z'),
+    updated_at: DateTime.iso8601('2026-01-03T05:09:59.702Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1417,7 +1421,7 @@ end
 
 ## patch_ads_creative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -1435,15 +1439,16 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAdsCreativeRequest.new(
   ads_creative: Models::Shared::AdsCreative.new(
     created_at: DateTime.iso8601('2020-02-17T11:24:51.093Z'),
-    id: 'cd134e56-1298-4651-a885-4a59998f4b93',
+    id: '214b3c56-c7cf-43e9-9af4-8c8d883b797f',
     labels: [
       'coma',
       'accedo',
       'termes',
     ],
+    metadata: [],
     name: 'Brekke, Bradtke and Robel',
     status: Models::Shared::AdsCreativeStatus::PAUSED,
-    updated_at: DateTime.iso8601('2021-06-21T15:50:31.764Z'),
+    updated_at: DateTime.iso8601('2021-06-28T03:59:57.039Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1475,7 +1480,7 @@ end
 
 ## patch_ads_group
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -1498,14 +1503,15 @@ req = Models::Operations::PatchAdsGroupRequest.new(
     created_at: DateTime.iso8601('2019-08-29T17:59:41.045Z'),
     currency: 'USD',
     effective_status: Models::Shared::AdsGroupEffectiveStatus::PAUSED,
-    end_at: DateTime.iso8601('2026-05-27T10:47:54.564Z'),
-    id: 'ea9eb928-96eb-4e5b-a608-6caf8c5ab32f',
+    end_at: DateTime.iso8601('2026-06-26T23:06:05.936Z'),
+    id: '0eeec5cc-3170-4279-acfa-ca35313357a2',
     language_locale: 'fr-FR',
+    metadata: [],
     name: 'Stark - Baumbach',
-    start_at: DateTime.iso8601('2025-12-13T14:00:50.468Z'),
+    start_at: DateTime.iso8601('2026-01-11T01:17:34.718Z'),
     status: Models::Shared::AdsGroupStatus::PROCESSING,
     targeting: Models::Shared::PropertyAdsGroupTargeting.new(),
-    updated_at: DateTime.iso8601('2022-01-03T16:58:18.420Z'),
+    updated_at: DateTime.iso8601('2022-01-14T08:05:31.639Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1537,7 +1543,7 @@ end
 
 ## patch_ads_insertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -1555,10 +1561,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAdsInsertionorderRequest.new(
   ads_insertionorder: Models::Shared::AdsInsertionorder.new(
     created_at: DateTime.iso8601('2021-04-10T06:57:36.611Z'),
-    id: 'eed344b4-d35f-4921-aacc-f4c71a23697c',
+    id: '572472e0-6ed5-4e80-a835-aea09e94ff04',
+    metadata: [],
     name: 'Kunde, Smith and Reinger',
     status: Models::Shared::AdsInsertionorderStatus::UNSPECIFIED,
-    updated_at: DateTime.iso8601('2021-04-28T13:11:26.450Z'),
+    updated_at: DateTime.iso8601('2021-04-28T20:13:44.672Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1590,7 +1597,7 @@ end
 
 ## patch_ads_organization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1610,17 +1617,13 @@ req = Models::Operations::PatchAdsOrganizationRequest.new(
     account_number: 'LQUJx8zQBW',
     created_at: DateTime.iso8601('2020-07-23T21:47:11.440Z'),
     currency: 'USD',
-    id: '342b0c9f-6f03-4da3-8936-b68c6b4ad0c0',
-    managers: [
-      Models::Shared::AdsManager.new(
-        id: 'e4fd87df-9f8b-4fa0-a77b-b7d18669e350',
-        name: 'Parker, Leannon and Gibson',
-      ),
-    ],
+    id: '6c36c6c1-1193-4e54-920e-b70dd990ec69',
+    managers: [],
+    metadata: [],
     name: 'Ankunding Inc',
     status: Models::Shared::AdsOrganizationStatus::PROCESSING,
     timezone: 'Europe/Chisinau',
-    updated_at: DateTime.iso8601('2026-03-01T20:43:52.701Z'),
+    updated_at: DateTime.iso8601('2026-03-30T22:27:01.507Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1652,7 +1655,7 @@ end
 
 ## remove_ads_ad
 
-Remove an ad
+Deletes the AdsAd identified by `id`.
 
 ### Example Usage
 
@@ -1694,7 +1697,7 @@ end
 
 ## remove_ads_campaign
 
-Remove a campaign
+Deletes the AdsCampaign identified by `id`.
 
 ### Example Usage
 
@@ -1736,7 +1739,7 @@ end
 
 ## remove_ads_creative
 
-Remove a creative
+Deletes the AdsCreative identified by `id`.
 
 ### Example Usage
 
@@ -1778,7 +1781,7 @@ end
 
 ## remove_ads_group
 
-Remove a group
+Deletes the AdsGroup identified by `id`.
 
 ### Example Usage
 
@@ -1820,7 +1823,7 @@ end
 
 ## remove_ads_insertionorder
 
-Remove an insertionorder
+Deletes the AdsInsertionorder identified by `id`.
 
 ### Example Usage
 
@@ -1862,7 +1865,7 @@ end
 
 ## remove_ads_organization
 
-Remove an organization
+Deletes the AdsOrganization identified by `id`.
 
 ### Example Usage
 
@@ -1904,7 +1907,7 @@ end
 
 ## update_ads_ad
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -1928,10 +1931,11 @@ req = Models::Operations::UpdateAdsAdRequest.new(
     creative_asset_url: 'https://picsum.photos/seed/LwOzrpr9/948/2793',
     description: 'Accedo vespillo carpo dolor decet stillicidium comptus tenuis.',
     final_url: 'https://improbable-sanity.com',
-    id: '7f9acd34-3955-412f-9c47-9fb5cebefc72',
+    id: 'b0b0524c-8867-4742-8522-90e7adb683a9',
+    metadata: [],
     name: 'Hermiston Group',
     status: Models::Shared::AdsAdStatus::ARCHIVED,
-    updated_at: DateTime.iso8601('2024-06-06T08:19:09.255Z'),
+    updated_at: DateTime.iso8601('2024-06-19T09:06:11.812Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1963,7 +1967,7 @@ end
 
 ## update_ads_campaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -1986,17 +1990,18 @@ req = Models::Operations::UpdateAdsCampaignRequest.new(
     created_at: DateTime.iso8601('2022-05-21T08:51:41.868Z'),
     currency: 'USD',
     effective_status: Models::Shared::EffectiveStatus::NOT_ELIGIBLE,
-    end_at: DateTime.iso8601('2025-05-11T10:13:16.729Z'),
-    id: '9d5b5933-d96e-4219-abbd-af2e7056899b',
+    end_at: DateTime.iso8601('2025-06-02T08:12:06.805Z'),
+    id: 'a9072f26-4981-4c59-a064-9f4778c74f87',
     labels: [
       'comedo',
     ],
+    metadata: [],
     name: 'Emard Inc',
-    start_at: DateTime.iso8601('2022-07-20T07:36:39.674Z'),
+    start_at: DateTime.iso8601('2022-07-21T12:38:38.287Z'),
     status: Models::Shared::AdsCampaignStatus::PROCESSING_FAILED,
     targeting: Models::Shared::PropertyAdsCampaignTargeting.new(),
     total_spend_amount: 2_349.8_642_875_347_286,
-    updated_at: DateTime.iso8601('2025-12-08T01:10:49.785Z'),
+    updated_at: DateTime.iso8601('2026-01-03T05:09:59.702Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2028,7 +2033,7 @@ end
 
 ## update_ads_creative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -2046,15 +2051,16 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAdsCreativeRequest.new(
   ads_creative: Models::Shared::AdsCreative.new(
     created_at: DateTime.iso8601('2020-02-17T11:24:51.093Z'),
-    id: 'cd134e56-1298-4651-a885-4a59998f4b93',
+    id: '214b3c56-c7cf-43e9-9af4-8c8d883b797f',
     labels: [
       'coma',
       'accedo',
       'termes',
     ],
+    metadata: [],
     name: 'Brekke, Bradtke and Robel',
     status: Models::Shared::AdsCreativeStatus::PAUSED,
-    updated_at: DateTime.iso8601('2021-06-21T15:50:31.764Z'),
+    updated_at: DateTime.iso8601('2021-06-28T03:59:57.039Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2086,7 +2092,7 @@ end
 
 ## update_ads_group
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -2109,14 +2115,15 @@ req = Models::Operations::UpdateAdsGroupRequest.new(
     created_at: DateTime.iso8601('2019-08-29T17:59:41.045Z'),
     currency: 'USD',
     effective_status: Models::Shared::AdsGroupEffectiveStatus::PAUSED,
-    end_at: DateTime.iso8601('2026-05-27T10:47:54.564Z'),
-    id: 'ea9eb928-96eb-4e5b-a608-6caf8c5ab32f',
+    end_at: DateTime.iso8601('2026-06-26T23:06:05.936Z'),
+    id: '0eeec5cc-3170-4279-acfa-ca35313357a2',
     language_locale: 'fr-FR',
+    metadata: [],
     name: 'Stark - Baumbach',
-    start_at: DateTime.iso8601('2025-12-13T14:00:50.468Z'),
+    start_at: DateTime.iso8601('2026-01-11T01:17:34.718Z'),
     status: Models::Shared::AdsGroupStatus::PROCESSING,
     targeting: Models::Shared::PropertyAdsGroupTargeting.new(),
-    updated_at: DateTime.iso8601('2022-01-03T16:58:18.420Z'),
+    updated_at: DateTime.iso8601('2022-01-14T08:05:31.639Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2148,7 +2155,7 @@ end
 
 ## update_ads_insertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -2166,10 +2173,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAdsInsertionorderRequest.new(
   ads_insertionorder: Models::Shared::AdsInsertionorder.new(
     created_at: DateTime.iso8601('2021-04-10T06:57:36.611Z'),
-    id: 'eed344b4-d35f-4921-aacc-f4c71a23697c',
+    id: '572472e0-6ed5-4e80-a835-aea09e94ff04',
+    metadata: [],
     name: 'Kunde, Smith and Reinger',
     status: Models::Shared::AdsInsertionorderStatus::UNSPECIFIED,
-    updated_at: DateTime.iso8601('2021-04-28T13:11:26.450Z'),
+    updated_at: DateTime.iso8601('2021-04-28T20:13:44.672Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2201,7 +2209,7 @@ end
 
 ## update_ads_organization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -2221,17 +2229,13 @@ req = Models::Operations::UpdateAdsOrganizationRequest.new(
     account_number: 'LQUJx8zQBW',
     created_at: DateTime.iso8601('2020-07-23T21:47:11.440Z'),
     currency: 'USD',
-    id: '342b0c9f-6f03-4da3-8936-b68c6b4ad0c0',
-    managers: [
-      Models::Shared::AdsManager.new(
-        id: 'e4fd87df-9f8b-4fa0-a77b-b7d18669e350',
-        name: 'Parker, Leannon and Gibson',
-      ),
-    ],
+    id: '6c36c6c1-1193-4e54-920e-b70dd990ec69',
+    managers: [],
+    metadata: [],
     name: 'Ankunding Inc',
     status: Models::Shared::AdsOrganizationStatus::PROCESSING,
     timezone: 'Europe/Chisinau',
-    updated_at: DateTime.iso8601('2026-03-01T20:43:52.701Z'),
+    updated_at: DateTime.iso8601('2026-03-30T22:27:01.507Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

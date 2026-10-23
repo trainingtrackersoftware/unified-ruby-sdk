@@ -7,14 +7,16 @@
 
 * [create_ats_scorecard](#create_ats_scorecard) - Create a scorecard
 * [get_ats_scorecard](#get_ats_scorecard) - Retrieve a scorecard
+* [get_uc_scorecard](#get_uc_scorecard) - Retrieve a scorecard
 * [list_ats_scorecards](#list_ats_scorecards) - List all scorecards
+* [list_uc_scorecards](#list_uc_scorecards) - List all scorecards
 * [patch_ats_scorecard](#patch_ats_scorecard) - Update a scorecard
 * [remove_ats_scorecard](#remove_ats_scorecard) - Remove a scorecard
 * [update_ats_scorecard](#update_ats_scorecard) - Update a scorecard
 
 ## create_ats_scorecard
 
-Create a scorecard
+Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
 
 ### Example Usage
 
@@ -32,7 +34,8 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.scorecard.create_ats_scorecard(ats_scorecard: Models::Shared::AtsScorecard.new(
   comment: 'Maiores enim.',
   created_at: DateTime.iso8601('2022-02-20T17:09:45.498Z'),
-  id: 'e2f4a5a4-e9bc-4405-9cfd-bd6b3f9cbd6c',
+  id: '19b0e4fb-a259-43aa-a392-afb96fe06d04',
+  metadata: [],
   questions: [
     Models::Shared::AtsScorecardQuestion.new(
       description: 'Sulum textor eveniet facere vita.',
@@ -45,7 +48,7 @@ res = s.scorecard.create_ats_scorecard(ats_scorecard: Models::Shared::AtsScoreca
     ),
   ],
   recommendation: Models::Shared::Recommendation::STRONG_YES,
-  updated_at: DateTime.iso8601('2023-05-28T07:14:55.859Z'),
+  updated_at: DateTime.iso8601('2023-06-06T02:49:08.973Z'),
 ), connection_id: '<id>')
 
 unless res.ats_scorecard.nil?
@@ -75,7 +78,7 @@ end
 
 ## get_ats_scorecard
 
-Retrieve a scorecard
+Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -117,9 +120,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_uc_scorecard
+
+Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getUcScorecard" method="get" path="/uc/{connection_id}/scorecard/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.scorecard.get_uc_scorecard(connection_id: '<id>', id: '<id>')
+
+unless res.uc_scorecard.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Scorecard                                                                                                                              |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetUcScorecardQueryParamFields](../../models/operations/getucscorecardqueryparamfields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetUcScorecardResponse)](../../models/operations/getucscorecardresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_ats_scorecards
 
-List all scorecards
+Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -162,9 +209,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_uc_scorecards
+
+Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listUcScorecards" method="get" path="/uc/{connection_id}/scorecard" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListUcScorecardsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.scorecard.list_uc_scorecards(request: req)
+
+unless res.uc_scorecards.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [Models::Operations::ListUcScorecardsRequest](../../models/operations/listucscorecardsrequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[T.nilable(Models::Operations::ListUcScorecardsResponse)](../../models/operations/listucscorecardsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## patch_ats_scorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -183,7 +275,8 @@ req = Models::Operations::PatchAtsScorecardRequest.new(
   ats_scorecard: Models::Shared::AtsScorecard.new(
     comment: 'Maiores enim.',
     created_at: DateTime.iso8601('2022-02-20T17:09:45.498Z'),
-    id: 'a14934d1-1651-4216-999d-179416ae4bd7',
+    id: 'c5de99f1-c13a-40f6-a55e-2e2e6943034a',
+    metadata: [],
     questions: [
       Models::Shared::AtsScorecardQuestion.new(
         description: 'Sulum textor eveniet facere vita.',
@@ -196,7 +289,7 @@ req = Models::Operations::PatchAtsScorecardRequest.new(
       ),
     ],
     recommendation: Models::Shared::Recommendation::STRONG_YES,
-    updated_at: DateTime.iso8601('2023-05-28T07:14:55.862Z'),
+    updated_at: DateTime.iso8601('2023-06-06T02:49:08.978Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -228,7 +321,7 @@ end
 
 ## remove_ats_scorecard
 
-Remove a scorecard
+Deletes the AtsScorecard identified by `id`.
 
 ### Example Usage
 
@@ -270,7 +363,7 @@ end
 
 ## update_ats_scorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -289,7 +382,8 @@ req = Models::Operations::UpdateAtsScorecardRequest.new(
   ats_scorecard: Models::Shared::AtsScorecard.new(
     comment: 'Maiores enim.',
     created_at: DateTime.iso8601('2022-02-20T17:09:45.498Z'),
-    id: 'a14934d1-1651-4216-999d-179416ae4bd7',
+    id: 'c5de99f1-c13a-40f6-a55e-2e2e6943034a',
+    metadata: [],
     questions: [
       Models::Shared::AtsScorecardQuestion.new(
         description: 'Sulum textor eveniet facere vita.',
@@ -302,7 +396,7 @@ req = Models::Operations::UpdateAtsScorecardRequest.new(
       ),
     ],
     recommendation: Models::Shared::Recommendation::STRONG_YES,
-    updated_at: DateTime.iso8601('2023-05-28T07:14:55.862Z'),
+    updated_at: DateTime.iso8601('2023-06-06T02:49:08.978Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

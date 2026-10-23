@@ -22,7 +22,7 @@
 
 ## create_ats_activity
 
-Create an activity
+Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
 
 ### Example Usage
 
@@ -38,43 +38,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.activity.create_ats_activity(ats_activity: Models::Shared::AtsActivity.new(
-  bcc: [
-    Models::Shared::AtsEmail.new(
-      email: 'Mabel_Schuppe-Schowalter42@hotmail.com',
-      name: 'Rochelle Franey-Bechtelar',
-      type: Models::Shared::AtsEmailType::HOME,
-    ),
-  ],
-  cc: [
-    Models::Shared::AtsEmail.new(
-      email: 'Sasha24@hotmail.com',
-      name: 'Dr. Elbert Kuvalis',
-      type: Models::Shared::AtsEmailType::HOME,
-    ),
-    Models::Shared::AtsEmail.new(
-      email: 'Rosetta_Donnelly@gmail.com',
-      name: 'Ramon Daniel',
-      type: Models::Shared::AtsEmailType::OTHER,
-    ),
-    Models::Shared::AtsEmail.new(
-      email: 'Kathryne_Jast@yahoo.com',
-      name: 'Christian Jacobson',
-      type: Models::Shared::AtsEmailType::OTHER,
-    ),
-    Models::Shared::AtsEmail.new(
-      email: 'Eldred95@yahoo.com',
-      name: 'Edna Bogan',
-      type: Models::Shared::AtsEmailType::OTHER,
-    ),
-  ],
   created_at: DateTime.iso8601('2022-08-07T03:16:43.865Z'),
-  description: 'Amplus.',
-  from: Models::Shared::PropertyAtsActivityFrom.new(
-    email: 'Norwood.Wiza47@yahoo.com',
-    name: 'Toby Grant',
-    type: Models::Shared::PropertyAtsActivityFromType::OTHER,
-  ),
-  id: '48924229-4cbf-4f28-8350-8c58f0543bd2',
+  description: 'Sapiente.',
+  id: '9f29f41f-00b8-468d-a94a-d9976a5bfa51',
   is_private: false,
   metadata: [
     Models::Shared::AtsMetadata.new(
@@ -82,33 +48,16 @@ res = s.activity.create_ats_activity(ats_activity: Models::Shared::AtsActivity.n
 
       },
       format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: '849da9fb-afb3-4743-a832-027267258898',
+      id: 'a36967ba-5072-47d3-911e-54d55d57e785',
       namespace: 'activity',
-      slug: 'acer',
-      value: 'Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.',
-    ),
-    Models::Shared::AtsMetadata.new(
-      extra_data: {
-
-      },
-      format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: '3f050d99-8ea3-43c9-b460-06fedd00bd1a',
-      namespace: 'activity',
-      slug: 'tremo',
-      value: 'Amita delectus dicta temptatio utroque ex.',
+      slug: 'cimentarius',
+      value: 'Reprehenderit verto.',
     ),
   ],
   sub_type: 'TASK',
-  title: 'Senior Interactions Manager',
-  to: [
-    Models::Shared::AtsEmail.new(
-      email: 'Sister91@hotmail.com',
-      name: 'Eddie Nienow PhD',
-      type: Models::Shared::AtsEmailType::WORK,
-    ),
-  ],
+  title: 'Venio blandior aureus.',
   type: Models::Shared::AtsActivityType::TASK,
-  updated_at: DateTime.iso8601('2026-03-09T04:52:43.038Z'),
+  updated_at: DateTime.iso8601('2026-04-06T00:06:46.980Z'),
 ), connection_id: '<id>')
 
 unless res.ats_activity.nil?
@@ -138,7 +87,7 @@ end
 
 ## create_lms_activity
 
-Create an activity
+Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
 
 ### Example Usage
 
@@ -155,14 +104,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.activity.create_lms_activity(lms_activity: Models::Shared::LmsActivity.new(
   assigned_grade: 'summopere',
-  completed_at: DateTime.iso8601('2025-04-14T07:48:00.659Z'),
+  completed_at: DateTime.iso8601('2023-12-07T00:32:47.256Z'),
   created_at: DateTime.iso8601('2020-10-17T01:25:21.745Z'),
   duration_minutes: 55.0,
-  id: '8121796d-85be-45e3-a87f-43bbbe4bdd8e',
+  id: '8ef8803d-f215-49d2-b7ed-91e7dc13d16a',
   is_completed: true,
+  metadata: [],
   progress_percentage: 100.0,
-  started_at: DateTime.iso8601('2023-12-24T04:54:05.825Z'),
-  updated_at: DateTime.iso8601('2022-01-24T13:21:48.887Z'),
+  started_at: DateTime.iso8601('2021-04-25T08:31:19.340Z'),
+  updated_at: DateTime.iso8601('2022-01-31T09:55:05.053Z'),
 ), connection_id: '<id>')
 
 unless res.lms_activity.nil?
@@ -192,7 +142,7 @@ end
 
 ## get_ats_activity
 
-Retrieve an activity
+Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -236,7 +186,7 @@ end
 
 ## get_clubs_activity
 
-Retrieve an activity
+Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -280,7 +230,7 @@ end
 
 ## get_lms_activity
 
-Retrieve an activity
+Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -324,7 +274,7 @@ end
 
 ## list_ats_activities
 
-List all activities
+Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -369,7 +319,7 @@ end
 
 ## list_clubs_activities
 
-List all activities
+Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -414,7 +364,7 @@ end
 
 ## list_lms_activities
 
-List all activities
+Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -459,7 +409,7 @@ end
 
 ## patch_ats_activity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -476,43 +426,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAtsActivityRequest.new(
   ats_activity: Models::Shared::AtsActivity.new(
-    bcc: [
-      Models::Shared::AtsEmail.new(
-        email: 'Mabel_Schuppe-Schowalter42@hotmail.com',
-        name: 'Rochelle Franey-Bechtelar',
-        type: Models::Shared::AtsEmailType::HOME,
-      ),
-    ],
-    cc: [
-      Models::Shared::AtsEmail.new(
-        email: 'Sasha24@hotmail.com',
-        name: 'Dr. Elbert Kuvalis',
-        type: Models::Shared::AtsEmailType::HOME,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Rosetta_Donnelly@gmail.com',
-        name: 'Ramon Daniel',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Kathryne_Jast@yahoo.com',
-        name: 'Christian Jacobson',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Eldred95@yahoo.com',
-        name: 'Edna Bogan',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-    ],
     created_at: DateTime.iso8601('2022-08-07T03:16:43.865Z'),
-    description: 'Amplus.',
-    from: Models::Shared::PropertyAtsActivityFrom.new(
-      email: 'Norwood.Wiza47@yahoo.com',
-      name: 'Toby Grant',
-      type: Models::Shared::PropertyAtsActivityFromType::OTHER,
-    ),
-    id: 'be0ddd8c-7f16-4700-b101-7d44699e146a',
+    description: 'Sapiente.',
+    id: '621110a0-f5d3-4b25-814f-2739f5b1e852',
     is_private: false,
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -520,33 +436,16 @@ req = Models::Operations::PatchAtsActivityRequest.new(
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'de40c31b-a668-433c-b13d-9b31f9d413dc',
+        id: 'ca56b027-1a12-41d4-a917-a681c4322f63',
         namespace: 'activity',
-        slug: 'acer',
-        value: 'Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.',
-      ),
-      Models::Shared::AtsMetadata.new(
-        extra_data: {
-
-        },
-        format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'cc1af4d8-b92d-429c-9987-74a012680ba3',
-        namespace: 'activity',
-        slug: 'tremo',
-        value: 'Amita delectus dicta temptatio utroque ex.',
+        slug: 'cimentarius',
+        value: 'Reprehenderit verto.',
       ),
     ],
     sub_type: 'TASK',
-    title: 'Senior Interactions Manager',
-    to: [
-      Models::Shared::AtsEmail.new(
-        email: 'Sister91@hotmail.com',
-        name: 'Eddie Nienow PhD',
-        type: Models::Shared::AtsEmailType::WORK,
-      ),
-    ],
+    title: 'Venio blandior aureus.',
     type: Models::Shared::AtsActivityType::TASK,
-    updated_at: DateTime.iso8601('2026-03-09T04:52:43.054Z'),
+    updated_at: DateTime.iso8601('2026-04-06T00:06:47.007Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -578,7 +477,7 @@ end
 
 ## patch_lms_activity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -596,14 +495,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchLmsActivityRequest.new(
   lms_activity: Models::Shared::LmsActivity.new(
     assigned_grade: 'summopere',
-    completed_at: DateTime.iso8601('2025-04-14T07:48:00.664Z'),
+    completed_at: DateTime.iso8601('2023-12-07T00:32:47.263Z'),
     created_at: DateTime.iso8601('2020-10-17T01:25:21.745Z'),
     duration_minutes: 55.0,
-    id: '5bfa4252-4269-48b7-98a0-a37088a2874c',
+    id: '0cadbe83-eb81-4e9c-b1e3-5d9ebab0420e',
     is_completed: true,
+    metadata: [],
     progress_percentage: 100.0,
-    started_at: DateTime.iso8601('2023-12-24T04:54:05.825Z'),
-    updated_at: DateTime.iso8601('2022-01-24T13:21:48.889Z'),
+    started_at: DateTime.iso8601('2021-04-25T08:31:19.341Z'),
+    updated_at: DateTime.iso8601('2022-01-31T09:55:05.056Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -635,7 +535,7 @@ end
 
 ## remove_ats_activity
 
-Remove an activity
+Deletes the AtsActivity identified by `id`.
 
 ### Example Usage
 
@@ -677,7 +577,7 @@ end
 
 ## remove_lms_activity
 
-Remove an activity
+Deletes the LmsActivity identified by `id`.
 
 ### Example Usage
 
@@ -719,7 +619,7 @@ end
 
 ## update_ats_activity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -736,43 +636,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAtsActivityRequest.new(
   ats_activity: Models::Shared::AtsActivity.new(
-    bcc: [
-      Models::Shared::AtsEmail.new(
-        email: 'Mabel_Schuppe-Schowalter42@hotmail.com',
-        name: 'Rochelle Franey-Bechtelar',
-        type: Models::Shared::AtsEmailType::HOME,
-      ),
-    ],
-    cc: [
-      Models::Shared::AtsEmail.new(
-        email: 'Sasha24@hotmail.com',
-        name: 'Dr. Elbert Kuvalis',
-        type: Models::Shared::AtsEmailType::HOME,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Rosetta_Donnelly@gmail.com',
-        name: 'Ramon Daniel',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Kathryne_Jast@yahoo.com',
-        name: 'Christian Jacobson',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Eldred95@yahoo.com',
-        name: 'Edna Bogan',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-    ],
     created_at: DateTime.iso8601('2022-08-07T03:16:43.865Z'),
-    description: 'Amplus.',
-    from: Models::Shared::PropertyAtsActivityFrom.new(
-      email: 'Norwood.Wiza47@yahoo.com',
-      name: 'Toby Grant',
-      type: Models::Shared::PropertyAtsActivityFromType::OTHER,
-    ),
-    id: 'be0ddd8c-7f16-4700-b101-7d44699e146a',
+    description: 'Sapiente.',
+    id: '621110a0-f5d3-4b25-814f-2739f5b1e852',
     is_private: false,
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -780,33 +646,16 @@ req = Models::Operations::UpdateAtsActivityRequest.new(
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'de40c31b-a668-433c-b13d-9b31f9d413dc',
+        id: 'ca56b027-1a12-41d4-a917-a681c4322f63',
         namespace: 'activity',
-        slug: 'acer',
-        value: 'Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.',
-      ),
-      Models::Shared::AtsMetadata.new(
-        extra_data: {
-
-        },
-        format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'cc1af4d8-b92d-429c-9987-74a012680ba3',
-        namespace: 'activity',
-        slug: 'tremo',
-        value: 'Amita delectus dicta temptatio utroque ex.',
+        slug: 'cimentarius',
+        value: 'Reprehenderit verto.',
       ),
     ],
     sub_type: 'TASK',
-    title: 'Senior Interactions Manager',
-    to: [
-      Models::Shared::AtsEmail.new(
-        email: 'Sister91@hotmail.com',
-        name: 'Eddie Nienow PhD',
-        type: Models::Shared::AtsEmailType::WORK,
-      ),
-    ],
+    title: 'Venio blandior aureus.',
     type: Models::Shared::AtsActivityType::TASK,
-    updated_at: DateTime.iso8601('2026-03-09T04:52:43.054Z'),
+    updated_at: DateTime.iso8601('2026-04-06T00:06:47.007Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -838,7 +687,7 @@ end
 
 ## update_lms_activity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -856,14 +705,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateLmsActivityRequest.new(
   lms_activity: Models::Shared::LmsActivity.new(
     assigned_grade: 'summopere',
-    completed_at: DateTime.iso8601('2025-04-14T07:48:00.664Z'),
+    completed_at: DateTime.iso8601('2023-12-07T00:32:47.263Z'),
     created_at: DateTime.iso8601('2020-10-17T01:25:21.745Z'),
     duration_minutes: 55.0,
-    id: '5bfa4252-4269-48b7-98a0-a37088a2874c',
+    id: '0cadbe83-eb81-4e9c-b1e3-5d9ebab0420e',
     is_completed: true,
+    metadata: [],
     progress_percentage: 100.0,
-    started_at: DateTime.iso8601('2023-12-24T04:54:05.825Z'),
-    updated_at: DateTime.iso8601('2022-01-24T13:21:48.889Z'),
+    started_at: DateTime.iso8601('2021-04-25T08:31:19.341Z'),
+    updated_at: DateTime.iso8601('2022-01-31T09:55:05.056Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

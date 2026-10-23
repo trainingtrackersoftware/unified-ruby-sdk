@@ -9,9 +9,11 @@
 * [create_hris_location](#create_hris_location) - Create a location
 * [get_clubs_location](#get_clubs_location) - Retrieve a location
 * [get_commerce_location](#get_commerce_location) - Retrieve a location
+* [get_healthcare_location](#get_healthcare_location) - Retrieve a location
 * [get_hris_location](#get_hris_location) - Retrieve a location
 * [list_clubs_locations](#list_clubs_locations) - List all locations
 * [list_commerce_locations](#list_commerce_locations) - List all locations
+* [list_healthcare_locations](#list_healthcare_locations) - List all locations
 * [list_hris_locations](#list_hris_locations) - List all locations
 * [patch_commerce_location](#patch_commerce_location) - Update a location
 * [patch_hris_location](#patch_hris_location) - Update a location
@@ -22,7 +24,7 @@
 
 ## create_commerce_location
 
-Create a location
+Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
 
 ### Example Usage
 
@@ -50,7 +52,7 @@ res = s.location.create_commerce_location(commerce_location: Models::Shared::Com
   created_at: DateTime.iso8601('2022-12-29T04:15:21.195Z'),
   currency: 'XCD',
   description: 'Adsidue audentia.',
-  id: '79f90f0b-9046-4f30-b91d-7996aec988c6',
+  id: '9269d190-f7e4-4ca0-9d9a-3b2cd258af77',
   image_url: 'https://picsum.photos/seed/hjFt1/1036/2220',
   is_active: false,
   language_locale: 'vulgaris',
@@ -61,10 +63,10 @@ res = s.location.create_commerce_location(commerce_location: Models::Shared::Com
     Models::Shared::CommerceItemMedia.new(
       alt: 'Addo.',
       height: 283.0,
-      id: '8febbc6e-0ba1-4b76-b53b-718da7b464c1',
+      id: 'a9b34ae1-d23f-4ae8-a407-12dc516fa948',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: 'e6b6e10a-3d44-4aee-beac-d6f73e9c5f09',
+          id: '51dd7bb8-9a09-4018-a8be-b30616cf72bd',
           slug: 'abutor',
           value: 'damno',
         ),
@@ -75,6 +77,7 @@ res = s.location.create_commerce_location(commerce_location: Models::Shared::Com
       width: 1.0,
     ),
   ],
+  metadata: [],
   name: 'Olson - Mraz',
   price_level: '',
   rating: 0.0,
@@ -89,7 +92,7 @@ res = s.location.create_commerce_location(commerce_location: Models::Shared::Com
       type: Models::Shared::CommerceTelephoneType::MOBILE,
     ),
   ],
-  updated_at: DateTime.iso8601('2024-04-10T10:37:16.074Z'),
+  updated_at: DateTime.iso8601('2024-04-21T10:20:25.147Z'),
   web_url: 'https://chilly-edge.info',
 ), connection_id: '<id>')
 
@@ -120,7 +123,7 @@ end
 
 ## create_hris_location
 
-Create a location
+Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
 
 ### Example Usage
 
@@ -137,39 +140,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.location.create_hris_location(hris_location: Models::Shared::HrisLocation.new(
   address: Models::Shared::PropertyHrisLocationAddress.new(
-    address1: '2743 Connelly Summit',
-    address2: 'Apt. 350',
-    city: 'Titusville',
+    address1: '4418 Daniella Mall',
+    address2: 'Apt. 997',
+    city: 'Burke',
     country_code: 'US',
-    postal_code: '16154-1095',
-    region: 'Oregon',
-    region_code: 'AL',
+    postal_code: '54109',
+    region: 'Ohio',
+    region_code: 'OR',
   ),
   created_at: DateTime.iso8601('2021-07-18T10:32:01.414Z'),
-  currency: 'MUR',
-  description: 'Acervus caries.',
-  external_identifier: '96a41c8d-a0fd-4317-9a93-9adbec79d837',
-  id: '735bb4e6-f12f-4c14-a185-655cdcecdb5e',
-  is_active: true,
-  is_hq: false,
-  language_locale: 'fr',
-  name: 'adhuc',
+  currency: 'MNT',
+  description: 'Commemoro acervus.',
+  id: '5265ff37-d91e-450f-a51f-00456bb7a4f3',
+  is_active: false,
+  is_hq: true,
+  language_locale: 'it',
+  metadata: [],
+  name: 'North Kimberlyland Office',
   telephones: [
     Models::Shared::HrisTelephone.new(
-      telephone: '(710) 550-6997',
+      telephone: '(371) 245-0699',
       type: Models::Shared::HrisTelephoneType::FAX,
     ),
     Models::Shared::HrisTelephone.new(
-      telephone: '(208) 555-8542',
+      telephone: '(700) 845-5854',
+      type: Models::Shared::HrisTelephoneType::FAX,
+    ),
+    Models::Shared::HrisTelephone.new(
+      telephone: '(461) 437-3548',
       type: Models::Shared::HrisTelephoneType::HOME,
     ),
-    Models::Shared::HrisTelephone.new(
-      telephone: '(712) 473-5482',
-      type: Models::Shared::HrisTelephoneType::FAX,
-    ),
   ],
-  timezone: 'America/Guyana',
-  updated_at: DateTime.iso8601('2023-06-10T03:17:45.017Z'),
+  timezone: 'Asia/Jerusalem',
+  updated_at: DateTime.iso8601('2023-06-21T19:54:08.292Z'),
 ), connection_id: '<id>')
 
 unless res.hris_location.nil?
@@ -199,7 +202,7 @@ end
 
 ## get_clubs_location
 
-Retrieve a location
+Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -243,7 +246,7 @@ end
 
 ## get_commerce_location
 
-Retrieve a location
+Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -285,9 +288,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_healthcare_location
+
+Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getHealthcareLocation" method="get" path="/healthcare/{connection_id}/location/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.location.get_healthcare_location(connection_id: '<id>', id: '<id>')
+
+unless res.healthcare_location.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetHealthcareLocationQueryParamFields](../../models/operations/gethealthcarelocationqueryparamfields.md)>          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetHealthcareLocationResponse)](../../models/operations/gethealthcarelocationresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_hris_location
 
-Retrieve a location
+Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -331,7 +378,7 @@ end
 
 ## list_clubs_locations
 
-List all locations
+Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -376,7 +423,7 @@ end
 
 ## list_commerce_locations
 
-List all locations
+Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -419,9 +466,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_healthcare_locations
+
+Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listHealthcareLocations" method="get" path="/healthcare/{connection_id}/location" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListHealthcareLocationsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.location.list_healthcare_locations(request: req)
+
+unless res.healthcare_locations.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                       | [Models::Operations::ListHealthcareLocationsRequest](../../models/operations/listhealthcarelocationsrequest.md) | :heavy_check_mark:                                                                                              | The request object to use for the request.                                                                      |
+
+### Response
+
+**[T.nilable(Models::Operations::ListHealthcareLocationsResponse)](../../models/operations/listhealthcarelocationsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_hris_locations
 
-List all locations
+Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -466,7 +558,7 @@ end
 
 ## patch_commerce_location
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -495,7 +587,7 @@ req = Models::Operations::PatchCommerceLocationRequest.new(
     created_at: DateTime.iso8601('2022-12-29T04:15:21.195Z'),
     currency: 'XCD',
     description: 'Adsidue audentia.',
-    id: '407e8a02-063b-4559-b267-cb7c048ee39b',
+    id: '6d84c5e1-4a04-4750-b446-7984c24185bf',
     image_url: 'https://picsum.photos/seed/hjFt1/1036/2220',
     is_active: false,
     language_locale: 'vulgaris',
@@ -506,10 +598,10 @@ req = Models::Operations::PatchCommerceLocationRequest.new(
       Models::Shared::CommerceItemMedia.new(
         alt: 'Addo.',
         height: 283.0,
-        id: '43ca55da-031f-4db1-9534-51d351892c87',
+        id: '61a372b2-53b9-4882-b235-31278dee6b9f',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'd3730f18-8de3-48ee-8e00-1f683adc6056',
+            id: '36d1a9c2-1d24-4fb0-bc5c-a15ea787218a',
             slug: 'abutor',
             value: 'damno',
           ),
@@ -520,6 +612,7 @@ req = Models::Operations::PatchCommerceLocationRequest.new(
         width: 1.0,
       ),
     ],
+    metadata: [],
     name: 'Olson - Mraz',
     price_level: '',
     rating: 0.0,
@@ -534,7 +627,7 @@ req = Models::Operations::PatchCommerceLocationRequest.new(
         type: Models::Shared::CommerceTelephoneType::MOBILE,
       ),
     ],
-    updated_at: DateTime.iso8601('2024-04-10T10:37:16.090Z'),
+    updated_at: DateTime.iso8601('2024-04-21T10:20:25.162Z'),
     web_url: 'https://chilly-edge.info',
   ),
   connection_id: '<id>',
@@ -567,7 +660,7 @@ end
 
 ## patch_hris_location
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -585,39 +678,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchHrisLocationRequest.new(
   hris_location: Models::Shared::HrisLocation.new(
     address: Models::Shared::PropertyHrisLocationAddress.new(
-      address1: '2743 Connelly Summit',
-      address2: 'Apt. 350',
-      city: 'Titusville',
+      address1: '4418 Daniella Mall',
+      address2: 'Apt. 997',
+      city: 'Burke',
       country_code: 'US',
-      postal_code: '16154-1095',
-      region: 'Oregon',
-      region_code: 'AL',
+      postal_code: '54109',
+      region: 'Ohio',
+      region_code: 'OR',
     ),
     created_at: DateTime.iso8601('2021-07-18T10:32:01.414Z'),
-    currency: 'MUR',
-    description: 'Acervus caries.',
-    external_identifier: 'fd01f7ca-7b21-4d32-a619-3b75e64df32b',
-    id: 'f28f28b3-6633-431a-8161-7ef046d9d815',
-    is_active: true,
-    is_hq: false,
-    language_locale: 'fr',
-    name: 'adhuc',
+    currency: 'MNT',
+    description: 'Commemoro acervus.',
+    id: 'a79e86f2-b553-44c7-bcca-ed7260958f52',
+    is_active: false,
+    is_hq: true,
+    language_locale: 'it',
+    metadata: [],
+    name: 'North Kimberlyland Office',
     telephones: [
       Models::Shared::HrisTelephone.new(
-        telephone: '(710) 550-6997',
+        telephone: '(371) 245-0699',
         type: Models::Shared::HrisTelephoneType::FAX,
       ),
       Models::Shared::HrisTelephone.new(
-        telephone: '(208) 555-8542',
+        telephone: '(700) 845-5854',
+        type: Models::Shared::HrisTelephoneType::FAX,
+      ),
+      Models::Shared::HrisTelephone.new(
+        telephone: '(461) 437-3548',
         type: Models::Shared::HrisTelephoneType::HOME,
       ),
-      Models::Shared::HrisTelephone.new(
-        telephone: '(712) 473-5482',
-        type: Models::Shared::HrisTelephoneType::FAX,
-      ),
     ],
-    timezone: 'America/Guyana',
-    updated_at: DateTime.iso8601('2023-06-10T03:17:45.026Z'),
+    timezone: 'Asia/Jerusalem',
+    updated_at: DateTime.iso8601('2023-06-21T19:54:08.302Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -649,7 +742,7 @@ end
 
 ## remove_commerce_location
 
-Remove a location
+Deletes the CommerceLocation identified by `id`.
 
 ### Example Usage
 
@@ -691,7 +784,7 @@ end
 
 ## remove_hris_location
 
-Remove a location
+Deletes the HrisLocation identified by `id`.
 
 ### Example Usage
 
@@ -733,7 +826,7 @@ end
 
 ## update_commerce_location
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -762,7 +855,7 @@ req = Models::Operations::UpdateCommerceLocationRequest.new(
     created_at: DateTime.iso8601('2022-12-29T04:15:21.195Z'),
     currency: 'XCD',
     description: 'Adsidue audentia.',
-    id: '407e8a02-063b-4559-b267-cb7c048ee39b',
+    id: '6d84c5e1-4a04-4750-b446-7984c24185bf',
     image_url: 'https://picsum.photos/seed/hjFt1/1036/2220',
     is_active: false,
     language_locale: 'vulgaris',
@@ -773,10 +866,10 @@ req = Models::Operations::UpdateCommerceLocationRequest.new(
       Models::Shared::CommerceItemMedia.new(
         alt: 'Addo.',
         height: 283.0,
-        id: '43ca55da-031f-4db1-9534-51d351892c87',
+        id: '61a372b2-53b9-4882-b235-31278dee6b9f',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'd3730f18-8de3-48ee-8e00-1f683adc6056',
+            id: '36d1a9c2-1d24-4fb0-bc5c-a15ea787218a',
             slug: 'abutor',
             value: 'damno',
           ),
@@ -787,6 +880,7 @@ req = Models::Operations::UpdateCommerceLocationRequest.new(
         width: 1.0,
       ),
     ],
+    metadata: [],
     name: 'Olson - Mraz',
     price_level: '',
     rating: 0.0,
@@ -801,7 +895,7 @@ req = Models::Operations::UpdateCommerceLocationRequest.new(
         type: Models::Shared::CommerceTelephoneType::MOBILE,
       ),
     ],
-    updated_at: DateTime.iso8601('2024-04-10T10:37:16.090Z'),
+    updated_at: DateTime.iso8601('2024-04-21T10:20:25.162Z'),
     web_url: 'https://chilly-edge.info',
   ),
   connection_id: '<id>',
@@ -834,7 +928,7 @@ end
 
 ## update_hris_location
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -852,39 +946,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateHrisLocationRequest.new(
   hris_location: Models::Shared::HrisLocation.new(
     address: Models::Shared::PropertyHrisLocationAddress.new(
-      address1: '2743 Connelly Summit',
-      address2: 'Apt. 350',
-      city: 'Titusville',
+      address1: '4418 Daniella Mall',
+      address2: 'Apt. 997',
+      city: 'Burke',
       country_code: 'US',
-      postal_code: '16154-1095',
-      region: 'Oregon',
-      region_code: 'AL',
+      postal_code: '54109',
+      region: 'Ohio',
+      region_code: 'OR',
     ),
     created_at: DateTime.iso8601('2021-07-18T10:32:01.414Z'),
-    currency: 'MUR',
-    description: 'Acervus caries.',
-    external_identifier: 'fd01f7ca-7b21-4d32-a619-3b75e64df32b',
-    id: 'f28f28b3-6633-431a-8161-7ef046d9d815',
-    is_active: true,
-    is_hq: false,
-    language_locale: 'fr',
-    name: 'adhuc',
+    currency: 'MNT',
+    description: 'Commemoro acervus.',
+    id: 'a79e86f2-b553-44c7-bcca-ed7260958f52',
+    is_active: false,
+    is_hq: true,
+    language_locale: 'it',
+    metadata: [],
+    name: 'North Kimberlyland Office',
     telephones: [
       Models::Shared::HrisTelephone.new(
-        telephone: '(710) 550-6997',
+        telephone: '(371) 245-0699',
         type: Models::Shared::HrisTelephoneType::FAX,
       ),
       Models::Shared::HrisTelephone.new(
-        telephone: '(208) 555-8542',
+        telephone: '(700) 845-5854',
+        type: Models::Shared::HrisTelephoneType::FAX,
+      ),
+      Models::Shared::HrisTelephone.new(
+        telephone: '(461) 437-3548',
         type: Models::Shared::HrisTelephoneType::HOME,
       ),
-      Models::Shared::HrisTelephone.new(
-        telephone: '(712) 473-5482',
-        type: Models::Shared::HrisTelephoneType::FAX,
-      ),
     ],
-    timezone: 'America/Guyana',
-    updated_at: DateTime.iso8601('2023-06-10T03:17:45.026Z'),
+    timezone: 'Asia/Jerusalem',
+    updated_at: DateTime.iso8601('2023-06-21T19:54:08.302Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

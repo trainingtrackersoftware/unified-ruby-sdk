@@ -14,7 +14,7 @@
 
 ## create_shipping_shipment
 
-Create a shipment
+Creates a ShippingShipment. Provide the unified ShippingShipment fields in the request body; they are mapped to the provider's API. Returns the created ShippingShipment.
 
 ### Example Usage
 
@@ -30,18 +30,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.shipment.create_shipping_shipment(shipping_shipment: Models::Shared::ShippingShipment.new(
-  carrier_name: 'Bogisich, Franey and Koelpin',
   created_at: DateTime.iso8601('2022-09-12T03:11:28.960Z'),
-  id: 'a30ed01b-a455-4d7c-9b5d-862937cc9289',
-  rate_amount: 8.86_546_263_936_907,
+  id: 'a97b9394-530d-4c94-bd61-5ac70a910d7f',
+  is_return: false,
+  lineitems: [],
+  metadata: [],
   rate_currency: 'USD',
-  rate_estimated_days: 8.0,
-  rate_service_name: 'Fisher - Kilback',
-  service_code: 'F7U',
-  shipped_at: DateTime.iso8601('2025-08-26T23:48:12.779Z'),
-  status: Models::Shared::ShippingShipmentStatus::PENDING,
-  tracking_url: 'https://shallow-secrecy.info/',
-  updated_at: DateTime.iso8601('2025-07-05T04:58:28.146Z'),
+  rate_estimated_days: 4.0,
+  rate_service_name: '2nd Day Air',
+  service_code: 'OVERNIGHT',
+  shipped_at: DateTime.iso8601('2022-09-12T07:26:48.479Z'),
+  status: Models::Shared::ShippingShipmentStatus::DELIVERED,
+  updated_at: DateTime.iso8601('2022-11-15T08:48:41.556Z'),
 ), connection_id: '<id>')
 
 unless res.shipping_shipment.nil?
@@ -71,7 +71,7 @@ end
 
 ## get_shipping_shipment
 
-Retrieve a shipment
+Retrieves a single ShippingShipment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -115,7 +115,7 @@ end
 
 ## list_shipping_shipments
 
-List all shipments
+Returns a list of ShippingShipments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -160,7 +160,7 @@ end
 
 ## patch_shipping_shipment
 
-Update a shipment
+Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
 
 ### Example Usage
 
@@ -177,18 +177,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchShippingShipmentRequest.new(
   shipping_shipment: Models::Shared::ShippingShipment.new(
-    carrier_name: 'Bogisich, Franey and Koelpin',
     created_at: DateTime.iso8601('2022-09-12T03:11:28.960Z'),
-    id: 'cced982a-1e2c-49e2-9a90-0780b443a038',
-    rate_amount: 8.86_546_263_936_907,
+    id: 'e395a54b-9c4e-4338-b2a8-841232973ca5',
+    is_return: false,
+    lineitems: [],
+    metadata: [],
     rate_currency: 'USD',
-    rate_estimated_days: 8.0,
-    rate_service_name: 'Fisher - Kilback',
-    service_code: 'F7U',
-    shipped_at: DateTime.iso8601('2025-08-26T23:48:12.854Z'),
-    status: Models::Shared::ShippingShipmentStatus::PENDING,
-    tracking_url: 'https://shallow-secrecy.info/',
-    updated_at: DateTime.iso8601('2025-07-05T04:58:28.218Z'),
+    rate_estimated_days: 4.0,
+    rate_service_name: '2nd Day Air',
+    service_code: 'OVERNIGHT',
+    shipped_at: DateTime.iso8601('2022-09-12T07:26:48.479Z'),
+    status: Models::Shared::ShippingShipmentStatus::DELIVERED,
+    updated_at: DateTime.iso8601('2022-11-15T08:48:41.561Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -220,7 +220,7 @@ end
 
 ## remove_shipping_shipment
 
-Remove a shipment
+Deletes the ShippingShipment identified by `id`.
 
 ### Example Usage
 
@@ -262,7 +262,7 @@ end
 
 ## update_shipping_shipment
 
-Update a shipment
+Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
 
 ### Example Usage
 
@@ -279,18 +279,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateShippingShipmentRequest.new(
   shipping_shipment: Models::Shared::ShippingShipment.new(
-    carrier_name: 'Bogisich, Franey and Koelpin',
     created_at: DateTime.iso8601('2022-09-12T03:11:28.960Z'),
-    id: 'cced982a-1e2c-49e2-9a90-0780b443a038',
-    rate_amount: 8.86_546_263_936_907,
+    id: 'e395a54b-9c4e-4338-b2a8-841232973ca5',
+    is_return: false,
+    lineitems: [],
+    metadata: [],
     rate_currency: 'USD',
-    rate_estimated_days: 8.0,
-    rate_service_name: 'Fisher - Kilback',
-    service_code: 'F7U',
-    shipped_at: DateTime.iso8601('2025-08-26T23:48:12.854Z'),
-    status: Models::Shared::ShippingShipmentStatus::PENDING,
-    tracking_url: 'https://shallow-secrecy.info/',
-    updated_at: DateTime.iso8601('2025-07-05T04:58:28.218Z'),
+    rate_estimated_days: 4.0,
+    rate_service_name: '2nd Day Air',
+    service_code: 'OVERNIGHT',
+    shipped_at: DateTime.iso8601('2022-09-12T07:26:48.479Z'),
+    status: Models::Shared::ShippingShipmentStatus::DELIVERED,
+    updated_at: DateTime.iso8601('2022-11-15T08:48:41.561Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

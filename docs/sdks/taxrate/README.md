@@ -14,7 +14,7 @@
 
 ## create_accounting_taxrate
 
-Create a taxrate
+Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
 
 ### Example Usage
 
@@ -33,24 +33,24 @@ res = s.taxrate.create_accounting_taxrate(accounting_taxrate: Models::Shared::Ac
   components: [
     Models::Shared::AccountingTaxrateComponent.new(
       is_compound: false,
-      name: 'cogo',
-      rate: 53.0,
+      name: 'Exempt',
+      rate: 0.0,
     ),
   ],
-  country: 'BY',
+  country: 'US',
   created_at: DateTime.iso8601('2020-01-04T10:37:56.894Z'),
-  description: 'Atrox tricesimus creator.',
-  effective_rate: 53.0,
-  id: 'f60cdbf8-fb40-4fa3-80f7-548de98ad657',
+  description: 'Exempt (0%)',
+  effective_rate: 0.0,
+  id: '2df554ed-f2e1-41c8-b0eb-5d269de95447',
   is_active: false,
-  is_compound: true,
+  is_compound: false,
   metadata: [],
-  name: 'villa',
-  rate: 53.0,
-  region: 'TX',
-  total_rate: 53.0,
-  type: Models::Shared::AccountingTaxrateType::OTHER,
-  updated_at: DateTime.iso8601('2022-04-13T10:10:02.142Z'),
+  name: 'Exempt',
+  rate: 0.0,
+  region: 'KS',
+  total_rate: 0.0,
+  type: Models::Shared::AccountingTaxrateType::SALES,
+  updated_at: DateTime.iso8601('2020-02-13T05:55:41.907Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_taxrate.nil?
@@ -80,7 +80,7 @@ end
 
 ## get_accounting_taxrate
 
-Retrieve a taxrate
+Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -124,7 +124,7 @@ end
 
 ## list_accounting_taxrates
 
-List all taxrates
+Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -169,7 +169,7 @@ end
 
 ## patch_accounting_taxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -189,24 +189,24 @@ req = Models::Operations::PatchAccountingTaxrateRequest.new(
     components: [
       Models::Shared::AccountingTaxrateComponent.new(
         is_compound: false,
-        name: 'cogo',
-        rate: 53.0,
+        name: 'Exempt',
+        rate: 0.0,
       ),
     ],
-    country: 'BY',
+    country: 'US',
     created_at: DateTime.iso8601('2020-01-04T10:37:56.894Z'),
-    description: 'Atrox tricesimus creator.',
-    effective_rate: 53.0,
-    id: '6157a522-08d3-45f7-9287-187fd17fc766',
+    description: 'Exempt (0%)',
+    effective_rate: 0.0,
+    id: 'df82a08b-d352-4145-845e-aa4f89cb154d',
     is_active: false,
-    is_compound: true,
+    is_compound: false,
     metadata: [],
-    name: 'villa',
-    rate: 53.0,
-    region: 'TX',
-    total_rate: 53.0,
-    type: Models::Shared::AccountingTaxrateType::OTHER,
-    updated_at: DateTime.iso8601('2022-04-13T10:10:02.150Z'),
+    name: 'Exempt',
+    rate: 0.0,
+    region: 'KS',
+    total_rate: 0.0,
+    type: Models::Shared::AccountingTaxrateType::SALES,
+    updated_at: DateTime.iso8601('2020-02-13T05:55:41.908Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -238,7 +238,7 @@ end
 
 ## remove_accounting_taxrate
 
-Remove a taxrate
+Deletes the AccountingTaxrate identified by `id`.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ end
 
 ## update_accounting_taxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -300,24 +300,24 @@ req = Models::Operations::UpdateAccountingTaxrateRequest.new(
     components: [
       Models::Shared::AccountingTaxrateComponent.new(
         is_compound: false,
-        name: 'cogo',
-        rate: 53.0,
+        name: 'Exempt',
+        rate: 0.0,
       ),
     ],
-    country: 'BY',
+    country: 'US',
     created_at: DateTime.iso8601('2020-01-04T10:37:56.894Z'),
-    description: 'Atrox tricesimus creator.',
-    effective_rate: 53.0,
-    id: '6157a522-08d3-45f7-9287-187fd17fc766',
+    description: 'Exempt (0%)',
+    effective_rate: 0.0,
+    id: 'df82a08b-d352-4145-845e-aa4f89cb154d',
     is_active: false,
-    is_compound: true,
+    is_compound: false,
     metadata: [],
-    name: 'villa',
-    rate: 53.0,
-    region: 'TX',
-    total_rate: 53.0,
-    type: Models::Shared::AccountingTaxrateType::OTHER,
-    updated_at: DateTime.iso8601('2022-04-13T10:10:02.150Z'),
+    name: 'Exempt',
+    rate: 0.0,
+    region: 'KS',
+    total_rate: 0.0,
+    type: Models::Shared::AccountingTaxrateType::SALES,
+    updated_at: DateTime.iso8601('2020-02-13T05:55:41.908Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

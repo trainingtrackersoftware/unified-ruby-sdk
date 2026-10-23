@@ -14,7 +14,7 @@
 
 ## create_hris_timeoff
 
-Create a timeoff
+Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
 
 ### Example Usage
 
@@ -30,20 +30,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.timeoff.create_hris_timeoff(hris_timeoff: Models::Shared::HrisTimeoff.new(
-  approved_at: DateTime.iso8601('2022-02-21T02:34:00.707Z'),
+  approved_at: DateTime.iso8601('2022-02-23T12:45:41.369Z'),
   comments: 'Blandior ventus curiositas amplitudo.',
   created_at: DateTime.iso8601('2021-10-06T18:00:20.615Z'),
   duration: 4.0,
   duration_type: Models::Shared::DurationType::DAY,
-  end_at: DateTime.iso8601('2024-12-09T12:28:57.437Z'),
-  id: '2d890fd1-cb8d-4af9-8e18-587564259ad2',
+  end_at: DateTime.iso8601('2024-12-29T23:50:53.916Z'),
+  id: 'e9166945-9121-45f2-8b46-f58c938170ce',
   is_paid: true,
+  metadata: [],
   original_type: 'acerbitas ut',
   reason: 'verto',
-  start_at: DateTime.iso8601('2023-08-24T10:33:26.221Z'),
+  start_at: DateTime.iso8601('2023-09-05T13:29:26.276Z'),
   status: Models::Shared::HrisTimeoffStatus::DENIED,
   type: Models::Shared::HrisTimeoffType::IN_LIEU,
-  updated_at: DateTime.iso8601('2022-07-08T06:37:13.084Z'),
+  updated_at: DateTime.iso8601('2022-07-13T02:55:47.937Z'),
   user_id: '<id>',
 ), connection_id: '<id>')
 
@@ -74,7 +75,7 @@ end
 
 ## get_hris_timeoff
 
-Retrieve a timeoff
+Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -118,7 +119,7 @@ end
 
 ## list_hris_timeoffs
 
-List all timeoffs
+Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -163,7 +164,7 @@ end
 
 ## patch_hris_timeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -180,20 +181,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchHrisTimeoffRequest.new(
   hris_timeoff: Models::Shared::HrisTimeoff.new(
-    approved_at: DateTime.iso8601('2022-02-21T02:34:00.708Z'),
+    approved_at: DateTime.iso8601('2022-02-23T12:45:41.371Z'),
     comments: 'Blandior ventus curiositas amplitudo.',
     created_at: DateTime.iso8601('2021-10-06T18:00:20.615Z'),
     duration: 4.0,
     duration_type: Models::Shared::DurationType::DAY,
-    end_at: DateTime.iso8601('2024-12-09T12:28:57.445Z'),
-    id: '0827ff67-76de-4e75-a057-caf46aa2bff1',
+    end_at: DateTime.iso8601('2024-12-29T23:50:53.937Z'),
+    id: '2aba93e5-a27c-4550-ac9b-f0337f0f7383',
     is_paid: true,
+    metadata: [],
     original_type: 'acerbitas ut',
     reason: 'verto',
-    start_at: DateTime.iso8601('2023-08-24T10:33:26.226Z'),
+    start_at: DateTime.iso8601('2023-09-05T13:29:26.288Z'),
     status: Models::Shared::HrisTimeoffStatus::DENIED,
     type: Models::Shared::HrisTimeoffType::IN_LIEU,
-    updated_at: DateTime.iso8601('2022-07-08T06:37:13.086Z'),
+    updated_at: DateTime.iso8601('2022-07-13T02:55:47.942Z'),
     user_id: '<id>',
   ),
   connection_id: '<id>',
@@ -226,7 +228,7 @@ end
 
 ## remove_hris_timeoff
 
-Remove a timeoff
+Deletes the HrisTimeoff identified by `id`.
 
 ### Example Usage
 
@@ -268,7 +270,7 @@ end
 
 ## update_hris_timeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -285,20 +287,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateHrisTimeoffRequest.new(
   hris_timeoff: Models::Shared::HrisTimeoff.new(
-    approved_at: DateTime.iso8601('2022-02-21T02:34:00.708Z'),
+    approved_at: DateTime.iso8601('2022-02-23T12:45:41.371Z'),
     comments: 'Blandior ventus curiositas amplitudo.',
     created_at: DateTime.iso8601('2021-10-06T18:00:20.615Z'),
     duration: 4.0,
     duration_type: Models::Shared::DurationType::DAY,
-    end_at: DateTime.iso8601('2024-12-09T12:28:57.445Z'),
-    id: '0827ff67-76de-4e75-a057-caf46aa2bff1',
+    end_at: DateTime.iso8601('2024-12-29T23:50:53.937Z'),
+    id: '2aba93e5-a27c-4550-ac9b-f0337f0f7383',
     is_paid: true,
+    metadata: [],
     original_type: 'acerbitas ut',
     reason: 'verto',
-    start_at: DateTime.iso8601('2023-08-24T10:33:26.226Z'),
+    start_at: DateTime.iso8601('2023-09-05T13:29:26.288Z'),
     status: Models::Shared::HrisTimeoffStatus::DENIED,
     type: Models::Shared::HrisTimeoffType::IN_LIEU,
-    updated_at: DateTime.iso8601('2022-07-08T06:37:13.086Z'),
+    updated_at: DateTime.iso8601('2022-07-13T02:55:47.942Z'),
     user_id: '<id>',
   ),
   connection_id: '<id>',

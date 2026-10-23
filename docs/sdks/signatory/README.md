@@ -14,7 +14,7 @@
 
 ## create_signing_signatory
 
-Create a signatory
+Creates a SigningSignatory. Provide the unified SigningSignatory fields in the request body; they are mapped to the provider's API. Returns the created SigningSignatory.
 
 ### Example Usage
 
@@ -31,12 +31,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.signatory.create_signing_signatory(signing_signatory: Models::Shared::SigningSignatory.new(
   created_at: DateTime.iso8601('2022-04-16T19:25:01.966Z'),
-  email: 'Hardy.Wehner@gmail.com',
-  id: '14744bf0-9914-4ff1-8cb9-f54737f20d72',
-  order: 5.0,
+  email: 'anais.lakin@icloud.com',
+  id: '1b0864c8-aab6-4b49-8b81-52e06c540451',
+  metadata: [],
+  name: 'Anais Lakin',
   role: Models::Shared::SigningSignatoryRole::SIGNER,
-  status: Models::Shared::SigningSignatoryStatus::SIGNED,
-  updated_at: DateTime.iso8601('2026-08-13T18:06:48.643Z'),
+  status: Models::Shared::SigningSignatoryStatus::ERROR,
+  updated_at: DateTime.iso8601('2024-05-18T18:00:21.130Z'),
 ), connection_id: '<id>')
 
 unless res.signing_signatory.nil?
@@ -66,7 +67,7 @@ end
 
 ## get_signing_signatory
 
-Retrieve a signatory
+Retrieves a single SigningSignatory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -110,7 +111,7 @@ end
 
 ## list_signing_signatories
 
-List all signatories
+Returns a list of SigningSignatories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -155,7 +156,7 @@ end
 
 ## patch_signing_signatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -173,12 +174,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchSigningSignatoryRequest.new(
   signing_signatory: Models::Shared::SigningSignatory.new(
     created_at: DateTime.iso8601('2022-04-16T19:25:01.966Z'),
-    email: 'Hardy.Wehner@gmail.com',
-    id: 'c90461b3-febf-4d10-a3f0-7a45f65ddc4a',
-    order: 5.0,
+    email: 'anais.lakin@icloud.com',
+    id: 'af436cd4-a6f7-40cb-afab-fa3841e76bbc',
+    metadata: [],
+    name: 'Anais Lakin',
     role: Models::Shared::SigningSignatoryRole::SIGNER,
-    status: Models::Shared::SigningSignatoryStatus::SIGNED,
-    updated_at: DateTime.iso8601('2026-08-13T18:06:48.654Z'),
+    status: Models::Shared::SigningSignatoryStatus::ERROR,
+    updated_at: DateTime.iso8601('2024-05-18T18:00:21.138Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -210,7 +212,7 @@ end
 
 ## remove_signing_signatory
 
-Remove a signatory
+Deletes the SigningSignatory identified by `id`.
 
 ### Example Usage
 
@@ -252,7 +254,7 @@ end
 
 ## update_signing_signatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -270,12 +272,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateSigningSignatoryRequest.new(
   signing_signatory: Models::Shared::SigningSignatory.new(
     created_at: DateTime.iso8601('2022-04-16T19:25:01.966Z'),
-    email: 'Hardy.Wehner@gmail.com',
-    id: 'c90461b3-febf-4d10-a3f0-7a45f65ddc4a',
-    order: 5.0,
+    email: 'anais.lakin@icloud.com',
+    id: 'af436cd4-a6f7-40cb-afab-fa3841e76bbc',
+    metadata: [],
+    name: 'Anais Lakin',
     role: Models::Shared::SigningSignatoryRole::SIGNER,
-    status: Models::Shared::SigningSignatoryStatus::SIGNED,
-    updated_at: DateTime.iso8601('2026-08-13T18:06:48.654Z'),
+    status: Models::Shared::SigningSignatoryStatus::ERROR,
+    updated_at: DateTime.iso8601('2024-05-18T18:00:21.138Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

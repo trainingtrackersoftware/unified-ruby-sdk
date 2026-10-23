@@ -14,7 +14,7 @@
 
 ## create_ticketing_ticket
 
-Create a ticket
+Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
 
 ### Example Usage
 
@@ -30,27 +30,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.ticket.create_ticketing_ticket(ticketing_ticket: Models::Shared::TicketingTicket.new(
-  attachment_ids: [
-    '7bd88e89-248b-4365-a664-2c9d8c875834',
-    'd3f71004-0c34-4c64-a3da-a93cb42ae7b9',
-  ],
-  category_id: 'vilicus',
+  attachment_ids: [],
   created_at: DateTime.iso8601('2021-06-25T19:19:31.279Z'),
   description: 'Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.',
-  due_at: DateTime.iso8601('2025-07-22T12:33:03.832Z'),
-  id: '8e4bd24d-1460-4051-943a-2eca1c4e55f4',
-  priority: 'LOW',
-  source: 'atavus',
-  source_ref: 'aa0ac6fa-a0c8-4d53-a46c-5087a7e65f97',
+  due_at: DateTime.iso8601('2021-07-07T17:39:49.813Z'),
+  id: '2d4295c1-a2d6-4a7d-b055-c2bcade85c1e',
+  metadata: [],
+  priority: 'MEDIUM',
+  source: 'email',
   status: Models::Shared::TicketingTicketStatus::ACTIVE,
   subject: 'Thymbra ratione minus arbitro tricesimus cetera validus.',
   tags: [
-    'tamen',
-    'vitae',
-    'torrens',
+    'vilicus',
   ],
-  updated_at: DateTime.iso8601('2023-05-29T10:09:13.669Z'),
-  url: 'https://yellowish-testimonial.biz',
+  updated_at: DateTime.iso8601('2021-07-03T18:40:40.246Z'),
+  url: 'https://similar-velocity.net/',
 ), connection_id: '<id>')
 
 unless res.ticketing_ticket.nil?
@@ -80,7 +74,7 @@ end
 
 ## get_ticketing_ticket
 
-Retrieve a ticket
+Retrieves a single TicketingTicket by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -124,7 +118,7 @@ end
 
 ## list_ticketing_tickets
 
-List all tickets
+Returns a list of TicketingTickets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -169,7 +163,7 @@ end
 
 ## patch_ticketing_ticket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -186,27 +180,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchTicketingTicketRequest.new(
   ticketing_ticket: Models::Shared::TicketingTicket.new(
-    attachment_ids: [
-      '5e97ec82-7cc3-47fb-b686-bea15836daeb',
-      '9e213d81-c7b7-445b-8b84-fe195e0a76a1',
-    ],
-    category_id: 'vilicus',
+    attachment_ids: [],
     created_at: DateTime.iso8601('2021-06-25T19:19:31.279Z'),
     description: 'Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.',
-    due_at: DateTime.iso8601('2025-07-22T12:33:03.840Z'),
-    id: '304a28df-8ac9-45ca-a304-26c7830a274f',
-    priority: 'LOW',
-    source: 'atavus',
-    source_ref: '2007a2e2-c681-445f-b9b9-9cd7e037b863',
+    due_at: DateTime.iso8601('2021-07-07T17:39:49.813Z'),
+    id: 'abcd6b11-d964-41a9-90fb-28d4b0c959c6',
+    metadata: [],
+    priority: 'MEDIUM',
+    source: 'email',
     status: Models::Shared::TicketingTicketStatus::ACTIVE,
     subject: 'Thymbra ratione minus arbitro tricesimus cetera validus.',
     tags: [
-      'tamen',
-      'vitae',
-      'torrens',
+      'vilicus',
     ],
-    updated_at: DateTime.iso8601('2023-05-29T10:09:13.673Z'),
-    url: 'https://yellowish-testimonial.biz',
+    updated_at: DateTime.iso8601('2021-07-03T18:40:40.246Z'),
+    url: 'https://similar-velocity.net/',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -238,7 +226,7 @@ end
 
 ## remove_ticketing_ticket
 
-Remove a ticket
+Deletes the TicketingTicket identified by `id`.
 
 ### Example Usage
 
@@ -280,7 +268,7 @@ end
 
 ## update_ticketing_ticket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -297,27 +285,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateTicketingTicketRequest.new(
   ticketing_ticket: Models::Shared::TicketingTicket.new(
-    attachment_ids: [
-      '5e97ec82-7cc3-47fb-b686-bea15836daeb',
-      '9e213d81-c7b7-445b-8b84-fe195e0a76a1',
-    ],
-    category_id: 'vilicus',
+    attachment_ids: [],
     created_at: DateTime.iso8601('2021-06-25T19:19:31.279Z'),
     description: 'Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.',
-    due_at: DateTime.iso8601('2025-07-22T12:33:03.840Z'),
-    id: '304a28df-8ac9-45ca-a304-26c7830a274f',
-    priority: 'LOW',
-    source: 'atavus',
-    source_ref: '2007a2e2-c681-445f-b9b9-9cd7e037b863',
+    due_at: DateTime.iso8601('2021-07-07T17:39:49.813Z'),
+    id: 'abcd6b11-d964-41a9-90fb-28d4b0c959c6',
+    metadata: [],
+    priority: 'MEDIUM',
+    source: 'email',
     status: Models::Shared::TicketingTicketStatus::ACTIVE,
     subject: 'Thymbra ratione minus arbitro tricesimus cetera validus.',
     tags: [
-      'tamen',
-      'vitae',
-      'torrens',
+      'vilicus',
     ],
-    updated_at: DateTime.iso8601('2023-05-29T10:09:13.673Z'),
-    url: 'https://yellowish-testimonial.biz',
+    updated_at: DateTime.iso8601('2021-07-03T18:40:40.246Z'),
+    url: 'https://similar-velocity.net/',
   ),
   connection_id: '<id>',
   id: '<id>',

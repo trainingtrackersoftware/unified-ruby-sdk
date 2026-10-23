@@ -14,7 +14,7 @@
 
 ## create_kms_space
 
-Create a space
+Creates a KmsSpace. Provide the unified KmsSpace fields in the request body; they are mapped to the provider's API. Returns the created KmsSpace.
 
 ### Example Usage
 
@@ -32,10 +32,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.space.create_kms_space(kms_space: Models::Shared::KmsSpace.new(
   created_at: DateTime.iso8601('2022-10-31T00:56:54.246Z'),
   description: 'Acer.',
-  id: '0eb4ccb5-ba8c-4008-9750-913c1fab1221',
+  id: '8dafebf6-2212-4a89-8f88-7c1ad4c13510',
   is_active: false,
+  metadata: [],
   name: 'into nor afore',
-  updated_at: DateTime.iso8601('2025-12-06T01:50:42.552Z'),
+  updated_at: DateTime.iso8601('2025-12-31T12:51:23.957Z'),
 ), connection_id: '<id>')
 
 unless res.kms_space.nil?
@@ -65,7 +66,7 @@ end
 
 ## get_kms_space
 
-Retrieve a space
+Retrieves a single KmsSpace by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -109,7 +110,7 @@ end
 
 ## list_kms_spaces
 
-List all spaces
+Returns a list of KmsSpaces. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -154,7 +155,7 @@ end
 
 ## patch_kms_space
 
-Update a space
+Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
 
 ### Example Usage
 
@@ -173,10 +174,11 @@ req = Models::Operations::PatchKmsSpaceRequest.new(
   kms_space: Models::Shared::KmsSpace.new(
     created_at: DateTime.iso8601('2022-10-31T00:56:54.246Z'),
     description: 'Acer.',
-    id: '7b1060ad-1f2c-48c0-a8ac-5a188cbecc68',
+    id: '71f93a2c-391a-41ed-9cb3-fad87e1ac4fb',
     is_active: false,
+    metadata: [],
     name: 'into nor afore',
-    updated_at: DateTime.iso8601('2025-12-06T01:50:42.558Z'),
+    updated_at: DateTime.iso8601('2025-12-31T12:51:23.970Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -208,7 +210,7 @@ end
 
 ## remove_kms_space
 
-Remove a space
+Deletes the KmsSpace identified by `id`.
 
 ### Example Usage
 
@@ -250,7 +252,7 @@ end
 
 ## update_kms_space
 
-Update a space
+Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
 
 ### Example Usage
 
@@ -269,10 +271,11 @@ req = Models::Operations::UpdateKmsSpaceRequest.new(
   kms_space: Models::Shared::KmsSpace.new(
     created_at: DateTime.iso8601('2022-10-31T00:56:54.246Z'),
     description: 'Acer.',
-    id: '7b1060ad-1f2c-48c0-a8ac-5a188cbecc68',
+    id: '71f93a2c-391a-41ed-9cb3-fad87e1ac4fb',
     is_active: false,
+    metadata: [],
     name: 'into nor afore',
-    updated_at: DateTime.iso8601('2025-12-06T01:50:42.558Z'),
+    updated_at: DateTime.iso8601('2025-12-31T12:51:23.970Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

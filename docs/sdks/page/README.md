@@ -14,7 +14,7 @@
 
 ## create_kms_page
 
-Create a page
+Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider's API. Returns the created KmsPage.
 
 ### Example Usage
 
@@ -33,12 +33,12 @@ res = s.page.create_kms_page(kms_page: Models::Shared::KmsPage.new(
   created_at: DateTime.iso8601('2019-05-20T18:06:50.749Z'),
   download_url: 'https://agitated-validity.info',
   has_children: true,
-  id: 'a18dac84-0e7c-485a-8cd5-935e17d21859',
+  id: '3e3f360a-de43-4650-a9bd-911dfb7ed5ac',
   is_active: true,
   metadata: [],
   title: 'even minister extract',
   type: Models::Shared::KmsPageType::HTML,
-  updated_at: DateTime.iso8601('2025-09-13T09:05:24.001Z'),
+  updated_at: DateTime.iso8601('2025-10-10T21:25:24.997Z'),
   web_url: 'https://another-petticoat.info',
 ), connection_id: '<id>')
 
@@ -69,7 +69,7 @@ end
 
 ## get_kms_page
 
-Retrieve a page
+Retrieves a single KmsPage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -113,7 +113,7 @@ end
 
 ## list_kms_pages
 
-List all pages
+Returns a list of KmsPages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -158,7 +158,7 @@ end
 
 ## patch_kms_page
 
-Update a page
+Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
 
 ### Example Usage
 
@@ -178,12 +178,12 @@ req = Models::Operations::PatchKmsPageRequest.new(
     created_at: DateTime.iso8601('2019-05-20T18:06:50.749Z'),
     download_url: 'https://agitated-validity.info',
     has_children: true,
-    id: '3a026114-1c13-424d-ae8f-eb99f474a669',
+    id: 'a3213212-f378-45d5-8801-204ceeee06da',
     is_active: true,
     metadata: [],
     title: 'even minister extract',
     type: Models::Shared::KmsPageType::HTML,
-    updated_at: DateTime.iso8601('2025-09-13T09:05:24.016Z'),
+    updated_at: DateTime.iso8601('2025-10-10T21:25:25.025Z'),
     web_url: 'https://another-petticoat.info',
   ),
   connection_id: '<id>',
@@ -216,7 +216,7 @@ end
 
 ## remove_kms_page
 
-Remove a page
+Deletes the KmsPage identified by `id`.
 
 ### Example Usage
 
@@ -258,7 +258,7 @@ end
 
 ## update_kms_page
 
-Update a page
+Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
 
 ### Example Usage
 
@@ -278,12 +278,12 @@ req = Models::Operations::UpdateKmsPageRequest.new(
     created_at: DateTime.iso8601('2019-05-20T18:06:50.749Z'),
     download_url: 'https://agitated-validity.info',
     has_children: true,
-    id: '3a026114-1c13-424d-ae8f-eb99f474a669',
+    id: 'a3213212-f378-45d5-8801-204ceeee06da',
     is_active: true,
     metadata: [],
     title: 'even minister extract',
     type: Models::Shared::KmsPageType::HTML,
-    updated_at: DateTime.iso8601('2025-09-13T09:05:24.016Z'),
+    updated_at: DateTime.iso8601('2025-10-10T21:25:25.025Z'),
     web_url: 'https://another-petticoat.info',
   ),
   connection_id: '<id>',

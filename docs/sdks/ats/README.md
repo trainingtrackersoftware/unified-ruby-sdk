@@ -15,6 +15,7 @@
 * [create_ats_scorecard](#create_ats_scorecard) - Create a scorecard
 * [get_ats_activity](#get_ats_activity) - Retrieve an activity
 * [get_ats_application](#get_ats_application) - Retrieve an application
+* [get_ats_applicationstatus](#get_ats_applicationstatus) - Retrieve an applicationstatus
 * [get_ats_candidate](#get_ats_candidate) - Retrieve a candidate
 * [get_ats_company](#get_ats_company) - Retrieve a company
 * [get_ats_document](#get_ats_document) - Retrieve a document
@@ -57,7 +58,7 @@
 
 ## create_ats_activity
 
-Create an activity
+Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
 
 ### Example Usage
 
@@ -73,43 +74,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.ats.create_ats_activity(ats_activity: Models::Shared::AtsActivity.new(
-  bcc: [
-    Models::Shared::AtsEmail.new(
-      email: 'Mabel_Schuppe-Schowalter42@hotmail.com',
-      name: 'Rochelle Franey-Bechtelar',
-      type: Models::Shared::AtsEmailType::HOME,
-    ),
-  ],
-  cc: [
-    Models::Shared::AtsEmail.new(
-      email: 'Sasha24@hotmail.com',
-      name: 'Dr. Elbert Kuvalis',
-      type: Models::Shared::AtsEmailType::HOME,
-    ),
-    Models::Shared::AtsEmail.new(
-      email: 'Rosetta_Donnelly@gmail.com',
-      name: 'Ramon Daniel',
-      type: Models::Shared::AtsEmailType::OTHER,
-    ),
-    Models::Shared::AtsEmail.new(
-      email: 'Kathryne_Jast@yahoo.com',
-      name: 'Christian Jacobson',
-      type: Models::Shared::AtsEmailType::OTHER,
-    ),
-    Models::Shared::AtsEmail.new(
-      email: 'Eldred95@yahoo.com',
-      name: 'Edna Bogan',
-      type: Models::Shared::AtsEmailType::OTHER,
-    ),
-  ],
   created_at: DateTime.iso8601('2022-08-07T03:16:43.865Z'),
-  description: 'Amplus.',
-  from: Models::Shared::PropertyAtsActivityFrom.new(
-    email: 'Norwood.Wiza47@yahoo.com',
-    name: 'Toby Grant',
-    type: Models::Shared::PropertyAtsActivityFromType::OTHER,
-  ),
-  id: '48924229-4cbf-4f28-8350-8c58f0543bd2',
+  description: 'Sapiente.',
+  id: '9f29f41f-00b8-468d-a94a-d9976a5bfa51',
   is_private: false,
   metadata: [
     Models::Shared::AtsMetadata.new(
@@ -117,33 +84,16 @@ res = s.ats.create_ats_activity(ats_activity: Models::Shared::AtsActivity.new(
 
       },
       format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: '849da9fb-afb3-4743-a832-027267258898',
+      id: 'a36967ba-5072-47d3-911e-54d55d57e785',
       namespace: 'activity',
-      slug: 'acer',
-      value: 'Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.',
-    ),
-    Models::Shared::AtsMetadata.new(
-      extra_data: {
-
-      },
-      format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: '3f050d99-8ea3-43c9-b460-06fedd00bd1a',
-      namespace: 'activity',
-      slug: 'tremo',
-      value: 'Amita delectus dicta temptatio utroque ex.',
+      slug: 'cimentarius',
+      value: 'Reprehenderit verto.',
     ),
   ],
   sub_type: 'TASK',
-  title: 'Senior Interactions Manager',
-  to: [
-    Models::Shared::AtsEmail.new(
-      email: 'Sister91@hotmail.com',
-      name: 'Eddie Nienow PhD',
-      type: Models::Shared::AtsEmailType::WORK,
-    ),
-  ],
+  title: 'Venio blandior aureus.',
   type: Models::Shared::AtsActivityType::TASK,
-  updated_at: DateTime.iso8601('2026-03-09T04:52:43.038Z'),
+  updated_at: DateTime.iso8601('2026-04-06T00:06:46.980Z'),
 ), connection_id: '<id>')
 
 unless res.ats_activity.nil?
@@ -173,7 +123,7 @@ end
 
 ## create_ats_application
 
-Create an application
+Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
 
 ### Example Usage
 
@@ -190,31 +140,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.ats.create_ats_application(ats_application: Models::Shared::AtsApplication.new(
   answers: [],
-  applied_at: DateTime.iso8601('2025-09-10T08:01:12.569Z'),
+  applied_at: DateTime.iso8601('2025-10-01T01:37:37.720Z'),
   created_at: DateTime.iso8601('2023-10-17T07:19:48.787Z'),
-  hired_at: DateTime.iso8601('2026-04-17T04:40:08.977Z'),
-  id: 'b9551fea-9345-452f-ac1d-9224d16cc214',
+  hired_at: DateTime.iso8601('2026-05-14T11:11:43.330Z'),
+  id: '57c46487-4ef4-4520-b33f-0dc7a4f08009',
   metadata: [
     Models::Shared::AtsMetadata.new(
       extra_data: {
 
       },
       format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: 'a1302a79-0341-40e6-b91a-daeb95584617',
+      id: '3333fd9f-537d-4099-a087-c44c032b92ff',
       namespace: 'application',
-      slug: 'despecto',
-      value: 'Argentum decretum cultellus aveho distinctio verecundia stella depono.',
+      slug: 'stella',
+      value: 'Caput.',
     ),
   ],
   offers: [],
   original_status: 'vomica',
   original_substatus: 'allatus',
-  rejected_at: DateTime.iso8601('2026-09-11T20:00:10.437Z'),
+  rejected_at: DateTime.iso8601('2026-10-13T12:23:01.431Z'),
   rejected_reason: 'Cometes amplitudo videlicet talio.',
   source: 'credo',
   status: Models::Shared::AtsApplicationStatus::REVIEWING,
-  summary: 'Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.',
-  updated_at: DateTime.iso8601('2026-09-18T11:45:52.820Z'),
+  summary: 'Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.',
+  updated_at: DateTime.iso8601('2026-10-20T08:55:05.791Z'),
 ), connection_id: '<id>')
 
 unless res.ats_application.nil?
@@ -244,7 +194,7 @@ end
 
 ## create_ats_candidate
 
-Create a candidate
+Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
 
 ### Example Usage
 
@@ -261,55 +211,62 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.ats.create_ats_candidate(ats_candidate: Models::Shared::AtsCandidate.new(
   address: Models::Shared::PropertyAtsCandidateAddress.new(
-    address1: '802 Roberts Squares',
-    address2: 'Suite 550',
-    city: 'Lake Raeganside',
+    address1: '6790 S 1st Street',
+    city: 'Ferrystad',
     country_code: 'US',
-    postal_code: '44530-0054',
-    region: 'Tennessee',
-    region_code: 'NV',
+    postal_code: '91605',
+    region: 'Idaho',
+    region_code: 'HI',
   ),
-  company_name: 'Ferry, Legros and Feest',
+  company_name: 'Lehner and Sons',
   created_at: DateTime.iso8601('2023-10-16T05:42:56.049Z'),
+  date_of_birth: DateTime.iso8601('1994-07-05T19:48:57.631Z'),
   education: [
     Models::Shared::AtsCandidateEducation.new(
-      degree: 'mouser throughout',
-      end_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
-      field_of_study: 'solutio',
-      institution: 'Heller - Lubowitz',
+      degree: 'emphasize tricky',
+      end_at: DateTime.iso8601('1978-04-14T07:58:36.326Z'),
+      field_of_study: 'curtus',
+      institution: 'Abbott - Batz',
       level: 'phd',
-      start_at: DateTime.iso8601('2001-03-26T08:12:11.510Z'),
+      start_at: DateTime.iso8601('1994-06-09T13:31:39.059Z'),
+    ),
+    Models::Shared::AtsCandidateEducation.new(
+      degree: 'blah cappelletti',
+      end_at: DateTime.iso8601('1989-09-06T03:32:39.901Z'),
+      field_of_study: 'crustulum',
+      institution: 'Herman, Franey and Lebsack',
+      level: 'highschool',
+      start_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
     ),
   ],
   emails: [
     Models::Shared::AtsEmail.new(
-      email: 'Ardith.Beatty@hotmail.com',
-      name: 'Opal Lindgren',
-      type: Models::Shared::AtsEmailType::WORK,
-    ),
-    Models::Shared::AtsEmail.new(
-      email: 'Ardith_Beatty@gmail.com',
-      name: 'Kristi Nader',
-      type: Models::Shared::AtsEmailType::OTHER,
+      email: 'ardith.beatty@outlook.com',
+      name: 'Ardith Beatty',
+      type: Models::Shared::AtsEmailType::HOME,
     ),
   ],
   experiences: [
     Models::Shared::AtsCandidateExperience.new(
-      company_name: 'Donnelly, Buckridge and Steuber',
-      end_at: DateTime.iso8601('1978-06-20T02:53:48.383Z'),
-      start_at: DateTime.iso8601('1980-02-06T17:16:53.798Z'),
-      title: 'Principal Brand Strategist',
+      company_name: 'Kutch, Lind and Marks',
+      end_at: DateTime.iso8601('1974-03-01T17:02:58.824Z'),
+      start_at: DateTime.iso8601('1999-09-21T22:12:51.663Z'),
+      title: 'Lead Security Technician',
+    ),
+    Models::Shared::AtsCandidateExperience.new(
+      company_name: 'Trantow, Sipes and Witting',
+      end_at: DateTime.iso8601('2004-10-14T14:01:00.717Z'),
+      start_at: DateTime.iso8601('1996-12-15T04:12:04.582Z'),
+      title: 'Regional Applications Planner',
     ),
   ],
   first_name: 'Ardith',
-  id: '5783d841-61c1-4e84-89a1-75752d0c34de',
-  image_url: 'https://loremflickr.com/40/3693?lock=5634712403880328',
+  id: '765d8f1d-ef35-4301-8df0-35945f28d492',
+  image_url: 'https://avatars.githubusercontent.com/u/27464445',
   job_ids: [],
   last_name: 'Beatty',
   link_urls: [
-    'https://sizzling-legislature.com',
-    'https://soupy-interchange.net',
-    'https://troubled-substitution.info',
+    'https://www.linkedin.com/in/ardith-beatty',
   ],
   metadata: [
     Models::Shared::AtsMetadata.new(
@@ -317,34 +274,35 @@ res = s.ats.create_ats_candidate(ats_candidate: Models::Shared::AtsCandidate.new
 
       },
       format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: '15415530-c27a-40d4-bac7-71c36dd5d9c8',
+      id: '88f377c0-68ae-4125-8dd1-4a4c59aa2d11',
       namespace: 'custom',
       slug: 'custom_field',
-      value: 'cariosus',
+      value: 'officia',
     ),
   ],
   name: 'Ardith Beatty',
-  origin: Models::Shared::Origin::SOURCED,
+  origin: Models::Shared::Origin::AGENCY,
   skills: [
-    'vita',
-    'cohors',
+    'trepide',
+    'voveo',
   ],
   sources: [
-    'tactus',
+    'vesper',
+    'utroque',
   ],
-  summary: 'Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.',
+  summary: 'Laborum trado carcer delibero patruus totam. Vita cohors cariosus trans denego barba rerum similique. Templum totam suus voluptatem cui depraedor virgo cui comminor commodi.',
   tags: [
-    'aliquid',
+    'voro',
   ],
   telephones: [
     Models::Shared::AtsTelephone.new(
-      telephone: '(779) 296-5994',
-      type: Models::Shared::AtsTelephoneType::HOME,
+      telephone: '(837) 251-3896',
+      type: Models::Shared::AtsTelephoneType::MOBILE,
     ),
   ],
-  title: 'Principal Implementation Analyst',
-  updated_at: DateTime.iso8601('2024-04-23T10:02:23.058Z'),
-  web_url: 'https://expert-lender.name/',
+  title: 'Customer Division Producer',
+  updated_at: DateTime.iso8601('2024-04-29T02:15:35.352Z'),
+  web_url: 'https://fragrant-husband.net/',
 ), connection_id: '<id>')
 
 unless res.ats_candidate.nil?
@@ -374,7 +332,7 @@ end
 
 ## create_ats_company
 
-Create a company
+Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
 
 ### Example Usage
 
@@ -391,11 +349,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.ats.create_ats_company(ats_company: Models::Shared::AtsCompany.new(
   created_at: DateTime.iso8601('2019-04-22T03:50:02.920Z'),
-  id: '8622302e-b838-4e0e-bd70-d376bfaaf6c9',
+  id: '65aa9526-a605-4697-b0ac-3a18d9bad4f9',
   name: 'Gulgowski, Dibbert and Wilderman',
-  phone: '1-602-210-4548',
-  updated_at: DateTime.iso8601('2020-09-25T09:32:07.701Z'),
-  website_url: 'https://somber-substitution.com/',
+  phone: '1-882-360-2010',
+  updated_at: DateTime.iso8601('2020-10-01T13:23:51.891Z'),
+  website_url: 'https://www.gulgowskidibbert.com',
 ), connection_id: '<id>')
 
 unless res.ats_company.nil?
@@ -425,7 +383,7 @@ end
 
 ## create_ats_document
 
-Create a document
+Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
 
 ### Example Usage
 
@@ -443,10 +401,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.ats.create_ats_document(ats_document: Models::Shared::AtsDocument.new(
   created_at: DateTime.iso8601('2021-08-20T08:00:27.437Z'),
   document_url: 'https://vengeful-lashes.biz',
-  filename: 'bah_white_frantically.bz',
-  id: '2339998e-940a-46d9-b8d8-b4c10a2a79e4',
-  type: Models::Shared::AtsDocumentType::RESUME,
-  updated_at: DateTime.iso8601('2022-11-29T16:25:43.702Z'),
+  filename: 'lonzo_schowalter_resume.pdf',
+  id: 'a9b9128f-444c-43cb-bc3d-6803d582a3ca',
+  metadata: [],
+  type: Models::Shared::AtsDocumentType::COVER_LETTER,
+  updated_at: DateTime.iso8601('2022-12-07T16:58:00.725Z'),
 ), connection_id: '<id>')
 
 unless res.ats_document.nil?
@@ -476,7 +435,7 @@ end
 
 ## create_ats_interview
 
-Create an interview
+Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
 
 ### Example Usage
 
@@ -493,13 +452,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.ats.create_ats_interview(ats_interview: Models::Shared::AtsInterview.new(
   created_at: DateTime.iso8601('2021-11-28T03:14:47.774Z'),
-  end_at: DateTime.iso8601('2025-09-25T18:09:46.122Z'),
-  external_event_xref: '1ed48a17-ef1f-4f09-b3b0-d5aa6edacc6c',
-  id: '83325da5-97c4-494e-aab2-fa37c22e4eb6',
+  end_at: DateTime.iso8601('2021-12-08T06:33:19.583Z'),
+  id: 'c3aa3c85-97d5-446d-8a4a-a444074900d9',
   location: '26596 Halle Trafficway',
-  start_at: DateTime.iso8601('2025-05-21T11:01:32.885Z'),
+  meeting_url: 'https://immaculate-foodstuffs.biz',
+  metadata: [],
+  start_at: DateTime.iso8601('2021-12-08T06:03:19.583Z'),
   status: Models::Shared::AtsInterviewStatus::SCHEDULED,
-  updated_at: DateTime.iso8601('2026-02-06T16:01:50.668Z'),
+  updated_at: DateTime.iso8601('2023-09-24T10:22:27.590Z'),
 ), connection_id: '<id>')
 
 unless res.ats_interview.nil?
@@ -529,7 +489,7 @@ end
 
 ## create_ats_job
 
-Create a job
+Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
 
 ### Example Usage
 
@@ -574,14 +534,9 @@ res = s.ats.create_ats_job(ats_job: Models::Shared::AtsJob.new(
   created_at: DateTime.iso8601('2023-06-16T12:51:44.518Z'),
   description: 'Global',
   employment_type: Models::Shared::EmploymentType::FREELANCE,
-  hiring_managers: [
-    Models::Shared::AtsReference.new(
-      id: 'fd9852e3-9035-4f42-beb3-bbf4e4022122',
-      name: 'Eloise Mueller PhD',
-    ),
-  ],
-  id: 'bfe00c1f-0367-472b-b451-951cde5374d2',
-  industry: 'Gorgeous Plastic Computer',
+  hiring_managers: [],
+  id: '5ab983d8-8aed-4220-b98c-20c535ec253c',
+  industry: 'Handcrafted Bamboo Soap',
   language_locale: 'en',
   metadata: [
     Models::Shared::AtsMetadata.new(
@@ -589,10 +544,10 @@ res = s.ats.create_ats_job(ats_job: Models::Shared::AtsJob.new(
         "display_name": 'Custom Property',
       },
       format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: 'f06b5e9f-e154-42d3-b349-1266d7564239',
+      id: '9d473ef5-2192-4185-8751-1629bb7a7f91',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'acceptus',
+      value: 'desolo',
     ),
   ],
   minimum_degree: 'Bachelor',
@@ -602,28 +557,28 @@ res = s.ats.create_ats_job(ats_job: Models::Shared::AtsJob.new(
   openings: [
     Models::Shared::AtsJobOpening.new(
       close_reason: 'Admoveo trado textilis.',
-      opened_at: DateTime.iso8601('2026-05-12T05:40:01.586Z'),
+      opened_at: DateTime.iso8601('2026-06-09T15:52:30.296Z'),
       status: Models::Shared::AtsJobOpeningStatus::OPEN,
     ),
   ],
   postings: [
     Models::Shared::AtsJobPosting.new(
       address: Models::Shared::PropertyAtsJobPostingAddress.new(
-        address1: '8460 Nils Trace',
-        city: 'West Mervinburgh',
+        address1: '75008 Medhurst Road',
+        city: 'Madelynnshire',
         country_code: 'US',
-        postal_code: '14162',
-        region: 'Maine',
-        region_code: 'MO',
+        postal_code: '98754',
+        region: 'Wisconsin',
+        region_code: 'CO',
       ),
-      created_at: DateTime.iso8601('2026-07-05T00:15:10.014Z'),
-      description: 'Deduco cultellus alii terebro depono thesaurus.',
-      id: 'f6101769-deb3-4721-978c-d205638870ee',
+      created_at: DateTime.iso8601('2026-08-03T21:02:48.153Z'),
+      description: 'Beatus eum volutabrum balbus victus ipsa tubineus claustrum.',
+      id: '813890e3-27c5-40cf-babe-cb546dc9606f',
       is_active: false,
-      location: '6788 Oxford Road',
-      name: 'Forward Security Orchestrator',
-      posting_url: 'https://ajar-metabolite.net/',
-      updated_at: DateTime.iso8601('2026-07-30T16:09:23.656Z'),
+      location: '1725 Hessel Keys',
+      name: 'International Identity Manager',
+      posting_url: 'https://obedient-yak.com',
+      updated_at: DateTime.iso8601('2026-08-30T05:27:21.197Z'),
     ),
   ],
   public_job_urls: [
@@ -632,46 +587,52 @@ res = s.ats.create_ats_job(ats_job: Models::Shared::AtsJob.new(
   ],
   questions: [
     Models::Shared::AtsJobQuestion.new(
-      description: 'Trepide provident taceo rem.',
-      id: '289f27c0-311c-41e5-ad9d-cbe2097332c2',
+      description: 'Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.',
+      id: 'edba0fef-6feb-480a-9450-8824ead84cca',
+      max_length: 117.0,
+      min_length: 1.0,
       options: [
-        'censura',
-        'tum',
+        'tactus',
+        'vehemens',
       ],
-      prompt: 'Spectaculum mollitia arcus compello.',
-      question: 'Sodalitas nemo natus attonbitus reprehenderit voro depono constans vehemens ante.',
+      prompt: 'Totam maxime tres tergiversatio.',
+      question: 'Doloribus mollitia.',
       required: true,
       type: Models::Shared::AtsJobQuestionType::TEXT,
     ),
     Models::Shared::AtsJobQuestion.new(
-      id: 'b3a0b53b-38f3-4e8d-84b9-f413a900d79b',
+      id: '776515df-d9a9-4e87-b636-b718fad3bd87',
+      max_length: 453.0,
+      min_length: 1.0,
       options: [
-        'odit',
+        'constans',
       ],
-      prompt: 'Similique absque temeritas celebrer enim.',
-      question: 'Vinitor sodalitas desino sollers viduo volo.',
+      prompt: 'Veritatis sodalitas nemo natus attonbitus reprehenderit voro depono.',
+      question: 'Nam.',
       required: false,
       type: Models::Shared::AtsJobQuestionType::TEXT,
     ),
     Models::Shared::AtsJobQuestion.new(
-      description: 'Abstergo possimus quibusdam deinde amoveo.',
-      id: '568be61d-060e-4d8c-a8ab-8a17cb25edf3',
+      description: 'Taceo rem compello spectaculum mollitia arcus compello.',
+      id: '77e31e82-0a16-42cb-bc9a-25058cef8acb',
+      max_length: 66.0,
+      min_length: 1.0,
       options: [
-        'vallum',
+        'repellendus',
       ],
-      prompt: 'Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.',
-      question: 'Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.',
+      prompt: 'Tum tamisium autus.',
+      question: 'Confero trepide.',
       required: false,
       type: Models::Shared::AtsJobQuestionType::TEXT,
     ),
   ],
   skills: [
-    'amiculum',
-    'crux',
+    'suadeo',
+    'utrimque',
   ],
   status: Models::Shared::AtsJobStatus::ARCHIVED,
-  summary: 'Amicitia vergo hic.',
-  updated_at: DateTime.iso8601('2026-02-03T05:06:46.724Z'),
+  summary: 'Crepusculum adsuesco vere.',
+  updated_at: DateTime.iso8601('2026-03-01T00:16:32.454Z'),
 ), connection_id: '<id>')
 
 unless res.ats_job.nil?
@@ -701,7 +662,7 @@ end
 
 ## create_ats_scorecard
 
-Create a scorecard
+Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
 
 ### Example Usage
 
@@ -719,7 +680,8 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.ats.create_ats_scorecard(ats_scorecard: Models::Shared::AtsScorecard.new(
   comment: 'Maiores enim.',
   created_at: DateTime.iso8601('2022-02-20T17:09:45.498Z'),
-  id: 'e2f4a5a4-e9bc-4405-9cfd-bd6b3f9cbd6c',
+  id: '19b0e4fb-a259-43aa-a392-afb96fe06d04',
+  metadata: [],
   questions: [
     Models::Shared::AtsScorecardQuestion.new(
       description: 'Sulum textor eveniet facere vita.',
@@ -732,7 +694,7 @@ res = s.ats.create_ats_scorecard(ats_scorecard: Models::Shared::AtsScorecard.new
     ),
   ],
   recommendation: Models::Shared::Recommendation::STRONG_YES,
-  updated_at: DateTime.iso8601('2023-05-28T07:14:55.859Z'),
+  updated_at: DateTime.iso8601('2023-06-06T02:49:08.973Z'),
 ), connection_id: '<id>')
 
 unless res.ats_scorecard.nil?
@@ -762,7 +724,7 @@ end
 
 ## get_ats_activity
 
-Retrieve an activity
+Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -806,7 +768,7 @@ end
 
 ## get_ats_application
 
-Retrieve an application
+Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -848,9 +810,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_ats_applicationstatus
+
+Retrieves a single AtsStatus by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getAtsApplicationstatus" method="get" path="/ats/{connection_id}/applicationstatus/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.ats.get_ats_applicationstatus(connection_id: '<id>', id: '<id>')
+
+unless res.ats_status.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Applicationstatus                                                                                                                      |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetAtsApplicationstatusQueryParamFields](../../models/operations/getatsapplicationstatusqueryparamfields.md)>      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetAtsApplicationstatusResponse)](../../models/operations/getatsapplicationstatusresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_ats_candidate
 
-Retrieve a candidate
+Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -894,7 +900,7 @@ end
 
 ## get_ats_company
 
-Retrieve a company
+Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -938,7 +944,7 @@ end
 
 ## get_ats_document
 
-Retrieve a document
+Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -982,7 +988,7 @@ end
 
 ## get_ats_interview
 
-Retrieve an interview
+Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1026,7 +1032,7 @@ end
 
 ## get_ats_job
 
-Retrieve a job
+Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1070,7 +1076,7 @@ end
 
 ## get_ats_scorecard
 
-Retrieve a scorecard
+Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1114,7 +1120,7 @@ end
 
 ## list_ats_activities
 
-List all activities
+Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1159,7 +1165,7 @@ end
 
 ## list_ats_applications
 
-List all applications
+Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1204,7 +1210,7 @@ end
 
 ## list_ats_applicationstatuses
 
-List all applicationstatuses
+Returns a list of AtsStatuses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1249,7 +1255,7 @@ end
 
 ## list_ats_candidates
 
-List all candidates
+Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1294,7 +1300,7 @@ end
 
 ## list_ats_companies
 
-List all companies
+Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1339,7 +1345,7 @@ end
 
 ## list_ats_documents
 
-List all documents
+Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1384,7 +1390,7 @@ end
 
 ## list_ats_interviews
 
-List all interviews
+Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1429,7 +1435,7 @@ end
 
 ## list_ats_jobs
 
-List all jobs
+Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1474,7 +1480,7 @@ end
 
 ## list_ats_scorecards
 
-List all scorecards
+Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1519,7 +1525,7 @@ end
 
 ## patch_ats_activity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -1536,43 +1542,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAtsActivityRequest.new(
   ats_activity: Models::Shared::AtsActivity.new(
-    bcc: [
-      Models::Shared::AtsEmail.new(
-        email: 'Mabel_Schuppe-Schowalter42@hotmail.com',
-        name: 'Rochelle Franey-Bechtelar',
-        type: Models::Shared::AtsEmailType::HOME,
-      ),
-    ],
-    cc: [
-      Models::Shared::AtsEmail.new(
-        email: 'Sasha24@hotmail.com',
-        name: 'Dr. Elbert Kuvalis',
-        type: Models::Shared::AtsEmailType::HOME,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Rosetta_Donnelly@gmail.com',
-        name: 'Ramon Daniel',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Kathryne_Jast@yahoo.com',
-        name: 'Christian Jacobson',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Eldred95@yahoo.com',
-        name: 'Edna Bogan',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-    ],
     created_at: DateTime.iso8601('2022-08-07T03:16:43.865Z'),
-    description: 'Amplus.',
-    from: Models::Shared::PropertyAtsActivityFrom.new(
-      email: 'Norwood.Wiza47@yahoo.com',
-      name: 'Toby Grant',
-      type: Models::Shared::PropertyAtsActivityFromType::OTHER,
-    ),
-    id: 'be0ddd8c-7f16-4700-b101-7d44699e146a',
+    description: 'Sapiente.',
+    id: '621110a0-f5d3-4b25-814f-2739f5b1e852',
     is_private: false,
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -1580,33 +1552,16 @@ req = Models::Operations::PatchAtsActivityRequest.new(
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'de40c31b-a668-433c-b13d-9b31f9d413dc',
+        id: 'ca56b027-1a12-41d4-a917-a681c4322f63',
         namespace: 'activity',
-        slug: 'acer',
-        value: 'Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.',
-      ),
-      Models::Shared::AtsMetadata.new(
-        extra_data: {
-
-        },
-        format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'cc1af4d8-b92d-429c-9987-74a012680ba3',
-        namespace: 'activity',
-        slug: 'tremo',
-        value: 'Amita delectus dicta temptatio utroque ex.',
+        slug: 'cimentarius',
+        value: 'Reprehenderit verto.',
       ),
     ],
     sub_type: 'TASK',
-    title: 'Senior Interactions Manager',
-    to: [
-      Models::Shared::AtsEmail.new(
-        email: 'Sister91@hotmail.com',
-        name: 'Eddie Nienow PhD',
-        type: Models::Shared::AtsEmailType::WORK,
-      ),
-    ],
+    title: 'Venio blandior aureus.',
     type: Models::Shared::AtsActivityType::TASK,
-    updated_at: DateTime.iso8601('2026-03-09T04:52:43.054Z'),
+    updated_at: DateTime.iso8601('2026-04-06T00:06:47.007Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1638,7 +1593,7 @@ end
 
 ## patch_ats_application
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -1656,31 +1611,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAtsApplicationRequest.new(
   ats_application: Models::Shared::AtsApplication.new(
     answers: [],
-    applied_at: DateTime.iso8601('2025-09-10T08:01:12.582Z'),
+    applied_at: DateTime.iso8601('2025-10-01T01:37:37.743Z'),
     created_at: DateTime.iso8601('2023-10-17T07:19:48.787Z'),
-    hired_at: DateTime.iso8601('2026-04-17T04:40:08.994Z'),
-    id: '96e8b30f-3e90-4079-acda-4c4a2a432054',
+    hired_at: DateTime.iso8601('2026-05-14T11:11:43.360Z'),
+    id: 'a14c3793-96f0-4da0-ab90-d018fce93490',
     metadata: [
       Models::Shared::AtsMetadata.new(
         extra_data: {
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'a1302a79-0341-40e6-b91a-daeb95584617',
+        id: '2102778b-bf7f-4765-90b8-dfcf65e38dfa',
         namespace: 'application',
-        slug: 'despecto',
-        value: 'Argentum decretum cultellus aveho distinctio verecundia stella depono.',
+        slug: 'stella',
+        value: 'Caput.',
       ),
     ],
     offers: [],
     original_status: 'vomica',
     original_substatus: 'allatus',
-    rejected_at: DateTime.iso8601('2026-09-11T20:00:10.456Z'),
+    rejected_at: DateTime.iso8601('2026-10-13T12:23:01.466Z'),
     rejected_reason: 'Cometes amplitudo videlicet talio.',
     source: 'credo',
     status: Models::Shared::AtsApplicationStatus::REVIEWING,
-    summary: 'Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.',
-    updated_at: DateTime.iso8601('2026-09-18T11:45:52.839Z'),
+    summary: 'Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.',
+    updated_at: DateTime.iso8601('2026-10-20T08:55:05.826Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1712,7 +1667,7 @@ end
 
 ## patch_ats_candidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -1730,55 +1685,62 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAtsCandidateRequest.new(
   ats_candidate: Models::Shared::AtsCandidate.new(
     address: Models::Shared::PropertyAtsCandidateAddress.new(
-      address1: '802 Roberts Squares',
-      address2: 'Suite 550',
-      city: 'Lake Raeganside',
+      address1: '6790 S 1st Street',
+      city: 'Ferrystad',
       country_code: 'US',
-      postal_code: '44530-0054',
-      region: 'Tennessee',
-      region_code: 'NV',
+      postal_code: '91605',
+      region: 'Idaho',
+      region_code: 'HI',
     ),
-    company_name: 'Ferry, Legros and Feest',
+    company_name: 'Lehner and Sons',
     created_at: DateTime.iso8601('2023-10-16T05:42:56.049Z'),
+    date_of_birth: DateTime.iso8601('1994-07-05T19:48:57.631Z'),
     education: [
       Models::Shared::AtsCandidateEducation.new(
-        degree: 'mouser throughout',
-        end_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
-        field_of_study: 'solutio',
-        institution: 'Heller - Lubowitz',
+        degree: 'emphasize tricky',
+        end_at: DateTime.iso8601('1978-04-14T07:58:36.326Z'),
+        field_of_study: 'curtus',
+        institution: 'Abbott - Batz',
         level: 'phd',
-        start_at: DateTime.iso8601('2001-03-26T08:12:11.510Z'),
+        start_at: DateTime.iso8601('1994-06-09T13:31:39.059Z'),
+      ),
+      Models::Shared::AtsCandidateEducation.new(
+        degree: 'blah cappelletti',
+        end_at: DateTime.iso8601('1989-09-06T03:32:39.901Z'),
+        field_of_study: 'crustulum',
+        institution: 'Herman, Franey and Lebsack',
+        level: 'highschool',
+        start_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
       ),
     ],
     emails: [
       Models::Shared::AtsEmail.new(
-        email: 'Ardith.Beatty@hotmail.com',
-        name: 'Opal Lindgren',
-        type: Models::Shared::AtsEmailType::WORK,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Ardith_Beatty@gmail.com',
-        name: 'Kristi Nader',
-        type: Models::Shared::AtsEmailType::OTHER,
+        email: 'ardith.beatty@outlook.com',
+        name: 'Ardith Beatty',
+        type: Models::Shared::AtsEmailType::HOME,
       ),
     ],
     experiences: [
       Models::Shared::AtsCandidateExperience.new(
-        company_name: 'Donnelly, Buckridge and Steuber',
-        end_at: DateTime.iso8601('1978-06-20T02:53:48.383Z'),
-        start_at: DateTime.iso8601('1980-02-06T17:16:53.798Z'),
-        title: 'Principal Brand Strategist',
+        company_name: 'Kutch, Lind and Marks',
+        end_at: DateTime.iso8601('1974-03-01T17:02:58.824Z'),
+        start_at: DateTime.iso8601('1999-09-21T22:12:51.663Z'),
+        title: 'Lead Security Technician',
+      ),
+      Models::Shared::AtsCandidateExperience.new(
+        company_name: 'Trantow, Sipes and Witting',
+        end_at: DateTime.iso8601('2004-10-14T14:01:00.717Z'),
+        start_at: DateTime.iso8601('1996-12-15T04:12:04.582Z'),
+        title: 'Regional Applications Planner',
       ),
     ],
     first_name: 'Ardith',
-    id: '716db3fd-4ddf-42c5-8e0d-aff56725cdd2',
-    image_url: 'https://loremflickr.com/40/3693?lock=5634712403880328',
+    id: '048dfdaa-43d0-4e45-9000-37cd633a405e',
+    image_url: 'https://avatars.githubusercontent.com/u/27464445',
     job_ids: [],
     last_name: 'Beatty',
     link_urls: [
-      'https://sizzling-legislature.com',
-      'https://soupy-interchange.net',
-      'https://troubled-substitution.info',
+      'https://www.linkedin.com/in/ardith-beatty',
     ],
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -1786,34 +1748,35 @@ req = Models::Operations::PatchAtsCandidateRequest.new(
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: '94b0b9be-6037-4b57-8924-0c1ada734aca',
+        id: '01d15e03-e3cf-4fec-8e4e-15b634f09c61',
         namespace: 'custom',
         slug: 'custom_field',
-        value: 'cariosus',
+        value: 'officia',
       ),
     ],
     name: 'Ardith Beatty',
-    origin: Models::Shared::Origin::SOURCED,
+    origin: Models::Shared::Origin::AGENCY,
     skills: [
-      'vita',
-      'cohors',
+      'trepide',
+      'voveo',
     ],
     sources: [
-      'tactus',
+      'vesper',
+      'utroque',
     ],
-    summary: 'Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.',
+    summary: 'Laborum trado carcer delibero patruus totam. Vita cohors cariosus trans denego barba rerum similique. Templum totam suus voluptatem cui depraedor virgo cui comminor commodi.',
     tags: [
-      'aliquid',
+      'voro',
     ],
     telephones: [
       Models::Shared::AtsTelephone.new(
-        telephone: '(779) 296-5994',
-        type: Models::Shared::AtsTelephoneType::HOME,
+        telephone: '(837) 251-3896',
+        type: Models::Shared::AtsTelephoneType::MOBILE,
       ),
     ],
-    title: 'Principal Implementation Analyst',
-    updated_at: DateTime.iso8601('2024-04-23T10:02:23.064Z'),
-    web_url: 'https://expert-lender.name/',
+    title: 'Customer Division Producer',
+    updated_at: DateTime.iso8601('2024-04-29T02:15:35.360Z'),
+    web_url: 'https://fragrant-husband.net/',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1845,7 +1808,7 @@ end
 
 ## patch_ats_company
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1863,11 +1826,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAtsCompanyRequest.new(
   ats_company: Models::Shared::AtsCompany.new(
     created_at: DateTime.iso8601('2019-04-22T03:50:02.920Z'),
-    id: '1c041a6c-7b33-400e-b667-3f1b9a1dd42b',
+    id: '04306bc4-29e8-4ac5-83fb-6732d84841b9',
     name: 'Gulgowski, Dibbert and Wilderman',
-    phone: '1-602-210-4548',
-    updated_at: DateTime.iso8601('2020-09-25T09:32:07.704Z'),
-    website_url: 'https://somber-substitution.com/',
+    phone: '1-882-360-2010',
+    updated_at: DateTime.iso8601('2020-10-01T13:23:51.895Z'),
+    website_url: 'https://www.gulgowskidibbert.com',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1899,7 +1862,7 @@ end
 
 ## patch_ats_document
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -1918,10 +1881,11 @@ req = Models::Operations::PatchAtsDocumentRequest.new(
   ats_document: Models::Shared::AtsDocument.new(
     created_at: DateTime.iso8601('2021-08-20T08:00:27.437Z'),
     document_url: 'https://vengeful-lashes.biz',
-    filename: 'bah_white_frantically.bz',
-    id: 'bac58552-7cd4-4289-82b8-b121d9932328',
-    type: Models::Shared::AtsDocumentType::RESUME,
-    updated_at: DateTime.iso8601('2022-11-29T16:25:43.703Z'),
+    filename: 'lonzo_schowalter_resume.pdf',
+    id: 'ea0b47db-4b68-4e53-9967-aa0c3af04f0b',
+    metadata: [],
+    type: Models::Shared::AtsDocumentType::COVER_LETTER,
+    updated_at: DateTime.iso8601('2022-12-07T16:58:00.730Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1953,7 +1917,7 @@ end
 
 ## patch_ats_interview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -1971,13 +1935,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAtsInterviewRequest.new(
   ats_interview: Models::Shared::AtsInterview.new(
     created_at: DateTime.iso8601('2021-11-28T03:14:47.774Z'),
-    end_at: DateTime.iso8601('2025-09-25T18:09:46.127Z'),
-    external_event_xref: 'e45670df-2ac9-444e-b73e-fb44e5c6ecb8',
-    id: 'cb688c36-e48c-4a6e-9109-7c2f8ce24def',
+    end_at: DateTime.iso8601('2021-12-08T06:33:19.583Z'),
+    id: '221868ac-d631-4669-a95c-a32a4721be2b',
     location: '26596 Halle Trafficway',
-    start_at: DateTime.iso8601('2025-05-21T11:01:32.889Z'),
+    meeting_url: 'https://immaculate-foodstuffs.biz',
+    metadata: [],
+    start_at: DateTime.iso8601('2021-12-08T06:03:19.583Z'),
     status: Models::Shared::AtsInterviewStatus::SCHEDULED,
-    updated_at: DateTime.iso8601('2026-02-06T16:01:50.673Z'),
+    updated_at: DateTime.iso8601('2023-09-24T10:22:27.597Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2009,7 +1974,7 @@ end
 
 ## patch_ats_job
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -2055,14 +2020,9 @@ req = Models::Operations::PatchAtsJobRequest.new(
     created_at: DateTime.iso8601('2023-06-16T12:51:44.518Z'),
     description: 'Global',
     employment_type: Models::Shared::EmploymentType::FREELANCE,
-    hiring_managers: [
-      Models::Shared::AtsReference.new(
-        id: 'fd9852e3-9035-4f42-beb3-bbf4e4022122',
-        name: 'Eloise Mueller PhD',
-      ),
-    ],
-    id: '1d252d32-7042-4fd0-9e94-32b0d0556bc1',
-    industry: 'Gorgeous Plastic Computer',
+    hiring_managers: [],
+    id: 'abdbabdb-e8ee-46ff-bec9-f76ec78092fc',
+    industry: 'Handcrafted Bamboo Soap',
     language_locale: 'en',
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -2070,10 +2030,10 @@ req = Models::Operations::PatchAtsJobRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: '1ea5c44a-7c54-4427-8992-8e5bb31c3c02',
+        id: 'a124042e-72e1-4570-816b-573467885d01',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'acceptus',
+        value: 'desolo',
       ),
     ],
     minimum_degree: 'Bachelor',
@@ -2083,28 +2043,28 @@ req = Models::Operations::PatchAtsJobRequest.new(
     openings: [
       Models::Shared::AtsJobOpening.new(
         close_reason: 'Admoveo trado textilis.',
-        opened_at: DateTime.iso8601('2026-05-12T05:40:01.623Z'),
+        opened_at: DateTime.iso8601('2026-06-09T15:52:30.357Z'),
         status: Models::Shared::AtsJobOpeningStatus::OPEN,
       ),
     ],
     postings: [
       Models::Shared::AtsJobPosting.new(
         address: Models::Shared::PropertyAtsJobPostingAddress.new(
-          address1: '8460 Nils Trace',
-          city: 'West Mervinburgh',
+          address1: '75008 Medhurst Road',
+          city: 'Madelynnshire',
           country_code: 'US',
-          postal_code: '14162',
-          region: 'Maine',
-          region_code: 'MO',
+          postal_code: '98754',
+          region: 'Wisconsin',
+          region_code: 'CO',
         ),
-        created_at: DateTime.iso8601('2026-07-05T00:15:10.052Z'),
-        description: 'Deduco cultellus alii terebro depono thesaurus.',
-        id: 'f6101769-deb3-4721-978c-d205638870ee',
+        created_at: DateTime.iso8601('2026-08-03T21:02:48.217Z'),
+        description: 'Beatus eum volutabrum balbus victus ipsa tubineus claustrum.',
+        id: 'a2fdd133-2847-42ba-951c-cfdcb7ddcddd',
         is_active: false,
-        location: '6788 Oxford Road',
-        name: 'Forward Security Orchestrator',
-        posting_url: 'https://ajar-metabolite.net/',
-        updated_at: DateTime.iso8601('2026-07-30T16:09:23.695Z'),
+        location: '1725 Hessel Keys',
+        name: 'International Identity Manager',
+        posting_url: 'https://obedient-yak.com',
+        updated_at: DateTime.iso8601('2026-08-30T05:27:21.263Z'),
       ),
     ],
     public_job_urls: [
@@ -2113,46 +2073,52 @@ req = Models::Operations::PatchAtsJobRequest.new(
     ],
     questions: [
       Models::Shared::AtsJobQuestion.new(
-        description: 'Trepide provident taceo rem.',
-        id: '289f27c0-311c-41e5-ad9d-cbe2097332c2',
+        description: 'Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.',
+        id: '95a0c94b-fd09-4fd8-8623-5f0bfb849649',
+        max_length: 117.0,
+        min_length: 1.0,
         options: [
-          'censura',
-          'tum',
+          'tactus',
+          'vehemens',
         ],
-        prompt: 'Spectaculum mollitia arcus compello.',
-        question: 'Sodalitas nemo natus attonbitus reprehenderit voro depono constans vehemens ante.',
+        prompt: 'Totam maxime tres tergiversatio.',
+        question: 'Doloribus mollitia.',
         required: true,
         type: Models::Shared::AtsJobQuestionType::TEXT,
       ),
       Models::Shared::AtsJobQuestion.new(
-        id: 'b3a0b53b-38f3-4e8d-84b9-f413a900d79b',
+        id: '49137bac-9997-4091-a0ce-0abbc7fe610f',
+        max_length: 453.0,
+        min_length: 1.0,
         options: [
-          'odit',
+          'constans',
         ],
-        prompt: 'Similique absque temeritas celebrer enim.',
-        question: 'Vinitor sodalitas desino sollers viduo volo.',
+        prompt: 'Veritatis sodalitas nemo natus attonbitus reprehenderit voro depono.',
+        question: 'Nam.',
         required: false,
         type: Models::Shared::AtsJobQuestionType::TEXT,
       ),
       Models::Shared::AtsJobQuestion.new(
-        description: 'Abstergo possimus quibusdam deinde amoveo.',
-        id: '568be61d-060e-4d8c-a8ab-8a17cb25edf3',
+        description: 'Taceo rem compello spectaculum mollitia arcus compello.',
+        id: 'ad0b5769-3173-4d52-99b4-2c601b00c67d',
+        max_length: 66.0,
+        min_length: 1.0,
         options: [
-          'vallum',
+          'repellendus',
         ],
-        prompt: 'Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.',
-        question: 'Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.',
+        prompt: 'Tum tamisium autus.',
+        question: 'Confero trepide.',
         required: false,
         type: Models::Shared::AtsJobQuestionType::TEXT,
       ),
     ],
     skills: [
-      'amiculum',
-      'crux',
+      'suadeo',
+      'utrimque',
     ],
     status: Models::Shared::AtsJobStatus::ARCHIVED,
-    summary: 'Amicitia vergo hic.',
-    updated_at: DateTime.iso8601('2026-02-03T05:06:46.757Z'),
+    summary: 'Crepusculum adsuesco vere.',
+    updated_at: DateTime.iso8601('2026-03-01T00:16:32.509Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2184,7 +2150,7 @@ end
 
 ## patch_ats_scorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -2203,7 +2169,8 @@ req = Models::Operations::PatchAtsScorecardRequest.new(
   ats_scorecard: Models::Shared::AtsScorecard.new(
     comment: 'Maiores enim.',
     created_at: DateTime.iso8601('2022-02-20T17:09:45.498Z'),
-    id: 'a14934d1-1651-4216-999d-179416ae4bd7',
+    id: 'c5de99f1-c13a-40f6-a55e-2e2e6943034a',
+    metadata: [],
     questions: [
       Models::Shared::AtsScorecardQuestion.new(
         description: 'Sulum textor eveniet facere vita.',
@@ -2216,7 +2183,7 @@ req = Models::Operations::PatchAtsScorecardRequest.new(
       ),
     ],
     recommendation: Models::Shared::Recommendation::STRONG_YES,
-    updated_at: DateTime.iso8601('2023-05-28T07:14:55.862Z'),
+    updated_at: DateTime.iso8601('2023-06-06T02:49:08.978Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2248,7 +2215,7 @@ end
 
 ## remove_ats_activity
 
-Remove an activity
+Deletes the AtsActivity identified by `id`.
 
 ### Example Usage
 
@@ -2290,7 +2257,7 @@ end
 
 ## remove_ats_application
 
-Remove an application
+Deletes the AtsApplication identified by `id`.
 
 ### Example Usage
 
@@ -2332,7 +2299,7 @@ end
 
 ## remove_ats_candidate
 
-Remove a candidate
+Deletes the AtsCandidate identified by `id`.
 
 ### Example Usage
 
@@ -2374,7 +2341,7 @@ end
 
 ## remove_ats_company
 
-Remove a company
+Deletes the AtsCompany identified by `id`.
 
 ### Example Usage
 
@@ -2416,7 +2383,7 @@ end
 
 ## remove_ats_document
 
-Remove a document
+Deletes the AtsDocument identified by `id`.
 
 ### Example Usage
 
@@ -2458,7 +2425,7 @@ end
 
 ## remove_ats_interview
 
-Remove an interview
+Deletes the AtsInterview identified by `id`.
 
 ### Example Usage
 
@@ -2500,7 +2467,7 @@ end
 
 ## remove_ats_job
 
-Remove a job
+Deletes the AtsJob identified by `id`.
 
 ### Example Usage
 
@@ -2542,7 +2509,7 @@ end
 
 ## remove_ats_scorecard
 
-Remove a scorecard
+Deletes the AtsScorecard identified by `id`.
 
 ### Example Usage
 
@@ -2584,7 +2551,7 @@ end
 
 ## update_ats_activity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -2601,43 +2568,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAtsActivityRequest.new(
   ats_activity: Models::Shared::AtsActivity.new(
-    bcc: [
-      Models::Shared::AtsEmail.new(
-        email: 'Mabel_Schuppe-Schowalter42@hotmail.com',
-        name: 'Rochelle Franey-Bechtelar',
-        type: Models::Shared::AtsEmailType::HOME,
-      ),
-    ],
-    cc: [
-      Models::Shared::AtsEmail.new(
-        email: 'Sasha24@hotmail.com',
-        name: 'Dr. Elbert Kuvalis',
-        type: Models::Shared::AtsEmailType::HOME,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Rosetta_Donnelly@gmail.com',
-        name: 'Ramon Daniel',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Kathryne_Jast@yahoo.com',
-        name: 'Christian Jacobson',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Eldred95@yahoo.com',
-        name: 'Edna Bogan',
-        type: Models::Shared::AtsEmailType::OTHER,
-      ),
-    ],
     created_at: DateTime.iso8601('2022-08-07T03:16:43.865Z'),
-    description: 'Amplus.',
-    from: Models::Shared::PropertyAtsActivityFrom.new(
-      email: 'Norwood.Wiza47@yahoo.com',
-      name: 'Toby Grant',
-      type: Models::Shared::PropertyAtsActivityFromType::OTHER,
-    ),
-    id: 'be0ddd8c-7f16-4700-b101-7d44699e146a',
+    description: 'Sapiente.',
+    id: '621110a0-f5d3-4b25-814f-2739f5b1e852',
     is_private: false,
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -2645,33 +2578,16 @@ req = Models::Operations::UpdateAtsActivityRequest.new(
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'de40c31b-a668-433c-b13d-9b31f9d413dc',
+        id: 'ca56b027-1a12-41d4-a917-a681c4322f63',
         namespace: 'activity',
-        slug: 'acer',
-        value: 'Pauci eius cena adamo summisse arguo pectus communis arcesso tergeo.',
-      ),
-      Models::Shared::AtsMetadata.new(
-        extra_data: {
-
-        },
-        format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'cc1af4d8-b92d-429c-9987-74a012680ba3',
-        namespace: 'activity',
-        slug: 'tremo',
-        value: 'Amita delectus dicta temptatio utroque ex.',
+        slug: 'cimentarius',
+        value: 'Reprehenderit verto.',
       ),
     ],
     sub_type: 'TASK',
-    title: 'Senior Interactions Manager',
-    to: [
-      Models::Shared::AtsEmail.new(
-        email: 'Sister91@hotmail.com',
-        name: 'Eddie Nienow PhD',
-        type: Models::Shared::AtsEmailType::WORK,
-      ),
-    ],
+    title: 'Venio blandior aureus.',
     type: Models::Shared::AtsActivityType::TASK,
-    updated_at: DateTime.iso8601('2026-03-09T04:52:43.054Z'),
+    updated_at: DateTime.iso8601('2026-04-06T00:06:47.007Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2703,7 +2619,7 @@ end
 
 ## update_ats_application
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -2721,31 +2637,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAtsApplicationRequest.new(
   ats_application: Models::Shared::AtsApplication.new(
     answers: [],
-    applied_at: DateTime.iso8601('2025-09-10T08:01:12.582Z'),
+    applied_at: DateTime.iso8601('2025-10-01T01:37:37.743Z'),
     created_at: DateTime.iso8601('2023-10-17T07:19:48.787Z'),
-    hired_at: DateTime.iso8601('2026-04-17T04:40:08.994Z'),
-    id: '96e8b30f-3e90-4079-acda-4c4a2a432054',
+    hired_at: DateTime.iso8601('2026-05-14T11:11:43.360Z'),
+    id: 'a14c3793-96f0-4da0-ab90-d018fce93490',
     metadata: [
       Models::Shared::AtsMetadata.new(
         extra_data: {
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'a1302a79-0341-40e6-b91a-daeb95584617',
+        id: '2102778b-bf7f-4765-90b8-dfcf65e38dfa',
         namespace: 'application',
-        slug: 'despecto',
-        value: 'Argentum decretum cultellus aveho distinctio verecundia stella depono.',
+        slug: 'stella',
+        value: 'Caput.',
       ),
     ],
     offers: [],
     original_status: 'vomica',
     original_substatus: 'allatus',
-    rejected_at: DateTime.iso8601('2026-09-11T20:00:10.456Z'),
+    rejected_at: DateTime.iso8601('2026-10-13T12:23:01.466Z'),
     rejected_reason: 'Cometes amplitudo videlicet talio.',
     source: 'credo',
     status: Models::Shared::AtsApplicationStatus::REVIEWING,
-    summary: 'Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.',
-    updated_at: DateTime.iso8601('2026-09-18T11:45:52.839Z'),
+    summary: 'Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.',
+    updated_at: DateTime.iso8601('2026-10-20T08:55:05.826Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2777,7 +2693,7 @@ end
 
 ## update_ats_candidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -2795,55 +2711,62 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAtsCandidateRequest.new(
   ats_candidate: Models::Shared::AtsCandidate.new(
     address: Models::Shared::PropertyAtsCandidateAddress.new(
-      address1: '802 Roberts Squares',
-      address2: 'Suite 550',
-      city: 'Lake Raeganside',
+      address1: '6790 S 1st Street',
+      city: 'Ferrystad',
       country_code: 'US',
-      postal_code: '44530-0054',
-      region: 'Tennessee',
-      region_code: 'NV',
+      postal_code: '91605',
+      region: 'Idaho',
+      region_code: 'HI',
     ),
-    company_name: 'Ferry, Legros and Feest',
+    company_name: 'Lehner and Sons',
     created_at: DateTime.iso8601('2023-10-16T05:42:56.049Z'),
+    date_of_birth: DateTime.iso8601('1994-07-05T19:48:57.631Z'),
     education: [
       Models::Shared::AtsCandidateEducation.new(
-        degree: 'mouser throughout',
-        end_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
-        field_of_study: 'solutio',
-        institution: 'Heller - Lubowitz',
+        degree: 'emphasize tricky',
+        end_at: DateTime.iso8601('1978-04-14T07:58:36.326Z'),
+        field_of_study: 'curtus',
+        institution: 'Abbott - Batz',
         level: 'phd',
-        start_at: DateTime.iso8601('2001-03-26T08:12:11.510Z'),
+        start_at: DateTime.iso8601('1994-06-09T13:31:39.059Z'),
+      ),
+      Models::Shared::AtsCandidateEducation.new(
+        degree: 'blah cappelletti',
+        end_at: DateTime.iso8601('1989-09-06T03:32:39.901Z'),
+        field_of_study: 'crustulum',
+        institution: 'Herman, Franey and Lebsack',
+        level: 'highschool',
+        start_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
       ),
     ],
     emails: [
       Models::Shared::AtsEmail.new(
-        email: 'Ardith.Beatty@hotmail.com',
-        name: 'Opal Lindgren',
-        type: Models::Shared::AtsEmailType::WORK,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Ardith_Beatty@gmail.com',
-        name: 'Kristi Nader',
-        type: Models::Shared::AtsEmailType::OTHER,
+        email: 'ardith.beatty@outlook.com',
+        name: 'Ardith Beatty',
+        type: Models::Shared::AtsEmailType::HOME,
       ),
     ],
     experiences: [
       Models::Shared::AtsCandidateExperience.new(
-        company_name: 'Donnelly, Buckridge and Steuber',
-        end_at: DateTime.iso8601('1978-06-20T02:53:48.383Z'),
-        start_at: DateTime.iso8601('1980-02-06T17:16:53.798Z'),
-        title: 'Principal Brand Strategist',
+        company_name: 'Kutch, Lind and Marks',
+        end_at: DateTime.iso8601('1974-03-01T17:02:58.824Z'),
+        start_at: DateTime.iso8601('1999-09-21T22:12:51.663Z'),
+        title: 'Lead Security Technician',
+      ),
+      Models::Shared::AtsCandidateExperience.new(
+        company_name: 'Trantow, Sipes and Witting',
+        end_at: DateTime.iso8601('2004-10-14T14:01:00.717Z'),
+        start_at: DateTime.iso8601('1996-12-15T04:12:04.582Z'),
+        title: 'Regional Applications Planner',
       ),
     ],
     first_name: 'Ardith',
-    id: '716db3fd-4ddf-42c5-8e0d-aff56725cdd2',
-    image_url: 'https://loremflickr.com/40/3693?lock=5634712403880328',
+    id: '048dfdaa-43d0-4e45-9000-37cd633a405e',
+    image_url: 'https://avatars.githubusercontent.com/u/27464445',
     job_ids: [],
     last_name: 'Beatty',
     link_urls: [
-      'https://sizzling-legislature.com',
-      'https://soupy-interchange.net',
-      'https://troubled-substitution.info',
+      'https://www.linkedin.com/in/ardith-beatty',
     ],
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -2851,34 +2774,35 @@ req = Models::Operations::UpdateAtsCandidateRequest.new(
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: '94b0b9be-6037-4b57-8924-0c1ada734aca',
+        id: '01d15e03-e3cf-4fec-8e4e-15b634f09c61',
         namespace: 'custom',
         slug: 'custom_field',
-        value: 'cariosus',
+        value: 'officia',
       ),
     ],
     name: 'Ardith Beatty',
-    origin: Models::Shared::Origin::SOURCED,
+    origin: Models::Shared::Origin::AGENCY,
     skills: [
-      'vita',
-      'cohors',
+      'trepide',
+      'voveo',
     ],
     sources: [
-      'tactus',
+      'vesper',
+      'utroque',
     ],
-    summary: 'Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.',
+    summary: 'Laborum trado carcer delibero patruus totam. Vita cohors cariosus trans denego barba rerum similique. Templum totam suus voluptatem cui depraedor virgo cui comminor commodi.',
     tags: [
-      'aliquid',
+      'voro',
     ],
     telephones: [
       Models::Shared::AtsTelephone.new(
-        telephone: '(779) 296-5994',
-        type: Models::Shared::AtsTelephoneType::HOME,
+        telephone: '(837) 251-3896',
+        type: Models::Shared::AtsTelephoneType::MOBILE,
       ),
     ],
-    title: 'Principal Implementation Analyst',
-    updated_at: DateTime.iso8601('2024-04-23T10:02:23.064Z'),
-    web_url: 'https://expert-lender.name/',
+    title: 'Customer Division Producer',
+    updated_at: DateTime.iso8601('2024-04-29T02:15:35.360Z'),
+    web_url: 'https://fragrant-husband.net/',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2910,7 +2834,7 @@ end
 
 ## update_ats_company
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -2928,11 +2852,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAtsCompanyRequest.new(
   ats_company: Models::Shared::AtsCompany.new(
     created_at: DateTime.iso8601('2019-04-22T03:50:02.920Z'),
-    id: '1c041a6c-7b33-400e-b667-3f1b9a1dd42b',
+    id: '04306bc4-29e8-4ac5-83fb-6732d84841b9',
     name: 'Gulgowski, Dibbert and Wilderman',
-    phone: '1-602-210-4548',
-    updated_at: DateTime.iso8601('2020-09-25T09:32:07.704Z'),
-    website_url: 'https://somber-substitution.com/',
+    phone: '1-882-360-2010',
+    updated_at: DateTime.iso8601('2020-10-01T13:23:51.895Z'),
+    website_url: 'https://www.gulgowskidibbert.com',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2964,7 +2888,7 @@ end
 
 ## update_ats_document
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -2983,10 +2907,11 @@ req = Models::Operations::UpdateAtsDocumentRequest.new(
   ats_document: Models::Shared::AtsDocument.new(
     created_at: DateTime.iso8601('2021-08-20T08:00:27.437Z'),
     document_url: 'https://vengeful-lashes.biz',
-    filename: 'bah_white_frantically.bz',
-    id: 'bac58552-7cd4-4289-82b8-b121d9932328',
-    type: Models::Shared::AtsDocumentType::RESUME,
-    updated_at: DateTime.iso8601('2022-11-29T16:25:43.703Z'),
+    filename: 'lonzo_schowalter_resume.pdf',
+    id: 'ea0b47db-4b68-4e53-9967-aa0c3af04f0b',
+    metadata: [],
+    type: Models::Shared::AtsDocumentType::COVER_LETTER,
+    updated_at: DateTime.iso8601('2022-12-07T16:58:00.730Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3018,7 +2943,7 @@ end
 
 ## update_ats_interview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -3036,13 +2961,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAtsInterviewRequest.new(
   ats_interview: Models::Shared::AtsInterview.new(
     created_at: DateTime.iso8601('2021-11-28T03:14:47.774Z'),
-    end_at: DateTime.iso8601('2025-09-25T18:09:46.127Z'),
-    external_event_xref: 'e45670df-2ac9-444e-b73e-fb44e5c6ecb8',
-    id: 'cb688c36-e48c-4a6e-9109-7c2f8ce24def',
+    end_at: DateTime.iso8601('2021-12-08T06:33:19.583Z'),
+    id: '221868ac-d631-4669-a95c-a32a4721be2b',
     location: '26596 Halle Trafficway',
-    start_at: DateTime.iso8601('2025-05-21T11:01:32.889Z'),
+    meeting_url: 'https://immaculate-foodstuffs.biz',
+    metadata: [],
+    start_at: DateTime.iso8601('2021-12-08T06:03:19.583Z'),
     status: Models::Shared::AtsInterviewStatus::SCHEDULED,
-    updated_at: DateTime.iso8601('2026-02-06T16:01:50.673Z'),
+    updated_at: DateTime.iso8601('2023-09-24T10:22:27.597Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3074,7 +3000,7 @@ end
 
 ## update_ats_job
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -3120,14 +3046,9 @@ req = Models::Operations::UpdateAtsJobRequest.new(
     created_at: DateTime.iso8601('2023-06-16T12:51:44.518Z'),
     description: 'Global',
     employment_type: Models::Shared::EmploymentType::FREELANCE,
-    hiring_managers: [
-      Models::Shared::AtsReference.new(
-        id: 'fd9852e3-9035-4f42-beb3-bbf4e4022122',
-        name: 'Eloise Mueller PhD',
-      ),
-    ],
-    id: '1d252d32-7042-4fd0-9e94-32b0d0556bc1',
-    industry: 'Gorgeous Plastic Computer',
+    hiring_managers: [],
+    id: 'abdbabdb-e8ee-46ff-bec9-f76ec78092fc',
+    industry: 'Handcrafted Bamboo Soap',
     language_locale: 'en',
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -3135,10 +3056,10 @@ req = Models::Operations::UpdateAtsJobRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: '1ea5c44a-7c54-4427-8992-8e5bb31c3c02',
+        id: 'a124042e-72e1-4570-816b-573467885d01',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'acceptus',
+        value: 'desolo',
       ),
     ],
     minimum_degree: 'Bachelor',
@@ -3148,28 +3069,28 @@ req = Models::Operations::UpdateAtsJobRequest.new(
     openings: [
       Models::Shared::AtsJobOpening.new(
         close_reason: 'Admoveo trado textilis.',
-        opened_at: DateTime.iso8601('2026-05-12T05:40:01.623Z'),
+        opened_at: DateTime.iso8601('2026-06-09T15:52:30.357Z'),
         status: Models::Shared::AtsJobOpeningStatus::OPEN,
       ),
     ],
     postings: [
       Models::Shared::AtsJobPosting.new(
         address: Models::Shared::PropertyAtsJobPostingAddress.new(
-          address1: '8460 Nils Trace',
-          city: 'West Mervinburgh',
+          address1: '75008 Medhurst Road',
+          city: 'Madelynnshire',
           country_code: 'US',
-          postal_code: '14162',
-          region: 'Maine',
-          region_code: 'MO',
+          postal_code: '98754',
+          region: 'Wisconsin',
+          region_code: 'CO',
         ),
-        created_at: DateTime.iso8601('2026-07-05T00:15:10.052Z'),
-        description: 'Deduco cultellus alii terebro depono thesaurus.',
-        id: 'f6101769-deb3-4721-978c-d205638870ee',
+        created_at: DateTime.iso8601('2026-08-03T21:02:48.217Z'),
+        description: 'Beatus eum volutabrum balbus victus ipsa tubineus claustrum.',
+        id: 'a2fdd133-2847-42ba-951c-cfdcb7ddcddd',
         is_active: false,
-        location: '6788 Oxford Road',
-        name: 'Forward Security Orchestrator',
-        posting_url: 'https://ajar-metabolite.net/',
-        updated_at: DateTime.iso8601('2026-07-30T16:09:23.695Z'),
+        location: '1725 Hessel Keys',
+        name: 'International Identity Manager',
+        posting_url: 'https://obedient-yak.com',
+        updated_at: DateTime.iso8601('2026-08-30T05:27:21.263Z'),
       ),
     ],
     public_job_urls: [
@@ -3178,46 +3099,52 @@ req = Models::Operations::UpdateAtsJobRequest.new(
     ],
     questions: [
       Models::Shared::AtsJobQuestion.new(
-        description: 'Trepide provident taceo rem.',
-        id: '289f27c0-311c-41e5-ad9d-cbe2097332c2',
+        description: 'Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.',
+        id: '95a0c94b-fd09-4fd8-8623-5f0bfb849649',
+        max_length: 117.0,
+        min_length: 1.0,
         options: [
-          'censura',
-          'tum',
+          'tactus',
+          'vehemens',
         ],
-        prompt: 'Spectaculum mollitia arcus compello.',
-        question: 'Sodalitas nemo natus attonbitus reprehenderit voro depono constans vehemens ante.',
+        prompt: 'Totam maxime tres tergiversatio.',
+        question: 'Doloribus mollitia.',
         required: true,
         type: Models::Shared::AtsJobQuestionType::TEXT,
       ),
       Models::Shared::AtsJobQuestion.new(
-        id: 'b3a0b53b-38f3-4e8d-84b9-f413a900d79b',
+        id: '49137bac-9997-4091-a0ce-0abbc7fe610f',
+        max_length: 453.0,
+        min_length: 1.0,
         options: [
-          'odit',
+          'constans',
         ],
-        prompt: 'Similique absque temeritas celebrer enim.',
-        question: 'Vinitor sodalitas desino sollers viduo volo.',
+        prompt: 'Veritatis sodalitas nemo natus attonbitus reprehenderit voro depono.',
+        question: 'Nam.',
         required: false,
         type: Models::Shared::AtsJobQuestionType::TEXT,
       ),
       Models::Shared::AtsJobQuestion.new(
-        description: 'Abstergo possimus quibusdam deinde amoveo.',
-        id: '568be61d-060e-4d8c-a8ab-8a17cb25edf3',
+        description: 'Taceo rem compello spectaculum mollitia arcus compello.',
+        id: 'ad0b5769-3173-4d52-99b4-2c601b00c67d',
+        max_length: 66.0,
+        min_length: 1.0,
         options: [
-          'vallum',
+          'repellendus',
         ],
-        prompt: 'Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.',
-        question: 'Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.',
+        prompt: 'Tum tamisium autus.',
+        question: 'Confero trepide.',
         required: false,
         type: Models::Shared::AtsJobQuestionType::TEXT,
       ),
     ],
     skills: [
-      'amiculum',
-      'crux',
+      'suadeo',
+      'utrimque',
     ],
     status: Models::Shared::AtsJobStatus::ARCHIVED,
-    summary: 'Amicitia vergo hic.',
-    updated_at: DateTime.iso8601('2026-02-03T05:06:46.757Z'),
+    summary: 'Crepusculum adsuesco vere.',
+    updated_at: DateTime.iso8601('2026-03-01T00:16:32.509Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3249,7 +3176,7 @@ end
 
 ## update_ats_scorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -3268,7 +3195,8 @@ req = Models::Operations::UpdateAtsScorecardRequest.new(
   ats_scorecard: Models::Shared::AtsScorecard.new(
     comment: 'Maiores enim.',
     created_at: DateTime.iso8601('2022-02-20T17:09:45.498Z'),
-    id: 'a14934d1-1651-4216-999d-179416ae4bd7',
+    id: 'c5de99f1-c13a-40f6-a55e-2e2e6943034a',
+    metadata: [],
     questions: [
       Models::Shared::AtsScorecardQuestion.new(
         description: 'Sulum textor eveniet facere vita.',
@@ -3281,7 +3209,7 @@ req = Models::Operations::UpdateAtsScorecardRequest.new(
       ),
     ],
     recommendation: Models::Shared::Recommendation::STRONG_YES,
-    updated_at: DateTime.iso8601('2023-05-28T07:14:55.862Z'),
+    updated_at: DateTime.iso8601('2023-06-06T02:49:08.978Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -14,7 +14,7 @@
 
 ## create_hris_employee
 
-Create an employee
+Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
 
 ### Example Usage
 
@@ -31,43 +31,44 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.employee.create_hris_employee(hris_employee: Models::Shared::HrisEmployee.new(
   address: Models::Shared::PropertyHrisEmployeeAddress.new(
-    address1: '52008 Lansdowne Road',
-    address2: 'Apt. 101',
-    city: 'Connellyberg',
+    address1: '7431 Hintz Parkway',
+    address2: 'Apt. 520',
+    city: 'Port Rogerview',
     country_code: 'US',
-    postal_code: '18978',
-    region: 'South Dakota',
-    region_code: 'NM',
+    postal_code: '01711',
+    region: 'Missouri',
+    region_code: 'TN',
   ),
-  bio: 'sushi devotee, singer',
+  bio: 'fun advocate  🇱🇻',
   compensation: [
     Models::Shared::HrisCompensation.new(
-      amount: 69_148.0,
-      currency: 'CRC',
-      frequency: Models::Shared::HrisCompensationFrequency::QUARTER,
-      notes: 'Tergeo laborum laboriosam tutis.',
-      type: Models::Shared::HrisCompensationType::EQUITY,
+      amount: 95_000.0,
+      currency: 'USD',
+      frequency: Models::Shared::HrisCompensationFrequency::YEAR,
+      notes: 'Eius.',
+      type: Models::Shared::HrisCompensationType::OTHER,
     ),
   ],
   created_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
-  currency: 'IDR',
+  currency: 'USD',
   date_of_birth: DateTime.iso8601('2001-04-22'),
   emails: [
     Models::Shared::HrisEmail.new(
-      email: 'Zetta_Prohaska67@hotmail.com',
-      type: Models::Shared::HrisEmailType::HOME,
+      email: 'zetta.prohaska@insidious-stump.net',
+      type: Models::Shared::HrisEmailType::WORK,
     ),
   ],
-  employee_number: 'YuOt169CGu',
+  employee_number: 'uCk3qaL1ei',
   employment_status: Models::Shared::EmploymentStatus::ACTIVE,
-  employment_type: Models::Shared::HrisEmployeeEmploymentType::VOLUNTEER,
+  employment_type: Models::Shared::HrisEmployeeEmploymentType::PART_TIME,
   first_name: 'Zetta',
-  gender: Models::Shared::HrisEmployeeGender::INTERSEX,
+  flsa_status: Models::Shared::FlsaStatus::EXEMPT,
+  gender: Models::Shared::HrisEmployeeGender::MALE,
   has_mfa: true,
-  hired_at: DateTime.iso8601('2023-05-12T06:08:21.583Z'),
-  id: '484040b5-6330-41f5-9b49-4d3045c77f39',
-  image_url: 'https://loremflickr.com/3684/2116?lock=4686991638584456',
-  language_locale: 'es',
+  hired_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
+  id: 'f6a1ee89-b952-43f1-8024-95d665d0bdc5',
+  image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg',
+  language_locale: 'in',
   last_name: 'Prohaska',
   locations: [],
   marital_status: Models::Shared::MaritalStatus::MARRIED,
@@ -77,72 +78,55 @@ res = s.employee.create_hris_employee(hris_employee: Models::Shared::HrisEmploye
         "display_name": 'Custom Property',
       },
       format: Models::Shared::HrisMetadataFormat::TEXT,
-      id: 'f3fc17c5-b836-407b-a353-5d1f99341389',
+      id: '554bb5dd-d05f-4c0e-85ca-7aa28f3f1d32',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'tenetur',
+      value: 'tutis',
     ),
   ],
   name: 'Zetta Prohaska',
+  pay_frequency: Models::Shared::PayFrequency::WEEK,
   pronouns: 'she/her',
   relationships: [
     Models::Shared::HrisEmployeerelationship.new(
       emails: [
         Models::Shared::HrisEmail.new(
-          email: 'Deshaun.Sanford24@yahoo.com',
-        ),
-        Models::Shared::HrisEmail.new(
-          email: 'Rebeca.Dibbert11@hotmail.com',
-        ),
-        Models::Shared::HrisEmail.new(
-          email: 'Hester80@gmail.com',
+          email: 'keith.prohaska@gmail.com',
         ),
       ],
-      name: 'Automotive',
-      type: Models::Shared::HrisEmployeerelationshipType::EMERGENCY,
-    ),
-    Models::Shared::HrisEmployeerelationship.new(
-      emails: [
-        Models::Shared::HrisEmail.new(
-          email: 'Benedict_Wisozk83@hotmail.com',
-        ),
-        Models::Shared::HrisEmail.new(
-          email: 'Princess_Rath43@gmail.com',
-        ),
-        Models::Shared::HrisEmail.new(
-          email: 'Elmira92@yahoo.com',
-        ),
-      ],
-      name: 'Music',
-      type: Models::Shared::HrisEmployeerelationshipType::FRIEND,
-    ),
-    Models::Shared::HrisEmployeerelationship.new(
-      emails: [
-        Models::Shared::HrisEmail.new(
-          email: 'Jane30@gmail.com',
-        ),
-      ],
-      name: 'Jewelry',
+      name: 'Keith Prohaska',
       type: Models::Shared::HrisEmployeerelationshipType::SIBLING,
     ),
+    Models::Shared::HrisEmployeerelationship.new(
+      emails: [
+        Models::Shared::HrisEmail.new(
+          email: 'keely.prohaska@icloud.com',
+        ),
+      ],
+      name: 'Keely Prohaska',
+      type: Models::Shared::HrisEmployeerelationshipType::OTHER,
+    ),
   ],
-  salutation: 'Miss',
-  ssn_sin: 'yMRtj0Q3xO',
-  storage_quota_allocated: 3_674_489.0,
-  storage_quota_available: 7_748_057.0,
-  storage_quota_used: 301_727.0,
+  salutation: 'Ms.',
+  ssn_sin: '284-82-8167',
+  storage_quota_allocated: 3_653_713.0,
+  storage_quota_available: 3_017_275.0,
+  storage_quota_used: 367_449.0,
   telephones: [
     Models::Shared::HrisTelephone.new(
-      telephone: '(409) 801-3705',
+      telephone: '(320) 980-1370',
+      type: Models::Shared::HrisTelephoneType::HOME,
+    ),
+    Models::Shared::HrisTelephone.new(
+      telephone: '(694) 840-0166',
       type: Models::Shared::HrisTelephoneType::FAX,
     ),
   ],
-  termination_reason: 'Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.',
-  timeoff_days_total: 12.0,
-  timeoff_days_used: 6.0,
-  timezone: 'Africa/Harare',
-  title: 'Investor Paradigm Liaison',
-  updated_at: DateTime.iso8601('2022-02-20T08:15:24.501Z'),
+  timeoff_days_total: 17.0,
+  timeoff_days_used: 9.0,
+  timezone: 'Europe/Ljubljana',
+  title: 'District Branding Specialist',
+  updated_at: DateTime.iso8601('2020-07-19T09:51:06.439Z'),
 ), connection_id: '<id>')
 
 unless res.hris_employee.nil?
@@ -172,7 +156,7 @@ end
 
 ## get_hris_employee
 
-Retrieve an employee
+Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -216,7 +200,7 @@ end
 
 ## list_hris_employees
 
-List all employees
+Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -261,7 +245,7 @@ end
 
 ## patch_hris_employee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -279,43 +263,44 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchHrisEmployeeRequest.new(
   hris_employee: Models::Shared::HrisEmployee.new(
     address: Models::Shared::PropertyHrisEmployeeAddress.new(
-      address1: '52008 Lansdowne Road',
-      address2: 'Apt. 101',
-      city: 'Connellyberg',
+      address1: '7431 Hintz Parkway',
+      address2: 'Apt. 520',
+      city: 'Port Rogerview',
       country_code: 'US',
-      postal_code: '18978',
-      region: 'South Dakota',
-      region_code: 'NM',
+      postal_code: '01711',
+      region: 'Missouri',
+      region_code: 'TN',
     ),
-    bio: 'sushi devotee, singer',
+    bio: 'fun advocate  🇱🇻',
     compensation: [
       Models::Shared::HrisCompensation.new(
-        amount: 69_148.0,
-        currency: 'CRC',
-        frequency: Models::Shared::HrisCompensationFrequency::QUARTER,
-        notes: 'Tergeo laborum laboriosam tutis.',
-        type: Models::Shared::HrisCompensationType::EQUITY,
+        amount: 95_000.0,
+        currency: 'USD',
+        frequency: Models::Shared::HrisCompensationFrequency::YEAR,
+        notes: 'Eius.',
+        type: Models::Shared::HrisCompensationType::OTHER,
       ),
     ],
     created_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
-    currency: 'IDR',
+    currency: 'USD',
     date_of_birth: DateTime.iso8601('2001-04-22'),
     emails: [
       Models::Shared::HrisEmail.new(
-        email: 'Zetta_Prohaska67@hotmail.com',
-        type: Models::Shared::HrisEmailType::HOME,
+        email: 'zetta.prohaska@insidious-stump.net',
+        type: Models::Shared::HrisEmailType::WORK,
       ),
     ],
-    employee_number: 'YuOt169CGu',
+    employee_number: 'uCk3qaL1ei',
     employment_status: Models::Shared::EmploymentStatus::ACTIVE,
-    employment_type: Models::Shared::HrisEmployeeEmploymentType::VOLUNTEER,
+    employment_type: Models::Shared::HrisEmployeeEmploymentType::PART_TIME,
     first_name: 'Zetta',
-    gender: Models::Shared::HrisEmployeeGender::INTERSEX,
+    flsa_status: Models::Shared::FlsaStatus::EXEMPT,
+    gender: Models::Shared::HrisEmployeeGender::MALE,
     has_mfa: true,
-    hired_at: DateTime.iso8601('2023-05-12T06:08:21.617Z'),
-    id: '9b80cc3c-35a4-4eb2-b269-399711785e39',
-    image_url: 'https://loremflickr.com/3684/2116?lock=4686991638584456',
-    language_locale: 'es',
+    hired_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
+    id: 'cc9adbc7-7e36-4c95-9f64-626deec56178',
+    image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg',
+    language_locale: 'in',
     last_name: 'Prohaska',
     locations: [],
     marital_status: Models::Shared::MaritalStatus::MARRIED,
@@ -325,72 +310,55 @@ req = Models::Operations::PatchHrisEmployeeRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::HrisMetadataFormat::TEXT,
-        id: 'cd351d1b-4490-4933-92ab-fea7c8e86868',
+        id: 'c37f78a9-26c3-499d-8136-291077fe7813',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'tenetur',
+        value: 'tutis',
       ),
     ],
     name: 'Zetta Prohaska',
+    pay_frequency: Models::Shared::PayFrequency::WEEK,
     pronouns: 'she/her',
     relationships: [
       Models::Shared::HrisEmployeerelationship.new(
         emails: [
           Models::Shared::HrisEmail.new(
-            email: 'Deshaun.Sanford24@yahoo.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Rebeca.Dibbert11@hotmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Hester80@gmail.com',
+            email: 'keith.prohaska@gmail.com',
           ),
         ],
-        name: 'Automotive',
-        type: Models::Shared::HrisEmployeerelationshipType::EMERGENCY,
-      ),
-      Models::Shared::HrisEmployeerelationship.new(
-        emails: [
-          Models::Shared::HrisEmail.new(
-            email: 'Benedict_Wisozk83@hotmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Princess_Rath43@gmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Elmira92@yahoo.com',
-          ),
-        ],
-        name: 'Music',
-        type: Models::Shared::HrisEmployeerelationshipType::FRIEND,
-      ),
-      Models::Shared::HrisEmployeerelationship.new(
-        emails: [
-          Models::Shared::HrisEmail.new(
-            email: 'Jane30@gmail.com',
-          ),
-        ],
-        name: 'Jewelry',
+        name: 'Keith Prohaska',
         type: Models::Shared::HrisEmployeerelationshipType::SIBLING,
       ),
+      Models::Shared::HrisEmployeerelationship.new(
+        emails: [
+          Models::Shared::HrisEmail.new(
+            email: 'keely.prohaska@icloud.com',
+          ),
+        ],
+        name: 'Keely Prohaska',
+        type: Models::Shared::HrisEmployeerelationshipType::OTHER,
+      ),
     ],
-    salutation: 'Miss',
-    ssn_sin: 'yMRtj0Q3xO',
-    storage_quota_allocated: 3_674_489.0,
-    storage_quota_available: 7_748_057.0,
-    storage_quota_used: 301_727.0,
+    salutation: 'Ms.',
+    ssn_sin: '284-82-8167',
+    storage_quota_allocated: 3_653_713.0,
+    storage_quota_available: 3_017_275.0,
+    storage_quota_used: 367_449.0,
     telephones: [
       Models::Shared::HrisTelephone.new(
-        telephone: '(409) 801-3705',
+        telephone: '(320) 980-1370',
+        type: Models::Shared::HrisTelephoneType::HOME,
+      ),
+      Models::Shared::HrisTelephone.new(
+        telephone: '(694) 840-0166',
         type: Models::Shared::HrisTelephoneType::FAX,
       ),
     ],
-    termination_reason: 'Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.',
-    timeoff_days_total: 12.0,
-    timeoff_days_used: 6.0,
-    timezone: 'Africa/Harare',
-    title: 'Investor Paradigm Liaison',
-    updated_at: DateTime.iso8601('2022-02-20T08:15:24.523Z'),
+    timeoff_days_total: 17.0,
+    timeoff_days_used: 9.0,
+    timezone: 'Europe/Ljubljana',
+    title: 'District Branding Specialist',
+    updated_at: DateTime.iso8601('2020-07-19T09:51:06.453Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -422,7 +390,7 @@ end
 
 ## remove_hris_employee
 
-Remove an employee
+Deletes the HrisEmployee identified by `id`.
 
 ### Example Usage
 
@@ -464,7 +432,7 @@ end
 
 ## update_hris_employee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -482,43 +450,44 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateHrisEmployeeRequest.new(
   hris_employee: Models::Shared::HrisEmployee.new(
     address: Models::Shared::PropertyHrisEmployeeAddress.new(
-      address1: '52008 Lansdowne Road',
-      address2: 'Apt. 101',
-      city: 'Connellyberg',
+      address1: '7431 Hintz Parkway',
+      address2: 'Apt. 520',
+      city: 'Port Rogerview',
       country_code: 'US',
-      postal_code: '18978',
-      region: 'South Dakota',
-      region_code: 'NM',
+      postal_code: '01711',
+      region: 'Missouri',
+      region_code: 'TN',
     ),
-    bio: 'sushi devotee, singer',
+    bio: 'fun advocate  🇱🇻',
     compensation: [
       Models::Shared::HrisCompensation.new(
-        amount: 69_148.0,
-        currency: 'CRC',
-        frequency: Models::Shared::HrisCompensationFrequency::QUARTER,
-        notes: 'Tergeo laborum laboriosam tutis.',
-        type: Models::Shared::HrisCompensationType::EQUITY,
+        amount: 95_000.0,
+        currency: 'USD',
+        frequency: Models::Shared::HrisCompensationFrequency::YEAR,
+        notes: 'Eius.',
+        type: Models::Shared::HrisCompensationType::OTHER,
       ),
     ],
     created_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
-    currency: 'IDR',
+    currency: 'USD',
     date_of_birth: DateTime.iso8601('2001-04-22'),
     emails: [
       Models::Shared::HrisEmail.new(
-        email: 'Zetta_Prohaska67@hotmail.com',
-        type: Models::Shared::HrisEmailType::HOME,
+        email: 'zetta.prohaska@insidious-stump.net',
+        type: Models::Shared::HrisEmailType::WORK,
       ),
     ],
-    employee_number: 'YuOt169CGu',
+    employee_number: 'uCk3qaL1ei',
     employment_status: Models::Shared::EmploymentStatus::ACTIVE,
-    employment_type: Models::Shared::HrisEmployeeEmploymentType::VOLUNTEER,
+    employment_type: Models::Shared::HrisEmployeeEmploymentType::PART_TIME,
     first_name: 'Zetta',
-    gender: Models::Shared::HrisEmployeeGender::INTERSEX,
+    flsa_status: Models::Shared::FlsaStatus::EXEMPT,
+    gender: Models::Shared::HrisEmployeeGender::MALE,
     has_mfa: true,
-    hired_at: DateTime.iso8601('2023-05-12T06:08:21.617Z'),
-    id: '9b80cc3c-35a4-4eb2-b269-399711785e39',
-    image_url: 'https://loremflickr.com/3684/2116?lock=4686991638584456',
-    language_locale: 'es',
+    hired_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
+    id: 'cc9adbc7-7e36-4c95-9f64-626deec56178',
+    image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg',
+    language_locale: 'in',
     last_name: 'Prohaska',
     locations: [],
     marital_status: Models::Shared::MaritalStatus::MARRIED,
@@ -528,72 +497,55 @@ req = Models::Operations::UpdateHrisEmployeeRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::HrisMetadataFormat::TEXT,
-        id: 'cd351d1b-4490-4933-92ab-fea7c8e86868',
+        id: 'c37f78a9-26c3-499d-8136-291077fe7813',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'tenetur',
+        value: 'tutis',
       ),
     ],
     name: 'Zetta Prohaska',
+    pay_frequency: Models::Shared::PayFrequency::WEEK,
     pronouns: 'she/her',
     relationships: [
       Models::Shared::HrisEmployeerelationship.new(
         emails: [
           Models::Shared::HrisEmail.new(
-            email: 'Deshaun.Sanford24@yahoo.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Rebeca.Dibbert11@hotmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Hester80@gmail.com',
+            email: 'keith.prohaska@gmail.com',
           ),
         ],
-        name: 'Automotive',
-        type: Models::Shared::HrisEmployeerelationshipType::EMERGENCY,
-      ),
-      Models::Shared::HrisEmployeerelationship.new(
-        emails: [
-          Models::Shared::HrisEmail.new(
-            email: 'Benedict_Wisozk83@hotmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Princess_Rath43@gmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Elmira92@yahoo.com',
-          ),
-        ],
-        name: 'Music',
-        type: Models::Shared::HrisEmployeerelationshipType::FRIEND,
-      ),
-      Models::Shared::HrisEmployeerelationship.new(
-        emails: [
-          Models::Shared::HrisEmail.new(
-            email: 'Jane30@gmail.com',
-          ),
-        ],
-        name: 'Jewelry',
+        name: 'Keith Prohaska',
         type: Models::Shared::HrisEmployeerelationshipType::SIBLING,
       ),
+      Models::Shared::HrisEmployeerelationship.new(
+        emails: [
+          Models::Shared::HrisEmail.new(
+            email: 'keely.prohaska@icloud.com',
+          ),
+        ],
+        name: 'Keely Prohaska',
+        type: Models::Shared::HrisEmployeerelationshipType::OTHER,
+      ),
     ],
-    salutation: 'Miss',
-    ssn_sin: 'yMRtj0Q3xO',
-    storage_quota_allocated: 3_674_489.0,
-    storage_quota_available: 7_748_057.0,
-    storage_quota_used: 301_727.0,
+    salutation: 'Ms.',
+    ssn_sin: '284-82-8167',
+    storage_quota_allocated: 3_653_713.0,
+    storage_quota_available: 3_017_275.0,
+    storage_quota_used: 367_449.0,
     telephones: [
       Models::Shared::HrisTelephone.new(
-        telephone: '(409) 801-3705',
+        telephone: '(320) 980-1370',
+        type: Models::Shared::HrisTelephoneType::HOME,
+      ),
+      Models::Shared::HrisTelephone.new(
+        telephone: '(694) 840-0166',
         type: Models::Shared::HrisTelephoneType::FAX,
       ),
     ],
-    termination_reason: 'Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.',
-    timeoff_days_total: 12.0,
-    timeoff_days_used: 6.0,
-    timezone: 'Africa/Harare',
-    title: 'Investor Paradigm Liaison',
-    updated_at: DateTime.iso8601('2022-02-20T08:15:24.523Z'),
+    timeoff_days_total: 17.0,
+    timeoff_days_used: 9.0,
+    timezone: 'Europe/Ljubljana',
+    title: 'District Branding Specialist',
+    updated_at: DateTime.iso8601('2020-07-19T09:51:06.453Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

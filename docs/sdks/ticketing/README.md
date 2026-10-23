@@ -32,7 +32,7 @@
 
 ## create_ticketing_category
 
-Create a category
+Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
 
 ### Example Usage
 
@@ -50,10 +50,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.ticketing.create_ticketing_category(ticketing_category: Models::Shared::TicketingCategory.new(
   created_at: DateTime.iso8601('2019-10-19T22:02:51.067Z'),
   description: 'Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.',
-  id: '593cc150-ad6e-43cc-9cfd-dd992d77f12a',
+  id: 'cbc506da-1ed4-4800-89ef-dc3261f185b5',
   is_active: true,
+  metadata: [],
   name: 'amicitia',
-  updated_at: DateTime.iso8601('2025-12-18T07:59:56.418Z'),
+  updated_at: DateTime.iso8601('2026-01-15T19:01:28.006Z'),
 ), connection_id: '<id>')
 
 unless res.ticketing_category.nil?
@@ -83,7 +84,7 @@ end
 
 ## create_ticketing_customer
 
-Create a customer
+Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider's API. Returns the created TicketingCustomer.
 
 ### Example Usage
 
@@ -102,31 +103,32 @@ res = s.ticketing.create_ticketing_customer(ticketing_customer: Models::Shared::
   created_at: DateTime.iso8601('2021-03-15T12:33:14.875Z'),
   emails: [
     Models::Shared::TicketingEmail.new(
-      email: 'Christian_Windler@gmail.com',
+      email: 'christian.windler@gmail.com',
       type: Models::Shared::TicketingEmailType::HOME,
     ),
   ],
-  id: 'f325e02c-1f2a-47f7-a239-b3cf570768e4',
+  id: '8f14819b-1617-4b36-a403-ebe5db008bf6',
+  metadata: [],
   name: 'Christian Windler',
   tags: [
-    'casso',
-    'peccatus',
+    'quidem',
+    'una',
   ],
   telephones: [
     Models::Shared::TicketingTelephone.new(
-      telephone: '(532) 242-0482',
+      telephone: '(299) 843-2042',
       type: Models::Shared::TicketingTelephoneType::OTHER,
     ),
     Models::Shared::TicketingTelephone.new(
-      telephone: '(826) 283-7431',
+      telephone: '(248) 482-6083',
       type: Models::Shared::TicketingTelephoneType::MOBILE,
     ),
     Models::Shared::TicketingTelephone.new(
-      telephone: '(483) 314-6826',
+      telephone: '(743) 328-3214',
       type: Models::Shared::TicketingTelephoneType::MOBILE,
     ),
   ],
-  updated_at: DateTime.iso8601('2026-05-07T03:29:41.552Z'),
+  updated_at: DateTime.iso8601('2026-06-05T22:22:31.311Z'),
 ), connection_id: '<id>')
 
 unless res.ticketing_customer.nil?
@@ -156,7 +158,7 @@ end
 
 ## create_ticketing_note
 
-Create a note
+Creates a TicketingNote. Provide the unified TicketingNote fields in the request body; they are mapped to the provider's API. Returns the created TicketingNote.
 
 ### Example Usage
 
@@ -174,8 +176,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.ticketing.create_ticketing_note(ticketing_note: Models::Shared::TicketingNote.new(
   created_at: DateTime.iso8601('2019-07-23T15:05:03.241Z'),
   description: 'Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.',
-  id: '0e92d770-f83a-4574-b23e-9d32b18f5607',
-  updated_at: DateTime.iso8601('2024-09-07T19:44:57.659Z'),
+  id: '043cc9b8-4e55-41dd-8b70-230b3d96abb4',
+  metadata: [],
+  updated_at: DateTime.iso8601('2024-09-30T16:51:18.236Z'),
 ), connection_id: '<id>')
 
 unless res.ticketing_note.nil?
@@ -205,7 +208,7 @@ end
 
 ## create_ticketing_ticket
 
-Create a ticket
+Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
 
 ### Example Usage
 
@@ -221,27 +224,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.ticketing.create_ticketing_ticket(ticketing_ticket: Models::Shared::TicketingTicket.new(
-  attachment_ids: [
-    '7bd88e89-248b-4365-a664-2c9d8c875834',
-    'd3f71004-0c34-4c64-a3da-a93cb42ae7b9',
-  ],
-  category_id: 'vilicus',
+  attachment_ids: [],
   created_at: DateTime.iso8601('2021-06-25T19:19:31.279Z'),
   description: 'Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.',
-  due_at: DateTime.iso8601('2025-07-22T12:33:03.832Z'),
-  id: '8e4bd24d-1460-4051-943a-2eca1c4e55f4',
-  priority: 'LOW',
-  source: 'atavus',
-  source_ref: 'aa0ac6fa-a0c8-4d53-a46c-5087a7e65f97',
+  due_at: DateTime.iso8601('2021-07-07T17:39:49.813Z'),
+  id: '2d4295c1-a2d6-4a7d-b055-c2bcade85c1e',
+  metadata: [],
+  priority: 'MEDIUM',
+  source: 'email',
   status: Models::Shared::TicketingTicketStatus::ACTIVE,
   subject: 'Thymbra ratione minus arbitro tricesimus cetera validus.',
   tags: [
-    'tamen',
-    'vitae',
-    'torrens',
+    'vilicus',
   ],
-  updated_at: DateTime.iso8601('2023-05-29T10:09:13.669Z'),
-  url: 'https://yellowish-testimonial.biz',
+  updated_at: DateTime.iso8601('2021-07-03T18:40:40.246Z'),
+  url: 'https://similar-velocity.net/',
 ), connection_id: '<id>')
 
 unless res.ticketing_ticket.nil?
@@ -271,7 +268,7 @@ end
 
 ## get_ticketing_category
 
-Retrieve a category
+Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -315,7 +312,7 @@ end
 
 ## get_ticketing_customer
 
-Retrieve a customer
+Retrieves a single TicketingCustomer by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -359,7 +356,7 @@ end
 
 ## get_ticketing_note
 
-Retrieve a note
+Retrieves a single TicketingNote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -403,7 +400,7 @@ end
 
 ## get_ticketing_ticket
 
-Retrieve a ticket
+Retrieves a single TicketingTicket by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -447,7 +444,7 @@ end
 
 ## list_ticketing_categories
 
-List all categories
+Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -492,7 +489,7 @@ end
 
 ## list_ticketing_customers
 
-List all customers
+Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -537,7 +534,7 @@ end
 
 ## list_ticketing_notes
 
-List all notes
+Returns a list of TicketingNotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -582,7 +579,7 @@ end
 
 ## list_ticketing_tickets
 
-List all tickets
+Returns a list of TicketingTickets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -627,7 +624,7 @@ end
 
 ## patch_ticketing_category
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -646,10 +643,11 @@ req = Models::Operations::PatchTicketingCategoryRequest.new(
   ticketing_category: Models::Shared::TicketingCategory.new(
     created_at: DateTime.iso8601('2019-10-19T22:02:51.067Z'),
     description: 'Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.',
-    id: '357c1928-d52c-4680-b02e-d446abe84175',
+    id: 'c79706b9-cfe2-413f-b6d1-4bc089c15bb2',
     is_active: true,
+    metadata: [],
     name: 'amicitia',
-    updated_at: DateTime.iso8601('2025-12-18T07:59:56.422Z'),
+    updated_at: DateTime.iso8601('2026-01-15T19:01:28.018Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -681,7 +679,7 @@ end
 
 ## patch_ticketing_customer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -701,31 +699,32 @@ req = Models::Operations::PatchTicketingCustomerRequest.new(
     created_at: DateTime.iso8601('2021-03-15T12:33:14.875Z'),
     emails: [
       Models::Shared::TicketingEmail.new(
-        email: 'Christian_Windler@gmail.com',
+        email: 'christian.windler@gmail.com',
         type: Models::Shared::TicketingEmailType::HOME,
       ),
     ],
-    id: '49d6eaf9-a5d4-40ba-a55f-db92d897503c',
+    id: 'da97a462-260f-4918-a35a-2da43dc69624',
+    metadata: [],
     name: 'Christian Windler',
     tags: [
-      'casso',
-      'peccatus',
+      'quidem',
+      'una',
     ],
     telephones: [
       Models::Shared::TicketingTelephone.new(
-        telephone: '(532) 242-0482',
+        telephone: '(299) 843-2042',
         type: Models::Shared::TicketingTelephoneType::OTHER,
       ),
       Models::Shared::TicketingTelephone.new(
-        telephone: '(826) 283-7431',
+        telephone: '(248) 482-6083',
         type: Models::Shared::TicketingTelephoneType::MOBILE,
       ),
       Models::Shared::TicketingTelephone.new(
-        telephone: '(483) 314-6826',
+        telephone: '(743) 328-3214',
         type: Models::Shared::TicketingTelephoneType::MOBILE,
       ),
     ],
-    updated_at: DateTime.iso8601('2026-05-07T03:29:41.559Z'),
+    updated_at: DateTime.iso8601('2026-06-05T22:22:31.327Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -757,7 +756,7 @@ end
 
 ## patch_ticketing_note
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -776,8 +775,9 @@ req = Models::Operations::PatchTicketingNoteRequest.new(
   ticketing_note: Models::Shared::TicketingNote.new(
     created_at: DateTime.iso8601('2019-07-23T15:05:03.241Z'),
     description: 'Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.',
-    id: 'b8a209e8-dd1b-4b3e-8657-17503285f173',
-    updated_at: DateTime.iso8601('2024-09-07T19:44:57.662Z'),
+    id: '73852e90-d047-4a5d-8bfb-ff4cda387854',
+    metadata: [],
+    updated_at: DateTime.iso8601('2024-09-30T16:51:18.248Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -809,7 +809,7 @@ end
 
 ## patch_ticketing_ticket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -826,27 +826,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchTicketingTicketRequest.new(
   ticketing_ticket: Models::Shared::TicketingTicket.new(
-    attachment_ids: [
-      '5e97ec82-7cc3-47fb-b686-bea15836daeb',
-      '9e213d81-c7b7-445b-8b84-fe195e0a76a1',
-    ],
-    category_id: 'vilicus',
+    attachment_ids: [],
     created_at: DateTime.iso8601('2021-06-25T19:19:31.279Z'),
     description: 'Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.',
-    due_at: DateTime.iso8601('2025-07-22T12:33:03.840Z'),
-    id: '304a28df-8ac9-45ca-a304-26c7830a274f',
-    priority: 'LOW',
-    source: 'atavus',
-    source_ref: '2007a2e2-c681-445f-b9b9-9cd7e037b863',
+    due_at: DateTime.iso8601('2021-07-07T17:39:49.813Z'),
+    id: 'abcd6b11-d964-41a9-90fb-28d4b0c959c6',
+    metadata: [],
+    priority: 'MEDIUM',
+    source: 'email',
     status: Models::Shared::TicketingTicketStatus::ACTIVE,
     subject: 'Thymbra ratione minus arbitro tricesimus cetera validus.',
     tags: [
-      'tamen',
-      'vitae',
-      'torrens',
+      'vilicus',
     ],
-    updated_at: DateTime.iso8601('2023-05-29T10:09:13.673Z'),
-    url: 'https://yellowish-testimonial.biz',
+    updated_at: DateTime.iso8601('2021-07-03T18:40:40.246Z'),
+    url: 'https://similar-velocity.net/',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -878,7 +872,7 @@ end
 
 ## remove_ticketing_category
 
-Remove a category
+Deletes the TicketingCategory identified by `id`.
 
 ### Example Usage
 
@@ -920,7 +914,7 @@ end
 
 ## remove_ticketing_customer
 
-Remove a customer
+Deletes the TicketingCustomer identified by `id`.
 
 ### Example Usage
 
@@ -962,7 +956,7 @@ end
 
 ## remove_ticketing_note
 
-Remove a note
+Deletes the TicketingNote identified by `id`.
 
 ### Example Usage
 
@@ -1004,7 +998,7 @@ end
 
 ## remove_ticketing_ticket
 
-Remove a ticket
+Deletes the TicketingTicket identified by `id`.
 
 ### Example Usage
 
@@ -1046,7 +1040,7 @@ end
 
 ## update_ticketing_category
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -1065,10 +1059,11 @@ req = Models::Operations::UpdateTicketingCategoryRequest.new(
   ticketing_category: Models::Shared::TicketingCategory.new(
     created_at: DateTime.iso8601('2019-10-19T22:02:51.067Z'),
     description: 'Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.',
-    id: '357c1928-d52c-4680-b02e-d446abe84175',
+    id: 'c79706b9-cfe2-413f-b6d1-4bc089c15bb2',
     is_active: true,
+    metadata: [],
     name: 'amicitia',
-    updated_at: DateTime.iso8601('2025-12-18T07:59:56.422Z'),
+    updated_at: DateTime.iso8601('2026-01-15T19:01:28.018Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1100,7 +1095,7 @@ end
 
 ## update_ticketing_customer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -1120,31 +1115,32 @@ req = Models::Operations::UpdateTicketingCustomerRequest.new(
     created_at: DateTime.iso8601('2021-03-15T12:33:14.875Z'),
     emails: [
       Models::Shared::TicketingEmail.new(
-        email: 'Christian_Windler@gmail.com',
+        email: 'christian.windler@gmail.com',
         type: Models::Shared::TicketingEmailType::HOME,
       ),
     ],
-    id: '49d6eaf9-a5d4-40ba-a55f-db92d897503c',
+    id: 'da97a462-260f-4918-a35a-2da43dc69624',
+    metadata: [],
     name: 'Christian Windler',
     tags: [
-      'casso',
-      'peccatus',
+      'quidem',
+      'una',
     ],
     telephones: [
       Models::Shared::TicketingTelephone.new(
-        telephone: '(532) 242-0482',
+        telephone: '(299) 843-2042',
         type: Models::Shared::TicketingTelephoneType::OTHER,
       ),
       Models::Shared::TicketingTelephone.new(
-        telephone: '(826) 283-7431',
+        telephone: '(248) 482-6083',
         type: Models::Shared::TicketingTelephoneType::MOBILE,
       ),
       Models::Shared::TicketingTelephone.new(
-        telephone: '(483) 314-6826',
+        telephone: '(743) 328-3214',
         type: Models::Shared::TicketingTelephoneType::MOBILE,
       ),
     ],
-    updated_at: DateTime.iso8601('2026-05-07T03:29:41.559Z'),
+    updated_at: DateTime.iso8601('2026-06-05T22:22:31.327Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1176,7 +1172,7 @@ end
 
 ## update_ticketing_note
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -1195,8 +1191,9 @@ req = Models::Operations::UpdateTicketingNoteRequest.new(
   ticketing_note: Models::Shared::TicketingNote.new(
     created_at: DateTime.iso8601('2019-07-23T15:05:03.241Z'),
     description: 'Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.',
-    id: 'b8a209e8-dd1b-4b3e-8657-17503285f173',
-    updated_at: DateTime.iso8601('2024-09-07T19:44:57.662Z'),
+    id: '73852e90-d047-4a5d-8bfb-ff4cda387854',
+    metadata: [],
+    updated_at: DateTime.iso8601('2024-09-30T16:51:18.248Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1228,7 +1225,7 @@ end
 
 ## update_ticketing_ticket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -1245,27 +1242,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateTicketingTicketRequest.new(
   ticketing_ticket: Models::Shared::TicketingTicket.new(
-    attachment_ids: [
-      '5e97ec82-7cc3-47fb-b686-bea15836daeb',
-      '9e213d81-c7b7-445b-8b84-fe195e0a76a1',
-    ],
-    category_id: 'vilicus',
+    attachment_ids: [],
     created_at: DateTime.iso8601('2021-06-25T19:19:31.279Z'),
     description: 'Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.',
-    due_at: DateTime.iso8601('2025-07-22T12:33:03.840Z'),
-    id: '304a28df-8ac9-45ca-a304-26c7830a274f',
-    priority: 'LOW',
-    source: 'atavus',
-    source_ref: '2007a2e2-c681-445f-b9b9-9cd7e037b863',
+    due_at: DateTime.iso8601('2021-07-07T17:39:49.813Z'),
+    id: 'abcd6b11-d964-41a9-90fb-28d4b0c959c6',
+    metadata: [],
+    priority: 'MEDIUM',
+    source: 'email',
     status: Models::Shared::TicketingTicketStatus::ACTIVE,
     subject: 'Thymbra ratione minus arbitro tricesimus cetera validus.',
     tags: [
-      'tamen',
-      'vitae',
-      'torrens',
+      'vilicus',
     ],
-    updated_at: DateTime.iso8601('2023-05-29T10:09:13.673Z'),
-    url: 'https://yellowish-testimonial.biz',
+    updated_at: DateTime.iso8601('2021-07-03T18:40:40.246Z'),
+    url: 'https://similar-velocity.net/',
   ),
   connection_id: '<id>',
   id: '<id>',

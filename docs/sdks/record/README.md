@@ -14,7 +14,7 @@
 
 ## create_datastore_record
 
-Create a record
+Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
 
 ### Example Usage
 
@@ -34,9 +34,10 @@ res = s.record.create_datastore_record(datastore_record: Models::Shared::Datasto
   fields_: {
 
   },
-  id: '2b4102f3-a37f-4fc2-b332-d4d16eefcc8b',
+  id: '21f1849e-0df5-4b1c-b643-1fb45cc31608',
+  metadata: [],
   row_number: 33.0,
-  updated_at: DateTime.iso8601('2025-02-14T13:29:47.496Z'),
+  updated_at: DateTime.iso8601('2025-03-06T08:42:49.741Z'),
 ), connection_id: '<id>')
 
 unless res.datastore_record.nil?
@@ -66,7 +67,7 @@ end
 
 ## get_datastore_record
 
-Retrieve a record
+Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -110,7 +111,7 @@ end
 
 ## list_datastore_records
 
-List all records
+Returns a list of DatastoreRecords. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -155,7 +156,7 @@ end
 
 ## patch_datastore_record
 
-Update a record
+Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
 
 ### Example Usage
 
@@ -176,9 +177,10 @@ req = Models::Operations::PatchDatastoreRecordRequest.new(
     fields_: {
 
     },
-    id: '9531e1ad-5658-4cbf-b6cd-694a19d4358c',
+    id: 'f51ae1d3-4898-4080-b815-00bd01a98a06',
+    metadata: [],
     row_number: 33.0,
-    updated_at: DateTime.iso8601('2025-02-14T13:29:47.503Z'),
+    updated_at: DateTime.iso8601('2025-03-06T08:42:49.749Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -210,7 +212,7 @@ end
 
 ## remove_datastore_record
 
-Remove a record
+Deletes the DatastoreRecord identified by `id`.
 
 ### Example Usage
 
@@ -252,7 +254,7 @@ end
 
 ## update_datastore_record
 
-Update a record
+Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
 
 ### Example Usage
 
@@ -273,9 +275,10 @@ req = Models::Operations::UpdateDatastoreRecordRequest.new(
     fields_: {
 
     },
-    id: '9531e1ad-5658-4cbf-b6cd-694a19d4358c',
+    id: 'f51ae1d3-4898-4080-b815-00bd01a98a06',
+    metadata: [],
     row_number: 33.0,
-    updated_at: DateTime.iso8601('2025-02-14T13:29:47.503Z'),
+    updated_at: DateTime.iso8601('2025-03-06T08:42:49.749Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

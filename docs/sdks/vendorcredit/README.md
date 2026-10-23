@@ -14,7 +14,7 @@
 
 ## create_accounting_vendorcredit
 
-Create a vendorcredit
+Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
 
 ### Example Usage
 
@@ -31,19 +31,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.vendorcredit.create_accounting_vendorcredit(accounting_vendorcredit: Models::Shared::AccountingVendorcredit.new(
   applications: [],
-  apply_amount: 1.0,
   balance_amount: 0.0,
   created_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
-  currency: 'KGS',
-  due_at: DateTime.iso8601('2023-05-06T20:38:46.775Z'),
-  id: 'b338c9bb-4b83-4be5-9fbc-b6460c8258a0',
+  currency: 'USD',
+  id: 'ded0be57-4069-4996-87ce-79889634bdc3',
   lineitems: [],
   metadata: [],
-  notes: 'Conatus cruciamentum decor avaritia tantum.',
-  posted_at: DateTime.iso8601('2023-09-29T02:22:24.982Z'),
-  status: Models::Shared::AccountingVendorcreditStatus::SUBMITTED,
+  notes: 'Volup conatus cruciamentum decor avaritia.',
+  posted_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
+  status: Models::Shared::AccountingVendorcreditStatus::AUTHORIZED,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2023-11-27T03:40:07.005Z'),
+  updated_at: DateTime.iso8601('2023-10-03T08:01:18.996Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_vendorcredit.nil?
@@ -73,7 +71,7 @@ end
 
 ## get_accounting_vendorcredit
 
-Retrieve a vendorcredit
+Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -117,7 +115,7 @@ end
 
 ## list_accounting_vendorcredits
 
-List all vendorcredits
+Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -162,7 +160,7 @@ end
 
 ## patch_accounting_vendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -180,19 +178,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingVendorcreditRequest.new(
   accounting_vendorcredit: Models::Shared::AccountingVendorcredit.new(
     applications: [],
-    apply_amount: 1.0,
     balance_amount: 0.0,
     created_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
-    currency: 'KGS',
-    due_at: DateTime.iso8601('2023-05-06T20:38:46.775Z'),
-    id: 'f037c8ee-fc51-466e-b5c7-85bfcaec147f',
+    currency: 'USD',
+    id: '8582d371-dfff-4f5c-b05f-342aafd613ef',
     lineitems: [],
     metadata: [],
-    notes: 'Conatus cruciamentum decor avaritia tantum.',
-    posted_at: DateTime.iso8601('2023-09-29T02:22:24.987Z'),
-    status: Models::Shared::AccountingVendorcreditStatus::SUBMITTED,
+    notes: 'Volup conatus cruciamentum decor avaritia.',
+    posted_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
+    status: Models::Shared::AccountingVendorcreditStatus::AUTHORIZED,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2023-11-27T03:40:07.012Z'),
+    updated_at: DateTime.iso8601('2023-10-03T08:01:19.002Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -224,7 +220,7 @@ end
 
 ## remove_accounting_vendorcredit
 
-Remove a vendorcredit
+Deletes the AccountingVendorcredit identified by `id`.
 
 ### Example Usage
 
@@ -266,7 +262,7 @@ end
 
 ## update_accounting_vendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -284,19 +280,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingVendorcreditRequest.new(
   accounting_vendorcredit: Models::Shared::AccountingVendorcredit.new(
     applications: [],
-    apply_amount: 1.0,
     balance_amount: 0.0,
     created_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
-    currency: 'KGS',
-    due_at: DateTime.iso8601('2023-05-06T20:38:46.775Z'),
-    id: 'f037c8ee-fc51-466e-b5c7-85bfcaec147f',
+    currency: 'USD',
+    id: '8582d371-dfff-4f5c-b05f-342aafd613ef',
     lineitems: [],
     metadata: [],
-    notes: 'Conatus cruciamentum decor avaritia tantum.',
-    posted_at: DateTime.iso8601('2023-09-29T02:22:24.987Z'),
-    status: Models::Shared::AccountingVendorcreditStatus::SUBMITTED,
+    notes: 'Volup conatus cruciamentum decor avaritia.',
+    posted_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
+    status: Models::Shared::AccountingVendorcreditStatus::AUTHORIZED,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2023-11-27T03:40:07.012Z'),
+    updated_at: DateTime.iso8601('2023-10-03T08:01:19.002Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

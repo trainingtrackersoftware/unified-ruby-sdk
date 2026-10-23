@@ -17,11 +17,11 @@ module UnifiedRubySDK
         field :application_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('application_id') } }
 
         field :candidate_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('candidate_id') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :end_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('end_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # the ID of the event in a calendar
         field :external_event_xref, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('external_event_xref') } }
 
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
@@ -29,19 +29,23 @@ module UnifiedRubySDK
         field :job_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('job_id') } }
 
         field :location, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('location') } }
+        # the URL of the virtual/video meeting (eg. Zoom, Google Meet, Microsoft Teams)
+        field :meeting_url, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('meeting_url') } }
+
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::AtsMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
 
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :start_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('start_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :status, Crystalline::Nilable.new(Models::Shared::AtsInterviewStatus), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('status'), 'decoder': Utils.enum_from_string(Models::Shared::AtsInterviewStatus, true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :user_ids, Crystalline::Nilable.new(Crystalline::Array.new(::String)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('user_ids') } }
 
-        sig { params(application_id: T.nilable(::String), candidate_id: T.nilable(::String), created_at: T.nilable(::DateTime), end_at: T.nilable(::DateTime), external_event_xref: T.nilable(::String), id: T.nilable(::String), job_id: T.nilable(::String), location: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), start_at: T.nilable(::DateTime), status: T.nilable(Models::Shared::AtsInterviewStatus), updated_at: T.nilable(::DateTime), user_ids: T.nilable(T::Array[::String])).void }
-        def initialize(application_id: nil, candidate_id: nil, created_at: nil, end_at: nil, external_event_xref: nil, id: nil, job_id: nil, location: nil, raw: nil, start_at: nil, status: nil, updated_at: nil, user_ids: nil)
+        sig { params(application_id: T.nilable(::String), candidate_id: T.nilable(::String), created_at: T.nilable(::DateTime), end_at: T.nilable(::DateTime), external_event_xref: T.nilable(::String), id: T.nilable(::String), job_id: T.nilable(::String), location: T.nilable(::String), meeting_url: T.nilable(::String), metadata: T.nilable(T::Array[Models::Shared::AtsMetadata]), raw: T.nilable(T::Hash[Symbol, ::Object]), start_at: T.nilable(::DateTime), status: T.nilable(Models::Shared::AtsInterviewStatus), updated_at: T.nilable(::DateTime), user_ids: T.nilable(T::Array[::String])).void }
+        def initialize(application_id: nil, candidate_id: nil, created_at: nil, end_at: nil, external_event_xref: nil, id: nil, job_id: nil, location: nil, meeting_url: nil, metadata: nil, raw: nil, start_at: nil, status: nil, updated_at: nil, user_ids: nil)
           @application_id = application_id
           @candidate_id = candidate_id
           @created_at = created_at
@@ -50,6 +54,8 @@ module UnifiedRubySDK
           @id = id
           @job_id = job_id
           @location = location
+          @meeting_url = meeting_url
+          @metadata = metadata
           @raw = raw
           @start_at = start_at
           @status = status
@@ -68,6 +74,8 @@ module UnifiedRubySDK
           return false unless @id == other.id
           return false unless @job_id == other.job_id
           return false unless @location == other.location
+          return false unless @meeting_url == other.meeting_url
+          return false unless @metadata == other.metadata
           return false unless @raw == other.raw
           return false unless @start_at == other.start_at
           return false unless @status == other.status

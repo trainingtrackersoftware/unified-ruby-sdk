@@ -21,7 +21,7 @@
 
 ## create_performance_feedback
 
-Create a feedback
+Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
 
 ### Example Usage
 
@@ -38,15 +38,16 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.performance.create_performance_feedback(performance_feedback: Models::Shared::PerformanceFeedback.new(
   created_at: DateTime.iso8601('2023-04-11T16:21:53.862Z'),
-  id: '5edc2b1e-0782-468b-afd6-0a47267c3cde',
+  id: 'b903536e-0573-420e-90c1-8f7d22ec584e',
   is_visible: true,
   message: 'Tabernus corpus voluptate aestus.',
+  metadata: [],
   tags: [
     'well-to-do',
     'hexagon',
   ],
   type: Models::Shared::PerformanceFeedbackType::PRAISE,
-  updated_at: DateTime.iso8601('2025-08-14T17:08:29.867Z'),
+  updated_at: DateTime.iso8601('2025-09-05T10:54:01.678Z'),
   user_id: '<id>',
 ), connection_id: '<id>')
 
@@ -77,7 +78,7 @@ end
 
 ## create_performance_goal
 
-Create a goal
+Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
 
 ### Example Usage
 
@@ -95,45 +96,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.performance.create_performance_goal(performance_goal: Models::Shared::PerformanceGoal.new(
   created_at: DateTime.iso8601('2020-01-09T20:43:07.380Z'),
   description: 'Suscipit suspendo vulnero vel facere valeo vallum degero.',
-  due_at: DateTime.iso8601('2026-06-30T19:17:51.185Z'),
-  id: 'f2e9b4a7-98e6-4e89-be45-1b224227f875',
+  due_at: DateTime.iso8601('2026-07-31T16:29:09.322Z'),
+  id: '3df190f1-58c1-40a7-88d2-820ca3dc7775',
+  metadata: [],
   milestones: [
     Models::Shared::PerformanceGoalMilestone.new(
       current_value: 10.0,
-      due_at: DateTime.iso8601('2026-05-06T14:13:47.018Z'),
-      id: 'ec90d3e3-23bd-4d9f-a5d7-e388979f90d9',
+      due_at: DateTime.iso8601('2026-06-05T18:06:26.026Z'),
+      id: 'c1d49a6d-54ca-4de6-a2bd-ab6c45520442',
       is_completed: true,
-      name: 'Front-line asynchronous hub',
+      name: 'Team-oriented secondary matrix',
       target_value: 32.0,
       unit: '%',
       weight: 7.0,
     ),
     Models::Shared::PerformanceGoalMilestone.new(
       current_value: 0.0,
-      due_at: DateTime.iso8601('2026-07-10T09:19:33.480Z'),
-      id: '09e04b09-7197-4fc4-9c32-077230408c26',
+      due_at: DateTime.iso8601('2026-08-10T09:31:10.060Z'),
+      id: 'e55af9d2-82c4-4dbd-b18b-08e06bd67c05',
       is_completed: true,
-      name: 'Organized encompassing archive',
+      name: 'Exclusive client-server conglomeration',
       target_value: 32.0,
       weight: 5.0,
     ),
     Models::Shared::PerformanceGoalMilestone.new(
       current_value: 31.0,
-      description: 'Nobis tremo debitis.',
-      due_at: DateTime.iso8601('2026-09-10T13:52:21.274Z'),
-      id: 'bbe63683-c1d0-4932-89ac-ef81e73ae6f1',
+      description: 'Hic explicabo odit.',
+      due_at: DateTime.iso8601('2026-10-12T09:33:53.660Z'),
+      id: '2df5a8c2-3ce6-4719-accf-92f5b2ed074f',
       is_completed: true,
-      name: 'Devolved directional middleware',
+      name: 'Synchronised immersive success',
       target_value: 32.0,
       weight: 5.0,
     ),
   ],
   name: 'Proactive national protocol',
   progress: 3.0,
-  start_at: DateTime.iso8601('2025-06-28T21:57:58.453Z'),
+  start_at: DateTime.iso8601('2025-07-25T00:07:13.959Z'),
   status: Models::Shared::PerformanceGoalStatus::CLOSED,
   type: Models::Shared::PerformanceGoalSchemasType::COMPANY,
-  updated_at: DateTime.iso8601('2022-09-01T05:37:05.194Z'),
+  updated_at: DateTime.iso8601('2022-09-13T20:17:59.317Z'),
   weight: 5.0,
 ), connection_id: '<id>')
 
@@ -164,7 +166,7 @@ end
 
 ## get_performance_cycle
 
-Retrieve a cycle
+Retrieves a single PerformanceCycle by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -208,7 +210,7 @@ end
 
 ## get_performance_feedback
 
-Retrieve a feedback
+Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -252,7 +254,7 @@ end
 
 ## get_performance_goal
 
-Retrieve a goal
+Retrieves a single PerformanceGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -296,7 +298,7 @@ end
 
 ## get_performance_review
 
-Retrieve a review
+Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -340,7 +342,7 @@ end
 
 ## list_performance_cycles
 
-List all cycles
+Returns a list of PerformanceCycles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -385,7 +387,7 @@ end
 
 ## list_performance_feedbacks
 
-List all feedbacks
+Returns a list of PerformanceFeedbacks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -430,7 +432,7 @@ end
 
 ## list_performance_goals
 
-List all goals
+Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -475,7 +477,7 @@ end
 
 ## list_performance_reviews
 
-List all reviews
+Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -520,7 +522,7 @@ end
 
 ## patch_performance_goal
 
-Update a goal
+Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
 
 ### Example Usage
 
@@ -539,45 +541,46 @@ req = Models::Operations::PatchPerformanceGoalRequest.new(
   performance_goal: Models::Shared::PerformanceGoal.new(
     created_at: DateTime.iso8601('2020-01-09T20:43:07.380Z'),
     description: 'Suscipit suspendo vulnero vel facere valeo vallum degero.',
-    due_at: DateTime.iso8601('2026-06-30T19:17:51.203Z'),
-    id: 'c30254a0-f3da-4a1d-b976-db4817f6bbe0',
+    due_at: DateTime.iso8601('2026-07-31T16:29:09.343Z'),
+    id: '5b9a3d76-1677-4f34-8153-013b30b7223f',
+    metadata: [],
     milestones: [
       Models::Shared::PerformanceGoalMilestone.new(
         current_value: 10.0,
-        due_at: DateTime.iso8601('2026-05-06T14:13:47.036Z'),
-        id: 'ec90d3e3-23bd-4d9f-a5d7-e388979f90d9',
+        due_at: DateTime.iso8601('2026-06-05T18:06:26.047Z'),
+        id: 'ceec02a3-a2ce-442e-803f-902dfd7f118d',
         is_completed: true,
-        name: 'Front-line asynchronous hub',
+        name: 'Team-oriented secondary matrix',
         target_value: 32.0,
         unit: '%',
         weight: 7.0,
       ),
       Models::Shared::PerformanceGoalMilestone.new(
         current_value: 0.0,
-        due_at: DateTime.iso8601('2026-07-10T09:19:33.500Z'),
-        id: '09e04b09-7197-4fc4-9c32-077230408c26',
+        due_at: DateTime.iso8601('2026-08-10T09:31:10.082Z'),
+        id: 'b897bc9b-1fd4-4fcf-a6c4-b0123c36d653',
         is_completed: true,
-        name: 'Organized encompassing archive',
+        name: 'Exclusive client-server conglomeration',
         target_value: 32.0,
         weight: 5.0,
       ),
       Models::Shared::PerformanceGoalMilestone.new(
         current_value: 31.0,
-        description: 'Nobis tremo debitis.',
-        due_at: DateTime.iso8601('2026-09-10T13:52:21.294Z'),
-        id: 'bbe63683-c1d0-4932-89ac-ef81e73ae6f1',
+        description: 'Hic explicabo odit.',
+        due_at: DateTime.iso8601('2026-10-12T09:33:53.682Z'),
+        id: '0b8b5044-0428-4b30-bbac-1f755074fbca',
         is_completed: true,
-        name: 'Devolved directional middleware',
+        name: 'Synchronised immersive success',
         target_value: 32.0,
         weight: 5.0,
       ),
     ],
     name: 'Proactive national protocol',
     progress: 3.0,
-    start_at: DateTime.iso8601('2025-06-28T21:57:58.469Z'),
+    start_at: DateTime.iso8601('2025-07-25T00:07:13.977Z'),
     status: Models::Shared::PerformanceGoalStatus::CLOSED,
     type: Models::Shared::PerformanceGoalSchemasType::COMPANY,
-    updated_at: DateTime.iso8601('2022-09-01T05:37:05.202Z'),
+    updated_at: DateTime.iso8601('2022-09-13T20:17:59.326Z'),
     weight: 5.0,
   ),
   connection_id: '<id>',
@@ -610,7 +613,7 @@ end
 
 ## remove_performance_goal
 
-Remove a goal
+Deletes the PerformanceGoal identified by `id`.
 
 ### Example Usage
 
@@ -652,7 +655,7 @@ end
 
 ## update_performance_goal
 
-Update a goal
+Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
 
 ### Example Usage
 
@@ -671,45 +674,46 @@ req = Models::Operations::UpdatePerformanceGoalRequest.new(
   performance_goal: Models::Shared::PerformanceGoal.new(
     created_at: DateTime.iso8601('2020-01-09T20:43:07.380Z'),
     description: 'Suscipit suspendo vulnero vel facere valeo vallum degero.',
-    due_at: DateTime.iso8601('2026-06-30T19:17:51.203Z'),
-    id: 'c30254a0-f3da-4a1d-b976-db4817f6bbe0',
+    due_at: DateTime.iso8601('2026-07-31T16:29:09.343Z'),
+    id: '5b9a3d76-1677-4f34-8153-013b30b7223f',
+    metadata: [],
     milestones: [
       Models::Shared::PerformanceGoalMilestone.new(
         current_value: 10.0,
-        due_at: DateTime.iso8601('2026-05-06T14:13:47.036Z'),
-        id: 'ec90d3e3-23bd-4d9f-a5d7-e388979f90d9',
+        due_at: DateTime.iso8601('2026-06-05T18:06:26.047Z'),
+        id: 'ceec02a3-a2ce-442e-803f-902dfd7f118d',
         is_completed: true,
-        name: 'Front-line asynchronous hub',
+        name: 'Team-oriented secondary matrix',
         target_value: 32.0,
         unit: '%',
         weight: 7.0,
       ),
       Models::Shared::PerformanceGoalMilestone.new(
         current_value: 0.0,
-        due_at: DateTime.iso8601('2026-07-10T09:19:33.500Z'),
-        id: '09e04b09-7197-4fc4-9c32-077230408c26',
+        due_at: DateTime.iso8601('2026-08-10T09:31:10.082Z'),
+        id: 'b897bc9b-1fd4-4fcf-a6c4-b0123c36d653',
         is_completed: true,
-        name: 'Organized encompassing archive',
+        name: 'Exclusive client-server conglomeration',
         target_value: 32.0,
         weight: 5.0,
       ),
       Models::Shared::PerformanceGoalMilestone.new(
         current_value: 31.0,
-        description: 'Nobis tremo debitis.',
-        due_at: DateTime.iso8601('2026-09-10T13:52:21.294Z'),
-        id: 'bbe63683-c1d0-4932-89ac-ef81e73ae6f1',
+        description: 'Hic explicabo odit.',
+        due_at: DateTime.iso8601('2026-10-12T09:33:53.682Z'),
+        id: '0b8b5044-0428-4b30-bbac-1f755074fbca',
         is_completed: true,
-        name: 'Devolved directional middleware',
+        name: 'Synchronised immersive success',
         target_value: 32.0,
         weight: 5.0,
       ),
     ],
     name: 'Proactive national protocol',
     progress: 3.0,
-    start_at: DateTime.iso8601('2025-06-28T21:57:58.469Z'),
+    start_at: DateTime.iso8601('2025-07-25T00:07:13.977Z'),
     status: Models::Shared::PerformanceGoalStatus::CLOSED,
     type: Models::Shared::PerformanceGoalSchemasType::COMPANY,
-    updated_at: DateTime.iso8601('2022-09-01T05:37:05.202Z'),
+    updated_at: DateTime.iso8601('2022-09-13T20:17:59.326Z'),
     weight: 5.0,
   ),
   connection_id: '<id>',

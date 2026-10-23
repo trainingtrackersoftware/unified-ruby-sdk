@@ -14,7 +14,7 @@
 
 ## create_storage_file
 
-Create a file
+Creates a StorageFile. Provide the unified StorageFile fields in the request body; they are mapped to the provider's API. Returns the created StorageFile.
 
 ### Example Usage
 
@@ -31,33 +31,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.storage.create_storage_file(storage_file: Models::Shared::StorageFile.new(
   created_at: DateTime.iso8601('2021-09-12T16:48:23.774Z'),
-  data: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+',
-  description: 'Crastinus cupiditate debilito cimentarius virgo.',
-  download_url: 'https://stingy-casement.name/',
-  hash: 'fe6a659e-75cd-4079-9b76-351f9af2205a',
-  id: 'a4c73bf4-45f7-4d08-b69f-c661f14a61ec',
-  mime_type: 'FOLDER',
-  name: 'softly.tiff',
-  references: [
-    Models::Shared::StorageReference.new(
-      id: 'ab705f3b-e368-4a94-8b22-d5f693c14a76',
-      name: 'tamisium viduo odio cauda',
-      type: 'accounting_bill',
-    ),
-    Models::Shared::StorageReference.new(
-      id: '9f0f694e-b6f4-4c12-b5f6-ab08d4e81140',
-      name: 'quia',
-      type: 'accounting_expense',
-    ),
-  ],
-  size: 10_276.0,
+  description: 'Deprimo crastinus cupiditate debilito cimentarius virgo acidus.',
+  download_url: 'https://clueless-laughter.biz',
+  hash: 'd9d88dda7bc0acaa8472fdef2307f94a1fc355ce',
+  id: '83549c04-8697-4601-a4ea-4a1749789a6f',
+  metadata: [],
+  mime_type: 'application/pdf',
+  name: 'softly.pdf',
+  size: 1_134_456.0,
   tags: [
-    'spoliatio',
+    'suasoria',
   ],
-  type: Models::Shared::StorageFileType::FILE,
-  updated_at: DateTime.iso8601('2023-01-28T07:54:33.468Z'),
+  type: Models::Shared::StorageFileType::FOLDER,
+  updated_at: DateTime.iso8601('2023-02-06T02:04:07.903Z'),
   version: '1',
-  web_url: 'https://sandy-distinction.info/',
+  web_url: 'https://faraway-inspection.org',
 ), connection_id: '<id>')
 
 unless res.storage_file.nil?
@@ -87,7 +75,7 @@ end
 
 ## get_storage_file
 
-Retrieve a file
+Retrieves a single StorageFile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -131,7 +119,7 @@ end
 
 ## list_storage_files
 
-List all files
+Returns a list of StorageFiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -176,7 +164,7 @@ end
 
 ## patch_storage_file
 
-Update a file
+Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
 
 ### Example Usage
 
@@ -194,33 +182,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchStorageFileRequest.new(
   storage_file: Models::Shared::StorageFile.new(
     created_at: DateTime.iso8601('2021-09-12T16:48:23.774Z'),
-    data: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+',
-    description: 'Crastinus cupiditate debilito cimentarius virgo.',
-    download_url: 'https://stingy-casement.name/',
-    hash: 'fe6a659e-75cd-4079-9b76-351f9af2205a',
-    id: 'eb0cd49e-a657-407e-ad8d-aef0b777596d',
-    mime_type: 'FOLDER',
-    name: 'softly.tiff',
-    references: [
-      Models::Shared::StorageReference.new(
-        id: 'ab705f3b-e368-4a94-8b22-d5f693c14a76',
-        name: 'tamisium viduo odio cauda',
-        type: 'accounting_bill',
-      ),
-      Models::Shared::StorageReference.new(
-        id: '9f0f694e-b6f4-4c12-b5f6-ab08d4e81140',
-        name: 'quia',
-        type: 'accounting_expense',
-      ),
-    ],
-    size: 10_276.0,
+    description: 'Deprimo crastinus cupiditate debilito cimentarius virgo acidus.',
+    download_url: 'https://clueless-laughter.biz',
+    hash: 'd9d88dda7bc0acaa8472fdef2307f94a1fc355ce',
+    id: '482d8815-e0fe-4853-b46a-8e0ef83bf944',
+    metadata: [],
+    mime_type: 'application/pdf',
+    name: 'softly.pdf',
+    size: 1_134_456.0,
     tags: [
-      'spoliatio',
+      'suasoria',
     ],
-    type: Models::Shared::StorageFileType::FILE,
-    updated_at: DateTime.iso8601('2023-01-28T07:54:33.473Z'),
+    type: Models::Shared::StorageFileType::FOLDER,
+    updated_at: DateTime.iso8601('2023-02-06T02:04:07.910Z'),
     version: '1',
-    web_url: 'https://sandy-distinction.info/',
+    web_url: 'https://faraway-inspection.org',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -252,7 +228,7 @@ end
 
 ## remove_storage_file
 
-Remove a file
+Deletes the StorageFile identified by `id`.
 
 ### Example Usage
 
@@ -294,7 +270,7 @@ end
 
 ## update_storage_file
 
-Update a file
+Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
 
 ### Example Usage
 
@@ -312,33 +288,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateStorageFileRequest.new(
   storage_file: Models::Shared::StorageFile.new(
     created_at: DateTime.iso8601('2021-09-12T16:48:23.774Z'),
-    data: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+',
-    description: 'Crastinus cupiditate debilito cimentarius virgo.',
-    download_url: 'https://stingy-casement.name/',
-    hash: 'fe6a659e-75cd-4079-9b76-351f9af2205a',
-    id: 'eb0cd49e-a657-407e-ad8d-aef0b777596d',
-    mime_type: 'FOLDER',
-    name: 'softly.tiff',
-    references: [
-      Models::Shared::StorageReference.new(
-        id: 'ab705f3b-e368-4a94-8b22-d5f693c14a76',
-        name: 'tamisium viduo odio cauda',
-        type: 'accounting_bill',
-      ),
-      Models::Shared::StorageReference.new(
-        id: '9f0f694e-b6f4-4c12-b5f6-ab08d4e81140',
-        name: 'quia',
-        type: 'accounting_expense',
-      ),
-    ],
-    size: 10_276.0,
+    description: 'Deprimo crastinus cupiditate debilito cimentarius virgo acidus.',
+    download_url: 'https://clueless-laughter.biz',
+    hash: 'd9d88dda7bc0acaa8472fdef2307f94a1fc355ce',
+    id: '482d8815-e0fe-4853-b46a-8e0ef83bf944',
+    metadata: [],
+    mime_type: 'application/pdf',
+    name: 'softly.pdf',
+    size: 1_134_456.0,
     tags: [
-      'spoliatio',
+      'suasoria',
     ],
-    type: Models::Shared::StorageFileType::FILE,
-    updated_at: DateTime.iso8601('2023-01-28T07:54:33.473Z'),
+    type: Models::Shared::StorageFileType::FOLDER,
+    updated_at: DateTime.iso8601('2023-02-06T02:04:07.910Z'),
     version: '1',
-    web_url: 'https://sandy-distinction.info/',
+    web_url: 'https://faraway-inspection.org',
   ),
   connection_id: '<id>',
   id: '<id>',

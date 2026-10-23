@@ -14,7 +14,7 @@
 
 ## create_hris_benefit
 
-Create a benefit
+Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
 
 ### Example Usage
 
@@ -32,18 +32,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.benefit.create_hris_benefit(hris_benefit: Models::Shared::HrisBenefit.new(
   coverage_level: Models::Shared::CoverageLevel::EMPLOYEE_SPOUSE,
   created_at: DateTime.iso8601('2020-06-11T01:24:05.654Z'),
-  currency: 'JOD',
+  currency: 'GBP',
   description: 'Vomito voluptas dolor sed.',
   employer_contribution_amount: 185_006.0,
   employer_contribution_max_amount: 179_093.0,
   employer_contribution_type: Models::Shared::EmployerContributionType::PERCENTAGE,
-  frequency: Models::Shared::HrisBenefitFrequency::HOUR,
-  id: '2bc73132-a231-4f6b-b0f2-73d8f42a7bb3',
+  frequency: Models::Shared::HrisBenefitFrequency::MONTH,
+  id: '14c75d97-923c-437f-89d5-aec3b77e7f11',
   is_active: false,
+  metadata: [],
   name: 'Frozen Wooden Ball',
   tax: Models::Shared::Tax::PRE_TAX,
-  type: Models::Shared::HrisBenefitType::GARNISHMENT,
-  updated_at: DateTime.iso8601('2023-03-07T18:44:31.792Z'),
+  type: Models::Shared::HrisBenefitType::OTHER,
+  updated_at: DateTime.iso8601('2023-03-21T17:08:11.107Z'),
 ), connection_id: '<id>')
 
 unless res.hris_benefit.nil?
@@ -73,7 +74,7 @@ end
 
 ## get_hris_benefit
 
-Retrieve a benefit
+Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -117,7 +118,7 @@ end
 
 ## list_hris_benefits
 
-List all benefits
+Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -162,7 +163,7 @@ end
 
 ## patch_hris_benefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -181,18 +182,19 @@ req = Models::Operations::PatchHrisBenefitRequest.new(
   hris_benefit: Models::Shared::HrisBenefit.new(
     coverage_level: Models::Shared::CoverageLevel::EMPLOYEE_SPOUSE,
     created_at: DateTime.iso8601('2020-06-11T01:24:05.654Z'),
-    currency: 'JOD',
+    currency: 'GBP',
     description: 'Vomito voluptas dolor sed.',
     employer_contribution_amount: 185_006.0,
     employer_contribution_max_amount: 179_093.0,
     employer_contribution_type: Models::Shared::EmployerContributionType::PERCENTAGE,
-    frequency: Models::Shared::HrisBenefitFrequency::HOUR,
-    id: '8afb2ac2-392c-4be4-aa88-39cea81b92ae',
+    frequency: Models::Shared::HrisBenefitFrequency::MONTH,
+    id: '9559438e-6c3b-498f-925d-b0295a2d009d',
     is_active: false,
+    metadata: [],
     name: 'Frozen Wooden Ball',
     tax: Models::Shared::Tax::PRE_TAX,
-    type: Models::Shared::HrisBenefitType::GARNISHMENT,
-    updated_at: DateTime.iso8601('2023-03-07T18:44:31.799Z'),
+    type: Models::Shared::HrisBenefitType::OTHER,
+    updated_at: DateTime.iso8601('2023-03-21T17:08:11.118Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -224,7 +226,7 @@ end
 
 ## remove_hris_benefit
 
-Remove a benefit
+Deletes the HrisBenefit identified by `id`.
 
 ### Example Usage
 
@@ -266,7 +268,7 @@ end
 
 ## update_hris_benefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -285,18 +287,19 @@ req = Models::Operations::UpdateHrisBenefitRequest.new(
   hris_benefit: Models::Shared::HrisBenefit.new(
     coverage_level: Models::Shared::CoverageLevel::EMPLOYEE_SPOUSE,
     created_at: DateTime.iso8601('2020-06-11T01:24:05.654Z'),
-    currency: 'JOD',
+    currency: 'GBP',
     description: 'Vomito voluptas dolor sed.',
     employer_contribution_amount: 185_006.0,
     employer_contribution_max_amount: 179_093.0,
     employer_contribution_type: Models::Shared::EmployerContributionType::PERCENTAGE,
-    frequency: Models::Shared::HrisBenefitFrequency::HOUR,
-    id: '8afb2ac2-392c-4be4-aa88-39cea81b92ae',
+    frequency: Models::Shared::HrisBenefitFrequency::MONTH,
+    id: '9559438e-6c3b-498f-925d-b0295a2d009d',
     is_active: false,
+    metadata: [],
     name: 'Frozen Wooden Ball',
     tax: Models::Shared::Tax::PRE_TAX,
-    type: Models::Shared::HrisBenefitType::GARNISHMENT,
-    updated_at: DateTime.iso8601('2023-03-07T18:44:31.799Z'),
+    type: Models::Shared::HrisBenefitType::OTHER,
+    updated_at: DateTime.iso8601('2023-03-21T17:08:11.118Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

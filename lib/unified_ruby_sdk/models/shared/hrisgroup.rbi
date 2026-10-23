@@ -20,10 +20,16 @@ class UnifiedRubySDK::Models::Shared::HrisGroup
   def is_active=(str_); end
   def manager_ids(); end
   def manager_ids=(str_); end
+  def metadata(); end
+  def metadata=(str_); end
   def name(); end
   def name=(str_); end
+  def next_paid_at(); end
+  def next_paid_at=(str_); end
   def parent_id(); end
   def parent_id=(str_); end
+  def pay_frequency(); end
+  def pay_frequency=(str_); end
   def raw(); end
   def raw=(str_); end
   def type(); end

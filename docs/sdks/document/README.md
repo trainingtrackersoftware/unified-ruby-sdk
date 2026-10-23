@@ -26,7 +26,7 @@
 
 ## create_ats_document
 
-Create a document
+Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
 
 ### Example Usage
 
@@ -44,10 +44,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.document.create_ats_document(ats_document: Models::Shared::AtsDocument.new(
   created_at: DateTime.iso8601('2021-08-20T08:00:27.437Z'),
   document_url: 'https://vengeful-lashes.biz',
-  filename: 'bah_white_frantically.bz',
-  id: '2339998e-940a-46d9-b8d8-b4c10a2a79e4',
-  type: Models::Shared::AtsDocumentType::RESUME,
-  updated_at: DateTime.iso8601('2022-11-29T16:25:43.702Z'),
+  filename: 'lonzo_schowalter_resume.pdf',
+  id: 'a9b9128f-444c-43cb-bc3d-6803d582a3ca',
+  metadata: [],
+  type: Models::Shared::AtsDocumentType::COVER_LETTER,
+  updated_at: DateTime.iso8601('2022-12-07T16:58:00.725Z'),
 ), connection_id: '<id>')
 
 unless res.ats_document.nil?
@@ -77,7 +78,7 @@ end
 
 ## create_hris_document
 
-Create a document
+Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
 
 ### Example Usage
 
@@ -96,9 +97,10 @@ res = s.document.create_hris_document(hris_document: Models::Shared::HrisDocumen
   created_at: DateTime.iso8601('2022-10-27T11:47:26.086Z'),
   document_url: 'https://sore-decision.biz/',
   filename: 'ridge_forager.xsl',
-  id: '9b700086-451a-4120-8d57-fed917f0d7fe',
+  id: '7d609a97-f59a-4860-9238-05ad03354cc0',
+  metadata: [],
   type: Models::Shared::HrisDocumentType::POLICY,
-  updated_at: DateTime.iso8601('2025-09-19T07:57:45.601Z'),
+  updated_at: DateTime.iso8601('2025-10-13T01:30:16.029Z'),
 ), connection_id: '<id>')
 
 unless res.hris_document.nil?
@@ -128,7 +130,7 @@ end
 
 ## create_signing_document
 
-Create a document
+Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
 
 ### Example Usage
 
@@ -145,11 +147,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.document.create_signing_document(signing_document: Models::Shared::SigningDocument.new(
   created_at: DateTime.iso8601('2021-05-02T09:35:23.679Z'),
-  expires_at: DateTime.iso8601('2026-12-19T11:03:25.768Z'),
-  id: 'b2f0411f-28da-4877-92cf-b9c6e682766e',
-  name: 'nam audax absens',
-  status: Models::Shared::SigningDocumentStatus::VOIDED,
-  updated_at: DateTime.iso8601('2025-08-10T03:55:15.160Z'),
+  description: 'Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.',
+  expires_at: DateTime.iso8601('2021-06-04T01:21:34.949Z'),
+  id: 'efddad88-fde5-43a7-98a3-290f5f4b3c1a',
+  metadata: [],
+  name: 'Denesik Group NDA',
+  sent_at: DateTime.iso8601('2022-06-29T22:11:51.154Z'),
+  status: Models::Shared::SigningDocumentStatus::DRAFT,
+  updated_at: DateTime.iso8601('2025-09-04T12:17:49.876Z'),
 ), connection_id: '<id>')
 
 unless res.signing_document.nil?
@@ -179,7 +184,7 @@ end
 
 ## get_ats_document
 
-Retrieve a document
+Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -223,7 +228,7 @@ end
 
 ## get_hris_document
 
-Retrieve a document
+Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -267,7 +272,7 @@ end
 
 ## get_signing_document
 
-Retrieve a document
+Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -311,7 +316,7 @@ end
 
 ## list_ats_documents
 
-List all documents
+Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -356,7 +361,7 @@ end
 
 ## list_hris_documents
 
-List all documents
+Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -401,7 +406,7 @@ end
 
 ## list_signing_documents
 
-List all documents
+Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -446,7 +451,7 @@ end
 
 ## patch_ats_document
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -465,10 +470,11 @@ req = Models::Operations::PatchAtsDocumentRequest.new(
   ats_document: Models::Shared::AtsDocument.new(
     created_at: DateTime.iso8601('2021-08-20T08:00:27.437Z'),
     document_url: 'https://vengeful-lashes.biz',
-    filename: 'bah_white_frantically.bz',
-    id: 'bac58552-7cd4-4289-82b8-b121d9932328',
-    type: Models::Shared::AtsDocumentType::RESUME,
-    updated_at: DateTime.iso8601('2022-11-29T16:25:43.703Z'),
+    filename: 'lonzo_schowalter_resume.pdf',
+    id: 'ea0b47db-4b68-4e53-9967-aa0c3af04f0b',
+    metadata: [],
+    type: Models::Shared::AtsDocumentType::COVER_LETTER,
+    updated_at: DateTime.iso8601('2022-12-07T16:58:00.730Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -500,7 +506,7 @@ end
 
 ## patch_hris_document
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -520,9 +526,10 @@ req = Models::Operations::PatchHrisDocumentRequest.new(
     created_at: DateTime.iso8601('2022-10-27T11:47:26.086Z'),
     document_url: 'https://sore-decision.biz/',
     filename: 'ridge_forager.xsl',
-    id: '85c0eb48-5170-4b2a-9af4-354cdbccee45',
+    id: '22db088b-317d-486a-b436-8033c2ffd1ef',
+    metadata: [],
     type: Models::Shared::HrisDocumentType::POLICY,
-    updated_at: DateTime.iso8601('2025-09-19T07:57:45.609Z'),
+    updated_at: DateTime.iso8601('2025-10-13T01:30:16.041Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -554,7 +561,7 @@ end
 
 ## patch_signing_document
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -572,11 +579,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchSigningDocumentRequest.new(
   signing_document: Models::Shared::SigningDocument.new(
     created_at: DateTime.iso8601('2021-05-02T09:35:23.679Z'),
-    expires_at: DateTime.iso8601('2026-12-19T11:03:25.779Z'),
-    id: '5f467819-867a-49f2-8899-12411a9c144c',
-    name: 'nam audax absens',
-    status: Models::Shared::SigningDocumentStatus::VOIDED,
-    updated_at: DateTime.iso8601('2025-08-10T03:55:15.168Z'),
+    description: 'Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.',
+    expires_at: DateTime.iso8601('2021-06-04T01:21:34.949Z'),
+    id: 'ba32fd4b-3106-4424-bd56-05bf07e10eb0',
+    metadata: [],
+    name: 'Denesik Group NDA',
+    sent_at: DateTime.iso8601('2022-06-29T22:11:51.157Z'),
+    status: Models::Shared::SigningDocumentStatus::DRAFT,
+    updated_at: DateTime.iso8601('2025-09-04T12:17:49.889Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -608,7 +618,7 @@ end
 
 ## remove_ats_document
 
-Remove a document
+Deletes the AtsDocument identified by `id`.
 
 ### Example Usage
 
@@ -650,7 +660,7 @@ end
 
 ## remove_hris_document
 
-Remove a document
+Deletes the HrisDocument identified by `id`.
 
 ### Example Usage
 
@@ -692,7 +702,7 @@ end
 
 ## remove_signing_document
 
-Remove a document
+Deletes the SigningDocument identified by `id`.
 
 ### Example Usage
 
@@ -734,7 +744,7 @@ end
 
 ## update_ats_document
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -753,10 +763,11 @@ req = Models::Operations::UpdateAtsDocumentRequest.new(
   ats_document: Models::Shared::AtsDocument.new(
     created_at: DateTime.iso8601('2021-08-20T08:00:27.437Z'),
     document_url: 'https://vengeful-lashes.biz',
-    filename: 'bah_white_frantically.bz',
-    id: 'bac58552-7cd4-4289-82b8-b121d9932328',
-    type: Models::Shared::AtsDocumentType::RESUME,
-    updated_at: DateTime.iso8601('2022-11-29T16:25:43.703Z'),
+    filename: 'lonzo_schowalter_resume.pdf',
+    id: 'ea0b47db-4b68-4e53-9967-aa0c3af04f0b',
+    metadata: [],
+    type: Models::Shared::AtsDocumentType::COVER_LETTER,
+    updated_at: DateTime.iso8601('2022-12-07T16:58:00.730Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -788,7 +799,7 @@ end
 
 ## update_hris_document
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -808,9 +819,10 @@ req = Models::Operations::UpdateHrisDocumentRequest.new(
     created_at: DateTime.iso8601('2022-10-27T11:47:26.086Z'),
     document_url: 'https://sore-decision.biz/',
     filename: 'ridge_forager.xsl',
-    id: '85c0eb48-5170-4b2a-9af4-354cdbccee45',
+    id: '22db088b-317d-486a-b436-8033c2ffd1ef',
+    metadata: [],
     type: Models::Shared::HrisDocumentType::POLICY,
-    updated_at: DateTime.iso8601('2025-09-19T07:57:45.609Z'),
+    updated_at: DateTime.iso8601('2025-10-13T01:30:16.041Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -842,7 +854,7 @@ end
 
 ## update_signing_document
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -860,11 +872,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateSigningDocumentRequest.new(
   signing_document: Models::Shared::SigningDocument.new(
     created_at: DateTime.iso8601('2021-05-02T09:35:23.679Z'),
-    expires_at: DateTime.iso8601('2026-12-19T11:03:25.779Z'),
-    id: '5f467819-867a-49f2-8899-12411a9c144c',
-    name: 'nam audax absens',
-    status: Models::Shared::SigningDocumentStatus::VOIDED,
-    updated_at: DateTime.iso8601('2025-08-10T03:55:15.168Z'),
+    description: 'Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.',
+    expires_at: DateTime.iso8601('2021-06-04T01:21:34.949Z'),
+    id: 'ba32fd4b-3106-4424-bd56-05bf07e10eb0',
+    metadata: [],
+    name: 'Denesik Group NDA',
+    sent_at: DateTime.iso8601('2022-06-29T22:11:51.157Z'),
+    status: Models::Shared::SigningDocumentStatus::DRAFT,
+    updated_at: DateTime.iso8601('2025-09-04T12:17:49.889Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

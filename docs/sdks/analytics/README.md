@@ -26,7 +26,7 @@
 
 ## create_analytics_event
 
-Create an event
+Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
 
 ### Example Usage
 
@@ -44,12 +44,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.analytics.create_analytics_event(analytics_event: Models::Shared::AnalyticsEvent.new(
   created_at: DateTime.iso8601('2023-06-21T03:13:22.954Z'),
   event_type: Models::Shared::EventType::SCREEN_VIEW,
-  id: '08a18908-d185-4817-8b6d-02eff3daff1a',
+  id: '5596855f-627d-4ca7-a9e0-47d4eb514e63',
   metadata: {
     "key": Models::Shared::PropertyAnalyticsEventMetadata.new(),
   },
-  name: 'Xk707ttsb51v',
-  updated_at: DateTime.iso8601('2023-09-22T07:57:05.092Z'),
+  name: 'page_view',
+  page_url: 'https://golden-carboxyl.biz',
+  updated_at: DateTime.iso8601('2023-09-24T20:07:29.259Z'),
 ), connection_id: '<id>')
 
 unless res.analytics_event.nil?
@@ -79,7 +80,7 @@ end
 
 ## create_analytics_property
 
-Create a property
+Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
 
 ### Example Usage
 
@@ -97,10 +98,10 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.analytics.create_analytics_property(analytics_property: Models::Shared::AnalyticsProperty.new(
   created_at: DateTime.iso8601('2021-09-05T19:04:58.430Z'),
   currency: 'USD',
-  id: '6297c562-640b-40ba-9f47-29fc9c403b62',
+  id: '66a7cadb-6c99-404e-8583-7a81b923d57f',
   name: 'Daniel, Goldner and Dickinson',
   timezone: 'UTC',
-  updated_at: DateTime.iso8601('2021-09-14T16:57:25.517Z'),
+  updated_at: DateTime.iso8601('2021-09-14T20:40:08.989Z'),
 ), connection_id: '<id>')
 
 unless res.analytics_property.nil?
@@ -130,7 +131,7 @@ end
 
 ## create_analytics_visitor
 
-Create a visitor
+Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
 
 ### Example Usage
 
@@ -147,16 +148,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.analytics.create_analytics_visitor(analytics_visitor: Models::Shared::AnalyticsVisitor.new(
   created_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-  email: 'Dallas_Mitchell@yahoo.com',
+  email: 'desiree.o.hara@icloud.com',
   first_seen_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-  id: '6d7fb874-3ba2-4e03-9be5-a0030384d834',
-  last_seen_at: DateTime.iso8601('2021-12-05T12:40:47.096Z'),
+  id: 'a2cda971-98a8-4b88-8030-f9db4fc7cbbb',
+  last_seen_at: DateTime.iso8601('2025-01-12T18:13:21.722Z'),
   metadata: {
     "segment": Models::Shared::PropertyAnalyticsVisitorMetadata.new(),
   },
-  name: 'Desiree O\'Hara',
-  total_events: 3639.0,
-  updated_at: DateTime.iso8601('2025-06-05T18:36:53.337Z'),
+  total_events: 2916.0,
+  updated_at: DateTime.iso8601('2025-07-01T07:20:06.031Z'),
 ), connection_id: '<id>')
 
 unless res.analytics_visitor.nil?
@@ -186,7 +186,7 @@ end
 
 ## get_analytics_event
 
-Retrieve an event
+Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -230,7 +230,7 @@ end
 
 ## get_analytics_property
 
-Retrieve a property
+Retrieves a single AnalyticsProperty by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -274,7 +274,7 @@ end
 
 ## get_analytics_session
 
-Retrieve a session
+Retrieves a single AnalyticsSession by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -318,7 +318,7 @@ end
 
 ## get_analytics_visitor
 
-Retrieve a visitor
+Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -362,7 +362,7 @@ end
 
 ## list_analytics_events
 
-List all events
+Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -407,7 +407,7 @@ end
 
 ## list_analytics_properties
 
-List all properties
+Returns a list of AnalyticsProperties. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -452,7 +452,7 @@ end
 
 ## list_analytics_reports
 
-List all reports
+Returns a list of AnalyticsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -497,7 +497,7 @@ end
 
 ## list_analytics_sessions
 
-List all sessions
+Returns a list of AnalyticsSessions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -542,7 +542,7 @@ end
 
 ## list_analytics_visitors
 
-List all visitors
+Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -587,7 +587,7 @@ end
 
 ## patch_analytics_property
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -606,10 +606,10 @@ req = Models::Operations::PatchAnalyticsPropertyRequest.new(
   analytics_property: Models::Shared::AnalyticsProperty.new(
     created_at: DateTime.iso8601('2021-09-05T19:04:58.430Z'),
     currency: 'USD',
-    id: 'd7962403-c899-49dc-b631-18f2a1db9677',
+    id: '56fec81b-ebae-4419-aba9-f151f63f6764',
     name: 'Daniel, Goldner and Dickinson',
     timezone: 'UTC',
-    updated_at: DateTime.iso8601('2021-09-14T16:57:25.517Z'),
+    updated_at: DateTime.iso8601('2021-09-14T20:40:08.990Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -641,7 +641,7 @@ end
 
 ## patch_analytics_visitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -659,16 +659,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAnalyticsVisitorRequest.new(
   analytics_visitor: Models::Shared::AnalyticsVisitor.new(
     created_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-    email: 'Dallas_Mitchell@yahoo.com',
+    email: 'desiree.o.hara@icloud.com',
     first_seen_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-    id: '85a6dfff-cd43-4020-853d-a6840aaa56db',
-    last_seen_at: DateTime.iso8601('2021-12-05T12:40:47.100Z'),
+    id: '8fcc2224-5df1-43db-a781-0bf412f36d1d',
+    last_seen_at: DateTime.iso8601('2025-01-12T18:13:21.737Z'),
     metadata: {
       "segment": Models::Shared::PropertyAnalyticsVisitorMetadata.new(),
     },
-    name: 'Desiree O\'Hara',
-    total_events: 3639.0,
-    updated_at: DateTime.iso8601('2025-06-05T18:36:53.352Z'),
+    total_events: 2916.0,
+    updated_at: DateTime.iso8601('2025-07-01T07:20:06.048Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -700,7 +699,7 @@ end
 
 ## remove_analytics_property
 
-Remove a property
+Deletes the AnalyticsProperty identified by `id`.
 
 ### Example Usage
 
@@ -742,7 +741,7 @@ end
 
 ## remove_analytics_visitor
 
-Remove a visitor
+Deletes the AnalyticsVisitor identified by `id`.
 
 ### Example Usage
 
@@ -784,7 +783,7 @@ end
 
 ## update_analytics_property
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -803,10 +802,10 @@ req = Models::Operations::UpdateAnalyticsPropertyRequest.new(
   analytics_property: Models::Shared::AnalyticsProperty.new(
     created_at: DateTime.iso8601('2021-09-05T19:04:58.430Z'),
     currency: 'USD',
-    id: 'd7962403-c899-49dc-b631-18f2a1db9677',
+    id: '56fec81b-ebae-4419-aba9-f151f63f6764',
     name: 'Daniel, Goldner and Dickinson',
     timezone: 'UTC',
-    updated_at: DateTime.iso8601('2021-09-14T16:57:25.517Z'),
+    updated_at: DateTime.iso8601('2021-09-14T20:40:08.990Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -838,7 +837,7 @@ end
 
 ## update_analytics_visitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -856,16 +855,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAnalyticsVisitorRequest.new(
   analytics_visitor: Models::Shared::AnalyticsVisitor.new(
     created_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-    email: 'Dallas_Mitchell@yahoo.com',
+    email: 'desiree.o.hara@icloud.com',
     first_seen_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-    id: '85a6dfff-cd43-4020-853d-a6840aaa56db',
-    last_seen_at: DateTime.iso8601('2021-12-05T12:40:47.100Z'),
+    id: '8fcc2224-5df1-43db-a781-0bf412f36d1d',
+    last_seen_at: DateTime.iso8601('2025-01-12T18:13:21.737Z'),
     metadata: {
       "segment": Models::Shared::PropertyAnalyticsVisitorMetadata.new(),
     },
-    name: 'Desiree O\'Hara',
-    total_events: 3639.0,
-    updated_at: DateTime.iso8601('2025-06-05T18:36:53.352Z'),
+    total_events: 2916.0,
+    updated_at: DateTime.iso8601('2025-07-01T07:20:06.048Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

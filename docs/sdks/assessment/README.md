@@ -18,7 +18,7 @@
 
 ## create_assessment_order
 
-Create an order
+Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
 
 ### Example Usage
 
@@ -36,12 +36,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.assessment.create_assessment_order(assessment_order: Models::Shared::AssessmentOrder.new(
   connection_id: '<id>',
   created_at: DateTime.iso8601('2021-09-18T10:33:57.803Z'),
-  id: '56621e09-aa10-4e42-aab5-4e92ebfc91ac',
+  id: 'e4deecb5-a978-419b-ab61-a80ca92420ed',
+  metadata: [],
   parameters: [],
   profile_addresses: [],
   profile_date_of_birth: '1989-07-22T16:18:37.650Z',
   profile_emails: [
-    'Cleta.Daugherty@gmail.com',
+    'amy.kris.windler@icloud.com',
   ],
   profile_first_name: 'Amy',
   profile_gender: Models::Shared::ProfileGender::NON_BINARY,
@@ -50,19 +51,19 @@ res = s.assessment.create_assessment_order(assessment_order: Models::Shared::Ass
   profile_resume_url: 'https://enchanted-cycle.biz/',
   profile_social_media_urls: [],
   profile_telephones: [
-    '(828) 263-1594 x5248',
+    '(341) 425-5828',
   ],
   reference: 'ab',
   response_attributes: [],
   response_details: [],
   response_download_urls: [],
-  response_max_score: 82.0,
-  response_score: 92.0,
-  response_status: Models::Shared::ResponseStatus::FAILED,
-  response_url: 'https://irresponsible-trench.info/',
+  response_max_score: 84.0,
+  response_score: 82.0,
+  response_status: Models::Shared::ResponseStatus::REJECTED,
+  response_url: 'https://rowdy-fisherman.biz/',
   status: Models::Shared::AssessmentOrderStatus::REJECTED,
   target_url: 'https://cautious-turret.info',
-  updated_at: DateTime.iso8601('2023-01-17T21:13:52.935Z'),
+  updated_at: DateTime.iso8601('2023-01-26T09:15:43.301Z'),
   workspace_id: '<id>',
 ), connection_id: '<id>')
 
@@ -116,12 +117,13 @@ res = s.assessment.create_assessment_package(assessment_package: Models::Shared:
   description: 'Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.',
   has_redirect_url: true,
   has_target_url: false,
-  id: 'ba669d94-997b-412d-8dca-f79131f242ef',
+  id: '9d6d357e-ec51-4231-89e4-1f948f7bf3eb',
   info_url: 'https://ugly-instance.biz/',
   integration_types: [
     'viridis',
   ],
   max_score: 22.0,
+  metadata: [],
   name: 'Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.',
   needs_ip_address: true,
   parameters: [],
@@ -130,7 +132,7 @@ res = s.assessment.create_assessment_package(assessment_package: Models::Shared:
     'clamo',
   ],
   type: Models::Shared::AssessmentPackageType::VIDEO_INTERVIEW,
-  updated_at: DateTime.iso8601('2023-09-18T21:16:01.106Z'),
+  updated_at: DateTime.iso8601('2023-09-25T19:34:50.962Z'),
 ), connection_id: '<id>')
 
 unless res.assessment_package.nil?
@@ -158,7 +160,7 @@ end
 
 ## get_assessment_order
 
-Retrieve an order
+Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -287,7 +289,7 @@ end
 
 ## patch_assessment_order
 
-Update an order
+Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
 
 ### Example Usage
 
@@ -306,12 +308,13 @@ req = Models::Operations::PatchAssessmentOrderRequest.new(
   assessment_order: Models::Shared::AssessmentOrder.new(
     connection_id: '<id>',
     created_at: DateTime.iso8601('2021-09-18T10:33:57.803Z'),
-    id: 'e1404ad8-0ded-4d74-96fb-b1bb7333dbff',
+    id: '79bbd734-8e01-4ed4-93cb-acf9e73a268a',
+    metadata: [],
     parameters: [],
     profile_addresses: [],
     profile_date_of_birth: '1989-07-22T16:18:37.650Z',
     profile_emails: [
-      'Cleta.Daugherty@gmail.com',
+      'amy.kris.windler@icloud.com',
     ],
     profile_first_name: 'Amy',
     profile_gender: Models::Shared::ProfileGender::NON_BINARY,
@@ -320,19 +323,19 @@ req = Models::Operations::PatchAssessmentOrderRequest.new(
     profile_resume_url: 'https://enchanted-cycle.biz/',
     profile_social_media_urls: [],
     profile_telephones: [
-      '(828) 263-1594 x5248',
+      '(341) 425-5828',
     ],
     reference: 'ab',
     response_attributes: [],
     response_details: [],
     response_download_urls: [],
-    response_max_score: 82.0,
-    response_score: 92.0,
-    response_status: Models::Shared::ResponseStatus::FAILED,
-    response_url: 'https://irresponsible-trench.info/',
+    response_max_score: 84.0,
+    response_score: 82.0,
+    response_status: Models::Shared::ResponseStatus::REJECTED,
+    response_url: 'https://rowdy-fisherman.biz/',
     status: Models::Shared::AssessmentOrderStatus::REJECTED,
     target_url: 'https://cautious-turret.info',
-    updated_at: DateTime.iso8601('2023-01-17T21:13:52.948Z'),
+    updated_at: DateTime.iso8601('2023-01-26T09:15:43.311Z'),
     workspace_id: '<id>',
   ),
   connection_id: '<id>',
@@ -388,12 +391,13 @@ res = s.assessment.patch_assessment_package(assessment_package: Models::Shared::
   description: 'Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.',
   has_redirect_url: true,
   has_target_url: false,
-  id: '0c813f8c-6a21-409b-a384-015244895a32',
+  id: '84f63991-8347-405e-8e47-037c8ca3aadc',
   info_url: 'https://ugly-instance.biz/',
   integration_types: [
     'viridis',
   ],
   max_score: 22.0,
+  metadata: [],
   name: 'Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.',
   needs_ip_address: true,
   parameters: [],
@@ -402,7 +406,7 @@ res = s.assessment.patch_assessment_package(assessment_package: Models::Shared::
     'clamo',
   ],
   type: Models::Shared::AssessmentPackageType::VIDEO_INTERVIEW,
-  updated_at: DateTime.iso8601('2023-09-18T21:16:01.109Z'),
+  updated_at: DateTime.iso8601('2023-09-25T19:34:50.967Z'),
 ), connection_id: '<id>', id: '<id>')
 
 unless res.assessment_package.nil?
@@ -473,7 +477,7 @@ end
 
 ## update_assessment_order
 
-Update an order
+Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
 
 ### Example Usage
 
@@ -492,12 +496,13 @@ req = Models::Operations::UpdateAssessmentOrderRequest.new(
   assessment_order: Models::Shared::AssessmentOrder.new(
     connection_id: '<id>',
     created_at: DateTime.iso8601('2021-09-18T10:33:57.803Z'),
-    id: 'e1404ad8-0ded-4d74-96fb-b1bb7333dbff',
+    id: '79bbd734-8e01-4ed4-93cb-acf9e73a268a',
+    metadata: [],
     parameters: [],
     profile_addresses: [],
     profile_date_of_birth: '1989-07-22T16:18:37.650Z',
     profile_emails: [
-      'Cleta.Daugherty@gmail.com',
+      'amy.kris.windler@icloud.com',
     ],
     profile_first_name: 'Amy',
     profile_gender: Models::Shared::ProfileGender::NON_BINARY,
@@ -506,19 +511,19 @@ req = Models::Operations::UpdateAssessmentOrderRequest.new(
     profile_resume_url: 'https://enchanted-cycle.biz/',
     profile_social_media_urls: [],
     profile_telephones: [
-      '(828) 263-1594 x5248',
+      '(341) 425-5828',
     ],
     reference: 'ab',
     response_attributes: [],
     response_details: [],
     response_download_urls: [],
-    response_max_score: 82.0,
-    response_score: 92.0,
-    response_status: Models::Shared::ResponseStatus::FAILED,
-    response_url: 'https://irresponsible-trench.info/',
+    response_max_score: 84.0,
+    response_score: 82.0,
+    response_status: Models::Shared::ResponseStatus::REJECTED,
+    response_url: 'https://rowdy-fisherman.biz/',
     status: Models::Shared::AssessmentOrderStatus::REJECTED,
     target_url: 'https://cautious-turret.info',
-    updated_at: DateTime.iso8601('2023-01-17T21:13:52.948Z'),
+    updated_at: DateTime.iso8601('2023-01-26T09:15:43.311Z'),
     workspace_id: '<id>',
   ),
   connection_id: '<id>',
@@ -574,12 +579,13 @@ res = s.assessment.update_assessment_package(assessment_package: Models::Shared:
   description: 'Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.',
   has_redirect_url: true,
   has_target_url: false,
-  id: '0c813f8c-6a21-409b-a384-015244895a32',
+  id: '84f63991-8347-405e-8e47-037c8ca3aadc',
   info_url: 'https://ugly-instance.biz/',
   integration_types: [
     'viridis',
   ],
   max_score: 22.0,
+  metadata: [],
   name: 'Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.',
   needs_ip_address: true,
   parameters: [],
@@ -588,7 +594,7 @@ res = s.assessment.update_assessment_package(assessment_package: Models::Shared:
     'clamo',
   ],
   type: Models::Shared::AssessmentPackageType::VIDEO_INTERVIEW,
-  updated_at: DateTime.iso8601('2023-09-18T21:16:01.109Z'),
+  updated_at: DateTime.iso8601('2023-09-25T19:34:50.967Z'),
 ), connection_id: '<id>', id: '<id>')
 
 unless res.assessment_package.nil?

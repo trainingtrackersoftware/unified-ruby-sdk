@@ -14,7 +14,7 @@
 
 ## create_accounting_bankfeedtransaction
 
-Create a bankfeedtransaction
+Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
 
 ### Example Usage
 
@@ -30,23 +30,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.bankfeedtransaction.create_accounting_bankfeedtransaction(accounting_bankfeedtransaction: Models::Shared::AccountingBankfeedtransaction.new(
-  account_id: 'b7dc4175-1368-4b89-a700-d621b6666648',
   amount: 60_889.0,
-  bank_category: 'Games',
-  bankfeedaccount_id: '34c1d05f-5b62-4bcd-9121-3be8b720941f',
+  bank_category: 'Clothing',
   category_ids: [],
-  contact_id: '1ef58ebe-f9c9-46f6-9d9c-2df2658503be',
   created_at: DateTime.iso8601('2022-03-24T23:41:08.374Z'),
-  currency: 'SRD',
-  description: 'payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.',
-  id: '63e8e361-59cc-45a9-9ca0-f7fbc930f184',
+  currency: 'CAD',
+  description: 'Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.',
+  id: 'f080d207-3e88-44a8-8116-d612351e64bb',
   is_pending: true,
-  merchant_name: 'Reichert, Erdman and Tillman',
-  posted_at: DateTime.iso8601('2025-03-25T19:12:54.812Z'),
-  reference: '93642593',
-  transaction_at: DateTime.iso8601('2022-07-28T01:21:00.312Z'),
+  merchant_name: 'Buckridge - Feest',
+  metadata: [],
+  posted_at: DateTime.iso8601('2025-04-16T03:49:52.041Z'),
+  reference: '79574105',
+  transaction_at: DateTime.iso8601('2022-07-30T11:48:12.702Z'),
   type: Models::Shared::AccountingBankfeedtransactionType::CREDIT,
-  updated_at: DateTime.iso8601('2022-05-23T23:26:58.193Z'),
+  updated_at: DateTime.iso8601('2022-05-25T03:29:13.175Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_bankfeedtransaction.nil?
@@ -76,7 +74,7 @@ end
 
 ## get_accounting_bankfeedtransaction
 
-Retrieve a bankfeedtransaction
+Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -120,7 +118,7 @@ end
 
 ## list_accounting_bankfeedtransactions
 
-List all bankfeedtransactions
+Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -165,7 +163,7 @@ end
 
 ## patch_accounting_bankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -182,23 +180,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingBankfeedtransactionRequest.new(
   accounting_bankfeedtransaction: Models::Shared::AccountingBankfeedtransaction.new(
-    account_id: 'b7dc4175-1368-4b89-a700-d621b6666648',
     amount: 60_889.0,
-    bank_category: 'Games',
-    bankfeedaccount_id: '34c1d05f-5b62-4bcd-9121-3be8b720941f',
+    bank_category: 'Clothing',
     category_ids: [],
-    contact_id: '1ef58ebe-f9c9-46f6-9d9c-2df2658503be',
     created_at: DateTime.iso8601('2022-03-24T23:41:08.374Z'),
-    currency: 'SRD',
-    description: 'payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.',
-    id: '56011350-c2b0-41d1-9ed0-b65eb5620267',
+    currency: 'CAD',
+    description: 'Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.',
+    id: '0ccd919c-7f10-48a9-8909-d562d7d5291a',
     is_pending: true,
-    merchant_name: 'Reichert, Erdman and Tillman',
-    posted_at: DateTime.iso8601('2025-03-25T19:12:54.821Z'),
-    reference: '93642593',
-    transaction_at: DateTime.iso8601('2022-07-28T01:21:00.313Z'),
+    merchant_name: 'Buckridge - Feest',
+    metadata: [],
+    posted_at: DateTime.iso8601('2025-04-16T03:49:52.053Z'),
+    reference: '79574105',
+    transaction_at: DateTime.iso8601('2022-07-30T11:48:12.704Z'),
     type: Models::Shared::AccountingBankfeedtransactionType::CREDIT,
-    updated_at: DateTime.iso8601('2022-05-23T23:26:58.193Z'),
+    updated_at: DateTime.iso8601('2022-05-25T03:29:13.176Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -230,7 +226,7 @@ end
 
 ## remove_accounting_bankfeedtransaction
 
-Remove a bankfeedtransaction
+Deletes the AccountingBankfeedtransaction identified by `id`.
 
 ### Example Usage
 
@@ -272,7 +268,7 @@ end
 
 ## update_accounting_bankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -289,23 +285,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingBankfeedtransactionRequest.new(
   accounting_bankfeedtransaction: Models::Shared::AccountingBankfeedtransaction.new(
-    account_id: 'b7dc4175-1368-4b89-a700-d621b6666648',
     amount: 60_889.0,
-    bank_category: 'Games',
-    bankfeedaccount_id: '34c1d05f-5b62-4bcd-9121-3be8b720941f',
+    bank_category: 'Clothing',
     category_ids: [],
-    contact_id: '1ef58ebe-f9c9-46f6-9d9c-2df2658503be',
     created_at: DateTime.iso8601('2022-03-24T23:41:08.374Z'),
-    currency: 'SRD',
-    description: 'payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.',
-    id: '56011350-c2b0-41d1-9ed0-b65eb5620267',
+    currency: 'CAD',
+    description: 'Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.',
+    id: '0ccd919c-7f10-48a9-8909-d562d7d5291a',
     is_pending: true,
-    merchant_name: 'Reichert, Erdman and Tillman',
-    posted_at: DateTime.iso8601('2025-03-25T19:12:54.821Z'),
-    reference: '93642593',
-    transaction_at: DateTime.iso8601('2022-07-28T01:21:00.313Z'),
+    merchant_name: 'Buckridge - Feest',
+    metadata: [],
+    posted_at: DateTime.iso8601('2025-04-16T03:49:52.053Z'),
+    reference: '79574105',
+    transaction_at: DateTime.iso8601('2022-07-30T11:48:12.704Z'),
     type: Models::Shared::AccountingBankfeedtransactionType::CREDIT,
-    updated_at: DateTime.iso8601('2022-05-23T23:26:58.193Z'),
+    updated_at: DateTime.iso8601('2022-05-25T03:29:13.176Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

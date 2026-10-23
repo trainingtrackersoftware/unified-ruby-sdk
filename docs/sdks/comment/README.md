@@ -26,7 +26,7 @@
 
 ## create_kms_comment
 
-Create a comment
+Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
 
 ### Example Usage
 
@@ -45,9 +45,10 @@ res = s.comment.create_kms_comment(kms_comment: Models::Shared::KmsComment.new(
   content: 'Decimus tolero viriliter usque.',
   content_type: Models::Shared::ContentType::HTML,
   created_at: DateTime.iso8601('2022-08-26T14:40:49.732Z'),
-  id: '27fd7c36-2f0f-474b-9c9f-6a2bf1b27279',
+  id: '6e86b1a7-3b9b-4320-a925-7c73a796b9ae',
+  metadata: [],
   type: Models::Shared::KmsCommentType::PAGE,
-  updated_at: DateTime.iso8601('2023-11-17T06:10:22.975Z'),
+  updated_at: DateTime.iso8601('2023-11-26T21:09:07.966Z'),
 ), connection_id: '<id>')
 
 unless res.kms_comment.nil?
@@ -77,7 +78,7 @@ end
 
 ## create_task_comment
 
-Create a comment
+Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
 
 ### Example Usage
 
@@ -95,10 +96,10 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.comment.create_task_comment(task_comment: Models::Shared::TaskComment.new(
   created_at: DateTime.iso8601('2019-10-12T20:33:37.879Z'),
   has_children: true,
-  id: 'd92b2d9e-8c09-4571-a417-fe7110f8b0bb',
+  id: 'dc3b63d3-a6f9-48e7-a145-4c566e24fc34',
+  metadata: [],
   text: 'Colo ulciscor sublime tabernus.',
-  updated_at: DateTime.iso8601('2021-09-24T21:41:00.583Z'),
-  user_name: 'Santina Abbott',
+  updated_at: DateTime.iso8601('2021-10-03T21:24:08.746Z'),
 ), connection_id: '<id>')
 
 unless res.task_comment.nil?
@@ -128,7 +129,7 @@ end
 
 ## create_uc_comment
 
-Create a comment
+Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
 
 ### Example Usage
 
@@ -146,8 +147,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.comment.create_uc_comment(uc_comment: Models::Shared::UcComment.new(
   content: 'Vociferor vitiosus.',
   created_at: '2023-04-02T23:42:31.571Z',
-  id: '323a249e-0cee-438f-80c8-aa82141e88d3',
-  updated_at: '2024-02-02T13:02:16.012Z',
+  id: '50773d7c-4630-49fb-961b-cba9fe034632',
+  metadata: [],
+  updated_at: '2024-02-10T05:59:53.692Z',
 ), connection_id: '<id>')
 
 unless res.uc_comment.nil?
@@ -177,7 +179,7 @@ end
 
 ## get_kms_comment
 
-Retrieve a comment
+Retrieves a single KmsComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -221,7 +223,7 @@ end
 
 ## get_task_comment
 
-Retrieve a comment
+Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -265,7 +267,7 @@ end
 
 ## get_uc_comment
 
-Retrieve a comment
+Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -309,7 +311,7 @@ end
 
 ## list_kms_comments
 
-List all comments
+Returns a list of KmsComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -354,7 +356,7 @@ end
 
 ## list_task_comments
 
-List all comments
+Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -399,7 +401,7 @@ end
 
 ## list_uc_comments
 
-List all comments
+Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -444,7 +446,7 @@ end
 
 ## patch_kms_comment
 
-Update a comment
+Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
 
 ### Example Usage
 
@@ -464,9 +466,10 @@ req = Models::Operations::PatchKmsCommentRequest.new(
     content: 'Decimus tolero viriliter usque.',
     content_type: Models::Shared::ContentType::HTML,
     created_at: DateTime.iso8601('2022-08-26T14:40:49.732Z'),
-    id: '725c578c-4e68-4686-b3a9-bc17e74111f2',
+    id: '326bb35a-355d-44f1-8aa6-bfb9de8f8773',
+    metadata: [],
     type: Models::Shared::KmsCommentType::PAGE,
-    updated_at: DateTime.iso8601('2023-11-17T06:10:22.978Z'),
+    updated_at: DateTime.iso8601('2023-11-26T21:09:07.971Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -498,7 +501,7 @@ end
 
 ## patch_task_comment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -517,10 +520,10 @@ req = Models::Operations::PatchTaskCommentRequest.new(
   task_comment: Models::Shared::TaskComment.new(
     created_at: DateTime.iso8601('2019-10-12T20:33:37.879Z'),
     has_children: true,
-    id: '73440994-5b81-4ab7-9441-ec40694d6397',
+    id: '1fff7161-2500-40af-9743-fa2743781a91',
+    metadata: [],
     text: 'Colo ulciscor sublime tabernus.',
-    updated_at: DateTime.iso8601('2021-09-24T21:41:00.585Z'),
-    user_name: 'Santina Abbott',
+    updated_at: DateTime.iso8601('2021-10-03T21:24:08.750Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -552,7 +555,7 @@ end
 
 ## patch_uc_comment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -571,8 +574,9 @@ req = Models::Operations::PatchUcCommentRequest.new(
   uc_comment: Models::Shared::UcComment.new(
     content: 'Vociferor vitiosus.',
     created_at: '2023-04-02T23:42:31.571Z',
-    id: '45a743bf-a173-442a-a853-3c6d0c1433a2',
-    updated_at: '2024-02-02T13:02:16.014Z',
+    id: '395be5cd-ad5d-4d86-bb3a-5d79de78227d',
+    metadata: [],
+    updated_at: '2024-02-10T05:59:53.696Z',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -604,7 +608,7 @@ end
 
 ## remove_kms_comment
 
-Remove a comment
+Deletes the KmsComment identified by `id`.
 
 ### Example Usage
 
@@ -646,7 +650,7 @@ end
 
 ## remove_task_comment
 
-Remove a comment
+Deletes the TaskComment identified by `id`.
 
 ### Example Usage
 
@@ -688,7 +692,7 @@ end
 
 ## remove_uc_comment
 
-Remove a comment
+Deletes the UcComment identified by `id`.
 
 ### Example Usage
 
@@ -730,7 +734,7 @@ end
 
 ## update_kms_comment
 
-Update a comment
+Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
 
 ### Example Usage
 
@@ -750,9 +754,10 @@ req = Models::Operations::UpdateKmsCommentRequest.new(
     content: 'Decimus tolero viriliter usque.',
     content_type: Models::Shared::ContentType::HTML,
     created_at: DateTime.iso8601('2022-08-26T14:40:49.732Z'),
-    id: '725c578c-4e68-4686-b3a9-bc17e74111f2',
+    id: '326bb35a-355d-44f1-8aa6-bfb9de8f8773',
+    metadata: [],
     type: Models::Shared::KmsCommentType::PAGE,
-    updated_at: DateTime.iso8601('2023-11-17T06:10:22.978Z'),
+    updated_at: DateTime.iso8601('2023-11-26T21:09:07.971Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -784,7 +789,7 @@ end
 
 ## update_task_comment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -803,10 +808,10 @@ req = Models::Operations::UpdateTaskCommentRequest.new(
   task_comment: Models::Shared::TaskComment.new(
     created_at: DateTime.iso8601('2019-10-12T20:33:37.879Z'),
     has_children: true,
-    id: '73440994-5b81-4ab7-9441-ec40694d6397',
+    id: '1fff7161-2500-40af-9743-fa2743781a91',
+    metadata: [],
     text: 'Colo ulciscor sublime tabernus.',
-    updated_at: DateTime.iso8601('2021-09-24T21:41:00.585Z'),
-    user_name: 'Santina Abbott',
+    updated_at: DateTime.iso8601('2021-10-03T21:24:08.750Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -838,7 +843,7 @@ end
 
 ## update_uc_comment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -857,8 +862,9 @@ req = Models::Operations::UpdateUcCommentRequest.new(
   uc_comment: Models::Shared::UcComment.new(
     content: 'Vociferor vitiosus.',
     created_at: '2023-04-02T23:42:31.571Z',
-    id: '45a743bf-a173-442a-a853-3c6d0c1433a2',
-    updated_at: '2024-02-02T13:02:16.014Z',
+    id: '395be5cd-ad5d-4d86-bb3a-5d79de78227d',
+    metadata: [],
+    updated_at: '2024-02-10T05:59:53.696Z',
   ),
   connection_id: '<id>',
   id: '<id>',

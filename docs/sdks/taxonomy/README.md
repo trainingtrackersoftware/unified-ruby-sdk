@@ -12,7 +12,7 @@
 
 ## create_hris_taxonomy
 
-Create a taxonomy
+Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
 
 ### Example Usage
 
@@ -28,20 +28,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.taxonomy.create_hris_taxonomy(hris_taxonomy: Models::Shared::HrisTaxonomy.new(
-  created_at: DateTime.iso8601('2022-06-23T02:10:00.789Z'),
-  description: 'Apto demonstro audacia adstringo cursim tristis solio careo.',
-  domain: 'Electronics',
-  id: 'ede085db-5709-4d53-a490-746f3de5be17',
-  is_active: false,
-  name: 'International Functionality Architect',
-  parent_id: '6524b2a7-6520-4e15-8c4e-1aa6793db837',
-  role_ids: [
-    '2b1ef757-eb4c-4207-8af1-929afe49cd65',
+  alternative_names: [
+    'Facilitator',
+    'National',
   ],
-  subcategory: 'Bamboo',
+  created_at: DateTime.iso8601('2022-06-23T02:10:00.789Z'),
+  description: 'Uterque vespillo adnuo ea commodo turbo suscipio condico.',
+  domain: 'Health',
+  id: '35c515a6-98c6-451b-aee2-3ca74bea618d',
+  is_active: false,
+  metadata: [],
+  name: 'International Functionality Architect',
+  subcategory: 'Marble',
   type: Models::Shared::HrisTaxonomyType::KNOWLEDGE,
-  updated_at: DateTime.iso8601('2023-05-22T20:37:18.964Z'),
-  url: 'https://our-polarisation.name',
+  updated_at: DateTime.iso8601('2023-05-29T17:40:39.222Z'),
+  url: 'https://fixed-membership.biz/',
 ), connection_id: '<id>')
 
 unless res.hris_taxonomy.nil?
@@ -71,7 +72,7 @@ end
 
 ## get_hris_taxonomy
 
-Retrieve a taxonomy
+Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -115,7 +116,7 @@ end
 
 ## list_crm_taxonomies
 
-List all taxonomies
+Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -160,7 +161,7 @@ end
 
 ## list_hris_taxonomies
 
-List all taxonomies
+Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

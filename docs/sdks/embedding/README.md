@@ -9,7 +9,7 @@
 
 ## create_genai_embedding
 
-Create an embedding
+Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
 
 ### Example Usage
 
@@ -33,7 +33,7 @@ res = s.embedding.create_genai_embedding(genai_embedding: Models::Shared::GenaiE
   dimension: 423.0,
   embeddings: 'Est.',
   enconding_format: Models::Shared::EncondingFormat::FLOAT,
-  id: 'cca4d4fc-2849-4a2f-a78c-7c28952c326c',
+  id: '59a2d3bc-13ae-40e2-895c-5ea599bf291c',
   max_tokens: 223.0,
   tokens_used: 836.0,
   type: 'classification',

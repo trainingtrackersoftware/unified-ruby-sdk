@@ -27,7 +27,7 @@
 
 ## create_martech_campaign
 
-Create a campaign
+Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
 
 ### Example Usage
 
@@ -43,21 +43,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.martech.create_martech_campaign(marketing_campaign: Models::Shared::MarketingCampaign.new(
-  created_at: DateTime.iso8601('2023-08-01T22:29:12.121Z'),
-  from_email: 'Nick.Beahan@hotmail.com',
-  from_name: 'Javier Rempel',
-  id: 'df998b05-de2a-430d-b95e-5170a18ef8d3',
-  list_ids: [
-    'bde5cab9-cf2f-4ed5-adab-b33c88bac5af',
-  ],
+  created_at: DateTime.iso8601('2019-05-19T11:18:15.589Z'),
+  from_email: 'graham.mertz@gmail.com',
+  from_name: 'Graham Mertz',
+  id: '407a1645-beda-4d0b-b5f2-36d4cfb30e0f',
+  metadata: [],
   name: 'Consequatur atqui sustineo.',
-  preview_text: 'Bellicus tener cinis causa cavus toties.',
-  reply_to_email: 'Antwan.Abshire@hotmail.com',
-  send_at: DateTime.iso8601('2023-03-28T12:33:25.052Z'),
-  status: Models::Shared::MarketingCampaignStatus::SENT,
-  subject_line: 'Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.',
-  type: 'plaintext',
-  updated_at: DateTime.iso8601('2023-12-17T22:11:31.702Z'),
+  preview_text: 'Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.',
+  reply_to_email: 'graham.mertz@icloud.com',
+  send_at: DateTime.iso8601('2024-01-23T21:19:26.708Z'),
+  status: Models::Shared::MarketingCampaignStatus::SCHEDULED,
+  subject_line: 'Trepide utpote conculco tibi solio supplanto peior tibi.',
+  type: 'absplit',
+  updated_at: DateTime.iso8601('2022-06-22T22:42:06.196Z'),
 ), connection_id: '<id>')
 
 unless res.marketing_campaign.nil?
@@ -87,7 +85,7 @@ end
 
 ## create_martech_list
 
-Create a list
+Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider's API. Returns the created MarketingList.
 
 ### Example Usage
 
@@ -104,25 +102,26 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.martech.create_martech_list(marketing_list: Models::Shared::MarketingList.new(
   address: Models::Shared::PropertyMarketingListAddress.new(
-    address1: '922 Elmore Manor',
-    address2: 'Suite 925',
-    city: 'Deerfield Beach',
-    country: 'Bahrain',
-    postal_code: '30765-6471',
-    region: 'FL',
+    address1: '76564 Coronation Road',
+    address2: 'Suite 922',
+    city: 'West Jordon',
+    country: 'Mexico',
+    postal_code: '04183',
+    region: 'NC',
   ),
   created_at: DateTime.iso8601('2019-09-18T02:01:36.950Z'),
-  description: 'Currus.',
-  id: 'a7bab7ae-14cc-45c4-9321-430ec10644b7',
+  description: 'Vilis.',
+  id: '3b003412-2577-4c16-94cc-ff85e9f73d48',
   is_active: true,
-  language: 'it',
-  name: 'Annette Nolan',
-  sender_company: 'Hickle - Homenick',
-  sender_email: 'Matt_Steuber@hotmail.com',
-  sender_name: 'Salvatore Roob',
-  sender_phone: '896-328-1153 x4957',
-  subject: 'Tenetur thymum circumvenio triumphus celo.',
-  updated_at: DateTime.iso8601('2022-08-31T19:02:58.579Z'),
+  language: 'ru',
+  metadata: [],
+  name: 'Electronics Newsletter',
+  sender_company: 'Koepp and Sons',
+  sender_email: 'blake.kuhn@hotmail.com',
+  sender_name: 'Blake Kuhn',
+  sender_phone: '359.305.7962 x28115',
+  subject: 'Theca caecus copia crebro valeo ulciscor.',
+  updated_at: DateTime.iso8601('2022-09-14T06:14:04.658Z'),
 ), connection_id: '<id>')
 
 unless res.marketing_list.nil?
@@ -152,7 +151,7 @@ end
 
 ## create_martech_member
 
-Create a member
+Creates a MarketingMember. Provide the unified MarketingMember fields in the request body; they are mapped to the provider's API. Returns the created MarketingMember.
 
 ### Example Usage
 
@@ -172,28 +171,21 @@ res = s.martech.create_martech_member(marketing_member: Models::Shared::Marketin
   created_at: DateTime.iso8601('2022-04-15T15:32:38.496Z'),
   emails: [
     Models::Shared::MarketingEmail.new(
-      email: 'Thalia.Abernathy61@gmail.com',
+      email: 'jude.leffler@hotmail.com',
       type: Models::Shared::MarketingEmailType::HOME,
-    ),
-    Models::Shared::MarketingEmail.new(
-      email: 'Maymie59@hotmail.com',
-      type: Models::Shared::MarketingEmailType::HOME,
-    ),
-    Models::Shared::MarketingEmail.new(
-      email: 'Coty27@hotmail.com',
-      type: Models::Shared::MarketingEmailType::WORK,
     ),
   ],
   first_name: 'Jude',
-  id: 'f753bd50-ca21-4509-b919-a53f54c01bad',
+  id: '270da929-b988-4159-8918-38d7bdde4ce8',
   last_name: 'Leffler',
+  metadata: [],
   name: 'Jude Leffler',
   status: Models::Shared::MarketingMemberStatus::UNSUBSCRIBED,
   tags: [
-    'vinco',
-    'ceno',
+    'adnuo',
+    'verumtamen',
   ],
-  updated_at: DateTime.iso8601('2025-06-17T09:11:18.183Z'),
+  updated_at: DateTime.iso8601('2025-07-10T05:59:16.554Z'),
 ), connection_id: '<id>')
 
 unless res.marketing_member.nil?
@@ -223,7 +215,7 @@ end
 
 ## get_martech_campaign
 
-Retrieve a campaign
+Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -267,7 +259,7 @@ end
 
 ## get_martech_list
 
-Retrieve a list
+Retrieves a single MarketingList by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -311,7 +303,7 @@ end
 
 ## get_martech_member
 
-Retrieve a member
+Retrieves a single MarketingMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -355,7 +347,7 @@ end
 
 ## list_martech_campaigns
 
-List all campaigns
+Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -400,7 +392,7 @@ end
 
 ## list_martech_lists
 
-List all lists
+Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -445,7 +437,7 @@ end
 
 ## list_martech_members
 
-List all members
+Returns a list of MarketingMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -490,7 +482,7 @@ end
 
 ## list_martech_reports
 
-List all reports
+Returns a list of MarketingReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -535,7 +527,7 @@ end
 
 ## patch_martech_campaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -552,21 +544,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchMartechCampaignRequest.new(
   marketing_campaign: Models::Shared::MarketingCampaign.new(
-    created_at: DateTime.iso8601('2023-08-01T22:29:12.121Z'),
-    from_email: 'Nick.Beahan@hotmail.com',
-    from_name: 'Javier Rempel',
-    id: '6e70b7c4-1de5-4391-9b5b-9fd4c8acb56a',
-    list_ids: [
-      'bde5cab9-cf2f-4ed5-adab-b33c88bac5af',
-    ],
+    created_at: DateTime.iso8601('2019-05-19T11:18:15.589Z'),
+    from_email: 'graham.mertz@gmail.com',
+    from_name: 'Graham Mertz',
+    id: '5a48f9a6-02f2-4b50-8a34-5bcc96b0d40a',
+    metadata: [],
     name: 'Consequatur atqui sustineo.',
-    preview_text: 'Bellicus tener cinis causa cavus toties.',
-    reply_to_email: 'Antwan.Abshire@hotmail.com',
-    send_at: DateTime.iso8601('2023-03-28T12:33:25.052Z'),
-    status: Models::Shared::MarketingCampaignStatus::SENT,
-    subject_line: 'Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.',
-    type: 'plaintext',
-    updated_at: DateTime.iso8601('2023-12-17T22:11:31.702Z'),
+    preview_text: 'Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.',
+    reply_to_email: 'graham.mertz@icloud.com',
+    send_at: DateTime.iso8601('2024-01-23T21:19:26.708Z'),
+    status: Models::Shared::MarketingCampaignStatus::SCHEDULED,
+    subject_line: 'Trepide utpote conculco tibi solio supplanto peior tibi.',
+    type: 'absplit',
+    updated_at: DateTime.iso8601('2022-06-22T22:42:06.204Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -598,7 +588,7 @@ end
 
 ## patch_martech_list
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -616,25 +606,26 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchMartechListRequest.new(
   marketing_list: Models::Shared::MarketingList.new(
     address: Models::Shared::PropertyMarketingListAddress.new(
-      address1: '922 Elmore Manor',
-      address2: 'Suite 925',
-      city: 'Deerfield Beach',
-      country: 'Bahrain',
-      postal_code: '30765-6471',
-      region: 'FL',
+      address1: '76564 Coronation Road',
+      address2: 'Suite 922',
+      city: 'West Jordon',
+      country: 'Mexico',
+      postal_code: '04183',
+      region: 'NC',
     ),
     created_at: DateTime.iso8601('2019-09-18T02:01:36.950Z'),
-    description: 'Currus.',
-    id: '9605b057-d244-42a2-9531-60293c28a4b8',
+    description: 'Vilis.',
+    id: '0ebb97b3-1979-48db-9888-59d2a1abd6ea',
     is_active: true,
-    language: 'it',
-    name: 'Annette Nolan',
-    sender_company: 'Hickle - Homenick',
-    sender_email: 'Matt_Steuber@hotmail.com',
-    sender_name: 'Salvatore Roob',
-    sender_phone: '896-328-1153 x4957',
-    subject: 'Tenetur thymum circumvenio triumphus celo.',
-    updated_at: DateTime.iso8601('2022-08-31T19:02:58.586Z'),
+    language: 'ru',
+    metadata: [],
+    name: 'Electronics Newsletter',
+    sender_company: 'Koepp and Sons',
+    sender_email: 'blake.kuhn@hotmail.com',
+    sender_name: 'Blake Kuhn',
+    sender_phone: '359.305.7962 x28115',
+    subject: 'Theca caecus copia crebro valeo ulciscor.',
+    updated_at: DateTime.iso8601('2022-09-14T06:14:04.670Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -666,7 +657,7 @@ end
 
 ## patch_martech_member
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -687,28 +678,21 @@ req = Models::Operations::PatchMartechMemberRequest.new(
     created_at: DateTime.iso8601('2022-04-15T15:32:38.496Z'),
     emails: [
       Models::Shared::MarketingEmail.new(
-        email: 'Thalia.Abernathy61@gmail.com',
+        email: 'jude.leffler@hotmail.com',
         type: Models::Shared::MarketingEmailType::HOME,
-      ),
-      Models::Shared::MarketingEmail.new(
-        email: 'Maymie59@hotmail.com',
-        type: Models::Shared::MarketingEmailType::HOME,
-      ),
-      Models::Shared::MarketingEmail.new(
-        email: 'Coty27@hotmail.com',
-        type: Models::Shared::MarketingEmailType::WORK,
       ),
     ],
     first_name: 'Jude',
-    id: '8a534753-6554-4d78-98b0-1b6ba7be952e',
+    id: '2e8f501b-b93b-4cbe-807d-29c89dba8c62',
     last_name: 'Leffler',
+    metadata: [],
     name: 'Jude Leffler',
     status: Models::Shared::MarketingMemberStatus::UNSUBSCRIBED,
     tags: [
-      'vinco',
-      'ceno',
+      'adnuo',
+      'verumtamen',
     ],
-    updated_at: DateTime.iso8601('2025-06-17T09:11:18.189Z'),
+    updated_at: DateTime.iso8601('2025-07-10T05:59:16.568Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -740,7 +724,7 @@ end
 
 ## remove_martech_campaign
 
-Remove a campaign
+Deletes the MarketingCampaign identified by `id`.
 
 ### Example Usage
 
@@ -782,7 +766,7 @@ end
 
 ## remove_martech_list
 
-Remove a list
+Deletes the MarketingList identified by `id`.
 
 ### Example Usage
 
@@ -824,7 +808,7 @@ end
 
 ## remove_martech_member
 
-Remove a member
+Deletes the MarketingMember identified by `id`.
 
 ### Example Usage
 
@@ -866,7 +850,7 @@ end
 
 ## update_martech_campaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -883,21 +867,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateMartechCampaignRequest.new(
   marketing_campaign: Models::Shared::MarketingCampaign.new(
-    created_at: DateTime.iso8601('2023-08-01T22:29:12.121Z'),
-    from_email: 'Nick.Beahan@hotmail.com',
-    from_name: 'Javier Rempel',
-    id: '6e70b7c4-1de5-4391-9b5b-9fd4c8acb56a',
-    list_ids: [
-      'bde5cab9-cf2f-4ed5-adab-b33c88bac5af',
-    ],
+    created_at: DateTime.iso8601('2019-05-19T11:18:15.589Z'),
+    from_email: 'graham.mertz@gmail.com',
+    from_name: 'Graham Mertz',
+    id: '5a48f9a6-02f2-4b50-8a34-5bcc96b0d40a',
+    metadata: [],
     name: 'Consequatur atqui sustineo.',
-    preview_text: 'Bellicus tener cinis causa cavus toties.',
-    reply_to_email: 'Antwan.Abshire@hotmail.com',
-    send_at: DateTime.iso8601('2023-03-28T12:33:25.052Z'),
-    status: Models::Shared::MarketingCampaignStatus::SENT,
-    subject_line: 'Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.',
-    type: 'plaintext',
-    updated_at: DateTime.iso8601('2023-12-17T22:11:31.702Z'),
+    preview_text: 'Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.',
+    reply_to_email: 'graham.mertz@icloud.com',
+    send_at: DateTime.iso8601('2024-01-23T21:19:26.708Z'),
+    status: Models::Shared::MarketingCampaignStatus::SCHEDULED,
+    subject_line: 'Trepide utpote conculco tibi solio supplanto peior tibi.',
+    type: 'absplit',
+    updated_at: DateTime.iso8601('2022-06-22T22:42:06.204Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -929,7 +911,7 @@ end
 
 ## update_martech_list
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -947,25 +929,26 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateMartechListRequest.new(
   marketing_list: Models::Shared::MarketingList.new(
     address: Models::Shared::PropertyMarketingListAddress.new(
-      address1: '922 Elmore Manor',
-      address2: 'Suite 925',
-      city: 'Deerfield Beach',
-      country: 'Bahrain',
-      postal_code: '30765-6471',
-      region: 'FL',
+      address1: '76564 Coronation Road',
+      address2: 'Suite 922',
+      city: 'West Jordon',
+      country: 'Mexico',
+      postal_code: '04183',
+      region: 'NC',
     ),
     created_at: DateTime.iso8601('2019-09-18T02:01:36.950Z'),
-    description: 'Currus.',
-    id: '9605b057-d244-42a2-9531-60293c28a4b8',
+    description: 'Vilis.',
+    id: '0ebb97b3-1979-48db-9888-59d2a1abd6ea',
     is_active: true,
-    language: 'it',
-    name: 'Annette Nolan',
-    sender_company: 'Hickle - Homenick',
-    sender_email: 'Matt_Steuber@hotmail.com',
-    sender_name: 'Salvatore Roob',
-    sender_phone: '896-328-1153 x4957',
-    subject: 'Tenetur thymum circumvenio triumphus celo.',
-    updated_at: DateTime.iso8601('2022-08-31T19:02:58.586Z'),
+    language: 'ru',
+    metadata: [],
+    name: 'Electronics Newsletter',
+    sender_company: 'Koepp and Sons',
+    sender_email: 'blake.kuhn@hotmail.com',
+    sender_name: 'Blake Kuhn',
+    sender_phone: '359.305.7962 x28115',
+    subject: 'Theca caecus copia crebro valeo ulciscor.',
+    updated_at: DateTime.iso8601('2022-09-14T06:14:04.670Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -997,7 +980,7 @@ end
 
 ## update_martech_member
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -1018,28 +1001,21 @@ req = Models::Operations::UpdateMartechMemberRequest.new(
     created_at: DateTime.iso8601('2022-04-15T15:32:38.496Z'),
     emails: [
       Models::Shared::MarketingEmail.new(
-        email: 'Thalia.Abernathy61@gmail.com',
+        email: 'jude.leffler@hotmail.com',
         type: Models::Shared::MarketingEmailType::HOME,
-      ),
-      Models::Shared::MarketingEmail.new(
-        email: 'Maymie59@hotmail.com',
-        type: Models::Shared::MarketingEmailType::HOME,
-      ),
-      Models::Shared::MarketingEmail.new(
-        email: 'Coty27@hotmail.com',
-        type: Models::Shared::MarketingEmailType::WORK,
       ),
     ],
     first_name: 'Jude',
-    id: '8a534753-6554-4d78-98b0-1b6ba7be952e',
+    id: '2e8f501b-b93b-4cbe-807d-29c89dba8c62',
     last_name: 'Leffler',
+    metadata: [],
     name: 'Jude Leffler',
     status: Models::Shared::MarketingMemberStatus::UNSUBSCRIBED,
     tags: [
-      'vinco',
-      'ceno',
+      'adnuo',
+      'verumtamen',
     ],
-    updated_at: DateTime.iso8601('2025-06-17T09:11:18.189Z'),
+    updated_at: DateTime.iso8601('2025-07-10T05:59:16.568Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

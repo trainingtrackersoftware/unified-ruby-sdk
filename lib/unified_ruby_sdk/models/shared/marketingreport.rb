@@ -13,65 +13,67 @@ module UnifiedRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
+        # Number of abuse reports
         field :abuse_reports, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('abuse_reports') } }
-
+        # Associated campaign ID
         field :campaign_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('campaign_id') } }
-
+        # Click rate (decimal)
         field :click_rate, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('click_rate') } }
-
+        # Total clicks
         field :clicks_total, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('clicks_total') } }
-
+        # Total emails sent
         field :emails_sent, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('emails_sent') } }
-
+        # End time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :end_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('end_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Forward count
         field :forwards_count, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('forwards_count') } }
-
+        # Forwards opened
         field :forwards_opens, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('forwards_opens') } }
-
+        # Hard bounce count
         field :hard_bounces, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('hard_bounces') } }
-
+        # Open rate (decimal) excluding automated/bot/proxy opens
         field :human_open_rate, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('human_open_rate') } }
-
+        # Total opens excluding automated/bot/proxy (e.g. Apple Mail Privacy Protection) opens
         field :human_opens_total, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('human_opens_total') } }
-
+        # Unique opens excluding automated/bot/proxy opens
         field :human_unique_opens, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('human_unique_opens') } }
-
+        # Unique identifier for the campaign report
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
-
+        # Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :last_click_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('last_click_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Last open timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :last_open_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('last_open_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
         # URL-specific click data
         field :links, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::MarketingReportLink)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('links') } }
-
+        # Associated list ID
         field :list_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('list_id') } }
 
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::MarketingMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
+        # Open rate (decimal)
         field :open_rate, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('open_rate') } }
-
+        # Total opens
         field :opens_total, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('opens_total') } }
-
+        # Raw data from integration
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
-
+        # Send time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :sent_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('sent_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Soft bounce count
         field :soft_bounces, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('soft_bounces') } }
-
+        # Start time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :start_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('start_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Syntax error count
         field :syntax_errors, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('syntax_errors') } }
-
+        # Unique clicks
         field :unique_clicks, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('unique_clicks') } }
-
+        # Unique opens
         field :unique_opens, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('unique_opens') } }
-
+        # Unique subscriber clicks
         field :unique_subscriber_clicks, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('unique_subscriber_clicks') } }
-
+        # Number of unsubscribes
         field :unsubscribed, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('unsubscribed') } }
 
-        sig { params(abuse_reports: T.nilable(::Float), campaign_id: T.nilable(::String), click_rate: T.nilable(::Float), clicks_total: T.nilable(::Float), emails_sent: T.nilable(::Float), end_at: T.nilable(::DateTime), forwards_count: T.nilable(::Float), forwards_opens: T.nilable(::Float), hard_bounces: T.nilable(::Float), human_open_rate: T.nilable(::Float), human_opens_total: T.nilable(::Float), human_unique_opens: T.nilable(::Float), id: T.nilable(::String), last_click_at: T.nilable(::DateTime), last_open_at: T.nilable(::DateTime), links: T.nilable(T::Array[Models::Shared::MarketingReportLink]), list_id: T.nilable(::String), open_rate: T.nilable(::Float), opens_total: T.nilable(::Float), raw: T.nilable(T::Hash[Symbol, ::Object]), sent_at: T.nilable(::DateTime), soft_bounces: T.nilable(::Float), start_at: T.nilable(::DateTime), syntax_errors: T.nilable(::Float), unique_clicks: T.nilable(::Float), unique_opens: T.nilable(::Float), unique_subscriber_clicks: T.nilable(::Float), unsubscribed: T.nilable(::Float)).void }
-        def initialize(abuse_reports: nil, campaign_id: nil, click_rate: nil, clicks_total: nil, emails_sent: nil, end_at: nil, forwards_count: nil, forwards_opens: nil, hard_bounces: nil, human_open_rate: nil, human_opens_total: nil, human_unique_opens: nil, id: nil, last_click_at: nil, last_open_at: nil, links: nil, list_id: nil, open_rate: nil, opens_total: nil, raw: nil, sent_at: nil, soft_bounces: nil, start_at: nil, syntax_errors: nil, unique_clicks: nil, unique_opens: nil, unique_subscriber_clicks: nil, unsubscribed: nil)
+        sig { params(abuse_reports: T.nilable(::Float), campaign_id: T.nilable(::String), click_rate: T.nilable(::Float), clicks_total: T.nilable(::Float), emails_sent: T.nilable(::Float), end_at: T.nilable(::DateTime), forwards_count: T.nilable(::Float), forwards_opens: T.nilable(::Float), hard_bounces: T.nilable(::Float), human_open_rate: T.nilable(::Float), human_opens_total: T.nilable(::Float), human_unique_opens: T.nilable(::Float), id: T.nilable(::String), last_click_at: T.nilable(::DateTime), last_open_at: T.nilable(::DateTime), links: T.nilable(T::Array[Models::Shared::MarketingReportLink]), list_id: T.nilable(::String), metadata: T.nilable(T::Array[Models::Shared::MarketingMetadata]), open_rate: T.nilable(::Float), opens_total: T.nilable(::Float), raw: T.nilable(T::Hash[Symbol, ::Object]), sent_at: T.nilable(::DateTime), soft_bounces: T.nilable(::Float), start_at: T.nilable(::DateTime), syntax_errors: T.nilable(::Float), unique_clicks: T.nilable(::Float), unique_opens: T.nilable(::Float), unique_subscriber_clicks: T.nilable(::Float), unsubscribed: T.nilable(::Float)).void }
+        def initialize(abuse_reports: nil, campaign_id: nil, click_rate: nil, clicks_total: nil, emails_sent: nil, end_at: nil, forwards_count: nil, forwards_opens: nil, hard_bounces: nil, human_open_rate: nil, human_opens_total: nil, human_unique_opens: nil, id: nil, last_click_at: nil, last_open_at: nil, links: nil, list_id: nil, metadata: nil, open_rate: nil, opens_total: nil, raw: nil, sent_at: nil, soft_bounces: nil, start_at: nil, syntax_errors: nil, unique_clicks: nil, unique_opens: nil, unique_subscriber_clicks: nil, unsubscribed: nil)
           @abuse_reports = abuse_reports
           @campaign_id = campaign_id
           @click_rate = click_rate
@@ -89,6 +91,7 @@ module UnifiedRubySDK
           @last_open_at = last_open_at
           @links = links
           @list_id = list_id
+          @metadata = metadata
           @open_rate = open_rate
           @opens_total = opens_total
           @raw = raw
@@ -122,6 +125,7 @@ module UnifiedRubySDK
           return false unless @last_open_at == other.last_open_at
           return false unless @links == other.links
           return false unless @list_id == other.list_id
+          return false unless @metadata == other.metadata
           return false unless @open_rate == other.open_rate
           return false unless @opens_total == other.opens_total
           return false unless @raw == other.raw

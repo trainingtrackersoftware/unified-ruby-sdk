@@ -14,7 +14,7 @@
 
 ## create_ats_candidate
 
-Create a candidate
+Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
 
 ### Example Usage
 
@@ -31,55 +31,62 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.candidate.create_ats_candidate(ats_candidate: Models::Shared::AtsCandidate.new(
   address: Models::Shared::PropertyAtsCandidateAddress.new(
-    address1: '802 Roberts Squares',
-    address2: 'Suite 550',
-    city: 'Lake Raeganside',
+    address1: '6790 S 1st Street',
+    city: 'Ferrystad',
     country_code: 'US',
-    postal_code: '44530-0054',
-    region: 'Tennessee',
-    region_code: 'NV',
+    postal_code: '91605',
+    region: 'Idaho',
+    region_code: 'HI',
   ),
-  company_name: 'Ferry, Legros and Feest',
+  company_name: 'Lehner and Sons',
   created_at: DateTime.iso8601('2023-10-16T05:42:56.049Z'),
+  date_of_birth: DateTime.iso8601('1994-07-05T19:48:57.631Z'),
   education: [
     Models::Shared::AtsCandidateEducation.new(
-      degree: 'mouser throughout',
-      end_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
-      field_of_study: 'solutio',
-      institution: 'Heller - Lubowitz',
+      degree: 'emphasize tricky',
+      end_at: DateTime.iso8601('1978-04-14T07:58:36.326Z'),
+      field_of_study: 'curtus',
+      institution: 'Abbott - Batz',
       level: 'phd',
-      start_at: DateTime.iso8601('2001-03-26T08:12:11.510Z'),
+      start_at: DateTime.iso8601('1994-06-09T13:31:39.059Z'),
+    ),
+    Models::Shared::AtsCandidateEducation.new(
+      degree: 'blah cappelletti',
+      end_at: DateTime.iso8601('1989-09-06T03:32:39.901Z'),
+      field_of_study: 'crustulum',
+      institution: 'Herman, Franey and Lebsack',
+      level: 'highschool',
+      start_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
     ),
   ],
   emails: [
     Models::Shared::AtsEmail.new(
-      email: 'Ardith.Beatty@hotmail.com',
-      name: 'Opal Lindgren',
-      type: Models::Shared::AtsEmailType::WORK,
-    ),
-    Models::Shared::AtsEmail.new(
-      email: 'Ardith_Beatty@gmail.com',
-      name: 'Kristi Nader',
-      type: Models::Shared::AtsEmailType::OTHER,
+      email: 'ardith.beatty@outlook.com',
+      name: 'Ardith Beatty',
+      type: Models::Shared::AtsEmailType::HOME,
     ),
   ],
   experiences: [
     Models::Shared::AtsCandidateExperience.new(
-      company_name: 'Donnelly, Buckridge and Steuber',
-      end_at: DateTime.iso8601('1978-06-20T02:53:48.383Z'),
-      start_at: DateTime.iso8601('1980-02-06T17:16:53.798Z'),
-      title: 'Principal Brand Strategist',
+      company_name: 'Kutch, Lind and Marks',
+      end_at: DateTime.iso8601('1974-03-01T17:02:58.824Z'),
+      start_at: DateTime.iso8601('1999-09-21T22:12:51.663Z'),
+      title: 'Lead Security Technician',
+    ),
+    Models::Shared::AtsCandidateExperience.new(
+      company_name: 'Trantow, Sipes and Witting',
+      end_at: DateTime.iso8601('2004-10-14T14:01:00.717Z'),
+      start_at: DateTime.iso8601('1996-12-15T04:12:04.582Z'),
+      title: 'Regional Applications Planner',
     ),
   ],
   first_name: 'Ardith',
-  id: '5783d841-61c1-4e84-89a1-75752d0c34de',
-  image_url: 'https://loremflickr.com/40/3693?lock=5634712403880328',
+  id: '765d8f1d-ef35-4301-8df0-35945f28d492',
+  image_url: 'https://avatars.githubusercontent.com/u/27464445',
   job_ids: [],
   last_name: 'Beatty',
   link_urls: [
-    'https://sizzling-legislature.com',
-    'https://soupy-interchange.net',
-    'https://troubled-substitution.info',
+    'https://www.linkedin.com/in/ardith-beatty',
   ],
   metadata: [
     Models::Shared::AtsMetadata.new(
@@ -87,34 +94,35 @@ res = s.candidate.create_ats_candidate(ats_candidate: Models::Shared::AtsCandida
 
       },
       format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: '15415530-c27a-40d4-bac7-71c36dd5d9c8',
+      id: '88f377c0-68ae-4125-8dd1-4a4c59aa2d11',
       namespace: 'custom',
       slug: 'custom_field',
-      value: 'cariosus',
+      value: 'officia',
     ),
   ],
   name: 'Ardith Beatty',
-  origin: Models::Shared::Origin::SOURCED,
+  origin: Models::Shared::Origin::AGENCY,
   skills: [
-    'vita',
-    'cohors',
+    'trepide',
+    'voveo',
   ],
   sources: [
-    'tactus',
+    'vesper',
+    'utroque',
   ],
-  summary: 'Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.',
+  summary: 'Laborum trado carcer delibero patruus totam. Vita cohors cariosus trans denego barba rerum similique. Templum totam suus voluptatem cui depraedor virgo cui comminor commodi.',
   tags: [
-    'aliquid',
+    'voro',
   ],
   telephones: [
     Models::Shared::AtsTelephone.new(
-      telephone: '(779) 296-5994',
-      type: Models::Shared::AtsTelephoneType::HOME,
+      telephone: '(837) 251-3896',
+      type: Models::Shared::AtsTelephoneType::MOBILE,
     ),
   ],
-  title: 'Principal Implementation Analyst',
-  updated_at: DateTime.iso8601('2024-04-23T10:02:23.058Z'),
-  web_url: 'https://expert-lender.name/',
+  title: 'Customer Division Producer',
+  updated_at: DateTime.iso8601('2024-04-29T02:15:35.352Z'),
+  web_url: 'https://fragrant-husband.net/',
 ), connection_id: '<id>')
 
 unless res.ats_candidate.nil?
@@ -144,7 +152,7 @@ end
 
 ## get_ats_candidate
 
-Retrieve a candidate
+Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -188,7 +196,7 @@ end
 
 ## list_ats_candidates
 
-List all candidates
+Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -233,7 +241,7 @@ end
 
 ## patch_ats_candidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -251,55 +259,62 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAtsCandidateRequest.new(
   ats_candidate: Models::Shared::AtsCandidate.new(
     address: Models::Shared::PropertyAtsCandidateAddress.new(
-      address1: '802 Roberts Squares',
-      address2: 'Suite 550',
-      city: 'Lake Raeganside',
+      address1: '6790 S 1st Street',
+      city: 'Ferrystad',
       country_code: 'US',
-      postal_code: '44530-0054',
-      region: 'Tennessee',
-      region_code: 'NV',
+      postal_code: '91605',
+      region: 'Idaho',
+      region_code: 'HI',
     ),
-    company_name: 'Ferry, Legros and Feest',
+    company_name: 'Lehner and Sons',
     created_at: DateTime.iso8601('2023-10-16T05:42:56.049Z'),
+    date_of_birth: DateTime.iso8601('1994-07-05T19:48:57.631Z'),
     education: [
       Models::Shared::AtsCandidateEducation.new(
-        degree: 'mouser throughout',
-        end_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
-        field_of_study: 'solutio',
-        institution: 'Heller - Lubowitz',
+        degree: 'emphasize tricky',
+        end_at: DateTime.iso8601('1978-04-14T07:58:36.326Z'),
+        field_of_study: 'curtus',
+        institution: 'Abbott - Batz',
         level: 'phd',
-        start_at: DateTime.iso8601('2001-03-26T08:12:11.510Z'),
+        start_at: DateTime.iso8601('1994-06-09T13:31:39.059Z'),
+      ),
+      Models::Shared::AtsCandidateEducation.new(
+        degree: 'blah cappelletti',
+        end_at: DateTime.iso8601('1989-09-06T03:32:39.901Z'),
+        field_of_study: 'crustulum',
+        institution: 'Herman, Franey and Lebsack',
+        level: 'highschool',
+        start_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
       ),
     ],
     emails: [
       Models::Shared::AtsEmail.new(
-        email: 'Ardith.Beatty@hotmail.com',
-        name: 'Opal Lindgren',
-        type: Models::Shared::AtsEmailType::WORK,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Ardith_Beatty@gmail.com',
-        name: 'Kristi Nader',
-        type: Models::Shared::AtsEmailType::OTHER,
+        email: 'ardith.beatty@outlook.com',
+        name: 'Ardith Beatty',
+        type: Models::Shared::AtsEmailType::HOME,
       ),
     ],
     experiences: [
       Models::Shared::AtsCandidateExperience.new(
-        company_name: 'Donnelly, Buckridge and Steuber',
-        end_at: DateTime.iso8601('1978-06-20T02:53:48.383Z'),
-        start_at: DateTime.iso8601('1980-02-06T17:16:53.798Z'),
-        title: 'Principal Brand Strategist',
+        company_name: 'Kutch, Lind and Marks',
+        end_at: DateTime.iso8601('1974-03-01T17:02:58.824Z'),
+        start_at: DateTime.iso8601('1999-09-21T22:12:51.663Z'),
+        title: 'Lead Security Technician',
+      ),
+      Models::Shared::AtsCandidateExperience.new(
+        company_name: 'Trantow, Sipes and Witting',
+        end_at: DateTime.iso8601('2004-10-14T14:01:00.717Z'),
+        start_at: DateTime.iso8601('1996-12-15T04:12:04.582Z'),
+        title: 'Regional Applications Planner',
       ),
     ],
     first_name: 'Ardith',
-    id: '716db3fd-4ddf-42c5-8e0d-aff56725cdd2',
-    image_url: 'https://loremflickr.com/40/3693?lock=5634712403880328',
+    id: '048dfdaa-43d0-4e45-9000-37cd633a405e',
+    image_url: 'https://avatars.githubusercontent.com/u/27464445',
     job_ids: [],
     last_name: 'Beatty',
     link_urls: [
-      'https://sizzling-legislature.com',
-      'https://soupy-interchange.net',
-      'https://troubled-substitution.info',
+      'https://www.linkedin.com/in/ardith-beatty',
     ],
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -307,34 +322,35 @@ req = Models::Operations::PatchAtsCandidateRequest.new(
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: '94b0b9be-6037-4b57-8924-0c1ada734aca',
+        id: '01d15e03-e3cf-4fec-8e4e-15b634f09c61',
         namespace: 'custom',
         slug: 'custom_field',
-        value: 'cariosus',
+        value: 'officia',
       ),
     ],
     name: 'Ardith Beatty',
-    origin: Models::Shared::Origin::SOURCED,
+    origin: Models::Shared::Origin::AGENCY,
     skills: [
-      'vita',
-      'cohors',
+      'trepide',
+      'voveo',
     ],
     sources: [
-      'tactus',
+      'vesper',
+      'utroque',
     ],
-    summary: 'Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.',
+    summary: 'Laborum trado carcer delibero patruus totam. Vita cohors cariosus trans denego barba rerum similique. Templum totam suus voluptatem cui depraedor virgo cui comminor commodi.',
     tags: [
-      'aliquid',
+      'voro',
     ],
     telephones: [
       Models::Shared::AtsTelephone.new(
-        telephone: '(779) 296-5994',
-        type: Models::Shared::AtsTelephoneType::HOME,
+        telephone: '(837) 251-3896',
+        type: Models::Shared::AtsTelephoneType::MOBILE,
       ),
     ],
-    title: 'Principal Implementation Analyst',
-    updated_at: DateTime.iso8601('2024-04-23T10:02:23.064Z'),
-    web_url: 'https://expert-lender.name/',
+    title: 'Customer Division Producer',
+    updated_at: DateTime.iso8601('2024-04-29T02:15:35.360Z'),
+    web_url: 'https://fragrant-husband.net/',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -366,7 +382,7 @@ end
 
 ## remove_ats_candidate
 
-Remove a candidate
+Deletes the AtsCandidate identified by `id`.
 
 ### Example Usage
 
@@ -408,7 +424,7 @@ end
 
 ## update_ats_candidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -426,55 +442,62 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAtsCandidateRequest.new(
   ats_candidate: Models::Shared::AtsCandidate.new(
     address: Models::Shared::PropertyAtsCandidateAddress.new(
-      address1: '802 Roberts Squares',
-      address2: 'Suite 550',
-      city: 'Lake Raeganside',
+      address1: '6790 S 1st Street',
+      city: 'Ferrystad',
       country_code: 'US',
-      postal_code: '44530-0054',
-      region: 'Tennessee',
-      region_code: 'NV',
+      postal_code: '91605',
+      region: 'Idaho',
+      region_code: 'HI',
     ),
-    company_name: 'Ferry, Legros and Feest',
+    company_name: 'Lehner and Sons',
     created_at: DateTime.iso8601('2023-10-16T05:42:56.049Z'),
+    date_of_birth: DateTime.iso8601('1994-07-05T19:48:57.631Z'),
     education: [
       Models::Shared::AtsCandidateEducation.new(
-        degree: 'mouser throughout',
-        end_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
-        field_of_study: 'solutio',
-        institution: 'Heller - Lubowitz',
+        degree: 'emphasize tricky',
+        end_at: DateTime.iso8601('1978-04-14T07:58:36.326Z'),
+        field_of_study: 'curtus',
+        institution: 'Abbott - Batz',
         level: 'phd',
-        start_at: DateTime.iso8601('2001-03-26T08:12:11.510Z'),
+        start_at: DateTime.iso8601('1994-06-09T13:31:39.059Z'),
+      ),
+      Models::Shared::AtsCandidateEducation.new(
+        degree: 'blah cappelletti',
+        end_at: DateTime.iso8601('1989-09-06T03:32:39.901Z'),
+        field_of_study: 'crustulum',
+        institution: 'Herman, Franey and Lebsack',
+        level: 'highschool',
+        start_at: DateTime.iso8601('1992-11-28T20:23:20.311Z'),
       ),
     ],
     emails: [
       Models::Shared::AtsEmail.new(
-        email: 'Ardith.Beatty@hotmail.com',
-        name: 'Opal Lindgren',
-        type: Models::Shared::AtsEmailType::WORK,
-      ),
-      Models::Shared::AtsEmail.new(
-        email: 'Ardith_Beatty@gmail.com',
-        name: 'Kristi Nader',
-        type: Models::Shared::AtsEmailType::OTHER,
+        email: 'ardith.beatty@outlook.com',
+        name: 'Ardith Beatty',
+        type: Models::Shared::AtsEmailType::HOME,
       ),
     ],
     experiences: [
       Models::Shared::AtsCandidateExperience.new(
-        company_name: 'Donnelly, Buckridge and Steuber',
-        end_at: DateTime.iso8601('1978-06-20T02:53:48.383Z'),
-        start_at: DateTime.iso8601('1980-02-06T17:16:53.798Z'),
-        title: 'Principal Brand Strategist',
+        company_name: 'Kutch, Lind and Marks',
+        end_at: DateTime.iso8601('1974-03-01T17:02:58.824Z'),
+        start_at: DateTime.iso8601('1999-09-21T22:12:51.663Z'),
+        title: 'Lead Security Technician',
+      ),
+      Models::Shared::AtsCandidateExperience.new(
+        company_name: 'Trantow, Sipes and Witting',
+        end_at: DateTime.iso8601('2004-10-14T14:01:00.717Z'),
+        start_at: DateTime.iso8601('1996-12-15T04:12:04.582Z'),
+        title: 'Regional Applications Planner',
       ),
     ],
     first_name: 'Ardith',
-    id: '716db3fd-4ddf-42c5-8e0d-aff56725cdd2',
-    image_url: 'https://loremflickr.com/40/3693?lock=5634712403880328',
+    id: '048dfdaa-43d0-4e45-9000-37cd633a405e',
+    image_url: 'https://avatars.githubusercontent.com/u/27464445',
     job_ids: [],
     last_name: 'Beatty',
     link_urls: [
-      'https://sizzling-legislature.com',
-      'https://soupy-interchange.net',
-      'https://troubled-substitution.info',
+      'https://www.linkedin.com/in/ardith-beatty',
     ],
     metadata: [
       Models::Shared::AtsMetadata.new(
@@ -482,34 +505,35 @@ req = Models::Operations::UpdateAtsCandidateRequest.new(
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: '94b0b9be-6037-4b57-8924-0c1ada734aca',
+        id: '01d15e03-e3cf-4fec-8e4e-15b634f09c61',
         namespace: 'custom',
         slug: 'custom_field',
-        value: 'cariosus',
+        value: 'officia',
       ),
     ],
     name: 'Ardith Beatty',
-    origin: Models::Shared::Origin::SOURCED,
+    origin: Models::Shared::Origin::AGENCY,
     skills: [
-      'vita',
-      'cohors',
+      'trepide',
+      'voveo',
     ],
     sources: [
-      'tactus',
+      'vesper',
+      'utroque',
     ],
-    summary: 'Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.',
+    summary: 'Laborum trado carcer delibero patruus totam. Vita cohors cariosus trans denego barba rerum similique. Templum totam suus voluptatem cui depraedor virgo cui comminor commodi.',
     tags: [
-      'aliquid',
+      'voro',
     ],
     telephones: [
       Models::Shared::AtsTelephone.new(
-        telephone: '(779) 296-5994',
-        type: Models::Shared::AtsTelephoneType::HOME,
+        telephone: '(837) 251-3896',
+        type: Models::Shared::AtsTelephoneType::MOBILE,
       ),
     ],
-    title: 'Principal Implementation Analyst',
-    updated_at: DateTime.iso8601('2024-04-23T10:02:23.064Z'),
-    web_url: 'https://expert-lender.name/',
+    title: 'Customer Division Producer',
+    updated_at: DateTime.iso8601('2024-04-29T02:15:35.360Z'),
+    web_url: 'https://fragrant-husband.net/',
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -13,33 +13,35 @@ module UnifiedRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
+        # The name of the company/organization the member belongs to
         field :company, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('company') } }
-
+        # The date that this member object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
         # An array of email addresses for this member
         field :emails, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::MarketingEmail)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('emails') } }
 
         field :first_name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('first_name') } }
-
+        # Unique identifier for this member object
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
 
         field :last_name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('last_name') } }
         # An array of list IDs associated with this member
         field :list_ids, Crystalline::Nilable.new(Crystalline::Array.new(::String)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('list_ids') } }
 
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::MarketingMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
+        # The name of the member
         field :name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('name') } }
-
+        # The raw data returned by the integration for this member
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
 
         field :status, Crystalline::Nilable.new(Models::Shared::MarketingMemberStatus), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('status'), 'decoder': Utils.enum_from_string(Models::Shared::MarketingMemberStatus, true) } }
         # An array of tags associated with this member
         field :tags, Crystalline::Nilable.new(Crystalline::Array.new(::String)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('tags') } }
-
+        # The last date that this member object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
-        sig { params(company: T.nilable(::String), created_at: T.nilable(::DateTime), emails: T.nilable(T::Array[Models::Shared::MarketingEmail]), first_name: T.nilable(::String), id: T.nilable(::String), last_name: T.nilable(::String), list_ids: T.nilable(T::Array[::String]), name: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), status: T.nilable(Models::Shared::MarketingMemberStatus), tags: T.nilable(T::Array[::String]), updated_at: T.nilable(::DateTime)).void }
-        def initialize(company: nil, created_at: nil, emails: nil, first_name: nil, id: nil, last_name: nil, list_ids: nil, name: nil, raw: nil, status: nil, tags: nil, updated_at: nil)
+        sig { params(company: T.nilable(::String), created_at: T.nilable(::DateTime), emails: T.nilable(T::Array[Models::Shared::MarketingEmail]), first_name: T.nilable(::String), id: T.nilable(::String), last_name: T.nilable(::String), list_ids: T.nilable(T::Array[::String]), metadata: T.nilable(T::Array[Models::Shared::MarketingMetadata]), name: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), status: T.nilable(Models::Shared::MarketingMemberStatus), tags: T.nilable(T::Array[::String]), updated_at: T.nilable(::DateTime)).void }
+        def initialize(company: nil, created_at: nil, emails: nil, first_name: nil, id: nil, last_name: nil, list_ids: nil, metadata: nil, name: nil, raw: nil, status: nil, tags: nil, updated_at: nil)
           @company = company
           @created_at = created_at
           @emails = emails
@@ -47,6 +49,7 @@ module UnifiedRubySDK
           @id = id
           @last_name = last_name
           @list_ids = list_ids
+          @metadata = metadata
           @name = name
           @raw = raw
           @status = status
@@ -64,6 +67,7 @@ module UnifiedRubySDK
           return false unless @id == other.id
           return false unless @last_name == other.last_name
           return false unless @list_ids == other.list_ids
+          return false unless @metadata == other.metadata
           return false unless @name == other.name
           return false unless @raw == other.raw
           return false unless @status == other.status

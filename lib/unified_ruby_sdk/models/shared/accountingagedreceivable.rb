@@ -13,37 +13,40 @@ module UnifiedRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # ISO 4217
         field :currency, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('currency') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :end_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('end_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # synthetic, one row per currency / date window
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
+
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::AccountingMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
 
         field :organization_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('organization_id') } }
 
         field :periods, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::AccountingAgedPeriod)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('periods') } }
 
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :start_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('start_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :total_amount, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('total_amount') } }
-
+        # open balances not yet past due; distinct from the first past-due period
         field :total_current_amount, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('total_current_amount') } }
-
+        # sum of open balances across all past-due periods
         field :total_overdue_amount, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('total_overdue_amount') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
-        sig { params(created_at: T.nilable(::DateTime), currency: T.nilable(::String), end_at: T.nilable(::DateTime), id: T.nilable(::String), organization_id: T.nilable(::String), periods: T.nilable(T::Array[Models::Shared::AccountingAgedPeriod]), raw: T.nilable(T::Hash[Symbol, ::Object]), start_at: T.nilable(::DateTime), total_amount: T.nilable(::Float), total_current_amount: T.nilable(::Float), total_overdue_amount: T.nilable(::Float), updated_at: T.nilable(::DateTime)).void }
-        def initialize(created_at: nil, currency: nil, end_at: nil, id: nil, organization_id: nil, periods: nil, raw: nil, start_at: nil, total_amount: nil, total_current_amount: nil, total_overdue_amount: nil, updated_at: nil)
+        sig { params(created_at: T.nilable(::DateTime), currency: T.nilable(::String), end_at: T.nilable(::DateTime), id: T.nilable(::String), metadata: T.nilable(T::Array[Models::Shared::AccountingMetadata]), organization_id: T.nilable(::String), periods: T.nilable(T::Array[Models::Shared::AccountingAgedPeriod]), raw: T.nilable(T::Hash[Symbol, ::Object]), start_at: T.nilable(::DateTime), total_amount: T.nilable(::Float), total_current_amount: T.nilable(::Float), total_overdue_amount: T.nilable(::Float), updated_at: T.nilable(::DateTime)).void }
+        def initialize(created_at: nil, currency: nil, end_at: nil, id: nil, metadata: nil, organization_id: nil, periods: nil, raw: nil, start_at: nil, total_amount: nil, total_current_amount: nil, total_overdue_amount: nil, updated_at: nil)
           @created_at = created_at
           @currency = currency
           @end_at = end_at
           @id = id
+          @metadata = metadata
           @organization_id = organization_id
           @periods = periods
           @raw = raw
@@ -61,6 +64,7 @@ module UnifiedRubySDK
           return false unless @currency == other.currency
           return false unless @end_at == other.end_at
           return false unless @id == other.id
+          return false unless @metadata == other.metadata
           return false unless @organization_id == other.organization_id
           return false unless @periods == other.periods
           return false unless @raw == other.raw

@@ -14,7 +14,7 @@
 
 ## create_analytics_visitor
 
-Create a visitor
+Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
 
 ### Example Usage
 
@@ -31,16 +31,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.visitor.create_analytics_visitor(analytics_visitor: Models::Shared::AnalyticsVisitor.new(
   created_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-  email: 'Dallas_Mitchell@yahoo.com',
+  email: 'desiree.o.hara@icloud.com',
   first_seen_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-  id: '6d7fb874-3ba2-4e03-9be5-a0030384d834',
-  last_seen_at: DateTime.iso8601('2021-12-05T12:40:47.096Z'),
+  id: 'a2cda971-98a8-4b88-8030-f9db4fc7cbbb',
+  last_seen_at: DateTime.iso8601('2025-01-12T18:13:21.722Z'),
   metadata: {
     "segment": Models::Shared::PropertyAnalyticsVisitorMetadata.new(),
   },
-  name: 'Desiree O\'Hara',
-  total_events: 3639.0,
-  updated_at: DateTime.iso8601('2025-06-05T18:36:53.337Z'),
+  total_events: 2916.0,
+  updated_at: DateTime.iso8601('2025-07-01T07:20:06.031Z'),
 ), connection_id: '<id>')
 
 unless res.analytics_visitor.nil?
@@ -70,7 +69,7 @@ end
 
 ## get_analytics_visitor
 
-Retrieve a visitor
+Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -114,7 +113,7 @@ end
 
 ## list_analytics_visitors
 
-List all visitors
+Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -159,7 +158,7 @@ end
 
 ## patch_analytics_visitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -177,16 +176,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAnalyticsVisitorRequest.new(
   analytics_visitor: Models::Shared::AnalyticsVisitor.new(
     created_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-    email: 'Dallas_Mitchell@yahoo.com',
+    email: 'desiree.o.hara@icloud.com',
     first_seen_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-    id: '85a6dfff-cd43-4020-853d-a6840aaa56db',
-    last_seen_at: DateTime.iso8601('2021-12-05T12:40:47.100Z'),
+    id: '8fcc2224-5df1-43db-a781-0bf412f36d1d',
+    last_seen_at: DateTime.iso8601('2025-01-12T18:13:21.737Z'),
     metadata: {
       "segment": Models::Shared::PropertyAnalyticsVisitorMetadata.new(),
     },
-    name: 'Desiree O\'Hara',
-    total_events: 3639.0,
-    updated_at: DateTime.iso8601('2025-06-05T18:36:53.352Z'),
+    total_events: 2916.0,
+    updated_at: DateTime.iso8601('2025-07-01T07:20:06.048Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -218,7 +216,7 @@ end
 
 ## remove_analytics_visitor
 
-Remove a visitor
+Deletes the AnalyticsVisitor identified by `id`.
 
 ### Example Usage
 
@@ -260,7 +258,7 @@ end
 
 ## update_analytics_visitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -278,16 +276,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAnalyticsVisitorRequest.new(
   analytics_visitor: Models::Shared::AnalyticsVisitor.new(
     created_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-    email: 'Dallas_Mitchell@yahoo.com',
+    email: 'desiree.o.hara@icloud.com',
     first_seen_at: DateTime.iso8601('2020-04-16T20:29:48.281Z'),
-    id: '85a6dfff-cd43-4020-853d-a6840aaa56db',
-    last_seen_at: DateTime.iso8601('2021-12-05T12:40:47.100Z'),
+    id: '8fcc2224-5df1-43db-a781-0bf412f36d1d',
+    last_seen_at: DateTime.iso8601('2025-01-12T18:13:21.737Z'),
     metadata: {
       "segment": Models::Shared::PropertyAnalyticsVisitorMetadata.new(),
     },
-    name: 'Desiree O\'Hara',
-    total_events: 3639.0,
-    updated_at: DateTime.iso8601('2025-06-05T18:36:53.352Z'),
+    total_events: 2916.0,
+    updated_at: DateTime.iso8601('2025-07-01T07:20:06.048Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

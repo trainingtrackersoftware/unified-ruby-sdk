@@ -14,7 +14,7 @@
 
 ## create_ticketing_customer
 
-Create a customer
+Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider's API. Returns the created TicketingCustomer.
 
 ### Example Usage
 
@@ -33,31 +33,32 @@ res = s.customer.create_ticketing_customer(ticketing_customer: Models::Shared::T
   created_at: DateTime.iso8601('2021-03-15T12:33:14.875Z'),
   emails: [
     Models::Shared::TicketingEmail.new(
-      email: 'Christian_Windler@gmail.com',
+      email: 'christian.windler@gmail.com',
       type: Models::Shared::TicketingEmailType::HOME,
     ),
   ],
-  id: 'f325e02c-1f2a-47f7-a239-b3cf570768e4',
+  id: '8f14819b-1617-4b36-a403-ebe5db008bf6',
+  metadata: [],
   name: 'Christian Windler',
   tags: [
-    'casso',
-    'peccatus',
+    'quidem',
+    'una',
   ],
   telephones: [
     Models::Shared::TicketingTelephone.new(
-      telephone: '(532) 242-0482',
+      telephone: '(299) 843-2042',
       type: Models::Shared::TicketingTelephoneType::OTHER,
     ),
     Models::Shared::TicketingTelephone.new(
-      telephone: '(826) 283-7431',
+      telephone: '(248) 482-6083',
       type: Models::Shared::TicketingTelephoneType::MOBILE,
     ),
     Models::Shared::TicketingTelephone.new(
-      telephone: '(483) 314-6826',
+      telephone: '(743) 328-3214',
       type: Models::Shared::TicketingTelephoneType::MOBILE,
     ),
   ],
-  updated_at: DateTime.iso8601('2026-05-07T03:29:41.552Z'),
+  updated_at: DateTime.iso8601('2026-06-05T22:22:31.311Z'),
 ), connection_id: '<id>')
 
 unless res.ticketing_customer.nil?
@@ -87,7 +88,7 @@ end
 
 ## get_ticketing_customer
 
-Retrieve a customer
+Retrieves a single TicketingCustomer by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -131,7 +132,7 @@ end
 
 ## list_ticketing_customers
 
-List all customers
+Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -176,7 +177,7 @@ end
 
 ## patch_ticketing_customer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -196,31 +197,32 @@ req = Models::Operations::PatchTicketingCustomerRequest.new(
     created_at: DateTime.iso8601('2021-03-15T12:33:14.875Z'),
     emails: [
       Models::Shared::TicketingEmail.new(
-        email: 'Christian_Windler@gmail.com',
+        email: 'christian.windler@gmail.com',
         type: Models::Shared::TicketingEmailType::HOME,
       ),
     ],
-    id: '49d6eaf9-a5d4-40ba-a55f-db92d897503c',
+    id: 'da97a462-260f-4918-a35a-2da43dc69624',
+    metadata: [],
     name: 'Christian Windler',
     tags: [
-      'casso',
-      'peccatus',
+      'quidem',
+      'una',
     ],
     telephones: [
       Models::Shared::TicketingTelephone.new(
-        telephone: '(532) 242-0482',
+        telephone: '(299) 843-2042',
         type: Models::Shared::TicketingTelephoneType::OTHER,
       ),
       Models::Shared::TicketingTelephone.new(
-        telephone: '(826) 283-7431',
+        telephone: '(248) 482-6083',
         type: Models::Shared::TicketingTelephoneType::MOBILE,
       ),
       Models::Shared::TicketingTelephone.new(
-        telephone: '(483) 314-6826',
+        telephone: '(743) 328-3214',
         type: Models::Shared::TicketingTelephoneType::MOBILE,
       ),
     ],
-    updated_at: DateTime.iso8601('2026-05-07T03:29:41.559Z'),
+    updated_at: DateTime.iso8601('2026-06-05T22:22:31.327Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -252,7 +254,7 @@ end
 
 ## remove_ticketing_customer
 
-Remove a customer
+Deletes the TicketingCustomer identified by `id`.
 
 ### Example Usage
 
@@ -294,7 +296,7 @@ end
 
 ## update_ticketing_customer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -314,31 +316,32 @@ req = Models::Operations::UpdateTicketingCustomerRequest.new(
     created_at: DateTime.iso8601('2021-03-15T12:33:14.875Z'),
     emails: [
       Models::Shared::TicketingEmail.new(
-        email: 'Christian_Windler@gmail.com',
+        email: 'christian.windler@gmail.com',
         type: Models::Shared::TicketingEmailType::HOME,
       ),
     ],
-    id: '49d6eaf9-a5d4-40ba-a55f-db92d897503c',
+    id: 'da97a462-260f-4918-a35a-2da43dc69624',
+    metadata: [],
     name: 'Christian Windler',
     tags: [
-      'casso',
-      'peccatus',
+      'quidem',
+      'una',
     ],
     telephones: [
       Models::Shared::TicketingTelephone.new(
-        telephone: '(532) 242-0482',
+        telephone: '(299) 843-2042',
         type: Models::Shared::TicketingTelephoneType::OTHER,
       ),
       Models::Shared::TicketingTelephone.new(
-        telephone: '(826) 283-7431',
+        telephone: '(248) 482-6083',
         type: Models::Shared::TicketingTelephoneType::MOBILE,
       ),
       Models::Shared::TicketingTelephone.new(
-        telephone: '(483) 314-6826',
+        telephone: '(743) 328-3214',
         type: Models::Shared::TicketingTelephoneType::MOBILE,
       ),
     ],
-    updated_at: DateTime.iso8601('2026-05-07T03:29:41.559Z'),
+    updated_at: DateTime.iso8601('2026-06-05T22:22:31.327Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

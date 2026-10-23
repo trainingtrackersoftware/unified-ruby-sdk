@@ -14,7 +14,7 @@
 
 ## create_ats_interview
 
-Create an interview
+Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
 
 ### Example Usage
 
@@ -31,13 +31,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.interview.create_ats_interview(ats_interview: Models::Shared::AtsInterview.new(
   created_at: DateTime.iso8601('2021-11-28T03:14:47.774Z'),
-  end_at: DateTime.iso8601('2025-09-25T18:09:46.122Z'),
-  external_event_xref: '1ed48a17-ef1f-4f09-b3b0-d5aa6edacc6c',
-  id: '83325da5-97c4-494e-aab2-fa37c22e4eb6',
+  end_at: DateTime.iso8601('2021-12-08T06:33:19.583Z'),
+  id: 'c3aa3c85-97d5-446d-8a4a-a444074900d9',
   location: '26596 Halle Trafficway',
-  start_at: DateTime.iso8601('2025-05-21T11:01:32.885Z'),
+  meeting_url: 'https://immaculate-foodstuffs.biz',
+  metadata: [],
+  start_at: DateTime.iso8601('2021-12-08T06:03:19.583Z'),
   status: Models::Shared::AtsInterviewStatus::SCHEDULED,
-  updated_at: DateTime.iso8601('2026-02-06T16:01:50.668Z'),
+  updated_at: DateTime.iso8601('2023-09-24T10:22:27.590Z'),
 ), connection_id: '<id>')
 
 unless res.ats_interview.nil?
@@ -67,7 +68,7 @@ end
 
 ## get_ats_interview
 
-Retrieve an interview
+Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -111,7 +112,7 @@ end
 
 ## list_ats_interviews
 
-List all interviews
+Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -156,7 +157,7 @@ end
 
 ## patch_ats_interview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -174,13 +175,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAtsInterviewRequest.new(
   ats_interview: Models::Shared::AtsInterview.new(
     created_at: DateTime.iso8601('2021-11-28T03:14:47.774Z'),
-    end_at: DateTime.iso8601('2025-09-25T18:09:46.127Z'),
-    external_event_xref: 'e45670df-2ac9-444e-b73e-fb44e5c6ecb8',
-    id: 'cb688c36-e48c-4a6e-9109-7c2f8ce24def',
+    end_at: DateTime.iso8601('2021-12-08T06:33:19.583Z'),
+    id: '221868ac-d631-4669-a95c-a32a4721be2b',
     location: '26596 Halle Trafficway',
-    start_at: DateTime.iso8601('2025-05-21T11:01:32.889Z'),
+    meeting_url: 'https://immaculate-foodstuffs.biz',
+    metadata: [],
+    start_at: DateTime.iso8601('2021-12-08T06:03:19.583Z'),
     status: Models::Shared::AtsInterviewStatus::SCHEDULED,
-    updated_at: DateTime.iso8601('2026-02-06T16:01:50.673Z'),
+    updated_at: DateTime.iso8601('2023-09-24T10:22:27.597Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -212,7 +214,7 @@ end
 
 ## remove_ats_interview
 
-Remove an interview
+Deletes the AtsInterview identified by `id`.
 
 ### Example Usage
 
@@ -254,7 +256,7 @@ end
 
 ## update_ats_interview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -272,13 +274,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAtsInterviewRequest.new(
   ats_interview: Models::Shared::AtsInterview.new(
     created_at: DateTime.iso8601('2021-11-28T03:14:47.774Z'),
-    end_at: DateTime.iso8601('2025-09-25T18:09:46.127Z'),
-    external_event_xref: 'e45670df-2ac9-444e-b73e-fb44e5c6ecb8',
-    id: 'cb688c36-e48c-4a6e-9109-7c2f8ce24def',
+    end_at: DateTime.iso8601('2021-12-08T06:33:19.583Z'),
+    id: '221868ac-d631-4669-a95c-a32a4721be2b',
     location: '26596 Halle Trafficway',
-    start_at: DateTime.iso8601('2025-05-21T11:01:32.889Z'),
+    meeting_url: 'https://immaculate-foodstuffs.biz',
+    metadata: [],
+    start_at: DateTime.iso8601('2021-12-08T06:03:19.583Z'),
     status: Models::Shared::AtsInterviewStatus::SCHEDULED,
-    updated_at: DateTime.iso8601('2026-02-06T16:01:50.673Z'),
+    updated_at: DateTime.iso8601('2023-09-24T10:22:27.597Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

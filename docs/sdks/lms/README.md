@@ -50,7 +50,7 @@
 
 ## create_lms_activity
 
-Create an activity
+Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
 
 ### Example Usage
 
@@ -67,14 +67,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.lms.create_lms_activity(lms_activity: Models::Shared::LmsActivity.new(
   assigned_grade: 'summopere',
-  completed_at: DateTime.iso8601('2025-04-14T07:48:00.659Z'),
+  completed_at: DateTime.iso8601('2023-12-07T00:32:47.256Z'),
   created_at: DateTime.iso8601('2020-10-17T01:25:21.745Z'),
   duration_minutes: 55.0,
-  id: '8121796d-85be-45e3-a87f-43bbbe4bdd8e',
+  id: '8ef8803d-f215-49d2-b7ed-91e7dc13d16a',
   is_completed: true,
+  metadata: [],
   progress_percentage: 100.0,
-  started_at: DateTime.iso8601('2023-12-24T04:54:05.825Z'),
-  updated_at: DateTime.iso8601('2022-01-24T13:21:48.887Z'),
+  started_at: DateTime.iso8601('2021-04-25T08:31:19.340Z'),
+  updated_at: DateTime.iso8601('2022-01-31T09:55:05.053Z'),
 ), connection_id: '<id>')
 
 unless res.lms_activity.nil?
@@ -104,7 +105,7 @@ end
 
 ## create_lms_class
 
-Create a class
+Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
 
 ### Example Usage
 
@@ -122,7 +123,7 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.lms.create_lms_class(lms_class: Models::Shared::LmsClass.new(
   created_at: DateTime.iso8601('2020-02-20T14:48:51.845Z'),
   description: 'Anser sperno decerno.',
-  id: 'd8e86285-4d39-43ad-81b4-47162c03c8c3',
+  id: '3d626bb3-633b-41be-ab9a-3ae166742cfe',
   instructors: [],
   languages: [
     'in',
@@ -141,9 +142,10 @@ res = s.lms.create_lms_class(lms_class: Models::Shared::LmsClass.new(
       url: 'https://loremflickr.com/487/921?lock=5127962071241632',
     ),
   ],
+  metadata: [],
   name: 'virtus',
   students: [],
-  updated_at: DateTime.iso8601('2025-07-10T09:08:36.712Z'),
+  updated_at: DateTime.iso8601('2025-08-05T12:30:35.661Z'),
 ), connection_id: '<id>')
 
 unless res.lms_class.nil?
@@ -173,7 +175,7 @@ end
 
 ## create_lms_collection
 
-Create a collection
+Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
 
 ### Example Usage
 
@@ -191,7 +193,7 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.lms.create_lms_collection(lms_collection: Models::Shared::LmsCollection.new(
   created_at: DateTime.iso8601('2019-08-19T14:40:29.227Z'),
   description: 'Ab.',
-  id: '0d256c95-5bf1-4475-aa61-72ba5c430511',
+  id: '6a2ec014-aede-4f89-8c0e-e7af93f30720',
   is_active: true,
   media: [
     Models::Shared::LmsMedia.new(
@@ -206,8 +208,9 @@ res = s.lms.create_lms_collection(lms_collection: Models::Shared::LmsCollection.
       url: 'https://loremflickr.com/2679/70?lock=6078357625960554',
     ),
   ],
+  metadata: [],
   name: 'ara',
-  updated_at: DateTime.iso8601('2026-07-01T06:30:00.795Z'),
+  updated_at: DateTime.iso8601('2026-08-01T05:15:10.123Z'),
 ), connection_id: '<id>')
 
 unless res.lms_collection.nil?
@@ -237,7 +240,7 @@ end
 
 ## create_lms_content
 
-Create a content
+Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
 
 ### Example Usage
 
@@ -260,14 +263,8 @@ res = s.lms.create_lms_content(lms_content: Models::Shared::LmsContent.new(
   description: 'Usque laboriosam ventosus adflicto.',
   difficulty: 'Beginner',
   duration_minutes: 19.0,
-  external_reference: '0d230e31-a9c4-4a35-a5b9-9168e91ffff5',
-  id: '89ae27e8-4507-4da5-8b22-b11ee45b2eda',
-  instructors: [
-    Models::Shared::LmsReference.new(
-      id: '91a23b20-a7a3-4323-9548-0897c09eb49e',
-      name: 'Winston Ferry',
-    ),
-  ],
+  id: 'd41c5ee7-fa14-4ca9-af98-8391170ededb',
+  instructors: [],
   is_active: true,
   languages: [
     'despecto',
@@ -275,14 +272,14 @@ res = s.lms.create_lms_content(lms_content: Models::Shared::LmsContent.new(
   ],
   localizations: [
     Models::Shared::LmsContentLocalization.new(
-      description: 'Numquam.',
+      description: 'Acervus.',
       language: 'es',
-      name: 'validus',
+      name: 'talis',
     ),
     Models::Shared::LmsContentLocalization.new(
-      description: 'Callide.',
-      language: 'fr',
-      name: 'crux',
+      description: 'Ratione.',
+      language: 'es',
+      name: 'sint',
     ),
   ],
   media: [
@@ -323,10 +320,11 @@ res = s.lms.create_lms_content(lms_content: Models::Shared::LmsContent.new(
       url: 'https://loremflickr.com/3927/2086?lock=5199784913821481',
     ),
   ],
+  metadata: [],
   name: 'ut',
-  provider_name: 'Berge LLC',
-  published_at: DateTime.iso8601('2023-11-08T11:32:09.080Z'),
-  short_description: 'Commemoro.',
+  provider_name: 'Bins LLC',
+  published_at: DateTime.iso8601('2022-09-03T21:07:34.822Z'),
+  short_description: 'Caritas.',
   skills: [
     'trucido',
   ],
@@ -340,7 +338,7 @@ res = s.lms.create_lms_content(lms_content: Models::Shared::LmsContent.new(
   tags: [
     'dens',
   ],
-  updated_at: DateTime.iso8601('2022-09-24T10:52:26.776Z'),
+  updated_at: DateTime.iso8601('2022-10-04T20:04:18.829Z'),
 ), connection_id: '<id>')
 
 unless res.lms_content.nil?
@@ -370,7 +368,7 @@ end
 
 ## create_lms_course
 
-Create a course
+Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
 
 ### Example Usage
 
@@ -394,7 +392,7 @@ res = s.lms.create_lms_course(lms_course: Models::Shared::LmsCourse.new(
   currency: 'FJD',
   description: 'Vinco alias aut capitulus.',
   duration_minutes: 148.0,
-  id: 'f635b758-af64-42a3-9389-1a94afbb201f',
+  id: 'f0cc7df0-5fdc-4ecb-8a6b-e5a87f9f2fcb',
   instructors: [],
   is_active: true,
   is_private: false,
@@ -417,17 +415,18 @@ res = s.lms.create_lms_course(lms_course: Models::Shared::LmsCourse.new(
       url: 'https://picsum.photos/seed/fQAbsk/2472/1671',
     ),
   ],
+  metadata: [],
   name: 'comptus',
   price_amount: 84.0,
   provider_name: 'Homenick - Wunsch',
-  published_at: DateTime.iso8601('2023-12-30T03:35:03.902Z'),
+  published_at: DateTime.iso8601('2022-11-05T19:09:55.352Z'),
   skills: [
     'adiuvo',
     'tam',
   ],
   students: [],
   time_estimate_minutes: 100.0,
-  updated_at: DateTime.iso8601('2023-02-07T04:44:43.438Z'),
+  updated_at: DateTime.iso8601('2023-02-09T22:25:04.839Z'),
 ), connection_id: '<id>')
 
 unless res.lms_course.nil?
@@ -457,7 +456,7 @@ end
 
 ## create_lms_instructor
 
-Create an instructor
+Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
 
 ### Example Usage
 
@@ -476,21 +475,25 @@ res = s.lms.create_lms_instructor(lms_instructor: Models::Shared::LmsInstructor.
   created_at: DateTime.iso8601('2021-10-12T16:38:54.979Z'),
   emails: [
     Models::Shared::LmsEmail.new(),
-    Models::Shared::LmsEmail.new(),
   ],
   first_name: 'Deangelo',
-  id: '290442f0-3bd4-4743-83d3-9c33c10f7ae0',
-  image_url: 'https://avatars.githubusercontent.com/u/20232618',
+  id: '72169b55-08d3-486b-af7d-12f838260457',
+  image_url: 'https://avatars.githubusercontent.com/u/95131132',
   last_name: 'Ritchie',
+  metadata: [],
   name: 'Deangelo Ritchie',
   telephones: [
     Models::Shared::LmsTelephone.new(
-      telephone: '(352) 551-7989',
+      telephone: '(605) 752-8163',
+      type: Models::Shared::LmsTelephoneType::WORK,
+    ),
+    Models::Shared::LmsTelephone.new(
+      telephone: '(430) 415-2451',
       type: Models::Shared::LmsTelephoneType::HOME,
     ),
   ],
-  title: 'Product Solutions Engineer',
-  updated_at: DateTime.iso8601('2025-07-01T20:53:44.388Z'),
+  title: 'Regional Security Agent',
+  updated_at: DateTime.iso8601('2025-07-25T22:13:02.082Z'),
 ), connection_id: '<id>')
 
 unless res.lms_instructor.nil?
@@ -520,7 +523,7 @@ end
 
 ## create_lms_student
 
-Create a student
+Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
 
 ### Example Usage
 
@@ -537,31 +540,38 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.lms.create_lms_student(lms_student: Models::Shared::LmsStudent.new(
   address: Models::Shared::PropertyLmsStudentAddress.new(
-    address1: '94082 Kassandra Camp',
-    address2: 'Apt. 461',
-    city: 'New Ibrahimmouth',
+    address1: '15033 Corwin Circles',
+    city: 'New Craigside',
     country_code: 'US',
-    postal_code: '52851',
-    region: 'Tennessee',
-    region_code: 'NV',
+    postal_code: '73966',
+    region: 'New Jersey',
+    region_code: 'TX',
   ),
   created_at: DateTime.iso8601('2020-03-23T06:59:29.777Z'),
   emails: [
     Models::Shared::LmsEmail.new(),
-    Models::Shared::LmsEmail.new(),
   ],
   first_name: 'Marcella',
-  id: '57a87fad-5a1b-4502-ac37-e71d6bd5ec19',
-  image_url: 'https://avatars.githubusercontent.com/u/36301374',
+  id: '88ab09dc-4d25-47d4-88b5-741857890652',
+  image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg',
   last_name: 'Murazik',
+  metadata: [],
   name: 'Marcella Murazik',
   telephones: [
     Models::Shared::LmsTelephone.new(
-      telephone: '(482) 469-8067',
+      telephone: '(899) 827-6400',
+      type: Models::Shared::LmsTelephoneType::WORK,
+    ),
+    Models::Shared::LmsTelephone.new(
+      telephone: '(487) 213-8236',
+      type: Models::Shared::LmsTelephoneType::FAX,
+    ),
+    Models::Shared::LmsTelephone.new(
+      telephone: '(980) 775-2940',
       type: Models::Shared::LmsTelephoneType::FAX,
     ),
   ],
-  updated_at: DateTime.iso8601('2022-06-20T15:03:55.419Z'),
+  updated_at: DateTime.iso8601('2022-07-01T15:54:34.494Z'),
 ), connection_id: '<id>')
 
 unless res.lms_student.nil?
@@ -591,7 +601,7 @@ end
 
 ## get_lms_activity
 
-Retrieve an activity
+Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -635,7 +645,7 @@ end
 
 ## get_lms_class
 
-Retrieve a class
+Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -679,7 +689,7 @@ end
 
 ## get_lms_collection
 
-Retrieve a collection
+Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -723,7 +733,7 @@ end
 
 ## get_lms_content
 
-Retrieve a content
+Retrieves a single LmsContent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -767,7 +777,7 @@ end
 
 ## get_lms_course
 
-Retrieve a course
+Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -811,7 +821,7 @@ end
 
 ## get_lms_instructor
 
-Retrieve an instructor
+Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -855,7 +865,7 @@ end
 
 ## get_lms_student
 
-Retrieve a student
+Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -899,7 +909,7 @@ end
 
 ## list_lms_activities
 
-List all activities
+Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -944,7 +954,7 @@ end
 
 ## list_lms_classes
 
-List all classes
+Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -989,7 +999,7 @@ end
 
 ## list_lms_collections
 
-List all collections
+Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1034,7 +1044,7 @@ end
 
 ## list_lms_contents
 
-List all contents
+Returns a list of LmsContents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1079,7 +1089,7 @@ end
 
 ## list_lms_courses
 
-List all courses
+Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1124,7 +1134,7 @@ end
 
 ## list_lms_instructors
 
-List all instructors
+Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1169,7 +1179,7 @@ end
 
 ## list_lms_students
 
-List all students
+Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1214,7 +1224,7 @@ end
 
 ## patch_lms_activity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -1232,14 +1242,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchLmsActivityRequest.new(
   lms_activity: Models::Shared::LmsActivity.new(
     assigned_grade: 'summopere',
-    completed_at: DateTime.iso8601('2025-04-14T07:48:00.664Z'),
+    completed_at: DateTime.iso8601('2023-12-07T00:32:47.263Z'),
     created_at: DateTime.iso8601('2020-10-17T01:25:21.745Z'),
     duration_minutes: 55.0,
-    id: '5bfa4252-4269-48b7-98a0-a37088a2874c',
+    id: '0cadbe83-eb81-4e9c-b1e3-5d9ebab0420e',
     is_completed: true,
+    metadata: [],
     progress_percentage: 100.0,
-    started_at: DateTime.iso8601('2023-12-24T04:54:05.825Z'),
-    updated_at: DateTime.iso8601('2022-01-24T13:21:48.889Z'),
+    started_at: DateTime.iso8601('2021-04-25T08:31:19.341Z'),
+    updated_at: DateTime.iso8601('2022-01-31T09:55:05.056Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1271,7 +1282,7 @@ end
 
 ## patch_lms_class
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -1290,7 +1301,7 @@ req = Models::Operations::PatchLmsClassRequest.new(
   lms_class: Models::Shared::LmsClass.new(
     created_at: DateTime.iso8601('2020-02-20T14:48:51.845Z'),
     description: 'Anser sperno decerno.',
-    id: 'e1649d98-707b-4ad9-a9ea-4ba1ea2b2fb9',
+    id: 'ddee1bcd-4b7e-4da9-b781-6a870fe29650',
     instructors: [],
     languages: [
       'in',
@@ -1309,9 +1320,10 @@ req = Models::Operations::PatchLmsClassRequest.new(
         url: 'https://loremflickr.com/487/921?lock=5127962071241632',
       ),
     ],
+    metadata: [],
     name: 'virtus',
     students: [],
-    updated_at: DateTime.iso8601('2025-07-10T09:08:36.732Z'),
+    updated_at: DateTime.iso8601('2025-08-05T12:30:35.679Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1343,7 +1355,7 @@ end
 
 ## patch_lms_collection
 
-Update a collection
+Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -1362,7 +1374,7 @@ req = Models::Operations::PatchLmsCollectionRequest.new(
   lms_collection: Models::Shared::LmsCollection.new(
     created_at: DateTime.iso8601('2019-08-19T14:40:29.227Z'),
     description: 'Ab.',
-    id: 'e26a3dc1-586b-492a-b360-69f1e36e6c47',
+    id: '914f1f70-a81b-45e1-88a5-173f8add5a6e',
     is_active: true,
     media: [
       Models::Shared::LmsMedia.new(
@@ -1377,8 +1389,9 @@ req = Models::Operations::PatchLmsCollectionRequest.new(
         url: 'https://loremflickr.com/2679/70?lock=6078357625960554',
       ),
     ],
+    metadata: [],
     name: 'ara',
-    updated_at: DateTime.iso8601('2026-07-01T06:30:00.808Z'),
+    updated_at: DateTime.iso8601('2026-08-01T05:15:10.141Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1410,7 +1423,7 @@ end
 
 ## patch_lms_content
 
-Update a content
+Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
 
 ### Example Usage
 
@@ -1434,14 +1447,8 @@ req = Models::Operations::PatchLmsContentRequest.new(
     description: 'Usque laboriosam ventosus adflicto.',
     difficulty: 'Beginner',
     duration_minutes: 19.0,
-    external_reference: '0d230e31-a9c4-4a35-a5b9-9168e91ffff5',
-    id: 'c2d04ccd-bcf6-48cd-a878-2f2bf63e7a1a',
-    instructors: [
-      Models::Shared::LmsReference.new(
-        id: '91a23b20-a7a3-4323-9548-0897c09eb49e',
-        name: 'Winston Ferry',
-      ),
-    ],
+    id: '195da47f-258a-4e0c-a82a-7de66257e6bc',
+    instructors: [],
     is_active: true,
     languages: [
       'despecto',
@@ -1449,14 +1456,14 @@ req = Models::Operations::PatchLmsContentRequest.new(
     ],
     localizations: [
       Models::Shared::LmsContentLocalization.new(
-        description: 'Numquam.',
+        description: 'Acervus.',
         language: 'es',
-        name: 'validus',
+        name: 'talis',
       ),
       Models::Shared::LmsContentLocalization.new(
-        description: 'Callide.',
-        language: 'fr',
-        name: 'crux',
+        description: 'Ratione.',
+        language: 'es',
+        name: 'sint',
       ),
     ],
     media: [
@@ -1497,10 +1504,11 @@ req = Models::Operations::PatchLmsContentRequest.new(
         url: 'https://loremflickr.com/3927/2086?lock=5199784913821481',
       ),
     ],
+    metadata: [],
     name: 'ut',
-    provider_name: 'Berge LLC',
-    published_at: DateTime.iso8601('2023-11-08T11:32:09.080Z'),
-    short_description: 'Commemoro.',
+    provider_name: 'Bins LLC',
+    published_at: DateTime.iso8601('2022-09-03T21:07:34.829Z'),
+    short_description: 'Caritas.',
     skills: [
       'trucido',
     ],
@@ -1514,7 +1522,7 @@ req = Models::Operations::PatchLmsContentRequest.new(
     tags: [
       'dens',
     ],
-    updated_at: DateTime.iso8601('2022-09-24T10:52:26.787Z'),
+    updated_at: DateTime.iso8601('2022-10-04T20:04:18.836Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1546,7 +1554,7 @@ end
 
 ## patch_lms_course
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -1571,7 +1579,7 @@ req = Models::Operations::PatchLmsCourseRequest.new(
     currency: 'FJD',
     description: 'Vinco alias aut capitulus.',
     duration_minutes: 148.0,
-    id: 'e5fd4218-b998-4e25-8ec9-c8d976623f7a',
+    id: '7ec46a0e-9733-463a-b4d2-7d64c87f8ac1',
     instructors: [],
     is_active: true,
     is_private: false,
@@ -1594,17 +1602,18 @@ req = Models::Operations::PatchLmsCourseRequest.new(
         url: 'https://picsum.photos/seed/fQAbsk/2472/1671',
       ),
     ],
+    metadata: [],
     name: 'comptus',
     price_amount: 84.0,
     provider_name: 'Homenick - Wunsch',
-    published_at: DateTime.iso8601('2023-12-30T03:35:03.902Z'),
+    published_at: DateTime.iso8601('2022-11-05T19:09:55.353Z'),
     skills: [
       'adiuvo',
       'tam',
     ],
     students: [],
     time_estimate_minutes: 100.0,
-    updated_at: DateTime.iso8601('2023-02-07T04:44:43.440Z'),
+    updated_at: DateTime.iso8601('2023-02-09T22:25:04.841Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1636,7 +1645,7 @@ end
 
 ## patch_lms_instructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -1656,21 +1665,25 @@ req = Models::Operations::PatchLmsInstructorRequest.new(
     created_at: DateTime.iso8601('2021-10-12T16:38:54.979Z'),
     emails: [
       Models::Shared::LmsEmail.new(),
-      Models::Shared::LmsEmail.new(),
     ],
     first_name: 'Deangelo',
-    id: 'da7712af-9bf9-4756-9098-68d148fe961e',
-    image_url: 'https://avatars.githubusercontent.com/u/20232618',
+    id: 'c4c38d07-3d05-4d98-adfd-910b8c1bbe76',
+    image_url: 'https://avatars.githubusercontent.com/u/95131132',
     last_name: 'Ritchie',
+    metadata: [],
     name: 'Deangelo Ritchie',
     telephones: [
       Models::Shared::LmsTelephone.new(
-        telephone: '(352) 551-7989',
+        telephone: '(605) 752-8163',
+        type: Models::Shared::LmsTelephoneType::WORK,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(430) 415-2451',
         type: Models::Shared::LmsTelephoneType::HOME,
       ),
     ],
-    title: 'Product Solutions Engineer',
-    updated_at: DateTime.iso8601('2025-07-01T20:53:44.397Z'),
+    title: 'Regional Security Agent',
+    updated_at: DateTime.iso8601('2025-07-25T22:13:02.094Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1702,7 +1715,7 @@ end
 
 ## patch_lms_student
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -1720,31 +1733,38 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchLmsStudentRequest.new(
   lms_student: Models::Shared::LmsStudent.new(
     address: Models::Shared::PropertyLmsStudentAddress.new(
-      address1: '94082 Kassandra Camp',
-      address2: 'Apt. 461',
-      city: 'New Ibrahimmouth',
+      address1: '15033 Corwin Circles',
+      city: 'New Craigside',
       country_code: 'US',
-      postal_code: '52851',
-      region: 'Tennessee',
-      region_code: 'NV',
+      postal_code: '73966',
+      region: 'New Jersey',
+      region_code: 'TX',
     ),
     created_at: DateTime.iso8601('2020-03-23T06:59:29.777Z'),
     emails: [
       Models::Shared::LmsEmail.new(),
-      Models::Shared::LmsEmail.new(),
     ],
     first_name: 'Marcella',
-    id: 'dff1448f-dddf-4fd2-bc4a-5c8fff066a9d',
-    image_url: 'https://avatars.githubusercontent.com/u/36301374',
+    id: '2dc0119d-4ae8-40e0-a92d-24cde92cc24f',
+    image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg',
     last_name: 'Murazik',
+    metadata: [],
     name: 'Marcella Murazik',
     telephones: [
       Models::Shared::LmsTelephone.new(
-        telephone: '(482) 469-8067',
+        telephone: '(899) 827-6400',
+        type: Models::Shared::LmsTelephoneType::WORK,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(487) 213-8236',
+        type: Models::Shared::LmsTelephoneType::FAX,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(980) 775-2940',
         type: Models::Shared::LmsTelephoneType::FAX,
       ),
     ],
-    updated_at: DateTime.iso8601('2022-06-20T15:03:55.426Z'),
+    updated_at: DateTime.iso8601('2022-07-01T15:54:34.501Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1776,7 +1796,7 @@ end
 
 ## remove_lms_activity
 
-Remove an activity
+Deletes the LmsActivity identified by `id`.
 
 ### Example Usage
 
@@ -1818,7 +1838,7 @@ end
 
 ## remove_lms_class
 
-Remove a class
+Deletes the LmsClass identified by `id`.
 
 ### Example Usage
 
@@ -1860,7 +1880,7 @@ end
 
 ## remove_lms_collection
 
-Remove a collection
+Deletes the LmsCollection identified by `id`.
 
 ### Example Usage
 
@@ -1902,7 +1922,7 @@ end
 
 ## remove_lms_content
 
-Remove a content
+Deletes the LmsContent identified by `id`.
 
 ### Example Usage
 
@@ -1944,7 +1964,7 @@ end
 
 ## remove_lms_course
 
-Remove a course
+Deletes the LmsCourse identified by `id`.
 
 ### Example Usage
 
@@ -1986,7 +2006,7 @@ end
 
 ## remove_lms_instructor
 
-Remove an instructor
+Deletes the LmsInstructor identified by `id`.
 
 ### Example Usage
 
@@ -2028,7 +2048,7 @@ end
 
 ## remove_lms_student
 
-Remove a student
+Deletes the LmsStudent identified by `id`.
 
 ### Example Usage
 
@@ -2070,7 +2090,7 @@ end
 
 ## update_lms_activity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -2088,14 +2108,15 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateLmsActivityRequest.new(
   lms_activity: Models::Shared::LmsActivity.new(
     assigned_grade: 'summopere',
-    completed_at: DateTime.iso8601('2025-04-14T07:48:00.664Z'),
+    completed_at: DateTime.iso8601('2023-12-07T00:32:47.263Z'),
     created_at: DateTime.iso8601('2020-10-17T01:25:21.745Z'),
     duration_minutes: 55.0,
-    id: '5bfa4252-4269-48b7-98a0-a37088a2874c',
+    id: '0cadbe83-eb81-4e9c-b1e3-5d9ebab0420e',
     is_completed: true,
+    metadata: [],
     progress_percentage: 100.0,
-    started_at: DateTime.iso8601('2023-12-24T04:54:05.825Z'),
-    updated_at: DateTime.iso8601('2022-01-24T13:21:48.889Z'),
+    started_at: DateTime.iso8601('2021-04-25T08:31:19.341Z'),
+    updated_at: DateTime.iso8601('2022-01-31T09:55:05.056Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2127,7 +2148,7 @@ end
 
 ## update_lms_class
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -2146,7 +2167,7 @@ req = Models::Operations::UpdateLmsClassRequest.new(
   lms_class: Models::Shared::LmsClass.new(
     created_at: DateTime.iso8601('2020-02-20T14:48:51.845Z'),
     description: 'Anser sperno decerno.',
-    id: 'e1649d98-707b-4ad9-a9ea-4ba1ea2b2fb9',
+    id: 'ddee1bcd-4b7e-4da9-b781-6a870fe29650',
     instructors: [],
     languages: [
       'in',
@@ -2165,9 +2186,10 @@ req = Models::Operations::UpdateLmsClassRequest.new(
         url: 'https://loremflickr.com/487/921?lock=5127962071241632',
       ),
     ],
+    metadata: [],
     name: 'virtus',
     students: [],
-    updated_at: DateTime.iso8601('2025-07-10T09:08:36.732Z'),
+    updated_at: DateTime.iso8601('2025-08-05T12:30:35.679Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2199,7 +2221,7 @@ end
 
 ## update_lms_collection
 
-Update a collection
+Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -2218,7 +2240,7 @@ req = Models::Operations::UpdateLmsCollectionRequest.new(
   lms_collection: Models::Shared::LmsCollection.new(
     created_at: DateTime.iso8601('2019-08-19T14:40:29.227Z'),
     description: 'Ab.',
-    id: 'e26a3dc1-586b-492a-b360-69f1e36e6c47',
+    id: '914f1f70-a81b-45e1-88a5-173f8add5a6e',
     is_active: true,
     media: [
       Models::Shared::LmsMedia.new(
@@ -2233,8 +2255,9 @@ req = Models::Operations::UpdateLmsCollectionRequest.new(
         url: 'https://loremflickr.com/2679/70?lock=6078357625960554',
       ),
     ],
+    metadata: [],
     name: 'ara',
-    updated_at: DateTime.iso8601('2026-07-01T06:30:00.808Z'),
+    updated_at: DateTime.iso8601('2026-08-01T05:15:10.141Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2266,7 +2289,7 @@ end
 
 ## update_lms_content
 
-Update a content
+Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
 
 ### Example Usage
 
@@ -2290,14 +2313,8 @@ req = Models::Operations::UpdateLmsContentRequest.new(
     description: 'Usque laboriosam ventosus adflicto.',
     difficulty: 'Beginner',
     duration_minutes: 19.0,
-    external_reference: '0d230e31-a9c4-4a35-a5b9-9168e91ffff5',
-    id: 'c2d04ccd-bcf6-48cd-a878-2f2bf63e7a1a',
-    instructors: [
-      Models::Shared::LmsReference.new(
-        id: '91a23b20-a7a3-4323-9548-0897c09eb49e',
-        name: 'Winston Ferry',
-      ),
-    ],
+    id: '195da47f-258a-4e0c-a82a-7de66257e6bc',
+    instructors: [],
     is_active: true,
     languages: [
       'despecto',
@@ -2305,14 +2322,14 @@ req = Models::Operations::UpdateLmsContentRequest.new(
     ],
     localizations: [
       Models::Shared::LmsContentLocalization.new(
-        description: 'Numquam.',
+        description: 'Acervus.',
         language: 'es',
-        name: 'validus',
+        name: 'talis',
       ),
       Models::Shared::LmsContentLocalization.new(
-        description: 'Callide.',
-        language: 'fr',
-        name: 'crux',
+        description: 'Ratione.',
+        language: 'es',
+        name: 'sint',
       ),
     ],
     media: [
@@ -2353,10 +2370,11 @@ req = Models::Operations::UpdateLmsContentRequest.new(
         url: 'https://loremflickr.com/3927/2086?lock=5199784913821481',
       ),
     ],
+    metadata: [],
     name: 'ut',
-    provider_name: 'Berge LLC',
-    published_at: DateTime.iso8601('2023-11-08T11:32:09.080Z'),
-    short_description: 'Commemoro.',
+    provider_name: 'Bins LLC',
+    published_at: DateTime.iso8601('2022-09-03T21:07:34.829Z'),
+    short_description: 'Caritas.',
     skills: [
       'trucido',
     ],
@@ -2370,7 +2388,7 @@ req = Models::Operations::UpdateLmsContentRequest.new(
     tags: [
       'dens',
     ],
-    updated_at: DateTime.iso8601('2022-09-24T10:52:26.787Z'),
+    updated_at: DateTime.iso8601('2022-10-04T20:04:18.836Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2402,7 +2420,7 @@ end
 
 ## update_lms_course
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -2427,7 +2445,7 @@ req = Models::Operations::UpdateLmsCourseRequest.new(
     currency: 'FJD',
     description: 'Vinco alias aut capitulus.',
     duration_minutes: 148.0,
-    id: 'e5fd4218-b998-4e25-8ec9-c8d976623f7a',
+    id: '7ec46a0e-9733-463a-b4d2-7d64c87f8ac1',
     instructors: [],
     is_active: true,
     is_private: false,
@@ -2450,17 +2468,18 @@ req = Models::Operations::UpdateLmsCourseRequest.new(
         url: 'https://picsum.photos/seed/fQAbsk/2472/1671',
       ),
     ],
+    metadata: [],
     name: 'comptus',
     price_amount: 84.0,
     provider_name: 'Homenick - Wunsch',
-    published_at: DateTime.iso8601('2023-12-30T03:35:03.902Z'),
+    published_at: DateTime.iso8601('2022-11-05T19:09:55.353Z'),
     skills: [
       'adiuvo',
       'tam',
     ],
     students: [],
     time_estimate_minutes: 100.0,
-    updated_at: DateTime.iso8601('2023-02-07T04:44:43.440Z'),
+    updated_at: DateTime.iso8601('2023-02-09T22:25:04.841Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2492,7 +2511,7 @@ end
 
 ## update_lms_instructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -2512,21 +2531,25 @@ req = Models::Operations::UpdateLmsInstructorRequest.new(
     created_at: DateTime.iso8601('2021-10-12T16:38:54.979Z'),
     emails: [
       Models::Shared::LmsEmail.new(),
-      Models::Shared::LmsEmail.new(),
     ],
     first_name: 'Deangelo',
-    id: 'da7712af-9bf9-4756-9098-68d148fe961e',
-    image_url: 'https://avatars.githubusercontent.com/u/20232618',
+    id: 'c4c38d07-3d05-4d98-adfd-910b8c1bbe76',
+    image_url: 'https://avatars.githubusercontent.com/u/95131132',
     last_name: 'Ritchie',
+    metadata: [],
     name: 'Deangelo Ritchie',
     telephones: [
       Models::Shared::LmsTelephone.new(
-        telephone: '(352) 551-7989',
+        telephone: '(605) 752-8163',
+        type: Models::Shared::LmsTelephoneType::WORK,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(430) 415-2451',
         type: Models::Shared::LmsTelephoneType::HOME,
       ),
     ],
-    title: 'Product Solutions Engineer',
-    updated_at: DateTime.iso8601('2025-07-01T20:53:44.397Z'),
+    title: 'Regional Security Agent',
+    updated_at: DateTime.iso8601('2025-07-25T22:13:02.094Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2558,7 +2581,7 @@ end
 
 ## update_lms_student
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -2576,31 +2599,38 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateLmsStudentRequest.new(
   lms_student: Models::Shared::LmsStudent.new(
     address: Models::Shared::PropertyLmsStudentAddress.new(
-      address1: '94082 Kassandra Camp',
-      address2: 'Apt. 461',
-      city: 'New Ibrahimmouth',
+      address1: '15033 Corwin Circles',
+      city: 'New Craigside',
       country_code: 'US',
-      postal_code: '52851',
-      region: 'Tennessee',
-      region_code: 'NV',
+      postal_code: '73966',
+      region: 'New Jersey',
+      region_code: 'TX',
     ),
     created_at: DateTime.iso8601('2020-03-23T06:59:29.777Z'),
     emails: [
       Models::Shared::LmsEmail.new(),
-      Models::Shared::LmsEmail.new(),
     ],
     first_name: 'Marcella',
-    id: 'dff1448f-dddf-4fd2-bc4a-5c8fff066a9d',
-    image_url: 'https://avatars.githubusercontent.com/u/36301374',
+    id: '2dc0119d-4ae8-40e0-a92d-24cde92cc24f',
+    image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg',
     last_name: 'Murazik',
+    metadata: [],
     name: 'Marcella Murazik',
     telephones: [
       Models::Shared::LmsTelephone.new(
-        telephone: '(482) 469-8067',
+        telephone: '(899) 827-6400',
+        type: Models::Shared::LmsTelephoneType::WORK,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(487) 213-8236',
+        type: Models::Shared::LmsTelephoneType::FAX,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(980) 775-2940',
         type: Models::Shared::LmsTelephoneType::FAX,
       ),
     ],
-    updated_at: DateTime.iso8601('2022-06-20T15:03:55.426Z'),
+    updated_at: DateTime.iso8601('2022-07-01T15:54:34.501Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

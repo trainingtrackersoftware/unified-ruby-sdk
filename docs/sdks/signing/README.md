@@ -22,7 +22,7 @@
 
 ## create_signing_document
 
-Create a document
+Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
 
 ### Example Usage
 
@@ -39,11 +39,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.signing.create_signing_document(signing_document: Models::Shared::SigningDocument.new(
   created_at: DateTime.iso8601('2021-05-02T09:35:23.679Z'),
-  expires_at: DateTime.iso8601('2026-12-19T11:03:25.768Z'),
-  id: 'b2f0411f-28da-4877-92cf-b9c6e682766e',
-  name: 'nam audax absens',
-  status: Models::Shared::SigningDocumentStatus::VOIDED,
-  updated_at: DateTime.iso8601('2025-08-10T03:55:15.160Z'),
+  description: 'Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.',
+  expires_at: DateTime.iso8601('2021-06-04T01:21:34.949Z'),
+  id: 'efddad88-fde5-43a7-98a3-290f5f4b3c1a',
+  metadata: [],
+  name: 'Denesik Group NDA',
+  sent_at: DateTime.iso8601('2022-06-29T22:11:51.154Z'),
+  status: Models::Shared::SigningDocumentStatus::DRAFT,
+  updated_at: DateTime.iso8601('2025-09-04T12:17:49.876Z'),
 ), connection_id: '<id>')
 
 unless res.signing_document.nil?
@@ -73,7 +76,7 @@ end
 
 ## create_signing_signatory
 
-Create a signatory
+Creates a SigningSignatory. Provide the unified SigningSignatory fields in the request body; they are mapped to the provider's API. Returns the created SigningSignatory.
 
 ### Example Usage
 
@@ -90,12 +93,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.signing.create_signing_signatory(signing_signatory: Models::Shared::SigningSignatory.new(
   created_at: DateTime.iso8601('2022-04-16T19:25:01.966Z'),
-  email: 'Hardy.Wehner@gmail.com',
-  id: '14744bf0-9914-4ff1-8cb9-f54737f20d72',
-  order: 5.0,
+  email: 'anais.lakin@icloud.com',
+  id: '1b0864c8-aab6-4b49-8b81-52e06c540451',
+  metadata: [],
+  name: 'Anais Lakin',
   role: Models::Shared::SigningSignatoryRole::SIGNER,
-  status: Models::Shared::SigningSignatoryStatus::SIGNED,
-  updated_at: DateTime.iso8601('2026-08-13T18:06:48.643Z'),
+  status: Models::Shared::SigningSignatoryStatus::ERROR,
+  updated_at: DateTime.iso8601('2024-05-18T18:00:21.130Z'),
 ), connection_id: '<id>')
 
 unless res.signing_signatory.nil?
@@ -125,7 +129,7 @@ end
 
 ## get_signing_document
 
-Retrieve a document
+Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -169,7 +173,7 @@ end
 
 ## get_signing_signatory
 
-Retrieve a signatory
+Retrieves a single SigningSignatory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -213,7 +217,7 @@ end
 
 ## get_signing_template
 
-Retrieve a template
+Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -257,7 +261,7 @@ end
 
 ## list_signing_documents
 
-List all documents
+Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -302,7 +306,7 @@ end
 
 ## list_signing_signatories
 
-List all signatories
+Returns a list of SigningSignatories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -347,7 +351,7 @@ end
 
 ## list_signing_templates
 
-List all templates
+Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -392,7 +396,7 @@ end
 
 ## patch_signing_document
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -410,11 +414,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchSigningDocumentRequest.new(
   signing_document: Models::Shared::SigningDocument.new(
     created_at: DateTime.iso8601('2021-05-02T09:35:23.679Z'),
-    expires_at: DateTime.iso8601('2026-12-19T11:03:25.779Z'),
-    id: '5f467819-867a-49f2-8899-12411a9c144c',
-    name: 'nam audax absens',
-    status: Models::Shared::SigningDocumentStatus::VOIDED,
-    updated_at: DateTime.iso8601('2025-08-10T03:55:15.168Z'),
+    description: 'Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.',
+    expires_at: DateTime.iso8601('2021-06-04T01:21:34.949Z'),
+    id: 'ba32fd4b-3106-4424-bd56-05bf07e10eb0',
+    metadata: [],
+    name: 'Denesik Group NDA',
+    sent_at: DateTime.iso8601('2022-06-29T22:11:51.157Z'),
+    status: Models::Shared::SigningDocumentStatus::DRAFT,
+    updated_at: DateTime.iso8601('2025-09-04T12:17:49.889Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -446,7 +453,7 @@ end
 
 ## patch_signing_signatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -464,12 +471,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchSigningSignatoryRequest.new(
   signing_signatory: Models::Shared::SigningSignatory.new(
     created_at: DateTime.iso8601('2022-04-16T19:25:01.966Z'),
-    email: 'Hardy.Wehner@gmail.com',
-    id: 'c90461b3-febf-4d10-a3f0-7a45f65ddc4a',
-    order: 5.0,
+    email: 'anais.lakin@icloud.com',
+    id: 'af436cd4-a6f7-40cb-afab-fa3841e76bbc',
+    metadata: [],
+    name: 'Anais Lakin',
     role: Models::Shared::SigningSignatoryRole::SIGNER,
-    status: Models::Shared::SigningSignatoryStatus::SIGNED,
-    updated_at: DateTime.iso8601('2026-08-13T18:06:48.654Z'),
+    status: Models::Shared::SigningSignatoryStatus::ERROR,
+    updated_at: DateTime.iso8601('2024-05-18T18:00:21.138Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -501,7 +509,7 @@ end
 
 ## remove_signing_document
 
-Remove a document
+Deletes the SigningDocument identified by `id`.
 
 ### Example Usage
 
@@ -543,7 +551,7 @@ end
 
 ## remove_signing_signatory
 
-Remove a signatory
+Deletes the SigningSignatory identified by `id`.
 
 ### Example Usage
 
@@ -585,7 +593,7 @@ end
 
 ## update_signing_document
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -603,11 +611,14 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateSigningDocumentRequest.new(
   signing_document: Models::Shared::SigningDocument.new(
     created_at: DateTime.iso8601('2021-05-02T09:35:23.679Z'),
-    expires_at: DateTime.iso8601('2026-12-19T11:03:25.779Z'),
-    id: '5f467819-867a-49f2-8899-12411a9c144c',
-    name: 'nam audax absens',
-    status: Models::Shared::SigningDocumentStatus::VOIDED,
-    updated_at: DateTime.iso8601('2025-08-10T03:55:15.168Z'),
+    description: 'Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.',
+    expires_at: DateTime.iso8601('2021-06-04T01:21:34.949Z'),
+    id: 'ba32fd4b-3106-4424-bd56-05bf07e10eb0',
+    metadata: [],
+    name: 'Denesik Group NDA',
+    sent_at: DateTime.iso8601('2022-06-29T22:11:51.157Z'),
+    status: Models::Shared::SigningDocumentStatus::DRAFT,
+    updated_at: DateTime.iso8601('2025-09-04T12:17:49.889Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -639,7 +650,7 @@ end
 
 ## update_signing_signatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -657,12 +668,13 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateSigningSignatoryRequest.new(
   signing_signatory: Models::Shared::SigningSignatory.new(
     created_at: DateTime.iso8601('2022-04-16T19:25:01.966Z'),
-    email: 'Hardy.Wehner@gmail.com',
-    id: 'c90461b3-febf-4d10-a3f0-7a45f65ddc4a',
-    order: 5.0,
+    email: 'anais.lakin@icloud.com',
+    id: 'af436cd4-a6f7-40cb-afab-fa3841e76bbc',
+    metadata: [],
+    name: 'Anais Lakin',
     role: Models::Shared::SigningSignatoryRole::SIGNER,
-    status: Models::Shared::SigningSignatoryStatus::SIGNED,
-    updated_at: DateTime.iso8601('2026-08-13T18:06:48.654Z'),
+    status: Models::Shared::SigningSignatoryStatus::ERROR,
+    updated_at: DateTime.iso8601('2024-05-18T18:00:21.138Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

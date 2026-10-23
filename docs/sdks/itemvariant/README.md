@@ -14,7 +14,7 @@
 
 ## create_commerce_itemvariant
 
-Create an itemvariant
+Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
 
 ### Example Usage
 
@@ -30,47 +30,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.itemvariant.create_commerce_itemvariant(commerce_itemvariant: Models::Shared::CommerceItemvariant.new(
-  available_at: DateTime.iso8601('2022-02-02T16:10:33.503Z'),
+  available_at: DateTime.iso8601('2022-02-06T18:14:41.644Z'),
   created_at: DateTime.iso8601('2022-01-20T13:49:12.968Z'),
-  description: 'Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance',
-  height: 52.0,
-  id: '881bea6b-8da2-41ec-a838-48f626148ccf',
-  is_active: false,
+  description: 'Stylish Salad designed to make you stand out with little looks',
+  height: 54.0,
+  id: '095325c8-f323-4f30-989c-c770f39fbe7d',
+  is_active: true,
   is_featured: false,
   is_visible: false,
-  length: 94.0,
+  length: 92.0,
   media: [
     Models::Shared::CommerceItemMedia.new(
-      alt: 'Calcar delibero cursim summisse.',
-      height: 394.0,
-      id: '71db71de-f4aa-49c6-9311-29acafa9f965',
+      alt: 'Hic desipio thorax.',
+      height: 961.0,
+      id: '718f1a3a-48f8-40c0-87f3-3c8c7b28ea05',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: '703ab0b5-fe69-4a16-82d8-10530081b8eb',
-          slug: 'illo',
-          value: 'quia',
+          id: '5243fa2c-4cfc-422a-87f1-74dd513fe48f',
+          slug: 'ubi',
+          value: 'textus',
         ),
       ],
-      position: 92.0,
+      position: 72.0,
       type: Models::Shared::CommerceItemMediaType::IMAGE,
-      url: 'https://picsum.photos/seed/u0YdHqlRu/2007/3208',
-      width: 54.0,
-    ),
-    Models::Shared::CommerceItemMedia.new(
-      alt: 'Civitas acies substantia tergo.',
-      height: 351.0,
-      id: 'b7fa934b-1d6a-448b-8157-2ee82d3db529',
-      metadata: [
-        Models::Shared::CommerceMetadata.new(
-          id: '5509efb2-db07-47fa-9eb0-9455956d0f72',
-          slug: 'libero',
-          value: 'capitulus',
-        ),
-      ],
-      position: 44.0,
-      type: Models::Shared::CommerceItemMediaType::IMAGE,
-      url: 'https://loremflickr.com/2230/1237?lock=8628070842159966',
-      width: 55.0,
+      url: 'https://loremflickr.com/2126/721?lock=8820088623807162',
+      width: 35.0,
     ),
   ],
   metadata: [
@@ -79,55 +63,50 @@ res = s.itemvariant.create_commerce_itemvariant(commerce_itemvariant: Models::Sh
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CommerceMetadataFormat::TEXT,
-      id: '150303df-d881-4800-82f2-e21ba6a5995d',
+      id: '73b992be-aa91-430f-b091-49092867cb6d',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'nihil',
+      value: 'absens',
     ),
   ],
-  name: 'Keyboard',
+  name: 'Chair',
   options: [
     Models::Shared::CommerceItemOption.new(
-      id: 'fbb8b263-3357-4582-9634-820f5cf40feb',
-      name: 'Steel',
-      position: 97.0,
+      id: '958148c8-2b5b-428e-8a5f-5cfa28aa1399',
+      name: 'Color',
+      position: 1.0,
       values: [
-        'Granite',
-        'Plastic',
+        'olive',
+      ],
+    ),
+    Models::Shared::CommerceItemOption.new(
+      id: 'f2a752d5-9a6d-4d00-87c9-4a65e82c26e4',
+      name: 'Size',
+      position: 2.0,
+      values: [
+        'S',
       ],
     ),
   ],
   prices: [
     Models::Shared::CommerceItemPrice.new(
-      compare_at_price: 3745.0,
-      currency: 'COP',
-      price: 4913.0,
-    ),
-    Models::Shared::CommerceItemPrice.new(
-      compare_at_price: 438.0,
-      currency: 'PHP',
-      price: 1378.0,
-    ),
-    Models::Shared::CommerceItemPrice.new(
-      compare_at_price: 1614.0,
-      currency: 'PHP',
-      price: 8702.0,
+      currency: 'USD',
+      price: 382.23,
     ),
   ],
-  public_description: 'Stylish Soap designed to make you stand out with insistent looks',
-  public_name: 'Keyboard',
+  public_description: 'Stylish Cheese designed to make you stand out with grave looks',
+  public_name: 'Chair',
   requires_shipping: false,
   size_unit: Models::Shared::SizeUnit::CM,
-  sku: '978-0-7051-0955-0',
+  sku: '978-1-368-44270-1',
   tags: [
-    'vomito',
-    'custodia',
+    'deserunt',
   ],
-  total_stock: 929.0,
-  updated_at: DateTime.iso8601('2025-05-26T13:54:58.135Z'),
-  weight: 61.0,
+  total_stock: 436.0,
+  updated_at: DateTime.iso8601('2026-03-11T09:49:38.577Z'),
+  weight: 46.0,
   weight_unit: Models::Shared::CommerceItemvariantWeightUnit::OZ,
-  width: 26.0,
+  width: 40.0,
 ), connection_id: '<id>')
 
 unless res.commerce_itemvariant.nil?
@@ -157,7 +136,7 @@ end
 
 ## get_commerce_itemvariant
 
-Retrieve an itemvariant
+Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -201,7 +180,7 @@ end
 
 ## list_commerce_itemvariants
 
-List all itemvariants
+Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -246,7 +225,7 @@ end
 
 ## patch_commerce_itemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -263,47 +242,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchCommerceItemvariantRequest.new(
   commerce_itemvariant: Models::Shared::CommerceItemvariant.new(
-    available_at: DateTime.iso8601('2022-02-02T16:10:33.503Z'),
+    available_at: DateTime.iso8601('2022-02-06T18:14:41.644Z'),
     created_at: DateTime.iso8601('2022-01-20T13:49:12.968Z'),
-    description: 'Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance',
-    height: 52.0,
-    id: '4bc96b4d-5b97-4232-aec0-c93dc628787b',
-    is_active: false,
+    description: 'Stylish Salad designed to make you stand out with little looks',
+    height: 54.0,
+    id: 'b4e53342-2af5-4efa-a293-7ac75f25e68a',
+    is_active: true,
     is_featured: false,
     is_visible: false,
-    length: 94.0,
+    length: 92.0,
     media: [
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Calcar delibero cursim summisse.',
-        height: 394.0,
-        id: '5c2aa390-2a13-454a-868a-1c70f91207ec',
+        alt: 'Hic desipio thorax.',
+        height: 961.0,
+        id: 'a6b0552c-adbd-4142-bbbb-59187beb12b6',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'a18192c5-5410-4b54-9967-311c149c0d55',
-            slug: 'illo',
-            value: 'quia',
+            id: '2ebb0e9d-e614-4b19-9d8c-d0d2c9580081',
+            slug: 'ubi',
+            value: 'textus',
           ),
         ],
-        position: 92.0,
+        position: 72.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://picsum.photos/seed/u0YdHqlRu/2007/3208',
-        width: 54.0,
-      ),
-      Models::Shared::CommerceItemMedia.new(
-        alt: 'Civitas acies substantia tergo.',
-        height: 351.0,
-        id: '8d49cf6f-2339-46f3-a849-ae669f16e461',
-        metadata: [
-          Models::Shared::CommerceMetadata.new(
-            id: '47767d98-98c7-468c-b424-c07498d67cc4',
-            slug: 'libero',
-            value: 'capitulus',
-          ),
-        ],
-        position: 44.0,
-        type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://loremflickr.com/2230/1237?lock=8628070842159966',
-        width: 55.0,
+        url: 'https://loremflickr.com/2126/721?lock=8820088623807162',
+        width: 35.0,
       ),
     ],
     metadata: [
@@ -312,55 +275,50 @@ req = Models::Operations::PatchCommerceItemvariantRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CommerceMetadataFormat::TEXT,
-        id: 'aa52a554-aa45-4d6f-92cd-662ad0909530',
+        id: 'ce1351ef-274f-4f0e-b3fe-844e61153c5a',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'nihil',
+        value: 'absens',
       ),
     ],
-    name: 'Keyboard',
+    name: 'Chair',
     options: [
       Models::Shared::CommerceItemOption.new(
-        id: '3406f08a-aa50-437f-b6ef-b323b3669f28',
-        name: 'Steel',
-        position: 97.0,
+        id: '2911f5f1-0792-4b04-a81e-2dab72da752f',
+        name: 'Color',
+        position: 1.0,
         values: [
-          'Granite',
-          'Plastic',
+          'olive',
+        ],
+      ),
+      Models::Shared::CommerceItemOption.new(
+        id: '634ba452-f269-42b4-97bd-3169923350c2',
+        name: 'Size',
+        position: 2.0,
+        values: [
+          'S',
         ],
       ),
     ],
     prices: [
       Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 3745.0,
-        currency: 'COP',
-        price: 4913.0,
-      ),
-      Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 438.0,
-        currency: 'PHP',
-        price: 1378.0,
-      ),
-      Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 1614.0,
-        currency: 'PHP',
-        price: 8702.0,
+        currency: 'USD',
+        price: 382.23,
       ),
     ],
-    public_description: 'Stylish Soap designed to make you stand out with insistent looks',
-    public_name: 'Keyboard',
+    public_description: 'Stylish Cheese designed to make you stand out with grave looks',
+    public_name: 'Chair',
     requires_shipping: false,
     size_unit: Models::Shared::SizeUnit::CM,
-    sku: '978-0-7051-0955-0',
+    sku: '978-1-368-44270-1',
     tags: [
-      'vomito',
-      'custodia',
+      'deserunt',
     ],
-    total_stock: 929.0,
-    updated_at: DateTime.iso8601('2025-05-26T13:54:58.165Z'),
-    weight: 61.0,
+    total_stock: 436.0,
+    updated_at: DateTime.iso8601('2026-03-11T09:49:38.618Z'),
+    weight: 46.0,
     weight_unit: Models::Shared::CommerceItemvariantWeightUnit::OZ,
-    width: 26.0,
+    width: 40.0,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -392,7 +350,7 @@ end
 
 ## remove_commerce_itemvariant
 
-Remove an itemvariant
+Deletes the CommerceItemvariant identified by `id`.
 
 ### Example Usage
 
@@ -434,7 +392,7 @@ end
 
 ## update_commerce_itemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -451,47 +409,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateCommerceItemvariantRequest.new(
   commerce_itemvariant: Models::Shared::CommerceItemvariant.new(
-    available_at: DateTime.iso8601('2022-02-02T16:10:33.503Z'),
+    available_at: DateTime.iso8601('2022-02-06T18:14:41.644Z'),
     created_at: DateTime.iso8601('2022-01-20T13:49:12.968Z'),
-    description: 'Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance',
-    height: 52.0,
-    id: '4bc96b4d-5b97-4232-aec0-c93dc628787b',
-    is_active: false,
+    description: 'Stylish Salad designed to make you stand out with little looks',
+    height: 54.0,
+    id: 'b4e53342-2af5-4efa-a293-7ac75f25e68a',
+    is_active: true,
     is_featured: false,
     is_visible: false,
-    length: 94.0,
+    length: 92.0,
     media: [
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Calcar delibero cursim summisse.',
-        height: 394.0,
-        id: '5c2aa390-2a13-454a-868a-1c70f91207ec',
+        alt: 'Hic desipio thorax.',
+        height: 961.0,
+        id: 'a6b0552c-adbd-4142-bbbb-59187beb12b6',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'a18192c5-5410-4b54-9967-311c149c0d55',
-            slug: 'illo',
-            value: 'quia',
+            id: '2ebb0e9d-e614-4b19-9d8c-d0d2c9580081',
+            slug: 'ubi',
+            value: 'textus',
           ),
         ],
-        position: 92.0,
+        position: 72.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://picsum.photos/seed/u0YdHqlRu/2007/3208',
-        width: 54.0,
-      ),
-      Models::Shared::CommerceItemMedia.new(
-        alt: 'Civitas acies substantia tergo.',
-        height: 351.0,
-        id: '8d49cf6f-2339-46f3-a849-ae669f16e461',
-        metadata: [
-          Models::Shared::CommerceMetadata.new(
-            id: '47767d98-98c7-468c-b424-c07498d67cc4',
-            slug: 'libero',
-            value: 'capitulus',
-          ),
-        ],
-        position: 44.0,
-        type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://loremflickr.com/2230/1237?lock=8628070842159966',
-        width: 55.0,
+        url: 'https://loremflickr.com/2126/721?lock=8820088623807162',
+        width: 35.0,
       ),
     ],
     metadata: [
@@ -500,55 +442,50 @@ req = Models::Operations::UpdateCommerceItemvariantRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CommerceMetadataFormat::TEXT,
-        id: 'aa52a554-aa45-4d6f-92cd-662ad0909530',
+        id: 'ce1351ef-274f-4f0e-b3fe-844e61153c5a',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'nihil',
+        value: 'absens',
       ),
     ],
-    name: 'Keyboard',
+    name: 'Chair',
     options: [
       Models::Shared::CommerceItemOption.new(
-        id: '3406f08a-aa50-437f-b6ef-b323b3669f28',
-        name: 'Steel',
-        position: 97.0,
+        id: '2911f5f1-0792-4b04-a81e-2dab72da752f',
+        name: 'Color',
+        position: 1.0,
         values: [
-          'Granite',
-          'Plastic',
+          'olive',
+        ],
+      ),
+      Models::Shared::CommerceItemOption.new(
+        id: '634ba452-f269-42b4-97bd-3169923350c2',
+        name: 'Size',
+        position: 2.0,
+        values: [
+          'S',
         ],
       ),
     ],
     prices: [
       Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 3745.0,
-        currency: 'COP',
-        price: 4913.0,
-      ),
-      Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 438.0,
-        currency: 'PHP',
-        price: 1378.0,
-      ),
-      Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 1614.0,
-        currency: 'PHP',
-        price: 8702.0,
+        currency: 'USD',
+        price: 382.23,
       ),
     ],
-    public_description: 'Stylish Soap designed to make you stand out with insistent looks',
-    public_name: 'Keyboard',
+    public_description: 'Stylish Cheese designed to make you stand out with grave looks',
+    public_name: 'Chair',
     requires_shipping: false,
     size_unit: Models::Shared::SizeUnit::CM,
-    sku: '978-0-7051-0955-0',
+    sku: '978-1-368-44270-1',
     tags: [
-      'vomito',
-      'custodia',
+      'deserunt',
     ],
-    total_stock: 929.0,
-    updated_at: DateTime.iso8601('2025-05-26T13:54:58.165Z'),
-    weight: 61.0,
+    total_stock: 436.0,
+    updated_at: DateTime.iso8601('2026-03-11T09:49:38.618Z'),
+    weight: 46.0,
     weight_unit: Models::Shared::CommerceItemvariantWeightUnit::OZ,
-    width: 26.0,
+    width: 40.0,
   ),
   connection_id: '<id>',
   id: '<id>',

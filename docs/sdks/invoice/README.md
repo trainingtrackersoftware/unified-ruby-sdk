@@ -14,7 +14,7 @@
 
 ## create_accounting_invoice
 
-Create an invoice
+Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
 
 ### Example Usage
 
@@ -33,40 +33,44 @@ res = s.invoice.create_accounting_invoice(accounting_invoice: Models::Shared::Ac
   attachments: [
     Models::Shared::AccountingAttachment.new(
       download_url: 'https://glossy-markup.net/',
-      id: '5cf0c60a-c701-4795-a3aa-5f03390e836b',
-      mime_type: 'benevolentia',
-      name: 'vespillo',
+      id: '375cc477-e427-4c2a-bd69-75235f07628c',
+      mime_type: 'application/pdf',
+      name: 'INV-77705.pdf',
+    ),
+    Models::Shared::AccountingAttachment.new(
+      download_url: 'https://earnest-giggle.net',
+      id: '3ee0b8a0-9440-4164-9d01-09d8c8a2d8a3',
+      mime_type: 'application/pdf',
+      name: 'INV-77705-1.pdf',
     ),
   ],
-  balance_amount: -1.0,
+  balance_amount: 0.0,
   category_ids: [],
   created_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
-  currency: 'RWF',
+  currency: 'GBP',
   discount_amount: 0.0,
-  due_at: DateTime.iso8601('2022-11-27T21:25:37.363Z'),
+  due_at: DateTime.iso8601('2022-12-07T14:17:29.587Z'),
   extended_notes: [],
-  id: 'fcd76287-438d-4c94-b929-76593cc6f8a6',
-  invoice_number: 'vinco',
-  is_inclusive_of_tax: true,
+  id: '1ec363b5-4678-4173-9f76-3a9a86625ea3',
+  invoice_number: 'INV-77705',
+  is_inclusive_of_tax: false,
   lineitems: [],
   metadata: [],
-  notes: 'Auctus comburo clarus ubi.',
-  paid_amount: 0.0,
-  paid_at: DateTime.iso8601('2022-11-25T15:00:28.871Z'),
-  payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::SEND_INVOICE,
+  notes: 'Adinventitias sursum temptatio auctus comburo clarus ubi deprimo.',
+  payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::CHARGE_AUTOMATICALLY,
   payments: [],
-  posted_at: DateTime.iso8601('2026-03-29T14:31:44.384Z'),
-  reference: 'adinventitias',
+  posted_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
+  reference: 'PO-2331',
   salesorder_ids: [],
   send: true,
-  status: Models::Shared::AccountingInvoiceStatus::DELETED,
+  status: Models::Shared::AccountingInvoiceStatus::OVERDUE,
   sub_total_amount: 0.0,
   tax_amount: 0.0,
-  term: Models::Shared::AccountingInvoiceTerm::NET_45,
+  term: Models::Shared::AccountingInvoiceTerm::NET_25,
   total_amount: 0.0,
-  type: Models::Shared::AccountingInvoiceType::CREDITMEMO,
-  updated_at: DateTime.iso8601('2023-02-06T11:29:32.706Z'),
-  url: 'https://gifted-yarmulke.info/',
+  type: Models::Shared::AccountingInvoiceType::INVOICE,
+  updated_at: DateTime.iso8601('2026-04-25T06:46:36.172Z'),
+  url: 'https://gifted-yarmulke.info/invoices/INV-77705',
 ), connection_id: '<id>')
 
 unless res.accounting_invoice.nil?
@@ -96,7 +100,7 @@ end
 
 ## get_accounting_invoice
 
-Retrieve an invoice
+Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -140,7 +144,7 @@ end
 
 ## list_accounting_invoices
 
-List all invoices
+Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -185,7 +189,7 @@ end
 
 ## patch_accounting_invoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -205,40 +209,44 @@ req = Models::Operations::PatchAccountingInvoiceRequest.new(
     attachments: [
       Models::Shared::AccountingAttachment.new(
         download_url: 'https://glossy-markup.net/',
-        id: '9c84fb4a-f568-4d57-9814-d2f48b6721f9',
-        mime_type: 'benevolentia',
-        name: 'vespillo',
+        id: '49b43410-bdef-4ec5-b80d-db53c6dda2ae',
+        mime_type: 'application/pdf',
+        name: 'INV-77705.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://earnest-giggle.net',
+        id: 'd2133d3d-896a-4099-bdee-3a2d53872966',
+        mime_type: 'application/pdf',
+        name: 'INV-77705-1.pdf',
       ),
     ],
-    balance_amount: -1.0,
+    balance_amount: 0.0,
     category_ids: [],
     created_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
-    currency: 'RWF',
+    currency: 'GBP',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2022-11-27T21:25:37.363Z'),
+    due_at: DateTime.iso8601('2022-12-07T14:17:29.587Z'),
     extended_notes: [],
-    id: 'f85296bf-760d-4117-adb2-15ceb0fbb211',
-    invoice_number: 'vinco',
-    is_inclusive_of_tax: true,
+    id: 'c76c91c5-d89b-4b94-bd13-e9a0a6c57a48',
+    invoice_number: 'INV-77705',
+    is_inclusive_of_tax: false,
     lineitems: [],
     metadata: [],
-    notes: 'Auctus comburo clarus ubi.',
-    paid_amount: 0.0,
-    paid_at: DateTime.iso8601('2022-11-25T15:00:28.871Z'),
-    payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::SEND_INVOICE,
+    notes: 'Adinventitias sursum temptatio auctus comburo clarus ubi deprimo.',
+    payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::CHARGE_AUTOMATICALLY,
     payments: [],
-    posted_at: DateTime.iso8601('2026-03-29T14:31:44.428Z'),
-    reference: 'adinventitias',
+    posted_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
+    reference: 'PO-2331',
     salesorder_ids: [],
     send: true,
-    status: Models::Shared::AccountingInvoiceStatus::DELETED,
+    status: Models::Shared::AccountingInvoiceStatus::OVERDUE,
     sub_total_amount: 0.0,
     tax_amount: 0.0,
-    term: Models::Shared::AccountingInvoiceTerm::NET_45,
+    term: Models::Shared::AccountingInvoiceTerm::NET_25,
     total_amount: 0.0,
-    type: Models::Shared::AccountingInvoiceType::CREDITMEMO,
-    updated_at: DateTime.iso8601('2023-02-06T11:29:32.709Z'),
-    url: 'https://gifted-yarmulke.info/',
+    type: Models::Shared::AccountingInvoiceType::INVOICE,
+    updated_at: DateTime.iso8601('2026-04-25T06:46:36.228Z'),
+    url: 'https://gifted-yarmulke.info/invoices/INV-77705',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -270,7 +278,7 @@ end
 
 ## remove_accounting_invoice
 
-Remove an invoice
+Deletes the AccountingInvoice identified by `id`.
 
 ### Example Usage
 
@@ -312,7 +320,7 @@ end
 
 ## update_accounting_invoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -332,40 +340,44 @@ req = Models::Operations::UpdateAccountingInvoiceRequest.new(
     attachments: [
       Models::Shared::AccountingAttachment.new(
         download_url: 'https://glossy-markup.net/',
-        id: '9c84fb4a-f568-4d57-9814-d2f48b6721f9',
-        mime_type: 'benevolentia',
-        name: 'vespillo',
+        id: '49b43410-bdef-4ec5-b80d-db53c6dda2ae',
+        mime_type: 'application/pdf',
+        name: 'INV-77705.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://earnest-giggle.net',
+        id: 'd2133d3d-896a-4099-bdee-3a2d53872966',
+        mime_type: 'application/pdf',
+        name: 'INV-77705-1.pdf',
       ),
     ],
-    balance_amount: -1.0,
+    balance_amount: 0.0,
     category_ids: [],
     created_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
-    currency: 'RWF',
+    currency: 'GBP',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2022-11-27T21:25:37.363Z'),
+    due_at: DateTime.iso8601('2022-12-07T14:17:29.587Z'),
     extended_notes: [],
-    id: 'f85296bf-760d-4117-adb2-15ceb0fbb211',
-    invoice_number: 'vinco',
-    is_inclusive_of_tax: true,
+    id: 'c76c91c5-d89b-4b94-bd13-e9a0a6c57a48',
+    invoice_number: 'INV-77705',
+    is_inclusive_of_tax: false,
     lineitems: [],
     metadata: [],
-    notes: 'Auctus comburo clarus ubi.',
-    paid_amount: 0.0,
-    paid_at: DateTime.iso8601('2022-11-25T15:00:28.871Z'),
-    payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::SEND_INVOICE,
+    notes: 'Adinventitias sursum temptatio auctus comburo clarus ubi deprimo.',
+    payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::CHARGE_AUTOMATICALLY,
     payments: [],
-    posted_at: DateTime.iso8601('2026-03-29T14:31:44.428Z'),
-    reference: 'adinventitias',
+    posted_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
+    reference: 'PO-2331',
     salesorder_ids: [],
     send: true,
-    status: Models::Shared::AccountingInvoiceStatus::DELETED,
+    status: Models::Shared::AccountingInvoiceStatus::OVERDUE,
     sub_total_amount: 0.0,
     tax_amount: 0.0,
-    term: Models::Shared::AccountingInvoiceTerm::NET_45,
+    term: Models::Shared::AccountingInvoiceTerm::NET_25,
     total_amount: 0.0,
-    type: Models::Shared::AccountingInvoiceType::CREDITMEMO,
-    updated_at: DateTime.iso8601('2023-02-06T11:29:32.709Z'),
-    url: 'https://gifted-yarmulke.info/',
+    type: Models::Shared::AccountingInvoiceType::INVOICE,
+    updated_at: DateTime.iso8601('2026-04-25T06:46:36.228Z'),
+    url: 'https://gifted-yarmulke.info/invoices/INV-77705',
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -11,7 +11,7 @@
 
 ## create_performance_feedback
 
-Create a feedback
+Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
 
 ### Example Usage
 
@@ -28,15 +28,16 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.feedback.create_performance_feedback(performance_feedback: Models::Shared::PerformanceFeedback.new(
   created_at: DateTime.iso8601('2023-04-11T16:21:53.862Z'),
-  id: '5edc2b1e-0782-468b-afd6-0a47267c3cde',
+  id: 'b903536e-0573-420e-90c1-8f7d22ec584e',
   is_visible: true,
   message: 'Tabernus corpus voluptate aestus.',
+  metadata: [],
   tags: [
     'well-to-do',
     'hexagon',
   ],
   type: Models::Shared::PerformanceFeedbackType::PRAISE,
-  updated_at: DateTime.iso8601('2025-08-14T17:08:29.867Z'),
+  updated_at: DateTime.iso8601('2025-09-05T10:54:01.678Z'),
   user_id: '<id>',
 ), connection_id: '<id>')
 
@@ -67,7 +68,7 @@ end
 
 ## get_performance_feedback
 
-Retrieve a feedback
+Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -111,7 +112,7 @@ end
 
 ## list_performance_feedbacks
 
-List all feedbacks
+Returns a list of PerformanceFeedbacks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

@@ -24,6 +24,10 @@ class UnifiedRubySDK::Models::Shared::AtsInterview
   def job_id=(str_); end
   def location(); end
   def location=(str_); end
+  def meeting_url(); end
+  def meeting_url=(str_); end
+  def metadata(); end
+  def metadata=(str_); end
   def raw(); end
   def raw=(str_); end
   def start_at(); end

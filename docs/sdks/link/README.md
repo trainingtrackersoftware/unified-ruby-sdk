@@ -20,7 +20,7 @@
 
 ## create_calendar_link
 
-Create a link
+Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
 
 ### Example Usage
 
@@ -39,12 +39,13 @@ res = s.link.create_calendar_link(calendar_link: Models::Shared::CalendarLink.ne
   created_at: '2023-03-07T13:34:11.959Z',
   description: 'Vitium clibanus laboriosam uxor denuncio.',
   duration: 74.0,
-  id: '61eb5067-d982-487c-9c8b-a11b4fee7af2',
+  id: 'cb0ede8b-ce7e-4acb-a53b-6f9a026300ca',
   is_active: true,
+  metadata: [],
   name: 'Sopor sopor ancilla animus anser dignissimos vito confero utilis.',
   price_amount: 44.0,
   price_currency: 'USD',
-  updated_at: '2024-03-07T01:46:22.209Z',
+  updated_at: '2024-03-16T02:30:17.555Z',
   url: 'https://annual-apricot.info/',
 ), connection_id: '<id>')
 
@@ -75,7 +76,7 @@ end
 
 ## create_payment_link
 
-Create a link
+Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
 
 ### Example Usage
 
@@ -91,82 +92,55 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.link.create_payment_link(payment_link: Models::Shared::PaymentLink.new(
-  amount: 81_211.0,
+  amount: 17_001.68,
   created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
-  currency: 'GYD',
-  description: 'Adfero ipsa terreo benevolentia utrum.',
-  id: '4f9a36b6-88f0-45e4-bfa2-8133bbfcfc13',
+  currency: 'CAD',
+  description: 'Savor the tender essence in our Ball, designed for dim culinary adventures',
+  id: '765123bb-168f-44bd-8ff1-b440b0fcc73a',
   is_active: true,
-  is_chargeable_now: false,
+  is_chargeable_now: true,
   lineitems: [
     Models::Shared::PaymentLineitem.new(
-      created_at: DateTime.iso8601('2023-08-21T00:45:53.202Z'),
-      id: 'a9aff2d8-a192-46c6-8dbb-607b8001936e',
-      item_description: 'Experience the white brilliance of our Hat, perfect for aggravating environments',
-      item_name: 'Licensed Marble Mouse',
-      item_sku: 'TAD4EYLVRI',
-      notes: 'Charisma theca video verus conduco attollo cervus decretum viridis.',
-      tax_amount: 221.0,
-      total_amount: 1841.0,
-      unit_amount: 270.0,
-      unit_quantity: 6.0,
-      updated_at: DateTime.iso8601('2023-02-12T17:31:25.507Z'),
+      created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+      id: '90540f29-2c87-41f2-8621-34943b4e1cc0',
+      item_description: 'Discover the worst new Computer with an exciting mix of Steel ingredients',
+      item_name: 'Soft Marble Cheese',
+      tax_amount: 0.0,
+      total_amount: 9342.0,
+      unit_amount: 519.0,
+      unit_quantity: 18.0,
+      updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
     ),
     Models::Shared::PaymentLineitem.new(
-      created_at: DateTime.iso8601('2023-09-30T05:29:29.258Z'),
-      discount_amount: 15.0,
-      id: '8e21e867-cdf5-43bb-84c9-93787ad4488b',
-      item_description: 'New Chicken model with 79 GB RAM, 846 GB storage, and lovely features',
-      item_name: 'Intelligent Steel Table',
-      item_sku: 'V8HQCDQYUZ',
-      tax_amount: 150.0,
-      total_amount: 2037.0,
-      unit_amount: 317.0,
-      unit_quantity: 6.0,
-      updated_at: DateTime.iso8601('2023-05-31T11:10:09.190Z'),
-    ),
-    Models::Shared::PaymentLineitem.new(
-      created_at: DateTime.iso8601('2023-12-16T13:52:52.341Z'),
-      id: '814b8dfb-aed7-405a-a9ea-504c01ad0737',
-      item_description: 'Dach - Wolff\'s most advanced Car technology increases dense capabilities',
-      item_name: 'Modern Gold Soap',
-      item_sku: 'DYGKCTCLDJ',
-      tax_amount: 41.0,
-      total_amount: 281.0,
-      unit_amount: 30.0,
+      created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+      discount_amount: 424.32,
+      id: 'daf81fca-e707-4ab1-a9ba-f519f0a9206e',
+      item_description: 'Innovative Shoes featuring utilized technology and Cotton construction',
+      item_name: 'Sleek Aluminum Shoes',
+      notes: 'Cervus decretum viridis doloremque.',
+      tax_amount: 0.0,
+      total_amount: 6_647.68,
+      unit_amount: 884.0,
       unit_quantity: 8.0,
-      updated_at: DateTime.iso8601('2023-05-22T16:35:07.583Z'),
+      updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
     ),
     Models::Shared::PaymentLineitem.new(
-      created_at: DateTime.iso8601('2023-08-12T19:45:39.705Z'),
-      id: 'f53e5bd2-9c4b-4a82-93d3-e1b20c8ddfdf',
-      item_description: 'The sleek and unimportant Salad comes with salmon LED lighting for smart functionality',
-      item_name: 'Generic Aluminum Ball',
-      item_sku: 'BSBAXWAAFF',
-      notes: 'Cubo adversus victus subito asperiores vereor cibo tabgo.',
-      tax_amount: 6.0,
-      total_amount: 78.0,
-      unit_amount: 24.0,
-      unit_quantity: 3.0,
-      updated_at: DateTime.iso8601('2023-11-13T12:39:15.951Z'),
-    ),
-    Models::Shared::PaymentLineitem.new(
-      created_at: DateTime.iso8601('2023-02-14T06:21:13.641Z'),
-      discount_amount: 171.0,
-      id: '4773af83-1e85-497d-b1ef-f44fa2028d3f',
-      item_description: 'New Bike model with 29 GB RAM, 271 GB storage, and minty features',
-      item_name: 'Incredible Aluminum Chicken',
-      item_sku: '6ERMJK20HE',
-      tax_amount: 263.0,
-      total_amount: 3708.0,
-      unit_amount: 452.0,
-      unit_quantity: 8.0,
-      updated_at: DateTime.iso8601('2023-01-31T21:39:30.894Z'),
+      created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+      id: '8a3e2f38-e3db-476f-bacb-ad478a662f6b',
+      item_description: 'Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance',
+      item_name: 'Elegant Concrete Gloves',
+      notes: 'Desipio usque vacuus currus cetera testimonium.',
+      tax_amount: 0.0,
+      total_amount: 1012.0,
+      unit_amount: 506.0,
+      unit_quantity: 2.0,
+      updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
     ),
   ],
-  success_url: 'https://parched-kettledrum.com/',
-  updated_at: DateTime.iso8601('2025-12-13T02:46:38.771Z'),
-  url: 'https://forceful-laughter.biz/',
+  metadata: [],
+  success_url: 'https://tinted-jet.info',
+  updated_at: DateTime.iso8601('2024-04-13T21:38:29.534Z'),
+  url: 'https://pay.example.com/765123bb-168f-44bd-8ff1-b440b0fcc73a',
 ), connection_id: '<id>')
 
 unless res.payment_link.nil?
@@ -196,7 +170,7 @@ end
 
 ## get_calendar_link
 
-Retrieve a link
+Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -240,7 +214,7 @@ end
 
 ## get_payment_link
 
-Retrieve a link
+Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -284,7 +258,7 @@ end
 
 ## list_calendar_links
 
-List all links
+Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -329,7 +303,7 @@ end
 
 ## list_payment_links
 
-List all links
+Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -374,7 +348,7 @@ end
 
 ## patch_calendar_link
 
-Update a link
+Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
 
 ### Example Usage
 
@@ -394,12 +368,13 @@ req = Models::Operations::PatchCalendarLinkRequest.new(
     created_at: '2023-03-07T13:34:11.959Z',
     description: 'Vitium clibanus laboriosam uxor denuncio.',
     duration: 74.0,
-    id: '41fc80b8-6f19-4b95-8501-81a198bc9747',
+    id: 'f74de0f1-7ad4-41d2-9caf-be2a2c0a11aa',
     is_active: true,
+    metadata: [],
     name: 'Sopor sopor ancilla animus anser dignissimos vito confero utilis.',
     price_amount: 44.0,
     price_currency: 'USD',
-    updated_at: '2024-03-07T01:46:22.212Z',
+    updated_at: '2024-03-16T02:30:17.560Z',
     url: 'https://annual-apricot.info/',
   ),
   connection_id: '<id>',
@@ -432,7 +407,7 @@ end
 
 ## patch_payment_link
 
-Update a link
+Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
 
 ### Example Usage
 
@@ -449,82 +424,55 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchPaymentLinkRequest.new(
   payment_link: Models::Shared::PaymentLink.new(
-    amount: 81_211.0,
+    amount: 17_001.68,
     created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
-    currency: 'GYD',
-    description: 'Adfero ipsa terreo benevolentia utrum.',
-    id: 'a0d0a16f-3206-41d6-b149-7d98a1890715',
+    currency: 'CAD',
+    description: 'Savor the tender essence in our Ball, designed for dim culinary adventures',
+    id: 'ab310546-5a30-4ae4-a471-0f9440b670ce',
     is_active: true,
-    is_chargeable_now: false,
+    is_chargeable_now: true,
     lineitems: [
       Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-08-21T00:45:53.202Z'),
-        id: 'cf4ac767-3d27-4148-81e3-64f000cb7b68',
-        item_description: 'Experience the white brilliance of our Hat, perfect for aggravating environments',
-        item_name: 'Licensed Marble Mouse',
-        item_sku: 'TAD4EYLVRI',
-        notes: 'Charisma theca video verus conduco attollo cervus decretum viridis.',
-        tax_amount: 221.0,
-        total_amount: 1841.0,
-        unit_amount: 270.0,
-        unit_quantity: 6.0,
-        updated_at: DateTime.iso8601('2023-02-12T17:31:25.507Z'),
+        created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+        id: '645b6fd7-aedb-4967-96d1-3c370be28c35',
+        item_description: 'Discover the worst new Computer with an exciting mix of Steel ingredients',
+        item_name: 'Soft Marble Cheese',
+        tax_amount: 0.0,
+        total_amount: 9342.0,
+        unit_amount: 519.0,
+        unit_quantity: 18.0,
+        updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
       ),
       Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-09-30T05:29:29.258Z'),
-        discount_amount: 15.0,
-        id: '8886f8c0-4700-4699-bc2a-824424c85ce2',
-        item_description: 'New Chicken model with 79 GB RAM, 846 GB storage, and lovely features',
-        item_name: 'Intelligent Steel Table',
-        item_sku: 'V8HQCDQYUZ',
-        tax_amount: 150.0,
-        total_amount: 2037.0,
-        unit_amount: 317.0,
-        unit_quantity: 6.0,
-        updated_at: DateTime.iso8601('2023-05-31T11:10:09.190Z'),
-      ),
-      Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-12-16T13:52:52.341Z'),
-        id: '5bca260b-3698-4dd7-9ffd-701cdd34be1b',
-        item_description: 'Dach - Wolff\'s most advanced Car technology increases dense capabilities',
-        item_name: 'Modern Gold Soap',
-        item_sku: 'DYGKCTCLDJ',
-        tax_amount: 41.0,
-        total_amount: 281.0,
-        unit_amount: 30.0,
+        created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+        discount_amount: 424.32,
+        id: '35643734-60d3-4125-898d-565d7537e987',
+        item_description: 'Innovative Shoes featuring utilized technology and Cotton construction',
+        item_name: 'Sleek Aluminum Shoes',
+        notes: 'Cervus decretum viridis doloremque.',
+        tax_amount: 0.0,
+        total_amount: 6_647.68,
+        unit_amount: 884.0,
         unit_quantity: 8.0,
-        updated_at: DateTime.iso8601('2023-05-22T16:35:07.583Z'),
+        updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
       ),
       Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-08-12T19:45:39.705Z'),
-        id: '586c4099-5807-4681-8be4-7e87758c80e0',
-        item_description: 'The sleek and unimportant Salad comes with salmon LED lighting for smart functionality',
-        item_name: 'Generic Aluminum Ball',
-        item_sku: 'BSBAXWAAFF',
-        notes: 'Cubo adversus victus subito asperiores vereor cibo tabgo.',
-        tax_amount: 6.0,
-        total_amount: 78.0,
-        unit_amount: 24.0,
-        unit_quantity: 3.0,
-        updated_at: DateTime.iso8601('2023-11-13T12:39:15.951Z'),
-      ),
-      Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-02-14T06:21:13.641Z'),
-        discount_amount: 171.0,
-        id: '00fbbf59-b9cf-4413-a32b-18b58685fd7c',
-        item_description: 'New Bike model with 29 GB RAM, 271 GB storage, and minty features',
-        item_name: 'Incredible Aluminum Chicken',
-        item_sku: '6ERMJK20HE',
-        tax_amount: 263.0,
-        total_amount: 3708.0,
-        unit_amount: 452.0,
-        unit_quantity: 8.0,
-        updated_at: DateTime.iso8601('2023-01-31T21:39:30.894Z'),
+        created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+        id: 'ddd1e563-8fbf-4b2f-8adf-31f7e103de69',
+        item_description: 'Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance',
+        item_name: 'Elegant Concrete Gloves',
+        notes: 'Desipio usque vacuus currus cetera testimonium.',
+        tax_amount: 0.0,
+        total_amount: 1012.0,
+        unit_amount: 506.0,
+        unit_quantity: 2.0,
+        updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
       ),
     ],
-    success_url: 'https://parched-kettledrum.com/',
-    updated_at: DateTime.iso8601('2025-12-13T02:46:38.787Z'),
-    url: 'https://forceful-laughter.biz/',
+    metadata: [],
+    success_url: 'https://tinted-jet.info',
+    updated_at: DateTime.iso8601('2024-04-13T21:38:29.541Z'),
+    url: 'https://pay.example.com/ab310546-5a30-4ae4-a471-0f9440b670ce',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -556,7 +504,7 @@ end
 
 ## remove_calendar_link
 
-Remove a link
+Deletes the CalendarLink identified by `id`.
 
 ### Example Usage
 
@@ -598,7 +546,7 @@ end
 
 ## remove_payment_link
 
-Remove a link
+Deletes the PaymentLink identified by `id`.
 
 ### Example Usage
 
@@ -640,7 +588,7 @@ end
 
 ## update_calendar_link
 
-Update a link
+Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
 
 ### Example Usage
 
@@ -660,12 +608,13 @@ req = Models::Operations::UpdateCalendarLinkRequest.new(
     created_at: '2023-03-07T13:34:11.959Z',
     description: 'Vitium clibanus laboriosam uxor denuncio.',
     duration: 74.0,
-    id: '41fc80b8-6f19-4b95-8501-81a198bc9747',
+    id: 'f74de0f1-7ad4-41d2-9caf-be2a2c0a11aa',
     is_active: true,
+    metadata: [],
     name: 'Sopor sopor ancilla animus anser dignissimos vito confero utilis.',
     price_amount: 44.0,
     price_currency: 'USD',
-    updated_at: '2024-03-07T01:46:22.212Z',
+    updated_at: '2024-03-16T02:30:17.560Z',
     url: 'https://annual-apricot.info/',
   ),
   connection_id: '<id>',
@@ -698,7 +647,7 @@ end
 
 ## update_payment_link
 
-Update a link
+Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
 
 ### Example Usage
 
@@ -715,82 +664,55 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdatePaymentLinkRequest.new(
   payment_link: Models::Shared::PaymentLink.new(
-    amount: 81_211.0,
+    amount: 17_001.68,
     created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
-    currency: 'GYD',
-    description: 'Adfero ipsa terreo benevolentia utrum.',
-    id: 'a0d0a16f-3206-41d6-b149-7d98a1890715',
+    currency: 'CAD',
+    description: 'Savor the tender essence in our Ball, designed for dim culinary adventures',
+    id: 'ab310546-5a30-4ae4-a471-0f9440b670ce',
     is_active: true,
-    is_chargeable_now: false,
+    is_chargeable_now: true,
     lineitems: [
       Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-08-21T00:45:53.202Z'),
-        id: 'cf4ac767-3d27-4148-81e3-64f000cb7b68',
-        item_description: 'Experience the white brilliance of our Hat, perfect for aggravating environments',
-        item_name: 'Licensed Marble Mouse',
-        item_sku: 'TAD4EYLVRI',
-        notes: 'Charisma theca video verus conduco attollo cervus decretum viridis.',
-        tax_amount: 221.0,
-        total_amount: 1841.0,
-        unit_amount: 270.0,
-        unit_quantity: 6.0,
-        updated_at: DateTime.iso8601('2023-02-12T17:31:25.507Z'),
+        created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+        id: '645b6fd7-aedb-4967-96d1-3c370be28c35',
+        item_description: 'Discover the worst new Computer with an exciting mix of Steel ingredients',
+        item_name: 'Soft Marble Cheese',
+        tax_amount: 0.0,
+        total_amount: 9342.0,
+        unit_amount: 519.0,
+        unit_quantity: 18.0,
+        updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
       ),
       Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-09-30T05:29:29.258Z'),
-        discount_amount: 15.0,
-        id: '8886f8c0-4700-4699-bc2a-824424c85ce2',
-        item_description: 'New Chicken model with 79 GB RAM, 846 GB storage, and lovely features',
-        item_name: 'Intelligent Steel Table',
-        item_sku: 'V8HQCDQYUZ',
-        tax_amount: 150.0,
-        total_amount: 2037.0,
-        unit_amount: 317.0,
-        unit_quantity: 6.0,
-        updated_at: DateTime.iso8601('2023-05-31T11:10:09.190Z'),
-      ),
-      Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-12-16T13:52:52.341Z'),
-        id: '5bca260b-3698-4dd7-9ffd-701cdd34be1b',
-        item_description: 'Dach - Wolff\'s most advanced Car technology increases dense capabilities',
-        item_name: 'Modern Gold Soap',
-        item_sku: 'DYGKCTCLDJ',
-        tax_amount: 41.0,
-        total_amount: 281.0,
-        unit_amount: 30.0,
+        created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+        discount_amount: 424.32,
+        id: '35643734-60d3-4125-898d-565d7537e987',
+        item_description: 'Innovative Shoes featuring utilized technology and Cotton construction',
+        item_name: 'Sleek Aluminum Shoes',
+        notes: 'Cervus decretum viridis doloremque.',
+        tax_amount: 0.0,
+        total_amount: 6_647.68,
+        unit_amount: 884.0,
         unit_quantity: 8.0,
-        updated_at: DateTime.iso8601('2023-05-22T16:35:07.583Z'),
+        updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
       ),
       Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-08-12T19:45:39.705Z'),
-        id: '586c4099-5807-4681-8be4-7e87758c80e0',
-        item_description: 'The sleek and unimportant Salad comes with salmon LED lighting for smart functionality',
-        item_name: 'Generic Aluminum Ball',
-        item_sku: 'BSBAXWAAFF',
-        notes: 'Cubo adversus victus subito asperiores vereor cibo tabgo.',
-        tax_amount: 6.0,
-        total_amount: 78.0,
-        unit_amount: 24.0,
-        unit_quantity: 3.0,
-        updated_at: DateTime.iso8601('2023-11-13T12:39:15.951Z'),
-      ),
-      Models::Shared::PaymentLineitem.new(
-        created_at: DateTime.iso8601('2023-02-14T06:21:13.641Z'),
-        discount_amount: 171.0,
-        id: '00fbbf59-b9cf-4413-a32b-18b58685fd7c',
-        item_description: 'New Bike model with 29 GB RAM, 271 GB storage, and minty features',
-        item_name: 'Incredible Aluminum Chicken',
-        item_sku: '6ERMJK20HE',
-        tax_amount: 263.0,
-        total_amount: 3708.0,
-        unit_amount: 452.0,
-        unit_quantity: 8.0,
-        updated_at: DateTime.iso8601('2023-01-31T21:39:30.894Z'),
+        created_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
+        id: 'ddd1e563-8fbf-4b2f-8adf-31f7e103de69',
+        item_description: 'Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance',
+        item_name: 'Elegant Concrete Gloves',
+        notes: 'Desipio usque vacuus currus cetera testimonium.',
+        tax_amount: 0.0,
+        total_amount: 1012.0,
+        unit_amount: 506.0,
+        unit_quantity: 2.0,
+        updated_at: DateTime.iso8601('2023-06-04T16:11:45.685Z'),
       ),
     ],
-    success_url: 'https://parched-kettledrum.com/',
-    updated_at: DateTime.iso8601('2025-12-13T02:46:38.787Z'),
-    url: 'https://forceful-laughter.biz/',
+    metadata: [],
+    success_url: 'https://tinted-jet.info',
+    updated_at: DateTime.iso8601('2024-04-13T21:38:29.541Z'),
+    url: 'https://pay.example.com/ab310546-5a30-4ae4-a471-0f9440b670ce',
   ),
   connection_id: '<id>',
   id: '<id>',

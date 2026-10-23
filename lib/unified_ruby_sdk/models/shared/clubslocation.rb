@@ -15,35 +15,38 @@ module UnifiedRubySDK
 
 
         field :address, Crystalline::Nilable.new(Models::Shared::PropertyClubsLocationAddress), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('address') } }
-
+        # The date that this location was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # The group this location is associated with (reference to HrisGroup)
         field :group_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('group_id') } }
-
+        # Unique identifier for this location
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
-
+        # The latitude
         field :latitude, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('latitude') } }
-
+        # The longitude
         field :longitude, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('longitude') } }
 
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::ClubsMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
+        # The location name
         field :name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('name') } }
-
+        # The raw data returned by the integration for this location
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
-
+        # A contact phone number for the location
         field :telephone, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('telephone') } }
-
+        # The last date that this location was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # A URL for the location
         field :url, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('url') } }
 
-        sig { params(address: T.nilable(Models::Shared::PropertyClubsLocationAddress), created_at: T.nilable(::DateTime), group_id: T.nilable(::String), id: T.nilable(::String), latitude: T.nilable(::Float), longitude: T.nilable(::Float), name: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), telephone: T.nilable(::String), updated_at: T.nilable(::DateTime), url: T.nilable(::String)).void }
-        def initialize(address: nil, created_at: nil, group_id: nil, id: nil, latitude: nil, longitude: nil, name: nil, raw: nil, telephone: nil, updated_at: nil, url: nil)
+        sig { params(address: T.nilable(Models::Shared::PropertyClubsLocationAddress), created_at: T.nilable(::DateTime), group_id: T.nilable(::String), id: T.nilable(::String), latitude: T.nilable(::Float), longitude: T.nilable(::Float), metadata: T.nilable(T::Array[Models::Shared::ClubsMetadata]), name: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), telephone: T.nilable(::String), updated_at: T.nilable(::DateTime), url: T.nilable(::String)).void }
+        def initialize(address: nil, created_at: nil, group_id: nil, id: nil, latitude: nil, longitude: nil, metadata: nil, name: nil, raw: nil, telephone: nil, updated_at: nil, url: nil)
           @address = address
           @created_at = created_at
           @group_id = group_id
           @id = id
           @latitude = latitude
           @longitude = longitude
+          @metadata = metadata
           @name = name
           @raw = raw
           @telephone = telephone
@@ -60,6 +63,7 @@ module UnifiedRubySDK
           return false unless @id == other.id
           return false unless @latitude == other.latitude
           return false unless @longitude == other.longitude
+          return false unless @metadata == other.metadata
           return false unless @name == other.name
           return false unless @raw == other.raw
           return false unless @telephone == other.telephone

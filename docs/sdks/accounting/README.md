@@ -13,9 +13,10 @@
 * [create_accounting_contact](#create_accounting_contact) - Create a contact
 * [create_accounting_creditmemo](#create_accounting_creditmemo) - Create a creditmemo
 * [create_accounting_expense](#create_accounting_expense) - Create an expense
+* [create_accounting_expensereport](#create_accounting_expensereport) - Create an expensereport
 * [create_accounting_invoice](#create_accounting_invoice) - Create an invoice
 * [create_accounting_journal](#create_accounting_journal) - Create a journal
-* [create_accounting_order](#create_accounting_order) - Create an order
+* [~~create_accounting_order~~](#create_accounting_order) - Create an order :warning: **Deprecated**
 * [create_accounting_paymentterm](#create_accounting_paymentterm) - Create a paymentterm
 * [create_accounting_project](#create_accounting_project) - Create a project
 * [create_accounting_purchaseorder](#create_accounting_purchaseorder) - Create a purchaseorder
@@ -36,16 +37,19 @@
 * [get_accounting_contact](#get_accounting_contact) - Retrieve a contact
 * [get_accounting_creditmemo](#get_accounting_creditmemo) - Retrieve a creditmemo
 * [get_accounting_expense](#get_accounting_expense) - Retrieve an expense
+* [get_accounting_expensereport](#get_accounting_expensereport) - Retrieve an expensereport
 * [get_accounting_invoice](#get_accounting_invoice) - Retrieve an invoice
 * [get_accounting_journal](#get_accounting_journal) - Retrieve a journal
-* [get_accounting_order](#get_accounting_order) - Retrieve an order
+* [~~get_accounting_order~~](#get_accounting_order) - Retrieve an order :warning: **Deprecated**
 * [get_accounting_organization](#get_accounting_organization) - Retrieve an organization
 * [get_accounting_paymentterm](#get_accounting_paymentterm) - Retrieve a paymentterm
 * [get_accounting_profitloss](#get_accounting_profitloss) - Retrieve a profitloss
 * [get_accounting_project](#get_accounting_project) - Retrieve a project
 * [get_accounting_purchaseorder](#get_accounting_purchaseorder) - Retrieve a purchaseorder
+* [get_accounting_purchasereceipt](#get_accounting_purchasereceipt) - Retrieve a purchasereceipt
 * [get_accounting_quote](#get_accounting_quote) - Retrieve a quote
 * [get_accounting_salesorder](#get_accounting_salesorder) - Retrieve a salesorder
+* [get_accounting_salesreceipt](#get_accounting_salesreceipt) - Retrieve a salesreceipt
 * [get_accounting_taxrate](#get_accounting_taxrate) - Retrieve a taxrate
 * [get_accounting_transaction](#get_accounting_transaction) - Retrieve a transaction
 * [get_accounting_trialbalance](#get_accounting_trialbalance) - Retrieve a trialbalance
@@ -61,17 +65,20 @@
 * [list_accounting_categories](#list_accounting_categories) - List all categories
 * [list_accounting_contacts](#list_accounting_contacts) - List all contacts
 * [list_accounting_creditmemoes](#list_accounting_creditmemoes) - List all creditmemoes
+* [list_accounting_expensereports](#list_accounting_expensereports) - List all expensereports
 * [list_accounting_expenses](#list_accounting_expenses) - List all expenses
 * [list_accounting_invoices](#list_accounting_invoices) - List all invoices
 * [list_accounting_journals](#list_accounting_journals) - List all journals
-* [list_accounting_orders](#list_accounting_orders) - List all orders
+* [~~list_accounting_orders~~](#list_accounting_orders) - List all orders :warning: **Deprecated**
 * [list_accounting_organizations](#list_accounting_organizations) - List all organizations
 * [list_accounting_paymentterms](#list_accounting_paymentterms) - List all paymentterms
 * [list_accounting_profitlosses](#list_accounting_profitlosses) - List all profitlosses
 * [list_accounting_projects](#list_accounting_projects) - List all projects
 * [list_accounting_purchaseorders](#list_accounting_purchaseorders) - List all purchaseorders
+* [list_accounting_purchasereceipts](#list_accounting_purchasereceipts) - List all purchasereceipts
 * [list_accounting_quotes](#list_accounting_quotes) - List all quotes
 * [list_accounting_salesorders](#list_accounting_salesorders) - List all salesorders
+* [list_accounting_salesreceipts](#list_accounting_salesreceipts) - List all salesreceipts
 * [list_accounting_taxrates](#list_accounting_taxrates) - List all taxrates
 * [list_accounting_transactions](#list_accounting_transactions) - List all transactions
 * [list_accounting_trialbalances](#list_accounting_trialbalances) - List all trialbalances
@@ -84,9 +91,10 @@
 * [patch_accounting_contact](#patch_accounting_contact) - Update a contact
 * [patch_accounting_creditmemo](#patch_accounting_creditmemo) - Update a creditmemo
 * [patch_accounting_expense](#patch_accounting_expense) - Update an expense
+* [patch_accounting_expensereport](#patch_accounting_expensereport) - Update an expensereport
 * [patch_accounting_invoice](#patch_accounting_invoice) - Update an invoice
 * [patch_accounting_journal](#patch_accounting_journal) - Update a journal
-* [patch_accounting_order](#patch_accounting_order) - Update an order
+* [~~patch_accounting_order~~](#patch_accounting_order) - Update an order :warning: **Deprecated**
 * [patch_accounting_paymentterm](#patch_accounting_paymentterm) - Update a paymentterm
 * [patch_accounting_project](#patch_accounting_project) - Update a project
 * [patch_accounting_purchaseorder](#patch_accounting_purchaseorder) - Update a purchaseorder
@@ -103,9 +111,10 @@
 * [remove_accounting_contact](#remove_accounting_contact) - Remove a contact
 * [remove_accounting_creditmemo](#remove_accounting_creditmemo) - Remove a creditmemo
 * [remove_accounting_expense](#remove_accounting_expense) - Remove an expense
+* [remove_accounting_expensereport](#remove_accounting_expensereport) - Remove an expensereport
 * [remove_accounting_invoice](#remove_accounting_invoice) - Remove an invoice
 * [remove_accounting_journal](#remove_accounting_journal) - Remove a journal
-* [remove_accounting_order](#remove_accounting_order) - Remove an order
+* [~~remove_accounting_order~~](#remove_accounting_order) - Remove an order :warning: **Deprecated**
 * [remove_accounting_paymentterm](#remove_accounting_paymentterm) - Remove a paymentterm
 * [remove_accounting_project](#remove_accounting_project) - Remove a project
 * [remove_accounting_purchaseorder](#remove_accounting_purchaseorder) - Remove a purchaseorder
@@ -122,9 +131,10 @@
 * [update_accounting_contact](#update_accounting_contact) - Update a contact
 * [update_accounting_creditmemo](#update_accounting_creditmemo) - Update a creditmemo
 * [update_accounting_expense](#update_accounting_expense) - Update an expense
+* [update_accounting_expensereport](#update_accounting_expensereport) - Update an expensereport
 * [update_accounting_invoice](#update_accounting_invoice) - Update an invoice
 * [update_accounting_journal](#update_accounting_journal) - Update a journal
-* [update_accounting_order](#update_accounting_order) - Update an order
+* [~~update_accounting_order~~](#update_accounting_order) - Update an order :warning: **Deprecated**
 * [update_accounting_paymentterm](#update_accounting_paymentterm) - Update a paymentterm
 * [update_accounting_project](#update_accounting_project) - Update a project
 * [update_accounting_purchaseorder](#update_accounting_purchaseorder) - Update a purchaseorder
@@ -136,7 +146,7 @@
 
 ## create_accounting_account
 
-Create an account
+Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
 
 ### Example Usage
 
@@ -154,27 +164,23 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.accounting.create_accounting_account(accounting_account: Models::Shared::AccountingAccount.new(
   balance: 12_092.0,
   created_at: DateTime.iso8601('2022-07-03T17:57:07.391Z'),
-  currency: 'BOB',
-  customer_defined_code: 'quo',
-  description: 'Spoliatio comedo vilitas harum cupiditate.',
-  id: 'ba60921a-31d4-49c5-b2fe-50a08d9b2eec',
-  is_payable: true,
-  name: 'Electronic Aluminum Tuna',
+  currency: 'CAD',
+  customer_defined_code: '6170',
+  description: 'Voluptatibus valde spoliatio.',
+  id: '898bd106-40b2-43f3-9e8a-03eca401222f',
+  is_payable: false,
+  metadata: [],
+  name: 'Auto Loan Account',
   status: Models::Shared::Status::ARCHIVED,
   taxonomy: [
     Models::Shared::AccountingAccountTaxonomy.new(
-      original_type: 'vesper',
+      original_type: 'vilitas',
       type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-      value: 'iste',
-    ),
-    Models::Shared::AccountingAccountTaxonomy.new(
-      original_type: 'adamo',
-      type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-      value: 'peccatus',
+      value: 'comedo',
     ),
   ],
-  type: Models::Shared::Type::BANK,
-  updated_at: DateTime.iso8601('2023-01-03T11:52:17.293Z'),
+  type: Models::Shared::Type::ACCOUNTS_RECEIVABLE,
+  updated_at: DateTime.iso8601('2023-08-07T09:48:02.330Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_account.nil?
@@ -204,7 +210,7 @@ end
 
 ## create_accounting_bankfeedaccount
 
-Create a bankfeedaccount
+Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
 
 ### Example Usage
 
@@ -220,20 +226,20 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.accounting.create_accounting_bankfeedaccount(accounting_bankfeedaccount: Models::Shared::AccountingBankfeedaccount.new(
-  account_id: 'baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1',
   account_number: '30369722',
   account_number_last4: '9722',
   account_type: Models::Shared::AccountType::LOAN,
-  balance: 90_358.0,
-  bank_name: 'Weissnat Inc',
+  balance: 49_437.0,
+  bank_name: 'Wells Fargo',
   created_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-  currency: 'SSP',
+  currency: 'AUD',
   feed_start_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-  id: '7532335b-4d11-43d3-acb2-ec773f6d3972',
-  name: 'Corwin, Donnelly and Connelly Savings',
-  routing_number: '667753156',
+  id: '9ff0304a-822b-4e33-9260-a18b0d7dcbc2',
+  metadata: [],
+  name: 'Corwin, Donnelly and Connelly Checking',
+  routing_number: '694667752',
   status: Models::Shared::AccountingBankfeedaccountStatus::ACTIVE,
-  updated_at: DateTime.iso8601('2024-04-12T16:03:10.090Z'),
+  updated_at: DateTime.iso8601('2024-04-24T13:41:42.663Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_bankfeedaccount.nil?
@@ -263,7 +269,7 @@ end
 
 ## create_accounting_bankfeedtransaction
 
-Create a bankfeedtransaction
+Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
 
 ### Example Usage
 
@@ -279,23 +285,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.accounting.create_accounting_bankfeedtransaction(accounting_bankfeedtransaction: Models::Shared::AccountingBankfeedtransaction.new(
-  account_id: 'b7dc4175-1368-4b89-a700-d621b6666648',
   amount: 60_889.0,
-  bank_category: 'Games',
-  bankfeedaccount_id: '34c1d05f-5b62-4bcd-9121-3be8b720941f',
+  bank_category: 'Clothing',
   category_ids: [],
-  contact_id: '1ef58ebe-f9c9-46f6-9d9c-2df2658503be',
   created_at: DateTime.iso8601('2022-03-24T23:41:08.374Z'),
-  currency: 'SRD',
-  description: 'payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.',
-  id: '63e8e361-59cc-45a9-9ca0-f7fbc930f184',
+  currency: 'CAD',
+  description: 'Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.',
+  id: 'f080d207-3e88-44a8-8116-d612351e64bb',
   is_pending: true,
-  merchant_name: 'Reichert, Erdman and Tillman',
-  posted_at: DateTime.iso8601('2025-03-25T19:12:54.812Z'),
-  reference: '93642593',
-  transaction_at: DateTime.iso8601('2022-07-28T01:21:00.312Z'),
+  merchant_name: 'Buckridge - Feest',
+  metadata: [],
+  posted_at: DateTime.iso8601('2025-04-16T03:49:52.041Z'),
+  reference: '79574105',
+  transaction_at: DateTime.iso8601('2022-07-30T11:48:12.702Z'),
   type: Models::Shared::AccountingBankfeedtransactionType::CREDIT,
-  updated_at: DateTime.iso8601('2022-05-23T23:26:58.193Z'),
+  updated_at: DateTime.iso8601('2022-05-25T03:29:13.175Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_bankfeedtransaction.nil?
@@ -325,7 +329,7 @@ end
 
 ## create_accounting_bill
 
-Create a bill
+Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
 
 ### Example Usage
 
@@ -341,30 +345,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.accounting.create_accounting_bill(accounting_bill: Models::Shared::AccountingBill.new(
-  attachments: [],
-  bill_number: 'vitae',
+  attachments: [
+    Models::Shared::AccountingAttachment.new(
+      download_url: 'https://puny-foodstuffs.name',
+      id: '55e2ddb4-12ee-4738-acf5-9f35ad4fae0d',
+      mime_type: 'application/pdf',
+      name: 'BILL-2466.pdf',
+    ),
+    Models::Shared::AccountingAttachment.new(
+      download_url: 'https://grimy-characterization.net',
+      id: '59a88258-e743-46c1-8155-1bda358b5387',
+      mime_type: 'application/pdf',
+      name: 'BILL-2466-1.pdf',
+    ),
+  ],
+  balance_amount: 0.0,
+  bill_number: 'BILL-2466',
   category_ids: [],
   created_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
-  currency: 'AUD',
+  currency: 'USD',
   discount_amount: 0.0,
-  due_at: DateTime.iso8601('2019-08-11T20:52:55.321Z'),
+  due_at: DateTime.iso8601('2019-09-07T23:03:14.104Z'),
   extended_notes: [],
-  id: 'c1508f96-35ec-472c-a901-f0ee469454e4',
+  id: '033ba014-5082-45c2-856f-1d28639c1b99',
   lineitems: [],
   metadata: [],
-  notes: 'Tutamen cilicium infit.',
+  notes: 'Admiratio deporto tutamen cilicium infit amissio ante demulceo.',
+  paid_amount: 0.0,
+  paid_at: DateTime.iso8601('2019-08-15T17:24:28.313Z'),
   payment_collection_method: Models::Shared::PaymentCollectionMethod::CHARGE_AUTOMATICALLY,
   payments: [],
-  posted_at: DateTime.iso8601('2024-04-06T07:02:22.576Z'),
+  posted_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
   purchaseorder_ids: [],
   send: true,
-  status: Models::Shared::AccountingBillStatus::DELETED,
+  status: Models::Shared::AccountingBillStatus::PARTIALLY_PAID,
   sub_total_amount: 0.0,
   tax_amount: 0.0,
-  term: Models::Shared::Term::NET_10,
+  term: Models::Shared::Term::NET_90,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2025-01-31T09:00:56.052Z'),
-  url: 'https://coarse-interviewer.biz/',
+  updated_at: DateTime.iso8601('2020-06-01T11:04:57.928Z'),
+  url: 'https://cluttered-importance.org/bills/BILL-2466',
 ), connection_id: '<id>')
 
 unless res.accounting_bill.nil?
@@ -394,7 +414,7 @@ end
 
 ## create_accounting_category
 
-Create a category
+Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
 
 ### Example Usage
 
@@ -411,12 +431,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.accounting.create_accounting_category(accounting_category: Models::Shared::AccountingCategory.new(
   created_at: DateTime.iso8601('2023-05-30T12:29:04.257Z'),
-  description: 'Discover the koala-like agility of our Chair, perfect for imaginary users',
-  id: '88148b1e-dc10-46c0-9597-b3cdf31f314d',
+  description: 'Textus ab thymum labore basium.',
+  id: '2ed59372-fe04-40c8-8628-4c3f5af3a63e',
   is_active: false,
   metadata: [],
-  name: 'Electronic Cotton Shoes',
-  updated_at: DateTime.iso8601('2025-08-22T07:37:19.698Z'),
+  name: 'Beauty',
+  updated_at: DateTime.iso8601('2025-09-12T20:18:03.706Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_category.nil?
@@ -446,7 +466,7 @@ end
 
 ## create_accounting_contact
 
-Create a contact
+Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
 
 ### Example Usage
 
@@ -462,74 +482,65 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.accounting.create_accounting_contact(accounting_contact: Models::Shared::AccountingContact.new(
-  associated_contacts: [
-    Models::Shared::AccountingAssociatedContact.new(
-      id: 'aed4a25a-a941-4154-854f-32113e8dd6ca',
-      name: 'Delores Reynolds',
-    ),
-    Models::Shared::AccountingAssociatedContact.new(
-      id: '5a725f40-c54e-4aa5-a55d-353408faa333',
-      name: 'Delores Reynolds',
-    ),
-  ],
+  associated_contacts: [],
+  balance_amount: 55_574.0,
   billing_address: Models::Shared::PropertyAccountingContactBillingAddress.new(
-    address1: '2633 Stoney Lane',
-    address2: 'Suite 176',
-    city: 'Ladariusboro',
+    address1: '4091 Tromp Coves',
+    city: 'Lake Emmybury',
     country_code: 'US',
-    postal_code: '70131-2908',
-    region: 'Illinois',
-    region_code: 'NV',
+    postal_code: '50764-5226',
+    region: 'Washington',
+    region_code: 'CA',
   ),
-  company_name: 'Marquardt Inc',
+  company_name: 'Kertzmann Group',
   created_at: DateTime.iso8601('2021-08-15T14:56:50.258Z'),
-  currency: 'ISK',
+  currency: 'AUD',
   emails: [
     Models::Shared::AccountingEmail.new(
-      email: 'Delores.Reynolds10@hotmail.com',
-      type: Models::Shared::AccountingEmailType::HOME,
+      email: 'delores.reynolds@kertzmanngroup.com',
+      type: Models::Shared::AccountingEmailType::WORK,
+    ),
+    Models::Shared::AccountingEmail.new(
+      email: 'accounts@kertzmanngroup.com',
+      type: Models::Shared::AccountingEmailType::OTHER,
     ),
   ],
   first_name: 'Delores',
-  id: 'c6a1cc7a-b779-4420-a19a-0d6b905137af',
-  identification: 'amicitia',
+  id: 'c04f80fa-bfbe-4fd4-a019-dfc193c87147',
+  identification: '531850872',
   is_active: true,
   is_customer: true,
   last_name: 'Reynolds',
-  name: 'Delores Reynolds',
-  notes: 'Caput accusamus et videlicet.',
+  metadata: [],
+  name: 'Kertzmann Group',
+  notes: 'Et videlicet pauci.',
   payment_methods: [
     Models::Shared::AccountingContactPaymentMethod.new(
       default: true,
-      id: '00dadef0-7876-4af4-be59-5aa5a33c1ee3',
-      name: 'Visa 1234',
+      id: 'c5fb38a5-69ba-40a8-9a69-99562f8b4059',
+      name: 'Visa 7844',
       type: Models::Shared::AccountingContactPaymentMethodType::CARD,
     ),
   ],
-  portal_url: 'https://scented-t-shirt.info/',
+  portal_url: 'https://kertzmanngroup.com/billing',
   shipping_address: Models::Shared::PropertyAccountingContactShippingAddress.new(
-    address1: '786 Renner Stream',
-    address2: 'Apt. 555',
-    city: 'Roanoke',
+    address1: '23129 Rebekah Mews',
+    city: 'Mortimerhaven',
     country_code: 'US',
-    postal_code: '80686-7556',
-    region: 'Vermont',
-    region_code: 'NE',
+    postal_code: '55878-6806',
+    region: 'Florida',
+    region_code: 'OK',
   ),
-  tax_exemption: Models::Shared::TaxExemption::RESALE,
-  tax_number: 'amplexus',
+  tax_exemption: Models::Shared::TaxExemption::FOREIGN,
+  tax_number: '867556410',
   telephones: [
     Models::Shared::AccountingTelephone.new(
-      telephone: '(427) 701-7160',
-      type: Models::Shared::AccountingTelephoneType::HOME,
-    ),
-    Models::Shared::AccountingTelephone.new(
-      telephone: '(540) 913-9171',
+      telephone: '(432) 760-1716',
       type: Models::Shared::AccountingTelephoneType::FAX,
     ),
   ],
-  updated_at: DateTime.iso8601('2023-12-06T07:23:48.157Z'),
-  website: 'https://noxious-advertisement.org',
+  updated_at: DateTime.iso8601('2023-12-20T18:25:43.215Z'),
+  website: 'https://kertzmanngroup.com',
 ), connection_id: '<id>')
 
 unless res.accounting_contact.nil?
@@ -559,7 +570,7 @@ end
 
 ## create_accounting_creditmemo
 
-Create a creditmemo
+Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
 
 ### Example Usage
 
@@ -576,34 +587,22 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.accounting.create_accounting_creditmemo(accounting_creditmemo: Models::Shared::AccountingCreditmemo.new(
   applications: [],
-  attachments: [
-    Models::Shared::AccountingAttachment.new(
-      download_url: 'https://enlightened-chairperson.com/',
-      id: '852128f4-fbc1-4b6a-a326-60c6ed936eab',
-      mime_type: 'complectus',
-      name: 'thesis',
-    ),
-  ],
+  attachments: [],
+  balance_amount: 0.0,
   created_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
-  creditmemo_number: 'ulterius',
-  currency: 'MKD',
+  creditmemo_number: 'CM-99537',
+  currency: 'AUD',
   discount_amount: 0.0,
-  due_at: DateTime.iso8601('2023-10-18T04:35:00.543Z'),
-  id: '16ebb11b-b079-4d4f-8e95-4282a755f71e',
+  id: 'e41c2e8f-2f8b-4c2d-9fa2-dbfe0c507e10',
   lineitems: [],
   metadata: [],
-  notes: 'Dedecor amo adfero torqueo quas.',
-  payment_collection_method: Models::Shared::AccountingCreditmemoPaymentCollectionMethod::CHARGE_AUTOMATICALLY,
-  posted_at: DateTime.iso8601('2025-11-17T15:25:54.544Z'),
-  refund_amount: 0.0,
-  refund_reason: 'Virgo inflammatio quibusdam aestivus magnam.',
-  refunded_at: DateTime.iso8601('2023-10-23T00:35:36.814Z'),
-  send: false,
-  status: Models::Shared::AccountingCreditmemoStatus::PAID,
+  notes: 'Hic vorax dedecor amo adfero torqueo quas victoria.',
+  posted_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
+  send: true,
+  status: Models::Shared::AccountingCreditmemoStatus::AUTHORIZED,
   tax_amount: 0.0,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2024-11-16T17:39:05.647Z'),
-  url: 'https://lighthearted-bandwidth.net/',
+  updated_at: DateTime.iso8601('2025-09-12T14:30:43.020Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_creditmemo.nil?
@@ -633,7 +632,7 @@ end
 
 ## create_accounting_expense
 
-Create an expense
+Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
 
 ### Example Usage
 
@@ -649,42 +648,77 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.accounting.create_accounting_expense(accounting_expense: Models::Shared::AccountingExpense.new(
-  approved_at: DateTime.iso8601('2026-05-12T14:59:51.847Z'),
   attachments: [
     Models::Shared::AccountingAttachment.new(
-      download_url: 'https://ripe-napkin.biz/',
-      id: '2b12c7c0-070e-46a8-a60a-f6b9ac0974d1',
-      mime_type: 'annus',
-      name: 'cohibeo',
+      download_url: 'https://rubbery-couch.biz/',
+      id: 'baa02116-9bd8-4d02-ab4f-1bbe5b8e646d',
+      mime_type: 'application/pdf',
+      name: 'receipt-9696.pdf',
+    ),
+    Models::Shared::AccountingAttachment.new(
+      download_url: 'https://appropriate-smog.biz/',
+      id: 'f3ad53ec-18df-4841-8f6c-8670e7bb5c8b',
+      mime_type: 'application/pdf',
+      name: 'receipt-9696-1.pdf',
     ),
   ],
   category_ids: [],
   created_at: DateTime.iso8601('2020-06-11T03:39:37.305Z'),
-  currency: 'SSP',
-  external_number: 'necessitatibus',
-  id: '48eda7e6-33a6-4cc4-983e-d235e6b1e640',
+  currency: 'GBP',
+  external_number: 'EXP-38303',
+  id: '1141f71b-1df2-460b-9449-03f5213324e3',
   lineitems: [
     Models::Shared::AccountingLineitem.new(
-      id: '0f3ecfc8-0d5c-4da9-962b-a1ab4a21ec65',
-      item_description: 'Innovative Table featuring left technology and Rubber construction',
-      item_name: 'Luxurious Cotton Pizza',
-      item_sku: '978-0-8324-6620-5',
-      notes: 'Degusto conventus defendo valetudo.',
-      tax_amount: 2501.0,
-      total_amount: 168.0,
-      unit_amount: 3059.0,
+      id: '7282567e-e715-4ba6-b1cb-e5bf91560265',
+      item_name: 'Client dinner',
+      tax_amount: 0.0,
+      total_amount: 364.74,
+      unit_amount: 364.74,
+      unit_quantity: 1.0,
+    ),
+    Models::Shared::AccountingLineitem.new(
+      id: '4910fbb8-aae9-44b9-a910-ce25da3f0299',
+      item_name: 'Client dinner',
+      tax_amount: 0.0,
+      total_amount: 258.35,
+      unit_amount: 258.35,
+      unit_quantity: 1.0,
+    ),
+    Models::Shared::AccountingLineitem.new(
+      id: '52977deb-cfc3-43c3-9c5d-a4007dc1134e',
+      item_name: 'Conference ticket',
+      notes: 'Casus umquam conicio cinis demitto sint.',
+      tax_amount: 0.0,
+      total_amount: 28.14,
+      unit_amount: 28.14,
+      unit_quantity: 1.0,
+    ),
+    Models::Shared::AccountingLineitem.new(
+      id: 'd3fb7ae4-ce77-4e31-bc07-8c41c5cb61c5',
+      item_name: 'Hotel',
+      tax_amount: 0.0,
+      total_amount: 157.04,
+      unit_amount: 157.04,
+      unit_quantity: 1.0,
+    ),
+    Models::Shared::AccountingLineitem.new(
+      id: '196148e9-665a-445a-aac7-ff1b731109c3',
+      item_name: 'Hotel',
+      tax_amount: 0.0,
+      total_amount: 164.02,
+      unit_amount: 164.02,
       unit_quantity: 1.0,
     ),
   ],
   metadata: [],
-  name: 'Refined Steel Shoes',
+  name: 'A payment of XPF 714.84 occurred at Bins, Barrows and Koch using a card ending in ****8422 for account ***4614.',
   payment_method: 'CASH',
-  posted_at: DateTime.iso8601('2021-06-04T16:26:44.890Z'),
-  reimbursed_amount: 1833.0,
+  posted_at: DateTime.iso8601('2020-06-11T03:39:37.305Z'),
   status: Models::Shared::AccountingExpenseStatus::SUBMITTED,
-  tax_amount: 2602.0,
-  total_amount: 3580.0,
-  updated_at: DateTime.iso8601('2026-05-12T14:59:51.847Z'),
+  tax_amount: 0.0,
+  total_amount: 972.29,
+  type: Models::Shared::AccountingExpenseType::COMPANY,
+  updated_at: DateTime.iso8601('2020-09-02T08:59:36.000Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_expense.nil?
@@ -712,9 +746,106 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## create_accounting_expensereport
+
+Creates a AccountingExpensereport. Provide the unified AccountingExpensereport fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpensereport.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="createAccountingExpensereport" method="post" path="/accounting/{connection_id}/expensereport" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.accounting.create_accounting_expensereport(accounting_expensereport: Models::Shared::AccountingExpensereport.new(
+  approved_at: DateTime.iso8601('2021-04-19T18:07:41.842Z'),
+  attachments: [],
+  category_ids: [],
+  created_at: DateTime.iso8601('2020-05-29T02:04:59.078Z'),
+  currency: 'GBP',
+  external_number: 'ER-31240',
+  id: 'f63bd806-4b21-4bdc-b714-fe0e8e2402a0',
+  lineitems: [
+    Models::Shared::AccountingLineitem.new(
+      id: '5fdcc2ed-91dc-4537-bd23-7143ceb49a1c',
+      item_name: 'Conference ticket',
+      tax_amount: 0.0,
+      total_amount: 39.9,
+      unit_amount: 39.9,
+      unit_quantity: 1.0,
+    ),
+    Models::Shared::AccountingLineitem.new(
+      id: '652c74f5-0ff4-4b06-932d-a0c218ae5a70',
+      item_name: 'Flight',
+      notes: 'Soluta omnis dolor.',
+      tax_amount: 0.0,
+      total_amount: 193.17,
+      unit_amount: 193.17,
+      unit_quantity: 1.0,
+    ),
+    Models::Shared::AccountingLineitem.new(
+      id: '03b758bf-d56c-480f-a429-bf471d44d9e1',
+      item_name: 'Client dinner',
+      notes: 'Altus caveo capio.',
+      tax_amount: 0.0,
+      total_amount: 230.12,
+      unit_amount: 230.12,
+      unit_quantity: 1.0,
+    ),
+    Models::Shared::AccountingLineitem.new(
+      id: '962b1da8-8be3-42da-9e1e-27c725c75cfe',
+      item_name: 'Flight',
+      tax_amount: 0.0,
+      total_amount: 445.27,
+      unit_amount: 445.27,
+      unit_quantity: 1.0,
+    ),
+  ],
+  metadata: [],
+  name: 'Lolita Kunde - October expenses',
+  posted_at: DateTime.iso8601('2020-05-29T02:04:59.078Z'),
+  reimbursed_amount: 908.46,
+  reimbursed_at: DateTime.iso8601('2021-04-19T18:07:41.842Z'),
+  status: Models::Shared::AccountingExpensereportStatus::PAID,
+  tax_amount: 0.0,
+  total_amount: 908.46,
+  updated_at: DateTime.iso8601('2021-04-19T18:07:41.842Z'),
+), connection_id: '<id>')
+
+unless res.accounting_expensereport.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                               | Type                                                                                                                                                    | Required                                                                                                                                                | Description                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accounting_expensereport`                                                                                                                              | [Models::Shared::AccountingExpensereport](../../models/shared/accountingexpensereport.md)                                                               | :heavy_check_mark:                                                                                                                                      | N/A                                                                                                                                                     |
+| `connection_id`                                                                                                                                         | *::String*                                                                                                                                              | :heavy_check_mark:                                                                                                                                      | ID of the connection                                                                                                                                    |
+| `fields_`                                                                                                                                               | T::Array<[Models::Operations::CreateAccountingExpensereportQueryParamFields](../../models/operations/createaccountingexpensereportqueryparamfields.md)> | :heavy_minus_sign:                                                                                                                                      | Fields to return                                                                                                                                        |
+| `raw`                                                                                                                                                   | *T.nilable(::String)*                                                                                                                                   | :heavy_minus_sign:                                                                                                                                      | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar        |
+
+### Response
+
+**[T.nilable(Models::Operations::CreateAccountingExpensereportResponse)](../../models/operations/createaccountingexpensereportresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## create_accounting_invoice
 
-Create an invoice
+Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
 
 ### Example Usage
 
@@ -733,40 +864,44 @@ res = s.accounting.create_accounting_invoice(accounting_invoice: Models::Shared:
   attachments: [
     Models::Shared::AccountingAttachment.new(
       download_url: 'https://glossy-markup.net/',
-      id: '5cf0c60a-c701-4795-a3aa-5f03390e836b',
-      mime_type: 'benevolentia',
-      name: 'vespillo',
+      id: '375cc477-e427-4c2a-bd69-75235f07628c',
+      mime_type: 'application/pdf',
+      name: 'INV-77705.pdf',
+    ),
+    Models::Shared::AccountingAttachment.new(
+      download_url: 'https://earnest-giggle.net',
+      id: '3ee0b8a0-9440-4164-9d01-09d8c8a2d8a3',
+      mime_type: 'application/pdf',
+      name: 'INV-77705-1.pdf',
     ),
   ],
-  balance_amount: -1.0,
+  balance_amount: 0.0,
   category_ids: [],
   created_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
-  currency: 'RWF',
+  currency: 'GBP',
   discount_amount: 0.0,
-  due_at: DateTime.iso8601('2022-11-27T21:25:37.363Z'),
+  due_at: DateTime.iso8601('2022-12-07T14:17:29.587Z'),
   extended_notes: [],
-  id: 'fcd76287-438d-4c94-b929-76593cc6f8a6',
-  invoice_number: 'vinco',
-  is_inclusive_of_tax: true,
+  id: '1ec363b5-4678-4173-9f76-3a9a86625ea3',
+  invoice_number: 'INV-77705',
+  is_inclusive_of_tax: false,
   lineitems: [],
   metadata: [],
-  notes: 'Auctus comburo clarus ubi.',
-  paid_amount: 0.0,
-  paid_at: DateTime.iso8601('2022-11-25T15:00:28.871Z'),
-  payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::SEND_INVOICE,
+  notes: 'Adinventitias sursum temptatio auctus comburo clarus ubi deprimo.',
+  payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::CHARGE_AUTOMATICALLY,
   payments: [],
-  posted_at: DateTime.iso8601('2026-03-29T14:31:44.384Z'),
-  reference: 'adinventitias',
+  posted_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
+  reference: 'PO-2331',
   salesorder_ids: [],
   send: true,
-  status: Models::Shared::AccountingInvoiceStatus::DELETED,
+  status: Models::Shared::AccountingInvoiceStatus::OVERDUE,
   sub_total_amount: 0.0,
   tax_amount: 0.0,
-  term: Models::Shared::AccountingInvoiceTerm::NET_45,
+  term: Models::Shared::AccountingInvoiceTerm::NET_25,
   total_amount: 0.0,
-  type: Models::Shared::AccountingInvoiceType::CREDITMEMO,
-  updated_at: DateTime.iso8601('2023-02-06T11:29:32.706Z'),
-  url: 'https://gifted-yarmulke.info/',
+  type: Models::Shared::AccountingInvoiceType::INVOICE,
+  updated_at: DateTime.iso8601('2026-04-25T06:46:36.172Z'),
+  url: 'https://gifted-yarmulke.info/invoices/INV-77705',
 ), connection_id: '<id>')
 
 unless res.accounting_invoice.nil?
@@ -796,7 +931,7 @@ end
 
 ## create_accounting_journal
 
-Create a journal
+Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
 
 ### Example Usage
 
@@ -815,17 +950,18 @@ res = s.accounting.create_accounting_journal(accounting_journal: Models::Shared:
   attachments: [],
   category_ids: [],
   created_at: DateTime.iso8601('2020-02-20T15:14:55.881Z'),
-  currency: 'FKP',
-  description: 'Calco constans adipisci.',
-  id: '590b6288-5aee-4f57-a3a9-1a4e6c635598',
+  currency: 'CAD',
+  description: 'Cilicium minima calco constans adipisci.',
+  id: '9abd1632-a53f-4a7f-ae9d-cf19127cf0cb',
   is_inclusive_of_tax: true,
-  posted_at: DateTime.iso8601('2023-10-20T18:22:08.144Z'),
-  reference: 'ullam',
+  lineitems: [],
+  metadata: [],
+  posted_at: DateTime.iso8601('2023-11-07T13:12:51.054Z'),
+  reference: 'JE-78884',
   source: 'crustulum',
   status: Models::Shared::AccountingJournalStatus::VOID,
-  tax_amount: 78_672.0,
-  total_amount: 74_094.0,
-  updated_at: DateTime.iso8601('2022-01-02T07:46:54.270Z'),
+  total_amount: 0.0,
+  updated_at: DateTime.iso8601('2022-01-11T09:13:52.357Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_journal.nil?
@@ -853,9 +989,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## create_accounting_order
+## ~~create_accounting_order~~
 
-Create an order
+Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -872,32 +1010,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.accounting.create_accounting_order(accounting_order: Models::Shared::AccountingOrder.new(
   billing_address: Models::Shared::PropertyAccountingOrderBillingAddress.new(
-    address1: '802 Bechtelar Park',
-    address2: 'Apt. 436',
-    city: 'Daniellaville',
+    address1: '7654 Treutel Square',
+    city: 'Forrestport',
     country_code: 'US',
-    postal_code: '36947',
-    region: 'Wisconsin',
-    region_code: 'NY',
+    postal_code: '42190-3694',
+    region: 'Maine',
+    region_code: 'OR',
   ),
   created_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
-  currency: 'USD',
-  id: '7076518a-2762-43cc-b62f-1fca5b3421fa',
+  currency: 'GBP',
+  id: '8c3cf509-050d-41a9-8ce6-6d17f6f33e31',
   lineitems: [],
   metadata: [],
-  posted_at: DateTime.iso8601('2022-04-05T17:22:19.726Z'),
+  posted_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
   shipping_address: Models::Shared::PropertyAccountingOrderShippingAddress.new(
-    address1: '9745 Betty Shore',
-    city: 'South Alainaland',
+    address1: '4974 Beatty Corners',
+    city: 'Alizeport',
     country_code: 'US',
-    postal_code: '25274-7654',
-    region: 'New Hampshire',
-    region_code: 'LA',
+    postal_code: '56252',
+    region: 'Alaska',
+    region_code: 'VT',
   ),
-  status: Models::Shared::AccountingOrderStatus::SUBMITTED,
+  status: Models::Shared::AccountingOrderStatus::AUTHORIZED,
   total_amount: 0.0,
-  type: Models::Shared::AccountingOrderType::PURCHASE,
-  updated_at: DateTime.iso8601('2021-06-18T05:51:10.099Z'),
+  type: Models::Shared::AccountingOrderType::SALES,
+  updated_at: DateTime.iso8601('2022-02-08T17:08:09.733Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_order.nil?
@@ -927,7 +1064,7 @@ end
 
 ## create_accounting_paymentterm
 
-Create a paymentterm
+Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
 
 ### Example Usage
 
@@ -952,12 +1089,12 @@ res = s.accounting.create_accounting_paymentterm(accounting_paymentterm: Models:
   discount_percent: 5.0,
   due_days: 57.0,
   due_next_month_days: 9.0,
-  id: '7dc32579-8321-4cc9-a89d-fe7aa2787ab4',
+  id: '42ba22f9-17b1-462e-96dc-6a5cd1dd6193',
   is_active: false,
   metadata: [],
   name: 'Net 30',
   type: Models::Shared::AccountingPaymenttermType::NET_15,
-  updated_at: DateTime.iso8601('2025-12-14T00:52:14.687Z'),
+  updated_at: DateTime.iso8601('2026-01-10T03:39:59.459Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_paymentterm.nil?
@@ -987,7 +1124,7 @@ end
 
 ## create_accounting_project
 
-Create a project
+Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
 
 ### Example Usage
 
@@ -1031,7 +1168,7 @@ end
 
 ## create_accounting_purchaseorder
 
-Create a purchaseorder
+Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
 
 ### Example Usage
 
@@ -1047,32 +1184,34 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.accounting.create_accounting_purchaseorder(accounting_purchaseorder: Models::Shared::AccountingPurchaseorder.new(
+  attachments: [],
   billing_address: Models::Shared::PropertyAccountingPurchaseorderBillingAddress.new(
-    address1: '37214 Tanya Walks',
+    address1: '72142 Willow Street',
+    address2: 'Apt. 967',
     city: 'South Annabelleton',
     country_code: 'US',
     postal_code: '30337',
     region: 'Nevada',
-    region_code: 'MA',
+    region_code: 'FL',
   ),
   category_ids: [],
   created_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
-  currency: 'ZMW',
-  id: 'f7dde434-bbb1-4325-ae3c-a9403bede977',
+  currency: 'EUR',
+  id: '76a1091d-72ea-4bf1-9efa-fa5e21952343',
   lineitems: [],
   metadata: [],
-  posted_at: DateTime.iso8601('2025-04-27T10:38:53.396Z'),
+  posted_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
   shipping_address: Models::Shared::PropertyAccountingPurchaseorderShippingAddress.new(
-    address1: '649 Maggio Overpass',
-    city: 'Lake Jaylan',
+    address1: '76494 Medhurst Club',
+    city: 'Kshlerinfurt',
     country_code: 'US',
-    postal_code: '99211-6547',
-    region: 'North Carolina',
-    region_code: 'ID',
+    postal_code: '92116-5474',
+    region: 'Oregon',
+    region_code: 'WY',
   ),
-  status: Models::Shared::AccountingPurchaseorderStatus::PARTIALLY_REFUNDED,
+  status: Models::Shared::AccountingPurchaseorderStatus::SUBMITTED,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2021-02-26T05:56:03.104Z'),
+  updated_at: DateTime.iso8601('2021-08-11T11:24:00.096Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_purchaseorder.nil?
@@ -1102,7 +1241,7 @@ end
 
 ## create_accounting_quote
 
-Create a quote
+Creates a AccountingQuote. Provide the unified AccountingQuote fields in the request body; they are mapped to the provider's API. Returns the created AccountingQuote.
 
 ### Example Usage
 
@@ -1146,7 +1285,7 @@ end
 
 ## create_accounting_salesorder
 
-Create a salesorder
+Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
 
 ### Example Usage
 
@@ -1172,44 +1311,35 @@ res = s.accounting.create_accounting_salesorder(accounting_salesorder: Models::S
     region_code: 'MO',
   ),
   category_ids: [],
-  closed_at: DateTime.iso8601('2023-08-17T22:23:55.028Z'),
+  closed_at: DateTime.iso8601('2023-03-26T00:48:27.181Z'),
   created_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
-  currency: 'ANG',
-  discount_amount: 99.0,
-  employee_user_id: '4a6b8990-c85a-499f-82d0-5011c3c95a0b',
-  fees: [
-    Models::Shared::AccountingFee.new(
-      amount: 519.0,
-      currency: 'XCD',
-      type: Models::Shared::AccountingFeeType::PROMOTION,
-    ),
-  ],
-  fulfillment_type: Models::Shared::FulfillmentType::TAKEOUT,
-  guest_count: 8.0,
-  id: 'd4941a2a-7d44-42b9-90df-3e4a65d79d41',
+  currency: 'USD',
+  discount_amount: 0.0,
+  fees: [],
+  fulfillment_type: Models::Shared::FulfillmentType::OTHER,
+  id: '4637a288-911a-429a-bea4-7dcee1e32f51',
   lineitems: [],
   metadata: [],
-  order_number: '988187',
+  order_number: '832663',
   payments: [],
-  posted_at: DateTime.iso8601('2026-01-13T16:17:32.520Z'),
+  posted_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
   refunded_amount: 0.0,
-  sales_channel: 'Harvey, Collier and Weimann',
-  service_charge_amount: 63.0,
+  sales_channel: 'Wholesale',
+  service_charge_amount: 0.0,
   shipping_address: Models::Shared::PropertyAccountingSalesorderShippingAddress.new(
-    address1: '9878 Bradley Mill',
-    address2: 'Apt. 215',
+    address1: '69878 Bradley Mill',
     city: 'Port Matildestad',
     country_code: 'US',
     postal_code: '07989-2148',
     region: 'Arkansas',
     region_code: 'AK',
   ),
-  status: Models::Shared::AccountingSalesorderStatus::REFUNDED,
+  status: Models::Shared::AccountingSalesorderStatus::PAID,
   subtotal_amount: 0.0,
-  tax_amount: 63.0,
-  tip_amount: 34.0,
+  tax_amount: 0.0,
+  tip_amount: 0.0,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2022-02-10T19:50:55.205Z'),
+  updated_at: DateTime.iso8601('2023-03-26T00:48:27.181Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_salesorder.nil?
@@ -1239,7 +1369,7 @@ end
 
 ## create_accounting_taxrate
 
-Create a taxrate
+Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
 
 ### Example Usage
 
@@ -1258,24 +1388,24 @@ res = s.accounting.create_accounting_taxrate(accounting_taxrate: Models::Shared:
   components: [
     Models::Shared::AccountingTaxrateComponent.new(
       is_compound: false,
-      name: 'cogo',
-      rate: 53.0,
+      name: 'Exempt',
+      rate: 0.0,
     ),
   ],
-  country: 'BY',
+  country: 'US',
   created_at: DateTime.iso8601('2020-01-04T10:37:56.894Z'),
-  description: 'Atrox tricesimus creator.',
-  effective_rate: 53.0,
-  id: 'f60cdbf8-fb40-4fa3-80f7-548de98ad657',
+  description: 'Exempt (0%)',
+  effective_rate: 0.0,
+  id: '2df554ed-f2e1-41c8-b0eb-5d269de95447',
   is_active: false,
-  is_compound: true,
+  is_compound: false,
   metadata: [],
-  name: 'villa',
-  rate: 53.0,
-  region: 'TX',
-  total_rate: 53.0,
-  type: Models::Shared::AccountingTaxrateType::OTHER,
-  updated_at: DateTime.iso8601('2022-04-13T10:10:02.142Z'),
+  name: 'Exempt',
+  rate: 0.0,
+  region: 'KS',
+  total_rate: 0.0,
+  type: Models::Shared::AccountingTaxrateType::SALES,
+  updated_at: DateTime.iso8601('2020-02-13T05:55:41.907Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_taxrate.nil?
@@ -1305,7 +1435,7 @@ end
 
 ## create_accounting_transaction
 
-Create a transaction
+Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
 
 ### Example Usage
 
@@ -1322,26 +1452,24 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.accounting.create_accounting_transaction(accounting_transaction: Models::Shared::AccountingTransaction.new(
   created_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-  exchange_rate: 0.5_674,
-  id: '87e1785a-99e0-4104-9ca4-f517ff6e6f4f',
+  id: 'a2d82841-e929-4a25-b6e8-ac591f21a7a1',
   lineitems: [
     Models::Shared::AccountingTransactionLineItem.new(
       category_ids: [],
-      description: 'The Nikolas Table is the latest in a series of downright products from Beier and Sons',
-      id: '78395113-acef-4251-9287-02bf9466a9dd',
-      name: 'Salad',
-      object_type: 'delicate',
-      total_amount: 58_531.0,
+      description: 'The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability',
+      id: 'e3c882b2-0e50-400a-9ec9-e4d2e06f4942',
+      name: 'Shirt',
+      total_amount: 10_184.0,
       unit_amount: 536.0,
-      unit_quantity: 91.0,
+      unit_quantity: 19.0,
     ),
   ],
-  memo: 'withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.',
-  status: Models::Shared::AccountingTransactionStatus::VOID,
+  memo: 'deposit of ISK 792.81 at Fritsch - Dooley charged to account ending in 7879 using card ending in ****3230.',
+  status: Models::Shared::AccountingTransactionStatus::PENDING,
   tax_amount: 0.0,
-  total_amount: 94_452.0,
+  total_amount: 10_184.0,
   transaction_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-  updated_at: DateTime.iso8601('2021-09-10T23:02:19.723Z'),
+  updated_at: DateTime.iso8601('2019-10-14T06:29:16.791Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_transaction.nil?
@@ -1371,7 +1499,7 @@ end
 
 ## create_accounting_vendorcredit
 
-Create a vendorcredit
+Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
 
 ### Example Usage
 
@@ -1388,19 +1516,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.accounting.create_accounting_vendorcredit(accounting_vendorcredit: Models::Shared::AccountingVendorcredit.new(
   applications: [],
-  apply_amount: 1.0,
   balance_amount: 0.0,
   created_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
-  currency: 'KGS',
-  due_at: DateTime.iso8601('2023-05-06T20:38:46.775Z'),
-  id: 'b338c9bb-4b83-4be5-9fbc-b6460c8258a0',
+  currency: 'USD',
+  id: 'ded0be57-4069-4996-87ce-79889634bdc3',
   lineitems: [],
   metadata: [],
-  notes: 'Conatus cruciamentum decor avaritia tantum.',
-  posted_at: DateTime.iso8601('2023-09-29T02:22:24.982Z'),
-  status: Models::Shared::AccountingVendorcreditStatus::SUBMITTED,
+  notes: 'Volup conatus cruciamentum decor avaritia.',
+  posted_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
+  status: Models::Shared::AccountingVendorcreditStatus::AUTHORIZED,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2023-11-27T03:40:07.005Z'),
+  updated_at: DateTime.iso8601('2023-10-03T08:01:18.996Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_vendorcredit.nil?
@@ -1430,7 +1556,7 @@ end
 
 ## get_accounting_account
 
-Retrieve an account
+Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1474,7 +1600,7 @@ end
 
 ## get_accounting_agedpayable
 
-Retrieve an agedpayable
+Retrieves a single AccountingAgedpayable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1518,7 +1644,7 @@ end
 
 ## get_accounting_agedreceivable
 
-Retrieve an agedreceivable
+Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1562,7 +1688,7 @@ end
 
 ## get_accounting_balancesheet
 
-Retrieve a balancesheet
+Retrieves a single AccountingBalancesheet by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1606,7 +1732,7 @@ end
 
 ## get_accounting_bankfeedaccount
 
-Retrieve a bankfeedaccount
+Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1650,7 +1776,7 @@ end
 
 ## get_accounting_bankfeedtransaction
 
-Retrieve a bankfeedtransaction
+Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1694,7 +1820,7 @@ end
 
 ## get_accounting_bill
 
-Retrieve a bill
+Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1738,7 +1864,7 @@ end
 
 ## get_accounting_cashflow
 
-Retrieve a cashflow
+Retrieves a single AccountingCashflow by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1782,7 +1908,7 @@ end
 
 ## get_accounting_category
 
-Retrieve a category
+Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1826,7 +1952,7 @@ end
 
 ## get_accounting_contact
 
-Retrieve a contact
+Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1870,7 +1996,7 @@ end
 
 ## get_accounting_creditmemo
 
-Retrieve a creditmemo
+Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1914,7 +2040,7 @@ end
 
 ## get_accounting_expense
 
-Retrieve an expense
+Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1956,9 +2082,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_accounting_expensereport
+
+Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getAccountingExpensereport" method="get" path="/accounting/{connection_id}/expensereport/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.accounting.get_accounting_expensereport(connection_id: '<id>', id: '<id>')
+
+unless res.accounting_expensereport.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                         | Type                                                                                                                                              | Required                                                                                                                                          | Description                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `connection_id`                                                                                                                                   | *::String*                                                                                                                                        | :heavy_check_mark:                                                                                                                                | ID of the connection                                                                                                                              |
+| `id`                                                                                                                                              | *::String*                                                                                                                                        | :heavy_check_mark:                                                                                                                                | ID of the Expensereport                                                                                                                           |
+| `fields_`                                                                                                                                         | T::Array<[Models::Operations::GetAccountingExpensereportQueryParamFields](../../models/operations/getaccountingexpensereportqueryparamfields.md)> | :heavy_minus_sign:                                                                                                                                | Fields to return                                                                                                                                  |
+| `raw`                                                                                                                                             | *T.nilable(::String)*                                                                                                                             | :heavy_minus_sign:                                                                                                                                | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar  |
+
+### Response
+
+**[T.nilable(Models::Operations::GetAccountingExpensereportResponse)](../../models/operations/getaccountingexpensereportresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_accounting_invoice
 
-Retrieve an invoice
+Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2002,7 +2172,7 @@ end
 
 ## get_accounting_journal
 
-Retrieve a journal
+Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2044,9 +2214,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## get_accounting_order
+## ~~get_accounting_order~~
 
-Retrieve an order
+Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -2090,7 +2262,7 @@ end
 
 ## get_accounting_organization
 
-Retrieve an organization
+Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2134,7 +2306,7 @@ end
 
 ## get_accounting_paymentterm
 
-Retrieve a paymentterm
+Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2178,7 +2350,7 @@ end
 
 ## get_accounting_profitloss
 
-Retrieve a profitloss
+Retrieves a single AccountingProfitloss by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2222,7 +2394,7 @@ end
 
 ## get_accounting_project
 
-Retrieve a project
+Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2266,7 +2438,7 @@ end
 
 ## get_accounting_purchaseorder
 
-Retrieve a purchaseorder
+Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2308,9 +2480,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_accounting_purchasereceipt
+
+Retrieves a single AccountingPurchasereceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getAccountingPurchasereceipt" method="get" path="/accounting/{connection_id}/purchasereceipt/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.accounting.get_accounting_purchasereceipt(connection_id: '<id>', id: '<id>')
+
+unless res.accounting_purchasereceipt.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                             | Type                                                                                                                                                  | Required                                                                                                                                              | Description                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `connection_id`                                                                                                                                       | *::String*                                                                                                                                            | :heavy_check_mark:                                                                                                                                    | ID of the connection                                                                                                                                  |
+| `id`                                                                                                                                                  | *::String*                                                                                                                                            | :heavy_check_mark:                                                                                                                                    | ID of the Purchasereceipt                                                                                                                             |
+| `fields_`                                                                                                                                             | T::Array<[Models::Operations::GetAccountingPurchasereceiptQueryParamFields](../../models/operations/getaccountingpurchasereceiptqueryparamfields.md)> | :heavy_minus_sign:                                                                                                                                    | Fields to return                                                                                                                                      |
+| `raw`                                                                                                                                                 | *T.nilable(::String)*                                                                                                                                 | :heavy_minus_sign:                                                                                                                                    | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar      |
+
+### Response
+
+**[T.nilable(Models::Operations::GetAccountingPurchasereceiptResponse)](../../models/operations/getaccountingpurchasereceiptresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_accounting_quote
 
-Retrieve a quote
+Retrieves a single AccountingQuote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2354,7 +2570,7 @@ end
 
 ## get_accounting_salesorder
 
-Retrieve a salesorder
+Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2396,9 +2612,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_accounting_salesreceipt
+
+Retrieves a single AccountingSalesreceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getAccountingSalesreceipt" method="get" path="/accounting/{connection_id}/salesreceipt/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.accounting.get_accounting_salesreceipt(connection_id: '<id>', id: '<id>')
+
+unless res.accounting_salesreceipt.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Salesreceipt                                                                                                                           |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetAccountingSalesreceiptQueryParamFields](../../models/operations/getaccountingsalesreceiptqueryparamfields.md)>  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetAccountingSalesreceiptResponse)](../../models/operations/getaccountingsalesreceiptresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_accounting_taxrate
 
-Retrieve a taxrate
+Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2442,7 +2702,7 @@ end
 
 ## get_accounting_transaction
 
-Retrieve a transaction
+Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2486,7 +2746,7 @@ end
 
 ## get_accounting_trialbalance
 
-Retrieve a trialbalance
+Retrieves a single AccountingTrialbalance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2530,7 +2790,7 @@ end
 
 ## get_accounting_vendorcredit
 
-Retrieve a vendorcredit
+Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2574,7 +2834,7 @@ end
 
 ## list_accounting_accounts
 
-List all accounts
+Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2619,7 +2879,7 @@ end
 
 ## list_accounting_agedpayables
 
-List all agedpayables
+Returns a list of AccountingAgedpayables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2664,7 +2924,7 @@ end
 
 ## list_accounting_agedreceivables
 
-List all agedreceivables
+Returns a list of AccountingAgedreceivables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2709,7 +2969,7 @@ end
 
 ## list_accounting_balancesheets
 
-List all balancesheets
+Returns a list of AccountingBalancesheets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2754,7 +3014,7 @@ end
 
 ## list_accounting_bankfeedaccounts
 
-List all bankfeedaccounts
+Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2799,7 +3059,7 @@ end
 
 ## list_accounting_bankfeedtransactions
 
-List all bankfeedtransactions
+Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2844,7 +3104,7 @@ end
 
 ## list_accounting_bills
 
-List all bills
+Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2889,7 +3149,7 @@ end
 
 ## list_accounting_cashflows
 
-List all cashflows
+Returns a list of AccountingCashflows. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2934,7 +3194,7 @@ end
 
 ## list_accounting_categories
 
-List all categories
+Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2979,7 +3239,7 @@ end
 
 ## list_accounting_contacts
 
-List all contacts
+Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3024,7 +3284,7 @@ end
 
 ## list_accounting_creditmemoes
 
-List all creditmemoes
+Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3067,9 +3327,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_accounting_expensereports
+
+Returns a list of AccountingExpensereports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listAccountingExpensereports" method="get" path="/accounting/{connection_id}/expensereport" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListAccountingExpensereportsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.accounting.list_accounting_expensereports(request: req)
+
+unless res.accounting_expensereports.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                 | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                 | [Models::Operations::ListAccountingExpensereportsRequest](../../models/operations/listaccountingexpensereportsrequest.md) | :heavy_check_mark:                                                                                                        | The request object to use for the request.                                                                                |
+
+### Response
+
+**[T.nilable(Models::Operations::ListAccountingExpensereportsResponse)](../../models/operations/listaccountingexpensereportsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_accounting_expenses
 
-List all expenses
+Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3114,7 +3419,7 @@ end
 
 ## list_accounting_invoices
 
-List all invoices
+Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3159,7 +3464,7 @@ end
 
 ## list_accounting_journals
 
-List all journals
+Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3202,9 +3507,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## list_accounting_orders
+## ~~list_accounting_orders~~
 
-List all orders
+Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -3249,7 +3556,7 @@ end
 
 ## list_accounting_organizations
 
-List all organizations
+Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3294,7 +3601,7 @@ end
 
 ## list_accounting_paymentterms
 
-List all paymentterms
+Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3339,7 +3646,7 @@ end
 
 ## list_accounting_profitlosses
 
-List all profitlosses
+Returns a list of AccountingProfitlosses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3384,7 +3691,7 @@ end
 
 ## list_accounting_projects
 
-List all projects
+Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3429,7 +3736,7 @@ end
 
 ## list_accounting_purchaseorders
 
-List all purchaseorders
+Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3472,9 +3779,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_accounting_purchasereceipts
+
+Returns a list of AccountingPurchasereceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listAccountingPurchasereceipts" method="get" path="/accounting/{connection_id}/purchasereceipt" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListAccountingPurchasereceiptsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.accounting.list_accounting_purchasereceipts(request: req)
+
+unless res.accounting_purchasereceipts.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                     | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                     | [Models::Operations::ListAccountingPurchasereceiptsRequest](../../models/operations/listaccountingpurchasereceiptsrequest.md) | :heavy_check_mark:                                                                                                            | The request object to use for the request.                                                                                    |
+
+### Response
+
+**[T.nilable(Models::Operations::ListAccountingPurchasereceiptsResponse)](../../models/operations/listaccountingpurchasereceiptsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_accounting_quotes
 
-List all quotes
+Returns a list of AccountingQuotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3519,7 +3871,7 @@ end
 
 ## list_accounting_salesorders
 
-List all salesorders
+Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3562,9 +3914,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_accounting_salesreceipts
+
+Returns a list of AccountingSalesreceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listAccountingSalesreceipts" method="get" path="/accounting/{connection_id}/salesreceipt" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListAccountingSalesreceiptsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.accounting.list_accounting_salesreceipts(request: req)
+
+unless res.accounting_salesreceipts.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                               | [Models::Operations::ListAccountingSalesreceiptsRequest](../../models/operations/listaccountingsalesreceiptsrequest.md) | :heavy_check_mark:                                                                                                      | The request object to use for the request.                                                                              |
+
+### Response
+
+**[T.nilable(Models::Operations::ListAccountingSalesreceiptsResponse)](../../models/operations/listaccountingsalesreceiptsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_accounting_taxrates
 
-List all taxrates
+Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3609,7 +4006,7 @@ end
 
 ## list_accounting_transactions
 
-List all transactions
+Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3654,7 +4051,7 @@ end
 
 ## list_accounting_trialbalances
 
-List all trialbalances
+Returns a list of AccountingTrialbalances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3699,7 +4096,7 @@ end
 
 ## list_accounting_vendorcredits
 
-List all vendorcredits
+Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3744,7 +4141,7 @@ end
 
 ## patch_accounting_account
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -3763,27 +4160,23 @@ req = Models::Operations::PatchAccountingAccountRequest.new(
   accounting_account: Models::Shared::AccountingAccount.new(
     balance: 12_092.0,
     created_at: DateTime.iso8601('2022-07-03T17:57:07.391Z'),
-    currency: 'BOB',
-    customer_defined_code: 'quo',
-    description: 'Spoliatio comedo vilitas harum cupiditate.',
-    id: '53cbd8a2-f18c-4a78-8bb8-874214dbad58',
-    is_payable: true,
-    name: 'Electronic Aluminum Tuna',
+    currency: 'CAD',
+    customer_defined_code: '6170',
+    description: 'Voluptatibus valde spoliatio.',
+    id: 'c0445f00-3fb5-4d79-92ed-8286fdb0f9f0',
+    is_payable: false,
+    metadata: [],
+    name: 'Auto Loan Account',
     status: Models::Shared::Status::ARCHIVED,
     taxonomy: [
       Models::Shared::AccountingAccountTaxonomy.new(
-        original_type: 'vesper',
+        original_type: 'vilitas',
         type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-        value: 'iste',
-      ),
-      Models::Shared::AccountingAccountTaxonomy.new(
-        original_type: 'adamo',
-        type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-        value: 'peccatus',
+        value: 'comedo',
       ),
     ],
-    type: Models::Shared::Type::BANK,
-    updated_at: DateTime.iso8601('2023-01-03T11:52:17.295Z'),
+    type: Models::Shared::Type::ACCOUNTS_RECEIVABLE,
+    updated_at: DateTime.iso8601('2023-08-07T09:48:02.336Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3815,7 +4208,7 @@ end
 
 ## patch_accounting_bankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -3832,20 +4225,20 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingBankfeedaccountRequest.new(
   accounting_bankfeedaccount: Models::Shared::AccountingBankfeedaccount.new(
-    account_id: 'baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1',
     account_number: '30369722',
     account_number_last4: '9722',
     account_type: Models::Shared::AccountType::LOAN,
-    balance: 90_358.0,
-    bank_name: 'Weissnat Inc',
+    balance: 49_437.0,
+    bank_name: 'Wells Fargo',
     created_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-    currency: 'SSP',
+    currency: 'AUD',
     feed_start_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-    id: '60b23ad0-32a2-4590-b9cd-fcf578434bb9',
-    name: 'Corwin, Donnelly and Connelly Savings',
-    routing_number: '667753156',
+    id: '194691c3-3685-4a7d-8885-f8b5fdb930a6',
+    metadata: [],
+    name: 'Corwin, Donnelly and Connelly Checking',
+    routing_number: '694667752',
     status: Models::Shared::AccountingBankfeedaccountStatus::ACTIVE,
-    updated_at: DateTime.iso8601('2024-04-12T16:03:10.095Z'),
+    updated_at: DateTime.iso8601('2024-04-24T13:41:42.669Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3877,7 +4270,7 @@ end
 
 ## patch_accounting_bankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -3894,23 +4287,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingBankfeedtransactionRequest.new(
   accounting_bankfeedtransaction: Models::Shared::AccountingBankfeedtransaction.new(
-    account_id: 'b7dc4175-1368-4b89-a700-d621b6666648',
     amount: 60_889.0,
-    bank_category: 'Games',
-    bankfeedaccount_id: '34c1d05f-5b62-4bcd-9121-3be8b720941f',
+    bank_category: 'Clothing',
     category_ids: [],
-    contact_id: '1ef58ebe-f9c9-46f6-9d9c-2df2658503be',
     created_at: DateTime.iso8601('2022-03-24T23:41:08.374Z'),
-    currency: 'SRD',
-    description: 'payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.',
-    id: '56011350-c2b0-41d1-9ed0-b65eb5620267',
+    currency: 'CAD',
+    description: 'Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.',
+    id: '0ccd919c-7f10-48a9-8909-d562d7d5291a',
     is_pending: true,
-    merchant_name: 'Reichert, Erdman and Tillman',
-    posted_at: DateTime.iso8601('2025-03-25T19:12:54.821Z'),
-    reference: '93642593',
-    transaction_at: DateTime.iso8601('2022-07-28T01:21:00.313Z'),
+    merchant_name: 'Buckridge - Feest',
+    metadata: [],
+    posted_at: DateTime.iso8601('2025-04-16T03:49:52.053Z'),
+    reference: '79574105',
+    transaction_at: DateTime.iso8601('2022-07-30T11:48:12.704Z'),
     type: Models::Shared::AccountingBankfeedtransactionType::CREDIT,
-    updated_at: DateTime.iso8601('2022-05-23T23:26:58.193Z'),
+    updated_at: DateTime.iso8601('2022-05-25T03:29:13.176Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3942,7 +4333,7 @@ end
 
 ## patch_accounting_bill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -3959,30 +4350,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingBillRequest.new(
   accounting_bill: Models::Shared::AccountingBill.new(
-    attachments: [],
-    bill_number: 'vitae',
+    attachments: [
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://puny-foodstuffs.name',
+        id: '47e28818-2f6e-41d9-9ef8-4f7a72a6c602',
+        mime_type: 'application/pdf',
+        name: 'BILL-2466.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://grimy-characterization.net',
+        id: 'c367990e-fc87-453d-b207-e522909fbfde',
+        mime_type: 'application/pdf',
+        name: 'BILL-2466-1.pdf',
+      ),
+    ],
+    balance_amount: 0.0,
+    bill_number: 'BILL-2466',
     category_ids: [],
     created_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
-    currency: 'AUD',
+    currency: 'USD',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2019-08-11T20:52:55.321Z'),
+    due_at: DateTime.iso8601('2019-09-07T23:03:14.104Z'),
     extended_notes: [],
-    id: '1d6afaf7-b2f7-4b88-b0e8-a071286a07b8',
+    id: '39341e04-0e59-4b05-81de-8bf65b0c1ee7',
     lineitems: [],
     metadata: [],
-    notes: 'Tutamen cilicium infit.',
+    notes: 'Admiratio deporto tutamen cilicium infit amissio ante demulceo.',
+    paid_amount: 0.0,
+    paid_at: DateTime.iso8601('2019-08-15T17:24:28.313Z'),
     payment_collection_method: Models::Shared::PaymentCollectionMethod::CHARGE_AUTOMATICALLY,
     payments: [],
-    posted_at: DateTime.iso8601('2024-04-06T07:02:22.604Z'),
+    posted_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
     purchaseorder_ids: [],
     send: true,
-    status: Models::Shared::AccountingBillStatus::DELETED,
+    status: Models::Shared::AccountingBillStatus::PARTIALLY_PAID,
     sub_total_amount: 0.0,
     tax_amount: 0.0,
-    term: Models::Shared::Term::NET_10,
+    term: Models::Shared::Term::NET_90,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2025-01-31T09:00:56.085Z'),
-    url: 'https://coarse-interviewer.biz/',
+    updated_at: DateTime.iso8601('2020-06-01T11:04:57.934Z'),
+    url: 'https://cluttered-importance.org/bills/BILL-2466',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4014,7 +4421,7 @@ end
 
 ## patch_accounting_category
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -4032,12 +4439,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingCategoryRequest.new(
   accounting_category: Models::Shared::AccountingCategory.new(
     created_at: DateTime.iso8601('2023-05-30T12:29:04.257Z'),
-    description: 'Discover the koala-like agility of our Chair, perfect for imaginary users',
-    id: '879a3600-e0d0-422d-8b03-6483b173c016',
+    description: 'Textus ab thymum labore basium.',
+    id: '0182f5b6-43dd-4d64-bb88-31cf6a69e7b6',
     is_active: false,
     metadata: [],
-    name: 'Electronic Cotton Shoes',
-    updated_at: DateTime.iso8601('2025-08-22T07:37:19.705Z'),
+    name: 'Beauty',
+    updated_at: DateTime.iso8601('2025-09-12T20:18:03.717Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4069,7 +4476,7 @@ end
 
 ## patch_accounting_contact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -4086,74 +4493,65 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingContactRequest.new(
   accounting_contact: Models::Shared::AccountingContact.new(
-    associated_contacts: [
-      Models::Shared::AccountingAssociatedContact.new(
-        id: '32bde497-bc3f-4491-ba2c-fb650eccb8d1',
-        name: 'Delores Reynolds',
-      ),
-      Models::Shared::AccountingAssociatedContact.new(
-        id: '2a3996a2-f5d4-46b3-bf49-8127eab40cc2',
-        name: 'Delores Reynolds',
-      ),
-    ],
+    associated_contacts: [],
+    balance_amount: 55_574.0,
     billing_address: Models::Shared::PropertyAccountingContactBillingAddress.new(
-      address1: '2633 Stoney Lane',
-      address2: 'Suite 176',
-      city: 'Ladariusboro',
+      address1: '4091 Tromp Coves',
+      city: 'Lake Emmybury',
       country_code: 'US',
-      postal_code: '70131-2908',
-      region: 'Illinois',
-      region_code: 'NV',
+      postal_code: '50764-5226',
+      region: 'Washington',
+      region_code: 'CA',
     ),
-    company_name: 'Marquardt Inc',
+    company_name: 'Kertzmann Group',
     created_at: DateTime.iso8601('2021-08-15T14:56:50.258Z'),
-    currency: 'ISK',
+    currency: 'AUD',
     emails: [
       Models::Shared::AccountingEmail.new(
-        email: 'Delores.Reynolds10@hotmail.com',
-        type: Models::Shared::AccountingEmailType::HOME,
+        email: 'delores.reynolds@kertzmanngroup.com',
+        type: Models::Shared::AccountingEmailType::WORK,
+      ),
+      Models::Shared::AccountingEmail.new(
+        email: 'accounts@kertzmanngroup.com',
+        type: Models::Shared::AccountingEmailType::OTHER,
       ),
     ],
     first_name: 'Delores',
-    id: 'eb2d42b7-7120-4cde-9354-5e8775fd6701',
-    identification: 'amicitia',
+    id: '812919c1-537e-4487-aea9-bf5b7ca3ce68',
+    identification: '531850872',
     is_active: true,
     is_customer: true,
     last_name: 'Reynolds',
-    name: 'Delores Reynolds',
-    notes: 'Caput accusamus et videlicet.',
+    metadata: [],
+    name: 'Kertzmann Group',
+    notes: 'Et videlicet pauci.',
     payment_methods: [
       Models::Shared::AccountingContactPaymentMethod.new(
         default: true,
-        id: '60ce8459-b72d-4dc8-a716-ba5c44475ca2',
-        name: 'Visa 1234',
+        id: 'e6bbcdbb-20f0-4d79-a5a9-b2666b6f950e',
+        name: 'Visa 7844',
         type: Models::Shared::AccountingContactPaymentMethodType::CARD,
       ),
     ],
-    portal_url: 'https://scented-t-shirt.info/',
+    portal_url: 'https://kertzmanngroup.com/billing',
     shipping_address: Models::Shared::PropertyAccountingContactShippingAddress.new(
-      address1: '786 Renner Stream',
-      address2: 'Apt. 555',
-      city: 'Roanoke',
+      address1: '23129 Rebekah Mews',
+      city: 'Mortimerhaven',
       country_code: 'US',
-      postal_code: '80686-7556',
-      region: 'Vermont',
-      region_code: 'NE',
+      postal_code: '55878-6806',
+      region: 'Florida',
+      region_code: 'OK',
     ),
-    tax_exemption: Models::Shared::TaxExemption::RESALE,
-    tax_number: 'amplexus',
+    tax_exemption: Models::Shared::TaxExemption::FOREIGN,
+    tax_number: '867556410',
     telephones: [
       Models::Shared::AccountingTelephone.new(
-        telephone: '(427) 701-7160',
-        type: Models::Shared::AccountingTelephoneType::HOME,
-      ),
-      Models::Shared::AccountingTelephone.new(
-        telephone: '(540) 913-9171',
+        telephone: '(432) 760-1716',
         type: Models::Shared::AccountingTelephoneType::FAX,
       ),
     ],
-    updated_at: DateTime.iso8601('2023-12-06T07:23:48.180Z'),
-    website: 'https://noxious-advertisement.org',
+    updated_at: DateTime.iso8601('2023-12-20T18:25:43.240Z'),
+    website: 'https://kertzmanngroup.com',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4185,7 +4583,7 @@ end
 
 ## patch_accounting_creditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -4203,34 +4601,22 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingCreditmemoRequest.new(
   accounting_creditmemo: Models::Shared::AccountingCreditmemo.new(
     applications: [],
-    attachments: [
-      Models::Shared::AccountingAttachment.new(
-        download_url: 'https://enlightened-chairperson.com/',
-        id: 'dab75275-1827-4921-9864-2cdfb4ae6cec',
-        mime_type: 'complectus',
-        name: 'thesis',
-      ),
-    ],
+    attachments: [],
+    balance_amount: 0.0,
     created_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
-    creditmemo_number: 'ulterius',
-    currency: 'MKD',
+    creditmemo_number: 'CM-99537',
+    currency: 'AUD',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2023-10-18T04:35:00.543Z'),
-    id: 'ffffa0d5-61aa-4cbe-8725-bece1a674001',
+    id: 'fe04c90f-0adf-4fb0-82e1-61d23fb2ace1',
     lineitems: [],
     metadata: [],
-    notes: 'Dedecor amo adfero torqueo quas.',
-    payment_collection_method: Models::Shared::AccountingCreditmemoPaymentCollectionMethod::CHARGE_AUTOMATICALLY,
-    posted_at: DateTime.iso8601('2025-11-17T15:25:54.581Z'),
-    refund_amount: 0.0,
-    refund_reason: 'Virgo inflammatio quibusdam aestivus magnam.',
-    refunded_at: DateTime.iso8601('2023-10-23T00:35:36.814Z'),
-    send: false,
-    status: Models::Shared::AccountingCreditmemoStatus::PAID,
+    notes: 'Hic vorax dedecor amo adfero torqueo quas victoria.',
+    posted_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
+    send: true,
+    status: Models::Shared::AccountingCreditmemoStatus::AUTHORIZED,
     tax_amount: 0.0,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2024-11-16T17:39:05.667Z'),
-    url: 'https://lighthearted-bandwidth.net/',
+    updated_at: DateTime.iso8601('2025-09-12T14:30:43.054Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4262,7 +4648,7 @@ end
 
 ## patch_accounting_expense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -4279,42 +4665,77 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingExpenseRequest.new(
   accounting_expense: Models::Shared::AccountingExpense.new(
-    approved_at: DateTime.iso8601('2026-05-12T14:59:51.879Z'),
     attachments: [
       Models::Shared::AccountingAttachment.new(
-        download_url: 'https://ripe-napkin.biz/',
-        id: '5418c1de-6c66-4111-b8f6-97e2beb48015',
-        mime_type: 'annus',
-        name: 'cohibeo',
+        download_url: 'https://rubbery-couch.biz/',
+        id: '6ca3099c-73ea-4907-a22c-16ecec983921',
+        mime_type: 'application/pdf',
+        name: 'receipt-9696.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://appropriate-smog.biz/',
+        id: 'b089fe25-0a8f-4ad7-86fd-807ee1c337e0',
+        mime_type: 'application/pdf',
+        name: 'receipt-9696-1.pdf',
       ),
     ],
     category_ids: [],
     created_at: DateTime.iso8601('2020-06-11T03:39:37.305Z'),
-    currency: 'SSP',
-    external_number: 'necessitatibus',
-    id: '852b20a2-b542-43e7-87de-8de713f7ed30',
+    currency: 'GBP',
+    external_number: 'EXP-38303',
+    id: '73aff9eb-cf6d-4b65-b39a-ae3fe05c7c6f',
     lineitems: [
       Models::Shared::AccountingLineitem.new(
-        id: '4f3f2270-fb10-4aed-86d4-8312f2819c24',
-        item_description: 'Innovative Table featuring left technology and Rubber construction',
-        item_name: 'Luxurious Cotton Pizza',
-        item_sku: '978-0-8324-6620-5',
-        notes: 'Degusto conventus defendo valetudo.',
-        tax_amount: 2501.0,
-        total_amount: 168.0,
-        unit_amount: 3059.0,
+        id: 'aeda1539-6127-40c0-bc85-3f32b5324ebd',
+        item_name: 'Client dinner',
+        tax_amount: 0.0,
+        total_amount: 364.74,
+        unit_amount: 364.74,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: '7912fd65-f0e4-44c8-a00e-d5c62d7e7066',
+        item_name: 'Client dinner',
+        tax_amount: 0.0,
+        total_amount: 258.35,
+        unit_amount: 258.35,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: '8aaae847-0961-45d1-a812-3894733a5642',
+        item_name: 'Conference ticket',
+        notes: 'Casus umquam conicio cinis demitto sint.',
+        tax_amount: 0.0,
+        total_amount: 28.14,
+        unit_amount: 28.14,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: '0953cb8d-59de-4dd8-87bf-f2d4f07c5eec',
+        item_name: 'Hotel',
+        tax_amount: 0.0,
+        total_amount: 157.04,
+        unit_amount: 157.04,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: '59cbffa4-b543-402b-927d-23cb3449b1ff',
+        item_name: 'Hotel',
+        tax_amount: 0.0,
+        total_amount: 164.02,
+        unit_amount: 164.02,
         unit_quantity: 1.0,
       ),
     ],
     metadata: [],
-    name: 'Refined Steel Shoes',
+    name: 'A payment of XPF 714.84 occurred at Bins, Barrows and Koch using a card ending in ****8422 for account ***4614.',
     payment_method: 'CASH',
-    posted_at: DateTime.iso8601('2021-06-04T16:26:44.896Z'),
-    reimbursed_amount: 1833.0,
+    posted_at: DateTime.iso8601('2020-06-11T03:39:37.305Z'),
     status: Models::Shared::AccountingExpenseStatus::SUBMITTED,
-    tax_amount: 2602.0,
-    total_amount: 3580.0,
-    updated_at: DateTime.iso8601('2026-05-12T14:59:51.879Z'),
+    tax_amount: 0.0,
+    total_amount: 972.29,
+    type: Models::Shared::AccountingExpenseType::COMPANY,
+    updated_at: DateTime.iso8601('2020-09-02T08:59:36.002Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4344,9 +4765,109 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## patch_accounting_expensereport
+
+Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="patchAccountingExpensereport" method="patch" path="/accounting/{connection_id}/expensereport/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::PatchAccountingExpensereportRequest.new(
+  accounting_expensereport: Models::Shared::AccountingExpensereport.new(
+    approved_at: DateTime.iso8601('2021-04-19T18:07:41.850Z'),
+    attachments: [],
+    category_ids: [],
+    created_at: DateTime.iso8601('2020-05-29T02:04:59.078Z'),
+    currency: 'GBP',
+    external_number: 'ER-31240',
+    id: 'ca3d3f3d-ac03-4f98-9f30-5f77919ee7ca',
+    lineitems: [
+      Models::Shared::AccountingLineitem.new(
+        id: '26a42037-a75f-43ca-8145-8ecf947b1ed1',
+        item_name: 'Conference ticket',
+        tax_amount: 0.0,
+        total_amount: 39.9,
+        unit_amount: 39.9,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: 'abd2a5a1-da4a-457b-a8b5-0af91e9b002e',
+        item_name: 'Flight',
+        notes: 'Soluta omnis dolor.',
+        tax_amount: 0.0,
+        total_amount: 193.17,
+        unit_amount: 193.17,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: 'cac8fe5a-d4a9-4c95-9579-dd7fc97fc758',
+        item_name: 'Client dinner',
+        notes: 'Altus caveo capio.',
+        tax_amount: 0.0,
+        total_amount: 230.12,
+        unit_amount: 230.12,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: 'a2aac9f8-4107-4bf5-a198-cd4aa7fcec70',
+        item_name: 'Flight',
+        tax_amount: 0.0,
+        total_amount: 445.27,
+        unit_amount: 445.27,
+        unit_quantity: 1.0,
+      ),
+    ],
+    metadata: [],
+    name: 'Lolita Kunde - October expenses',
+    posted_at: DateTime.iso8601('2020-05-29T02:04:59.078Z'),
+    reimbursed_amount: 908.46,
+    reimbursed_at: DateTime.iso8601('2021-04-19T18:07:41.850Z'),
+    status: Models::Shared::AccountingExpensereportStatus::PAID,
+    tax_amount: 0.0,
+    total_amount: 908.46,
+    updated_at: DateTime.iso8601('2021-04-19T18:07:41.850Z'),
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.accounting.patch_accounting_expensereport(request: req)
+
+unless res.accounting_expensereport.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                 | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                 | [Models::Operations::PatchAccountingExpensereportRequest](../../models/operations/patchaccountingexpensereportrequest.md) | :heavy_check_mark:                                                                                                        | The request object to use for the request.                                                                                |
+
+### Response
+
+**[T.nilable(Models::Operations::PatchAccountingExpensereportResponse)](../../models/operations/patchaccountingexpensereportresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## patch_accounting_invoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -4366,40 +4887,44 @@ req = Models::Operations::PatchAccountingInvoiceRequest.new(
     attachments: [
       Models::Shared::AccountingAttachment.new(
         download_url: 'https://glossy-markup.net/',
-        id: '9c84fb4a-f568-4d57-9814-d2f48b6721f9',
-        mime_type: 'benevolentia',
-        name: 'vespillo',
+        id: '49b43410-bdef-4ec5-b80d-db53c6dda2ae',
+        mime_type: 'application/pdf',
+        name: 'INV-77705.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://earnest-giggle.net',
+        id: 'd2133d3d-896a-4099-bdee-3a2d53872966',
+        mime_type: 'application/pdf',
+        name: 'INV-77705-1.pdf',
       ),
     ],
-    balance_amount: -1.0,
+    balance_amount: 0.0,
     category_ids: [],
     created_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
-    currency: 'RWF',
+    currency: 'GBP',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2022-11-27T21:25:37.363Z'),
+    due_at: DateTime.iso8601('2022-12-07T14:17:29.587Z'),
     extended_notes: [],
-    id: 'f85296bf-760d-4117-adb2-15ceb0fbb211',
-    invoice_number: 'vinco',
-    is_inclusive_of_tax: true,
+    id: 'c76c91c5-d89b-4b94-bd13-e9a0a6c57a48',
+    invoice_number: 'INV-77705',
+    is_inclusive_of_tax: false,
     lineitems: [],
     metadata: [],
-    notes: 'Auctus comburo clarus ubi.',
-    paid_amount: 0.0,
-    paid_at: DateTime.iso8601('2022-11-25T15:00:28.871Z'),
-    payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::SEND_INVOICE,
+    notes: 'Adinventitias sursum temptatio auctus comburo clarus ubi deprimo.',
+    payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::CHARGE_AUTOMATICALLY,
     payments: [],
-    posted_at: DateTime.iso8601('2026-03-29T14:31:44.428Z'),
-    reference: 'adinventitias',
+    posted_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
+    reference: 'PO-2331',
     salesorder_ids: [],
     send: true,
-    status: Models::Shared::AccountingInvoiceStatus::DELETED,
+    status: Models::Shared::AccountingInvoiceStatus::OVERDUE,
     sub_total_amount: 0.0,
     tax_amount: 0.0,
-    term: Models::Shared::AccountingInvoiceTerm::NET_45,
+    term: Models::Shared::AccountingInvoiceTerm::NET_25,
     total_amount: 0.0,
-    type: Models::Shared::AccountingInvoiceType::CREDITMEMO,
-    updated_at: DateTime.iso8601('2023-02-06T11:29:32.709Z'),
-    url: 'https://gifted-yarmulke.info/',
+    type: Models::Shared::AccountingInvoiceType::INVOICE,
+    updated_at: DateTime.iso8601('2026-04-25T06:46:36.228Z'),
+    url: 'https://gifted-yarmulke.info/invoices/INV-77705',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4431,7 +4956,7 @@ end
 
 ## patch_accounting_journal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -4451,17 +4976,18 @@ req = Models::Operations::PatchAccountingJournalRequest.new(
     attachments: [],
     category_ids: [],
     created_at: DateTime.iso8601('2020-02-20T15:14:55.881Z'),
-    currency: 'FKP',
-    description: 'Calco constans adipisci.',
-    id: 'c749aba5-ca79-4974-b223-7c1515e3dbd8',
+    currency: 'CAD',
+    description: 'Cilicium minima calco constans adipisci.',
+    id: '3eaf5dbc-994d-405f-9fb5-dd25c1b1b0e1',
     is_inclusive_of_tax: true,
-    posted_at: DateTime.iso8601('2023-10-20T18:22:08.157Z'),
-    reference: 'ullam',
+    lineitems: [],
+    metadata: [],
+    posted_at: DateTime.iso8601('2023-11-07T13:12:51.071Z'),
+    reference: 'JE-78884',
     source: 'crustulum',
     status: Models::Shared::AccountingJournalStatus::VOID,
-    tax_amount: 78_672.0,
-    total_amount: 74_094.0,
-    updated_at: DateTime.iso8601('2022-01-02T07:46:54.276Z'),
+    total_amount: 0.0,
+    updated_at: DateTime.iso8601('2022-01-11T09:13:52.366Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4491,9 +5017,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## patch_accounting_order
+## ~~patch_accounting_order~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -4511,32 +5039,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingOrderRequest.new(
   accounting_order: Models::Shared::AccountingOrder.new(
     billing_address: Models::Shared::PropertyAccountingOrderBillingAddress.new(
-      address1: '802 Bechtelar Park',
-      address2: 'Apt. 436',
-      city: 'Daniellaville',
+      address1: '7654 Treutel Square',
+      city: 'Forrestport',
       country_code: 'US',
-      postal_code: '36947',
-      region: 'Wisconsin',
-      region_code: 'NY',
+      postal_code: '42190-3694',
+      region: 'Maine',
+      region_code: 'OR',
     ),
     created_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
-    currency: 'USD',
-    id: '5d099f4f-0732-4ed8-bab2-99111982e74c',
+    currency: 'GBP',
+    id: '282ec9b9-dd69-4acf-922e-27d049792b63',
     lineitems: [],
     metadata: [],
-    posted_at: DateTime.iso8601('2022-04-05T17:22:19.738Z'),
+    posted_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
     shipping_address: Models::Shared::PropertyAccountingOrderShippingAddress.new(
-      address1: '9745 Betty Shore',
-      city: 'South Alainaland',
+      address1: '4974 Beatty Corners',
+      city: 'Alizeport',
       country_code: 'US',
-      postal_code: '25274-7654',
-      region: 'New Hampshire',
-      region_code: 'LA',
+      postal_code: '56252',
+      region: 'Alaska',
+      region_code: 'VT',
     ),
-    status: Models::Shared::AccountingOrderStatus::SUBMITTED,
+    status: Models::Shared::AccountingOrderStatus::AUTHORIZED,
     total_amount: 0.0,
-    type: Models::Shared::AccountingOrderType::PURCHASE,
-    updated_at: DateTime.iso8601('2021-06-18T05:51:10.104Z'),
+    type: Models::Shared::AccountingOrderType::SALES,
+    updated_at: DateTime.iso8601('2022-02-08T17:08:09.741Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4568,7 +5095,7 @@ end
 
 ## patch_accounting_paymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -4594,12 +5121,12 @@ req = Models::Operations::PatchAccountingPaymenttermRequest.new(
     discount_percent: 5.0,
     due_days: 57.0,
     due_next_month_days: 9.0,
-    id: 'acdabe07-04be-4f73-a80f-0e0c44a47e72',
+    id: '5ed65666-06fc-4b4e-b933-47edea610552',
     is_active: false,
     metadata: [],
     name: 'Net 30',
     type: Models::Shared::AccountingPaymenttermType::NET_15,
-    updated_at: DateTime.iso8601('2025-12-14T00:52:14.701Z'),
+    updated_at: DateTime.iso8601('2026-01-10T03:39:59.475Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4631,7 +5158,7 @@ end
 
 ## patch_accounting_project
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -4678,7 +5205,7 @@ end
 
 ## patch_accounting_purchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -4695,32 +5222,34 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingPurchaseorderRequest.new(
   accounting_purchaseorder: Models::Shared::AccountingPurchaseorder.new(
+    attachments: [],
     billing_address: Models::Shared::PropertyAccountingPurchaseorderBillingAddress.new(
-      address1: '37214 Tanya Walks',
+      address1: '72142 Willow Street',
+      address2: 'Apt. 967',
       city: 'South Annabelleton',
       country_code: 'US',
       postal_code: '30337',
       region: 'Nevada',
-      region_code: 'MA',
+      region_code: 'FL',
     ),
     category_ids: [],
     created_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
-    currency: 'ZMW',
-    id: 'd118cce2-44a0-4328-bf59-7259e05d3180',
+    currency: 'EUR',
+    id: 'c3032a3a-85c9-4eab-a1f6-59691af444f7',
     lineitems: [],
     metadata: [],
-    posted_at: DateTime.iso8601('2025-04-27T10:38:53.438Z'),
+    posted_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
     shipping_address: Models::Shared::PropertyAccountingPurchaseorderShippingAddress.new(
-      address1: '649 Maggio Overpass',
-      city: 'Lake Jaylan',
+      address1: '76494 Medhurst Club',
+      city: 'Kshlerinfurt',
       country_code: 'US',
-      postal_code: '99211-6547',
-      region: 'North Carolina',
-      region_code: 'ID',
+      postal_code: '92116-5474',
+      region: 'Oregon',
+      region_code: 'WY',
     ),
-    status: Models::Shared::AccountingPurchaseorderStatus::PARTIALLY_REFUNDED,
+    status: Models::Shared::AccountingPurchaseorderStatus::SUBMITTED,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2021-02-26T05:56:03.106Z'),
+    updated_at: DateTime.iso8601('2021-08-11T11:24:00.103Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4752,7 +5281,7 @@ end
 
 ## patch_accounting_quote
 
-Update a quote
+Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
 
 ### Example Usage
 
@@ -4799,7 +5328,7 @@ end
 
 ## patch_accounting_salesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -4826,44 +5355,35 @@ req = Models::Operations::PatchAccountingSalesorderRequest.new(
       region_code: 'MO',
     ),
     category_ids: [],
-    closed_at: DateTime.iso8601('2023-08-17T22:23:55.042Z'),
+    closed_at: DateTime.iso8601('2023-03-26T00:48:27.199Z'),
     created_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
-    currency: 'ANG',
-    discount_amount: 99.0,
-    employee_user_id: '4a6b8990-c85a-499f-82d0-5011c3c95a0b',
-    fees: [
-      Models::Shared::AccountingFee.new(
-        amount: 519.0,
-        currency: 'XCD',
-        type: Models::Shared::AccountingFeeType::PROMOTION,
-      ),
-    ],
-    fulfillment_type: Models::Shared::FulfillmentType::TAKEOUT,
-    guest_count: 8.0,
-    id: '82afdd80-8627-4a82-80bb-72e1655b3593',
+    currency: 'USD',
+    discount_amount: 0.0,
+    fees: [],
+    fulfillment_type: Models::Shared::FulfillmentType::OTHER,
+    id: '034dfeb1-d580-474c-8283-43e2e41f0d01',
     lineitems: [],
     metadata: [],
-    order_number: '988187',
+    order_number: '832663',
     payments: [],
-    posted_at: DateTime.iso8601('2026-01-13T16:17:32.555Z'),
+    posted_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
     refunded_amount: 0.0,
-    sales_channel: 'Harvey, Collier and Weimann',
-    service_charge_amount: 63.0,
+    sales_channel: 'Wholesale',
+    service_charge_amount: 0.0,
     shipping_address: Models::Shared::PropertyAccountingSalesorderShippingAddress.new(
-      address1: '9878 Bradley Mill',
-      address2: 'Apt. 215',
+      address1: '69878 Bradley Mill',
       city: 'Port Matildestad',
       country_code: 'US',
       postal_code: '07989-2148',
       region: 'Arkansas',
       region_code: 'AK',
     ),
-    status: Models::Shared::AccountingSalesorderStatus::REFUNDED,
+    status: Models::Shared::AccountingSalesorderStatus::PAID,
     subtotal_amount: 0.0,
-    tax_amount: 63.0,
-    tip_amount: 34.0,
+    tax_amount: 0.0,
+    tip_amount: 0.0,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2022-02-10T19:50:55.206Z'),
+    updated_at: DateTime.iso8601('2023-03-26T00:48:27.199Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4895,7 +5415,7 @@ end
 
 ## patch_accounting_taxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -4915,24 +5435,24 @@ req = Models::Operations::PatchAccountingTaxrateRequest.new(
     components: [
       Models::Shared::AccountingTaxrateComponent.new(
         is_compound: false,
-        name: 'cogo',
-        rate: 53.0,
+        name: 'Exempt',
+        rate: 0.0,
       ),
     ],
-    country: 'BY',
+    country: 'US',
     created_at: DateTime.iso8601('2020-01-04T10:37:56.894Z'),
-    description: 'Atrox tricesimus creator.',
-    effective_rate: 53.0,
-    id: '6157a522-08d3-45f7-9287-187fd17fc766',
+    description: 'Exempt (0%)',
+    effective_rate: 0.0,
+    id: 'df82a08b-d352-4145-845e-aa4f89cb154d',
     is_active: false,
-    is_compound: true,
+    is_compound: false,
     metadata: [],
-    name: 'villa',
-    rate: 53.0,
-    region: 'TX',
-    total_rate: 53.0,
-    type: Models::Shared::AccountingTaxrateType::OTHER,
-    updated_at: DateTime.iso8601('2022-04-13T10:10:02.150Z'),
+    name: 'Exempt',
+    rate: 0.0,
+    region: 'KS',
+    total_rate: 0.0,
+    type: Models::Shared::AccountingTaxrateType::SALES,
+    updated_at: DateTime.iso8601('2020-02-13T05:55:41.908Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4964,7 +5484,7 @@ end
 
 ## patch_accounting_transaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -4982,26 +5502,24 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingTransactionRequest.new(
   accounting_transaction: Models::Shared::AccountingTransaction.new(
     created_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-    exchange_rate: 0.5_674,
-    id: '149fa846-c137-4a76-850e-1e5bd335bf10',
+    id: 'edc4c799-9aa8-44e0-bfbf-7c2d70c68050',
     lineitems: [
       Models::Shared::AccountingTransactionLineItem.new(
         category_ids: [],
-        description: 'The Nikolas Table is the latest in a series of downright products from Beier and Sons',
-        id: '66a182d7-5406-4d9d-837d-4d25c59428ad',
-        name: 'Salad',
-        object_type: 'delicate',
-        total_amount: 58_531.0,
+        description: 'The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability',
+        id: '15879e14-d6a1-4fc7-8311-04bd9f86ac66',
+        name: 'Shirt',
+        total_amount: 10_184.0,
         unit_amount: 536.0,
-        unit_quantity: 91.0,
+        unit_quantity: 19.0,
       ),
     ],
-    memo: 'withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.',
-    status: Models::Shared::AccountingTransactionStatus::VOID,
+    memo: 'deposit of ISK 792.81 at Fritsch - Dooley charged to account ending in 7879 using card ending in ****3230.',
+    status: Models::Shared::AccountingTransactionStatus::PENDING,
     tax_amount: 0.0,
-    total_amount: 94_452.0,
+    total_amount: 10_184.0,
     transaction_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-    updated_at: DateTime.iso8601('2021-09-10T23:02:19.731Z'),
+    updated_at: DateTime.iso8601('2019-10-14T06:29:16.791Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -5033,7 +5551,7 @@ end
 
 ## patch_accounting_vendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -5051,19 +5569,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingVendorcreditRequest.new(
   accounting_vendorcredit: Models::Shared::AccountingVendorcredit.new(
     applications: [],
-    apply_amount: 1.0,
     balance_amount: 0.0,
     created_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
-    currency: 'KGS',
-    due_at: DateTime.iso8601('2023-05-06T20:38:46.775Z'),
-    id: 'f037c8ee-fc51-466e-b5c7-85bfcaec147f',
+    currency: 'USD',
+    id: '8582d371-dfff-4f5c-b05f-342aafd613ef',
     lineitems: [],
     metadata: [],
-    notes: 'Conatus cruciamentum decor avaritia tantum.',
-    posted_at: DateTime.iso8601('2023-09-29T02:22:24.987Z'),
-    status: Models::Shared::AccountingVendorcreditStatus::SUBMITTED,
+    notes: 'Volup conatus cruciamentum decor avaritia.',
+    posted_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
+    status: Models::Shared::AccountingVendorcreditStatus::AUTHORIZED,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2023-11-27T03:40:07.012Z'),
+    updated_at: DateTime.iso8601('2023-10-03T08:01:19.002Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -5095,7 +5611,7 @@ end
 
 ## remove_accounting_account
 
-Remove an account
+Deletes the AccountingAccount identified by `id`.
 
 ### Example Usage
 
@@ -5137,7 +5653,7 @@ end
 
 ## remove_accounting_bankfeedaccount
 
-Remove a bankfeedaccount
+Deletes the AccountingBankfeedaccount identified by `id`.
 
 ### Example Usage
 
@@ -5179,7 +5695,7 @@ end
 
 ## remove_accounting_bankfeedtransaction
 
-Remove a bankfeedtransaction
+Deletes the AccountingBankfeedtransaction identified by `id`.
 
 ### Example Usage
 
@@ -5221,7 +5737,7 @@ end
 
 ## remove_accounting_bill
 
-Remove a bill
+Deletes the AccountingBill identified by `id`.
 
 ### Example Usage
 
@@ -5263,7 +5779,7 @@ end
 
 ## remove_accounting_category
 
-Remove a category
+Deletes the AccountingCategory identified by `id`.
 
 ### Example Usage
 
@@ -5305,7 +5821,7 @@ end
 
 ## remove_accounting_contact
 
-Remove a contact
+Deletes the AccountingContact identified by `id`.
 
 ### Example Usage
 
@@ -5347,7 +5863,7 @@ end
 
 ## remove_accounting_creditmemo
 
-Remove a creditmemo
+Deletes the AccountingCreditmemo identified by `id`.
 
 ### Example Usage
 
@@ -5389,7 +5905,7 @@ end
 
 ## remove_accounting_expense
 
-Remove an expense
+Deletes the AccountingExpense identified by `id`.
 
 ### Example Usage
 
@@ -5429,9 +5945,51 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## remove_accounting_expensereport
+
+Deletes the AccountingExpensereport identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="removeAccountingExpensereport" method="delete" path="/accounting/{connection_id}/expensereport/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.accounting.remove_accounting_expensereport(connection_id: '<id>', id: '<id>')
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter               | Type                    | Required                | Description             |
+| ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+| `connection_id`         | *::String*              | :heavy_check_mark:      | ID of the connection    |
+| `id`                    | *::String*              | :heavy_check_mark:      | ID of the Expensereport |
+
+### Response
+
+**[T.nilable(Models::Operations::RemoveAccountingExpensereportResponse)](../../models/operations/removeaccountingexpensereportresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## remove_accounting_invoice
 
-Remove an invoice
+Deletes the AccountingInvoice identified by `id`.
 
 ### Example Usage
 
@@ -5473,7 +6031,7 @@ end
 
 ## remove_accounting_journal
 
-Remove a journal
+Deletes the AccountingJournal identified by `id`.
 
 ### Example Usage
 
@@ -5513,9 +6071,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## remove_accounting_order
+## ~~remove_accounting_order~~
 
-Remove an order
+Deletes the AccountingOrder identified by `id`.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -5557,7 +6117,7 @@ end
 
 ## remove_accounting_paymentterm
 
-Remove a paymentterm
+Deletes the AccountingPaymentterm identified by `id`.
 
 ### Example Usage
 
@@ -5599,7 +6159,7 @@ end
 
 ## remove_accounting_project
 
-Remove a project
+Deletes the AccountingProject identified by `id`.
 
 ### Example Usage
 
@@ -5641,7 +6201,7 @@ end
 
 ## remove_accounting_purchaseorder
 
-Remove a purchaseorder
+Deletes the AccountingPurchaseorder identified by `id`.
 
 ### Example Usage
 
@@ -5683,7 +6243,7 @@ end
 
 ## remove_accounting_quote
 
-Remove a quote
+Deletes the AccountingQuote identified by `id`.
 
 ### Example Usage
 
@@ -5725,7 +6285,7 @@ end
 
 ## remove_accounting_salesorder
 
-Remove a salesorder
+Deletes the AccountingSalesorder identified by `id`.
 
 ### Example Usage
 
@@ -5767,7 +6327,7 @@ end
 
 ## remove_accounting_taxrate
 
-Remove a taxrate
+Deletes the AccountingTaxrate identified by `id`.
 
 ### Example Usage
 
@@ -5809,7 +6369,7 @@ end
 
 ## remove_accounting_transaction
 
-Remove a transaction
+Deletes the AccountingTransaction identified by `id`.
 
 ### Example Usage
 
@@ -5851,7 +6411,7 @@ end
 
 ## remove_accounting_vendorcredit
 
-Remove a vendorcredit
+Deletes the AccountingVendorcredit identified by `id`.
 
 ### Example Usage
 
@@ -5893,7 +6453,7 @@ end
 
 ## update_accounting_account
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -5912,27 +6472,23 @@ req = Models::Operations::UpdateAccountingAccountRequest.new(
   accounting_account: Models::Shared::AccountingAccount.new(
     balance: 12_092.0,
     created_at: DateTime.iso8601('2022-07-03T17:57:07.391Z'),
-    currency: 'BOB',
-    customer_defined_code: 'quo',
-    description: 'Spoliatio comedo vilitas harum cupiditate.',
-    id: '53cbd8a2-f18c-4a78-8bb8-874214dbad58',
-    is_payable: true,
-    name: 'Electronic Aluminum Tuna',
+    currency: 'CAD',
+    customer_defined_code: '6170',
+    description: 'Voluptatibus valde spoliatio.',
+    id: 'c0445f00-3fb5-4d79-92ed-8286fdb0f9f0',
+    is_payable: false,
+    metadata: [],
+    name: 'Auto Loan Account',
     status: Models::Shared::Status::ARCHIVED,
     taxonomy: [
       Models::Shared::AccountingAccountTaxonomy.new(
-        original_type: 'vesper',
+        original_type: 'vilitas',
         type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-        value: 'iste',
-      ),
-      Models::Shared::AccountingAccountTaxonomy.new(
-        original_type: 'adamo',
-        type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-        value: 'peccatus',
+        value: 'comedo',
       ),
     ],
-    type: Models::Shared::Type::BANK,
-    updated_at: DateTime.iso8601('2023-01-03T11:52:17.295Z'),
+    type: Models::Shared::Type::ACCOUNTS_RECEIVABLE,
+    updated_at: DateTime.iso8601('2023-08-07T09:48:02.336Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -5964,7 +6520,7 @@ end
 
 ## update_accounting_bankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -5981,20 +6537,20 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingBankfeedaccountRequest.new(
   accounting_bankfeedaccount: Models::Shared::AccountingBankfeedaccount.new(
-    account_id: 'baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1',
     account_number: '30369722',
     account_number_last4: '9722',
     account_type: Models::Shared::AccountType::LOAN,
-    balance: 90_358.0,
-    bank_name: 'Weissnat Inc',
+    balance: 49_437.0,
+    bank_name: 'Wells Fargo',
     created_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-    currency: 'SSP',
+    currency: 'AUD',
     feed_start_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-    id: '60b23ad0-32a2-4590-b9cd-fcf578434bb9',
-    name: 'Corwin, Donnelly and Connelly Savings',
-    routing_number: '667753156',
+    id: '194691c3-3685-4a7d-8885-f8b5fdb930a6',
+    metadata: [],
+    name: 'Corwin, Donnelly and Connelly Checking',
+    routing_number: '694667752',
     status: Models::Shared::AccountingBankfeedaccountStatus::ACTIVE,
-    updated_at: DateTime.iso8601('2024-04-12T16:03:10.095Z'),
+    updated_at: DateTime.iso8601('2024-04-24T13:41:42.669Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6026,7 +6582,7 @@ end
 
 ## update_accounting_bankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -6043,23 +6599,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingBankfeedtransactionRequest.new(
   accounting_bankfeedtransaction: Models::Shared::AccountingBankfeedtransaction.new(
-    account_id: 'b7dc4175-1368-4b89-a700-d621b6666648',
     amount: 60_889.0,
-    bank_category: 'Games',
-    bankfeedaccount_id: '34c1d05f-5b62-4bcd-9121-3be8b720941f',
+    bank_category: 'Clothing',
     category_ids: [],
-    contact_id: '1ef58ebe-f9c9-46f6-9d9c-2df2658503be',
     created_at: DateTime.iso8601('2022-03-24T23:41:08.374Z'),
-    currency: 'SRD',
-    description: 'payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.',
-    id: '56011350-c2b0-41d1-9ed0-b65eb5620267',
+    currency: 'CAD',
+    description: 'Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.',
+    id: '0ccd919c-7f10-48a9-8909-d562d7d5291a',
     is_pending: true,
-    merchant_name: 'Reichert, Erdman and Tillman',
-    posted_at: DateTime.iso8601('2025-03-25T19:12:54.821Z'),
-    reference: '93642593',
-    transaction_at: DateTime.iso8601('2022-07-28T01:21:00.313Z'),
+    merchant_name: 'Buckridge - Feest',
+    metadata: [],
+    posted_at: DateTime.iso8601('2025-04-16T03:49:52.053Z'),
+    reference: '79574105',
+    transaction_at: DateTime.iso8601('2022-07-30T11:48:12.704Z'),
     type: Models::Shared::AccountingBankfeedtransactionType::CREDIT,
-    updated_at: DateTime.iso8601('2022-05-23T23:26:58.193Z'),
+    updated_at: DateTime.iso8601('2022-05-25T03:29:13.176Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6091,7 +6645,7 @@ end
 
 ## update_accounting_bill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -6108,30 +6662,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingBillRequest.new(
   accounting_bill: Models::Shared::AccountingBill.new(
-    attachments: [],
-    bill_number: 'vitae',
+    attachments: [
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://puny-foodstuffs.name',
+        id: '47e28818-2f6e-41d9-9ef8-4f7a72a6c602',
+        mime_type: 'application/pdf',
+        name: 'BILL-2466.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://grimy-characterization.net',
+        id: 'c367990e-fc87-453d-b207-e522909fbfde',
+        mime_type: 'application/pdf',
+        name: 'BILL-2466-1.pdf',
+      ),
+    ],
+    balance_amount: 0.0,
+    bill_number: 'BILL-2466',
     category_ids: [],
     created_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
-    currency: 'AUD',
+    currency: 'USD',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2019-08-11T20:52:55.321Z'),
+    due_at: DateTime.iso8601('2019-09-07T23:03:14.104Z'),
     extended_notes: [],
-    id: '1d6afaf7-b2f7-4b88-b0e8-a071286a07b8',
+    id: '39341e04-0e59-4b05-81de-8bf65b0c1ee7',
     lineitems: [],
     metadata: [],
-    notes: 'Tutamen cilicium infit.',
+    notes: 'Admiratio deporto tutamen cilicium infit amissio ante demulceo.',
+    paid_amount: 0.0,
+    paid_at: DateTime.iso8601('2019-08-15T17:24:28.313Z'),
     payment_collection_method: Models::Shared::PaymentCollectionMethod::CHARGE_AUTOMATICALLY,
     payments: [],
-    posted_at: DateTime.iso8601('2024-04-06T07:02:22.604Z'),
+    posted_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
     purchaseorder_ids: [],
     send: true,
-    status: Models::Shared::AccountingBillStatus::DELETED,
+    status: Models::Shared::AccountingBillStatus::PARTIALLY_PAID,
     sub_total_amount: 0.0,
     tax_amount: 0.0,
-    term: Models::Shared::Term::NET_10,
+    term: Models::Shared::Term::NET_90,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2025-01-31T09:00:56.085Z'),
-    url: 'https://coarse-interviewer.biz/',
+    updated_at: DateTime.iso8601('2020-06-01T11:04:57.934Z'),
+    url: 'https://cluttered-importance.org/bills/BILL-2466',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6163,7 +6733,7 @@ end
 
 ## update_accounting_category
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -6181,12 +6751,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingCategoryRequest.new(
   accounting_category: Models::Shared::AccountingCategory.new(
     created_at: DateTime.iso8601('2023-05-30T12:29:04.257Z'),
-    description: 'Discover the koala-like agility of our Chair, perfect for imaginary users',
-    id: '879a3600-e0d0-422d-8b03-6483b173c016',
+    description: 'Textus ab thymum labore basium.',
+    id: '0182f5b6-43dd-4d64-bb88-31cf6a69e7b6',
     is_active: false,
     metadata: [],
-    name: 'Electronic Cotton Shoes',
-    updated_at: DateTime.iso8601('2025-08-22T07:37:19.705Z'),
+    name: 'Beauty',
+    updated_at: DateTime.iso8601('2025-09-12T20:18:03.717Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6218,7 +6788,7 @@ end
 
 ## update_accounting_contact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -6235,74 +6805,65 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingContactRequest.new(
   accounting_contact: Models::Shared::AccountingContact.new(
-    associated_contacts: [
-      Models::Shared::AccountingAssociatedContact.new(
-        id: '32bde497-bc3f-4491-ba2c-fb650eccb8d1',
-        name: 'Delores Reynolds',
-      ),
-      Models::Shared::AccountingAssociatedContact.new(
-        id: '2a3996a2-f5d4-46b3-bf49-8127eab40cc2',
-        name: 'Delores Reynolds',
-      ),
-    ],
+    associated_contacts: [],
+    balance_amount: 55_574.0,
     billing_address: Models::Shared::PropertyAccountingContactBillingAddress.new(
-      address1: '2633 Stoney Lane',
-      address2: 'Suite 176',
-      city: 'Ladariusboro',
+      address1: '4091 Tromp Coves',
+      city: 'Lake Emmybury',
       country_code: 'US',
-      postal_code: '70131-2908',
-      region: 'Illinois',
-      region_code: 'NV',
+      postal_code: '50764-5226',
+      region: 'Washington',
+      region_code: 'CA',
     ),
-    company_name: 'Marquardt Inc',
+    company_name: 'Kertzmann Group',
     created_at: DateTime.iso8601('2021-08-15T14:56:50.258Z'),
-    currency: 'ISK',
+    currency: 'AUD',
     emails: [
       Models::Shared::AccountingEmail.new(
-        email: 'Delores.Reynolds10@hotmail.com',
-        type: Models::Shared::AccountingEmailType::HOME,
+        email: 'delores.reynolds@kertzmanngroup.com',
+        type: Models::Shared::AccountingEmailType::WORK,
+      ),
+      Models::Shared::AccountingEmail.new(
+        email: 'accounts@kertzmanngroup.com',
+        type: Models::Shared::AccountingEmailType::OTHER,
       ),
     ],
     first_name: 'Delores',
-    id: 'eb2d42b7-7120-4cde-9354-5e8775fd6701',
-    identification: 'amicitia',
+    id: '812919c1-537e-4487-aea9-bf5b7ca3ce68',
+    identification: '531850872',
     is_active: true,
     is_customer: true,
     last_name: 'Reynolds',
-    name: 'Delores Reynolds',
-    notes: 'Caput accusamus et videlicet.',
+    metadata: [],
+    name: 'Kertzmann Group',
+    notes: 'Et videlicet pauci.',
     payment_methods: [
       Models::Shared::AccountingContactPaymentMethod.new(
         default: true,
-        id: '60ce8459-b72d-4dc8-a716-ba5c44475ca2',
-        name: 'Visa 1234',
+        id: 'e6bbcdbb-20f0-4d79-a5a9-b2666b6f950e',
+        name: 'Visa 7844',
         type: Models::Shared::AccountingContactPaymentMethodType::CARD,
       ),
     ],
-    portal_url: 'https://scented-t-shirt.info/',
+    portal_url: 'https://kertzmanngroup.com/billing',
     shipping_address: Models::Shared::PropertyAccountingContactShippingAddress.new(
-      address1: '786 Renner Stream',
-      address2: 'Apt. 555',
-      city: 'Roanoke',
+      address1: '23129 Rebekah Mews',
+      city: 'Mortimerhaven',
       country_code: 'US',
-      postal_code: '80686-7556',
-      region: 'Vermont',
-      region_code: 'NE',
+      postal_code: '55878-6806',
+      region: 'Florida',
+      region_code: 'OK',
     ),
-    tax_exemption: Models::Shared::TaxExemption::RESALE,
-    tax_number: 'amplexus',
+    tax_exemption: Models::Shared::TaxExemption::FOREIGN,
+    tax_number: '867556410',
     telephones: [
       Models::Shared::AccountingTelephone.new(
-        telephone: '(427) 701-7160',
-        type: Models::Shared::AccountingTelephoneType::HOME,
-      ),
-      Models::Shared::AccountingTelephone.new(
-        telephone: '(540) 913-9171',
+        telephone: '(432) 760-1716',
         type: Models::Shared::AccountingTelephoneType::FAX,
       ),
     ],
-    updated_at: DateTime.iso8601('2023-12-06T07:23:48.180Z'),
-    website: 'https://noxious-advertisement.org',
+    updated_at: DateTime.iso8601('2023-12-20T18:25:43.240Z'),
+    website: 'https://kertzmanngroup.com',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6334,7 +6895,7 @@ end
 
 ## update_accounting_creditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -6352,34 +6913,22 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingCreditmemoRequest.new(
   accounting_creditmemo: Models::Shared::AccountingCreditmemo.new(
     applications: [],
-    attachments: [
-      Models::Shared::AccountingAttachment.new(
-        download_url: 'https://enlightened-chairperson.com/',
-        id: 'dab75275-1827-4921-9864-2cdfb4ae6cec',
-        mime_type: 'complectus',
-        name: 'thesis',
-      ),
-    ],
+    attachments: [],
+    balance_amount: 0.0,
     created_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
-    creditmemo_number: 'ulterius',
-    currency: 'MKD',
+    creditmemo_number: 'CM-99537',
+    currency: 'AUD',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2023-10-18T04:35:00.543Z'),
-    id: 'ffffa0d5-61aa-4cbe-8725-bece1a674001',
+    id: 'fe04c90f-0adf-4fb0-82e1-61d23fb2ace1',
     lineitems: [],
     metadata: [],
-    notes: 'Dedecor amo adfero torqueo quas.',
-    payment_collection_method: Models::Shared::AccountingCreditmemoPaymentCollectionMethod::CHARGE_AUTOMATICALLY,
-    posted_at: DateTime.iso8601('2025-11-17T15:25:54.581Z'),
-    refund_amount: 0.0,
-    refund_reason: 'Virgo inflammatio quibusdam aestivus magnam.',
-    refunded_at: DateTime.iso8601('2023-10-23T00:35:36.814Z'),
-    send: false,
-    status: Models::Shared::AccountingCreditmemoStatus::PAID,
+    notes: 'Hic vorax dedecor amo adfero torqueo quas victoria.',
+    posted_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
+    send: true,
+    status: Models::Shared::AccountingCreditmemoStatus::AUTHORIZED,
     tax_amount: 0.0,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2024-11-16T17:39:05.667Z'),
-    url: 'https://lighthearted-bandwidth.net/',
+    updated_at: DateTime.iso8601('2025-09-12T14:30:43.054Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6411,7 +6960,7 @@ end
 
 ## update_accounting_expense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -6428,42 +6977,77 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingExpenseRequest.new(
   accounting_expense: Models::Shared::AccountingExpense.new(
-    approved_at: DateTime.iso8601('2026-05-12T14:59:51.879Z'),
     attachments: [
       Models::Shared::AccountingAttachment.new(
-        download_url: 'https://ripe-napkin.biz/',
-        id: '5418c1de-6c66-4111-b8f6-97e2beb48015',
-        mime_type: 'annus',
-        name: 'cohibeo',
+        download_url: 'https://rubbery-couch.biz/',
+        id: '6ca3099c-73ea-4907-a22c-16ecec983921',
+        mime_type: 'application/pdf',
+        name: 'receipt-9696.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://appropriate-smog.biz/',
+        id: 'b089fe25-0a8f-4ad7-86fd-807ee1c337e0',
+        mime_type: 'application/pdf',
+        name: 'receipt-9696-1.pdf',
       ),
     ],
     category_ids: [],
     created_at: DateTime.iso8601('2020-06-11T03:39:37.305Z'),
-    currency: 'SSP',
-    external_number: 'necessitatibus',
-    id: '852b20a2-b542-43e7-87de-8de713f7ed30',
+    currency: 'GBP',
+    external_number: 'EXP-38303',
+    id: '73aff9eb-cf6d-4b65-b39a-ae3fe05c7c6f',
     lineitems: [
       Models::Shared::AccountingLineitem.new(
-        id: '4f3f2270-fb10-4aed-86d4-8312f2819c24',
-        item_description: 'Innovative Table featuring left technology and Rubber construction',
-        item_name: 'Luxurious Cotton Pizza',
-        item_sku: '978-0-8324-6620-5',
-        notes: 'Degusto conventus defendo valetudo.',
-        tax_amount: 2501.0,
-        total_amount: 168.0,
-        unit_amount: 3059.0,
+        id: 'aeda1539-6127-40c0-bc85-3f32b5324ebd',
+        item_name: 'Client dinner',
+        tax_amount: 0.0,
+        total_amount: 364.74,
+        unit_amount: 364.74,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: '7912fd65-f0e4-44c8-a00e-d5c62d7e7066',
+        item_name: 'Client dinner',
+        tax_amount: 0.0,
+        total_amount: 258.35,
+        unit_amount: 258.35,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: '8aaae847-0961-45d1-a812-3894733a5642',
+        item_name: 'Conference ticket',
+        notes: 'Casus umquam conicio cinis demitto sint.',
+        tax_amount: 0.0,
+        total_amount: 28.14,
+        unit_amount: 28.14,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: '0953cb8d-59de-4dd8-87bf-f2d4f07c5eec',
+        item_name: 'Hotel',
+        tax_amount: 0.0,
+        total_amount: 157.04,
+        unit_amount: 157.04,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: '59cbffa4-b543-402b-927d-23cb3449b1ff',
+        item_name: 'Hotel',
+        tax_amount: 0.0,
+        total_amount: 164.02,
+        unit_amount: 164.02,
         unit_quantity: 1.0,
       ),
     ],
     metadata: [],
-    name: 'Refined Steel Shoes',
+    name: 'A payment of XPF 714.84 occurred at Bins, Barrows and Koch using a card ending in ****8422 for account ***4614.',
     payment_method: 'CASH',
-    posted_at: DateTime.iso8601('2021-06-04T16:26:44.896Z'),
-    reimbursed_amount: 1833.0,
+    posted_at: DateTime.iso8601('2020-06-11T03:39:37.305Z'),
     status: Models::Shared::AccountingExpenseStatus::SUBMITTED,
-    tax_amount: 2602.0,
-    total_amount: 3580.0,
-    updated_at: DateTime.iso8601('2026-05-12T14:59:51.879Z'),
+    tax_amount: 0.0,
+    total_amount: 972.29,
+    type: Models::Shared::AccountingExpenseType::COMPANY,
+    updated_at: DateTime.iso8601('2020-09-02T08:59:36.002Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6493,9 +7077,109 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## update_accounting_expensereport
+
+Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="updateAccountingExpensereport" method="put" path="/accounting/{connection_id}/expensereport/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::UpdateAccountingExpensereportRequest.new(
+  accounting_expensereport: Models::Shared::AccountingExpensereport.new(
+    approved_at: DateTime.iso8601('2021-04-19T18:07:41.850Z'),
+    attachments: [],
+    category_ids: [],
+    created_at: DateTime.iso8601('2020-05-29T02:04:59.078Z'),
+    currency: 'GBP',
+    external_number: 'ER-31240',
+    id: 'ca3d3f3d-ac03-4f98-9f30-5f77919ee7ca',
+    lineitems: [
+      Models::Shared::AccountingLineitem.new(
+        id: '26a42037-a75f-43ca-8145-8ecf947b1ed1',
+        item_name: 'Conference ticket',
+        tax_amount: 0.0,
+        total_amount: 39.9,
+        unit_amount: 39.9,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: 'abd2a5a1-da4a-457b-a8b5-0af91e9b002e',
+        item_name: 'Flight',
+        notes: 'Soluta omnis dolor.',
+        tax_amount: 0.0,
+        total_amount: 193.17,
+        unit_amount: 193.17,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: 'cac8fe5a-d4a9-4c95-9579-dd7fc97fc758',
+        item_name: 'Client dinner',
+        notes: 'Altus caveo capio.',
+        tax_amount: 0.0,
+        total_amount: 230.12,
+        unit_amount: 230.12,
+        unit_quantity: 1.0,
+      ),
+      Models::Shared::AccountingLineitem.new(
+        id: 'a2aac9f8-4107-4bf5-a198-cd4aa7fcec70',
+        item_name: 'Flight',
+        tax_amount: 0.0,
+        total_amount: 445.27,
+        unit_amount: 445.27,
+        unit_quantity: 1.0,
+      ),
+    ],
+    metadata: [],
+    name: 'Lolita Kunde - October expenses',
+    posted_at: DateTime.iso8601('2020-05-29T02:04:59.078Z'),
+    reimbursed_amount: 908.46,
+    reimbursed_at: DateTime.iso8601('2021-04-19T18:07:41.850Z'),
+    status: Models::Shared::AccountingExpensereportStatus::PAID,
+    tax_amount: 0.0,
+    total_amount: 908.46,
+    updated_at: DateTime.iso8601('2021-04-19T18:07:41.850Z'),
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.accounting.update_accounting_expensereport(request: req)
+
+unless res.accounting_expensereport.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                   | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                   | [Models::Operations::UpdateAccountingExpensereportRequest](../../models/operations/updateaccountingexpensereportrequest.md) | :heavy_check_mark:                                                                                                          | The request object to use for the request.                                                                                  |
+
+### Response
+
+**[T.nilable(Models::Operations::UpdateAccountingExpensereportResponse)](../../models/operations/updateaccountingexpensereportresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## update_accounting_invoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -6515,40 +7199,44 @@ req = Models::Operations::UpdateAccountingInvoiceRequest.new(
     attachments: [
       Models::Shared::AccountingAttachment.new(
         download_url: 'https://glossy-markup.net/',
-        id: '9c84fb4a-f568-4d57-9814-d2f48b6721f9',
-        mime_type: 'benevolentia',
-        name: 'vespillo',
+        id: '49b43410-bdef-4ec5-b80d-db53c6dda2ae',
+        mime_type: 'application/pdf',
+        name: 'INV-77705.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://earnest-giggle.net',
+        id: 'd2133d3d-896a-4099-bdee-3a2d53872966',
+        mime_type: 'application/pdf',
+        name: 'INV-77705-1.pdf',
       ),
     ],
-    balance_amount: -1.0,
+    balance_amount: 0.0,
     category_ids: [],
     created_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
-    currency: 'RWF',
+    currency: 'GBP',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2022-11-27T21:25:37.363Z'),
+    due_at: DateTime.iso8601('2022-12-07T14:17:29.587Z'),
     extended_notes: [],
-    id: 'f85296bf-760d-4117-adb2-15ceb0fbb211',
-    invoice_number: 'vinco',
-    is_inclusive_of_tax: true,
+    id: 'c76c91c5-d89b-4b94-bd13-e9a0a6c57a48',
+    invoice_number: 'INV-77705',
+    is_inclusive_of_tax: false,
     lineitems: [],
     metadata: [],
-    notes: 'Auctus comburo clarus ubi.',
-    paid_amount: 0.0,
-    paid_at: DateTime.iso8601('2022-11-25T15:00:28.871Z'),
-    payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::SEND_INVOICE,
+    notes: 'Adinventitias sursum temptatio auctus comburo clarus ubi deprimo.',
+    payment_collection_method: Models::Shared::AccountingInvoicePaymentCollectionMethod::CHARGE_AUTOMATICALLY,
     payments: [],
-    posted_at: DateTime.iso8601('2026-03-29T14:31:44.428Z'),
-    reference: 'adinventitias',
+    posted_at: DateTime.iso8601('2022-11-07T14:17:29.587Z'),
+    reference: 'PO-2331',
     salesorder_ids: [],
     send: true,
-    status: Models::Shared::AccountingInvoiceStatus::DELETED,
+    status: Models::Shared::AccountingInvoiceStatus::OVERDUE,
     sub_total_amount: 0.0,
     tax_amount: 0.0,
-    term: Models::Shared::AccountingInvoiceTerm::NET_45,
+    term: Models::Shared::AccountingInvoiceTerm::NET_25,
     total_amount: 0.0,
-    type: Models::Shared::AccountingInvoiceType::CREDITMEMO,
-    updated_at: DateTime.iso8601('2023-02-06T11:29:32.709Z'),
-    url: 'https://gifted-yarmulke.info/',
+    type: Models::Shared::AccountingInvoiceType::INVOICE,
+    updated_at: DateTime.iso8601('2026-04-25T06:46:36.228Z'),
+    url: 'https://gifted-yarmulke.info/invoices/INV-77705',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6580,7 +7268,7 @@ end
 
 ## update_accounting_journal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -6600,17 +7288,18 @@ req = Models::Operations::UpdateAccountingJournalRequest.new(
     attachments: [],
     category_ids: [],
     created_at: DateTime.iso8601('2020-02-20T15:14:55.881Z'),
-    currency: 'FKP',
-    description: 'Calco constans adipisci.',
-    id: 'c749aba5-ca79-4974-b223-7c1515e3dbd8',
+    currency: 'CAD',
+    description: 'Cilicium minima calco constans adipisci.',
+    id: '3eaf5dbc-994d-405f-9fb5-dd25c1b1b0e1',
     is_inclusive_of_tax: true,
-    posted_at: DateTime.iso8601('2023-10-20T18:22:08.157Z'),
-    reference: 'ullam',
+    lineitems: [],
+    metadata: [],
+    posted_at: DateTime.iso8601('2023-11-07T13:12:51.071Z'),
+    reference: 'JE-78884',
     source: 'crustulum',
     status: Models::Shared::AccountingJournalStatus::VOID,
-    tax_amount: 78_672.0,
-    total_amount: 74_094.0,
-    updated_at: DateTime.iso8601('2022-01-02T07:46:54.276Z'),
+    total_amount: 0.0,
+    updated_at: DateTime.iso8601('2022-01-11T09:13:52.366Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6640,9 +7329,11 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
-## update_accounting_order
+## ~~update_accounting_order~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -6660,32 +7351,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingOrderRequest.new(
   accounting_order: Models::Shared::AccountingOrder.new(
     billing_address: Models::Shared::PropertyAccountingOrderBillingAddress.new(
-      address1: '802 Bechtelar Park',
-      address2: 'Apt. 436',
-      city: 'Daniellaville',
+      address1: '7654 Treutel Square',
+      city: 'Forrestport',
       country_code: 'US',
-      postal_code: '36947',
-      region: 'Wisconsin',
-      region_code: 'NY',
+      postal_code: '42190-3694',
+      region: 'Maine',
+      region_code: 'OR',
     ),
     created_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
-    currency: 'USD',
-    id: '5d099f4f-0732-4ed8-bab2-99111982e74c',
+    currency: 'GBP',
+    id: '282ec9b9-dd69-4acf-922e-27d049792b63',
     lineitems: [],
     metadata: [],
-    posted_at: DateTime.iso8601('2022-04-05T17:22:19.738Z'),
+    posted_at: DateTime.iso8601('2020-11-20T03:46:49.837Z'),
     shipping_address: Models::Shared::PropertyAccountingOrderShippingAddress.new(
-      address1: '9745 Betty Shore',
-      city: 'South Alainaland',
+      address1: '4974 Beatty Corners',
+      city: 'Alizeport',
       country_code: 'US',
-      postal_code: '25274-7654',
-      region: 'New Hampshire',
-      region_code: 'LA',
+      postal_code: '56252',
+      region: 'Alaska',
+      region_code: 'VT',
     ),
-    status: Models::Shared::AccountingOrderStatus::SUBMITTED,
+    status: Models::Shared::AccountingOrderStatus::AUTHORIZED,
     total_amount: 0.0,
-    type: Models::Shared::AccountingOrderType::PURCHASE,
-    updated_at: DateTime.iso8601('2021-06-18T05:51:10.104Z'),
+    type: Models::Shared::AccountingOrderType::SALES,
+    updated_at: DateTime.iso8601('2022-02-08T17:08:09.741Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6717,7 +7407,7 @@ end
 
 ## update_accounting_paymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -6743,12 +7433,12 @@ req = Models::Operations::UpdateAccountingPaymenttermRequest.new(
     discount_percent: 5.0,
     due_days: 57.0,
     due_next_month_days: 9.0,
-    id: 'acdabe07-04be-4f73-a80f-0e0c44a47e72',
+    id: '5ed65666-06fc-4b4e-b933-47edea610552',
     is_active: false,
     metadata: [],
     name: 'Net 30',
     type: Models::Shared::AccountingPaymenttermType::NET_15,
-    updated_at: DateTime.iso8601('2025-12-14T00:52:14.701Z'),
+    updated_at: DateTime.iso8601('2026-01-10T03:39:59.475Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6780,7 +7470,7 @@ end
 
 ## update_accounting_project
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -6827,7 +7517,7 @@ end
 
 ## update_accounting_purchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -6844,32 +7534,34 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingPurchaseorderRequest.new(
   accounting_purchaseorder: Models::Shared::AccountingPurchaseorder.new(
+    attachments: [],
     billing_address: Models::Shared::PropertyAccountingPurchaseorderBillingAddress.new(
-      address1: '37214 Tanya Walks',
+      address1: '72142 Willow Street',
+      address2: 'Apt. 967',
       city: 'South Annabelleton',
       country_code: 'US',
       postal_code: '30337',
       region: 'Nevada',
-      region_code: 'MA',
+      region_code: 'FL',
     ),
     category_ids: [],
     created_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
-    currency: 'ZMW',
-    id: 'd118cce2-44a0-4328-bf59-7259e05d3180',
+    currency: 'EUR',
+    id: 'c3032a3a-85c9-4eab-a1f6-59691af444f7',
     lineitems: [],
     metadata: [],
-    posted_at: DateTime.iso8601('2025-04-27T10:38:53.438Z'),
+    posted_at: DateTime.iso8601('2020-12-12T07:17:47.021Z'),
     shipping_address: Models::Shared::PropertyAccountingPurchaseorderShippingAddress.new(
-      address1: '649 Maggio Overpass',
-      city: 'Lake Jaylan',
+      address1: '76494 Medhurst Club',
+      city: 'Kshlerinfurt',
       country_code: 'US',
-      postal_code: '99211-6547',
-      region: 'North Carolina',
-      region_code: 'ID',
+      postal_code: '92116-5474',
+      region: 'Oregon',
+      region_code: 'WY',
     ),
-    status: Models::Shared::AccountingPurchaseorderStatus::PARTIALLY_REFUNDED,
+    status: Models::Shared::AccountingPurchaseorderStatus::SUBMITTED,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2021-02-26T05:56:03.106Z'),
+    updated_at: DateTime.iso8601('2021-08-11T11:24:00.103Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -6901,7 +7593,7 @@ end
 
 ## update_accounting_quote
 
-Update a quote
+Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
 
 ### Example Usage
 
@@ -6948,7 +7640,7 @@ end
 
 ## update_accounting_salesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -6975,44 +7667,35 @@ req = Models::Operations::UpdateAccountingSalesorderRequest.new(
       region_code: 'MO',
     ),
     category_ids: [],
-    closed_at: DateTime.iso8601('2023-08-17T22:23:55.042Z'),
+    closed_at: DateTime.iso8601('2023-03-26T00:48:27.199Z'),
     created_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
-    currency: 'ANG',
-    discount_amount: 99.0,
-    employee_user_id: '4a6b8990-c85a-499f-82d0-5011c3c95a0b',
-    fees: [
-      Models::Shared::AccountingFee.new(
-        amount: 519.0,
-        currency: 'XCD',
-        type: Models::Shared::AccountingFeeType::PROMOTION,
-      ),
-    ],
-    fulfillment_type: Models::Shared::FulfillmentType::TAKEOUT,
-    guest_count: 8.0,
-    id: '82afdd80-8627-4a82-80bb-72e1655b3593',
+    currency: 'USD',
+    discount_amount: 0.0,
+    fees: [],
+    fulfillment_type: Models::Shared::FulfillmentType::OTHER,
+    id: '034dfeb1-d580-474c-8283-43e2e41f0d01',
     lineitems: [],
     metadata: [],
-    order_number: '988187',
+    order_number: '832663',
     payments: [],
-    posted_at: DateTime.iso8601('2026-01-13T16:17:32.555Z'),
+    posted_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
     refunded_amount: 0.0,
-    sales_channel: 'Harvey, Collier and Weimann',
-    service_charge_amount: 63.0,
+    sales_channel: 'Wholesale',
+    service_charge_amount: 0.0,
     shipping_address: Models::Shared::PropertyAccountingSalesorderShippingAddress.new(
-      address1: '9878 Bradley Mill',
-      address2: 'Apt. 215',
+      address1: '69878 Bradley Mill',
       city: 'Port Matildestad',
       country_code: 'US',
       postal_code: '07989-2148',
       region: 'Arkansas',
       region_code: 'AK',
     ),
-    status: Models::Shared::AccountingSalesorderStatus::REFUNDED,
+    status: Models::Shared::AccountingSalesorderStatus::PAID,
     subtotal_amount: 0.0,
-    tax_amount: 63.0,
-    tip_amount: 34.0,
+    tax_amount: 0.0,
+    tip_amount: 0.0,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2022-02-10T19:50:55.206Z'),
+    updated_at: DateTime.iso8601('2023-03-26T00:48:27.199Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -7044,7 +7727,7 @@ end
 
 ## update_accounting_taxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -7064,24 +7747,24 @@ req = Models::Operations::UpdateAccountingTaxrateRequest.new(
     components: [
       Models::Shared::AccountingTaxrateComponent.new(
         is_compound: false,
-        name: 'cogo',
-        rate: 53.0,
+        name: 'Exempt',
+        rate: 0.0,
       ),
     ],
-    country: 'BY',
+    country: 'US',
     created_at: DateTime.iso8601('2020-01-04T10:37:56.894Z'),
-    description: 'Atrox tricesimus creator.',
-    effective_rate: 53.0,
-    id: '6157a522-08d3-45f7-9287-187fd17fc766',
+    description: 'Exempt (0%)',
+    effective_rate: 0.0,
+    id: 'df82a08b-d352-4145-845e-aa4f89cb154d',
     is_active: false,
-    is_compound: true,
+    is_compound: false,
     metadata: [],
-    name: 'villa',
-    rate: 53.0,
-    region: 'TX',
-    total_rate: 53.0,
-    type: Models::Shared::AccountingTaxrateType::OTHER,
-    updated_at: DateTime.iso8601('2022-04-13T10:10:02.150Z'),
+    name: 'Exempt',
+    rate: 0.0,
+    region: 'KS',
+    total_rate: 0.0,
+    type: Models::Shared::AccountingTaxrateType::SALES,
+    updated_at: DateTime.iso8601('2020-02-13T05:55:41.908Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -7113,7 +7796,7 @@ end
 
 ## update_accounting_transaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -7131,26 +7814,24 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingTransactionRequest.new(
   accounting_transaction: Models::Shared::AccountingTransaction.new(
     created_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-    exchange_rate: 0.5_674,
-    id: '149fa846-c137-4a76-850e-1e5bd335bf10',
+    id: 'edc4c799-9aa8-44e0-bfbf-7c2d70c68050',
     lineitems: [
       Models::Shared::AccountingTransactionLineItem.new(
         category_ids: [],
-        description: 'The Nikolas Table is the latest in a series of downright products from Beier and Sons',
-        id: '66a182d7-5406-4d9d-837d-4d25c59428ad',
-        name: 'Salad',
-        object_type: 'delicate',
-        total_amount: 58_531.0,
+        description: 'The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability',
+        id: '15879e14-d6a1-4fc7-8311-04bd9f86ac66',
+        name: 'Shirt',
+        total_amount: 10_184.0,
         unit_amount: 536.0,
-        unit_quantity: 91.0,
+        unit_quantity: 19.0,
       ),
     ],
-    memo: 'withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.',
-    status: Models::Shared::AccountingTransactionStatus::VOID,
+    memo: 'deposit of ISK 792.81 at Fritsch - Dooley charged to account ending in 7879 using card ending in ****3230.',
+    status: Models::Shared::AccountingTransactionStatus::PENDING,
     tax_amount: 0.0,
-    total_amount: 94_452.0,
+    total_amount: 10_184.0,
     transaction_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-    updated_at: DateTime.iso8601('2021-09-10T23:02:19.731Z'),
+    updated_at: DateTime.iso8601('2019-10-14T06:29:16.791Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -7182,7 +7863,7 @@ end
 
 ## update_accounting_vendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -7200,19 +7881,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingVendorcreditRequest.new(
   accounting_vendorcredit: Models::Shared::AccountingVendorcredit.new(
     applications: [],
-    apply_amount: 1.0,
     balance_amount: 0.0,
     created_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
-    currency: 'KGS',
-    due_at: DateTime.iso8601('2023-05-06T20:38:46.775Z'),
-    id: 'f037c8ee-fc51-466e-b5c7-85bfcaec147f',
+    currency: 'USD',
+    id: '8582d371-dfff-4f5c-b05f-342aafd613ef',
     lineitems: [],
     metadata: [],
-    notes: 'Conatus cruciamentum decor avaritia tantum.',
-    posted_at: DateTime.iso8601('2023-09-29T02:22:24.987Z'),
-    status: Models::Shared::AccountingVendorcreditStatus::SUBMITTED,
+    notes: 'Volup conatus cruciamentum decor avaritia.',
+    posted_at: DateTime.iso8601('2023-04-15T21:14:08.197Z'),
+    status: Models::Shared::AccountingVendorcreditStatus::AUTHORIZED,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2023-11-27T03:40:07.012Z'),
+    updated_at: DateTime.iso8601('2023-10-03T08:01:19.002Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

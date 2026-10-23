@@ -1,5 +1,7 @@
 # PropertyDatastoreQueryQuery
 
+What to run: a raw `sql` statement, or a structured query (select, filter, sort, limit/offset, aggregate)
+
 
 ## Fields
 
@@ -14,4 +16,4 @@
 | `select`                                                                                                                       | T::Array<*::String*>                                                                                                           | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
 | `sort_fields`                                                                                                                  | T::Array<*::String*>                                                                                                           | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
 | `sort_order`                                                                                                                   | [T.nilable(Models::Shared::SortOrder)](../../models/shared/sortorder.md)                                                       | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
-| `sql`                                                                                                                          | *T.nilable(::String)*                                                                                                          | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
+| `sql`                                                                                                                          | *T.nilable(::String)*                                                                                                          | :heavy_minus_sign:                                                                                                             | Raw SQL – when set, executed directly (table_id optional)                                                                      |

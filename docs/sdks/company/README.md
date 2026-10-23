@@ -27,7 +27,7 @@
 
 ## create_ats_company
 
-Create a company
+Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
 
 ### Example Usage
 
@@ -44,11 +44,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.company.create_ats_company(ats_company: Models::Shared::AtsCompany.new(
   created_at: DateTime.iso8601('2019-04-22T03:50:02.920Z'),
-  id: '8622302e-b838-4e0e-bd70-d376bfaaf6c9',
+  id: '65aa9526-a605-4697-b0ac-3a18d9bad4f9',
   name: 'Gulgowski, Dibbert and Wilderman',
-  phone: '1-602-210-4548',
-  updated_at: DateTime.iso8601('2020-09-25T09:32:07.701Z'),
-  website_url: 'https://somber-substitution.com/',
+  phone: '1-882-360-2010',
+  updated_at: DateTime.iso8601('2020-10-01T13:23:51.891Z'),
+  website_url: 'https://www.gulgowskidibbert.com',
 ), connection_id: '<id>')
 
 unless res.ats_company.nil?
@@ -78,7 +78,7 @@ end
 
 ## create_crm_company
 
-Create a company
+Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
 
 ### Example Usage
 
@@ -95,43 +95,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.company.create_crm_company(crm_company: Models::Shared::CrmCompany.new(
   address: Models::Shared::PropertyCrmCompanyAddress.new(
-    address1: '7261 Salisbury Road',
-    address2: 'Apt. 778',
-    city: 'Harrisburg',
+    address1: '3328 Wunsch Flat',
+    address2: 'Suite 905',
+    city: 'New Ryderfort',
     country_code: 'US',
-    postal_code: '56293-3678',
-    region: 'Pennsylvania',
-    region_code: 'ID',
+    postal_code: '04674',
+    region: 'Delaware',
+    region_code: 'NY',
   ),
   created_at: DateTime.iso8601('2020-05-11T18:26:32.925Z'),
-  description: 'Balbus crapula spiculum.',
+  description: 'Venustas cruentus votum patruus terebro.',
   domains: [
-    'fussy-nerve.info',
-    'sturdy-lobster.org',
-    'greedy-offset.name',
+    'goodwinsons.com',
   ],
   emails: [
     Models::Shared::CrmEmail.new(
-      email: 'Sandrine_Jacobi@hotmail.com',
+      email: 'info@goodwinsons.com',
       type: Models::Shared::CrmEmailType::WORK,
     ),
     Models::Shared::CrmEmail.new(
-      email: 'Sandrine_Jacobi@gmail.com',
+      email: 'sales@goodwinsons.com',
       type: Models::Shared::CrmEmailType::WORK,
     ),
     Models::Shared::CrmEmail.new(
-      email: 'Sandrine.Jacobi@yahoo.com',
-      type: Models::Shared::CrmEmailType::OTHER,
+      email: 'support@goodwinsons.com',
+      type: Models::Shared::CrmEmailType::WORK,
     ),
   ],
-  employees: 967.0,
-  id: '0567cfb8-6154-4978-93a3-743b1c88e669',
-  industry: 'Infrastructure',
+  employees: 4177.0,
+  id: '6a388d88-c09e-4d11-976a-d3c2920ffbf8',
+  industry: 'Metrics',
   is_active: true,
   link_urls: [
-    'https://blue-license.org',
-    'https://minor-formation.com',
-    'https://ecstatic-hammock.com',
+    'https://www.linkedin.com/company/goodwin-and-sons',
   ],
   metadata: [
     Models::Shared::CrmMetadata.new(
@@ -139,35 +135,28 @@ res = s.company.create_crm_company(crm_company: Models::Shared::CrmCompany.new(
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CrmMetadataFormat::TEXT,
-      id: '6f98be97-88f2-4f7a-9315-a237e1600d65',
+      id: '4535e03c-2a68-45e9-a8de-edb61c2de92f',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'esse',
+      value: 'unde',
     ),
   ],
   name: 'Goodwin and Sons',
   tags: [
-    'quaerat',
-    'valeo',
+    'censura',
+    'abstergo',
+    'ipsam',
   ],
   telephones: [
     Models::Shared::CrmTelephone.new(
-      telephone: '(432) 849-2690',
-      type: Models::Shared::CrmTelephoneType::MOBILE,
-    ),
-    Models::Shared::CrmTelephone.new(
-      telephone: '(606) 871-2046',
-      type: Models::Shared::CrmTelephoneType::OTHER,
-    ),
-    Models::Shared::CrmTelephone.new(
-      telephone: '(842) 258-9395',
-      type: Models::Shared::CrmTelephoneType::MOBILE,
+      telephone: '(667) 607-5872',
+      type: Models::Shared::CrmTelephoneType::HOME,
     ),
   ],
-  timezone: 'Europe/San_Marino',
-  updated_at: DateTime.iso8601('2025-02-08T18:52:45.950Z'),
+  timezone: 'Atlantic/Azores',
+  updated_at: DateTime.iso8601('2025-03-04T15:19:25.848Z'),
   websites: [
-    'https://wise-possession.org',
+    'https://www.goodwinsons.com',
   ],
 ), connection_id: '<id>')
 
@@ -198,7 +187,7 @@ end
 
 ## create_hris_company
 
-Create a company
+Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
 
 ### Example Usage
 
@@ -215,18 +204,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.company.create_hris_company(hris_company: Models::Shared::HrisCompany.new(
   address: Models::Shared::PropertyHrisCompanyAddress.new(
-    address1: '2549 Church Walk',
-    city: 'Lake Nettiebury',
+    address1: '675 Lavinia Lights',
+    city: 'Rocky Mount',
     country_code: 'US',
-    postal_code: '32877-4898',
-    region: 'Idaho',
-    region_code: 'PA',
+    postal_code: '67325',
+    region: 'Kentucky',
+    region_code: 'MO',
   ),
   created_at: DateTime.iso8601('2021-05-02T22:27:38.970Z'),
-  id: 'a11f97c3-0d79-4eae-aaf7-d7987e9817aa',
-  legal_name: 'Schultz LLC',
+  id: '7c750bde-2fb2-4c0c-93a5-cc962069e617',
+  legal_name: 'Gottlieb Group LLC',
+  metadata: [],
   name: 'Gottlieb Group',
-  updated_at: DateTime.iso8601('2026-09-08T21:31:26.668Z'),
+  updated_at: DateTime.iso8601('2026-10-10T15:45:47.999Z'),
 ), connection_id: '<id>')
 
 unless res.hris_company.nil?
@@ -256,7 +246,7 @@ end
 
 ## get_ats_company
 
-Retrieve a company
+Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -300,7 +290,7 @@ end
 
 ## get_crm_company
 
-Retrieve a company
+Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -344,7 +334,7 @@ end
 
 ## get_hris_company
 
-Retrieve a company
+Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -388,7 +378,7 @@ end
 
 ## list_ats_companies
 
-List all companies
+Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -433,7 +423,7 @@ end
 
 ## list_crm_companies
 
-List all companies
+Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -521,7 +511,7 @@ end
 
 ## list_hris_companies
 
-List all companies
+Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -566,7 +556,7 @@ end
 
 ## patch_ats_company
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -584,11 +574,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAtsCompanyRequest.new(
   ats_company: Models::Shared::AtsCompany.new(
     created_at: DateTime.iso8601('2019-04-22T03:50:02.920Z'),
-    id: '1c041a6c-7b33-400e-b667-3f1b9a1dd42b',
+    id: '04306bc4-29e8-4ac5-83fb-6732d84841b9',
     name: 'Gulgowski, Dibbert and Wilderman',
-    phone: '1-602-210-4548',
-    updated_at: DateTime.iso8601('2020-09-25T09:32:07.704Z'),
-    website_url: 'https://somber-substitution.com/',
+    phone: '1-882-360-2010',
+    updated_at: DateTime.iso8601('2020-10-01T13:23:51.895Z'),
+    website_url: 'https://www.gulgowskidibbert.com',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -620,7 +610,7 @@ end
 
 ## patch_crm_company
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -638,43 +628,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCrmCompanyRequest.new(
   crm_company: Models::Shared::CrmCompany.new(
     address: Models::Shared::PropertyCrmCompanyAddress.new(
-      address1: '7261 Salisbury Road',
-      address2: 'Apt. 778',
-      city: 'Harrisburg',
+      address1: '3328 Wunsch Flat',
+      address2: 'Suite 905',
+      city: 'New Ryderfort',
       country_code: 'US',
-      postal_code: '56293-3678',
-      region: 'Pennsylvania',
-      region_code: 'ID',
+      postal_code: '04674',
+      region: 'Delaware',
+      region_code: 'NY',
     ),
     created_at: DateTime.iso8601('2020-05-11T18:26:32.925Z'),
-    description: 'Balbus crapula spiculum.',
+    description: 'Venustas cruentus votum patruus terebro.',
     domains: [
-      'fussy-nerve.info',
-      'sturdy-lobster.org',
-      'greedy-offset.name',
+      'goodwinsons.com',
     ],
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine_Jacobi@hotmail.com',
+        email: 'info@goodwinsons.com',
         type: Models::Shared::CrmEmailType::WORK,
       ),
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine_Jacobi@gmail.com',
+        email: 'sales@goodwinsons.com',
         type: Models::Shared::CrmEmailType::WORK,
       ),
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine.Jacobi@yahoo.com',
-        type: Models::Shared::CrmEmailType::OTHER,
+        email: 'support@goodwinsons.com',
+        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
-    employees: 967.0,
-    id: '78c9de98-3738-4fda-8dc5-f353c2ae9d13',
-    industry: 'Infrastructure',
+    employees: 4177.0,
+    id: '5a27ccfb-b0fb-49cd-8739-5707c69b2474',
+    industry: 'Metrics',
     is_active: true,
     link_urls: [
-      'https://blue-license.org',
-      'https://minor-formation.com',
-      'https://ecstatic-hammock.com',
+      'https://www.linkedin.com/company/goodwin-and-sons',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -682,35 +668,28 @@ req = Models::Operations::PatchCrmCompanyRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '024cb77c-3ee1-4c81-91c9-80f9a64e7559',
+        id: 'cb79908e-7d5f-4534-a067-1e54a01d8df9',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'esse',
+        value: 'unde',
       ),
     ],
     name: 'Goodwin and Sons',
     tags: [
-      'quaerat',
-      'valeo',
+      'censura',
+      'abstergo',
+      'ipsam',
     ],
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(432) 849-2690',
-        type: Models::Shared::CrmTelephoneType::MOBILE,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(606) 871-2046',
-        type: Models::Shared::CrmTelephoneType::OTHER,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(842) 258-9395',
-        type: Models::Shared::CrmTelephoneType::MOBILE,
+        telephone: '(667) 607-5872',
+        type: Models::Shared::CrmTelephoneType::HOME,
       ),
     ],
-    timezone: 'Europe/San_Marino',
-    updated_at: DateTime.iso8601('2025-02-08T18:52:45.974Z'),
+    timezone: 'Atlantic/Azores',
+    updated_at: DateTime.iso8601('2025-03-04T15:19:25.864Z'),
     websites: [
-      'https://wise-possession.org',
+      'https://www.goodwinsons.com',
     ],
   ),
   connection_id: '<id>',
@@ -743,7 +722,7 @@ end
 
 ## patch_hris_company
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -761,18 +740,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchHrisCompanyRequest.new(
   hris_company: Models::Shared::HrisCompany.new(
     address: Models::Shared::PropertyHrisCompanyAddress.new(
-      address1: '2549 Church Walk',
-      city: 'Lake Nettiebury',
+      address1: '675 Lavinia Lights',
+      city: 'Rocky Mount',
       country_code: 'US',
-      postal_code: '32877-4898',
-      region: 'Idaho',
-      region_code: 'PA',
+      postal_code: '67325',
+      region: 'Kentucky',
+      region_code: 'MO',
     ),
     created_at: DateTime.iso8601('2021-05-02T22:27:38.970Z'),
-    id: '50bdb37f-e21e-4d15-b7dd-677113a9b1d3',
-    legal_name: 'Schultz LLC',
+    id: '85b73e0f-ec9b-45ff-aa0b-c382b00eba76',
+    legal_name: 'Gottlieb Group LLC',
+    metadata: [],
     name: 'Gottlieb Group',
-    updated_at: DateTime.iso8601('2026-09-08T21:31:26.681Z'),
+    updated_at: DateTime.iso8601('2026-10-10T15:45:48.033Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -804,7 +784,7 @@ end
 
 ## remove_ats_company
 
-Remove a company
+Deletes the AtsCompany identified by `id`.
 
 ### Example Usage
 
@@ -846,7 +826,7 @@ end
 
 ## remove_crm_company
 
-Remove a company
+Deletes the CrmCompany identified by `id`.
 
 ### Example Usage
 
@@ -888,7 +868,7 @@ end
 
 ## remove_hris_company
 
-Remove a company
+Deletes the HrisCompany identified by `id`.
 
 ### Example Usage
 
@@ -930,7 +910,7 @@ end
 
 ## update_ats_company
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -948,11 +928,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAtsCompanyRequest.new(
   ats_company: Models::Shared::AtsCompany.new(
     created_at: DateTime.iso8601('2019-04-22T03:50:02.920Z'),
-    id: '1c041a6c-7b33-400e-b667-3f1b9a1dd42b',
+    id: '04306bc4-29e8-4ac5-83fb-6732d84841b9',
     name: 'Gulgowski, Dibbert and Wilderman',
-    phone: '1-602-210-4548',
-    updated_at: DateTime.iso8601('2020-09-25T09:32:07.704Z'),
-    website_url: 'https://somber-substitution.com/',
+    phone: '1-882-360-2010',
+    updated_at: DateTime.iso8601('2020-10-01T13:23:51.895Z'),
+    website_url: 'https://www.gulgowskidibbert.com',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -984,7 +964,7 @@ end
 
 ## update_crm_company
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1002,43 +982,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCrmCompanyRequest.new(
   crm_company: Models::Shared::CrmCompany.new(
     address: Models::Shared::PropertyCrmCompanyAddress.new(
-      address1: '7261 Salisbury Road',
-      address2: 'Apt. 778',
-      city: 'Harrisburg',
+      address1: '3328 Wunsch Flat',
+      address2: 'Suite 905',
+      city: 'New Ryderfort',
       country_code: 'US',
-      postal_code: '56293-3678',
-      region: 'Pennsylvania',
-      region_code: 'ID',
+      postal_code: '04674',
+      region: 'Delaware',
+      region_code: 'NY',
     ),
     created_at: DateTime.iso8601('2020-05-11T18:26:32.925Z'),
-    description: 'Balbus crapula spiculum.',
+    description: 'Venustas cruentus votum patruus terebro.',
     domains: [
-      'fussy-nerve.info',
-      'sturdy-lobster.org',
-      'greedy-offset.name',
+      'goodwinsons.com',
     ],
     emails: [
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine_Jacobi@hotmail.com',
+        email: 'info@goodwinsons.com',
         type: Models::Shared::CrmEmailType::WORK,
       ),
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine_Jacobi@gmail.com',
+        email: 'sales@goodwinsons.com',
         type: Models::Shared::CrmEmailType::WORK,
       ),
       Models::Shared::CrmEmail.new(
-        email: 'Sandrine.Jacobi@yahoo.com',
-        type: Models::Shared::CrmEmailType::OTHER,
+        email: 'support@goodwinsons.com',
+        type: Models::Shared::CrmEmailType::WORK,
       ),
     ],
-    employees: 967.0,
-    id: '78c9de98-3738-4fda-8dc5-f353c2ae9d13',
-    industry: 'Infrastructure',
+    employees: 4177.0,
+    id: '5a27ccfb-b0fb-49cd-8739-5707c69b2474',
+    industry: 'Metrics',
     is_active: true,
     link_urls: [
-      'https://blue-license.org',
-      'https://minor-formation.com',
-      'https://ecstatic-hammock.com',
+      'https://www.linkedin.com/company/goodwin-and-sons',
     ],
     metadata: [
       Models::Shared::CrmMetadata.new(
@@ -1046,35 +1022,28 @@ req = Models::Operations::UpdateCrmCompanyRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CrmMetadataFormat::TEXT,
-        id: '024cb77c-3ee1-4c81-91c9-80f9a64e7559',
+        id: 'cb79908e-7d5f-4534-a067-1e54a01d8df9',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'esse',
+        value: 'unde',
       ),
     ],
     name: 'Goodwin and Sons',
     tags: [
-      'quaerat',
-      'valeo',
+      'censura',
+      'abstergo',
+      'ipsam',
     ],
     telephones: [
       Models::Shared::CrmTelephone.new(
-        telephone: '(432) 849-2690',
-        type: Models::Shared::CrmTelephoneType::MOBILE,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(606) 871-2046',
-        type: Models::Shared::CrmTelephoneType::OTHER,
-      ),
-      Models::Shared::CrmTelephone.new(
-        telephone: '(842) 258-9395',
-        type: Models::Shared::CrmTelephoneType::MOBILE,
+        telephone: '(667) 607-5872',
+        type: Models::Shared::CrmTelephoneType::HOME,
       ),
     ],
-    timezone: 'Europe/San_Marino',
-    updated_at: DateTime.iso8601('2025-02-08T18:52:45.974Z'),
+    timezone: 'Atlantic/Azores',
+    updated_at: DateTime.iso8601('2025-03-04T15:19:25.864Z'),
     websites: [
-      'https://wise-possession.org',
+      'https://www.goodwinsons.com',
     ],
   ),
   connection_id: '<id>',
@@ -1107,7 +1076,7 @@ end
 
 ## update_hris_company
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1125,18 +1094,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateHrisCompanyRequest.new(
   hris_company: Models::Shared::HrisCompany.new(
     address: Models::Shared::PropertyHrisCompanyAddress.new(
-      address1: '2549 Church Walk',
-      city: 'Lake Nettiebury',
+      address1: '675 Lavinia Lights',
+      city: 'Rocky Mount',
       country_code: 'US',
-      postal_code: '32877-4898',
-      region: 'Idaho',
-      region_code: 'PA',
+      postal_code: '67325',
+      region: 'Kentucky',
+      region_code: 'MO',
     ),
     created_at: DateTime.iso8601('2021-05-02T22:27:38.970Z'),
-    id: '50bdb37f-e21e-4d15-b7dd-677113a9b1d3',
-    legal_name: 'Schultz LLC',
+    id: '85b73e0f-ec9b-45ff-aa0b-c382b00eba76',
+    legal_name: 'Gottlieb Group LLC',
+    metadata: [],
     name: 'Gottlieb Group',
-    updated_at: DateTime.iso8601('2026-09-08T21:31:26.681Z'),
+    updated_at: DateTime.iso8601('2026-10-10T15:45:48.033Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

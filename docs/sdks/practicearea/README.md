@@ -1,0 +1,306 @@
+# Practicearea
+(*practicearea*)
+
+## Overview
+
+### Available Operations
+
+* [create_legal_practicearea](#create_legal_practicearea) - Create a practicearea
+* [get_legal_practicearea](#get_legal_practicearea) - Retrieve a practicearea
+* [list_legal_practiceareas](#list_legal_practiceareas) - List all practiceareas
+* [patch_legal_practicearea](#patch_legal_practicearea) - Update a practicearea
+* [remove_legal_practicearea](#remove_legal_practicearea) - Remove a practicearea
+* [update_legal_practicearea](#update_legal_practicearea) - Update a practicearea
+
+## create_legal_practicearea
+
+Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="createLegalPracticearea" method="post" path="/legal/{connection_id}/practicearea" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.practicearea.create_legal_practicearea(legal_practicearea: Models::Shared::LegalPracticearea.new(
+  code: 'QCA',
+  created_at: DateTime.iso8601('2023-01-28T21:00:26.264Z'),
+  id: '1523ba44-d3df-4638-b9bd-09e1f365d66f',
+  metadata: [],
+  name: 'witty Law',
+  type: Models::Shared::LegalPracticeareaType::EDUCATION,
+  updated_at: DateTime.iso8601('2025-08-29T02:08:05.503Z'),
+), connection_id: '<id>')
+
+unless res.legal_practicearea.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `legal_practicearea`                                                                                                                             | [Models::Shared::LegalPracticearea](../../models/shared/legalpracticearea.md)                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::CreateLegalPracticeareaQueryParamFields](../../models/operations/createlegalpracticeareaqueryparamfields.md)>      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::CreateLegalPracticeareaResponse)](../../models/operations/createlegalpracticearearesponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## get_legal_practicearea
+
+Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getLegalPracticearea" method="get" path="/legal/{connection_id}/practicearea/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.practicearea.get_legal_practicearea(connection_id: '<id>', id: '<id>')
+
+unless res.legal_practicearea.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Practicearea                                                                                                                           |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetLegalPracticeareaQueryParamFields](../../models/operations/getlegalpracticeareaqueryparamfields.md)>            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetLegalPracticeareaResponse)](../../models/operations/getlegalpracticearearesponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## list_legal_practiceareas
+
+Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listLegalPracticeareas" method="get" path="/legal/{connection_id}/practicearea" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListLegalPracticeareasRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.practicearea.list_legal_practiceareas(request: req)
+
+unless res.legal_practiceareas.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                     | [Models::Operations::ListLegalPracticeareasRequest](../../models/operations/listlegalpracticeareasrequest.md) | :heavy_check_mark:                                                                                            | The request object to use for the request.                                                                    |
+
+### Response
+
+**[T.nilable(Models::Operations::ListLegalPracticeareasResponse)](../../models/operations/listlegalpracticeareasresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## patch_legal_practicearea
+
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="patchLegalPracticearea" method="patch" path="/legal/{connection_id}/practicearea/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::PatchLegalPracticeareaRequest.new(
+  legal_practicearea: Models::Shared::LegalPracticearea.new(
+    code: 'QCA',
+    created_at: DateTime.iso8601('2023-01-28T21:00:26.264Z'),
+    id: '7823ac50-beb1-435d-b880-83b77d55b891',
+    metadata: [],
+    name: 'witty Law',
+    type: Models::Shared::LegalPracticeareaType::EDUCATION,
+    updated_at: DateTime.iso8601('2025-08-29T02:08:05.520Z'),
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.practicearea.patch_legal_practicearea(request: req)
+
+unless res.legal_practicearea.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                     | [Models::Operations::PatchLegalPracticeareaRequest](../../models/operations/patchlegalpracticearearequest.md) | :heavy_check_mark:                                                                                            | The request object to use for the request.                                                                    |
+
+### Response
+
+**[T.nilable(Models::Operations::PatchLegalPracticeareaResponse)](../../models/operations/patchlegalpracticearearesponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## remove_legal_practicearea
+
+Deletes the LegalPracticearea identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="removeLegalPracticearea" method="delete" path="/legal/{connection_id}/practicearea/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.practicearea.remove_legal_practicearea(connection_id: '<id>', id: '<id>')
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `connection_id`        | *::String*             | :heavy_check_mark:     | ID of the connection   |
+| `id`                   | *::String*             | :heavy_check_mark:     | ID of the Practicearea |
+
+### Response
+
+**[T.nilable(Models::Operations::RemoveLegalPracticeareaResponse)](../../models/operations/removelegalpracticearearesponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## update_legal_practicearea
+
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="updateLegalPracticearea" method="put" path="/legal/{connection_id}/practicearea/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::UpdateLegalPracticeareaRequest.new(
+  legal_practicearea: Models::Shared::LegalPracticearea.new(
+    code: 'QCA',
+    created_at: DateTime.iso8601('2023-01-28T21:00:26.264Z'),
+    id: '7823ac50-beb1-435d-b880-83b77d55b891',
+    metadata: [],
+    name: 'witty Law',
+    type: Models::Shared::LegalPracticeareaType::EDUCATION,
+    updated_at: DateTime.iso8601('2025-08-29T02:08:05.520Z'),
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.practicearea.update_legal_practicearea(request: req)
+
+unless res.legal_practicearea.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                       | [Models::Operations::UpdateLegalPracticeareaRequest](../../models/operations/updatelegalpracticearearequest.md) | :heavy_check_mark:                                                                                              | The request object to use for the request.                                                                      |
+
+### Response
+
+**[T.nilable(Models::Operations::UpdateLegalPracticeareaResponse)](../../models/operations/updatelegalpracticearearesponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |

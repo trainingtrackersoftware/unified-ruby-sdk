@@ -15,37 +15,39 @@ module UnifiedRubySDK
 
         # synonyms / alternative labels
         field :alternative_names, Crystalline::Nilable.new(Crystalline::Array.new(::String)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('alternative_names') } }
-
+        # 2nd-level grouping
         field :category, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('category') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :description, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('description') } }
-
+        # 1st-level grouping (broadest)
         field :domain, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('domain') } }
 
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
 
         field :is_active, Crystalline::Nilable.new(Crystalline::Boolean.new), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('is_active') } }
 
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::HrisMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
+        # the preferred label of the skill/role
         field :name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('name') } }
-
+        # id of the parent taxonomy item, for providers exposing arbitrary-depth trees
         field :parent_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('parent_id') } }
 
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
         # ids of hris_taxonomy items of type ROLE that this skill relates to
         field :role_ids, Crystalline::Nilable.new(Crystalline::Array.new(::String)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('role_ids') } }
-
+        # 3rd-level grouping
         field :subcategory, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('subcategory') } }
-
+        # the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation
         field :type, Crystalline::Nilable.new(Models::Shared::HrisTaxonomyType), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Shared::HrisTaxonomyType, true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # external reference URL for this item
         field :url, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('url') } }
 
-        sig { params(alternative_names: T.nilable(T::Array[::String]), category: T.nilable(::String), created_at: T.nilable(::DateTime), description: T.nilable(::String), domain: T.nilable(::String), id: T.nilable(::String), is_active: T.nilable(T::Boolean), name: T.nilable(::String), parent_id: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), role_ids: T.nilable(T::Array[::String]), subcategory: T.nilable(::String), type: T.nilable(Models::Shared::HrisTaxonomyType), updated_at: T.nilable(::DateTime), url: T.nilable(::String)).void }
-        def initialize(alternative_names: nil, category: nil, created_at: nil, description: nil, domain: nil, id: nil, is_active: nil, name: nil, parent_id: nil, raw: nil, role_ids: nil, subcategory: nil, type: nil, updated_at: nil, url: nil)
+        sig { params(alternative_names: T.nilable(T::Array[::String]), category: T.nilable(::String), created_at: T.nilable(::DateTime), description: T.nilable(::String), domain: T.nilable(::String), id: T.nilable(::String), is_active: T.nilable(T::Boolean), metadata: T.nilable(T::Array[Models::Shared::HrisMetadata]), name: T.nilable(::String), parent_id: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), role_ids: T.nilable(T::Array[::String]), subcategory: T.nilable(::String), type: T.nilable(Models::Shared::HrisTaxonomyType), updated_at: T.nilable(::DateTime), url: T.nilable(::String)).void }
+        def initialize(alternative_names: nil, category: nil, created_at: nil, description: nil, domain: nil, id: nil, is_active: nil, metadata: nil, name: nil, parent_id: nil, raw: nil, role_ids: nil, subcategory: nil, type: nil, updated_at: nil, url: nil)
           @alternative_names = alternative_names
           @category = category
           @created_at = created_at
@@ -53,6 +55,7 @@ module UnifiedRubySDK
           @domain = domain
           @id = id
           @is_active = is_active
+          @metadata = metadata
           @name = name
           @parent_id = parent_id
           @raw = raw
@@ -73,6 +76,7 @@ module UnifiedRubySDK
           return false unless @domain == other.domain
           return false unless @id == other.id
           return false unless @is_active == other.is_active
+          return false unless @metadata == other.metadata
           return false unless @name == other.name
           return false unless @parent_id == other.parent_id
           return false unless @raw == other.raw

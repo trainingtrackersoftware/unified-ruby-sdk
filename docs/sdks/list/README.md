@@ -14,7 +14,7 @@
 
 ## create_martech_list
 
-Create a list
+Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider's API. Returns the created MarketingList.
 
 ### Example Usage
 
@@ -31,25 +31,26 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.list.create_martech_list(marketing_list: Models::Shared::MarketingList.new(
   address: Models::Shared::PropertyMarketingListAddress.new(
-    address1: '922 Elmore Manor',
-    address2: 'Suite 925',
-    city: 'Deerfield Beach',
-    country: 'Bahrain',
-    postal_code: '30765-6471',
-    region: 'FL',
+    address1: '76564 Coronation Road',
+    address2: 'Suite 922',
+    city: 'West Jordon',
+    country: 'Mexico',
+    postal_code: '04183',
+    region: 'NC',
   ),
   created_at: DateTime.iso8601('2019-09-18T02:01:36.950Z'),
-  description: 'Currus.',
-  id: 'a7bab7ae-14cc-45c4-9321-430ec10644b7',
+  description: 'Vilis.',
+  id: '3b003412-2577-4c16-94cc-ff85e9f73d48',
   is_active: true,
-  language: 'it',
-  name: 'Annette Nolan',
-  sender_company: 'Hickle - Homenick',
-  sender_email: 'Matt_Steuber@hotmail.com',
-  sender_name: 'Salvatore Roob',
-  sender_phone: '896-328-1153 x4957',
-  subject: 'Tenetur thymum circumvenio triumphus celo.',
-  updated_at: DateTime.iso8601('2022-08-31T19:02:58.579Z'),
+  language: 'ru',
+  metadata: [],
+  name: 'Electronics Newsletter',
+  sender_company: 'Koepp and Sons',
+  sender_email: 'blake.kuhn@hotmail.com',
+  sender_name: 'Blake Kuhn',
+  sender_phone: '359.305.7962 x28115',
+  subject: 'Theca caecus copia crebro valeo ulciscor.',
+  updated_at: DateTime.iso8601('2022-09-14T06:14:04.658Z'),
 ), connection_id: '<id>')
 
 unless res.marketing_list.nil?
@@ -79,7 +80,7 @@ end
 
 ## get_martech_list
 
-Retrieve a list
+Retrieves a single MarketingList by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -123,7 +124,7 @@ end
 
 ## list_martech_lists
 
-List all lists
+Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -168,7 +169,7 @@ end
 
 ## patch_martech_list
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -186,25 +187,26 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchMartechListRequest.new(
   marketing_list: Models::Shared::MarketingList.new(
     address: Models::Shared::PropertyMarketingListAddress.new(
-      address1: '922 Elmore Manor',
-      address2: 'Suite 925',
-      city: 'Deerfield Beach',
-      country: 'Bahrain',
-      postal_code: '30765-6471',
-      region: 'FL',
+      address1: '76564 Coronation Road',
+      address2: 'Suite 922',
+      city: 'West Jordon',
+      country: 'Mexico',
+      postal_code: '04183',
+      region: 'NC',
     ),
     created_at: DateTime.iso8601('2019-09-18T02:01:36.950Z'),
-    description: 'Currus.',
-    id: '9605b057-d244-42a2-9531-60293c28a4b8',
+    description: 'Vilis.',
+    id: '0ebb97b3-1979-48db-9888-59d2a1abd6ea',
     is_active: true,
-    language: 'it',
-    name: 'Annette Nolan',
-    sender_company: 'Hickle - Homenick',
-    sender_email: 'Matt_Steuber@hotmail.com',
-    sender_name: 'Salvatore Roob',
-    sender_phone: '896-328-1153 x4957',
-    subject: 'Tenetur thymum circumvenio triumphus celo.',
-    updated_at: DateTime.iso8601('2022-08-31T19:02:58.586Z'),
+    language: 'ru',
+    metadata: [],
+    name: 'Electronics Newsletter',
+    sender_company: 'Koepp and Sons',
+    sender_email: 'blake.kuhn@hotmail.com',
+    sender_name: 'Blake Kuhn',
+    sender_phone: '359.305.7962 x28115',
+    subject: 'Theca caecus copia crebro valeo ulciscor.',
+    updated_at: DateTime.iso8601('2022-09-14T06:14:04.670Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -236,7 +238,7 @@ end
 
 ## remove_martech_list
 
-Remove a list
+Deletes the MarketingList identified by `id`.
 
 ### Example Usage
 
@@ -278,7 +280,7 @@ end
 
 ## update_martech_list
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -296,25 +298,26 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateMartechListRequest.new(
   marketing_list: Models::Shared::MarketingList.new(
     address: Models::Shared::PropertyMarketingListAddress.new(
-      address1: '922 Elmore Manor',
-      address2: 'Suite 925',
-      city: 'Deerfield Beach',
-      country: 'Bahrain',
-      postal_code: '30765-6471',
-      region: 'FL',
+      address1: '76564 Coronation Road',
+      address2: 'Suite 922',
+      city: 'West Jordon',
+      country: 'Mexico',
+      postal_code: '04183',
+      region: 'NC',
     ),
     created_at: DateTime.iso8601('2019-09-18T02:01:36.950Z'),
-    description: 'Currus.',
-    id: '9605b057-d244-42a2-9531-60293c28a4b8',
+    description: 'Vilis.',
+    id: '0ebb97b3-1979-48db-9888-59d2a1abd6ea',
     is_active: true,
-    language: 'it',
-    name: 'Annette Nolan',
-    sender_company: 'Hickle - Homenick',
-    sender_email: 'Matt_Steuber@hotmail.com',
-    sender_name: 'Salvatore Roob',
-    sender_phone: '896-328-1153 x4957',
-    subject: 'Tenetur thymum circumvenio triumphus celo.',
-    updated_at: DateTime.iso8601('2022-08-31T19:02:58.586Z'),
+    language: 'ru',
+    metadata: [],
+    name: 'Electronics Newsletter',
+    sender_company: 'Koepp and Sons',
+    sender_email: 'blake.kuhn@hotmail.com',
+    sender_name: 'Blake Kuhn',
+    sender_phone: '359.305.7962 x28115',
+    subject: 'Theca caecus copia crebro valeo ulciscor.',
+    updated_at: DateTime.iso8601('2022-09-14T06:14:04.670Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

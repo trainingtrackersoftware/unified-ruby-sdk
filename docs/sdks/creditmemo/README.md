@@ -14,7 +14,7 @@
 
 ## create_accounting_creditmemo
 
-Create a creditmemo
+Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
 
 ### Example Usage
 
@@ -31,34 +31,22 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.creditmemo.create_accounting_creditmemo(accounting_creditmemo: Models::Shared::AccountingCreditmemo.new(
   applications: [],
-  attachments: [
-    Models::Shared::AccountingAttachment.new(
-      download_url: 'https://enlightened-chairperson.com/',
-      id: '852128f4-fbc1-4b6a-a326-60c6ed936eab',
-      mime_type: 'complectus',
-      name: 'thesis',
-    ),
-  ],
+  attachments: [],
+  balance_amount: 0.0,
   created_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
-  creditmemo_number: 'ulterius',
-  currency: 'MKD',
+  creditmemo_number: 'CM-99537',
+  currency: 'AUD',
   discount_amount: 0.0,
-  due_at: DateTime.iso8601('2023-10-18T04:35:00.543Z'),
-  id: '16ebb11b-b079-4d4f-8e95-4282a755f71e',
+  id: 'e41c2e8f-2f8b-4c2d-9fa2-dbfe0c507e10',
   lineitems: [],
   metadata: [],
-  notes: 'Dedecor amo adfero torqueo quas.',
-  payment_collection_method: Models::Shared::AccountingCreditmemoPaymentCollectionMethod::CHARGE_AUTOMATICALLY,
-  posted_at: DateTime.iso8601('2025-11-17T15:25:54.544Z'),
-  refund_amount: 0.0,
-  refund_reason: 'Virgo inflammatio quibusdam aestivus magnam.',
-  refunded_at: DateTime.iso8601('2023-10-23T00:35:36.814Z'),
-  send: false,
-  status: Models::Shared::AccountingCreditmemoStatus::PAID,
+  notes: 'Hic vorax dedecor amo adfero torqueo quas victoria.',
+  posted_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
+  send: true,
+  status: Models::Shared::AccountingCreditmemoStatus::AUTHORIZED,
   tax_amount: 0.0,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2024-11-16T17:39:05.647Z'),
-  url: 'https://lighthearted-bandwidth.net/',
+  updated_at: DateTime.iso8601('2025-09-12T14:30:43.020Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_creditmemo.nil?
@@ -88,7 +76,7 @@ end
 
 ## get_accounting_creditmemo
 
-Retrieve a creditmemo
+Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -132,7 +120,7 @@ end
 
 ## list_accounting_creditmemoes
 
-List all creditmemoes
+Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -177,7 +165,7 @@ end
 
 ## patch_accounting_creditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -195,34 +183,22 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingCreditmemoRequest.new(
   accounting_creditmemo: Models::Shared::AccountingCreditmemo.new(
     applications: [],
-    attachments: [
-      Models::Shared::AccountingAttachment.new(
-        download_url: 'https://enlightened-chairperson.com/',
-        id: 'dab75275-1827-4921-9864-2cdfb4ae6cec',
-        mime_type: 'complectus',
-        name: 'thesis',
-      ),
-    ],
+    attachments: [],
+    balance_amount: 0.0,
     created_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
-    creditmemo_number: 'ulterius',
-    currency: 'MKD',
+    creditmemo_number: 'CM-99537',
+    currency: 'AUD',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2023-10-18T04:35:00.543Z'),
-    id: 'ffffa0d5-61aa-4cbe-8725-bece1a674001',
+    id: 'fe04c90f-0adf-4fb0-82e1-61d23fb2ace1',
     lineitems: [],
     metadata: [],
-    notes: 'Dedecor amo adfero torqueo quas.',
-    payment_collection_method: Models::Shared::AccountingCreditmemoPaymentCollectionMethod::CHARGE_AUTOMATICALLY,
-    posted_at: DateTime.iso8601('2025-11-17T15:25:54.581Z'),
-    refund_amount: 0.0,
-    refund_reason: 'Virgo inflammatio quibusdam aestivus magnam.',
-    refunded_at: DateTime.iso8601('2023-10-23T00:35:36.814Z'),
-    send: false,
-    status: Models::Shared::AccountingCreditmemoStatus::PAID,
+    notes: 'Hic vorax dedecor amo adfero torqueo quas victoria.',
+    posted_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
+    send: true,
+    status: Models::Shared::AccountingCreditmemoStatus::AUTHORIZED,
     tax_amount: 0.0,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2024-11-16T17:39:05.667Z'),
-    url: 'https://lighthearted-bandwidth.net/',
+    updated_at: DateTime.iso8601('2025-09-12T14:30:43.054Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -254,7 +230,7 @@ end
 
 ## remove_accounting_creditmemo
 
-Remove a creditmemo
+Deletes the AccountingCreditmemo identified by `id`.
 
 ### Example Usage
 
@@ -296,7 +272,7 @@ end
 
 ## update_accounting_creditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -314,34 +290,22 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingCreditmemoRequest.new(
   accounting_creditmemo: Models::Shared::AccountingCreditmemo.new(
     applications: [],
-    attachments: [
-      Models::Shared::AccountingAttachment.new(
-        download_url: 'https://enlightened-chairperson.com/',
-        id: 'dab75275-1827-4921-9864-2cdfb4ae6cec',
-        mime_type: 'complectus',
-        name: 'thesis',
-      ),
-    ],
+    attachments: [],
+    balance_amount: 0.0,
     created_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
-    creditmemo_number: 'ulterius',
-    currency: 'MKD',
+    creditmemo_number: 'CM-99537',
+    currency: 'AUD',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2023-10-18T04:35:00.543Z'),
-    id: 'ffffa0d5-61aa-4cbe-8725-bece1a674001',
+    id: 'fe04c90f-0adf-4fb0-82e1-61d23fb2ace1',
     lineitems: [],
     metadata: [],
-    notes: 'Dedecor amo adfero torqueo quas.',
-    payment_collection_method: Models::Shared::AccountingCreditmemoPaymentCollectionMethod::CHARGE_AUTOMATICALLY,
-    posted_at: DateTime.iso8601('2025-11-17T15:25:54.581Z'),
-    refund_amount: 0.0,
-    refund_reason: 'Virgo inflammatio quibusdam aestivus magnam.',
-    refunded_at: DateTime.iso8601('2023-10-23T00:35:36.814Z'),
-    send: false,
-    status: Models::Shared::AccountingCreditmemoStatus::PAID,
+    notes: 'Hic vorax dedecor amo adfero torqueo quas victoria.',
+    posted_at: DateTime.iso8601('2023-09-20T01:47:01.571Z'),
+    send: true,
+    status: Models::Shared::AccountingCreditmemoStatus::AUTHORIZED,
     tax_amount: 0.0,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2024-11-16T17:39:05.667Z'),
-    url: 'https://lighthearted-bandwidth.net/',
+    updated_at: DateTime.iso8601('2025-09-12T14:30:43.054Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

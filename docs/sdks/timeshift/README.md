@@ -14,7 +14,7 @@
 
 ## create_hris_timeshift
 
-Create a timeshift
+Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
 
 ### Example Usage
 
@@ -30,24 +30,25 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.timeshift.create_hris_timeshift(hris_timeshift: Models::Shared::HrisTimeshift.new(
-  approved_at: DateTime.iso8601('2023-06-07T06:09:27.537Z'),
+  approved_at: DateTime.iso8601('2022-07-18T21:43:25.563Z'),
   compensation: [
     Models::Shared::HrisCompensation.new(
       amount: 76_761.0,
-      currency: 'JPY',
-      frequency: Models::Shared::HrisCompensationFrequency::HOUR,
-      notes: 'Annus adficio suasoria architecto aggero.',
-      type: Models::Shared::HrisCompensationType::OTHER,
+      currency: 'GBP',
+      frequency: Models::Shared::HrisCompensationFrequency::SEMIMONTHLY,
+      notes: 'Vehemens annus adficio.',
+      type: Models::Shared::HrisCompensationType::COMMISSION,
     ),
   ],
   created_at: DateTime.iso8601('2019-07-01T23:53:15.738Z'),
   employee_user_id: '<id>',
-  end_at: DateTime.iso8601('2026-08-28T08:36:26.125Z'),
-  hours: 8.0,
-  id: '66e56b79-777c-4816-93c2-56aab6d4a323',
-  is_approved: true,
-  start_at: DateTime.iso8601('2023-06-26T11:39:07.841Z'),
-  updated_at: DateTime.iso8601('2021-06-23T16:49:43.315Z'),
+  end_at: DateTime.iso8601('2026-09-29T00:41:37.965Z'),
+  hours: 6.0,
+  id: '220cff1c-9e52-44ee-8079-44ef6ca61acd',
+  is_approved: false,
+  metadata: [],
+  start_at: DateTime.iso8601('2023-07-14T02:48:50.230Z'),
+  updated_at: DateTime.iso8601('2021-07-02T10:56:40.233Z'),
 ), connection_id: '<id>')
 
 unless res.hris_timeshift.nil?
@@ -77,7 +78,7 @@ end
 
 ## get_hris_timeshift
 
-Retrieve a timeshift
+Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -121,7 +122,7 @@ end
 
 ## list_hris_timeshifts
 
-List all timeshifts
+Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -166,7 +167,7 @@ end
 
 ## patch_hris_timeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -183,24 +184,25 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchHrisTimeshiftRequest.new(
   hris_timeshift: Models::Shared::HrisTimeshift.new(
-    approved_at: DateTime.iso8601('2023-06-07T06:09:27.547Z'),
+    approved_at: DateTime.iso8601('2022-07-18T21:43:25.574Z'),
     compensation: [
       Models::Shared::HrisCompensation.new(
         amount: 76_761.0,
-        currency: 'JPY',
-        frequency: Models::Shared::HrisCompensationFrequency::HOUR,
-        notes: 'Annus adficio suasoria architecto aggero.',
-        type: Models::Shared::HrisCompensationType::OTHER,
+        currency: 'GBP',
+        frequency: Models::Shared::HrisCompensationFrequency::SEMIMONTHLY,
+        notes: 'Vehemens annus adficio.',
+        type: Models::Shared::HrisCompensationType::COMMISSION,
       ),
     ],
     created_at: DateTime.iso8601('2019-07-01T23:53:15.738Z'),
     employee_user_id: '<id>',
-    end_at: DateTime.iso8601('2026-08-28T08:36:26.141Z'),
-    hours: 8.0,
-    id: 'f4e9abcd-0967-4162-a883-8936d4157af5',
-    is_approved: true,
-    start_at: DateTime.iso8601('2023-06-26T11:39:07.851Z'),
-    updated_at: DateTime.iso8601('2021-06-23T16:49:43.319Z'),
+    end_at: DateTime.iso8601('2026-09-29T00:41:37.990Z'),
+    hours: 6.0,
+    id: 'ca9ee199-3154-4f5b-b34b-264ec1a5017e',
+    is_approved: false,
+    metadata: [],
+    start_at: DateTime.iso8601('2023-07-14T02:48:50.244Z'),
+    updated_at: DateTime.iso8601('2021-07-02T10:56:40.240Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -232,7 +234,7 @@ end
 
 ## remove_hris_timeshift
 
-Remove a timeshift
+Deletes the HrisTimeshift identified by `id`.
 
 ### Example Usage
 
@@ -274,7 +276,7 @@ end
 
 ## update_hris_timeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -291,24 +293,25 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateHrisTimeshiftRequest.new(
   hris_timeshift: Models::Shared::HrisTimeshift.new(
-    approved_at: DateTime.iso8601('2023-06-07T06:09:27.547Z'),
+    approved_at: DateTime.iso8601('2022-07-18T21:43:25.574Z'),
     compensation: [
       Models::Shared::HrisCompensation.new(
         amount: 76_761.0,
-        currency: 'JPY',
-        frequency: Models::Shared::HrisCompensationFrequency::HOUR,
-        notes: 'Annus adficio suasoria architecto aggero.',
-        type: Models::Shared::HrisCompensationType::OTHER,
+        currency: 'GBP',
+        frequency: Models::Shared::HrisCompensationFrequency::SEMIMONTHLY,
+        notes: 'Vehemens annus adficio.',
+        type: Models::Shared::HrisCompensationType::COMMISSION,
       ),
     ],
     created_at: DateTime.iso8601('2019-07-01T23:53:15.738Z'),
     employee_user_id: '<id>',
-    end_at: DateTime.iso8601('2026-08-28T08:36:26.141Z'),
-    hours: 8.0,
-    id: 'f4e9abcd-0967-4162-a883-8936d4157af5',
-    is_approved: true,
-    start_at: DateTime.iso8601('2023-06-26T11:39:07.851Z'),
-    updated_at: DateTime.iso8601('2021-06-23T16:49:43.319Z'),
+    end_at: DateTime.iso8601('2026-09-29T00:41:37.990Z'),
+    hours: 6.0,
+    id: 'ca9ee199-3154-4f5b-b34b-264ec1a5017e',
+    is_approved: false,
+    metadata: [],
+    start_at: DateTime.iso8601('2023-07-14T02:48:50.244Z'),
+    updated_at: DateTime.iso8601('2021-07-02T10:56:40.240Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

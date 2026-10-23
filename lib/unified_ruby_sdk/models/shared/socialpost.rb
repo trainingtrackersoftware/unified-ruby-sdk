@@ -13,47 +13,50 @@ module UnifiedRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
+        # The main text content of the post
         field :body, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('body') } }
         # Call-to-action button on the post
         field :call_to_action, Crystalline::Nilable.new(Models::Shared::PropertySocialPostCallToAction), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('call_to_action') } }
-
+        # When the post was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Unique identifier for the post
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
-
+        # Language code of the post content
         field :language, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('language') } }
         # Media assets attached to the post
         field :media, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::SocialMedia)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('media') } }
+
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::SocialMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
         # Engagement metrics for the post
         field :metrics, Crystalline::Nilable.new(Models::Shared::PropertySocialPostMetrics), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metrics') } }
-
+        # The post this one replies to or references
         field :parent_post_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('parent_post_id') } }
-
+        # The social profile (page/handle/listing) that owns this post
         field :profile_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('profile_id') } }
-
+        # Raw data from integration
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
-
+        # When the post is scheduled to publish (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :scheduled_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('scheduled_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Publication status of the post
         field :status, Crystalline::Nilable.new(Models::Shared::SocialPostStatus), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('status'), 'decoder': Utils.enum_from_string(Models::Shared::SocialPostStatus, true) } }
-
+        # Optional post title/headline
         field :title, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('title') } }
-
+        # The kind of post
         field :type, Crystalline::Nilable.new(Models::Shared::SocialPostType), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Shared::SocialPostType, true) } }
-
+        # When the post was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Public permalink to the post
         field :url, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('url') } }
 
-        sig { params(body: T.nilable(::String), call_to_action: T.nilable(Models::Shared::PropertySocialPostCallToAction), created_at: T.nilable(::DateTime), id: T.nilable(::String), language: T.nilable(::String), media: T.nilable(T::Array[Models::Shared::SocialMedia]), metrics: T.nilable(Models::Shared::PropertySocialPostMetrics), parent_post_id: T.nilable(::String), profile_id: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), scheduled_at: T.nilable(::DateTime), status: T.nilable(Models::Shared::SocialPostStatus), title: T.nilable(::String), type: T.nilable(Models::Shared::SocialPostType), updated_at: T.nilable(::DateTime), url: T.nilable(::String)).void }
-        def initialize(body: nil, call_to_action: nil, created_at: nil, id: nil, language: nil, media: nil, metrics: nil, parent_post_id: nil, profile_id: nil, raw: nil, scheduled_at: nil, status: nil, title: nil, type: nil, updated_at: nil, url: nil)
+        sig { params(body: T.nilable(::String), call_to_action: T.nilable(Models::Shared::PropertySocialPostCallToAction), created_at: T.nilable(::DateTime), id: T.nilable(::String), language: T.nilable(::String), media: T.nilable(T::Array[Models::Shared::SocialMedia]), metadata: T.nilable(T::Array[Models::Shared::SocialMetadata]), metrics: T.nilable(Models::Shared::PropertySocialPostMetrics), parent_post_id: T.nilable(::String), profile_id: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), scheduled_at: T.nilable(::DateTime), status: T.nilable(Models::Shared::SocialPostStatus), title: T.nilable(::String), type: T.nilable(Models::Shared::SocialPostType), updated_at: T.nilable(::DateTime), url: T.nilable(::String)).void }
+        def initialize(body: nil, call_to_action: nil, created_at: nil, id: nil, language: nil, media: nil, metadata: nil, metrics: nil, parent_post_id: nil, profile_id: nil, raw: nil, scheduled_at: nil, status: nil, title: nil, type: nil, updated_at: nil, url: nil)
           @body = body
           @call_to_action = call_to_action
           @created_at = created_at
           @id = id
           @language = language
           @media = media
+          @metadata = metadata
           @metrics = metrics
           @parent_post_id = parent_post_id
           @profile_id = profile_id
@@ -75,6 +78,7 @@ module UnifiedRubySDK
           return false unless @id == other.id
           return false unless @language == other.language
           return false unless @media == other.media
+          return false unless @metadata == other.metadata
           return false unless @metrics == other.metrics
           return false unless @parent_post_id == other.parent_post_id
           return false unless @profile_id == other.profile_id

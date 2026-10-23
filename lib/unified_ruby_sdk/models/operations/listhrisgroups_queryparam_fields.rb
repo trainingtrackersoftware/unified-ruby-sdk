@@ -24,6 +24,9 @@ module UnifiedRubySDK
           MANAGER_IDS = new('manager_ids')
           IS_ACTIVE = new('is_active')
           COMPANY_ID = new('company_id')
+          PAY_FREQUENCY = new('pay_frequency')
+          NEXT_PAID_AT = new('next_paid_at')
+          METADATA = new('metadata')
           RAW = new('raw')
         end
       end

@@ -14,7 +14,7 @@
 
 ## create_metadata_metadata
 
-Create a metadata
+Creates a MetadataMetadata. Provide the unified MetadataMetadata fields in the request body; they are mapped to the provider's API. Returns the created MetadataMetadata.
 
 ### Example Usage
 
@@ -32,17 +32,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.metadata.create_metadata_metadata(metadata_metadata: Models::Shared::MetadataMetadata.new(
   created_at: DateTime.iso8601('2021-03-25T03:02:17.656Z'),
   format: Models::Shared::MetadataMetadataFormat::PRICE,
-  id: 'e09aec14-85b3-4858-bcae-58aefba6991c',
+  id: 'de1f6bb7-89c4-4061-961a-13b216604909',
   is_required: false,
   name: 'autem',
-  object_type: 'signing_template',
+  object_type: 'social_review',
   objects: {
 
   },
   options: [],
   original_format: 'advoco',
   slug: 'arbustum',
-  updated_at: DateTime.iso8601('2025-02-28T12:07:27.238Z'),
+  updated_at: DateTime.iso8601('2025-03-23T09:19:58.898Z'),
 ), connection_id: '<id>')
 
 unless res.metadata_metadata.nil?
@@ -72,7 +72,7 @@ end
 
 ## get_metadata_metadata
 
-Retrieve a metadata
+Retrieves a single MetadataMetadata by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -116,7 +116,7 @@ end
 
 ## list_metadata_metadatas
 
-List all metadatas
+Returns a list of MetadataMetadatas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -161,7 +161,7 @@ end
 
 ## patch_metadata_metadata
 
-Update a metadata
+Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
 
 ### Example Usage
 
@@ -180,17 +180,17 @@ req = Models::Operations::PatchMetadataMetadataRequest.new(
   metadata_metadata: Models::Shared::MetadataMetadata.new(
     created_at: DateTime.iso8601('2021-03-25T03:02:17.656Z'),
     format: Models::Shared::MetadataMetadataFormat::PRICE,
-    id: '84a4a9d5-6587-476a-b4ba-afb92d58ce03',
+    id: '3ed29ea8-0fba-47cb-b951-5f26625418fc',
     is_required: false,
     name: 'autem',
-    object_type: 'signing_template',
+    object_type: 'social_review',
     objects: {
 
     },
     options: [],
     original_format: 'advoco',
     slug: 'arbustum',
-    updated_at: DateTime.iso8601('2025-02-28T12:07:27.246Z'),
+    updated_at: DateTime.iso8601('2025-03-23T09:19:58.907Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -222,7 +222,7 @@ end
 
 ## remove_metadata_metadata
 
-Remove a metadata
+Deletes the MetadataMetadata identified by `id`.
 
 ### Example Usage
 
@@ -264,7 +264,7 @@ end
 
 ## update_metadata_metadata
 
-Update a metadata
+Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
 
 ### Example Usage
 
@@ -283,17 +283,17 @@ req = Models::Operations::UpdateMetadataMetadataRequest.new(
   metadata_metadata: Models::Shared::MetadataMetadata.new(
     created_at: DateTime.iso8601('2021-03-25T03:02:17.656Z'),
     format: Models::Shared::MetadataMetadataFormat::PRICE,
-    id: '84a4a9d5-6587-476a-b4ba-afb92d58ce03',
+    id: '3ed29ea8-0fba-47cb-b951-5f26625418fc',
     is_required: false,
     name: 'autem',
-    object_type: 'signing_template',
+    object_type: 'social_review',
     objects: {
 
     },
     options: [],
     original_format: 'advoco',
     slug: 'arbustum',
-    updated_at: DateTime.iso8601('2025-02-28T12:07:27.246Z'),
+    updated_at: DateTime.iso8601('2025-03-23T09:19:58.907Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

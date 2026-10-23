@@ -20,7 +20,7 @@
 
 ## create_ads_campaign
 
-Create a campaign
+Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
 
 ### Example Usage
 
@@ -42,17 +42,18 @@ res = s.campaign.create_ads_campaign(ads_campaign: Models::Shared::AdsCampaign.n
   created_at: DateTime.iso8601('2022-05-21T08:51:41.868Z'),
   currency: 'USD',
   effective_status: Models::Shared::EffectiveStatus::NOT_ELIGIBLE,
-  end_at: DateTime.iso8601('2025-05-11T10:13:16.657Z'),
-  id: 'b7845a2b-55ce-4073-a0ed-06c84d3fc889',
+  end_at: DateTime.iso8601('2025-06-02T08:12:06.694Z'),
+  id: '7734a920-8b81-4528-ad2c-7f85f1886802',
   labels: [
     'comedo',
   ],
+  metadata: [],
   name: 'Emard Inc',
-  start_at: DateTime.iso8601('2022-07-20T07:36:39.670Z'),
+  start_at: DateTime.iso8601('2022-07-21T12:38:38.281Z'),
   status: Models::Shared::AdsCampaignStatus::PROCESSING_FAILED,
   targeting: Models::Shared::PropertyAdsCampaignTargeting.new(),
   total_spend_amount: 2_349.8_642_875_347_286,
-  updated_at: DateTime.iso8601('2025-12-08T01:10:49.698Z'),
+  updated_at: DateTime.iso8601('2026-01-03T05:09:59.570Z'),
 ), connection_id: '<id>')
 
 unless res.ads_campaign.nil?
@@ -82,7 +83,7 @@ end
 
 ## create_martech_campaign
 
-Create a campaign
+Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
 
 ### Example Usage
 
@@ -98,21 +99,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.campaign.create_martech_campaign(marketing_campaign: Models::Shared::MarketingCampaign.new(
-  created_at: DateTime.iso8601('2023-08-01T22:29:12.121Z'),
-  from_email: 'Nick.Beahan@hotmail.com',
-  from_name: 'Javier Rempel',
-  id: 'df998b05-de2a-430d-b95e-5170a18ef8d3',
-  list_ids: [
-    'bde5cab9-cf2f-4ed5-adab-b33c88bac5af',
-  ],
+  created_at: DateTime.iso8601('2019-05-19T11:18:15.589Z'),
+  from_email: 'graham.mertz@gmail.com',
+  from_name: 'Graham Mertz',
+  id: '407a1645-beda-4d0b-b5f2-36d4cfb30e0f',
+  metadata: [],
   name: 'Consequatur atqui sustineo.',
-  preview_text: 'Bellicus tener cinis causa cavus toties.',
-  reply_to_email: 'Antwan.Abshire@hotmail.com',
-  send_at: DateTime.iso8601('2023-03-28T12:33:25.052Z'),
-  status: Models::Shared::MarketingCampaignStatus::SENT,
-  subject_line: 'Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.',
-  type: 'plaintext',
-  updated_at: DateTime.iso8601('2023-12-17T22:11:31.702Z'),
+  preview_text: 'Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.',
+  reply_to_email: 'graham.mertz@icloud.com',
+  send_at: DateTime.iso8601('2024-01-23T21:19:26.708Z'),
+  status: Models::Shared::MarketingCampaignStatus::SCHEDULED,
+  subject_line: 'Trepide utpote conculco tibi solio supplanto peior tibi.',
+  type: 'absplit',
+  updated_at: DateTime.iso8601('2022-06-22T22:42:06.196Z'),
 ), connection_id: '<id>')
 
 unless res.marketing_campaign.nil?
@@ -142,7 +141,7 @@ end
 
 ## get_ads_campaign
 
-Retrieve a campaign
+Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -186,7 +185,7 @@ end
 
 ## get_martech_campaign
 
-Retrieve a campaign
+Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -230,7 +229,7 @@ end
 
 ## list_ads_campaigns
 
-List all campaigns
+Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -275,7 +274,7 @@ end
 
 ## list_martech_campaigns
 
-List all campaigns
+Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -320,7 +319,7 @@ end
 
 ## patch_ads_campaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -343,17 +342,18 @@ req = Models::Operations::PatchAdsCampaignRequest.new(
     created_at: DateTime.iso8601('2022-05-21T08:51:41.868Z'),
     currency: 'USD',
     effective_status: Models::Shared::EffectiveStatus::NOT_ELIGIBLE,
-    end_at: DateTime.iso8601('2025-05-11T10:13:16.729Z'),
-    id: '9d5b5933-d96e-4219-abbd-af2e7056899b',
+    end_at: DateTime.iso8601('2025-06-02T08:12:06.805Z'),
+    id: 'a9072f26-4981-4c59-a064-9f4778c74f87',
     labels: [
       'comedo',
     ],
+    metadata: [],
     name: 'Emard Inc',
-    start_at: DateTime.iso8601('2022-07-20T07:36:39.674Z'),
+    start_at: DateTime.iso8601('2022-07-21T12:38:38.287Z'),
     status: Models::Shared::AdsCampaignStatus::PROCESSING_FAILED,
     targeting: Models::Shared::PropertyAdsCampaignTargeting.new(),
     total_spend_amount: 2_349.8_642_875_347_286,
-    updated_at: DateTime.iso8601('2025-12-08T01:10:49.785Z'),
+    updated_at: DateTime.iso8601('2026-01-03T05:09:59.702Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -385,7 +385,7 @@ end
 
 ## patch_martech_campaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -402,21 +402,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchMartechCampaignRequest.new(
   marketing_campaign: Models::Shared::MarketingCampaign.new(
-    created_at: DateTime.iso8601('2023-08-01T22:29:12.121Z'),
-    from_email: 'Nick.Beahan@hotmail.com',
-    from_name: 'Javier Rempel',
-    id: '6e70b7c4-1de5-4391-9b5b-9fd4c8acb56a',
-    list_ids: [
-      'bde5cab9-cf2f-4ed5-adab-b33c88bac5af',
-    ],
+    created_at: DateTime.iso8601('2019-05-19T11:18:15.589Z'),
+    from_email: 'graham.mertz@gmail.com',
+    from_name: 'Graham Mertz',
+    id: '5a48f9a6-02f2-4b50-8a34-5bcc96b0d40a',
+    metadata: [],
     name: 'Consequatur atqui sustineo.',
-    preview_text: 'Bellicus tener cinis causa cavus toties.',
-    reply_to_email: 'Antwan.Abshire@hotmail.com',
-    send_at: DateTime.iso8601('2023-03-28T12:33:25.052Z'),
-    status: Models::Shared::MarketingCampaignStatus::SENT,
-    subject_line: 'Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.',
-    type: 'plaintext',
-    updated_at: DateTime.iso8601('2023-12-17T22:11:31.702Z'),
+    preview_text: 'Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.',
+    reply_to_email: 'graham.mertz@icloud.com',
+    send_at: DateTime.iso8601('2024-01-23T21:19:26.708Z'),
+    status: Models::Shared::MarketingCampaignStatus::SCHEDULED,
+    subject_line: 'Trepide utpote conculco tibi solio supplanto peior tibi.',
+    type: 'absplit',
+    updated_at: DateTime.iso8601('2022-06-22T22:42:06.204Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -448,7 +446,7 @@ end
 
 ## remove_ads_campaign
 
-Remove a campaign
+Deletes the AdsCampaign identified by `id`.
 
 ### Example Usage
 
@@ -490,7 +488,7 @@ end
 
 ## remove_martech_campaign
 
-Remove a campaign
+Deletes the MarketingCampaign identified by `id`.
 
 ### Example Usage
 
@@ -532,7 +530,7 @@ end
 
 ## update_ads_campaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -555,17 +553,18 @@ req = Models::Operations::UpdateAdsCampaignRequest.new(
     created_at: DateTime.iso8601('2022-05-21T08:51:41.868Z'),
     currency: 'USD',
     effective_status: Models::Shared::EffectiveStatus::NOT_ELIGIBLE,
-    end_at: DateTime.iso8601('2025-05-11T10:13:16.729Z'),
-    id: '9d5b5933-d96e-4219-abbd-af2e7056899b',
+    end_at: DateTime.iso8601('2025-06-02T08:12:06.805Z'),
+    id: 'a9072f26-4981-4c59-a064-9f4778c74f87',
     labels: [
       'comedo',
     ],
+    metadata: [],
     name: 'Emard Inc',
-    start_at: DateTime.iso8601('2022-07-20T07:36:39.674Z'),
+    start_at: DateTime.iso8601('2022-07-21T12:38:38.287Z'),
     status: Models::Shared::AdsCampaignStatus::PROCESSING_FAILED,
     targeting: Models::Shared::PropertyAdsCampaignTargeting.new(),
     total_spend_amount: 2_349.8_642_875_347_286,
-    updated_at: DateTime.iso8601('2025-12-08T01:10:49.785Z'),
+    updated_at: DateTime.iso8601('2026-01-03T05:09:59.702Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -597,7 +596,7 @@ end
 
 ## update_martech_campaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -614,21 +613,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateMartechCampaignRequest.new(
   marketing_campaign: Models::Shared::MarketingCampaign.new(
-    created_at: DateTime.iso8601('2023-08-01T22:29:12.121Z'),
-    from_email: 'Nick.Beahan@hotmail.com',
-    from_name: 'Javier Rempel',
-    id: '6e70b7c4-1de5-4391-9b5b-9fd4c8acb56a',
-    list_ids: [
-      'bde5cab9-cf2f-4ed5-adab-b33c88bac5af',
-    ],
+    created_at: DateTime.iso8601('2019-05-19T11:18:15.589Z'),
+    from_email: 'graham.mertz@gmail.com',
+    from_name: 'Graham Mertz',
+    id: '5a48f9a6-02f2-4b50-8a34-5bcc96b0d40a',
+    metadata: [],
     name: 'Consequatur atqui sustineo.',
-    preview_text: 'Bellicus tener cinis causa cavus toties.',
-    reply_to_email: 'Antwan.Abshire@hotmail.com',
-    send_at: DateTime.iso8601('2023-03-28T12:33:25.052Z'),
-    status: Models::Shared::MarketingCampaignStatus::SENT,
-    subject_line: 'Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.',
-    type: 'plaintext',
-    updated_at: DateTime.iso8601('2023-12-17T22:11:31.702Z'),
+    preview_text: 'Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.',
+    reply_to_email: 'graham.mertz@icloud.com',
+    send_at: DateTime.iso8601('2024-01-23T21:19:26.708Z'),
+    status: Models::Shared::MarketingCampaignStatus::SCHEDULED,
+    subject_line: 'Trepide utpote conculco tibi solio supplanto peior tibi.',
+    type: 'absplit',
+    updated_at: DateTime.iso8601('2022-06-22T22:42:06.204Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -14,7 +14,7 @@
 
 ## create_payment_subscription
 
-Create a subscription
+Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
 
 ### Example Usage
 
@@ -31,20 +31,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.subscription.create_payment_subscription(payment_subscription: Models::Shared::PaymentSubscription.new(
   created_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
-  currency: 'WST',
-  current_period_end_at: DateTime.iso8601('2023-06-03T04:20:29.157Z'),
-  current_period_start_at: DateTime.iso8601('2023-05-21T03:55:58.846Z'),
-  day_of_month: 1.0,
+  currency: 'USD',
+  current_period_end_at: DateTime.iso8601('2024-02-08T10:05:22.912Z'),
+  current_period_start_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
+  day_of_month: 8.0,
   description: 'Innovative Mouse featuring important technology and Bamboo construction',
-  end_at: DateTime.iso8601('2023-05-21T12:36:09.234Z'),
-  id: '474ee5bc-efa0-45e7-8d0d-7880e6a189c8',
+  id: '00ad0491-10fd-423a-9540-056214ba4956',
   interval: 1.0,
-  interval_unit: Models::Shared::IntervalUnit::MONTH,
+  interval_unit: Models::Shared::IntervalUnit::YEAR,
   lineitems: [],
-  start_at: DateTime.iso8601('2023-05-29T06:04:51.030Z'),
+  metadata: [],
+  month: 5.0,
+  start_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
   status: Models::Shared::PaymentSubscriptionStatus::ACTIVE,
-  total_amount: 75_616.0,
-  updated_at: DateTime.iso8601('2023-12-16T11:40:39.964Z'),
+  total_amount: 0.0,
+  updated_at: DateTime.iso8601('2023-10-04T18:30:59.446Z'),
 ), connection_id: '<id>')
 
 unless res.payment_subscription.nil?
@@ -74,7 +75,7 @@ end
 
 ## get_payment_subscription
 
-Retrieve a subscription
+Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -118,7 +119,7 @@ end
 
 ## list_payment_subscriptions
 
-List all subscriptions
+Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -163,7 +164,7 @@ end
 
 ## patch_payment_subscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -181,20 +182,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchPaymentSubscriptionRequest.new(
   payment_subscription: Models::Shared::PaymentSubscription.new(
     created_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
-    currency: 'WST',
-    current_period_end_at: DateTime.iso8601('2023-06-03T04:20:29.157Z'),
-    current_period_start_at: DateTime.iso8601('2023-05-21T03:55:58.846Z'),
-    day_of_month: 1.0,
+    currency: 'USD',
+    current_period_end_at: DateTime.iso8601('2024-02-08T10:05:22.912Z'),
+    current_period_start_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
+    day_of_month: 8.0,
     description: 'Innovative Mouse featuring important technology and Bamboo construction',
-    end_at: DateTime.iso8601('2023-05-21T12:36:09.234Z'),
-    id: '00e5f826-7bb0-4714-bdd4-901be19b2dd7',
+    id: 'ea3a9722-c59c-41de-aa53-178838a1b961',
     interval: 1.0,
-    interval_unit: Models::Shared::IntervalUnit::MONTH,
+    interval_unit: Models::Shared::IntervalUnit::YEAR,
     lineitems: [],
-    start_at: DateTime.iso8601('2023-05-29T06:04:51.030Z'),
+    metadata: [],
+    month: 5.0,
+    start_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
     status: Models::Shared::PaymentSubscriptionStatus::ACTIVE,
-    total_amount: 75_616.0,
-    updated_at: DateTime.iso8601('2023-12-16T11:40:39.968Z'),
+    total_amount: 0.0,
+    updated_at: DateTime.iso8601('2023-10-04T18:30:59.450Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -226,7 +228,7 @@ end
 
 ## remove_payment_subscription
 
-Remove a subscription
+Deletes the PaymentSubscription identified by `id`.
 
 ### Example Usage
 
@@ -268,7 +270,7 @@ end
 
 ## update_payment_subscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -286,20 +288,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdatePaymentSubscriptionRequest.new(
   payment_subscription: Models::Shared::PaymentSubscription.new(
     created_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
-    currency: 'WST',
-    current_period_end_at: DateTime.iso8601('2023-06-03T04:20:29.157Z'),
-    current_period_start_at: DateTime.iso8601('2023-05-21T03:55:58.846Z'),
-    day_of_month: 1.0,
+    currency: 'USD',
+    current_period_end_at: DateTime.iso8601('2024-02-08T10:05:22.912Z'),
+    current_period_start_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
+    day_of_month: 8.0,
     description: 'Innovative Mouse featuring important technology and Bamboo construction',
-    end_at: DateTime.iso8601('2023-05-21T12:36:09.234Z'),
-    id: '00e5f826-7bb0-4714-bdd4-901be19b2dd7',
+    id: 'ea3a9722-c59c-41de-aa53-178838a1b961',
     interval: 1.0,
-    interval_unit: Models::Shared::IntervalUnit::MONTH,
+    interval_unit: Models::Shared::IntervalUnit::YEAR,
     lineitems: [],
-    start_at: DateTime.iso8601('2023-05-29T06:04:51.030Z'),
+    metadata: [],
+    month: 5.0,
+    start_at: DateTime.iso8601('2023-05-08T10:11:03.414Z'),
     status: Models::Shared::PaymentSubscriptionStatus::ACTIVE,
-    total_amount: 75_616.0,
-    updated_at: DateTime.iso8601('2023-12-16T11:40:39.968Z'),
+    total_amount: 0.0,
+    updated_at: DateTime.iso8601('2023-10-04T18:30:59.450Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

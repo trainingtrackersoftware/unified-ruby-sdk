@@ -14,7 +14,7 @@
 
 ## create_hris_attendance
 
-Create an attendance
+Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
 
 ### Example Usage
 
@@ -38,31 +38,32 @@ res = s.attendance.create_hris_attendance(hris_attendance: Models::Shared::HrisA
     region: 'Tennessee',
     region_code: 'CA',
   ),
-  approved_at: DateTime.iso8601('2021-08-13T10:42:10.868Z'),
+  approved_at: DateTime.iso8601('2021-09-19T15:06:28.110Z'),
   breaks: [
     Models::Shared::HrisAttendanceBreak.new(
-      duration_minutes: 12.0,
-      end_at: DateTime.iso8601('2023-10-23T23:43:18.991Z'),
-      id: 'd60a1001-5a8a-4991-8c21-f4da6036cc87',
-      is_paid: true,
+      duration_minutes: 51.0,
+      end_at: DateTime.iso8601('2024-02-15T12:19:44.117Z'),
+      id: '885331bb-2d7c-4be6-ab50-f6c0a8246cac',
+      is_paid: false,
       name: 'Lunch',
-      start_at: DateTime.iso8601('2023-10-17T03:53:40.572Z'),
+      start_at: DateTime.iso8601('2023-10-30T19:24:30.520Z'),
     ),
   ],
   created_at: DateTime.iso8601('2021-08-10T19:43:18.452Z'),
-  currency: 'UGX',
-  declared_tips_amount: 161.0,
+  currency: 'EUR',
+  declared_tips_amount: 54.0,
   employee_user_id: '<id>',
-  end_at: DateTime.iso8601('2024-04-07T17:46:51.474Z'),
-  hourly_rate: 53.0,
+  end_at: DateTime.iso8601('2024-04-24T08:35:36.994Z'),
+  hourly_rate: 16.0,
   hours: 10.0,
-  id: '0dfdb179-687d-4983-9d57-e442cb84eb0d',
-  job_name: 'Global Creative Supervisor',
-  non_cash_tips_amount: 54.0,
-  start_at: DateTime.iso8601('2021-11-09T13:58:14.444Z'),
-  status: Models::Shared::HrisAttendanceStatus::CLOSED,
+  id: 'e245fc8a-5b24-4114-9a10-52987bb51214',
+  job_name: 'Human Accountability Administrator',
+  metadata: [],
+  non_cash_tips_amount: 167.0,
+  start_at: DateTime.iso8601('2021-11-11T03:15:04.365Z'),
+  status: Models::Shared::HrisAttendanceStatus::OPEN,
   timezone: 'America/Atikokan',
-  updated_at: DateTime.iso8601('2022-01-17T07:38:03.665Z'),
+  updated_at: DateTime.iso8601('2022-01-20T01:08:55.429Z'),
 ), connection_id: '<id>')
 
 unless res.hris_attendance.nil?
@@ -75,7 +76,7 @@ end
 
 | Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `hris_attendance`                                                                                                                                | [Models::Shared::HrisAttendance](../../models/shared/hrisattendance.md)                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `hris_attendance`                                                                                                                                | [Models::Shared::HrisAttendance](../../models/shared/hrisattendance.md)                                                                          | :heavy_check_mark:                                                                                                                               | Also called timesheets                                                                                                                           |
 | `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `fields_`                                                                                                                                        | T::Array<[Models::Operations::CreateHrisAttendanceQueryParamFields](../../models/operations/createhrisattendancequeryparamfields.md)>            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
@@ -92,7 +93,7 @@ end
 
 ## get_hris_attendance
 
-Retrieve an attendance
+Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -136,7 +137,7 @@ end
 
 ## list_hris_attendances
 
-List all attendances
+Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -181,7 +182,7 @@ end
 
 ## patch_hris_attendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -206,31 +207,32 @@ req = Models::Operations::PatchHrisAttendanceRequest.new(
       region: 'Tennessee',
       region_code: 'CA',
     ),
-    approved_at: DateTime.iso8601('2021-08-13T10:42:10.868Z'),
+    approved_at: DateTime.iso8601('2021-09-19T15:06:28.111Z'),
     breaks: [
       Models::Shared::HrisAttendanceBreak.new(
-        duration_minutes: 12.0,
-        end_at: DateTime.iso8601('2023-10-23T23:43:19.003Z'),
-        id: 'd60a1001-5a8a-4991-8c21-f4da6036cc87',
-        is_paid: true,
+        duration_minutes: 51.0,
+        end_at: DateTime.iso8601('2024-02-15T12:19:44.132Z'),
+        id: '535ff72a-3602-4916-aabd-100b5c5bd600',
+        is_paid: false,
         name: 'Lunch',
-        start_at: DateTime.iso8601('2023-10-17T03:53:40.584Z'),
+        start_at: DateTime.iso8601('2023-10-30T19:24:30.533Z'),
       ),
     ],
     created_at: DateTime.iso8601('2021-08-10T19:43:18.452Z'),
-    currency: 'UGX',
-    declared_tips_amount: 161.0,
+    currency: 'EUR',
+    declared_tips_amount: 54.0,
     employee_user_id: '<id>',
-    end_at: DateTime.iso8601('2024-04-07T17:46:51.489Z'),
-    hourly_rate: 53.0,
+    end_at: DateTime.iso8601('2024-04-24T08:35:37.010Z'),
+    hourly_rate: 16.0,
     hours: 10.0,
-    id: 'c47a366e-1c08-45fa-9d0c-38d1d738a641',
-    job_name: 'Global Creative Supervisor',
-    non_cash_tips_amount: 54.0,
-    start_at: DateTime.iso8601('2021-11-09T13:58:14.446Z'),
-    status: Models::Shared::HrisAttendanceStatus::CLOSED,
+    id: '3168ed24-e8aa-43a5-b61e-0f0cb5f8bb6f',
+    job_name: 'Human Accountability Administrator',
+    metadata: [],
+    non_cash_tips_amount: 167.0,
+    start_at: DateTime.iso8601('2021-11-11T03:15:04.367Z'),
+    status: Models::Shared::HrisAttendanceStatus::OPEN,
     timezone: 'America/Atikokan',
-    updated_at: DateTime.iso8601('2022-01-17T07:38:03.668Z'),
+    updated_at: DateTime.iso8601('2022-01-20T01:08:55.432Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -262,7 +264,7 @@ end
 
 ## remove_hris_attendance
 
-Remove an attendance
+Deletes the HrisAttendance identified by `id`.
 
 ### Example Usage
 
@@ -304,7 +306,7 @@ end
 
 ## update_hris_attendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -329,31 +331,32 @@ req = Models::Operations::UpdateHrisAttendanceRequest.new(
       region: 'Tennessee',
       region_code: 'CA',
     ),
-    approved_at: DateTime.iso8601('2021-08-13T10:42:10.868Z'),
+    approved_at: DateTime.iso8601('2021-09-19T15:06:28.111Z'),
     breaks: [
       Models::Shared::HrisAttendanceBreak.new(
-        duration_minutes: 12.0,
-        end_at: DateTime.iso8601('2023-10-23T23:43:19.003Z'),
-        id: 'd60a1001-5a8a-4991-8c21-f4da6036cc87',
-        is_paid: true,
+        duration_minutes: 51.0,
+        end_at: DateTime.iso8601('2024-02-15T12:19:44.132Z'),
+        id: '535ff72a-3602-4916-aabd-100b5c5bd600',
+        is_paid: false,
         name: 'Lunch',
-        start_at: DateTime.iso8601('2023-10-17T03:53:40.584Z'),
+        start_at: DateTime.iso8601('2023-10-30T19:24:30.533Z'),
       ),
     ],
     created_at: DateTime.iso8601('2021-08-10T19:43:18.452Z'),
-    currency: 'UGX',
-    declared_tips_amount: 161.0,
+    currency: 'EUR',
+    declared_tips_amount: 54.0,
     employee_user_id: '<id>',
-    end_at: DateTime.iso8601('2024-04-07T17:46:51.489Z'),
-    hourly_rate: 53.0,
+    end_at: DateTime.iso8601('2024-04-24T08:35:37.010Z'),
+    hourly_rate: 16.0,
     hours: 10.0,
-    id: 'c47a366e-1c08-45fa-9d0c-38d1d738a641',
-    job_name: 'Global Creative Supervisor',
-    non_cash_tips_amount: 54.0,
-    start_at: DateTime.iso8601('2021-11-09T13:58:14.446Z'),
-    status: Models::Shared::HrisAttendanceStatus::CLOSED,
+    id: '3168ed24-e8aa-43a5-b61e-0f0cb5f8bb6f',
+    job_name: 'Human Accountability Administrator',
+    metadata: [],
+    non_cash_tips_amount: 167.0,
+    start_at: DateTime.iso8601('2021-11-11T03:15:04.367Z'),
+    status: Models::Shared::HrisAttendanceStatus::OPEN,
     timezone: 'America/Atikokan',
-    updated_at: DateTime.iso8601('2022-01-17T07:38:03.668Z'),
+    updated_at: DateTime.iso8601('2022-01-20T01:08:55.432Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -9,7 +9,7 @@
 
 ## create_datastore_query
 
-Create a query
+Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
 
 ### Example Usage
 
@@ -25,6 +25,7 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.query.create_datastore_query(datastore_query: Models::Shared::DatastoreQuery.new(
+  metadata: [],
   query: Models::Shared::PropertyDatastoreQueryQuery.new(
     filter: Models::Shared::PropertyDatastoreQueryQueryFilter.new(
       type: Models::Shared::PropertyDatastoreQueryQueryFilterType::OR,

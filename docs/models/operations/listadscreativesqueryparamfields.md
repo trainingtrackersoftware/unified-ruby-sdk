@@ -19,6 +19,7 @@
 | `WIDTH`                        | width                          |
 | `HEIGHT`                       | height                         |
 | `ASSET_URLS`                   | asset_urls                     |
+| `CARDS`                        | cards                          |
 | `LINK_URL`                     | link_url                       |
 | `URL_TAGS`                     | url_tags                       |
 | `BODY`                         | body                           |
@@ -34,4 +35,5 @@
 | `PATH2`                        | path2                          |
 | `DATA`                         | data                           |
 | `LABELS`                       | labels                         |
+| `METADATA`                     | metadata                       |
 | `RAW`                          | raw                            |

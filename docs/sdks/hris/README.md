@@ -12,8 +12,10 @@
 * [create_hris_deduction](#create_hris_deduction) - Create a deduction
 * [create_hris_device](#create_hris_device) - Create a device
 * [create_hris_document](#create_hris_document) - Create a document
+* [create_hris_earning](#create_hris_earning) - Create an earning
 * [create_hris_employee](#create_hris_employee) - Create an employee
 * [create_hris_group](#create_hris_group) - Create a group
+* [create_hris_job](#create_hris_job) - Create a job
 * [create_hris_location](#create_hris_location) - Create a location
 * [create_hris_taxonomy](#create_hris_taxonomy) - Create a taxonomy
 * [create_hris_timeoff](#create_hris_timeoff) - Create a timeoff
@@ -25,9 +27,13 @@
 * [get_hris_deduction](#get_hris_deduction) - Retrieve a deduction
 * [get_hris_device](#get_hris_device) - Retrieve a device
 * [get_hris_document](#get_hris_document) - Retrieve a document
+* [get_hris_earning](#get_hris_earning) - Retrieve an earning
 * [get_hris_employee](#get_hris_employee) - Retrieve an employee
 * [get_hris_group](#get_hris_group) - Retrieve a group
+* [get_hris_job](#get_hris_job) - Retrieve a job
 * [get_hris_location](#get_hris_location) - Retrieve a location
+* [get_hris_paycode](#get_hris_paycode) - Retrieve a paycode
+* [get_hris_payroll](#get_hris_payroll) - Retrieve a payroll
 * [get_hris_payslip](#get_hris_payslip) - Retrieve a payslip
 * [get_hris_taxonomy](#get_hris_taxonomy) - Retrieve a taxonomy
 * [get_hris_timeoff](#get_hris_timeoff) - Retrieve a timeoff
@@ -39,9 +45,13 @@
 * [list_hris_deductions](#list_hris_deductions) - List all deductions
 * [list_hris_devices](#list_hris_devices) - List all devices
 * [list_hris_documents](#list_hris_documents) - List all documents
+* [list_hris_earnings](#list_hris_earnings) - List all earnings
 * [list_hris_employees](#list_hris_employees) - List all employees
 * [list_hris_groups](#list_hris_groups) - List all groups
+* [list_hris_jobs](#list_hris_jobs) - List all jobs
 * [list_hris_locations](#list_hris_locations) - List all locations
+* [list_hris_paycodes](#list_hris_paycodes) - List all paycodes
+* [list_hris_payrolls](#list_hris_payrolls) - List all payrolls
 * [list_hris_payslips](#list_hris_payslips) - List all payslips
 * [list_hris_taxonomies](#list_hris_taxonomies) - List all taxonomies
 * [list_hris_timeoffs](#list_hris_timeoffs) - List all timeoffs
@@ -53,8 +63,10 @@
 * [patch_hris_deduction](#patch_hris_deduction) - Update a deduction
 * [patch_hris_device](#patch_hris_device) - Update a device
 * [patch_hris_document](#patch_hris_document) - Update a document
+* [patch_hris_earning](#patch_hris_earning) - Update an earning
 * [patch_hris_employee](#patch_hris_employee) - Update an employee
 * [patch_hris_group](#patch_hris_group) - Update a group
+* [patch_hris_job](#patch_hris_job) - Update a job
 * [patch_hris_location](#patch_hris_location) - Update a location
 * [patch_hris_timeoff](#patch_hris_timeoff) - Update a timeoff
 * [patch_hris_timeshift](#patch_hris_timeshift) - Update a timeshift
@@ -65,8 +77,10 @@
 * [remove_hris_deduction](#remove_hris_deduction) - Remove a deduction
 * [remove_hris_device](#remove_hris_device) - Remove a device
 * [remove_hris_document](#remove_hris_document) - Remove a document
+* [remove_hris_earning](#remove_hris_earning) - Remove an earning
 * [remove_hris_employee](#remove_hris_employee) - Remove an employee
 * [remove_hris_group](#remove_hris_group) - Remove a group
+* [remove_hris_job](#remove_hris_job) - Remove a job
 * [remove_hris_location](#remove_hris_location) - Remove a location
 * [remove_hris_timeoff](#remove_hris_timeoff) - Remove a timeoff
 * [remove_hris_timeshift](#remove_hris_timeshift) - Remove a timeshift
@@ -77,15 +91,17 @@
 * [update_hris_deduction](#update_hris_deduction) - Update a deduction
 * [update_hris_device](#update_hris_device) - Update a device
 * [update_hris_document](#update_hris_document) - Update a document
+* [update_hris_earning](#update_hris_earning) - Update an earning
 * [update_hris_employee](#update_hris_employee) - Update an employee
 * [update_hris_group](#update_hris_group) - Update a group
+* [update_hris_job](#update_hris_job) - Update a job
 * [update_hris_location](#update_hris_location) - Update a location
 * [update_hris_timeoff](#update_hris_timeoff) - Update a timeoff
 * [update_hris_timeshift](#update_hris_timeshift) - Update a timeshift
 
 ## create_hris_attendance
 
-Create an attendance
+Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
 
 ### Example Usage
 
@@ -109,31 +125,32 @@ res = s.hris.create_hris_attendance(hris_attendance: Models::Shared::HrisAttenda
     region: 'Tennessee',
     region_code: 'CA',
   ),
-  approved_at: DateTime.iso8601('2021-08-13T10:42:10.868Z'),
+  approved_at: DateTime.iso8601('2021-09-19T15:06:28.110Z'),
   breaks: [
     Models::Shared::HrisAttendanceBreak.new(
-      duration_minutes: 12.0,
-      end_at: DateTime.iso8601('2023-10-23T23:43:18.991Z'),
-      id: 'd60a1001-5a8a-4991-8c21-f4da6036cc87',
-      is_paid: true,
+      duration_minutes: 51.0,
+      end_at: DateTime.iso8601('2024-02-15T12:19:44.117Z'),
+      id: '885331bb-2d7c-4be6-ab50-f6c0a8246cac',
+      is_paid: false,
       name: 'Lunch',
-      start_at: DateTime.iso8601('2023-10-17T03:53:40.572Z'),
+      start_at: DateTime.iso8601('2023-10-30T19:24:30.520Z'),
     ),
   ],
   created_at: DateTime.iso8601('2021-08-10T19:43:18.452Z'),
-  currency: 'UGX',
-  declared_tips_amount: 161.0,
+  currency: 'EUR',
+  declared_tips_amount: 54.0,
   employee_user_id: '<id>',
-  end_at: DateTime.iso8601('2024-04-07T17:46:51.474Z'),
-  hourly_rate: 53.0,
+  end_at: DateTime.iso8601('2024-04-24T08:35:36.994Z'),
+  hourly_rate: 16.0,
   hours: 10.0,
-  id: '0dfdb179-687d-4983-9d57-e442cb84eb0d',
-  job_name: 'Global Creative Supervisor',
-  non_cash_tips_amount: 54.0,
-  start_at: DateTime.iso8601('2021-11-09T13:58:14.444Z'),
-  status: Models::Shared::HrisAttendanceStatus::CLOSED,
+  id: 'e245fc8a-5b24-4114-9a10-52987bb51214',
+  job_name: 'Human Accountability Administrator',
+  metadata: [],
+  non_cash_tips_amount: 167.0,
+  start_at: DateTime.iso8601('2021-11-11T03:15:04.365Z'),
+  status: Models::Shared::HrisAttendanceStatus::OPEN,
   timezone: 'America/Atikokan',
-  updated_at: DateTime.iso8601('2022-01-17T07:38:03.665Z'),
+  updated_at: DateTime.iso8601('2022-01-20T01:08:55.429Z'),
 ), connection_id: '<id>')
 
 unless res.hris_attendance.nil?
@@ -146,7 +163,7 @@ end
 
 | Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `hris_attendance`                                                                                                                                | [Models::Shared::HrisAttendance](../../models/shared/hrisattendance.md)                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `hris_attendance`                                                                                                                                | [Models::Shared::HrisAttendance](../../models/shared/hrisattendance.md)                                                                          | :heavy_check_mark:                                                                                                                               | Also called timesheets                                                                                                                           |
 | `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `fields_`                                                                                                                                        | T::Array<[Models::Operations::CreateHrisAttendanceQueryParamFields](../../models/operations/createhrisattendancequeryparamfields.md)>            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
@@ -163,7 +180,7 @@ end
 
 ## create_hris_bankaccount
 
-Create a bankaccount
+Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
 
 ### Example Usage
 
@@ -183,12 +200,18 @@ res = s.hris.create_hris_bankaccount(hris_bankaccount: Models::Shared::HrisBanka
   account_number_last4: '3777',
   account_type: Models::Shared::HrisBankaccountAccountType::CHECKING,
   bank_name: 'Huel Group',
+  country_code: 'US',
   created_at: DateTime.iso8601('2019-11-16T16:43:45.976Z'),
-  id: '8861a5c0-e091-4718-8479-aec3dd76bf39',
-  is_primary: false,
-  name: 'Checking Account',
+  currency: 'USD',
+  id: 'a6b56f32-6680-4278-a7eb-42eafc008478',
+  is_primary: true,
+  metadata: [],
+  name: 'Granville Schumm - Checking',
+  priority: 2.0,
   routing_number: '448650724',
-  updated_at: DateTime.iso8601('2025-06-06T22:35:03.395Z'),
+  split_amount: 98.0,
+  split_type: Models::Shared::SplitType::PERCENTAGE,
+  updated_at: DateTime.iso8601('2025-07-02T21:02:53.617Z'),
 ), connection_id: '<id>')
 
 unless res.hris_bankaccount.nil?
@@ -218,7 +241,7 @@ end
 
 ## create_hris_benefit
 
-Create a benefit
+Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
 
 ### Example Usage
 
@@ -236,18 +259,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.hris.create_hris_benefit(hris_benefit: Models::Shared::HrisBenefit.new(
   coverage_level: Models::Shared::CoverageLevel::EMPLOYEE_SPOUSE,
   created_at: DateTime.iso8601('2020-06-11T01:24:05.654Z'),
-  currency: 'JOD',
+  currency: 'GBP',
   description: 'Vomito voluptas dolor sed.',
   employer_contribution_amount: 185_006.0,
   employer_contribution_max_amount: 179_093.0,
   employer_contribution_type: Models::Shared::EmployerContributionType::PERCENTAGE,
-  frequency: Models::Shared::HrisBenefitFrequency::HOUR,
-  id: '2bc73132-a231-4f6b-b0f2-73d8f42a7bb3',
+  frequency: Models::Shared::HrisBenefitFrequency::MONTH,
+  id: '14c75d97-923c-437f-89d5-aec3b77e7f11',
   is_active: false,
+  metadata: [],
   name: 'Frozen Wooden Ball',
   tax: Models::Shared::Tax::PRE_TAX,
-  type: Models::Shared::HrisBenefitType::GARNISHMENT,
-  updated_at: DateTime.iso8601('2023-03-07T18:44:31.792Z'),
+  type: Models::Shared::HrisBenefitType::OTHER,
+  updated_at: DateTime.iso8601('2023-03-21T17:08:11.107Z'),
 ), connection_id: '<id>')
 
 unless res.hris_benefit.nil?
@@ -277,7 +301,7 @@ end
 
 ## create_hris_company
 
-Create a company
+Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
 
 ### Example Usage
 
@@ -294,18 +318,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.hris.create_hris_company(hris_company: Models::Shared::HrisCompany.new(
   address: Models::Shared::PropertyHrisCompanyAddress.new(
-    address1: '2549 Church Walk',
-    city: 'Lake Nettiebury',
+    address1: '675 Lavinia Lights',
+    city: 'Rocky Mount',
     country_code: 'US',
-    postal_code: '32877-4898',
-    region: 'Idaho',
-    region_code: 'PA',
+    postal_code: '67325',
+    region: 'Kentucky',
+    region_code: 'MO',
   ),
   created_at: DateTime.iso8601('2021-05-02T22:27:38.970Z'),
-  id: 'a11f97c3-0d79-4eae-aaf7-d7987e9817aa',
-  legal_name: 'Schultz LLC',
+  id: '7c750bde-2fb2-4c0c-93a5-cc962069e617',
+  legal_name: 'Gottlieb Group LLC',
+  metadata: [],
   name: 'Gottlieb Group',
-  updated_at: DateTime.iso8601('2026-09-08T21:31:26.668Z'),
+  updated_at: DateTime.iso8601('2026-10-10T15:45:47.999Z'),
 ), connection_id: '<id>')
 
 unless res.hris_company.nil?
@@ -335,7 +360,7 @@ end
 
 ## create_hris_deduction
 
-Create a deduction
+Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
 
 ### Example Usage
 
@@ -351,17 +376,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.hris.create_hris_deduction(hris_deduction: Models::Shared::HrisDeduction.new(
-  amount: 139_655.0,
-  coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_ONLY,
+  amount: 564.0,
+  coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_CHILD,
   created_at: DateTime.iso8601('2020-02-05T01:46:31.384Z'),
-  end_at: DateTime.iso8601('2026-05-25T20:05:49.194Z'),
-  frequency: Models::Shared::HrisDeductionFrequency::MONTH,
-  id: '84f3e0b9-8ec8-4eb5-b808-e26cc8f4468a',
-  is_active: false,
+  employer_amount: 80_510.0,
+  employer_type: Models::Shared::EmployerType::PERCENTAGE,
+  frequency: Models::Shared::HrisDeductionFrequency::ONE_TIME,
+  garnishment_type: Models::Shared::GarnishmentType::CHILD_SUPPORT,
+  id: '63abbe37-87cb-429c-8365-04ba2c639cb6',
+  is_active: true,
+  max_amount: 21_794.0,
+  metadata: [],
   notes: 'Carmen desidero.',
-  start_at: DateTime.iso8601('2025-02-20T12:02:49.110Z'),
+  start_at: DateTime.iso8601('2025-03-16T19:58:37.713Z'),
   type: Models::Shared::HrisDeductionType::FIXED,
-  updated_at: DateTime.iso8601('2024-03-03T20:28:34.377Z'),
+  updated_at: DateTime.iso8601('2024-03-23T12:19:21.568Z'),
 ), connection_id: '<id>')
 
 unless res.hris_deduction.nil?
@@ -391,7 +420,7 @@ end
 
 ## create_hris_device
 
-Create a device
+Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
 
 ### Example Usage
 
@@ -408,22 +437,23 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.hris.create_hris_device(hris_device: Models::Shared::HrisDevice.new(
   admin_user_ids: [],
-  asset_tag: 'dpho9OuFNG',
+  asset_tag: 'fJNacaaoWi',
   created_at: DateTime.iso8601('2019-04-04T17:11:40.322Z'),
-  has_antivirus: false,
+  has_antivirus: true,
   has_firewall: true,
   has_hd_encrypted: true,
   has_password_manager: true,
-  has_screenlock: true,
-  id: 'ff6f7d28-8a09-4c0d-8233-996f14d17b4f',
+  has_screenlock: false,
+  id: '35aab3f8-e9a2-4dbc-9093-e69da49d460e',
   is_missing: false,
-  manufacturer: 'Sanford - Hamill',
-  model: 'Refined',
-  name: 'cross_contamination_if.rar',
-  os: 'monitor',
-  os_version: '1.12.16',
-  updated_at: DateTime.iso8601('2023-05-22T17:13:26.123Z'),
-  version: '2.20.17',
+  manufacturer: 'Hackett Inc',
+  metadata: [],
+  model: 'Fantastic',
+  name: 'august-laptop',
+  os: 'transmitter',
+  os_version: '8.4.8',
+  updated_at: DateTime.iso8601('2023-06-09T09:44:14.207Z'),
+  version: '4.15.7',
 ), connection_id: '<id>')
 
 unless res.hris_device.nil?
@@ -453,7 +483,7 @@ end
 
 ## create_hris_document
 
-Create a document
+Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
 
 ### Example Usage
 
@@ -472,9 +502,10 @@ res = s.hris.create_hris_document(hris_document: Models::Shared::HrisDocument.ne
   created_at: DateTime.iso8601('2022-10-27T11:47:26.086Z'),
   document_url: 'https://sore-decision.biz/',
   filename: 'ridge_forager.xsl',
-  id: '9b700086-451a-4120-8d57-fed917f0d7fe',
+  id: '7d609a97-f59a-4860-9238-05ad03354cc0',
+  metadata: [],
   type: Models::Shared::HrisDocumentType::POLICY,
-  updated_at: DateTime.iso8601('2025-09-19T07:57:45.601Z'),
+  updated_at: DateTime.iso8601('2025-10-13T01:30:16.029Z'),
 ), connection_id: '<id>')
 
 unless res.hris_document.nil?
@@ -502,9 +533,64 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## create_hris_earning
+
+Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="createHrisEarning" method="post" path="/hris/{connection_id}/earning" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.hris.create_hris_earning(hris_earning: Models::Shared::HrisEarning.new(
+  amount: 4026.0,
+  created_at: DateTime.iso8601('2019-01-26T12:44:52.326Z'),
+  currency: 'USD',
+  frequency: Models::Shared::HrisEarningFrequency::SEMIMONTHLY,
+  id: '76988974-2455-4547-ab67-1103f1de5004',
+  metadata: [],
+  notes: 'Deporto truculenter vinum beatae.',
+  start_at: DateTime.iso8601('2022-07-26T09:21:02.675Z'),
+  status: Models::Shared::HrisEarningStatus::ENDED,
+  updated_at: DateTime.iso8601('2020-02-09T02:56:01.410Z'),
+), connection_id: '<id>')
+
+unless res.hris_earning.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `hris_earning`                                                                                                                                   | [Models::Shared::HrisEarning](../../models/shared/hrisearning.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::CreateHrisEarningQueryParamFields](../../models/operations/createhrisearningqueryparamfields.md)>                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::CreateHrisEarningResponse)](../../models/operations/createhrisearningresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## create_hris_employee
 
-Create an employee
+Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
 
 ### Example Usage
 
@@ -521,43 +607,44 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.hris.create_hris_employee(hris_employee: Models::Shared::HrisEmployee.new(
   address: Models::Shared::PropertyHrisEmployeeAddress.new(
-    address1: '52008 Lansdowne Road',
-    address2: 'Apt. 101',
-    city: 'Connellyberg',
+    address1: '7431 Hintz Parkway',
+    address2: 'Apt. 520',
+    city: 'Port Rogerview',
     country_code: 'US',
-    postal_code: '18978',
-    region: 'South Dakota',
-    region_code: 'NM',
+    postal_code: '01711',
+    region: 'Missouri',
+    region_code: 'TN',
   ),
-  bio: 'sushi devotee, singer',
+  bio: 'fun advocate  🇱🇻',
   compensation: [
     Models::Shared::HrisCompensation.new(
-      amount: 69_148.0,
-      currency: 'CRC',
-      frequency: Models::Shared::HrisCompensationFrequency::QUARTER,
-      notes: 'Tergeo laborum laboriosam tutis.',
-      type: Models::Shared::HrisCompensationType::EQUITY,
+      amount: 95_000.0,
+      currency: 'USD',
+      frequency: Models::Shared::HrisCompensationFrequency::YEAR,
+      notes: 'Eius.',
+      type: Models::Shared::HrisCompensationType::OTHER,
     ),
   ],
   created_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
-  currency: 'IDR',
+  currency: 'USD',
   date_of_birth: DateTime.iso8601('2001-04-22'),
   emails: [
     Models::Shared::HrisEmail.new(
-      email: 'Zetta_Prohaska67@hotmail.com',
-      type: Models::Shared::HrisEmailType::HOME,
+      email: 'zetta.prohaska@insidious-stump.net',
+      type: Models::Shared::HrisEmailType::WORK,
     ),
   ],
-  employee_number: 'YuOt169CGu',
+  employee_number: 'uCk3qaL1ei',
   employment_status: Models::Shared::EmploymentStatus::ACTIVE,
-  employment_type: Models::Shared::HrisEmployeeEmploymentType::VOLUNTEER,
+  employment_type: Models::Shared::HrisEmployeeEmploymentType::PART_TIME,
   first_name: 'Zetta',
-  gender: Models::Shared::HrisEmployeeGender::INTERSEX,
+  flsa_status: Models::Shared::FlsaStatus::EXEMPT,
+  gender: Models::Shared::HrisEmployeeGender::MALE,
   has_mfa: true,
-  hired_at: DateTime.iso8601('2023-05-12T06:08:21.583Z'),
-  id: '484040b5-6330-41f5-9b49-4d3045c77f39',
-  image_url: 'https://loremflickr.com/3684/2116?lock=4686991638584456',
-  language_locale: 'es',
+  hired_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
+  id: 'f6a1ee89-b952-43f1-8024-95d665d0bdc5',
+  image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg',
+  language_locale: 'in',
   last_name: 'Prohaska',
   locations: [],
   marital_status: Models::Shared::MaritalStatus::MARRIED,
@@ -567,72 +654,55 @@ res = s.hris.create_hris_employee(hris_employee: Models::Shared::HrisEmployee.ne
         "display_name": 'Custom Property',
       },
       format: Models::Shared::HrisMetadataFormat::TEXT,
-      id: 'f3fc17c5-b836-407b-a353-5d1f99341389',
+      id: '554bb5dd-d05f-4c0e-85ca-7aa28f3f1d32',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'tenetur',
+      value: 'tutis',
     ),
   ],
   name: 'Zetta Prohaska',
+  pay_frequency: Models::Shared::PayFrequency::WEEK,
   pronouns: 'she/her',
   relationships: [
     Models::Shared::HrisEmployeerelationship.new(
       emails: [
         Models::Shared::HrisEmail.new(
-          email: 'Deshaun.Sanford24@yahoo.com',
-        ),
-        Models::Shared::HrisEmail.new(
-          email: 'Rebeca.Dibbert11@hotmail.com',
-        ),
-        Models::Shared::HrisEmail.new(
-          email: 'Hester80@gmail.com',
+          email: 'keith.prohaska@gmail.com',
         ),
       ],
-      name: 'Automotive',
-      type: Models::Shared::HrisEmployeerelationshipType::EMERGENCY,
-    ),
-    Models::Shared::HrisEmployeerelationship.new(
-      emails: [
-        Models::Shared::HrisEmail.new(
-          email: 'Benedict_Wisozk83@hotmail.com',
-        ),
-        Models::Shared::HrisEmail.new(
-          email: 'Princess_Rath43@gmail.com',
-        ),
-        Models::Shared::HrisEmail.new(
-          email: 'Elmira92@yahoo.com',
-        ),
-      ],
-      name: 'Music',
-      type: Models::Shared::HrisEmployeerelationshipType::FRIEND,
-    ),
-    Models::Shared::HrisEmployeerelationship.new(
-      emails: [
-        Models::Shared::HrisEmail.new(
-          email: 'Jane30@gmail.com',
-        ),
-      ],
-      name: 'Jewelry',
+      name: 'Keith Prohaska',
       type: Models::Shared::HrisEmployeerelationshipType::SIBLING,
     ),
+    Models::Shared::HrisEmployeerelationship.new(
+      emails: [
+        Models::Shared::HrisEmail.new(
+          email: 'keely.prohaska@icloud.com',
+        ),
+      ],
+      name: 'Keely Prohaska',
+      type: Models::Shared::HrisEmployeerelationshipType::OTHER,
+    ),
   ],
-  salutation: 'Miss',
-  ssn_sin: 'yMRtj0Q3xO',
-  storage_quota_allocated: 3_674_489.0,
-  storage_quota_available: 7_748_057.0,
-  storage_quota_used: 301_727.0,
+  salutation: 'Ms.',
+  ssn_sin: '284-82-8167',
+  storage_quota_allocated: 3_653_713.0,
+  storage_quota_available: 3_017_275.0,
+  storage_quota_used: 367_449.0,
   telephones: [
     Models::Shared::HrisTelephone.new(
-      telephone: '(409) 801-3705',
+      telephone: '(320) 980-1370',
+      type: Models::Shared::HrisTelephoneType::HOME,
+    ),
+    Models::Shared::HrisTelephone.new(
+      telephone: '(694) 840-0166',
       type: Models::Shared::HrisTelephoneType::FAX,
     ),
   ],
-  termination_reason: 'Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.',
-  timeoff_days_total: 12.0,
-  timeoff_days_used: 6.0,
-  timezone: 'Africa/Harare',
-  title: 'Investor Paradigm Liaison',
-  updated_at: DateTime.iso8601('2022-02-20T08:15:24.501Z'),
+  timeoff_days_total: 17.0,
+  timeoff_days_used: 9.0,
+  timezone: 'Europe/Ljubljana',
+  title: 'District Branding Specialist',
+  updated_at: DateTime.iso8601('2020-07-19T09:51:06.439Z'),
 ), connection_id: '<id>')
 
 unless res.hris_employee.nil?
@@ -662,7 +732,7 @@ end
 
 ## create_hris_group
 
-Create a group
+Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
 
 ### Example Usage
 
@@ -680,11 +750,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.hris.create_hris_group(hris_group: Models::Shared::HrisGroup.new(
   created_at: DateTime.iso8601('2023-11-01T13:13:40.714Z'),
   description: 'Absorbeo casso.',
-  id: '5c8815da-b7ad-4fcf-9182-6e52f3c7d156',
+  id: '6c919a90-22a1-479d-ab34-1dc3ed8beeb6',
   is_active: false,
+  metadata: [],
   name: 'Games',
-  type: Models::Shared::HrisGroupType::BUSINESS_UNIT,
-  updated_at: DateTime.iso8601('2026-04-26T04:59:49.322Z'),
+  type: Models::Shared::HrisGroupType::BRANCH,
+  updated_at: DateTime.iso8601('2026-05-23T16:27:13.349Z'),
 ), connection_id: '<id>')
 
 unless res.hris_group.nil?
@@ -712,9 +783,63 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## create_hris_job
+
+Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="createHrisJob" method="post" path="/hris/{connection_id}/job" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.hris.create_hris_job(hris_job: Models::Shared::HrisJob.new(
+  code: 'P-05547',
+  created_at: DateTime.iso8601('2020-10-28T01:13:19.491Z'),
+  description: 'Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.',
+  employment_type: Models::Shared::HrisJobEmploymentType::FREELANCE,
+  id: '26519dc9-69ac-4059-ba4e-2ee0291a8c88',
+  is_active: false,
+  metadata: [],
+  name: 'Internal Integration Specialist',
+  updated_at: DateTime.iso8601('2023-01-30T23:18:09.859Z'),
+), connection_id: '<id>')
+
+unless res.hris_job.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `hris_job`                                                                                                                                       | [Models::Shared::HrisJob](../../models/shared/hrisjob.md)                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::CreateHrisJobQueryParamFields](../../models/operations/createhrisjobqueryparamfields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::CreateHrisJobResponse)](../../models/operations/createhrisjobresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## create_hris_location
 
-Create a location
+Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
 
 ### Example Usage
 
@@ -731,39 +856,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.hris.create_hris_location(hris_location: Models::Shared::HrisLocation.new(
   address: Models::Shared::PropertyHrisLocationAddress.new(
-    address1: '2743 Connelly Summit',
-    address2: 'Apt. 350',
-    city: 'Titusville',
+    address1: '4418 Daniella Mall',
+    address2: 'Apt. 997',
+    city: 'Burke',
     country_code: 'US',
-    postal_code: '16154-1095',
-    region: 'Oregon',
-    region_code: 'AL',
+    postal_code: '54109',
+    region: 'Ohio',
+    region_code: 'OR',
   ),
   created_at: DateTime.iso8601('2021-07-18T10:32:01.414Z'),
-  currency: 'MUR',
-  description: 'Acervus caries.',
-  external_identifier: '96a41c8d-a0fd-4317-9a93-9adbec79d837',
-  id: '735bb4e6-f12f-4c14-a185-655cdcecdb5e',
-  is_active: true,
-  is_hq: false,
-  language_locale: 'fr',
-  name: 'adhuc',
+  currency: 'MNT',
+  description: 'Commemoro acervus.',
+  id: '5265ff37-d91e-450f-a51f-00456bb7a4f3',
+  is_active: false,
+  is_hq: true,
+  language_locale: 'it',
+  metadata: [],
+  name: 'North Kimberlyland Office',
   telephones: [
     Models::Shared::HrisTelephone.new(
-      telephone: '(710) 550-6997',
+      telephone: '(371) 245-0699',
       type: Models::Shared::HrisTelephoneType::FAX,
     ),
     Models::Shared::HrisTelephone.new(
-      telephone: '(208) 555-8542',
+      telephone: '(700) 845-5854',
+      type: Models::Shared::HrisTelephoneType::FAX,
+    ),
+    Models::Shared::HrisTelephone.new(
+      telephone: '(461) 437-3548',
       type: Models::Shared::HrisTelephoneType::HOME,
     ),
-    Models::Shared::HrisTelephone.new(
-      telephone: '(712) 473-5482',
-      type: Models::Shared::HrisTelephoneType::FAX,
-    ),
   ],
-  timezone: 'America/Guyana',
-  updated_at: DateTime.iso8601('2023-06-10T03:17:45.017Z'),
+  timezone: 'Asia/Jerusalem',
+  updated_at: DateTime.iso8601('2023-06-21T19:54:08.292Z'),
 ), connection_id: '<id>')
 
 unless res.hris_location.nil?
@@ -793,7 +918,7 @@ end
 
 ## create_hris_taxonomy
 
-Create a taxonomy
+Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
 
 ### Example Usage
 
@@ -809,20 +934,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.hris.create_hris_taxonomy(hris_taxonomy: Models::Shared::HrisTaxonomy.new(
-  created_at: DateTime.iso8601('2022-06-23T02:10:00.789Z'),
-  description: 'Apto demonstro audacia adstringo cursim tristis solio careo.',
-  domain: 'Electronics',
-  id: 'ede085db-5709-4d53-a490-746f3de5be17',
-  is_active: false,
-  name: 'International Functionality Architect',
-  parent_id: '6524b2a7-6520-4e15-8c4e-1aa6793db837',
-  role_ids: [
-    '2b1ef757-eb4c-4207-8af1-929afe49cd65',
+  alternative_names: [
+    'Facilitator',
+    'National',
   ],
-  subcategory: 'Bamboo',
+  created_at: DateTime.iso8601('2022-06-23T02:10:00.789Z'),
+  description: 'Uterque vespillo adnuo ea commodo turbo suscipio condico.',
+  domain: 'Health',
+  id: '35c515a6-98c6-451b-aee2-3ca74bea618d',
+  is_active: false,
+  metadata: [],
+  name: 'International Functionality Architect',
+  subcategory: 'Marble',
   type: Models::Shared::HrisTaxonomyType::KNOWLEDGE,
-  updated_at: DateTime.iso8601('2023-05-22T20:37:18.964Z'),
-  url: 'https://our-polarisation.name',
+  updated_at: DateTime.iso8601('2023-05-29T17:40:39.222Z'),
+  url: 'https://fixed-membership.biz/',
 ), connection_id: '<id>')
 
 unless res.hris_taxonomy.nil?
@@ -852,7 +978,7 @@ end
 
 ## create_hris_timeoff
 
-Create a timeoff
+Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
 
 ### Example Usage
 
@@ -868,20 +994,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.hris.create_hris_timeoff(hris_timeoff: Models::Shared::HrisTimeoff.new(
-  approved_at: DateTime.iso8601('2022-02-21T02:34:00.707Z'),
+  approved_at: DateTime.iso8601('2022-02-23T12:45:41.369Z'),
   comments: 'Blandior ventus curiositas amplitudo.',
   created_at: DateTime.iso8601('2021-10-06T18:00:20.615Z'),
   duration: 4.0,
   duration_type: Models::Shared::DurationType::DAY,
-  end_at: DateTime.iso8601('2024-12-09T12:28:57.437Z'),
-  id: '2d890fd1-cb8d-4af9-8e18-587564259ad2',
+  end_at: DateTime.iso8601('2024-12-29T23:50:53.916Z'),
+  id: 'e9166945-9121-45f2-8b46-f58c938170ce',
   is_paid: true,
+  metadata: [],
   original_type: 'acerbitas ut',
   reason: 'verto',
-  start_at: DateTime.iso8601('2023-08-24T10:33:26.221Z'),
+  start_at: DateTime.iso8601('2023-09-05T13:29:26.276Z'),
   status: Models::Shared::HrisTimeoffStatus::DENIED,
   type: Models::Shared::HrisTimeoffType::IN_LIEU,
-  updated_at: DateTime.iso8601('2022-07-08T06:37:13.084Z'),
+  updated_at: DateTime.iso8601('2022-07-13T02:55:47.937Z'),
   user_id: '<id>',
 ), connection_id: '<id>')
 
@@ -912,7 +1039,7 @@ end
 
 ## create_hris_timeshift
 
-Create a timeshift
+Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
 
 ### Example Usage
 
@@ -928,24 +1055,25 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.hris.create_hris_timeshift(hris_timeshift: Models::Shared::HrisTimeshift.new(
-  approved_at: DateTime.iso8601('2023-06-07T06:09:27.537Z'),
+  approved_at: DateTime.iso8601('2022-07-18T21:43:25.563Z'),
   compensation: [
     Models::Shared::HrisCompensation.new(
       amount: 76_761.0,
-      currency: 'JPY',
-      frequency: Models::Shared::HrisCompensationFrequency::HOUR,
-      notes: 'Annus adficio suasoria architecto aggero.',
-      type: Models::Shared::HrisCompensationType::OTHER,
+      currency: 'GBP',
+      frequency: Models::Shared::HrisCompensationFrequency::SEMIMONTHLY,
+      notes: 'Vehemens annus adficio.',
+      type: Models::Shared::HrisCompensationType::COMMISSION,
     ),
   ],
   created_at: DateTime.iso8601('2019-07-01T23:53:15.738Z'),
   employee_user_id: '<id>',
-  end_at: DateTime.iso8601('2026-08-28T08:36:26.125Z'),
-  hours: 8.0,
-  id: '66e56b79-777c-4816-93c2-56aab6d4a323',
-  is_approved: true,
-  start_at: DateTime.iso8601('2023-06-26T11:39:07.841Z'),
-  updated_at: DateTime.iso8601('2021-06-23T16:49:43.315Z'),
+  end_at: DateTime.iso8601('2026-09-29T00:41:37.965Z'),
+  hours: 6.0,
+  id: '220cff1c-9e52-44ee-8079-44ef6ca61acd',
+  is_approved: false,
+  metadata: [],
+  start_at: DateTime.iso8601('2023-07-14T02:48:50.230Z'),
+  updated_at: DateTime.iso8601('2021-07-02T10:56:40.233Z'),
 ), connection_id: '<id>')
 
 unless res.hris_timeshift.nil?
@@ -975,7 +1103,7 @@ end
 
 ## get_hris_attendance
 
-Retrieve an attendance
+Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1019,7 +1147,7 @@ end
 
 ## get_hris_bankaccount
 
-Retrieve a bankaccount
+Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1063,7 +1191,7 @@ end
 
 ## get_hris_benefit
 
-Retrieve a benefit
+Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1107,7 +1235,7 @@ end
 
 ## get_hris_company
 
-Retrieve a company
+Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1151,7 +1279,7 @@ end
 
 ## get_hris_deduction
 
-Retrieve a deduction
+Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1195,7 +1323,7 @@ end
 
 ## get_hris_device
 
-Retrieve a device
+Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1239,7 +1367,7 @@ end
 
 ## get_hris_document
 
-Retrieve a document
+Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1281,9 +1409,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_hris_earning
+
+Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getHrisEarning" method="get" path="/hris/{connection_id}/earning/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.hris.get_hris_earning(connection_id: '<id>', id: '<id>')
+
+unless res.hris_earning.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Earning                                                                                                                                |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetHrisEarningQueryParamFields](../../models/operations/gethrisearningqueryparamfields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetHrisEarningResponse)](../../models/operations/gethrisearningresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_hris_employee
 
-Retrieve an employee
+Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1327,7 +1499,7 @@ end
 
 ## get_hris_group
 
-Retrieve a group
+Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1369,9 +1541,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_hris_job
+
+Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getHrisJob" method="get" path="/hris/{connection_id}/job/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.hris.get_hris_job(connection_id: '<id>', id: '<id>')
+
+unless res.hris_job.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Job                                                                                                                                    |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetHrisJobQueryParamFields](../../models/operations/gethrisjobqueryparamfields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetHrisJobResponse)](../../models/operations/gethrisjobresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_hris_location
 
-Retrieve a location
+Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1413,9 +1629,97 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_hris_paycode
+
+Retrieves a single HrisPaycode by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getHrisPaycode" method="get" path="/hris/{connection_id}/paycode/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.hris.get_hris_paycode(connection_id: '<id>', id: '<id>')
+
+unless res.hris_paycode.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Paycode                                                                                                                                |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetHrisPaycodeQueryParamFields](../../models/operations/gethrispaycodequeryparamfields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetHrisPaycodeResponse)](../../models/operations/gethrispaycoderesponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## get_hris_payroll
+
+Retrieves a single HrisPayroll by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getHrisPayroll" method="get" path="/hris/{connection_id}/payroll/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.hris.get_hris_payroll(connection_id: '<id>', id: '<id>')
+
+unless res.hris_payroll.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Payroll                                                                                                                                |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetHrisPayrollQueryParamFields](../../models/operations/gethrispayrollqueryparamfields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetHrisPayrollResponse)](../../models/operations/gethrispayrollresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_hris_payslip
 
-Retrieve a payslip
+Retrieves a single HrisPayslip by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1459,7 +1763,7 @@ end
 
 ## get_hris_taxonomy
 
-Retrieve a taxonomy
+Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1503,7 +1807,7 @@ end
 
 ## get_hris_timeoff
 
-Retrieve a timeoff
+Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1547,7 +1851,7 @@ end
 
 ## get_hris_timeshift
 
-Retrieve a timeshift
+Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1591,7 +1895,7 @@ end
 
 ## list_hris_attendances
 
-List all attendances
+Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1636,7 +1940,7 @@ end
 
 ## list_hris_bankaccounts
 
-List all bankaccounts
+Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1681,7 +1985,7 @@ end
 
 ## list_hris_benefits
 
-List all benefits
+Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1726,7 +2030,7 @@ end
 
 ## list_hris_companies
 
-List all companies
+Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1771,7 +2075,7 @@ end
 
 ## list_hris_deductions
 
-List all deductions
+Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1816,7 +2120,7 @@ end
 
 ## list_hris_devices
 
-List all devices
+Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1861,7 +2165,7 @@ end
 
 ## list_hris_documents
 
-List all documents
+Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1904,9 +2208,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_hris_earnings
+
+Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listHrisEarnings" method="get" path="/hris/{connection_id}/earning" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListHrisEarningsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.hris.list_hris_earnings(request: req)
+
+unless res.hris_earnings.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [Models::Operations::ListHrisEarningsRequest](../../models/operations/listhrisearningsrequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[T.nilable(Models::Operations::ListHrisEarningsResponse)](../../models/operations/listhrisearningsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_hris_employees
 
-List all employees
+Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1951,7 +2300,7 @@ end
 
 ## list_hris_groups
 
-List all groups
+Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1994,9 +2343,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_hris_jobs
+
+Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listHrisJobs" method="get" path="/hris/{connection_id}/job" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListHrisJobsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.hris.list_hris_jobs(request: req)
+
+unless res.hris_jobs.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [Models::Operations::ListHrisJobsRequest](../../models/operations/listhrisjobsrequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[T.nilable(Models::Operations::ListHrisJobsResponse)](../../models/operations/listhrisjobsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_hris_locations
 
-List all locations
+Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2039,9 +2433,99 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_hris_paycodes
+
+Returns a list of HrisPaycodes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listHrisPaycodes" method="get" path="/hris/{connection_id}/paycode" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListHrisPaycodesRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.hris.list_hris_paycodes(request: req)
+
+unless res.hris_paycodes.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [Models::Operations::ListHrisPaycodesRequest](../../models/operations/listhrispaycodesrequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[T.nilable(Models::Operations::ListHrisPaycodesResponse)](../../models/operations/listhrispaycodesresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## list_hris_payrolls
+
+Returns a list of HrisPayrolls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listHrisPayrolls" method="get" path="/hris/{connection_id}/payroll" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListHrisPayrollsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.hris.list_hris_payrolls(request: req)
+
+unless res.hris_payrolls.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [Models::Operations::ListHrisPayrollsRequest](../../models/operations/listhrispayrollsrequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[T.nilable(Models::Operations::ListHrisPayrollsResponse)](../../models/operations/listhrispayrollsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_hris_payslips
 
-List all payslips
+Returns a list of HrisPayslips. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2086,7 +2570,7 @@ end
 
 ## list_hris_taxonomies
 
-List all taxonomies
+Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2131,7 +2615,7 @@ end
 
 ## list_hris_timeoffs
 
-List all timeoffs
+Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2176,7 +2660,7 @@ end
 
 ## list_hris_timeshifts
 
-List all timeshifts
+Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2221,7 +2705,7 @@ end
 
 ## patch_hris_attendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -2246,31 +2730,32 @@ req = Models::Operations::PatchHrisAttendanceRequest.new(
       region: 'Tennessee',
       region_code: 'CA',
     ),
-    approved_at: DateTime.iso8601('2021-08-13T10:42:10.868Z'),
+    approved_at: DateTime.iso8601('2021-09-19T15:06:28.111Z'),
     breaks: [
       Models::Shared::HrisAttendanceBreak.new(
-        duration_minutes: 12.0,
-        end_at: DateTime.iso8601('2023-10-23T23:43:19.003Z'),
-        id: 'd60a1001-5a8a-4991-8c21-f4da6036cc87',
-        is_paid: true,
+        duration_minutes: 51.0,
+        end_at: DateTime.iso8601('2024-02-15T12:19:44.132Z'),
+        id: '535ff72a-3602-4916-aabd-100b5c5bd600',
+        is_paid: false,
         name: 'Lunch',
-        start_at: DateTime.iso8601('2023-10-17T03:53:40.584Z'),
+        start_at: DateTime.iso8601('2023-10-30T19:24:30.533Z'),
       ),
     ],
     created_at: DateTime.iso8601('2021-08-10T19:43:18.452Z'),
-    currency: 'UGX',
-    declared_tips_amount: 161.0,
+    currency: 'EUR',
+    declared_tips_amount: 54.0,
     employee_user_id: '<id>',
-    end_at: DateTime.iso8601('2024-04-07T17:46:51.489Z'),
-    hourly_rate: 53.0,
+    end_at: DateTime.iso8601('2024-04-24T08:35:37.010Z'),
+    hourly_rate: 16.0,
     hours: 10.0,
-    id: 'c47a366e-1c08-45fa-9d0c-38d1d738a641',
-    job_name: 'Global Creative Supervisor',
-    non_cash_tips_amount: 54.0,
-    start_at: DateTime.iso8601('2021-11-09T13:58:14.446Z'),
-    status: Models::Shared::HrisAttendanceStatus::CLOSED,
+    id: '3168ed24-e8aa-43a5-b61e-0f0cb5f8bb6f',
+    job_name: 'Human Accountability Administrator',
+    metadata: [],
+    non_cash_tips_amount: 167.0,
+    start_at: DateTime.iso8601('2021-11-11T03:15:04.367Z'),
+    status: Models::Shared::HrisAttendanceStatus::OPEN,
     timezone: 'America/Atikokan',
-    updated_at: DateTime.iso8601('2022-01-17T07:38:03.668Z'),
+    updated_at: DateTime.iso8601('2022-01-20T01:08:55.432Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2302,7 +2787,7 @@ end
 
 ## patch_hris_bankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -2323,12 +2808,18 @@ req = Models::Operations::PatchHrisBankaccountRequest.new(
     account_number_last4: '3777',
     account_type: Models::Shared::HrisBankaccountAccountType::CHECKING,
     bank_name: 'Huel Group',
+    country_code: 'US',
     created_at: DateTime.iso8601('2019-11-16T16:43:45.976Z'),
-    id: 'a59c46a7-5d4b-45df-98f1-c5935aac4d1f',
-    is_primary: false,
-    name: 'Checking Account',
+    currency: 'USD',
+    id: '0ac397c0-d0a9-4e91-a40f-625e296f11dc',
+    is_primary: true,
+    metadata: [],
+    name: 'Granville Schumm - Checking',
+    priority: 2.0,
     routing_number: '448650724',
-    updated_at: DateTime.iso8601('2025-06-06T22:35:03.403Z'),
+    split_amount: 98.0,
+    split_type: Models::Shared::SplitType::PERCENTAGE,
+    updated_at: DateTime.iso8601('2025-07-02T21:02:53.635Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2360,7 +2851,7 @@ end
 
 ## patch_hris_benefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -2379,18 +2870,19 @@ req = Models::Operations::PatchHrisBenefitRequest.new(
   hris_benefit: Models::Shared::HrisBenefit.new(
     coverage_level: Models::Shared::CoverageLevel::EMPLOYEE_SPOUSE,
     created_at: DateTime.iso8601('2020-06-11T01:24:05.654Z'),
-    currency: 'JOD',
+    currency: 'GBP',
     description: 'Vomito voluptas dolor sed.',
     employer_contribution_amount: 185_006.0,
     employer_contribution_max_amount: 179_093.0,
     employer_contribution_type: Models::Shared::EmployerContributionType::PERCENTAGE,
-    frequency: Models::Shared::HrisBenefitFrequency::HOUR,
-    id: '8afb2ac2-392c-4be4-aa88-39cea81b92ae',
+    frequency: Models::Shared::HrisBenefitFrequency::MONTH,
+    id: '9559438e-6c3b-498f-925d-b0295a2d009d',
     is_active: false,
+    metadata: [],
     name: 'Frozen Wooden Ball',
     tax: Models::Shared::Tax::PRE_TAX,
-    type: Models::Shared::HrisBenefitType::GARNISHMENT,
-    updated_at: DateTime.iso8601('2023-03-07T18:44:31.799Z'),
+    type: Models::Shared::HrisBenefitType::OTHER,
+    updated_at: DateTime.iso8601('2023-03-21T17:08:11.118Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2422,7 +2914,7 @@ end
 
 ## patch_hris_company
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -2440,18 +2932,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchHrisCompanyRequest.new(
   hris_company: Models::Shared::HrisCompany.new(
     address: Models::Shared::PropertyHrisCompanyAddress.new(
-      address1: '2549 Church Walk',
-      city: 'Lake Nettiebury',
+      address1: '675 Lavinia Lights',
+      city: 'Rocky Mount',
       country_code: 'US',
-      postal_code: '32877-4898',
-      region: 'Idaho',
-      region_code: 'PA',
+      postal_code: '67325',
+      region: 'Kentucky',
+      region_code: 'MO',
     ),
     created_at: DateTime.iso8601('2021-05-02T22:27:38.970Z'),
-    id: '50bdb37f-e21e-4d15-b7dd-677113a9b1d3',
-    legal_name: 'Schultz LLC',
+    id: '85b73e0f-ec9b-45ff-aa0b-c382b00eba76',
+    legal_name: 'Gottlieb Group LLC',
+    metadata: [],
     name: 'Gottlieb Group',
-    updated_at: DateTime.iso8601('2026-09-08T21:31:26.681Z'),
+    updated_at: DateTime.iso8601('2026-10-10T15:45:48.033Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2483,7 +2976,7 @@ end
 
 ## patch_hris_deduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -2500,17 +2993,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchHrisDeductionRequest.new(
   hris_deduction: Models::Shared::HrisDeduction.new(
-    amount: 139_655.0,
-    coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_ONLY,
+    amount: 564.0,
+    coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_CHILD,
     created_at: DateTime.iso8601('2020-02-05T01:46:31.384Z'),
-    end_at: DateTime.iso8601('2026-05-25T20:05:49.207Z'),
-    frequency: Models::Shared::HrisDeductionFrequency::MONTH,
-    id: '271b0d0e-936f-4af8-9bed-1b4a1174fd65',
-    is_active: false,
+    employer_amount: 80_510.0,
+    employer_type: Models::Shared::EmployerType::PERCENTAGE,
+    frequency: Models::Shared::HrisDeductionFrequency::ONE_TIME,
+    garnishment_type: Models::Shared::GarnishmentType::CHILD_SUPPORT,
+    id: '094f9f10-0414-428a-b246-807a48953ae6',
+    is_active: true,
+    max_amount: 21_794.0,
+    metadata: [],
     notes: 'Carmen desidero.',
-    start_at: DateTime.iso8601('2025-02-20T12:02:49.120Z'),
+    start_at: DateTime.iso8601('2025-03-16T19:58:37.731Z'),
     type: Models::Shared::HrisDeductionType::FIXED,
-    updated_at: DateTime.iso8601('2024-03-03T20:28:34.384Z'),
+    updated_at: DateTime.iso8601('2024-03-23T12:19:21.582Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2542,7 +3039,7 @@ end
 
 ## patch_hris_device
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -2560,22 +3057,23 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchHrisDeviceRequest.new(
   hris_device: Models::Shared::HrisDevice.new(
     admin_user_ids: [],
-    asset_tag: 'dpho9OuFNG',
+    asset_tag: 'fJNacaaoWi',
     created_at: DateTime.iso8601('2019-04-04T17:11:40.322Z'),
-    has_antivirus: false,
+    has_antivirus: true,
     has_firewall: true,
     has_hd_encrypted: true,
     has_password_manager: true,
-    has_screenlock: true,
-    id: '1e939b25-a7cf-4ff0-a182-104bfe9156ca',
+    has_screenlock: false,
+    id: '41cb5989-1e38-4830-9e95-cb84692d50bf',
     is_missing: false,
-    manufacturer: 'Sanford - Hamill',
-    model: 'Refined',
-    name: 'cross_contamination_if.rar',
-    os: 'monitor',
-    os_version: '1.12.16',
-    updated_at: DateTime.iso8601('2023-05-22T17:13:26.130Z'),
-    version: '2.20.17',
+    manufacturer: 'Hackett Inc',
+    metadata: [],
+    model: 'Fantastic',
+    name: 'august-laptop',
+    os: 'transmitter',
+    os_version: '8.4.8',
+    updated_at: DateTime.iso8601('2023-06-09T09:44:14.218Z'),
+    version: '4.15.7',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2607,7 +3105,7 @@ end
 
 ## patch_hris_document
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -2627,9 +3125,10 @@ req = Models::Operations::PatchHrisDocumentRequest.new(
     created_at: DateTime.iso8601('2022-10-27T11:47:26.086Z'),
     document_url: 'https://sore-decision.biz/',
     filename: 'ridge_forager.xsl',
-    id: '85c0eb48-5170-4b2a-9af4-354cdbccee45',
+    id: '22db088b-317d-486a-b436-8033c2ffd1ef',
+    metadata: [],
     type: Models::Shared::HrisDocumentType::POLICY,
-    updated_at: DateTime.iso8601('2025-09-19T07:57:45.609Z'),
+    updated_at: DateTime.iso8601('2025-10-13T01:30:16.041Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2659,9 +3158,67 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## patch_hris_earning
+
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="patchHrisEarning" method="patch" path="/hris/{connection_id}/earning/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::PatchHrisEarningRequest.new(
+  hris_earning: Models::Shared::HrisEarning.new(
+    amount: 4026.0,
+    created_at: DateTime.iso8601('2019-01-26T12:44:52.326Z'),
+    currency: 'USD',
+    frequency: Models::Shared::HrisEarningFrequency::SEMIMONTHLY,
+    id: '39c3e54d-e6fe-403b-ac15-194da84ef92e',
+    metadata: [],
+    notes: 'Deporto truculenter vinum beatae.',
+    start_at: DateTime.iso8601('2022-07-26T09:21:02.685Z'),
+    status: Models::Shared::HrisEarningStatus::ENDED,
+    updated_at: DateTime.iso8601('2020-02-09T02:56:01.413Z'),
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.hris.patch_hris_earning(request: req)
+
+unless res.hris_earning.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [Models::Operations::PatchHrisEarningRequest](../../models/operations/patchhrisearningrequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[T.nilable(Models::Operations::PatchHrisEarningResponse)](../../models/operations/patchhrisearningresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## patch_hris_employee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -2679,43 +3236,44 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchHrisEmployeeRequest.new(
   hris_employee: Models::Shared::HrisEmployee.new(
     address: Models::Shared::PropertyHrisEmployeeAddress.new(
-      address1: '52008 Lansdowne Road',
-      address2: 'Apt. 101',
-      city: 'Connellyberg',
+      address1: '7431 Hintz Parkway',
+      address2: 'Apt. 520',
+      city: 'Port Rogerview',
       country_code: 'US',
-      postal_code: '18978',
-      region: 'South Dakota',
-      region_code: 'NM',
+      postal_code: '01711',
+      region: 'Missouri',
+      region_code: 'TN',
     ),
-    bio: 'sushi devotee, singer',
+    bio: 'fun advocate  🇱🇻',
     compensation: [
       Models::Shared::HrisCompensation.new(
-        amount: 69_148.0,
-        currency: 'CRC',
-        frequency: Models::Shared::HrisCompensationFrequency::QUARTER,
-        notes: 'Tergeo laborum laboriosam tutis.',
-        type: Models::Shared::HrisCompensationType::EQUITY,
+        amount: 95_000.0,
+        currency: 'USD',
+        frequency: Models::Shared::HrisCompensationFrequency::YEAR,
+        notes: 'Eius.',
+        type: Models::Shared::HrisCompensationType::OTHER,
       ),
     ],
     created_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
-    currency: 'IDR',
+    currency: 'USD',
     date_of_birth: DateTime.iso8601('2001-04-22'),
     emails: [
       Models::Shared::HrisEmail.new(
-        email: 'Zetta_Prohaska67@hotmail.com',
-        type: Models::Shared::HrisEmailType::HOME,
+        email: 'zetta.prohaska@insidious-stump.net',
+        type: Models::Shared::HrisEmailType::WORK,
       ),
     ],
-    employee_number: 'YuOt169CGu',
+    employee_number: 'uCk3qaL1ei',
     employment_status: Models::Shared::EmploymentStatus::ACTIVE,
-    employment_type: Models::Shared::HrisEmployeeEmploymentType::VOLUNTEER,
+    employment_type: Models::Shared::HrisEmployeeEmploymentType::PART_TIME,
     first_name: 'Zetta',
-    gender: Models::Shared::HrisEmployeeGender::INTERSEX,
+    flsa_status: Models::Shared::FlsaStatus::EXEMPT,
+    gender: Models::Shared::HrisEmployeeGender::MALE,
     has_mfa: true,
-    hired_at: DateTime.iso8601('2023-05-12T06:08:21.617Z'),
-    id: '9b80cc3c-35a4-4eb2-b269-399711785e39',
-    image_url: 'https://loremflickr.com/3684/2116?lock=4686991638584456',
-    language_locale: 'es',
+    hired_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
+    id: 'cc9adbc7-7e36-4c95-9f64-626deec56178',
+    image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg',
+    language_locale: 'in',
     last_name: 'Prohaska',
     locations: [],
     marital_status: Models::Shared::MaritalStatus::MARRIED,
@@ -2725,72 +3283,55 @@ req = Models::Operations::PatchHrisEmployeeRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::HrisMetadataFormat::TEXT,
-        id: 'cd351d1b-4490-4933-92ab-fea7c8e86868',
+        id: 'c37f78a9-26c3-499d-8136-291077fe7813',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'tenetur',
+        value: 'tutis',
       ),
     ],
     name: 'Zetta Prohaska',
+    pay_frequency: Models::Shared::PayFrequency::WEEK,
     pronouns: 'she/her',
     relationships: [
       Models::Shared::HrisEmployeerelationship.new(
         emails: [
           Models::Shared::HrisEmail.new(
-            email: 'Deshaun.Sanford24@yahoo.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Rebeca.Dibbert11@hotmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Hester80@gmail.com',
+            email: 'keith.prohaska@gmail.com',
           ),
         ],
-        name: 'Automotive',
-        type: Models::Shared::HrisEmployeerelationshipType::EMERGENCY,
-      ),
-      Models::Shared::HrisEmployeerelationship.new(
-        emails: [
-          Models::Shared::HrisEmail.new(
-            email: 'Benedict_Wisozk83@hotmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Princess_Rath43@gmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Elmira92@yahoo.com',
-          ),
-        ],
-        name: 'Music',
-        type: Models::Shared::HrisEmployeerelationshipType::FRIEND,
-      ),
-      Models::Shared::HrisEmployeerelationship.new(
-        emails: [
-          Models::Shared::HrisEmail.new(
-            email: 'Jane30@gmail.com',
-          ),
-        ],
-        name: 'Jewelry',
+        name: 'Keith Prohaska',
         type: Models::Shared::HrisEmployeerelationshipType::SIBLING,
       ),
+      Models::Shared::HrisEmployeerelationship.new(
+        emails: [
+          Models::Shared::HrisEmail.new(
+            email: 'keely.prohaska@icloud.com',
+          ),
+        ],
+        name: 'Keely Prohaska',
+        type: Models::Shared::HrisEmployeerelationshipType::OTHER,
+      ),
     ],
-    salutation: 'Miss',
-    ssn_sin: 'yMRtj0Q3xO',
-    storage_quota_allocated: 3_674_489.0,
-    storage_quota_available: 7_748_057.0,
-    storage_quota_used: 301_727.0,
+    salutation: 'Ms.',
+    ssn_sin: '284-82-8167',
+    storage_quota_allocated: 3_653_713.0,
+    storage_quota_available: 3_017_275.0,
+    storage_quota_used: 367_449.0,
     telephones: [
       Models::Shared::HrisTelephone.new(
-        telephone: '(409) 801-3705',
+        telephone: '(320) 980-1370',
+        type: Models::Shared::HrisTelephoneType::HOME,
+      ),
+      Models::Shared::HrisTelephone.new(
+        telephone: '(694) 840-0166',
         type: Models::Shared::HrisTelephoneType::FAX,
       ),
     ],
-    termination_reason: 'Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.',
-    timeoff_days_total: 12.0,
-    timeoff_days_used: 6.0,
-    timezone: 'Africa/Harare',
-    title: 'Investor Paradigm Liaison',
-    updated_at: DateTime.iso8601('2022-02-20T08:15:24.523Z'),
+    timeoff_days_total: 17.0,
+    timeoff_days_used: 9.0,
+    timezone: 'Europe/Ljubljana',
+    title: 'District Branding Specialist',
+    updated_at: DateTime.iso8601('2020-07-19T09:51:06.453Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2822,7 +3363,7 @@ end
 
 ## patch_hris_group
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -2841,11 +3382,12 @@ req = Models::Operations::PatchHrisGroupRequest.new(
   hris_group: Models::Shared::HrisGroup.new(
     created_at: DateTime.iso8601('2023-11-01T13:13:40.714Z'),
     description: 'Absorbeo casso.',
-    id: '2dc0a185-c73f-4f72-8405-cfd966941363',
+    id: '2a6ab666-a779-4d61-8460-1708d2cf490f',
     is_active: false,
+    metadata: [],
     name: 'Games',
-    type: Models::Shared::HrisGroupType::BUSINESS_UNIT,
-    updated_at: DateTime.iso8601('2026-04-26T04:59:49.331Z'),
+    type: Models::Shared::HrisGroupType::BRANCH,
+    updated_at: DateTime.iso8601('2026-05-23T16:27:13.369Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2875,9 +3417,66 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## patch_hris_job
+
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="patchHrisJob" method="patch" path="/hris/{connection_id}/job/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::PatchHrisJobRequest.new(
+  hris_job: Models::Shared::HrisJob.new(
+    code: 'P-05547',
+    created_at: DateTime.iso8601('2020-10-28T01:13:19.491Z'),
+    description: 'Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.',
+    employment_type: Models::Shared::HrisJobEmploymentType::FREELANCE,
+    id: 'b1e43179-fc71-4f8b-94a8-7d02f75d7ac1',
+    is_active: false,
+    metadata: [],
+    name: 'Internal Integration Specialist',
+    updated_at: DateTime.iso8601('2023-01-30T23:18:09.925Z'),
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.hris.patch_hris_job(request: req)
+
+unless res.hris_job.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [Models::Operations::PatchHrisJobRequest](../../models/operations/patchhrisjobrequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[T.nilable(Models::Operations::PatchHrisJobResponse)](../../models/operations/patchhrisjobresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## patch_hris_location
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -2895,39 +3494,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchHrisLocationRequest.new(
   hris_location: Models::Shared::HrisLocation.new(
     address: Models::Shared::PropertyHrisLocationAddress.new(
-      address1: '2743 Connelly Summit',
-      address2: 'Apt. 350',
-      city: 'Titusville',
+      address1: '4418 Daniella Mall',
+      address2: 'Apt. 997',
+      city: 'Burke',
       country_code: 'US',
-      postal_code: '16154-1095',
-      region: 'Oregon',
-      region_code: 'AL',
+      postal_code: '54109',
+      region: 'Ohio',
+      region_code: 'OR',
     ),
     created_at: DateTime.iso8601('2021-07-18T10:32:01.414Z'),
-    currency: 'MUR',
-    description: 'Acervus caries.',
-    external_identifier: 'fd01f7ca-7b21-4d32-a619-3b75e64df32b',
-    id: 'f28f28b3-6633-431a-8161-7ef046d9d815',
-    is_active: true,
-    is_hq: false,
-    language_locale: 'fr',
-    name: 'adhuc',
+    currency: 'MNT',
+    description: 'Commemoro acervus.',
+    id: 'a79e86f2-b553-44c7-bcca-ed7260958f52',
+    is_active: false,
+    is_hq: true,
+    language_locale: 'it',
+    metadata: [],
+    name: 'North Kimberlyland Office',
     telephones: [
       Models::Shared::HrisTelephone.new(
-        telephone: '(710) 550-6997',
+        telephone: '(371) 245-0699',
         type: Models::Shared::HrisTelephoneType::FAX,
       ),
       Models::Shared::HrisTelephone.new(
-        telephone: '(208) 555-8542',
+        telephone: '(700) 845-5854',
+        type: Models::Shared::HrisTelephoneType::FAX,
+      ),
+      Models::Shared::HrisTelephone.new(
+        telephone: '(461) 437-3548',
         type: Models::Shared::HrisTelephoneType::HOME,
       ),
-      Models::Shared::HrisTelephone.new(
-        telephone: '(712) 473-5482',
-        type: Models::Shared::HrisTelephoneType::FAX,
-      ),
     ],
-    timezone: 'America/Guyana',
-    updated_at: DateTime.iso8601('2023-06-10T03:17:45.026Z'),
+    timezone: 'Asia/Jerusalem',
+    updated_at: DateTime.iso8601('2023-06-21T19:54:08.302Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2959,7 +3558,7 @@ end
 
 ## patch_hris_timeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -2976,20 +3575,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchHrisTimeoffRequest.new(
   hris_timeoff: Models::Shared::HrisTimeoff.new(
-    approved_at: DateTime.iso8601('2022-02-21T02:34:00.708Z'),
+    approved_at: DateTime.iso8601('2022-02-23T12:45:41.371Z'),
     comments: 'Blandior ventus curiositas amplitudo.',
     created_at: DateTime.iso8601('2021-10-06T18:00:20.615Z'),
     duration: 4.0,
     duration_type: Models::Shared::DurationType::DAY,
-    end_at: DateTime.iso8601('2024-12-09T12:28:57.445Z'),
-    id: '0827ff67-76de-4e75-a057-caf46aa2bff1',
+    end_at: DateTime.iso8601('2024-12-29T23:50:53.937Z'),
+    id: '2aba93e5-a27c-4550-ac9b-f0337f0f7383',
     is_paid: true,
+    metadata: [],
     original_type: 'acerbitas ut',
     reason: 'verto',
-    start_at: DateTime.iso8601('2023-08-24T10:33:26.226Z'),
+    start_at: DateTime.iso8601('2023-09-05T13:29:26.288Z'),
     status: Models::Shared::HrisTimeoffStatus::DENIED,
     type: Models::Shared::HrisTimeoffType::IN_LIEU,
-    updated_at: DateTime.iso8601('2022-07-08T06:37:13.086Z'),
+    updated_at: DateTime.iso8601('2022-07-13T02:55:47.942Z'),
     user_id: '<id>',
   ),
   connection_id: '<id>',
@@ -3022,7 +3622,7 @@ end
 
 ## patch_hris_timeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -3039,24 +3639,25 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchHrisTimeshiftRequest.new(
   hris_timeshift: Models::Shared::HrisTimeshift.new(
-    approved_at: DateTime.iso8601('2023-06-07T06:09:27.547Z'),
+    approved_at: DateTime.iso8601('2022-07-18T21:43:25.574Z'),
     compensation: [
       Models::Shared::HrisCompensation.new(
         amount: 76_761.0,
-        currency: 'JPY',
-        frequency: Models::Shared::HrisCompensationFrequency::HOUR,
-        notes: 'Annus adficio suasoria architecto aggero.',
-        type: Models::Shared::HrisCompensationType::OTHER,
+        currency: 'GBP',
+        frequency: Models::Shared::HrisCompensationFrequency::SEMIMONTHLY,
+        notes: 'Vehemens annus adficio.',
+        type: Models::Shared::HrisCompensationType::COMMISSION,
       ),
     ],
     created_at: DateTime.iso8601('2019-07-01T23:53:15.738Z'),
     employee_user_id: '<id>',
-    end_at: DateTime.iso8601('2026-08-28T08:36:26.141Z'),
-    hours: 8.0,
-    id: 'f4e9abcd-0967-4162-a883-8936d4157af5',
-    is_approved: true,
-    start_at: DateTime.iso8601('2023-06-26T11:39:07.851Z'),
-    updated_at: DateTime.iso8601('2021-06-23T16:49:43.319Z'),
+    end_at: DateTime.iso8601('2026-09-29T00:41:37.990Z'),
+    hours: 6.0,
+    id: 'ca9ee199-3154-4f5b-b34b-264ec1a5017e',
+    is_approved: false,
+    metadata: [],
+    start_at: DateTime.iso8601('2023-07-14T02:48:50.244Z'),
+    updated_at: DateTime.iso8601('2021-07-02T10:56:40.240Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3088,7 +3689,7 @@ end
 
 ## remove_hris_attendance
 
-Remove an attendance
+Deletes the HrisAttendance identified by `id`.
 
 ### Example Usage
 
@@ -3130,7 +3731,7 @@ end
 
 ## remove_hris_bankaccount
 
-Remove a bankaccount
+Deletes the HrisBankaccount identified by `id`.
 
 ### Example Usage
 
@@ -3172,7 +3773,7 @@ end
 
 ## remove_hris_benefit
 
-Remove a benefit
+Deletes the HrisBenefit identified by `id`.
 
 ### Example Usage
 
@@ -3214,7 +3815,7 @@ end
 
 ## remove_hris_company
 
-Remove a company
+Deletes the HrisCompany identified by `id`.
 
 ### Example Usage
 
@@ -3256,7 +3857,7 @@ end
 
 ## remove_hris_deduction
 
-Remove a deduction
+Deletes the HrisDeduction identified by `id`.
 
 ### Example Usage
 
@@ -3298,7 +3899,7 @@ end
 
 ## remove_hris_device
 
-Remove a device
+Deletes the HrisDevice identified by `id`.
 
 ### Example Usage
 
@@ -3340,7 +3941,7 @@ end
 
 ## remove_hris_document
 
-Remove a document
+Deletes the HrisDocument identified by `id`.
 
 ### Example Usage
 
@@ -3380,9 +3981,51 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## remove_hris_earning
+
+Deletes the HrisEarning identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="removeHrisEarning" method="delete" path="/hris/{connection_id}/earning/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.hris.remove_hris_earning(connection_id: '<id>', id: '<id>')
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `connection_id`      | *::String*           | :heavy_check_mark:   | ID of the connection |
+| `id`                 | *::String*           | :heavy_check_mark:   | ID of the Earning    |
+
+### Response
+
+**[T.nilable(Models::Operations::RemoveHrisEarningResponse)](../../models/operations/removehrisearningresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## remove_hris_employee
 
-Remove an employee
+Deletes the HrisEmployee identified by `id`.
 
 ### Example Usage
 
@@ -3424,7 +4067,7 @@ end
 
 ## remove_hris_group
 
-Remove a group
+Deletes the HrisGroup identified by `id`.
 
 ### Example Usage
 
@@ -3464,9 +4107,51 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## remove_hris_job
+
+Deletes the HrisJob identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="removeHrisJob" method="delete" path="/hris/{connection_id}/job/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.hris.remove_hris_job(connection_id: '<id>', id: '<id>')
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `connection_id`      | *::String*           | :heavy_check_mark:   | ID of the connection |
+| `id`                 | *::String*           | :heavy_check_mark:   | ID of the Job        |
+
+### Response
+
+**[T.nilable(Models::Operations::RemoveHrisJobResponse)](../../models/operations/removehrisjobresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## remove_hris_location
 
-Remove a location
+Deletes the HrisLocation identified by `id`.
 
 ### Example Usage
 
@@ -3508,7 +4193,7 @@ end
 
 ## remove_hris_timeoff
 
-Remove a timeoff
+Deletes the HrisTimeoff identified by `id`.
 
 ### Example Usage
 
@@ -3550,7 +4235,7 @@ end
 
 ## remove_hris_timeshift
 
-Remove a timeshift
+Deletes the HrisTimeshift identified by `id`.
 
 ### Example Usage
 
@@ -3592,7 +4277,7 @@ end
 
 ## update_hris_attendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -3617,31 +4302,32 @@ req = Models::Operations::UpdateHrisAttendanceRequest.new(
       region: 'Tennessee',
       region_code: 'CA',
     ),
-    approved_at: DateTime.iso8601('2021-08-13T10:42:10.868Z'),
+    approved_at: DateTime.iso8601('2021-09-19T15:06:28.111Z'),
     breaks: [
       Models::Shared::HrisAttendanceBreak.new(
-        duration_minutes: 12.0,
-        end_at: DateTime.iso8601('2023-10-23T23:43:19.003Z'),
-        id: 'd60a1001-5a8a-4991-8c21-f4da6036cc87',
-        is_paid: true,
+        duration_minutes: 51.0,
+        end_at: DateTime.iso8601('2024-02-15T12:19:44.132Z'),
+        id: '535ff72a-3602-4916-aabd-100b5c5bd600',
+        is_paid: false,
         name: 'Lunch',
-        start_at: DateTime.iso8601('2023-10-17T03:53:40.584Z'),
+        start_at: DateTime.iso8601('2023-10-30T19:24:30.533Z'),
       ),
     ],
     created_at: DateTime.iso8601('2021-08-10T19:43:18.452Z'),
-    currency: 'UGX',
-    declared_tips_amount: 161.0,
+    currency: 'EUR',
+    declared_tips_amount: 54.0,
     employee_user_id: '<id>',
-    end_at: DateTime.iso8601('2024-04-07T17:46:51.489Z'),
-    hourly_rate: 53.0,
+    end_at: DateTime.iso8601('2024-04-24T08:35:37.010Z'),
+    hourly_rate: 16.0,
     hours: 10.0,
-    id: 'c47a366e-1c08-45fa-9d0c-38d1d738a641',
-    job_name: 'Global Creative Supervisor',
-    non_cash_tips_amount: 54.0,
-    start_at: DateTime.iso8601('2021-11-09T13:58:14.446Z'),
-    status: Models::Shared::HrisAttendanceStatus::CLOSED,
+    id: '3168ed24-e8aa-43a5-b61e-0f0cb5f8bb6f',
+    job_name: 'Human Accountability Administrator',
+    metadata: [],
+    non_cash_tips_amount: 167.0,
+    start_at: DateTime.iso8601('2021-11-11T03:15:04.367Z'),
+    status: Models::Shared::HrisAttendanceStatus::OPEN,
     timezone: 'America/Atikokan',
-    updated_at: DateTime.iso8601('2022-01-17T07:38:03.668Z'),
+    updated_at: DateTime.iso8601('2022-01-20T01:08:55.432Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3673,7 +4359,7 @@ end
 
 ## update_hris_bankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -3694,12 +4380,18 @@ req = Models::Operations::UpdateHrisBankaccountRequest.new(
     account_number_last4: '3777',
     account_type: Models::Shared::HrisBankaccountAccountType::CHECKING,
     bank_name: 'Huel Group',
+    country_code: 'US',
     created_at: DateTime.iso8601('2019-11-16T16:43:45.976Z'),
-    id: 'a59c46a7-5d4b-45df-98f1-c5935aac4d1f',
-    is_primary: false,
-    name: 'Checking Account',
+    currency: 'USD',
+    id: '0ac397c0-d0a9-4e91-a40f-625e296f11dc',
+    is_primary: true,
+    metadata: [],
+    name: 'Granville Schumm - Checking',
+    priority: 2.0,
     routing_number: '448650724',
-    updated_at: DateTime.iso8601('2025-06-06T22:35:03.403Z'),
+    split_amount: 98.0,
+    split_type: Models::Shared::SplitType::PERCENTAGE,
+    updated_at: DateTime.iso8601('2025-07-02T21:02:53.635Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3731,7 +4423,7 @@ end
 
 ## update_hris_benefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -3750,18 +4442,19 @@ req = Models::Operations::UpdateHrisBenefitRequest.new(
   hris_benefit: Models::Shared::HrisBenefit.new(
     coverage_level: Models::Shared::CoverageLevel::EMPLOYEE_SPOUSE,
     created_at: DateTime.iso8601('2020-06-11T01:24:05.654Z'),
-    currency: 'JOD',
+    currency: 'GBP',
     description: 'Vomito voluptas dolor sed.',
     employer_contribution_amount: 185_006.0,
     employer_contribution_max_amount: 179_093.0,
     employer_contribution_type: Models::Shared::EmployerContributionType::PERCENTAGE,
-    frequency: Models::Shared::HrisBenefitFrequency::HOUR,
-    id: '8afb2ac2-392c-4be4-aa88-39cea81b92ae',
+    frequency: Models::Shared::HrisBenefitFrequency::MONTH,
+    id: '9559438e-6c3b-498f-925d-b0295a2d009d',
     is_active: false,
+    metadata: [],
     name: 'Frozen Wooden Ball',
     tax: Models::Shared::Tax::PRE_TAX,
-    type: Models::Shared::HrisBenefitType::GARNISHMENT,
-    updated_at: DateTime.iso8601('2023-03-07T18:44:31.799Z'),
+    type: Models::Shared::HrisBenefitType::OTHER,
+    updated_at: DateTime.iso8601('2023-03-21T17:08:11.118Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3793,7 +4486,7 @@ end
 
 ## update_hris_company
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -3811,18 +4504,19 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateHrisCompanyRequest.new(
   hris_company: Models::Shared::HrisCompany.new(
     address: Models::Shared::PropertyHrisCompanyAddress.new(
-      address1: '2549 Church Walk',
-      city: 'Lake Nettiebury',
+      address1: '675 Lavinia Lights',
+      city: 'Rocky Mount',
       country_code: 'US',
-      postal_code: '32877-4898',
-      region: 'Idaho',
-      region_code: 'PA',
+      postal_code: '67325',
+      region: 'Kentucky',
+      region_code: 'MO',
     ),
     created_at: DateTime.iso8601('2021-05-02T22:27:38.970Z'),
-    id: '50bdb37f-e21e-4d15-b7dd-677113a9b1d3',
-    legal_name: 'Schultz LLC',
+    id: '85b73e0f-ec9b-45ff-aa0b-c382b00eba76',
+    legal_name: 'Gottlieb Group LLC',
+    metadata: [],
     name: 'Gottlieb Group',
-    updated_at: DateTime.iso8601('2026-09-08T21:31:26.681Z'),
+    updated_at: DateTime.iso8601('2026-10-10T15:45:48.033Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3854,7 +4548,7 @@ end
 
 ## update_hris_deduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -3871,17 +4565,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateHrisDeductionRequest.new(
   hris_deduction: Models::Shared::HrisDeduction.new(
-    amount: 139_655.0,
-    coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_ONLY,
+    amount: 564.0,
+    coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_CHILD,
     created_at: DateTime.iso8601('2020-02-05T01:46:31.384Z'),
-    end_at: DateTime.iso8601('2026-05-25T20:05:49.207Z'),
-    frequency: Models::Shared::HrisDeductionFrequency::MONTH,
-    id: '271b0d0e-936f-4af8-9bed-1b4a1174fd65',
-    is_active: false,
+    employer_amount: 80_510.0,
+    employer_type: Models::Shared::EmployerType::PERCENTAGE,
+    frequency: Models::Shared::HrisDeductionFrequency::ONE_TIME,
+    garnishment_type: Models::Shared::GarnishmentType::CHILD_SUPPORT,
+    id: '094f9f10-0414-428a-b246-807a48953ae6',
+    is_active: true,
+    max_amount: 21_794.0,
+    metadata: [],
     notes: 'Carmen desidero.',
-    start_at: DateTime.iso8601('2025-02-20T12:02:49.120Z'),
+    start_at: DateTime.iso8601('2025-03-16T19:58:37.731Z'),
     type: Models::Shared::HrisDeductionType::FIXED,
-    updated_at: DateTime.iso8601('2024-03-03T20:28:34.384Z'),
+    updated_at: DateTime.iso8601('2024-03-23T12:19:21.582Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3913,7 +4611,7 @@ end
 
 ## update_hris_device
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -3931,22 +4629,23 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateHrisDeviceRequest.new(
   hris_device: Models::Shared::HrisDevice.new(
     admin_user_ids: [],
-    asset_tag: 'dpho9OuFNG',
+    asset_tag: 'fJNacaaoWi',
     created_at: DateTime.iso8601('2019-04-04T17:11:40.322Z'),
-    has_antivirus: false,
+    has_antivirus: true,
     has_firewall: true,
     has_hd_encrypted: true,
     has_password_manager: true,
-    has_screenlock: true,
-    id: '1e939b25-a7cf-4ff0-a182-104bfe9156ca',
+    has_screenlock: false,
+    id: '41cb5989-1e38-4830-9e95-cb84692d50bf',
     is_missing: false,
-    manufacturer: 'Sanford - Hamill',
-    model: 'Refined',
-    name: 'cross_contamination_if.rar',
-    os: 'monitor',
-    os_version: '1.12.16',
-    updated_at: DateTime.iso8601('2023-05-22T17:13:26.130Z'),
-    version: '2.20.17',
+    manufacturer: 'Hackett Inc',
+    metadata: [],
+    model: 'Fantastic',
+    name: 'august-laptop',
+    os: 'transmitter',
+    os_version: '8.4.8',
+    updated_at: DateTime.iso8601('2023-06-09T09:44:14.218Z'),
+    version: '4.15.7',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3978,7 +4677,7 @@ end
 
 ## update_hris_document
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -3998,9 +4697,10 @@ req = Models::Operations::UpdateHrisDocumentRequest.new(
     created_at: DateTime.iso8601('2022-10-27T11:47:26.086Z'),
     document_url: 'https://sore-decision.biz/',
     filename: 'ridge_forager.xsl',
-    id: '85c0eb48-5170-4b2a-9af4-354cdbccee45',
+    id: '22db088b-317d-486a-b436-8033c2ffd1ef',
+    metadata: [],
     type: Models::Shared::HrisDocumentType::POLICY,
-    updated_at: DateTime.iso8601('2025-09-19T07:57:45.609Z'),
+    updated_at: DateTime.iso8601('2025-10-13T01:30:16.041Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4030,9 +4730,67 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## update_hris_earning
+
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="updateHrisEarning" method="put" path="/hris/{connection_id}/earning/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::UpdateHrisEarningRequest.new(
+  hris_earning: Models::Shared::HrisEarning.new(
+    amount: 4026.0,
+    created_at: DateTime.iso8601('2019-01-26T12:44:52.326Z'),
+    currency: 'USD',
+    frequency: Models::Shared::HrisEarningFrequency::SEMIMONTHLY,
+    id: '39c3e54d-e6fe-403b-ac15-194da84ef92e',
+    metadata: [],
+    notes: 'Deporto truculenter vinum beatae.',
+    start_at: DateTime.iso8601('2022-07-26T09:21:02.685Z'),
+    status: Models::Shared::HrisEarningStatus::ENDED,
+    updated_at: DateTime.iso8601('2020-02-09T02:56:01.413Z'),
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.hris.update_hris_earning(request: req)
+
+unless res.hris_earning.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [Models::Operations::UpdateHrisEarningRequest](../../models/operations/updatehrisearningrequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
+
+### Response
+
+**[T.nilable(Models::Operations::UpdateHrisEarningResponse)](../../models/operations/updatehrisearningresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## update_hris_employee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -4050,43 +4808,44 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateHrisEmployeeRequest.new(
   hris_employee: Models::Shared::HrisEmployee.new(
     address: Models::Shared::PropertyHrisEmployeeAddress.new(
-      address1: '52008 Lansdowne Road',
-      address2: 'Apt. 101',
-      city: 'Connellyberg',
+      address1: '7431 Hintz Parkway',
+      address2: 'Apt. 520',
+      city: 'Port Rogerview',
       country_code: 'US',
-      postal_code: '18978',
-      region: 'South Dakota',
-      region_code: 'NM',
+      postal_code: '01711',
+      region: 'Missouri',
+      region_code: 'TN',
     ),
-    bio: 'sushi devotee, singer',
+    bio: 'fun advocate  🇱🇻',
     compensation: [
       Models::Shared::HrisCompensation.new(
-        amount: 69_148.0,
-        currency: 'CRC',
-        frequency: Models::Shared::HrisCompensationFrequency::QUARTER,
-        notes: 'Tergeo laborum laboriosam tutis.',
-        type: Models::Shared::HrisCompensationType::EQUITY,
+        amount: 95_000.0,
+        currency: 'USD',
+        frequency: Models::Shared::HrisCompensationFrequency::YEAR,
+        notes: 'Eius.',
+        type: Models::Shared::HrisCompensationType::OTHER,
       ),
     ],
     created_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
-    currency: 'IDR',
+    currency: 'USD',
     date_of_birth: DateTime.iso8601('2001-04-22'),
     emails: [
       Models::Shared::HrisEmail.new(
-        email: 'Zetta_Prohaska67@hotmail.com',
-        type: Models::Shared::HrisEmailType::HOME,
+        email: 'zetta.prohaska@insidious-stump.net',
+        type: Models::Shared::HrisEmailType::WORK,
       ),
     ],
-    employee_number: 'YuOt169CGu',
+    employee_number: 'uCk3qaL1ei',
     employment_status: Models::Shared::EmploymentStatus::ACTIVE,
-    employment_type: Models::Shared::HrisEmployeeEmploymentType::VOLUNTEER,
+    employment_type: Models::Shared::HrisEmployeeEmploymentType::PART_TIME,
     first_name: 'Zetta',
-    gender: Models::Shared::HrisEmployeeGender::INTERSEX,
+    flsa_status: Models::Shared::FlsaStatus::EXEMPT,
+    gender: Models::Shared::HrisEmployeeGender::MALE,
     has_mfa: true,
-    hired_at: DateTime.iso8601('2023-05-12T06:08:21.617Z'),
-    id: '9b80cc3c-35a4-4eb2-b269-399711785e39',
-    image_url: 'https://loremflickr.com/3684/2116?lock=4686991638584456',
-    language_locale: 'es',
+    hired_at: DateTime.iso8601('2019-09-16T15:08:53.262Z'),
+    id: 'cc9adbc7-7e36-4c95-9f64-626deec56178',
+    image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg',
+    language_locale: 'in',
     last_name: 'Prohaska',
     locations: [],
     marital_status: Models::Shared::MaritalStatus::MARRIED,
@@ -4096,72 +4855,55 @@ req = Models::Operations::UpdateHrisEmployeeRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::HrisMetadataFormat::TEXT,
-        id: 'cd351d1b-4490-4933-92ab-fea7c8e86868',
+        id: 'c37f78a9-26c3-499d-8136-291077fe7813',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'tenetur',
+        value: 'tutis',
       ),
     ],
     name: 'Zetta Prohaska',
+    pay_frequency: Models::Shared::PayFrequency::WEEK,
     pronouns: 'she/her',
     relationships: [
       Models::Shared::HrisEmployeerelationship.new(
         emails: [
           Models::Shared::HrisEmail.new(
-            email: 'Deshaun.Sanford24@yahoo.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Rebeca.Dibbert11@hotmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Hester80@gmail.com',
+            email: 'keith.prohaska@gmail.com',
           ),
         ],
-        name: 'Automotive',
-        type: Models::Shared::HrisEmployeerelationshipType::EMERGENCY,
-      ),
-      Models::Shared::HrisEmployeerelationship.new(
-        emails: [
-          Models::Shared::HrisEmail.new(
-            email: 'Benedict_Wisozk83@hotmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Princess_Rath43@gmail.com',
-          ),
-          Models::Shared::HrisEmail.new(
-            email: 'Elmira92@yahoo.com',
-          ),
-        ],
-        name: 'Music',
-        type: Models::Shared::HrisEmployeerelationshipType::FRIEND,
-      ),
-      Models::Shared::HrisEmployeerelationship.new(
-        emails: [
-          Models::Shared::HrisEmail.new(
-            email: 'Jane30@gmail.com',
-          ),
-        ],
-        name: 'Jewelry',
+        name: 'Keith Prohaska',
         type: Models::Shared::HrisEmployeerelationshipType::SIBLING,
       ),
+      Models::Shared::HrisEmployeerelationship.new(
+        emails: [
+          Models::Shared::HrisEmail.new(
+            email: 'keely.prohaska@icloud.com',
+          ),
+        ],
+        name: 'Keely Prohaska',
+        type: Models::Shared::HrisEmployeerelationshipType::OTHER,
+      ),
     ],
-    salutation: 'Miss',
-    ssn_sin: 'yMRtj0Q3xO',
-    storage_quota_allocated: 3_674_489.0,
-    storage_quota_available: 7_748_057.0,
-    storage_quota_used: 301_727.0,
+    salutation: 'Ms.',
+    ssn_sin: '284-82-8167',
+    storage_quota_allocated: 3_653_713.0,
+    storage_quota_available: 3_017_275.0,
+    storage_quota_used: 367_449.0,
     telephones: [
       Models::Shared::HrisTelephone.new(
-        telephone: '(409) 801-3705',
+        telephone: '(320) 980-1370',
+        type: Models::Shared::HrisTelephoneType::HOME,
+      ),
+      Models::Shared::HrisTelephone.new(
+        telephone: '(694) 840-0166',
         type: Models::Shared::HrisTelephoneType::FAX,
       ),
     ],
-    termination_reason: 'Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.',
-    timeoff_days_total: 12.0,
-    timeoff_days_used: 6.0,
-    timezone: 'Africa/Harare',
-    title: 'Investor Paradigm Liaison',
-    updated_at: DateTime.iso8601('2022-02-20T08:15:24.523Z'),
+    timeoff_days_total: 17.0,
+    timeoff_days_used: 9.0,
+    timezone: 'Europe/Ljubljana',
+    title: 'District Branding Specialist',
+    updated_at: DateTime.iso8601('2020-07-19T09:51:06.453Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4193,7 +4935,7 @@ end
 
 ## update_hris_group
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -4212,11 +4954,12 @@ req = Models::Operations::UpdateHrisGroupRequest.new(
   hris_group: Models::Shared::HrisGroup.new(
     created_at: DateTime.iso8601('2023-11-01T13:13:40.714Z'),
     description: 'Absorbeo casso.',
-    id: '2dc0a185-c73f-4f72-8405-cfd966941363',
+    id: '2a6ab666-a779-4d61-8460-1708d2cf490f',
     is_active: false,
+    metadata: [],
     name: 'Games',
-    type: Models::Shared::HrisGroupType::BUSINESS_UNIT,
-    updated_at: DateTime.iso8601('2026-04-26T04:59:49.331Z'),
+    type: Models::Shared::HrisGroupType::BRANCH,
+    updated_at: DateTime.iso8601('2026-05-23T16:27:13.369Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4246,9 +4989,66 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## update_hris_job
+
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="updateHrisJob" method="put" path="/hris/{connection_id}/job/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::UpdateHrisJobRequest.new(
+  hris_job: Models::Shared::HrisJob.new(
+    code: 'P-05547',
+    created_at: DateTime.iso8601('2020-10-28T01:13:19.491Z'),
+    description: 'Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.',
+    employment_type: Models::Shared::HrisJobEmploymentType::FREELANCE,
+    id: 'b1e43179-fc71-4f8b-94a8-7d02f75d7ac1',
+    is_active: false,
+    metadata: [],
+    name: 'Internal Integration Specialist',
+    updated_at: DateTime.iso8601('2023-01-30T23:18:09.925Z'),
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.hris.update_hris_job(request: req)
+
+unless res.hris_job.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [Models::Operations::UpdateHrisJobRequest](../../models/operations/updatehrisjobrequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[T.nilable(Models::Operations::UpdateHrisJobResponse)](../../models/operations/updatehrisjobresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## update_hris_location
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -4266,39 +5066,39 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateHrisLocationRequest.new(
   hris_location: Models::Shared::HrisLocation.new(
     address: Models::Shared::PropertyHrisLocationAddress.new(
-      address1: '2743 Connelly Summit',
-      address2: 'Apt. 350',
-      city: 'Titusville',
+      address1: '4418 Daniella Mall',
+      address2: 'Apt. 997',
+      city: 'Burke',
       country_code: 'US',
-      postal_code: '16154-1095',
-      region: 'Oregon',
-      region_code: 'AL',
+      postal_code: '54109',
+      region: 'Ohio',
+      region_code: 'OR',
     ),
     created_at: DateTime.iso8601('2021-07-18T10:32:01.414Z'),
-    currency: 'MUR',
-    description: 'Acervus caries.',
-    external_identifier: 'fd01f7ca-7b21-4d32-a619-3b75e64df32b',
-    id: 'f28f28b3-6633-431a-8161-7ef046d9d815',
-    is_active: true,
-    is_hq: false,
-    language_locale: 'fr',
-    name: 'adhuc',
+    currency: 'MNT',
+    description: 'Commemoro acervus.',
+    id: 'a79e86f2-b553-44c7-bcca-ed7260958f52',
+    is_active: false,
+    is_hq: true,
+    language_locale: 'it',
+    metadata: [],
+    name: 'North Kimberlyland Office',
     telephones: [
       Models::Shared::HrisTelephone.new(
-        telephone: '(710) 550-6997',
+        telephone: '(371) 245-0699',
         type: Models::Shared::HrisTelephoneType::FAX,
       ),
       Models::Shared::HrisTelephone.new(
-        telephone: '(208) 555-8542',
+        telephone: '(700) 845-5854',
+        type: Models::Shared::HrisTelephoneType::FAX,
+      ),
+      Models::Shared::HrisTelephone.new(
+        telephone: '(461) 437-3548',
         type: Models::Shared::HrisTelephoneType::HOME,
       ),
-      Models::Shared::HrisTelephone.new(
-        telephone: '(712) 473-5482',
-        type: Models::Shared::HrisTelephoneType::FAX,
-      ),
     ],
-    timezone: 'America/Guyana',
-    updated_at: DateTime.iso8601('2023-06-10T03:17:45.026Z'),
+    timezone: 'Asia/Jerusalem',
+    updated_at: DateTime.iso8601('2023-06-21T19:54:08.302Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -4330,7 +5130,7 @@ end
 
 ## update_hris_timeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -4347,20 +5147,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateHrisTimeoffRequest.new(
   hris_timeoff: Models::Shared::HrisTimeoff.new(
-    approved_at: DateTime.iso8601('2022-02-21T02:34:00.708Z'),
+    approved_at: DateTime.iso8601('2022-02-23T12:45:41.371Z'),
     comments: 'Blandior ventus curiositas amplitudo.',
     created_at: DateTime.iso8601('2021-10-06T18:00:20.615Z'),
     duration: 4.0,
     duration_type: Models::Shared::DurationType::DAY,
-    end_at: DateTime.iso8601('2024-12-09T12:28:57.445Z'),
-    id: '0827ff67-76de-4e75-a057-caf46aa2bff1',
+    end_at: DateTime.iso8601('2024-12-29T23:50:53.937Z'),
+    id: '2aba93e5-a27c-4550-ac9b-f0337f0f7383',
     is_paid: true,
+    metadata: [],
     original_type: 'acerbitas ut',
     reason: 'verto',
-    start_at: DateTime.iso8601('2023-08-24T10:33:26.226Z'),
+    start_at: DateTime.iso8601('2023-09-05T13:29:26.288Z'),
     status: Models::Shared::HrisTimeoffStatus::DENIED,
     type: Models::Shared::HrisTimeoffType::IN_LIEU,
-    updated_at: DateTime.iso8601('2022-07-08T06:37:13.086Z'),
+    updated_at: DateTime.iso8601('2022-07-13T02:55:47.942Z'),
     user_id: '<id>',
   ),
   connection_id: '<id>',
@@ -4393,7 +5194,7 @@ end
 
 ## update_hris_timeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -4410,24 +5211,25 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateHrisTimeshiftRequest.new(
   hris_timeshift: Models::Shared::HrisTimeshift.new(
-    approved_at: DateTime.iso8601('2023-06-07T06:09:27.547Z'),
+    approved_at: DateTime.iso8601('2022-07-18T21:43:25.574Z'),
     compensation: [
       Models::Shared::HrisCompensation.new(
         amount: 76_761.0,
-        currency: 'JPY',
-        frequency: Models::Shared::HrisCompensationFrequency::HOUR,
-        notes: 'Annus adficio suasoria architecto aggero.',
-        type: Models::Shared::HrisCompensationType::OTHER,
+        currency: 'GBP',
+        frequency: Models::Shared::HrisCompensationFrequency::SEMIMONTHLY,
+        notes: 'Vehemens annus adficio.',
+        type: Models::Shared::HrisCompensationType::COMMISSION,
       ),
     ],
     created_at: DateTime.iso8601('2019-07-01T23:53:15.738Z'),
     employee_user_id: '<id>',
-    end_at: DateTime.iso8601('2026-08-28T08:36:26.141Z'),
-    hours: 8.0,
-    id: 'f4e9abcd-0967-4162-a883-8936d4157af5',
-    is_approved: true,
-    start_at: DateTime.iso8601('2023-06-26T11:39:07.851Z'),
-    updated_at: DateTime.iso8601('2021-06-23T16:49:43.319Z'),
+    end_at: DateTime.iso8601('2026-09-29T00:41:37.990Z'),
+    hours: 6.0,
+    id: 'ca9ee199-3154-4f5b-b34b-264ec1a5017e',
+    is_approved: false,
+    metadata: [],
+    start_at: DateTime.iso8601('2023-07-14T02:48:50.244Z'),
+    updated_at: DateTime.iso8601('2021-07-02T10:56:40.240Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

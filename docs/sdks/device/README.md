@@ -14,7 +14,7 @@
 
 ## create_hris_device
 
-Create a device
+Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
 
 ### Example Usage
 
@@ -31,22 +31,23 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.device.create_hris_device(hris_device: Models::Shared::HrisDevice.new(
   admin_user_ids: [],
-  asset_tag: 'dpho9OuFNG',
+  asset_tag: 'fJNacaaoWi',
   created_at: DateTime.iso8601('2019-04-04T17:11:40.322Z'),
-  has_antivirus: false,
+  has_antivirus: true,
   has_firewall: true,
   has_hd_encrypted: true,
   has_password_manager: true,
-  has_screenlock: true,
-  id: 'ff6f7d28-8a09-4c0d-8233-996f14d17b4f',
+  has_screenlock: false,
+  id: '35aab3f8-e9a2-4dbc-9093-e69da49d460e',
   is_missing: false,
-  manufacturer: 'Sanford - Hamill',
-  model: 'Refined',
-  name: 'cross_contamination_if.rar',
-  os: 'monitor',
-  os_version: '1.12.16',
-  updated_at: DateTime.iso8601('2023-05-22T17:13:26.123Z'),
-  version: '2.20.17',
+  manufacturer: 'Hackett Inc',
+  metadata: [],
+  model: 'Fantastic',
+  name: 'august-laptop',
+  os: 'transmitter',
+  os_version: '8.4.8',
+  updated_at: DateTime.iso8601('2023-06-09T09:44:14.207Z'),
+  version: '4.15.7',
 ), connection_id: '<id>')
 
 unless res.hris_device.nil?
@@ -76,7 +77,7 @@ end
 
 ## get_hris_device
 
-Retrieve a device
+Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -120,7 +121,7 @@ end
 
 ## list_hris_devices
 
-List all devices
+Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -165,7 +166,7 @@ end
 
 ## patch_hris_device
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -183,22 +184,23 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchHrisDeviceRequest.new(
   hris_device: Models::Shared::HrisDevice.new(
     admin_user_ids: [],
-    asset_tag: 'dpho9OuFNG',
+    asset_tag: 'fJNacaaoWi',
     created_at: DateTime.iso8601('2019-04-04T17:11:40.322Z'),
-    has_antivirus: false,
+    has_antivirus: true,
     has_firewall: true,
     has_hd_encrypted: true,
     has_password_manager: true,
-    has_screenlock: true,
-    id: '1e939b25-a7cf-4ff0-a182-104bfe9156ca',
+    has_screenlock: false,
+    id: '41cb5989-1e38-4830-9e95-cb84692d50bf',
     is_missing: false,
-    manufacturer: 'Sanford - Hamill',
-    model: 'Refined',
-    name: 'cross_contamination_if.rar',
-    os: 'monitor',
-    os_version: '1.12.16',
-    updated_at: DateTime.iso8601('2023-05-22T17:13:26.130Z'),
-    version: '2.20.17',
+    manufacturer: 'Hackett Inc',
+    metadata: [],
+    model: 'Fantastic',
+    name: 'august-laptop',
+    os: 'transmitter',
+    os_version: '8.4.8',
+    updated_at: DateTime.iso8601('2023-06-09T09:44:14.218Z'),
+    version: '4.15.7',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -230,7 +232,7 @@ end
 
 ## remove_hris_device
 
-Remove a device
+Deletes the HrisDevice identified by `id`.
 
 ### Example Usage
 
@@ -272,7 +274,7 @@ end
 
 ## update_hris_device
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -290,22 +292,23 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateHrisDeviceRequest.new(
   hris_device: Models::Shared::HrisDevice.new(
     admin_user_ids: [],
-    asset_tag: 'dpho9OuFNG',
+    asset_tag: 'fJNacaaoWi',
     created_at: DateTime.iso8601('2019-04-04T17:11:40.322Z'),
-    has_antivirus: false,
+    has_antivirus: true,
     has_firewall: true,
     has_hd_encrypted: true,
     has_password_manager: true,
-    has_screenlock: true,
-    id: '1e939b25-a7cf-4ff0-a182-104bfe9156ca',
+    has_screenlock: false,
+    id: '41cb5989-1e38-4830-9e95-cb84692d50bf',
     is_missing: false,
-    manufacturer: 'Sanford - Hamill',
-    model: 'Refined',
-    name: 'cross_contamination_if.rar',
-    os: 'monitor',
-    os_version: '1.12.16',
-    updated_at: DateTime.iso8601('2023-05-22T17:13:26.130Z'),
-    version: '2.20.17',
+    manufacturer: 'Hackett Inc',
+    metadata: [],
+    model: 'Fantastic',
+    name: 'august-laptop',
+    os: 'transmitter',
+    os_version: '8.4.8',
+    updated_at: DateTime.iso8601('2023-06-09T09:44:14.218Z'),
+    version: '4.15.7',
   ),
   connection_id: '<id>',
   id: '<id>',

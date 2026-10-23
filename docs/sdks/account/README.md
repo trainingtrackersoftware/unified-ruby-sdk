@@ -14,7 +14,7 @@
 
 ## create_accounting_account
 
-Create an account
+Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
 
 ### Example Usage
 
@@ -32,27 +32,23 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.account.create_accounting_account(accounting_account: Models::Shared::AccountingAccount.new(
   balance: 12_092.0,
   created_at: DateTime.iso8601('2022-07-03T17:57:07.391Z'),
-  currency: 'BOB',
-  customer_defined_code: 'quo',
-  description: 'Spoliatio comedo vilitas harum cupiditate.',
-  id: 'ba60921a-31d4-49c5-b2fe-50a08d9b2eec',
-  is_payable: true,
-  name: 'Electronic Aluminum Tuna',
+  currency: 'CAD',
+  customer_defined_code: '6170',
+  description: 'Voluptatibus valde spoliatio.',
+  id: '898bd106-40b2-43f3-9e8a-03eca401222f',
+  is_payable: false,
+  metadata: [],
+  name: 'Auto Loan Account',
   status: Models::Shared::Status::ARCHIVED,
   taxonomy: [
     Models::Shared::AccountingAccountTaxonomy.new(
-      original_type: 'vesper',
+      original_type: 'vilitas',
       type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-      value: 'iste',
-    ),
-    Models::Shared::AccountingAccountTaxonomy.new(
-      original_type: 'adamo',
-      type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-      value: 'peccatus',
+      value: 'comedo',
     ),
   ],
-  type: Models::Shared::Type::BANK,
-  updated_at: DateTime.iso8601('2023-01-03T11:52:17.293Z'),
+  type: Models::Shared::Type::ACCOUNTS_RECEIVABLE,
+  updated_at: DateTime.iso8601('2023-08-07T09:48:02.330Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_account.nil?
@@ -82,7 +78,7 @@ end
 
 ## get_accounting_account
 
-Retrieve an account
+Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -126,7 +122,7 @@ end
 
 ## list_accounting_accounts
 
-List all accounts
+Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -171,7 +167,7 @@ end
 
 ## patch_accounting_account
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -190,27 +186,23 @@ req = Models::Operations::PatchAccountingAccountRequest.new(
   accounting_account: Models::Shared::AccountingAccount.new(
     balance: 12_092.0,
     created_at: DateTime.iso8601('2022-07-03T17:57:07.391Z'),
-    currency: 'BOB',
-    customer_defined_code: 'quo',
-    description: 'Spoliatio comedo vilitas harum cupiditate.',
-    id: '53cbd8a2-f18c-4a78-8bb8-874214dbad58',
-    is_payable: true,
-    name: 'Electronic Aluminum Tuna',
+    currency: 'CAD',
+    customer_defined_code: '6170',
+    description: 'Voluptatibus valde spoliatio.',
+    id: 'c0445f00-3fb5-4d79-92ed-8286fdb0f9f0',
+    is_payable: false,
+    metadata: [],
+    name: 'Auto Loan Account',
     status: Models::Shared::Status::ARCHIVED,
     taxonomy: [
       Models::Shared::AccountingAccountTaxonomy.new(
-        original_type: 'vesper',
+        original_type: 'vilitas',
         type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-        value: 'iste',
-      ),
-      Models::Shared::AccountingAccountTaxonomy.new(
-        original_type: 'adamo',
-        type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-        value: 'peccatus',
+        value: 'comedo',
       ),
     ],
-    type: Models::Shared::Type::BANK,
-    updated_at: DateTime.iso8601('2023-01-03T11:52:17.295Z'),
+    type: Models::Shared::Type::ACCOUNTS_RECEIVABLE,
+    updated_at: DateTime.iso8601('2023-08-07T09:48:02.336Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -242,7 +234,7 @@ end
 
 ## remove_accounting_account
 
-Remove an account
+Deletes the AccountingAccount identified by `id`.
 
 ### Example Usage
 
@@ -284,7 +276,7 @@ end
 
 ## update_accounting_account
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -303,27 +295,23 @@ req = Models::Operations::UpdateAccountingAccountRequest.new(
   accounting_account: Models::Shared::AccountingAccount.new(
     balance: 12_092.0,
     created_at: DateTime.iso8601('2022-07-03T17:57:07.391Z'),
-    currency: 'BOB',
-    customer_defined_code: 'quo',
-    description: 'Spoliatio comedo vilitas harum cupiditate.',
-    id: '53cbd8a2-f18c-4a78-8bb8-874214dbad58',
-    is_payable: true,
-    name: 'Electronic Aluminum Tuna',
+    currency: 'CAD',
+    customer_defined_code: '6170',
+    description: 'Voluptatibus valde spoliatio.',
+    id: 'c0445f00-3fb5-4d79-92ed-8286fdb0f9f0',
+    is_payable: false,
+    metadata: [],
+    name: 'Auto Loan Account',
     status: Models::Shared::Status::ARCHIVED,
     taxonomy: [
       Models::Shared::AccountingAccountTaxonomy.new(
-        original_type: 'vesper',
+        original_type: 'vilitas',
         type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-        value: 'iste',
-      ),
-      Models::Shared::AccountingAccountTaxonomy.new(
-        original_type: 'adamo',
-        type: Models::Shared::AccountingAccountTaxonomyType::SUBGROUP,
-        value: 'peccatus',
+        value: 'comedo',
       ),
     ],
-    type: Models::Shared::Type::BANK,
-    updated_at: DateTime.iso8601('2023-01-03T11:52:17.295Z'),
+    type: Models::Shared::Type::ACCOUNTS_RECEIVABLE,
+    updated_at: DateTime.iso8601('2023-08-07T09:48:02.336Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -14,7 +14,7 @@
 
 ## create_accounting_transaction
 
-Create a transaction
+Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
 
 ### Example Usage
 
@@ -31,26 +31,24 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.transaction.create_accounting_transaction(accounting_transaction: Models::Shared::AccountingTransaction.new(
   created_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-  exchange_rate: 0.5_674,
-  id: '87e1785a-99e0-4104-9ca4-f517ff6e6f4f',
+  id: 'a2d82841-e929-4a25-b6e8-ac591f21a7a1',
   lineitems: [
     Models::Shared::AccountingTransactionLineItem.new(
       category_ids: [],
-      description: 'The Nikolas Table is the latest in a series of downright products from Beier and Sons',
-      id: '78395113-acef-4251-9287-02bf9466a9dd',
-      name: 'Salad',
-      object_type: 'delicate',
-      total_amount: 58_531.0,
+      description: 'The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability',
+      id: 'e3c882b2-0e50-400a-9ec9-e4d2e06f4942',
+      name: 'Shirt',
+      total_amount: 10_184.0,
       unit_amount: 536.0,
-      unit_quantity: 91.0,
+      unit_quantity: 19.0,
     ),
   ],
-  memo: 'withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.',
-  status: Models::Shared::AccountingTransactionStatus::VOID,
+  memo: 'deposit of ISK 792.81 at Fritsch - Dooley charged to account ending in 7879 using card ending in ****3230.',
+  status: Models::Shared::AccountingTransactionStatus::PENDING,
   tax_amount: 0.0,
-  total_amount: 94_452.0,
+  total_amount: 10_184.0,
   transaction_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-  updated_at: DateTime.iso8601('2021-09-10T23:02:19.723Z'),
+  updated_at: DateTime.iso8601('2019-10-14T06:29:16.791Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_transaction.nil?
@@ -80,7 +78,7 @@ end
 
 ## get_accounting_transaction
 
-Retrieve a transaction
+Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -124,7 +122,7 @@ end
 
 ## list_accounting_transactions
 
-List all transactions
+Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -169,7 +167,7 @@ end
 
 ## patch_accounting_transaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -187,26 +185,24 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingTransactionRequest.new(
   accounting_transaction: Models::Shared::AccountingTransaction.new(
     created_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-    exchange_rate: 0.5_674,
-    id: '149fa846-c137-4a76-850e-1e5bd335bf10',
+    id: 'edc4c799-9aa8-44e0-bfbf-7c2d70c68050',
     lineitems: [
       Models::Shared::AccountingTransactionLineItem.new(
         category_ids: [],
-        description: 'The Nikolas Table is the latest in a series of downright products from Beier and Sons',
-        id: '66a182d7-5406-4d9d-837d-4d25c59428ad',
-        name: 'Salad',
-        object_type: 'delicate',
-        total_amount: 58_531.0,
+        description: 'The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability',
+        id: '15879e14-d6a1-4fc7-8311-04bd9f86ac66',
+        name: 'Shirt',
+        total_amount: 10_184.0,
         unit_amount: 536.0,
-        unit_quantity: 91.0,
+        unit_quantity: 19.0,
       ),
     ],
-    memo: 'withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.',
-    status: Models::Shared::AccountingTransactionStatus::VOID,
+    memo: 'deposit of ISK 792.81 at Fritsch - Dooley charged to account ending in 7879 using card ending in ****3230.',
+    status: Models::Shared::AccountingTransactionStatus::PENDING,
     tax_amount: 0.0,
-    total_amount: 94_452.0,
+    total_amount: 10_184.0,
     transaction_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-    updated_at: DateTime.iso8601('2021-09-10T23:02:19.731Z'),
+    updated_at: DateTime.iso8601('2019-10-14T06:29:16.791Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -238,7 +234,7 @@ end
 
 ## remove_accounting_transaction
 
-Remove a transaction
+Deletes the AccountingTransaction identified by `id`.
 
 ### Example Usage
 
@@ -280,7 +276,7 @@ end
 
 ## update_accounting_transaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -298,26 +294,24 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingTransactionRequest.new(
   accounting_transaction: Models::Shared::AccountingTransaction.new(
     created_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-    exchange_rate: 0.5_674,
-    id: '149fa846-c137-4a76-850e-1e5bd335bf10',
+    id: 'edc4c799-9aa8-44e0-bfbf-7c2d70c68050',
     lineitems: [
       Models::Shared::AccountingTransactionLineItem.new(
         category_ids: [],
-        description: 'The Nikolas Table is the latest in a series of downright products from Beier and Sons',
-        id: '66a182d7-5406-4d9d-837d-4d25c59428ad',
-        name: 'Salad',
-        object_type: 'delicate',
-        total_amount: 58_531.0,
+        description: 'The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability',
+        id: '15879e14-d6a1-4fc7-8311-04bd9f86ac66',
+        name: 'Shirt',
+        total_amount: 10_184.0,
         unit_amount: 536.0,
-        unit_quantity: 91.0,
+        unit_quantity: 19.0,
       ),
     ],
-    memo: 'withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.',
-    status: Models::Shared::AccountingTransactionStatus::VOID,
+    memo: 'deposit of ISK 792.81 at Fritsch - Dooley charged to account ending in 7879 using card ending in ****3230.',
+    status: Models::Shared::AccountingTransactionStatus::PENDING,
     tax_amount: 0.0,
-    total_amount: 94_452.0,
+    total_amount: 10_184.0,
     transaction_at: DateTime.iso8601('2019-09-25T11:40:42.574Z'),
-    updated_at: DateTime.iso8601('2021-09-10T23:02:19.731Z'),
+    updated_at: DateTime.iso8601('2019-10-14T06:29:16.791Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

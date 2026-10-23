@@ -14,7 +14,7 @@
 
 ## create_commerce_item
 
-Create an item
+Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
 
 ### Example Usage
 
@@ -32,46 +32,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.item.create_commerce_item(commerce_item: Models::Shared::CommerceItem.new(
   collections: [],
   created_at: DateTime.iso8601('2019-06-21T20:16:18.628Z'),
-  description: 'Vulnero ustulo abeo.',
-  duration: 87.0,
-  global_code: 'calamitas',
-  id: '0a89c18f-9c24-4907-a7b0-d337173f7f36',
+  description: 'Decretum vulnero ustulo abeo.',
+  duration: 104.0,
+  global_code: '978-0-85270-680-0',
+  id: '69888d2e-7ba9-417d-8e76-f06781383f3d',
   is_active: false,
-  is_featured: true,
+  is_featured: false,
   is_taxable: true,
   is_visible: true,
   media: [
     Models::Shared::CommerceItemMedia.new(
       alt: 'Caterva eveniet acies candidus.',
-      height: 663.0,
-      id: '8696f623-8390-47e8-af6c-24cc461320de',
+      height: 876.0,
+      id: '60f131ab-5d3f-4c5a-998d-2398b5b2cb0d',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: '3d3db832-89c1-43ed-b2ee-c595daa80b46',
+          id: 'b349f7f7-f117-4712-ae25-7c7dff25f551',
           slug: 'doloremque',
           value: 'allatus',
         ),
       ],
-      position: 67.0,
+      position: 21.0,
       type: Models::Shared::CommerceItemMediaType::VIDEO,
-      url: 'https://picsum.photos/seed/73y0uzyK/972/3753',
-      width: 88.0,
+      url: 'https://picsum.photos/seed/v73y0uzyK/3001/972',
+      width: 67.0,
     ),
     Models::Shared::CommerceItemMedia.new(
       alt: 'Comedo.',
-      height: 189.0,
-      id: '2c46089f-759e-4360-bc02-69187bbbead2',
+      height: 651.0,
+      id: '2577733c-d9d7-4ad9-aca7-2d9c2697e763',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: 'ab870c2f-9653-4461-b126-fd0e0d435b3c',
+          id: '59f50590-4bc2-44c7-b89e-28b478033704',
           slug: 'bis',
           value: 'somniculosus',
         ),
       ],
-      position: 3.0,
+      position: 51.0,
       type: Models::Shared::CommerceItemMediaType::IMAGE,
       url: 'https://picsum.photos/seed/Ao4iatfO/771/3906',
-      width: 66.0,
+      width: 3.0,
     ),
   ],
   metadata: [
@@ -80,34 +80,33 @@ res = s.item.create_commerce_item(commerce_item: Models::Shared::CommerceItem.ne
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CommerceMetadataFormat::TEXT,
-      id: '279a68a8-fe76-4d81-a472-b2b56036f5ba',
+      id: 'b5d20319-3f55-4e47-b6ae-a4670d01f524',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'terebro',
+      value: 'abstergo',
     ),
   ],
   name: 'Handcrafted Rubber Tuna',
   prices: [
     Models::Shared::CommerceItemPrice.new(
-      compare_at_price: 474.0,
-      currency: 'OMR',
-      price: 1438.0,
+      currency: 'USD',
+      price: 78.11,
     ),
   ],
   public_description: 'Custodia ventus solio compono.',
   public_name: 'Handcrafted Rubber Tuna',
   requires_shipping: true,
-  slug: 'cohors-turba-optio',
+  slug: 'handcrafted-rubber-tuna',
   tags: [
+    'beatae',
     'blanditiis',
-    'tandem',
   ],
-  total_stock: 579.0,
-  type: 'beatae',
-  updated_at: DateTime.iso8601('2022-04-07T22:40:37.462Z'),
+  total_stock: 682.0,
+  type: 'SERVICE',
+  updated_at: DateTime.iso8601('2022-04-20T06:24:31.238Z'),
   vendor_name: 'Mayer - Flatley',
-  weight: 22.0,
-  weight_unit: Models::Shared::WeightUnit::KG,
+  weight: 37.0,
+  weight_unit: Models::Shared::WeightUnit::OZ,
 ), connection_id: '<id>')
 
 unless res.commerce_item.nil?
@@ -137,7 +136,7 @@ end
 
 ## get_commerce_item
 
-Retrieve an item
+Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -181,7 +180,7 @@ end
 
 ## list_commerce_items
 
-List all items
+Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -226,7 +225,7 @@ end
 
 ## patch_commerce_item
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -245,46 +244,46 @@ req = Models::Operations::PatchCommerceItemRequest.new(
   commerce_item: Models::Shared::CommerceItem.new(
     collections: [],
     created_at: DateTime.iso8601('2019-06-21T20:16:18.628Z'),
-    description: 'Vulnero ustulo abeo.',
-    duration: 87.0,
-    global_code: 'calamitas',
-    id: '9ef0d16c-1c7b-4c45-914b-d13d38f130cc',
+    description: 'Decretum vulnero ustulo abeo.',
+    duration: 104.0,
+    global_code: '978-0-85270-680-0',
+    id: 'e16779fc-7762-4d3c-8e5b-d727309f0130',
     is_active: false,
-    is_featured: true,
+    is_featured: false,
     is_taxable: true,
     is_visible: true,
     media: [
       Models::Shared::CommerceItemMedia.new(
         alt: 'Caterva eveniet acies candidus.',
-        height: 663.0,
-        id: 'bb186362-822b-4830-a1a9-3105a38a33a9',
+        height: 876.0,
+        id: 'b5af06a2-45bf-4019-9f88-72f8ca2bdd50',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '0cd7aab4-f559-4505-bcc4-4d0afc0829fe',
+            id: '01dc9f6b-a04d-4b58-97cf-6d2292c64429',
             slug: 'doloremque',
             value: 'allatus',
           ),
         ],
-        position: 67.0,
+        position: 21.0,
         type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://picsum.photos/seed/73y0uzyK/972/3753',
-        width: 88.0,
+        url: 'https://picsum.photos/seed/v73y0uzyK/3001/972',
+        width: 67.0,
       ),
       Models::Shared::CommerceItemMedia.new(
         alt: 'Comedo.',
-        height: 189.0,
-        id: 'afe816ca-dc54-444c-9c50-268199a2865a',
+        height: 651.0,
+        id: '97c47924-f468-4ac6-a746-d3ac5c08ec7d',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '6aacaab9-bb0a-4728-aaf5-a75e8771478e',
+            id: '1b7c372a-3bf2-46ff-8c72-5fb0fd59d522',
             slug: 'bis',
             value: 'somniculosus',
           ),
         ],
-        position: 3.0,
+        position: 51.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
         url: 'https://picsum.photos/seed/Ao4iatfO/771/3906',
-        width: 66.0,
+        width: 3.0,
       ),
     ],
     metadata: [
@@ -293,34 +292,33 @@ req = Models::Operations::PatchCommerceItemRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CommerceMetadataFormat::TEXT,
-        id: '6caf34dd-ee37-46ae-8f4e-d51ce30c93ae',
+        id: '8d5f9439-2089-429f-9300-69bc44a4ae54',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'terebro',
+        value: 'abstergo',
       ),
     ],
     name: 'Handcrafted Rubber Tuna',
     prices: [
       Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 474.0,
-        currency: 'OMR',
-        price: 1438.0,
+        currency: 'USD',
+        price: 78.11,
       ),
     ],
     public_description: 'Custodia ventus solio compono.',
     public_name: 'Handcrafted Rubber Tuna',
     requires_shipping: true,
-    slug: 'cohors-turba-optio',
+    slug: 'handcrafted-rubber-tuna',
     tags: [
+      'beatae',
       'blanditiis',
-      'tandem',
     ],
-    total_stock: 579.0,
-    type: 'beatae',
-    updated_at: DateTime.iso8601('2022-04-07T22:40:37.477Z'),
+    total_stock: 682.0,
+    type: 'SERVICE',
+    updated_at: DateTime.iso8601('2022-04-20T06:24:31.255Z'),
     vendor_name: 'Mayer - Flatley',
-    weight: 22.0,
-    weight_unit: Models::Shared::WeightUnit::KG,
+    weight: 37.0,
+    weight_unit: Models::Shared::WeightUnit::OZ,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -352,7 +350,7 @@ end
 
 ## remove_commerce_item
 
-Remove an item
+Deletes the CommerceItem identified by `id`.
 
 ### Example Usage
 
@@ -394,7 +392,7 @@ end
 
 ## update_commerce_item
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -413,46 +411,46 @@ req = Models::Operations::UpdateCommerceItemRequest.new(
   commerce_item: Models::Shared::CommerceItem.new(
     collections: [],
     created_at: DateTime.iso8601('2019-06-21T20:16:18.628Z'),
-    description: 'Vulnero ustulo abeo.',
-    duration: 87.0,
-    global_code: 'calamitas',
-    id: '9ef0d16c-1c7b-4c45-914b-d13d38f130cc',
+    description: 'Decretum vulnero ustulo abeo.',
+    duration: 104.0,
+    global_code: '978-0-85270-680-0',
+    id: 'e16779fc-7762-4d3c-8e5b-d727309f0130',
     is_active: false,
-    is_featured: true,
+    is_featured: false,
     is_taxable: true,
     is_visible: true,
     media: [
       Models::Shared::CommerceItemMedia.new(
         alt: 'Caterva eveniet acies candidus.',
-        height: 663.0,
-        id: 'bb186362-822b-4830-a1a9-3105a38a33a9',
+        height: 876.0,
+        id: 'b5af06a2-45bf-4019-9f88-72f8ca2bdd50',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '0cd7aab4-f559-4505-bcc4-4d0afc0829fe',
+            id: '01dc9f6b-a04d-4b58-97cf-6d2292c64429',
             slug: 'doloremque',
             value: 'allatus',
           ),
         ],
-        position: 67.0,
+        position: 21.0,
         type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://picsum.photos/seed/73y0uzyK/972/3753',
-        width: 88.0,
+        url: 'https://picsum.photos/seed/v73y0uzyK/3001/972',
+        width: 67.0,
       ),
       Models::Shared::CommerceItemMedia.new(
         alt: 'Comedo.',
-        height: 189.0,
-        id: 'afe816ca-dc54-444c-9c50-268199a2865a',
+        height: 651.0,
+        id: '97c47924-f468-4ac6-a746-d3ac5c08ec7d',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '6aacaab9-bb0a-4728-aaf5-a75e8771478e',
+            id: '1b7c372a-3bf2-46ff-8c72-5fb0fd59d522',
             slug: 'bis',
             value: 'somniculosus',
           ),
         ],
-        position: 3.0,
+        position: 51.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
         url: 'https://picsum.photos/seed/Ao4iatfO/771/3906',
-        width: 66.0,
+        width: 3.0,
       ),
     ],
     metadata: [
@@ -461,34 +459,33 @@ req = Models::Operations::UpdateCommerceItemRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CommerceMetadataFormat::TEXT,
-        id: '6caf34dd-ee37-46ae-8f4e-d51ce30c93ae',
+        id: '8d5f9439-2089-429f-9300-69bc44a4ae54',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'terebro',
+        value: 'abstergo',
       ),
     ],
     name: 'Handcrafted Rubber Tuna',
     prices: [
       Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 474.0,
-        currency: 'OMR',
-        price: 1438.0,
+        currency: 'USD',
+        price: 78.11,
       ),
     ],
     public_description: 'Custodia ventus solio compono.',
     public_name: 'Handcrafted Rubber Tuna',
     requires_shipping: true,
-    slug: 'cohors-turba-optio',
+    slug: 'handcrafted-rubber-tuna',
     tags: [
+      'beatae',
       'blanditiis',
-      'tandem',
     ],
-    total_stock: 579.0,
-    type: 'beatae',
-    updated_at: DateTime.iso8601('2022-04-07T22:40:37.477Z'),
+    total_stock: 682.0,
+    type: 'SERVICE',
+    updated_at: DateTime.iso8601('2022-04-20T06:24:31.255Z'),
     vendor_name: 'Mayer - Flatley',
-    weight: 22.0,
-    weight_unit: Models::Shared::WeightUnit::KG,
+    weight: 37.0,
+    weight_unit: Models::Shared::WeightUnit::OZ,
   ),
   connection_id: '<id>',
   id: '<id>',

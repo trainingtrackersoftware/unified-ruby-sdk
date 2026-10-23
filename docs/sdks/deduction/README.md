@@ -14,7 +14,7 @@
 
 ## create_hris_deduction
 
-Create a deduction
+Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
 
 ### Example Usage
 
@@ -30,17 +30,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.deduction.create_hris_deduction(hris_deduction: Models::Shared::HrisDeduction.new(
-  amount: 139_655.0,
-  coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_ONLY,
+  amount: 564.0,
+  coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_CHILD,
   created_at: DateTime.iso8601('2020-02-05T01:46:31.384Z'),
-  end_at: DateTime.iso8601('2026-05-25T20:05:49.194Z'),
-  frequency: Models::Shared::HrisDeductionFrequency::MONTH,
-  id: '84f3e0b9-8ec8-4eb5-b808-e26cc8f4468a',
-  is_active: false,
+  employer_amount: 80_510.0,
+  employer_type: Models::Shared::EmployerType::PERCENTAGE,
+  frequency: Models::Shared::HrisDeductionFrequency::ONE_TIME,
+  garnishment_type: Models::Shared::GarnishmentType::CHILD_SUPPORT,
+  id: '63abbe37-87cb-429c-8365-04ba2c639cb6',
+  is_active: true,
+  max_amount: 21_794.0,
+  metadata: [],
   notes: 'Carmen desidero.',
-  start_at: DateTime.iso8601('2025-02-20T12:02:49.110Z'),
+  start_at: DateTime.iso8601('2025-03-16T19:58:37.713Z'),
   type: Models::Shared::HrisDeductionType::FIXED,
-  updated_at: DateTime.iso8601('2024-03-03T20:28:34.377Z'),
+  updated_at: DateTime.iso8601('2024-03-23T12:19:21.568Z'),
 ), connection_id: '<id>')
 
 unless res.hris_deduction.nil?
@@ -70,7 +74,7 @@ end
 
 ## get_hris_deduction
 
-Retrieve a deduction
+Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -114,7 +118,7 @@ end
 
 ## list_hris_deductions
 
-List all deductions
+Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -159,7 +163,7 @@ end
 
 ## patch_hris_deduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -176,17 +180,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchHrisDeductionRequest.new(
   hris_deduction: Models::Shared::HrisDeduction.new(
-    amount: 139_655.0,
-    coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_ONLY,
+    amount: 564.0,
+    coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_CHILD,
     created_at: DateTime.iso8601('2020-02-05T01:46:31.384Z'),
-    end_at: DateTime.iso8601('2026-05-25T20:05:49.207Z'),
-    frequency: Models::Shared::HrisDeductionFrequency::MONTH,
-    id: '271b0d0e-936f-4af8-9bed-1b4a1174fd65',
-    is_active: false,
+    employer_amount: 80_510.0,
+    employer_type: Models::Shared::EmployerType::PERCENTAGE,
+    frequency: Models::Shared::HrisDeductionFrequency::ONE_TIME,
+    garnishment_type: Models::Shared::GarnishmentType::CHILD_SUPPORT,
+    id: '094f9f10-0414-428a-b246-807a48953ae6',
+    is_active: true,
+    max_amount: 21_794.0,
+    metadata: [],
     notes: 'Carmen desidero.',
-    start_at: DateTime.iso8601('2025-02-20T12:02:49.120Z'),
+    start_at: DateTime.iso8601('2025-03-16T19:58:37.731Z'),
     type: Models::Shared::HrisDeductionType::FIXED,
-    updated_at: DateTime.iso8601('2024-03-03T20:28:34.384Z'),
+    updated_at: DateTime.iso8601('2024-03-23T12:19:21.582Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -218,7 +226,7 @@ end
 
 ## remove_hris_deduction
 
-Remove a deduction
+Deletes the HrisDeduction identified by `id`.
 
 ### Example Usage
 
@@ -260,7 +268,7 @@ end
 
 ## update_hris_deduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -277,17 +285,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateHrisDeductionRequest.new(
   hris_deduction: Models::Shared::HrisDeduction.new(
-    amount: 139_655.0,
-    coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_ONLY,
+    amount: 564.0,
+    coverage_level: Models::Shared::HrisDeductionCoverageLevel::EMPLOYEE_CHILD,
     created_at: DateTime.iso8601('2020-02-05T01:46:31.384Z'),
-    end_at: DateTime.iso8601('2026-05-25T20:05:49.207Z'),
-    frequency: Models::Shared::HrisDeductionFrequency::MONTH,
-    id: '271b0d0e-936f-4af8-9bed-1b4a1174fd65',
-    is_active: false,
+    employer_amount: 80_510.0,
+    employer_type: Models::Shared::EmployerType::PERCENTAGE,
+    frequency: Models::Shared::HrisDeductionFrequency::ONE_TIME,
+    garnishment_type: Models::Shared::GarnishmentType::CHILD_SUPPORT,
+    id: '094f9f10-0414-428a-b246-807a48953ae6',
+    is_active: true,
+    max_amount: 21_794.0,
+    metadata: [],
     notes: 'Carmen desidero.',
-    start_at: DateTime.iso8601('2025-02-20T12:02:49.120Z'),
+    start_at: DateTime.iso8601('2025-03-16T19:58:37.731Z'),
     type: Models::Shared::HrisDeductionType::FIXED,
-    updated_at: DateTime.iso8601('2024-03-03T20:28:34.384Z'),
+    updated_at: DateTime.iso8601('2024-03-23T12:19:21.582Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

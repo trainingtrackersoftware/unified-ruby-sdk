@@ -14,7 +14,7 @@
 
 ## create_repo_branch
 
-Create a branch
+Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
 
 ### Example Usage
 
@@ -31,10 +31,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.branch.create_repo_branch(repo_branch: Models::Shared::RepoBranch.new(
   created_at: DateTime.iso8601('2019-02-24T09:33:48.540Z'),
-  id: 'a40eaad5-678c-49bf-8ffd-a31ca39c074e',
-  name: 'voluptas',
+  id: '39f9ff87-4ed4-4fb5-9d39-56841ea1c863',
+  metadata: [],
+  name: 'transmitter-calculate',
   repo_id: '<id>',
-  updated_at: DateTime.iso8601('2020-01-03T22:30:09.758Z'),
+  updated_at: DateTime.iso8601('2020-01-07T13:27:13.784Z'),
 ), connection_id: '<id>')
 
 unless res.repo_branch.nil?
@@ -64,7 +65,7 @@ end
 
 ## get_repo_branch
 
-Retrieve a branch
+Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -108,7 +109,7 @@ end
 
 ## list_repo_branches
 
-List all branches
+Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -153,7 +154,7 @@ end
 
 ## patch_repo_branch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -171,10 +172,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchRepoBranchRequest.new(
   repo_branch: Models::Shared::RepoBranch.new(
     created_at: DateTime.iso8601('2019-02-24T09:33:48.540Z'),
-    id: '59b8a449-da57-4b09-b232-e27da089de39',
-    name: 'voluptas',
+    id: 'e48929ca-2277-4f9e-a5eb-d9e4d91f0ab2',
+    metadata: [],
+    name: 'transmitter-calculate',
     repo_id: '<id>',
-    updated_at: DateTime.iso8601('2020-01-03T22:30:09.758Z'),
+    updated_at: DateTime.iso8601('2020-01-07T13:27:13.785Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -206,7 +208,7 @@ end
 
 ## remove_repo_branch
 
-Remove a branch
+Deletes the RepoBranch identified by `id`.
 
 ### Example Usage
 
@@ -248,7 +250,7 @@ end
 
 ## update_repo_branch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -266,10 +268,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateRepoBranchRequest.new(
   repo_branch: Models::Shared::RepoBranch.new(
     created_at: DateTime.iso8601('2019-02-24T09:33:48.540Z'),
-    id: '59b8a449-da57-4b09-b232-e27da089de39',
-    name: 'voluptas',
+    id: 'e48929ca-2277-4f9e-a5eb-d9e4d91f0ab2',
+    metadata: [],
+    name: 'transmitter-calculate',
     repo_id: '<id>',
-    updated_at: DateTime.iso8601('2020-01-03T22:30:09.758Z'),
+    updated_at: DateTime.iso8601('2020-01-07T13:27:13.785Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

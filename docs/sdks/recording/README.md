@@ -16,7 +16,7 @@
 
 ## create_uc_recording
 
-Create a recording
+Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
 
 ### Example Usage
 
@@ -33,35 +33,36 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.recording.create_uc_recording(uc_recording: Models::Shared::UcRecording.new(
   contacts: [],
+  conversation_identifier: '166ae753-2570-4f63-aa2c-4c71ee0a8183',
   created_at: DateTime.iso8601('2022-09-17T19:41:46.956Z'),
-  end_at: DateTime.iso8601('2024-04-23T01:24:44.941Z'),
-  expires_at: DateTime.iso8601('2026-03-31T08:30:10.212Z'),
-  id: '16959603-31ff-4806-b696-fd3434fc2fa3',
+  end_at: DateTime.iso8601('2024-05-05T18:55:12.659Z'),
+  expires_at: DateTime.iso8601('2026-04-28T12:30:03.720Z'),
+  id: '166ae753-2570-4f63-aa2c-4c71ee0a8183',
   media: [
     Models::Shared::UcRecordingMedia.new(
-      end_at: DateTime.iso8601('2024-03-21T13:03:13.755Z'),
+      end_at: DateTime.iso8601('2024-04-02T13:31:47.178Z'),
       language: 'en',
       recording_download_url: 'https://parched-wasabi.com/',
-      start_at: DateTime.iso8601('2026-04-18T15:34:49.770Z'),
+      start_at: DateTime.iso8601('2026-05-17T05:09:42.461Z'),
       transcript_download_url: 'https://colossal-cuckoo.name',
       transcripts: [
         Models::Shared::UcRecordingTranscript.new(
-          end_at: DateTime.iso8601('2026-01-30T07:48:51.811Z'),
-          start_at: DateTime.iso8601('2024-05-20T17:57:09.629Z'),
+          end_at: DateTime.iso8601('2026-02-26T04:22:07.634Z'),
+          start_at: DateTime.iso8601('2024-06-03T01:57:51.559Z'),
           text: 'Turpis maiores ducimus tero speculum.',
         ),
         Models::Shared::UcRecordingTranscript.new(
-          end_at: DateTime.iso8601('2024-09-27T09:24:07.211Z'),
-          start_at: DateTime.iso8601('2026-07-05T11:55:01.125Z'),
+          end_at: DateTime.iso8601('2024-10-13T13:19:21.754Z'),
+          start_at: DateTime.iso8601('2026-08-04T18:16:32.641Z'),
           text: 'Magnam consuasor uxor tergiversatio subseco.',
         ),
       ],
     ),
   ],
-  start_at: DateTime.iso8601('2023-04-23T07:14:01.559Z'),
+  metadata: [],
+  start_at: DateTime.iso8601('2023-04-28T01:09:10.741Z'),
   type: Models::Shared::UcRecordingType::OUTBOUND,
-  updated_at: DateTime.iso8601('2025-02-26T04:45:21.953Z'),
-  user_name: 'Melyna Larson',
+  updated_at: DateTime.iso8601('2025-03-17T16:11:41.896Z'),
   user_phone: '1-915-327-0429 x509',
   web_url: 'https://spherical-comparison.org',
 ), connection_id: '<id>')
@@ -93,7 +94,7 @@ end
 
 ## get_calendar_recording
 
-Retrieve a recording
+Retrieves a single CalendarRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -137,7 +138,7 @@ end
 
 ## get_uc_recording
 
-Retrieve a recording
+Retrieves a single UcRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -181,7 +182,7 @@ end
 
 ## list_calendar_recordings
 
-List all recordings
+Returns a list of CalendarRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -226,7 +227,7 @@ end
 
 ## list_uc_recordings
 
-List all recordings
+Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -271,7 +272,7 @@ end
 
 ## patch_uc_recording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -289,35 +290,36 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchUcRecordingRequest.new(
   uc_recording: Models::Shared::UcRecording.new(
     contacts: [],
+    conversation_identifier: '9f3b5f29-332a-4f02-886b-9fe246af9c9a',
     created_at: DateTime.iso8601('2022-09-17T19:41:46.956Z'),
-    end_at: DateTime.iso8601('2024-04-23T01:24:44.948Z'),
-    expires_at: DateTime.iso8601('2026-03-31T08:30:10.228Z'),
-    id: '446c53c1-07a1-4da2-a56d-a6b2d6bc43ed',
+    end_at: DateTime.iso8601('2024-05-05T18:55:12.675Z'),
+    expires_at: DateTime.iso8601('2026-04-28T12:30:03.756Z'),
+    id: '9f3b5f29-332a-4f02-886b-9fe246af9c9a',
     media: [
       Models::Shared::UcRecordingMedia.new(
-        end_at: DateTime.iso8601('2024-03-21T13:03:13.761Z'),
+        end_at: DateTime.iso8601('2024-04-02T13:31:47.193Z'),
         language: 'en',
         recording_download_url: 'https://parched-wasabi.com/',
-        start_at: DateTime.iso8601('2026-04-18T15:34:49.786Z'),
+        start_at: DateTime.iso8601('2026-05-17T05:09:42.498Z'),
         transcript_download_url: 'https://colossal-cuckoo.name',
         transcripts: [
           Models::Shared::UcRecordingTranscript.new(
-            end_at: DateTime.iso8601('2026-01-30T07:48:51.827Z'),
-            start_at: DateTime.iso8601('2024-05-20T17:57:09.636Z'),
+            end_at: DateTime.iso8601('2026-02-26T04:22:07.667Z'),
+            start_at: DateTime.iso8601('2024-06-03T01:57:51.576Z'),
             text: 'Turpis maiores ducimus tero speculum.',
           ),
           Models::Shared::UcRecordingTranscript.new(
-            end_at: DateTime.iso8601('2024-09-27T09:24:07.220Z'),
-            start_at: DateTime.iso8601('2026-07-05T11:55:01.142Z'),
+            end_at: DateTime.iso8601('2024-10-13T13:19:21.774Z'),
+            start_at: DateTime.iso8601('2026-08-04T18:16:32.678Z'),
             text: 'Magnam consuasor uxor tergiversatio subseco.',
           ),
         ],
       ),
     ],
-    start_at: DateTime.iso8601('2023-04-23T07:14:01.562Z'),
+    metadata: [],
+    start_at: DateTime.iso8601('2023-04-28T01:09:10.747Z'),
     type: Models::Shared::UcRecordingType::OUTBOUND,
-    updated_at: DateTime.iso8601('2025-02-26T04:45:21.963Z'),
-    user_name: 'Melyna Larson',
+    updated_at: DateTime.iso8601('2025-03-17T16:11:41.920Z'),
     user_phone: '1-915-327-0429 x509',
     web_url: 'https://spherical-comparison.org',
   ),
@@ -351,7 +353,7 @@ end
 
 ## remove_uc_recording
 
-Remove a recording
+Deletes the UcRecording identified by `id`.
 
 ### Example Usage
 
@@ -393,7 +395,7 @@ end
 
 ## update_uc_recording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -411,35 +413,36 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateUcRecordingRequest.new(
   uc_recording: Models::Shared::UcRecording.new(
     contacts: [],
+    conversation_identifier: '9f3b5f29-332a-4f02-886b-9fe246af9c9a',
     created_at: DateTime.iso8601('2022-09-17T19:41:46.956Z'),
-    end_at: DateTime.iso8601('2024-04-23T01:24:44.948Z'),
-    expires_at: DateTime.iso8601('2026-03-31T08:30:10.228Z'),
-    id: '446c53c1-07a1-4da2-a56d-a6b2d6bc43ed',
+    end_at: DateTime.iso8601('2024-05-05T18:55:12.675Z'),
+    expires_at: DateTime.iso8601('2026-04-28T12:30:03.756Z'),
+    id: '9f3b5f29-332a-4f02-886b-9fe246af9c9a',
     media: [
       Models::Shared::UcRecordingMedia.new(
-        end_at: DateTime.iso8601('2024-03-21T13:03:13.761Z'),
+        end_at: DateTime.iso8601('2024-04-02T13:31:47.193Z'),
         language: 'en',
         recording_download_url: 'https://parched-wasabi.com/',
-        start_at: DateTime.iso8601('2026-04-18T15:34:49.786Z'),
+        start_at: DateTime.iso8601('2026-05-17T05:09:42.498Z'),
         transcript_download_url: 'https://colossal-cuckoo.name',
         transcripts: [
           Models::Shared::UcRecordingTranscript.new(
-            end_at: DateTime.iso8601('2026-01-30T07:48:51.827Z'),
-            start_at: DateTime.iso8601('2024-05-20T17:57:09.636Z'),
+            end_at: DateTime.iso8601('2026-02-26T04:22:07.667Z'),
+            start_at: DateTime.iso8601('2024-06-03T01:57:51.576Z'),
             text: 'Turpis maiores ducimus tero speculum.',
           ),
           Models::Shared::UcRecordingTranscript.new(
-            end_at: DateTime.iso8601('2024-09-27T09:24:07.220Z'),
-            start_at: DateTime.iso8601('2026-07-05T11:55:01.142Z'),
+            end_at: DateTime.iso8601('2024-10-13T13:19:21.774Z'),
+            start_at: DateTime.iso8601('2026-08-04T18:16:32.678Z'),
             text: 'Magnam consuasor uxor tergiversatio subseco.',
           ),
         ],
       ),
     ],
-    start_at: DateTime.iso8601('2023-04-23T07:14:01.562Z'),
+    metadata: [],
+    start_at: DateTime.iso8601('2023-04-28T01:09:10.747Z'),
     type: Models::Shared::UcRecordingType::OUTBOUND,
-    updated_at: DateTime.iso8601('2025-02-26T04:45:21.963Z'),
-    user_name: 'Melyna Larson',
+    updated_at: DateTime.iso8601('2025-03-17T16:11:41.920Z'),
     user_phone: '1-915-327-0429 x509',
     web_url: 'https://spherical-comparison.org',
   ),

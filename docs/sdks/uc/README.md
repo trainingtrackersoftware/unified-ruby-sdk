@@ -12,10 +12,14 @@
 * [get_uc_comment](#get_uc_comment) - Retrieve a comment
 * [get_uc_contact](#get_uc_contact) - Retrieve a contact
 * [get_uc_recording](#get_uc_recording) - Retrieve a recording
+* [get_uc_scorecard](#get_uc_scorecard) - Retrieve a scorecard
+* [get_uc_scorecardtemplate](#get_uc_scorecardtemplate) - Retrieve a scorecardtemplate
 * [list_uc_calls](#list_uc_calls) - List all calls
 * [list_uc_comments](#list_uc_comments) - List all comments
 * [list_uc_contacts](#list_uc_contacts) - List all contacts
 * [list_uc_recordings](#list_uc_recordings) - List all recordings
+* [list_uc_scorecards](#list_uc_scorecards) - List all scorecards
+* [list_uc_scorecardtemplates](#list_uc_scorecardtemplates) - List all scorecardtemplates
 * [patch_uc_comment](#patch_uc_comment) - Update a comment
 * [patch_uc_contact](#patch_uc_contact) - Update a contact
 * [patch_uc_recording](#patch_uc_recording) - Update a recording
@@ -28,7 +32,7 @@
 
 ## create_uc_comment
 
-Create a comment
+Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
 
 ### Example Usage
 
@@ -46,8 +50,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.uc.create_uc_comment(uc_comment: Models::Shared::UcComment.new(
   content: 'Vociferor vitiosus.',
   created_at: '2023-04-02T23:42:31.571Z',
-  id: '323a249e-0cee-438f-80c8-aa82141e88d3',
-  updated_at: '2024-02-02T13:02:16.012Z',
+  id: '50773d7c-4630-49fb-961b-cba9fe034632',
+  metadata: [],
+  updated_at: '2024-02-10T05:59:53.692Z',
 ), connection_id: '<id>')
 
 unless res.uc_comment.nil?
@@ -77,7 +82,7 @@ end
 
 ## create_uc_contact
 
-Create a contact
+Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
 
 ### Example Usage
 
@@ -102,8 +107,9 @@ res = s.uc.create_uc_contact(uc_contact: Models::Shared::UcContact.new(
     ),
   ],
   first_name: 'Luther',
-  id: 'b6f1a80e-606a-4fd0-b071-56e392552c22',
+  id: 'fa41b6a2-8e93-42a0-81fa-c6c20dd65f16',
   last_name: 'Rogahn',
+  metadata: [],
   name: 'Luther Rogahn',
   telephones: [
     Models::Shared::UcTelephone.new(
@@ -120,7 +126,7 @@ res = s.uc.create_uc_contact(uc_contact: Models::Shared::UcContact.new(
     ),
   ],
   title: 'Chief Optimization Executive',
-  updated_at: DateTime.iso8601('2023-11-20T17:22:46.770Z'),
+  updated_at: DateTime.iso8601('2023-12-09T13:11:45.837Z'),
 ), connection_id: '<id>')
 
 unless res.uc_contact.nil?
@@ -150,7 +156,7 @@ end
 
 ## create_uc_recording
 
-Create a recording
+Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
 
 ### Example Usage
 
@@ -167,35 +173,36 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.uc.create_uc_recording(uc_recording: Models::Shared::UcRecording.new(
   contacts: [],
+  conversation_identifier: '166ae753-2570-4f63-aa2c-4c71ee0a8183',
   created_at: DateTime.iso8601('2022-09-17T19:41:46.956Z'),
-  end_at: DateTime.iso8601('2024-04-23T01:24:44.941Z'),
-  expires_at: DateTime.iso8601('2026-03-31T08:30:10.212Z'),
-  id: '16959603-31ff-4806-b696-fd3434fc2fa3',
+  end_at: DateTime.iso8601('2024-05-05T18:55:12.659Z'),
+  expires_at: DateTime.iso8601('2026-04-28T12:30:03.720Z'),
+  id: '166ae753-2570-4f63-aa2c-4c71ee0a8183',
   media: [
     Models::Shared::UcRecordingMedia.new(
-      end_at: DateTime.iso8601('2024-03-21T13:03:13.755Z'),
+      end_at: DateTime.iso8601('2024-04-02T13:31:47.178Z'),
       language: 'en',
       recording_download_url: 'https://parched-wasabi.com/',
-      start_at: DateTime.iso8601('2026-04-18T15:34:49.770Z'),
+      start_at: DateTime.iso8601('2026-05-17T05:09:42.461Z'),
       transcript_download_url: 'https://colossal-cuckoo.name',
       transcripts: [
         Models::Shared::UcRecordingTranscript.new(
-          end_at: DateTime.iso8601('2026-01-30T07:48:51.811Z'),
-          start_at: DateTime.iso8601('2024-05-20T17:57:09.629Z'),
+          end_at: DateTime.iso8601('2026-02-26T04:22:07.634Z'),
+          start_at: DateTime.iso8601('2024-06-03T01:57:51.559Z'),
           text: 'Turpis maiores ducimus tero speculum.',
         ),
         Models::Shared::UcRecordingTranscript.new(
-          end_at: DateTime.iso8601('2024-09-27T09:24:07.211Z'),
-          start_at: DateTime.iso8601('2026-07-05T11:55:01.125Z'),
+          end_at: DateTime.iso8601('2024-10-13T13:19:21.754Z'),
+          start_at: DateTime.iso8601('2026-08-04T18:16:32.641Z'),
           text: 'Magnam consuasor uxor tergiversatio subseco.',
         ),
       ],
     ),
   ],
-  start_at: DateTime.iso8601('2023-04-23T07:14:01.559Z'),
+  metadata: [],
+  start_at: DateTime.iso8601('2023-04-28T01:09:10.741Z'),
   type: Models::Shared::UcRecordingType::OUTBOUND,
-  updated_at: DateTime.iso8601('2025-02-26T04:45:21.953Z'),
-  user_name: 'Melyna Larson',
+  updated_at: DateTime.iso8601('2025-03-17T16:11:41.896Z'),
   user_phone: '1-915-327-0429 x509',
   web_url: 'https://spherical-comparison.org',
 ), connection_id: '<id>')
@@ -227,7 +234,7 @@ end
 
 ## get_uc_call
 
-Retrieve a call
+Retrieves a single UcCall by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -271,7 +278,7 @@ end
 
 ## get_uc_comment
 
-Retrieve a comment
+Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -315,7 +322,7 @@ end
 
 ## get_uc_contact
 
-Retrieve a contact
+Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -359,7 +366,7 @@ end
 
 ## get_uc_recording
 
-Retrieve a recording
+Retrieves a single UcRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -401,9 +408,97 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_uc_scorecard
+
+Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getUcScorecard" method="get" path="/uc/{connection_id}/scorecard/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.uc.get_uc_scorecard(connection_id: '<id>', id: '<id>')
+
+unless res.uc_scorecard.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Scorecard                                                                                                                              |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetUcScorecardQueryParamFields](../../models/operations/getucscorecardqueryparamfields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetUcScorecardResponse)](../../models/operations/getucscorecardresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## get_uc_scorecardtemplate
+
+Retrieves a single UcScorecardtemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getUcScorecardtemplate" method="get" path="/uc/{connection_id}/scorecardtemplate/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.uc.get_uc_scorecardtemplate(connection_id: '<id>', id: '<id>')
+
+unless res.uc_scorecardtemplate.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Scorecardtemplate                                                                                                                      |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetUcScorecardtemplateQueryParamFields](../../models/operations/getucscorecardtemplatequeryparamfields.md)>        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetUcScorecardtemplateResponse)](../../models/operations/getucscorecardtemplateresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_uc_calls
 
-List all calls
+Returns a list of UcCalls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -448,7 +543,7 @@ end
 
 ## list_uc_comments
 
-List all comments
+Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -493,7 +588,7 @@ end
 
 ## list_uc_contacts
 
-List all contacts
+Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -538,7 +633,7 @@ end
 
 ## list_uc_recordings
 
-List all recordings
+Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -581,9 +676,99 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_uc_scorecards
+
+Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listUcScorecards" method="get" path="/uc/{connection_id}/scorecard" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListUcScorecardsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.uc.list_uc_scorecards(request: req)
+
+unless res.uc_scorecards.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [Models::Operations::ListUcScorecardsRequest](../../models/operations/listucscorecardsrequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[T.nilable(Models::Operations::ListUcScorecardsResponse)](../../models/operations/listucscorecardsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## list_uc_scorecardtemplates
+
+Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listUcScorecardtemplates" method="get" path="/uc/{connection_id}/scorecardtemplate" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListUcScorecardtemplatesRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.uc.list_uc_scorecardtemplates(request: req)
+
+unless res.uc_scorecardtemplates.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                         | [Models::Operations::ListUcScorecardtemplatesRequest](../../models/operations/listucscorecardtemplatesrequest.md) | :heavy_check_mark:                                                                                                | The request object to use for the request.                                                                        |
+
+### Response
+
+**[T.nilable(Models::Operations::ListUcScorecardtemplatesResponse)](../../models/operations/listucscorecardtemplatesresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## patch_uc_comment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -602,8 +787,9 @@ req = Models::Operations::PatchUcCommentRequest.new(
   uc_comment: Models::Shared::UcComment.new(
     content: 'Vociferor vitiosus.',
     created_at: '2023-04-02T23:42:31.571Z',
-    id: '45a743bf-a173-442a-a853-3c6d0c1433a2',
-    updated_at: '2024-02-02T13:02:16.014Z',
+    id: '395be5cd-ad5d-4d86-bb3a-5d79de78227d',
+    metadata: [],
+    updated_at: '2024-02-10T05:59:53.696Z',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -635,7 +821,7 @@ end
 
 ## patch_uc_contact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -661,8 +847,9 @@ req = Models::Operations::PatchUcContactRequest.new(
       ),
     ],
     first_name: 'Luther',
-    id: 'b02e5795-1218-412d-93ee-a303bcae9d79',
+    id: '1e48d49c-5c49-4401-9d4f-8dce4db19741',
     last_name: 'Rogahn',
+    metadata: [],
     name: 'Luther Rogahn',
     telephones: [
       Models::Shared::UcTelephone.new(
@@ -679,7 +866,7 @@ req = Models::Operations::PatchUcContactRequest.new(
       ),
     ],
     title: 'Chief Optimization Executive',
-    updated_at: DateTime.iso8601('2023-11-20T17:22:46.775Z'),
+    updated_at: DateTime.iso8601('2023-12-09T13:11:45.848Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -711,7 +898,7 @@ end
 
 ## patch_uc_recording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -729,35 +916,36 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchUcRecordingRequest.new(
   uc_recording: Models::Shared::UcRecording.new(
     contacts: [],
+    conversation_identifier: '9f3b5f29-332a-4f02-886b-9fe246af9c9a',
     created_at: DateTime.iso8601('2022-09-17T19:41:46.956Z'),
-    end_at: DateTime.iso8601('2024-04-23T01:24:44.948Z'),
-    expires_at: DateTime.iso8601('2026-03-31T08:30:10.228Z'),
-    id: '446c53c1-07a1-4da2-a56d-a6b2d6bc43ed',
+    end_at: DateTime.iso8601('2024-05-05T18:55:12.675Z'),
+    expires_at: DateTime.iso8601('2026-04-28T12:30:03.756Z'),
+    id: '9f3b5f29-332a-4f02-886b-9fe246af9c9a',
     media: [
       Models::Shared::UcRecordingMedia.new(
-        end_at: DateTime.iso8601('2024-03-21T13:03:13.761Z'),
+        end_at: DateTime.iso8601('2024-04-02T13:31:47.193Z'),
         language: 'en',
         recording_download_url: 'https://parched-wasabi.com/',
-        start_at: DateTime.iso8601('2026-04-18T15:34:49.786Z'),
+        start_at: DateTime.iso8601('2026-05-17T05:09:42.498Z'),
         transcript_download_url: 'https://colossal-cuckoo.name',
         transcripts: [
           Models::Shared::UcRecordingTranscript.new(
-            end_at: DateTime.iso8601('2026-01-30T07:48:51.827Z'),
-            start_at: DateTime.iso8601('2024-05-20T17:57:09.636Z'),
+            end_at: DateTime.iso8601('2026-02-26T04:22:07.667Z'),
+            start_at: DateTime.iso8601('2024-06-03T01:57:51.576Z'),
             text: 'Turpis maiores ducimus tero speculum.',
           ),
           Models::Shared::UcRecordingTranscript.new(
-            end_at: DateTime.iso8601('2024-09-27T09:24:07.220Z'),
-            start_at: DateTime.iso8601('2026-07-05T11:55:01.142Z'),
+            end_at: DateTime.iso8601('2024-10-13T13:19:21.774Z'),
+            start_at: DateTime.iso8601('2026-08-04T18:16:32.678Z'),
             text: 'Magnam consuasor uxor tergiversatio subseco.',
           ),
         ],
       ),
     ],
-    start_at: DateTime.iso8601('2023-04-23T07:14:01.562Z'),
+    metadata: [],
+    start_at: DateTime.iso8601('2023-04-28T01:09:10.747Z'),
     type: Models::Shared::UcRecordingType::OUTBOUND,
-    updated_at: DateTime.iso8601('2025-02-26T04:45:21.963Z'),
-    user_name: 'Melyna Larson',
+    updated_at: DateTime.iso8601('2025-03-17T16:11:41.920Z'),
     user_phone: '1-915-327-0429 x509',
     web_url: 'https://spherical-comparison.org',
   ),
@@ -791,7 +979,7 @@ end
 
 ## remove_uc_comment
 
-Remove a comment
+Deletes the UcComment identified by `id`.
 
 ### Example Usage
 
@@ -833,7 +1021,7 @@ end
 
 ## remove_uc_contact
 
-Remove a contact
+Deletes the UcContact identified by `id`.
 
 ### Example Usage
 
@@ -875,7 +1063,7 @@ end
 
 ## remove_uc_recording
 
-Remove a recording
+Deletes the UcRecording identified by `id`.
 
 ### Example Usage
 
@@ -917,7 +1105,7 @@ end
 
 ## update_uc_comment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -936,8 +1124,9 @@ req = Models::Operations::UpdateUcCommentRequest.new(
   uc_comment: Models::Shared::UcComment.new(
     content: 'Vociferor vitiosus.',
     created_at: '2023-04-02T23:42:31.571Z',
-    id: '45a743bf-a173-442a-a853-3c6d0c1433a2',
-    updated_at: '2024-02-02T13:02:16.014Z',
+    id: '395be5cd-ad5d-4d86-bb3a-5d79de78227d',
+    metadata: [],
+    updated_at: '2024-02-10T05:59:53.696Z',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -969,7 +1158,7 @@ end
 
 ## update_uc_contact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -995,8 +1184,9 @@ req = Models::Operations::UpdateUcContactRequest.new(
       ),
     ],
     first_name: 'Luther',
-    id: 'b02e5795-1218-412d-93ee-a303bcae9d79',
+    id: '1e48d49c-5c49-4401-9d4f-8dce4db19741',
     last_name: 'Rogahn',
+    metadata: [],
     name: 'Luther Rogahn',
     telephones: [
       Models::Shared::UcTelephone.new(
@@ -1013,7 +1203,7 @@ req = Models::Operations::UpdateUcContactRequest.new(
       ),
     ],
     title: 'Chief Optimization Executive',
-    updated_at: DateTime.iso8601('2023-11-20T17:22:46.775Z'),
+    updated_at: DateTime.iso8601('2023-12-09T13:11:45.848Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1045,7 +1235,7 @@ end
 
 ## update_uc_recording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -1063,35 +1253,36 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateUcRecordingRequest.new(
   uc_recording: Models::Shared::UcRecording.new(
     contacts: [],
+    conversation_identifier: '9f3b5f29-332a-4f02-886b-9fe246af9c9a',
     created_at: DateTime.iso8601('2022-09-17T19:41:46.956Z'),
-    end_at: DateTime.iso8601('2024-04-23T01:24:44.948Z'),
-    expires_at: DateTime.iso8601('2026-03-31T08:30:10.228Z'),
-    id: '446c53c1-07a1-4da2-a56d-a6b2d6bc43ed',
+    end_at: DateTime.iso8601('2024-05-05T18:55:12.675Z'),
+    expires_at: DateTime.iso8601('2026-04-28T12:30:03.756Z'),
+    id: '9f3b5f29-332a-4f02-886b-9fe246af9c9a',
     media: [
       Models::Shared::UcRecordingMedia.new(
-        end_at: DateTime.iso8601('2024-03-21T13:03:13.761Z'),
+        end_at: DateTime.iso8601('2024-04-02T13:31:47.193Z'),
         language: 'en',
         recording_download_url: 'https://parched-wasabi.com/',
-        start_at: DateTime.iso8601('2026-04-18T15:34:49.786Z'),
+        start_at: DateTime.iso8601('2026-05-17T05:09:42.498Z'),
         transcript_download_url: 'https://colossal-cuckoo.name',
         transcripts: [
           Models::Shared::UcRecordingTranscript.new(
-            end_at: DateTime.iso8601('2026-01-30T07:48:51.827Z'),
-            start_at: DateTime.iso8601('2024-05-20T17:57:09.636Z'),
+            end_at: DateTime.iso8601('2026-02-26T04:22:07.667Z'),
+            start_at: DateTime.iso8601('2024-06-03T01:57:51.576Z'),
             text: 'Turpis maiores ducimus tero speculum.',
           ),
           Models::Shared::UcRecordingTranscript.new(
-            end_at: DateTime.iso8601('2024-09-27T09:24:07.220Z'),
-            start_at: DateTime.iso8601('2026-07-05T11:55:01.142Z'),
+            end_at: DateTime.iso8601('2024-10-13T13:19:21.774Z'),
+            start_at: DateTime.iso8601('2026-08-04T18:16:32.678Z'),
             text: 'Magnam consuasor uxor tergiversatio subseco.',
           ),
         ],
       ),
     ],
-    start_at: DateTime.iso8601('2023-04-23T07:14:01.562Z'),
+    metadata: [],
+    start_at: DateTime.iso8601('2023-04-28T01:09:10.747Z'),
     type: Models::Shared::UcRecordingType::OUTBOUND,
-    updated_at: DateTime.iso8601('2025-02-26T04:45:21.963Z'),
-    user_name: 'Melyna Larson',
+    updated_at: DateTime.iso8601('2025-03-17T16:11:41.920Z'),
     user_phone: '1-915-327-0429 x509',
     web_url: 'https://spherical-comparison.org',
   ),

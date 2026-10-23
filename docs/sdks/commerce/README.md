@@ -57,7 +57,7 @@
 
 ## create_commerce_collection
 
-Create a collection
+Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
 
 ### Example Usage
 
@@ -75,7 +75,7 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.commerce.create_commerce_collection(commerce_collection: Models::Shared::CommerceCollection.new(
   created_at: DateTime.iso8601('2023-07-14T00:42:54.742Z'),
   description: 'The Integrated leading edge website Cheese offers reliable performance and productive design',
-  id: 'f4fd2359-4cc3-4e9b-90f1-6bb4017f0c03',
+  id: '3e54b1cf-8e90-48c3-aece-180ce04df367',
   is_active: true,
   is_featured: false,
   is_visible: false,
@@ -84,10 +84,10 @@ res = s.commerce.create_commerce_collection(commerce_collection: Models::Shared:
     Models::Shared::CommerceItemMedia.new(
       alt: 'Defungo adopto thorax.',
       height: 759.0,
-      id: '15659f88-be97-4fc8-be41-db089a411149',
+      id: '0fce4930-3146-40a8-bcf6-4e5f6d9fc02e',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: '301f7a97-0cf6-49ab-9b64-9e96afaf5b1f',
+          id: '2f65bd01-8292-4ad4-91ea-791e5e43cf90',
           slug: 'censura',
           value: 'toties',
         ),
@@ -100,7 +100,7 @@ res = s.commerce.create_commerce_collection(commerce_collection: Models::Shared:
   ],
   metadata: [
     Models::Shared::CommerceMetadata.new(
-      id: '414c009c-9ad7-44ce-b4a3-f78e5a0cee04',
+      id: 'c12292ff-a232-4491-b2d3-4b9570a1a5d9',
       slug: 'aetas',
       value: 'consuasor',
     ),
@@ -114,7 +114,7 @@ res = s.commerce.create_commerce_collection(commerce_collection: Models::Shared:
     'contego',
   ],
   type: Models::Shared::CommerceCollectionType::COLLECTION,
-  updated_at: DateTime.iso8601('2025-02-27T18:06:31.828Z'),
+  updated_at: DateTime.iso8601('2025-03-16T01:38:38.253Z'),
 ), connection_id: '<id>')
 
 unless res.commerce_collection.nil?
@@ -144,7 +144,7 @@ end
 
 ## create_commerce_inventory
 
-Create an inventory
+Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
 
 ### Example Usage
 
@@ -161,7 +161,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.commerce.create_commerce_inventory(commerce_inventory: Models::Shared::CommerceInventory.new(
   available: 337.0,
-  updated_at: DateTime.iso8601('2025-10-27T06:15:02.135Z'),
+  id: '926eae82-d80c-419c-9c20-87c424e622fa',
+  metadata: [],
+  updated_at: DateTime.iso8601('2025-11-22T00:13:27.869Z'),
 ), connection_id: '<id>')
 
 unless res.commerce_inventory.nil?
@@ -191,7 +193,7 @@ end
 
 ## create_commerce_item
 
-Create an item
+Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
 
 ### Example Usage
 
@@ -209,46 +211,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.commerce.create_commerce_item(commerce_item: Models::Shared::CommerceItem.new(
   collections: [],
   created_at: DateTime.iso8601('2019-06-21T20:16:18.628Z'),
-  description: 'Vulnero ustulo abeo.',
-  duration: 87.0,
-  global_code: 'calamitas',
-  id: '0a89c18f-9c24-4907-a7b0-d337173f7f36',
+  description: 'Decretum vulnero ustulo abeo.',
+  duration: 104.0,
+  global_code: '978-0-85270-680-0',
+  id: '69888d2e-7ba9-417d-8e76-f06781383f3d',
   is_active: false,
-  is_featured: true,
+  is_featured: false,
   is_taxable: true,
   is_visible: true,
   media: [
     Models::Shared::CommerceItemMedia.new(
       alt: 'Caterva eveniet acies candidus.',
-      height: 663.0,
-      id: '8696f623-8390-47e8-af6c-24cc461320de',
+      height: 876.0,
+      id: '60f131ab-5d3f-4c5a-998d-2398b5b2cb0d',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: '3d3db832-89c1-43ed-b2ee-c595daa80b46',
+          id: 'b349f7f7-f117-4712-ae25-7c7dff25f551',
           slug: 'doloremque',
           value: 'allatus',
         ),
       ],
-      position: 67.0,
+      position: 21.0,
       type: Models::Shared::CommerceItemMediaType::VIDEO,
-      url: 'https://picsum.photos/seed/73y0uzyK/972/3753',
-      width: 88.0,
+      url: 'https://picsum.photos/seed/v73y0uzyK/3001/972',
+      width: 67.0,
     ),
     Models::Shared::CommerceItemMedia.new(
       alt: 'Comedo.',
-      height: 189.0,
-      id: '2c46089f-759e-4360-bc02-69187bbbead2',
+      height: 651.0,
+      id: '2577733c-d9d7-4ad9-aca7-2d9c2697e763',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: 'ab870c2f-9653-4461-b126-fd0e0d435b3c',
+          id: '59f50590-4bc2-44c7-b89e-28b478033704',
           slug: 'bis',
           value: 'somniculosus',
         ),
       ],
-      position: 3.0,
+      position: 51.0,
       type: Models::Shared::CommerceItemMediaType::IMAGE,
       url: 'https://picsum.photos/seed/Ao4iatfO/771/3906',
-      width: 66.0,
+      width: 3.0,
     ),
   ],
   metadata: [
@@ -257,34 +259,33 @@ res = s.commerce.create_commerce_item(commerce_item: Models::Shared::CommerceIte
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CommerceMetadataFormat::TEXT,
-      id: '279a68a8-fe76-4d81-a472-b2b56036f5ba',
+      id: 'b5d20319-3f55-4e47-b6ae-a4670d01f524',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'terebro',
+      value: 'abstergo',
     ),
   ],
   name: 'Handcrafted Rubber Tuna',
   prices: [
     Models::Shared::CommerceItemPrice.new(
-      compare_at_price: 474.0,
-      currency: 'OMR',
-      price: 1438.0,
+      currency: 'USD',
+      price: 78.11,
     ),
   ],
   public_description: 'Custodia ventus solio compono.',
   public_name: 'Handcrafted Rubber Tuna',
   requires_shipping: true,
-  slug: 'cohors-turba-optio',
+  slug: 'handcrafted-rubber-tuna',
   tags: [
+    'beatae',
     'blanditiis',
-    'tandem',
   ],
-  total_stock: 579.0,
-  type: 'beatae',
-  updated_at: DateTime.iso8601('2022-04-07T22:40:37.462Z'),
+  total_stock: 682.0,
+  type: 'SERVICE',
+  updated_at: DateTime.iso8601('2022-04-20T06:24:31.238Z'),
   vendor_name: 'Mayer - Flatley',
-  weight: 22.0,
-  weight_unit: Models::Shared::WeightUnit::KG,
+  weight: 37.0,
+  weight_unit: Models::Shared::WeightUnit::OZ,
 ), connection_id: '<id>')
 
 unless res.commerce_item.nil?
@@ -314,7 +315,7 @@ end
 
 ## create_commerce_itemvariant
 
-Create an itemvariant
+Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
 
 ### Example Usage
 
@@ -330,47 +331,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.commerce.create_commerce_itemvariant(commerce_itemvariant: Models::Shared::CommerceItemvariant.new(
-  available_at: DateTime.iso8601('2022-02-02T16:10:33.503Z'),
+  available_at: DateTime.iso8601('2022-02-06T18:14:41.644Z'),
   created_at: DateTime.iso8601('2022-01-20T13:49:12.968Z'),
-  description: 'Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance',
-  height: 52.0,
-  id: '881bea6b-8da2-41ec-a838-48f626148ccf',
-  is_active: false,
+  description: 'Stylish Salad designed to make you stand out with little looks',
+  height: 54.0,
+  id: '095325c8-f323-4f30-989c-c770f39fbe7d',
+  is_active: true,
   is_featured: false,
   is_visible: false,
-  length: 94.0,
+  length: 92.0,
   media: [
     Models::Shared::CommerceItemMedia.new(
-      alt: 'Calcar delibero cursim summisse.',
-      height: 394.0,
-      id: '71db71de-f4aa-49c6-9311-29acafa9f965',
+      alt: 'Hic desipio thorax.',
+      height: 961.0,
+      id: '718f1a3a-48f8-40c0-87f3-3c8c7b28ea05',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: '703ab0b5-fe69-4a16-82d8-10530081b8eb',
-          slug: 'illo',
-          value: 'quia',
+          id: '5243fa2c-4cfc-422a-87f1-74dd513fe48f',
+          slug: 'ubi',
+          value: 'textus',
         ),
       ],
-      position: 92.0,
+      position: 72.0,
       type: Models::Shared::CommerceItemMediaType::IMAGE,
-      url: 'https://picsum.photos/seed/u0YdHqlRu/2007/3208',
-      width: 54.0,
-    ),
-    Models::Shared::CommerceItemMedia.new(
-      alt: 'Civitas acies substantia tergo.',
-      height: 351.0,
-      id: 'b7fa934b-1d6a-448b-8157-2ee82d3db529',
-      metadata: [
-        Models::Shared::CommerceMetadata.new(
-          id: '5509efb2-db07-47fa-9eb0-9455956d0f72',
-          slug: 'libero',
-          value: 'capitulus',
-        ),
-      ],
-      position: 44.0,
-      type: Models::Shared::CommerceItemMediaType::IMAGE,
-      url: 'https://loremflickr.com/2230/1237?lock=8628070842159966',
-      width: 55.0,
+      url: 'https://loremflickr.com/2126/721?lock=8820088623807162',
+      width: 35.0,
     ),
   ],
   metadata: [
@@ -379,55 +364,50 @@ res = s.commerce.create_commerce_itemvariant(commerce_itemvariant: Models::Share
         "display_name": 'Custom Property',
       },
       format: Models::Shared::CommerceMetadataFormat::TEXT,
-      id: '150303df-d881-4800-82f2-e21ba6a5995d',
+      id: '73b992be-aa91-430f-b091-49092867cb6d',
       namespace: 'custom',
       slug: 'custom_property',
-      value: 'nihil',
+      value: 'absens',
     ),
   ],
-  name: 'Keyboard',
+  name: 'Chair',
   options: [
     Models::Shared::CommerceItemOption.new(
-      id: 'fbb8b263-3357-4582-9634-820f5cf40feb',
-      name: 'Steel',
-      position: 97.0,
+      id: '958148c8-2b5b-428e-8a5f-5cfa28aa1399',
+      name: 'Color',
+      position: 1.0,
       values: [
-        'Granite',
-        'Plastic',
+        'olive',
+      ],
+    ),
+    Models::Shared::CommerceItemOption.new(
+      id: 'f2a752d5-9a6d-4d00-87c9-4a65e82c26e4',
+      name: 'Size',
+      position: 2.0,
+      values: [
+        'S',
       ],
     ),
   ],
   prices: [
     Models::Shared::CommerceItemPrice.new(
-      compare_at_price: 3745.0,
-      currency: 'COP',
-      price: 4913.0,
-    ),
-    Models::Shared::CommerceItemPrice.new(
-      compare_at_price: 438.0,
-      currency: 'PHP',
-      price: 1378.0,
-    ),
-    Models::Shared::CommerceItemPrice.new(
-      compare_at_price: 1614.0,
-      currency: 'PHP',
-      price: 8702.0,
+      currency: 'USD',
+      price: 382.23,
     ),
   ],
-  public_description: 'Stylish Soap designed to make you stand out with insistent looks',
-  public_name: 'Keyboard',
+  public_description: 'Stylish Cheese designed to make you stand out with grave looks',
+  public_name: 'Chair',
   requires_shipping: false,
   size_unit: Models::Shared::SizeUnit::CM,
-  sku: '978-0-7051-0955-0',
+  sku: '978-1-368-44270-1',
   tags: [
-    'vomito',
-    'custodia',
+    'deserunt',
   ],
-  total_stock: 929.0,
-  updated_at: DateTime.iso8601('2025-05-26T13:54:58.135Z'),
-  weight: 61.0,
+  total_stock: 436.0,
+  updated_at: DateTime.iso8601('2026-03-11T09:49:38.577Z'),
+  weight: 46.0,
   weight_unit: Models::Shared::CommerceItemvariantWeightUnit::OZ,
-  width: 26.0,
+  width: 40.0,
 ), connection_id: '<id>')
 
 unless res.commerce_itemvariant.nil?
@@ -457,7 +437,7 @@ end
 
 ## create_commerce_location
 
-Create a location
+Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
 
 ### Example Usage
 
@@ -485,7 +465,7 @@ res = s.commerce.create_commerce_location(commerce_location: Models::Shared::Com
   created_at: DateTime.iso8601('2022-12-29T04:15:21.195Z'),
   currency: 'XCD',
   description: 'Adsidue audentia.',
-  id: '79f90f0b-9046-4f30-b91d-7996aec988c6',
+  id: '9269d190-f7e4-4ca0-9d9a-3b2cd258af77',
   image_url: 'https://picsum.photos/seed/hjFt1/1036/2220',
   is_active: false,
   language_locale: 'vulgaris',
@@ -496,10 +476,10 @@ res = s.commerce.create_commerce_location(commerce_location: Models::Shared::Com
     Models::Shared::CommerceItemMedia.new(
       alt: 'Addo.',
       height: 283.0,
-      id: '8febbc6e-0ba1-4b76-b53b-718da7b464c1',
+      id: 'a9b34ae1-d23f-4ae8-a407-12dc516fa948',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: 'e6b6e10a-3d44-4aee-beac-d6f73e9c5f09',
+          id: '51dd7bb8-9a09-4018-a8be-b30616cf72bd',
           slug: 'abutor',
           value: 'damno',
         ),
@@ -510,6 +490,7 @@ res = s.commerce.create_commerce_location(commerce_location: Models::Shared::Com
       width: 1.0,
     ),
   ],
+  metadata: [],
   name: 'Olson - Mraz',
   price_level: '',
   rating: 0.0,
@@ -524,7 +505,7 @@ res = s.commerce.create_commerce_location(commerce_location: Models::Shared::Com
       type: Models::Shared::CommerceTelephoneType::MOBILE,
     ),
   ],
-  updated_at: DateTime.iso8601('2024-04-10T10:37:16.074Z'),
+  updated_at: DateTime.iso8601('2024-04-21T10:20:25.147Z'),
   web_url: 'https://chilly-edge.info',
 ), connection_id: '<id>')
 
@@ -555,7 +536,7 @@ end
 
 ## create_commerce_reservation
 
-Create a reservation
+Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
 
 ### Example Usage
 
@@ -573,18 +554,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.commerce.create_commerce_reservation(commerce_reservation: Models::Shared::CommerceReservation.new(
   created_at: DateTime.iso8601('2021-12-14T19:50:31.151Z'),
   end_at: DateTime.iso8601('2022-01-01T22:00:17.868Z'),
-  guest_email: 'Sunny.Strosin77@yahoo.com',
-  guest_name: 'Annette Franecki',
-  guest_phone: '(990) 317-6213',
-  id: '1a177edf-e865-4d48-97fa-a96f8c8c2d4f',
-  item_name: 'Practical Ceramic Shoes',
+  guest_email: 'julien.bartoletti@icloud.com',
+  guest_name: 'Julien Bartoletti',
+  guest_phone: '(728) 596-2620',
+  id: '8fc9ed13-ae4e-4a15-bb40-bbb5b203a787',
+  metadata: [],
   notes: 'Adsum textilis ipsum despecto.',
   size: 10.0,
-  staff_name: 'Vickie Fahey',
   start_at: DateTime.iso8601('2021-12-18T00:40:25.125Z'),
   status: Models::Shared::CommerceReservationStatus::PENDING,
-  updated_at: DateTime.iso8601('2022-12-28T09:01:03.532Z'),
-  url: 'https://cluttered-pine.info/',
+  updated_at: DateTime.iso8601('2023-01-04T07:45:43.823Z'),
+  url: 'https://expensive-gift.org',
 ), connection_id: '<id>')
 
 unless res.commerce_reservation.nil?
@@ -614,7 +594,7 @@ end
 
 ## create_commerce_review
 
-Create a review
+Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
 
 ### Example Usage
 
@@ -630,76 +610,60 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.commerce.create_commerce_review(commerce_review: Models::Shared::CommerceReview.new(
-  author_avatar_url: 'https://picsum.photos/seed/ix4Br3LA/2245/1245',
-  author_email: 'Cleve_Yundt@hotmail.com',
-  author_location: 'ipsum',
-  author_name: 'Marsha Krajcik',
+  author_avatar_url: 'https://loremflickr.com/7/2660?lock=4279109054086693',
+  author_email: 'nyasia.macgyver@hotmail.com',
+  author_location: 'denique',
+  author_name: 'Nyasia MacGyver',
   comments: [],
   content: 'Taedium thymum adipiscor amicitia cui.',
   created_at: DateTime.iso8601('2019-12-12T18:10:22.988Z'),
-  helpful_votes: 26.0,
-  id: '02f5db4f-c5f4-45d4-83de-ed4324249c6b',
-  is_featured: true,
+  helpful_votes: 66.0,
+  id: '33e41b27-10cf-4b96-a393-9efbcd3c1be0',
+  is_featured: false,
   is_public: true,
   is_verified: false,
   media: [
     Models::Shared::CommerceItemMedia.new(
-      alt: 'Adulescens.',
-      height: 519.0,
-      id: 'bc0bbb45-630e-43e3-9058-4900bd751771',
+      alt: 'Desipio carpo sol laudantium colo.',
+      height: 749.0,
+      id: '49585c8f-4972-4faa-8a1c-5b8efe96d149',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: 'ae79a189-5867-45e3-b100-bc337e4eb45b',
-          slug: 'aggero',
-          value: 'tero',
+          id: 'ae1023b0-2eb4-4ea5-87ec-f1c5a0c73632',
+          slug: 'textor',
+          value: 'quos',
         ),
       ],
-      position: 72.0,
+      position: 29.0,
       type: Models::Shared::CommerceItemMediaType::VIDEO,
-      url: 'https://loremflickr.com/882/1004?lock=7448492654002422',
-      width: 75.0,
+      url: 'https://loremflickr.com/196/2041?lock=5845524773114807',
+      width: 72.0,
     ),
     Models::Shared::CommerceItemMedia.new(
-      alt: 'Pauci timidus sol comburo thema.',
-      height: 297.0,
-      id: 'be3b922b-064a-4961-a4f7-0b9913af17dd',
+      alt: 'Adopto teneo numquam.',
+      height: 957.0,
+      id: '5dcac3f4-0b89-4e09-b590-f097819a2c59',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: 'dfc1e71b-6db1-411c-ad5a-e9bd58a15610',
-          slug: 'vito',
-          value: 'cuppedia',
+          id: 'f42a8516-2b7d-45b4-b6dd-edb18d7195a3',
+          slug: 'bos',
+          value: 'casso',
         ),
       ],
-      position: 61.0,
+      position: 69.0,
       type: Models::Shared::CommerceItemMediaType::IMAGE,
-      url: 'https://picsum.photos/seed/3QDZ8/1208/2171',
-      width: 96.0,
-    ),
-    Models::Shared::CommerceItemMedia.new(
-      alt: 'Cuppedia vestrum patruus.',
-      height: 6.0,
-      id: 'bdc6acf7-156b-4c68-ab9e-05c8a9529d62',
-      metadata: [
-        Models::Shared::CommerceMetadata.new(
-          id: '9de44b66-9394-4ebc-9a6a-04e175c828ac',
-          slug: 'arbitro',
-          value: 'villa',
-        ),
-      ],
-      position: 60.0,
-      type: Models::Shared::CommerceItemMediaType::VIDEO,
-      url: 'https://picsum.photos/seed/ytybC/2616/710',
-      width: 74.0,
+      url: 'https://loremflickr.com/1178/2175?lock=5466640101053206',
+      width: 61.0,
     ),
   ],
   metadata: [],
   rating: 3.0,
   status: Models::Shared::CommerceReviewStatus::APPROVED,
   title: 'Coepi adamo amicitia auxilium toties.',
-  unhelpful_votes: 49.0,
-  updated_at: DateTime.iso8601('2025-07-27T11:40:19.583Z'),
-  url: 'https://excitable-underneath.com',
-  verified_purchase: false,
+  unhelpful_votes: 88.0,
+  updated_at: DateTime.iso8601('2025-08-23T00:16:55.799Z'),
+  url: 'https://diligent-bandwidth.biz',
+  verified_purchase: true,
 ), connection_id: '<id>')
 
 unless res.commerce_review.nil?
@@ -729,7 +693,7 @@ end
 
 ## create_commerce_saleschannel
 
-Create a saleschannel
+Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
 
 ### Example Usage
 
@@ -748,10 +712,11 @@ res = s.commerce.create_commerce_saleschannel(commerce_saleschannel: Models::Sha
   collections: [],
   created_at: DateTime.iso8601('2021-12-12T06:19:55.421Z'),
   description: 'Utroque denuncio solutio.',
-  id: '7dc73f64-6430-4ebe-9bf7-c34dfb0a0939',
+  id: 'd26f95b7-a59e-43ab-93a5-5edab9b447e1',
   is_active: false,
+  metadata: [],
   slug: 'amiculum-congregatio-suspendo',
-  updated_at: DateTime.iso8601('2025-01-08T16:37:20.902Z'),
+  updated_at: DateTime.iso8601('2025-01-29T06:44:48.573Z'),
 ), connection_id: '<id>')
 
 unless res.commerce_saleschannel.nil?
@@ -781,7 +746,7 @@ end
 
 ## get_commerce_collection
 
-Retrieve a collection
+Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -825,7 +790,7 @@ end
 
 ## get_commerce_inventory
 
-Retrieve an inventory
+Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -869,7 +834,7 @@ end
 
 ## get_commerce_item
 
-Retrieve an item
+Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -913,7 +878,7 @@ end
 
 ## get_commerce_itemvariant
 
-Retrieve an itemvariant
+Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -957,7 +922,7 @@ end
 
 ## get_commerce_location
 
-Retrieve a location
+Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1001,7 +966,7 @@ end
 
 ## get_commerce_reservation
 
-Retrieve a reservation
+Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1045,7 +1010,7 @@ end
 
 ## get_commerce_review
 
-Retrieve a review
+Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1089,7 +1054,7 @@ end
 
 ## get_commerce_saleschannel
 
-Retrieve a saleschannel
+Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1133,7 +1098,7 @@ end
 
 ## list_commerce_availabilities
 
-List all availabilities
+Returns a list of CommerceAvailabilities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1178,7 +1143,7 @@ end
 
 ## list_commerce_collections
 
-List all collections
+Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1223,7 +1188,7 @@ end
 
 ## list_commerce_inventories
 
-List all inventories
+Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1268,7 +1233,7 @@ end
 
 ## list_commerce_items
 
-List all items
+Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1313,7 +1278,7 @@ end
 
 ## list_commerce_itemvariants
 
-List all itemvariants
+Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1358,7 +1323,7 @@ end
 
 ## list_commerce_locations
 
-List all locations
+Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1403,7 +1368,7 @@ end
 
 ## list_commerce_reservations
 
-List all reservations
+Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1448,7 +1413,7 @@ end
 
 ## list_commerce_reviews
 
-List all reviews
+Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1493,7 +1458,7 @@ end
 
 ## list_commerce_saleschannels
 
-List all saleschannels
+Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1538,7 +1503,7 @@ end
 
 ## patch_commerce_collection
 
-Update a collection
+Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -1557,7 +1522,7 @@ req = Models::Operations::PatchCommerceCollectionRequest.new(
   commerce_collection: Models::Shared::CommerceCollection.new(
     created_at: DateTime.iso8601('2023-07-14T00:42:54.742Z'),
     description: 'The Integrated leading edge website Cheese offers reliable performance and productive design',
-    id: 'a9167364-b435-4177-b780-3eb0c21dc3c9',
+    id: 'a258c3aa-d818-4b8c-8c60-ba089e9a9b36',
     is_active: true,
     is_featured: false,
     is_visible: false,
@@ -1566,10 +1531,10 @@ req = Models::Operations::PatchCommerceCollectionRequest.new(
       Models::Shared::CommerceItemMedia.new(
         alt: 'Defungo adopto thorax.',
         height: 759.0,
-        id: 'dd613742-21f5-4ec7-8f58-c5d0b3dd67f4',
+        id: '17088427-fefd-419b-822c-893b4842f844',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '16fd43f8-7f18-4112-a03c-6655590758bb',
+            id: 'e5459c1f-cb38-462e-b902-ca9c5dfc16bf',
             slug: 'censura',
             value: 'toties',
           ),
@@ -1582,7 +1547,7 @@ req = Models::Operations::PatchCommerceCollectionRequest.new(
     ],
     metadata: [
       Models::Shared::CommerceMetadata.new(
-        id: '0a68dfce-0401-40c0-893a-e6dc6e6f89ac',
+        id: 'e84025f6-0d87-440d-9431-58363bfced85',
         slug: 'aetas',
         value: 'consuasor',
       ),
@@ -1596,7 +1561,7 @@ req = Models::Operations::PatchCommerceCollectionRequest.new(
       'contego',
     ],
     type: Models::Shared::CommerceCollectionType::COLLECTION,
-    updated_at: DateTime.iso8601('2025-02-27T18:06:31.847Z'),
+    updated_at: DateTime.iso8601('2025-03-16T01:38:38.273Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1628,7 +1593,7 @@ end
 
 ## patch_commerce_inventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -1646,7 +1611,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchCommerceInventoryRequest.new(
   commerce_inventory: Models::Shared::CommerceInventory.new(
     available: 337.0,
-    updated_at: DateTime.iso8601('2025-10-27T06:15:02.141Z'),
+    id: 'd757bd8f-362e-4157-adcb-d38cecdbcaeb',
+    metadata: [],
+    updated_at: DateTime.iso8601('2025-11-22T00:13:27.880Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1678,7 +1645,7 @@ end
 
 ## patch_commerce_item
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -1697,46 +1664,46 @@ req = Models::Operations::PatchCommerceItemRequest.new(
   commerce_item: Models::Shared::CommerceItem.new(
     collections: [],
     created_at: DateTime.iso8601('2019-06-21T20:16:18.628Z'),
-    description: 'Vulnero ustulo abeo.',
-    duration: 87.0,
-    global_code: 'calamitas',
-    id: '9ef0d16c-1c7b-4c45-914b-d13d38f130cc',
+    description: 'Decretum vulnero ustulo abeo.',
+    duration: 104.0,
+    global_code: '978-0-85270-680-0',
+    id: 'e16779fc-7762-4d3c-8e5b-d727309f0130',
     is_active: false,
-    is_featured: true,
+    is_featured: false,
     is_taxable: true,
     is_visible: true,
     media: [
       Models::Shared::CommerceItemMedia.new(
         alt: 'Caterva eveniet acies candidus.',
-        height: 663.0,
-        id: 'bb186362-822b-4830-a1a9-3105a38a33a9',
+        height: 876.0,
+        id: 'b5af06a2-45bf-4019-9f88-72f8ca2bdd50',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '0cd7aab4-f559-4505-bcc4-4d0afc0829fe',
+            id: '01dc9f6b-a04d-4b58-97cf-6d2292c64429',
             slug: 'doloremque',
             value: 'allatus',
           ),
         ],
-        position: 67.0,
+        position: 21.0,
         type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://picsum.photos/seed/73y0uzyK/972/3753',
-        width: 88.0,
+        url: 'https://picsum.photos/seed/v73y0uzyK/3001/972',
+        width: 67.0,
       ),
       Models::Shared::CommerceItemMedia.new(
         alt: 'Comedo.',
-        height: 189.0,
-        id: 'afe816ca-dc54-444c-9c50-268199a2865a',
+        height: 651.0,
+        id: '97c47924-f468-4ac6-a746-d3ac5c08ec7d',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '6aacaab9-bb0a-4728-aaf5-a75e8771478e',
+            id: '1b7c372a-3bf2-46ff-8c72-5fb0fd59d522',
             slug: 'bis',
             value: 'somniculosus',
           ),
         ],
-        position: 3.0,
+        position: 51.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
         url: 'https://picsum.photos/seed/Ao4iatfO/771/3906',
-        width: 66.0,
+        width: 3.0,
       ),
     ],
     metadata: [
@@ -1745,34 +1712,33 @@ req = Models::Operations::PatchCommerceItemRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CommerceMetadataFormat::TEXT,
-        id: '6caf34dd-ee37-46ae-8f4e-d51ce30c93ae',
+        id: '8d5f9439-2089-429f-9300-69bc44a4ae54',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'terebro',
+        value: 'abstergo',
       ),
     ],
     name: 'Handcrafted Rubber Tuna',
     prices: [
       Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 474.0,
-        currency: 'OMR',
-        price: 1438.0,
+        currency: 'USD',
+        price: 78.11,
       ),
     ],
     public_description: 'Custodia ventus solio compono.',
     public_name: 'Handcrafted Rubber Tuna',
     requires_shipping: true,
-    slug: 'cohors-turba-optio',
+    slug: 'handcrafted-rubber-tuna',
     tags: [
+      'beatae',
       'blanditiis',
-      'tandem',
     ],
-    total_stock: 579.0,
-    type: 'beatae',
-    updated_at: DateTime.iso8601('2022-04-07T22:40:37.477Z'),
+    total_stock: 682.0,
+    type: 'SERVICE',
+    updated_at: DateTime.iso8601('2022-04-20T06:24:31.255Z'),
     vendor_name: 'Mayer - Flatley',
-    weight: 22.0,
-    weight_unit: Models::Shared::WeightUnit::KG,
+    weight: 37.0,
+    weight_unit: Models::Shared::WeightUnit::OZ,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1804,7 +1770,7 @@ end
 
 ## patch_commerce_itemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -1821,47 +1787,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchCommerceItemvariantRequest.new(
   commerce_itemvariant: Models::Shared::CommerceItemvariant.new(
-    available_at: DateTime.iso8601('2022-02-02T16:10:33.503Z'),
+    available_at: DateTime.iso8601('2022-02-06T18:14:41.644Z'),
     created_at: DateTime.iso8601('2022-01-20T13:49:12.968Z'),
-    description: 'Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance',
-    height: 52.0,
-    id: '4bc96b4d-5b97-4232-aec0-c93dc628787b',
-    is_active: false,
+    description: 'Stylish Salad designed to make you stand out with little looks',
+    height: 54.0,
+    id: 'b4e53342-2af5-4efa-a293-7ac75f25e68a',
+    is_active: true,
     is_featured: false,
     is_visible: false,
-    length: 94.0,
+    length: 92.0,
     media: [
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Calcar delibero cursim summisse.',
-        height: 394.0,
-        id: '5c2aa390-2a13-454a-868a-1c70f91207ec',
+        alt: 'Hic desipio thorax.',
+        height: 961.0,
+        id: 'a6b0552c-adbd-4142-bbbb-59187beb12b6',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'a18192c5-5410-4b54-9967-311c149c0d55',
-            slug: 'illo',
-            value: 'quia',
+            id: '2ebb0e9d-e614-4b19-9d8c-d0d2c9580081',
+            slug: 'ubi',
+            value: 'textus',
           ),
         ],
-        position: 92.0,
+        position: 72.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://picsum.photos/seed/u0YdHqlRu/2007/3208',
-        width: 54.0,
-      ),
-      Models::Shared::CommerceItemMedia.new(
-        alt: 'Civitas acies substantia tergo.',
-        height: 351.0,
-        id: '8d49cf6f-2339-46f3-a849-ae669f16e461',
-        metadata: [
-          Models::Shared::CommerceMetadata.new(
-            id: '47767d98-98c7-468c-b424-c07498d67cc4',
-            slug: 'libero',
-            value: 'capitulus',
-          ),
-        ],
-        position: 44.0,
-        type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://loremflickr.com/2230/1237?lock=8628070842159966',
-        width: 55.0,
+        url: 'https://loremflickr.com/2126/721?lock=8820088623807162',
+        width: 35.0,
       ),
     ],
     metadata: [
@@ -1870,55 +1820,50 @@ req = Models::Operations::PatchCommerceItemvariantRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CommerceMetadataFormat::TEXT,
-        id: 'aa52a554-aa45-4d6f-92cd-662ad0909530',
+        id: 'ce1351ef-274f-4f0e-b3fe-844e61153c5a',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'nihil',
+        value: 'absens',
       ),
     ],
-    name: 'Keyboard',
+    name: 'Chair',
     options: [
       Models::Shared::CommerceItemOption.new(
-        id: '3406f08a-aa50-437f-b6ef-b323b3669f28',
-        name: 'Steel',
-        position: 97.0,
+        id: '2911f5f1-0792-4b04-a81e-2dab72da752f',
+        name: 'Color',
+        position: 1.0,
         values: [
-          'Granite',
-          'Plastic',
+          'olive',
+        ],
+      ),
+      Models::Shared::CommerceItemOption.new(
+        id: '634ba452-f269-42b4-97bd-3169923350c2',
+        name: 'Size',
+        position: 2.0,
+        values: [
+          'S',
         ],
       ),
     ],
     prices: [
       Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 3745.0,
-        currency: 'COP',
-        price: 4913.0,
-      ),
-      Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 438.0,
-        currency: 'PHP',
-        price: 1378.0,
-      ),
-      Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 1614.0,
-        currency: 'PHP',
-        price: 8702.0,
+        currency: 'USD',
+        price: 382.23,
       ),
     ],
-    public_description: 'Stylish Soap designed to make you stand out with insistent looks',
-    public_name: 'Keyboard',
+    public_description: 'Stylish Cheese designed to make you stand out with grave looks',
+    public_name: 'Chair',
     requires_shipping: false,
     size_unit: Models::Shared::SizeUnit::CM,
-    sku: '978-0-7051-0955-0',
+    sku: '978-1-368-44270-1',
     tags: [
-      'vomito',
-      'custodia',
+      'deserunt',
     ],
-    total_stock: 929.0,
-    updated_at: DateTime.iso8601('2025-05-26T13:54:58.165Z'),
-    weight: 61.0,
+    total_stock: 436.0,
+    updated_at: DateTime.iso8601('2026-03-11T09:49:38.618Z'),
+    weight: 46.0,
     weight_unit: Models::Shared::CommerceItemvariantWeightUnit::OZ,
-    width: 26.0,
+    width: 40.0,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1950,7 +1895,7 @@ end
 
 ## patch_commerce_location
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -1979,7 +1924,7 @@ req = Models::Operations::PatchCommerceLocationRequest.new(
     created_at: DateTime.iso8601('2022-12-29T04:15:21.195Z'),
     currency: 'XCD',
     description: 'Adsidue audentia.',
-    id: '407e8a02-063b-4559-b267-cb7c048ee39b',
+    id: '6d84c5e1-4a04-4750-b446-7984c24185bf',
     image_url: 'https://picsum.photos/seed/hjFt1/1036/2220',
     is_active: false,
     language_locale: 'vulgaris',
@@ -1990,10 +1935,10 @@ req = Models::Operations::PatchCommerceLocationRequest.new(
       Models::Shared::CommerceItemMedia.new(
         alt: 'Addo.',
         height: 283.0,
-        id: '43ca55da-031f-4db1-9534-51d351892c87',
+        id: '61a372b2-53b9-4882-b235-31278dee6b9f',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'd3730f18-8de3-48ee-8e00-1f683adc6056',
+            id: '36d1a9c2-1d24-4fb0-bc5c-a15ea787218a',
             slug: 'abutor',
             value: 'damno',
           ),
@@ -2004,6 +1949,7 @@ req = Models::Operations::PatchCommerceLocationRequest.new(
         width: 1.0,
       ),
     ],
+    metadata: [],
     name: 'Olson - Mraz',
     price_level: '',
     rating: 0.0,
@@ -2018,7 +1964,7 @@ req = Models::Operations::PatchCommerceLocationRequest.new(
         type: Models::Shared::CommerceTelephoneType::MOBILE,
       ),
     ],
-    updated_at: DateTime.iso8601('2024-04-10T10:37:16.090Z'),
+    updated_at: DateTime.iso8601('2024-04-21T10:20:25.162Z'),
     web_url: 'https://chilly-edge.info',
   ),
   connection_id: '<id>',
@@ -2051,7 +1997,7 @@ end
 
 ## patch_commerce_reservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -2070,18 +2016,17 @@ req = Models::Operations::PatchCommerceReservationRequest.new(
   commerce_reservation: Models::Shared::CommerceReservation.new(
     created_at: DateTime.iso8601('2021-12-14T19:50:31.151Z'),
     end_at: DateTime.iso8601('2022-01-01T22:00:17.868Z'),
-    guest_email: 'Sunny.Strosin77@yahoo.com',
-    guest_name: 'Annette Franecki',
-    guest_phone: '(990) 317-6213',
-    id: 'cf8fcd48-48b2-48a3-a9ba-826de75c34e1',
-    item_name: 'Practical Ceramic Shoes',
+    guest_email: 'julien.bartoletti@icloud.com',
+    guest_name: 'Julien Bartoletti',
+    guest_phone: '(728) 596-2620',
+    id: 'a5c680e7-8a89-412e-9043-134d1481fef3',
+    metadata: [],
     notes: 'Adsum textilis ipsum despecto.',
     size: 10.0,
-    staff_name: 'Vickie Fahey',
     start_at: DateTime.iso8601('2021-12-18T00:40:25.125Z'),
     status: Models::Shared::CommerceReservationStatus::PENDING,
-    updated_at: DateTime.iso8601('2022-12-28T09:01:03.535Z'),
-    url: 'https://cluttered-pine.info/',
+    updated_at: DateTime.iso8601('2023-01-04T07:45:43.827Z'),
+    url: 'https://expensive-gift.org',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2113,7 +2058,7 @@ end
 
 ## patch_commerce_review
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -2130,76 +2075,60 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchCommerceReviewRequest.new(
   commerce_review: Models::Shared::CommerceReview.new(
-    author_avatar_url: 'https://picsum.photos/seed/ix4Br3LA/2245/1245',
-    author_email: 'Cleve_Yundt@hotmail.com',
-    author_location: 'ipsum',
-    author_name: 'Marsha Krajcik',
+    author_avatar_url: 'https://loremflickr.com/7/2660?lock=4279109054086693',
+    author_email: 'nyasia.macgyver@hotmail.com',
+    author_location: 'denique',
+    author_name: 'Nyasia MacGyver',
     comments: [],
     content: 'Taedium thymum adipiscor amicitia cui.',
     created_at: DateTime.iso8601('2019-12-12T18:10:22.988Z'),
-    helpful_votes: 26.0,
-    id: '77cccd4b-1f4e-44cc-aaa9-471ec6a4c23c',
-    is_featured: true,
+    helpful_votes: 66.0,
+    id: 'a71c13aa-d416-43f6-8ad8-35258e7a6fe8',
+    is_featured: false,
     is_public: true,
     is_verified: false,
     media: [
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Adulescens.',
-        height: 519.0,
-        id: 'f15b9b72-7ae5-48af-b294-cbcd82d8b298',
+        alt: 'Desipio carpo sol laudantium colo.',
+        height: 749.0,
+        id: '71c01db3-0af8-4bc1-a421-12a5e570269b',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'e71a554b-d9d7-4d0a-bad8-120ff1f77d5d',
-            slug: 'aggero',
-            value: 'tero',
+            id: 'a87907e7-6777-432a-a079-cdaff033b9ec',
+            slug: 'textor',
+            value: 'quos',
           ),
         ],
-        position: 72.0,
+        position: 29.0,
         type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://loremflickr.com/882/1004?lock=7448492654002422',
-        width: 75.0,
+        url: 'https://loremflickr.com/196/2041?lock=5845524773114807',
+        width: 72.0,
       ),
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Pauci timidus sol comburo thema.',
-        height: 297.0,
-        id: '4c4e6b8b-d9fc-4cf8-8e65-872edfc9ead5',
+        alt: 'Adopto teneo numquam.',
+        height: 957.0,
+        id: '6568d505-d413-41fd-b64d-3067705e05a3',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '7681e666-83e3-4f01-b1b2-21452f4fd591',
-            slug: 'vito',
-            value: 'cuppedia',
+            id: '864adde6-6719-41ea-8fc8-f1d7c8c545ae',
+            slug: 'bos',
+            value: 'casso',
           ),
         ],
-        position: 61.0,
+        position: 69.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://picsum.photos/seed/3QDZ8/1208/2171',
-        width: 96.0,
-      ),
-      Models::Shared::CommerceItemMedia.new(
-        alt: 'Cuppedia vestrum patruus.',
-        height: 6.0,
-        id: 'd7ff8c18-32da-43f8-a587-f145eab4e89c',
-        metadata: [
-          Models::Shared::CommerceMetadata.new(
-            id: '7d50fabd-7998-459f-8aa4-ac9a3c27460b',
-            slug: 'arbitro',
-            value: 'villa',
-          ),
-        ],
-        position: 60.0,
-        type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://picsum.photos/seed/ytybC/2616/710',
-        width: 74.0,
+        url: 'https://loremflickr.com/1178/2175?lock=5466640101053206',
+        width: 61.0,
       ),
     ],
     metadata: [],
     rating: 3.0,
     status: Models::Shared::CommerceReviewStatus::APPROVED,
     title: 'Coepi adamo amicitia auxilium toties.',
-    unhelpful_votes: 49.0,
-    updated_at: DateTime.iso8601('2025-07-27T11:40:19.627Z'),
-    url: 'https://excitable-underneath.com',
-    verified_purchase: false,
+    unhelpful_votes: 88.0,
+    updated_at: DateTime.iso8601('2025-08-23T00:16:55.843Z'),
+    url: 'https://diligent-bandwidth.biz',
+    verified_purchase: true,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2231,7 +2160,7 @@ end
 
 ## patch_commerce_saleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -2251,10 +2180,11 @@ req = Models::Operations::PatchCommerceSaleschannelRequest.new(
     collections: [],
     created_at: DateTime.iso8601('2021-12-12T06:19:55.421Z'),
     description: 'Utroque denuncio solutio.',
-    id: 'f29743a2-3363-44eb-baea-b4899a2813b9',
+    id: 'df964129-81d7-4efa-805d-b986fdc305ae',
     is_active: false,
+    metadata: [],
     slug: 'amiculum-congregatio-suspendo',
-    updated_at: DateTime.iso8601('2025-01-08T16:37:20.907Z'),
+    updated_at: DateTime.iso8601('2025-01-29T06:44:48.585Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2286,7 +2216,7 @@ end
 
 ## remove_commerce_collection
 
-Remove a collection
+Deletes the CommerceCollection identified by `id`.
 
 ### Example Usage
 
@@ -2328,7 +2258,7 @@ end
 
 ## remove_commerce_inventory
 
-Remove an inventory
+Deletes the CommerceInventory identified by `id`.
 
 ### Example Usage
 
@@ -2370,7 +2300,7 @@ end
 
 ## remove_commerce_item
 
-Remove an item
+Deletes the CommerceItem identified by `id`.
 
 ### Example Usage
 
@@ -2412,7 +2342,7 @@ end
 
 ## remove_commerce_itemvariant
 
-Remove an itemvariant
+Deletes the CommerceItemvariant identified by `id`.
 
 ### Example Usage
 
@@ -2454,7 +2384,7 @@ end
 
 ## remove_commerce_location
 
-Remove a location
+Deletes the CommerceLocation identified by `id`.
 
 ### Example Usage
 
@@ -2496,7 +2426,7 @@ end
 
 ## remove_commerce_reservation
 
-Remove a reservation
+Deletes the CommerceReservation identified by `id`.
 
 ### Example Usage
 
@@ -2538,7 +2468,7 @@ end
 
 ## remove_commerce_review
 
-Remove a review
+Deletes the CommerceReview identified by `id`.
 
 ### Example Usage
 
@@ -2580,7 +2510,7 @@ end
 
 ## remove_commerce_saleschannel
 
-Remove a saleschannel
+Deletes the CommerceSaleschannel identified by `id`.
 
 ### Example Usage
 
@@ -2622,7 +2552,7 @@ end
 
 ## update_commerce_collection
 
-Update a collection
+Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -2641,7 +2571,7 @@ req = Models::Operations::UpdateCommerceCollectionRequest.new(
   commerce_collection: Models::Shared::CommerceCollection.new(
     created_at: DateTime.iso8601('2023-07-14T00:42:54.742Z'),
     description: 'The Integrated leading edge website Cheese offers reliable performance and productive design',
-    id: 'a9167364-b435-4177-b780-3eb0c21dc3c9',
+    id: 'a258c3aa-d818-4b8c-8c60-ba089e9a9b36',
     is_active: true,
     is_featured: false,
     is_visible: false,
@@ -2650,10 +2580,10 @@ req = Models::Operations::UpdateCommerceCollectionRequest.new(
       Models::Shared::CommerceItemMedia.new(
         alt: 'Defungo adopto thorax.',
         height: 759.0,
-        id: 'dd613742-21f5-4ec7-8f58-c5d0b3dd67f4',
+        id: '17088427-fefd-419b-822c-893b4842f844',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '16fd43f8-7f18-4112-a03c-6655590758bb',
+            id: 'e5459c1f-cb38-462e-b902-ca9c5dfc16bf',
             slug: 'censura',
             value: 'toties',
           ),
@@ -2666,7 +2596,7 @@ req = Models::Operations::UpdateCommerceCollectionRequest.new(
     ],
     metadata: [
       Models::Shared::CommerceMetadata.new(
-        id: '0a68dfce-0401-40c0-893a-e6dc6e6f89ac',
+        id: 'e84025f6-0d87-440d-9431-58363bfced85',
         slug: 'aetas',
         value: 'consuasor',
       ),
@@ -2680,7 +2610,7 @@ req = Models::Operations::UpdateCommerceCollectionRequest.new(
       'contego',
     ],
     type: Models::Shared::CommerceCollectionType::COLLECTION,
-    updated_at: DateTime.iso8601('2025-02-27T18:06:31.847Z'),
+    updated_at: DateTime.iso8601('2025-03-16T01:38:38.273Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2712,7 +2642,7 @@ end
 
 ## update_commerce_inventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -2730,7 +2660,9 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateCommerceInventoryRequest.new(
   commerce_inventory: Models::Shared::CommerceInventory.new(
     available: 337.0,
-    updated_at: DateTime.iso8601('2025-10-27T06:15:02.141Z'),
+    id: 'd757bd8f-362e-4157-adcb-d38cecdbcaeb',
+    metadata: [],
+    updated_at: DateTime.iso8601('2025-11-22T00:13:27.880Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2762,7 +2694,7 @@ end
 
 ## update_commerce_item
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -2781,46 +2713,46 @@ req = Models::Operations::UpdateCommerceItemRequest.new(
   commerce_item: Models::Shared::CommerceItem.new(
     collections: [],
     created_at: DateTime.iso8601('2019-06-21T20:16:18.628Z'),
-    description: 'Vulnero ustulo abeo.',
-    duration: 87.0,
-    global_code: 'calamitas',
-    id: '9ef0d16c-1c7b-4c45-914b-d13d38f130cc',
+    description: 'Decretum vulnero ustulo abeo.',
+    duration: 104.0,
+    global_code: '978-0-85270-680-0',
+    id: 'e16779fc-7762-4d3c-8e5b-d727309f0130',
     is_active: false,
-    is_featured: true,
+    is_featured: false,
     is_taxable: true,
     is_visible: true,
     media: [
       Models::Shared::CommerceItemMedia.new(
         alt: 'Caterva eveniet acies candidus.',
-        height: 663.0,
-        id: 'bb186362-822b-4830-a1a9-3105a38a33a9',
+        height: 876.0,
+        id: 'b5af06a2-45bf-4019-9f88-72f8ca2bdd50',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '0cd7aab4-f559-4505-bcc4-4d0afc0829fe',
+            id: '01dc9f6b-a04d-4b58-97cf-6d2292c64429',
             slug: 'doloremque',
             value: 'allatus',
           ),
         ],
-        position: 67.0,
+        position: 21.0,
         type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://picsum.photos/seed/73y0uzyK/972/3753',
-        width: 88.0,
+        url: 'https://picsum.photos/seed/v73y0uzyK/3001/972',
+        width: 67.0,
       ),
       Models::Shared::CommerceItemMedia.new(
         alt: 'Comedo.',
-        height: 189.0,
-        id: 'afe816ca-dc54-444c-9c50-268199a2865a',
+        height: 651.0,
+        id: '97c47924-f468-4ac6-a746-d3ac5c08ec7d',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '6aacaab9-bb0a-4728-aaf5-a75e8771478e',
+            id: '1b7c372a-3bf2-46ff-8c72-5fb0fd59d522',
             slug: 'bis',
             value: 'somniculosus',
           ),
         ],
-        position: 3.0,
+        position: 51.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
         url: 'https://picsum.photos/seed/Ao4iatfO/771/3906',
-        width: 66.0,
+        width: 3.0,
       ),
     ],
     metadata: [
@@ -2829,34 +2761,33 @@ req = Models::Operations::UpdateCommerceItemRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CommerceMetadataFormat::TEXT,
-        id: '6caf34dd-ee37-46ae-8f4e-d51ce30c93ae',
+        id: '8d5f9439-2089-429f-9300-69bc44a4ae54',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'terebro',
+        value: 'abstergo',
       ),
     ],
     name: 'Handcrafted Rubber Tuna',
     prices: [
       Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 474.0,
-        currency: 'OMR',
-        price: 1438.0,
+        currency: 'USD',
+        price: 78.11,
       ),
     ],
     public_description: 'Custodia ventus solio compono.',
     public_name: 'Handcrafted Rubber Tuna',
     requires_shipping: true,
-    slug: 'cohors-turba-optio',
+    slug: 'handcrafted-rubber-tuna',
     tags: [
+      'beatae',
       'blanditiis',
-      'tandem',
     ],
-    total_stock: 579.0,
-    type: 'beatae',
-    updated_at: DateTime.iso8601('2022-04-07T22:40:37.477Z'),
+    total_stock: 682.0,
+    type: 'SERVICE',
+    updated_at: DateTime.iso8601('2022-04-20T06:24:31.255Z'),
     vendor_name: 'Mayer - Flatley',
-    weight: 22.0,
-    weight_unit: Models::Shared::WeightUnit::KG,
+    weight: 37.0,
+    weight_unit: Models::Shared::WeightUnit::OZ,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -2888,7 +2819,7 @@ end
 
 ## update_commerce_itemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -2905,47 +2836,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateCommerceItemvariantRequest.new(
   commerce_itemvariant: Models::Shared::CommerceItemvariant.new(
-    available_at: DateTime.iso8601('2022-02-02T16:10:33.503Z'),
+    available_at: DateTime.iso8601('2022-02-06T18:14:41.644Z'),
     created_at: DateTime.iso8601('2022-01-20T13:49:12.968Z'),
-    description: 'Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance',
-    height: 52.0,
-    id: '4bc96b4d-5b97-4232-aec0-c93dc628787b',
-    is_active: false,
+    description: 'Stylish Salad designed to make you stand out with little looks',
+    height: 54.0,
+    id: 'b4e53342-2af5-4efa-a293-7ac75f25e68a',
+    is_active: true,
     is_featured: false,
     is_visible: false,
-    length: 94.0,
+    length: 92.0,
     media: [
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Calcar delibero cursim summisse.',
-        height: 394.0,
-        id: '5c2aa390-2a13-454a-868a-1c70f91207ec',
+        alt: 'Hic desipio thorax.',
+        height: 961.0,
+        id: 'a6b0552c-adbd-4142-bbbb-59187beb12b6',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'a18192c5-5410-4b54-9967-311c149c0d55',
-            slug: 'illo',
-            value: 'quia',
+            id: '2ebb0e9d-e614-4b19-9d8c-d0d2c9580081',
+            slug: 'ubi',
+            value: 'textus',
           ),
         ],
-        position: 92.0,
+        position: 72.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://picsum.photos/seed/u0YdHqlRu/2007/3208',
-        width: 54.0,
-      ),
-      Models::Shared::CommerceItemMedia.new(
-        alt: 'Civitas acies substantia tergo.',
-        height: 351.0,
-        id: '8d49cf6f-2339-46f3-a849-ae669f16e461',
-        metadata: [
-          Models::Shared::CommerceMetadata.new(
-            id: '47767d98-98c7-468c-b424-c07498d67cc4',
-            slug: 'libero',
-            value: 'capitulus',
-          ),
-        ],
-        position: 44.0,
-        type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://loremflickr.com/2230/1237?lock=8628070842159966',
-        width: 55.0,
+        url: 'https://loremflickr.com/2126/721?lock=8820088623807162',
+        width: 35.0,
       ),
     ],
     metadata: [
@@ -2954,55 +2869,50 @@ req = Models::Operations::UpdateCommerceItemvariantRequest.new(
           "display_name": 'Custom Property',
         },
         format: Models::Shared::CommerceMetadataFormat::TEXT,
-        id: 'aa52a554-aa45-4d6f-92cd-662ad0909530',
+        id: 'ce1351ef-274f-4f0e-b3fe-844e61153c5a',
         namespace: 'custom',
         slug: 'custom_property',
-        value: 'nihil',
+        value: 'absens',
       ),
     ],
-    name: 'Keyboard',
+    name: 'Chair',
     options: [
       Models::Shared::CommerceItemOption.new(
-        id: '3406f08a-aa50-437f-b6ef-b323b3669f28',
-        name: 'Steel',
-        position: 97.0,
+        id: '2911f5f1-0792-4b04-a81e-2dab72da752f',
+        name: 'Color',
+        position: 1.0,
         values: [
-          'Granite',
-          'Plastic',
+          'olive',
+        ],
+      ),
+      Models::Shared::CommerceItemOption.new(
+        id: '634ba452-f269-42b4-97bd-3169923350c2',
+        name: 'Size',
+        position: 2.0,
+        values: [
+          'S',
         ],
       ),
     ],
     prices: [
       Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 3745.0,
-        currency: 'COP',
-        price: 4913.0,
-      ),
-      Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 438.0,
-        currency: 'PHP',
-        price: 1378.0,
-      ),
-      Models::Shared::CommerceItemPrice.new(
-        compare_at_price: 1614.0,
-        currency: 'PHP',
-        price: 8702.0,
+        currency: 'USD',
+        price: 382.23,
       ),
     ],
-    public_description: 'Stylish Soap designed to make you stand out with insistent looks',
-    public_name: 'Keyboard',
+    public_description: 'Stylish Cheese designed to make you stand out with grave looks',
+    public_name: 'Chair',
     requires_shipping: false,
     size_unit: Models::Shared::SizeUnit::CM,
-    sku: '978-0-7051-0955-0',
+    sku: '978-1-368-44270-1',
     tags: [
-      'vomito',
-      'custodia',
+      'deserunt',
     ],
-    total_stock: 929.0,
-    updated_at: DateTime.iso8601('2025-05-26T13:54:58.165Z'),
-    weight: 61.0,
+    total_stock: 436.0,
+    updated_at: DateTime.iso8601('2026-03-11T09:49:38.618Z'),
+    weight: 46.0,
     weight_unit: Models::Shared::CommerceItemvariantWeightUnit::OZ,
-    width: 26.0,
+    width: 40.0,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3034,7 +2944,7 @@ end
 
 ## update_commerce_location
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -3063,7 +2973,7 @@ req = Models::Operations::UpdateCommerceLocationRequest.new(
     created_at: DateTime.iso8601('2022-12-29T04:15:21.195Z'),
     currency: 'XCD',
     description: 'Adsidue audentia.',
-    id: '407e8a02-063b-4559-b267-cb7c048ee39b',
+    id: '6d84c5e1-4a04-4750-b446-7984c24185bf',
     image_url: 'https://picsum.photos/seed/hjFt1/1036/2220',
     is_active: false,
     language_locale: 'vulgaris',
@@ -3074,10 +2984,10 @@ req = Models::Operations::UpdateCommerceLocationRequest.new(
       Models::Shared::CommerceItemMedia.new(
         alt: 'Addo.',
         height: 283.0,
-        id: '43ca55da-031f-4db1-9534-51d351892c87',
+        id: '61a372b2-53b9-4882-b235-31278dee6b9f',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'd3730f18-8de3-48ee-8e00-1f683adc6056',
+            id: '36d1a9c2-1d24-4fb0-bc5c-a15ea787218a',
             slug: 'abutor',
             value: 'damno',
           ),
@@ -3088,6 +2998,7 @@ req = Models::Operations::UpdateCommerceLocationRequest.new(
         width: 1.0,
       ),
     ],
+    metadata: [],
     name: 'Olson - Mraz',
     price_level: '',
     rating: 0.0,
@@ -3102,7 +3013,7 @@ req = Models::Operations::UpdateCommerceLocationRequest.new(
         type: Models::Shared::CommerceTelephoneType::MOBILE,
       ),
     ],
-    updated_at: DateTime.iso8601('2024-04-10T10:37:16.090Z'),
+    updated_at: DateTime.iso8601('2024-04-21T10:20:25.162Z'),
     web_url: 'https://chilly-edge.info',
   ),
   connection_id: '<id>',
@@ -3135,7 +3046,7 @@ end
 
 ## update_commerce_reservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -3154,18 +3065,17 @@ req = Models::Operations::UpdateCommerceReservationRequest.new(
   commerce_reservation: Models::Shared::CommerceReservation.new(
     created_at: DateTime.iso8601('2021-12-14T19:50:31.151Z'),
     end_at: DateTime.iso8601('2022-01-01T22:00:17.868Z'),
-    guest_email: 'Sunny.Strosin77@yahoo.com',
-    guest_name: 'Annette Franecki',
-    guest_phone: '(990) 317-6213',
-    id: 'cf8fcd48-48b2-48a3-a9ba-826de75c34e1',
-    item_name: 'Practical Ceramic Shoes',
+    guest_email: 'julien.bartoletti@icloud.com',
+    guest_name: 'Julien Bartoletti',
+    guest_phone: '(728) 596-2620',
+    id: 'a5c680e7-8a89-412e-9043-134d1481fef3',
+    metadata: [],
     notes: 'Adsum textilis ipsum despecto.',
     size: 10.0,
-    staff_name: 'Vickie Fahey',
     start_at: DateTime.iso8601('2021-12-18T00:40:25.125Z'),
     status: Models::Shared::CommerceReservationStatus::PENDING,
-    updated_at: DateTime.iso8601('2022-12-28T09:01:03.535Z'),
-    url: 'https://cluttered-pine.info/',
+    updated_at: DateTime.iso8601('2023-01-04T07:45:43.827Z'),
+    url: 'https://expensive-gift.org',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3197,7 +3107,7 @@ end
 
 ## update_commerce_review
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -3214,76 +3124,60 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateCommerceReviewRequest.new(
   commerce_review: Models::Shared::CommerceReview.new(
-    author_avatar_url: 'https://picsum.photos/seed/ix4Br3LA/2245/1245',
-    author_email: 'Cleve_Yundt@hotmail.com',
-    author_location: 'ipsum',
-    author_name: 'Marsha Krajcik',
+    author_avatar_url: 'https://loremflickr.com/7/2660?lock=4279109054086693',
+    author_email: 'nyasia.macgyver@hotmail.com',
+    author_location: 'denique',
+    author_name: 'Nyasia MacGyver',
     comments: [],
     content: 'Taedium thymum adipiscor amicitia cui.',
     created_at: DateTime.iso8601('2019-12-12T18:10:22.988Z'),
-    helpful_votes: 26.0,
-    id: '77cccd4b-1f4e-44cc-aaa9-471ec6a4c23c',
-    is_featured: true,
+    helpful_votes: 66.0,
+    id: 'a71c13aa-d416-43f6-8ad8-35258e7a6fe8',
+    is_featured: false,
     is_public: true,
     is_verified: false,
     media: [
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Adulescens.',
-        height: 519.0,
-        id: 'f15b9b72-7ae5-48af-b294-cbcd82d8b298',
+        alt: 'Desipio carpo sol laudantium colo.',
+        height: 749.0,
+        id: '71c01db3-0af8-4bc1-a421-12a5e570269b',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'e71a554b-d9d7-4d0a-bad8-120ff1f77d5d',
-            slug: 'aggero',
-            value: 'tero',
+            id: 'a87907e7-6777-432a-a079-cdaff033b9ec',
+            slug: 'textor',
+            value: 'quos',
           ),
         ],
-        position: 72.0,
+        position: 29.0,
         type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://loremflickr.com/882/1004?lock=7448492654002422',
-        width: 75.0,
+        url: 'https://loremflickr.com/196/2041?lock=5845524773114807',
+        width: 72.0,
       ),
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Pauci timidus sol comburo thema.',
-        height: 297.0,
-        id: '4c4e6b8b-d9fc-4cf8-8e65-872edfc9ead5',
+        alt: 'Adopto teneo numquam.',
+        height: 957.0,
+        id: '6568d505-d413-41fd-b64d-3067705e05a3',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '7681e666-83e3-4f01-b1b2-21452f4fd591',
-            slug: 'vito',
-            value: 'cuppedia',
+            id: '864adde6-6719-41ea-8fc8-f1d7c8c545ae',
+            slug: 'bos',
+            value: 'casso',
           ),
         ],
-        position: 61.0,
+        position: 69.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://picsum.photos/seed/3QDZ8/1208/2171',
-        width: 96.0,
-      ),
-      Models::Shared::CommerceItemMedia.new(
-        alt: 'Cuppedia vestrum patruus.',
-        height: 6.0,
-        id: 'd7ff8c18-32da-43f8-a587-f145eab4e89c',
-        metadata: [
-          Models::Shared::CommerceMetadata.new(
-            id: '7d50fabd-7998-459f-8aa4-ac9a3c27460b',
-            slug: 'arbitro',
-            value: 'villa',
-          ),
-        ],
-        position: 60.0,
-        type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://picsum.photos/seed/ytybC/2616/710',
-        width: 74.0,
+        url: 'https://loremflickr.com/1178/2175?lock=5466640101053206',
+        width: 61.0,
       ),
     ],
     metadata: [],
     rating: 3.0,
     status: Models::Shared::CommerceReviewStatus::APPROVED,
     title: 'Coepi adamo amicitia auxilium toties.',
-    unhelpful_votes: 49.0,
-    updated_at: DateTime.iso8601('2025-07-27T11:40:19.627Z'),
-    url: 'https://excitable-underneath.com',
-    verified_purchase: false,
+    unhelpful_votes: 88.0,
+    updated_at: DateTime.iso8601('2025-08-23T00:16:55.843Z'),
+    url: 'https://diligent-bandwidth.biz',
+    verified_purchase: true,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -3315,7 +3209,7 @@ end
 
 ## update_commerce_saleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -3335,10 +3229,11 @@ req = Models::Operations::UpdateCommerceSaleschannelRequest.new(
     collections: [],
     created_at: DateTime.iso8601('2021-12-12T06:19:55.421Z'),
     description: 'Utroque denuncio solutio.',
-    id: 'f29743a2-3363-44eb-baea-b4899a2813b9',
+    id: 'df964129-81d7-4efa-805d-b986fdc305ae',
     is_active: false,
+    metadata: [],
     slug: 'amiculum-congregatio-suspendo',
-    updated_at: DateTime.iso8601('2025-01-08T16:37:20.907Z'),
+    updated_at: DateTime.iso8601('2025-01-29T06:44:48.585Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

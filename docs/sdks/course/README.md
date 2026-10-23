@@ -14,7 +14,7 @@
 
 ## create_lms_course
 
-Create a course
+Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
 
 ### Example Usage
 
@@ -38,7 +38,7 @@ res = s.course.create_lms_course(lms_course: Models::Shared::LmsCourse.new(
   currency: 'FJD',
   description: 'Vinco alias aut capitulus.',
   duration_minutes: 148.0,
-  id: 'f635b758-af64-42a3-9389-1a94afbb201f',
+  id: 'f0cc7df0-5fdc-4ecb-8a6b-e5a87f9f2fcb',
   instructors: [],
   is_active: true,
   is_private: false,
@@ -61,17 +61,18 @@ res = s.course.create_lms_course(lms_course: Models::Shared::LmsCourse.new(
       url: 'https://picsum.photos/seed/fQAbsk/2472/1671',
     ),
   ],
+  metadata: [],
   name: 'comptus',
   price_amount: 84.0,
   provider_name: 'Homenick - Wunsch',
-  published_at: DateTime.iso8601('2023-12-30T03:35:03.902Z'),
+  published_at: DateTime.iso8601('2022-11-05T19:09:55.352Z'),
   skills: [
     'adiuvo',
     'tam',
   ],
   students: [],
   time_estimate_minutes: 100.0,
-  updated_at: DateTime.iso8601('2023-02-07T04:44:43.438Z'),
+  updated_at: DateTime.iso8601('2023-02-09T22:25:04.839Z'),
 ), connection_id: '<id>')
 
 unless res.lms_course.nil?
@@ -101,7 +102,7 @@ end
 
 ## get_lms_course
 
-Retrieve a course
+Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -145,7 +146,7 @@ end
 
 ## list_lms_courses
 
-List all courses
+Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -190,7 +191,7 @@ end
 
 ## patch_lms_course
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -215,7 +216,7 @@ req = Models::Operations::PatchLmsCourseRequest.new(
     currency: 'FJD',
     description: 'Vinco alias aut capitulus.',
     duration_minutes: 148.0,
-    id: 'e5fd4218-b998-4e25-8ec9-c8d976623f7a',
+    id: '7ec46a0e-9733-463a-b4d2-7d64c87f8ac1',
     instructors: [],
     is_active: true,
     is_private: false,
@@ -238,17 +239,18 @@ req = Models::Operations::PatchLmsCourseRequest.new(
         url: 'https://picsum.photos/seed/fQAbsk/2472/1671',
       ),
     ],
+    metadata: [],
     name: 'comptus',
     price_amount: 84.0,
     provider_name: 'Homenick - Wunsch',
-    published_at: DateTime.iso8601('2023-12-30T03:35:03.902Z'),
+    published_at: DateTime.iso8601('2022-11-05T19:09:55.353Z'),
     skills: [
       'adiuvo',
       'tam',
     ],
     students: [],
     time_estimate_minutes: 100.0,
-    updated_at: DateTime.iso8601('2023-02-07T04:44:43.440Z'),
+    updated_at: DateTime.iso8601('2023-02-09T22:25:04.841Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -280,7 +282,7 @@ end
 
 ## remove_lms_course
 
-Remove a course
+Deletes the LmsCourse identified by `id`.
 
 ### Example Usage
 
@@ -322,7 +324,7 @@ end
 
 ## update_lms_course
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -347,7 +349,7 @@ req = Models::Operations::UpdateLmsCourseRequest.new(
     currency: 'FJD',
     description: 'Vinco alias aut capitulus.',
     duration_minutes: 148.0,
-    id: 'e5fd4218-b998-4e25-8ec9-c8d976623f7a',
+    id: '7ec46a0e-9733-463a-b4d2-7d64c87f8ac1',
     instructors: [],
     is_active: true,
     is_private: false,
@@ -370,17 +372,18 @@ req = Models::Operations::UpdateLmsCourseRequest.new(
         url: 'https://picsum.photos/seed/fQAbsk/2472/1671',
       ),
     ],
+    metadata: [],
     name: 'comptus',
     price_amount: 84.0,
     provider_name: 'Homenick - Wunsch',
-    published_at: DateTime.iso8601('2023-12-30T03:35:03.902Z'),
+    published_at: DateTime.iso8601('2022-11-05T19:09:55.353Z'),
     skills: [
       'adiuvo',
       'tam',
     ],
     students: [],
     time_estimate_minutes: 100.0,
-    updated_at: DateTime.iso8601('2023-02-07T04:44:43.440Z'),
+    updated_at: DateTime.iso8601('2023-02-09T22:25:04.841Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

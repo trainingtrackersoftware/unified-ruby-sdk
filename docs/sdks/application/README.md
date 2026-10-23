@@ -14,7 +14,7 @@
 
 ## create_ats_application
 
-Create an application
+Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
 
 ### Example Usage
 
@@ -31,31 +31,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.application.create_ats_application(ats_application: Models::Shared::AtsApplication.new(
   answers: [],
-  applied_at: DateTime.iso8601('2025-09-10T08:01:12.569Z'),
+  applied_at: DateTime.iso8601('2025-10-01T01:37:37.720Z'),
   created_at: DateTime.iso8601('2023-10-17T07:19:48.787Z'),
-  hired_at: DateTime.iso8601('2026-04-17T04:40:08.977Z'),
-  id: 'b9551fea-9345-452f-ac1d-9224d16cc214',
+  hired_at: DateTime.iso8601('2026-05-14T11:11:43.330Z'),
+  id: '57c46487-4ef4-4520-b33f-0dc7a4f08009',
   metadata: [
     Models::Shared::AtsMetadata.new(
       extra_data: {
 
       },
       format: Models::Shared::AtsMetadataFormat::TEXT,
-      id: 'a1302a79-0341-40e6-b91a-daeb95584617',
+      id: '3333fd9f-537d-4099-a087-c44c032b92ff',
       namespace: 'application',
-      slug: 'despecto',
-      value: 'Argentum decretum cultellus aveho distinctio verecundia stella depono.',
+      slug: 'stella',
+      value: 'Caput.',
     ),
   ],
   offers: [],
   original_status: 'vomica',
   original_substatus: 'allatus',
-  rejected_at: DateTime.iso8601('2026-09-11T20:00:10.437Z'),
+  rejected_at: DateTime.iso8601('2026-10-13T12:23:01.431Z'),
   rejected_reason: 'Cometes amplitudo videlicet talio.',
   source: 'credo',
   status: Models::Shared::AtsApplicationStatus::REVIEWING,
-  summary: 'Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.',
-  updated_at: DateTime.iso8601('2026-09-18T11:45:52.820Z'),
+  summary: 'Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.',
+  updated_at: DateTime.iso8601('2026-10-20T08:55:05.791Z'),
 ), connection_id: '<id>')
 
 unless res.ats_application.nil?
@@ -85,7 +85,7 @@ end
 
 ## get_ats_application
 
-Retrieve an application
+Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -129,7 +129,7 @@ end
 
 ## list_ats_applications
 
-List all applications
+Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -174,7 +174,7 @@ end
 
 ## patch_ats_application
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -192,31 +192,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAtsApplicationRequest.new(
   ats_application: Models::Shared::AtsApplication.new(
     answers: [],
-    applied_at: DateTime.iso8601('2025-09-10T08:01:12.582Z'),
+    applied_at: DateTime.iso8601('2025-10-01T01:37:37.743Z'),
     created_at: DateTime.iso8601('2023-10-17T07:19:48.787Z'),
-    hired_at: DateTime.iso8601('2026-04-17T04:40:08.994Z'),
-    id: '96e8b30f-3e90-4079-acda-4c4a2a432054',
+    hired_at: DateTime.iso8601('2026-05-14T11:11:43.360Z'),
+    id: 'a14c3793-96f0-4da0-ab90-d018fce93490',
     metadata: [
       Models::Shared::AtsMetadata.new(
         extra_data: {
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'a1302a79-0341-40e6-b91a-daeb95584617',
+        id: '2102778b-bf7f-4765-90b8-dfcf65e38dfa',
         namespace: 'application',
-        slug: 'despecto',
-        value: 'Argentum decretum cultellus aveho distinctio verecundia stella depono.',
+        slug: 'stella',
+        value: 'Caput.',
       ),
     ],
     offers: [],
     original_status: 'vomica',
     original_substatus: 'allatus',
-    rejected_at: DateTime.iso8601('2026-09-11T20:00:10.456Z'),
+    rejected_at: DateTime.iso8601('2026-10-13T12:23:01.466Z'),
     rejected_reason: 'Cometes amplitudo videlicet talio.',
     source: 'credo',
     status: Models::Shared::AtsApplicationStatus::REVIEWING,
-    summary: 'Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.',
-    updated_at: DateTime.iso8601('2026-09-18T11:45:52.839Z'),
+    summary: 'Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.',
+    updated_at: DateTime.iso8601('2026-10-20T08:55:05.826Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -248,7 +248,7 @@ end
 
 ## remove_ats_application
 
-Remove an application
+Deletes the AtsApplication identified by `id`.
 
 ### Example Usage
 
@@ -290,7 +290,7 @@ end
 
 ## update_ats_application
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -308,31 +308,31 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAtsApplicationRequest.new(
   ats_application: Models::Shared::AtsApplication.new(
     answers: [],
-    applied_at: DateTime.iso8601('2025-09-10T08:01:12.582Z'),
+    applied_at: DateTime.iso8601('2025-10-01T01:37:37.743Z'),
     created_at: DateTime.iso8601('2023-10-17T07:19:48.787Z'),
-    hired_at: DateTime.iso8601('2026-04-17T04:40:08.994Z'),
-    id: '96e8b30f-3e90-4079-acda-4c4a2a432054',
+    hired_at: DateTime.iso8601('2026-05-14T11:11:43.360Z'),
+    id: 'a14c3793-96f0-4da0-ab90-d018fce93490',
     metadata: [
       Models::Shared::AtsMetadata.new(
         extra_data: {
 
         },
         format: Models::Shared::AtsMetadataFormat::TEXT,
-        id: 'a1302a79-0341-40e6-b91a-daeb95584617',
+        id: '2102778b-bf7f-4765-90b8-dfcf65e38dfa',
         namespace: 'application',
-        slug: 'despecto',
-        value: 'Argentum decretum cultellus aveho distinctio verecundia stella depono.',
+        slug: 'stella',
+        value: 'Caput.',
       ),
     ],
     offers: [],
     original_status: 'vomica',
     original_substatus: 'allatus',
-    rejected_at: DateTime.iso8601('2026-09-11T20:00:10.456Z'),
+    rejected_at: DateTime.iso8601('2026-10-13T12:23:01.466Z'),
     rejected_reason: 'Cometes amplitudo videlicet talio.',
     source: 'credo',
     status: Models::Shared::AtsApplicationStatus::REVIEWING,
-    summary: 'Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.',
-    updated_at: DateTime.iso8601('2026-09-18T11:45:52.839Z'),
+    summary: 'Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.',
+    updated_at: DateTime.iso8601('2026-10-20T08:55:05.826Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

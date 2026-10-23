@@ -17,27 +17,29 @@ module UnifiedRubySDK
         field :type, Models::Shared::AssessmentPackageType, { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('type'), required: true, 'decoder': Utils.enum_from_string(Models::Shared::AssessmentPackageType, false) } }
         # Alternative namesidentifiers for this package
         field :aliases, Crystalline::Nilable.new(Crystalline::Array.new(::String)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('aliases') } }
-
+        # Connection ID that this package belongs to
         field :connection_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('connection_id') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Detailed description
         field :description, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('description') } }
-
+        # Whether provider redirects user to complete assessment
         field :has_redirect_url, Crystalline::Nilable.new(Crystalline::Boolean.new), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('has_redirect_url') } }
-
+        # Where provider redirects user after completion
         field :has_target_url, Crystalline::Nilable.new(Crystalline::Boolean.new), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('has_target_url') } }
-
+        # Unique identifier for the assessment package
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
-
+        # URL to find additional information about this package
         field :info_url, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('info_url') } }
         # Integration types that support this package
         field :integration_types, Crystalline::Nilable.new(Crystalline::Array.new(::String)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('integration_types') } }
-
+        # Maximum possible score if this assessment returns a score
         field :max_score, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('max_score') } }
 
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::AssessmentMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
+        # Name of the assessment package
         field :name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('name') } }
-
+        # Whether IP address is required
         field :needs_ip_address, Crystalline::Nilable.new(Crystalline::Boolean.new), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('needs_ip_address') } }
         # Questionsinputs needed for this assessment (aligned with verification)
         field :parameters, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::AssessmentParameter)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('parameters') } }
@@ -47,13 +49,13 @@ module UnifiedRubySDK
         field :regions, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::AssessmentPackageRegion)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('regions') } }
         # Category tags (e.g., "Assessment", "Background Check")
         field :tags, Crystalline::Nilable.new(Crystalline::Array.new(::String)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('tags') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Workspace ID that this package belongs to (reference to KmsSpace)
         field :workspace_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('workspace_id') } }
 
-        sig { params(type: Models::Shared::AssessmentPackageType, aliases: T.nilable(T::Array[::String]), connection_id: T.nilable(::String), created_at: T.nilable(::DateTime), description: T.nilable(::String), has_redirect_url: T.nilable(T::Boolean), has_target_url: T.nilable(T::Boolean), id: T.nilable(::String), info_url: T.nilable(::String), integration_types: T.nilable(T::Array[::String]), max_score: T.nilable(::Float), name: T.nilable(::String), needs_ip_address: T.nilable(T::Boolean), parameters: T.nilable(T::Array[Models::Shared::AssessmentParameter]), raw: T.nilable(T::Hash[Symbol, ::Object]), regions: T.nilable(T::Array[Models::Shared::AssessmentPackageRegion]), tags: T.nilable(T::Array[::String]), updated_at: T.nilable(::DateTime), workspace_id: T.nilable(::String)).void }
-        def initialize(type:, aliases: nil, connection_id: nil, created_at: nil, description: nil, has_redirect_url: nil, has_target_url: nil, id: nil, info_url: nil, integration_types: nil, max_score: nil, name: nil, needs_ip_address: nil, parameters: nil, raw: nil, regions: nil, tags: nil, updated_at: nil, workspace_id: nil)
+        sig { params(type: Models::Shared::AssessmentPackageType, aliases: T.nilable(T::Array[::String]), connection_id: T.nilable(::String), created_at: T.nilable(::DateTime), description: T.nilable(::String), has_redirect_url: T.nilable(T::Boolean), has_target_url: T.nilable(T::Boolean), id: T.nilable(::String), info_url: T.nilable(::String), integration_types: T.nilable(T::Array[::String]), max_score: T.nilable(::Float), metadata: T.nilable(T::Array[Models::Shared::AssessmentMetadata]), name: T.nilable(::String), needs_ip_address: T.nilable(T::Boolean), parameters: T.nilable(T::Array[Models::Shared::AssessmentParameter]), raw: T.nilable(T::Hash[Symbol, ::Object]), regions: T.nilable(T::Array[Models::Shared::AssessmentPackageRegion]), tags: T.nilable(T::Array[::String]), updated_at: T.nilable(::DateTime), workspace_id: T.nilable(::String)).void }
+        def initialize(type:, aliases: nil, connection_id: nil, created_at: nil, description: nil, has_redirect_url: nil, has_target_url: nil, id: nil, info_url: nil, integration_types: nil, max_score: nil, metadata: nil, name: nil, needs_ip_address: nil, parameters: nil, raw: nil, regions: nil, tags: nil, updated_at: nil, workspace_id: nil)
           @type = type
           @aliases = aliases
           @connection_id = connection_id
@@ -65,6 +67,7 @@ module UnifiedRubySDK
           @info_url = info_url
           @integration_types = integration_types
           @max_score = max_score
+          @metadata = metadata
           @name = name
           @needs_ip_address = needs_ip_address
           @parameters = parameters
@@ -89,6 +92,7 @@ module UnifiedRubySDK
           return false unless @info_url == other.info_url
           return false unless @integration_types == other.integration_types
           return false unless @max_score == other.max_score
+          return false unless @metadata == other.metadata
           return false unless @name == other.name
           return false unless @needs_ip_address == other.needs_ip_address
           return false unless @parameters == other.parameters

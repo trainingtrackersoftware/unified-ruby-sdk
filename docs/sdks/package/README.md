@@ -39,12 +39,13 @@ res = s.package.create_assessment_package(assessment_package: Models::Shared::As
   description: 'Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.',
   has_redirect_url: true,
   has_target_url: false,
-  id: 'ba669d94-997b-412d-8dca-f79131f242ef',
+  id: '9d6d357e-ec51-4231-89e4-1f948f7bf3eb',
   info_url: 'https://ugly-instance.biz/',
   integration_types: [
     'viridis',
   ],
   max_score: 22.0,
+  metadata: [],
   name: 'Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.',
   needs_ip_address: true,
   parameters: [],
@@ -53,7 +54,7 @@ res = s.package.create_assessment_package(assessment_package: Models::Shared::As
     'clamo',
   ],
   type: Models::Shared::AssessmentPackageType::VIDEO_INTERVIEW,
-  updated_at: DateTime.iso8601('2023-09-18T21:16:01.106Z'),
+  updated_at: DateTime.iso8601('2023-09-25T19:34:50.962Z'),
 ), connection_id: '<id>')
 
 unless res.assessment_package.nil?
@@ -123,7 +124,7 @@ end
 
 ## get_verification_package
 
-Retrieve a package
+Retrieves a single VerificationPackage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -210,7 +211,7 @@ end
 
 ## list_verification_packages
 
-List all packages
+Returns a list of VerificationPackages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -278,12 +279,13 @@ res = s.package.patch_assessment_package(assessment_package: Models::Shared::Ass
   description: 'Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.',
   has_redirect_url: true,
   has_target_url: false,
-  id: '0c813f8c-6a21-409b-a384-015244895a32',
+  id: '84f63991-8347-405e-8e47-037c8ca3aadc',
   info_url: 'https://ugly-instance.biz/',
   integration_types: [
     'viridis',
   ],
   max_score: 22.0,
+  metadata: [],
   name: 'Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.',
   needs_ip_address: true,
   parameters: [],
@@ -292,7 +294,7 @@ res = s.package.patch_assessment_package(assessment_package: Models::Shared::Ass
     'clamo',
   ],
   type: Models::Shared::AssessmentPackageType::VIDEO_INTERVIEW,
-  updated_at: DateTime.iso8601('2023-09-18T21:16:01.109Z'),
+  updated_at: DateTime.iso8601('2023-09-25T19:34:50.967Z'),
 ), connection_id: '<id>', id: '<id>')
 
 unless res.assessment_package.nil?
@@ -386,12 +388,13 @@ res = s.package.update_assessment_package(assessment_package: Models::Shared::As
   description: 'Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.',
   has_redirect_url: true,
   has_target_url: false,
-  id: '0c813f8c-6a21-409b-a384-015244895a32',
+  id: '84f63991-8347-405e-8e47-037c8ca3aadc',
   info_url: 'https://ugly-instance.biz/',
   integration_types: [
     'viridis',
   ],
   max_score: 22.0,
+  metadata: [],
   name: 'Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.',
   needs_ip_address: true,
   parameters: [],
@@ -400,7 +403,7 @@ res = s.package.update_assessment_package(assessment_package: Models::Shared::As
     'clamo',
   ],
   type: Models::Shared::AssessmentPackageType::VIDEO_INTERVIEW,
-  updated_at: DateTime.iso8601('2023-09-18T21:16:01.109Z'),
+  updated_at: DateTime.iso8601('2023-09-25T19:34:50.967Z'),
 ), connection_id: '<id>', id: '<id>')
 
 unless res.assessment_package.nil?

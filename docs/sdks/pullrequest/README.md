@@ -14,7 +14,7 @@
 
 ## create_repo_pullrequest
 
-Create a pullrequest
+Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
 
 ### Example Usage
 
@@ -30,19 +30,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.pullrequest.create_repo_pullrequest(repo_pullrequest: Models::Shared::RepoPullrequest.new(
-  closed_at: DateTime.iso8601('2025-04-13T16:53:13.472Z'),
+  closed_at: DateTime.iso8601('2025-05-02T18:18:59.473Z'),
   created_at: DateTime.iso8601('2023-02-27T09:37:13.663Z'),
-  id: 'abe61881-290f-49db-9dda-5a3c14d1111a',
+  id: 'd0924875-30a8-4330-8ecc-c1e883a38cd1',
   labels: [
-    'adhuc',
-    'quaerat',
+    'creptio',
+    'tutamen',
   ],
-  notes: 'Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.',
-  source_branch_id: 'microchip-navigate',
-  status: Models::Shared::RepoPullrequestStatus::REJECTED,
-  target_branch_id: 'feed-reboot',
-  title: 'Cunae aegrus averto texo advoco bibo amet asporto.',
-  updated_at: DateTime.iso8601('2025-01-01T13:24:36.687Z'),
+  metadata: [],
+  notes: 'Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.',
+  status: Models::Shared::RepoPullrequestStatus::APPROVED,
+  title: 'reboot mobile application',
+  updated_at: DateTime.iso8601('2026-01-18T20:52:11.514Z'),
 ), connection_id: '<id>')
 
 unless res.repo_pullrequest.nil?
@@ -72,7 +71,7 @@ end
 
 ## get_repo_pullrequest
 
-Retrieve a pullrequest
+Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -116,7 +115,7 @@ end
 
 ## list_repo_pullrequests
 
-List all pullrequests
+Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -161,7 +160,7 @@ end
 
 ## patch_repo_pullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -178,19 +177,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchRepoPullrequestRequest.new(
   repo_pullrequest: Models::Shared::RepoPullrequest.new(
-    closed_at: DateTime.iso8601('2025-04-13T16:53:13.480Z'),
+    closed_at: DateTime.iso8601('2025-05-02T18:18:59.479Z'),
     created_at: DateTime.iso8601('2023-02-27T09:37:13.663Z'),
-    id: 'e110885a-bc17-46c9-8c2e-133a24165d7d',
+    id: '9ab6e939-684f-4b33-8512-d5c39fd5d35c',
     labels: [
-      'adhuc',
-      'quaerat',
+      'creptio',
+      'tutamen',
     ],
-    notes: 'Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.',
-    source_branch_id: 'microchip-navigate',
-    status: Models::Shared::RepoPullrequestStatus::REJECTED,
-    target_branch_id: 'feed-reboot',
-    title: 'Cunae aegrus averto texo advoco bibo amet asporto.',
-    updated_at: DateTime.iso8601('2025-01-01T13:24:36.693Z'),
+    metadata: [],
+    notes: 'Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.',
+    status: Models::Shared::RepoPullrequestStatus::APPROVED,
+    title: 'reboot mobile application',
+    updated_at: DateTime.iso8601('2026-01-18T20:52:11.524Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -222,7 +220,7 @@ end
 
 ## remove_repo_pullrequest
 
-Remove a pullrequest
+Deletes the RepoPullrequest identified by `id`.
 
 ### Example Usage
 
@@ -264,7 +262,7 @@ end
 
 ## update_repo_pullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -281,19 +279,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateRepoPullrequestRequest.new(
   repo_pullrequest: Models::Shared::RepoPullrequest.new(
-    closed_at: DateTime.iso8601('2025-04-13T16:53:13.480Z'),
+    closed_at: DateTime.iso8601('2025-05-02T18:18:59.479Z'),
     created_at: DateTime.iso8601('2023-02-27T09:37:13.663Z'),
-    id: 'e110885a-bc17-46c9-8c2e-133a24165d7d',
+    id: '9ab6e939-684f-4b33-8512-d5c39fd5d35c',
     labels: [
-      'adhuc',
-      'quaerat',
+      'creptio',
+      'tutamen',
     ],
-    notes: 'Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.',
-    source_branch_id: 'microchip-navigate',
-    status: Models::Shared::RepoPullrequestStatus::REJECTED,
-    target_branch_id: 'feed-reboot',
-    title: 'Cunae aegrus averto texo advoco bibo amet asporto.',
-    updated_at: DateTime.iso8601('2025-01-01T13:24:36.693Z'),
+    metadata: [],
+    notes: 'Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.',
+    status: Models::Shared::RepoPullrequestStatus::APPROVED,
+    title: 'reboot mobile application',
+    updated_at: DateTime.iso8601('2026-01-18T20:52:11.524Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

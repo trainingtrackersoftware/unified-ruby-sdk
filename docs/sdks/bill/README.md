@@ -14,7 +14,7 @@
 
 ## create_accounting_bill
 
-Create a bill
+Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
 
 ### Example Usage
 
@@ -30,30 +30,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.bill.create_accounting_bill(accounting_bill: Models::Shared::AccountingBill.new(
-  attachments: [],
-  bill_number: 'vitae',
+  attachments: [
+    Models::Shared::AccountingAttachment.new(
+      download_url: 'https://puny-foodstuffs.name',
+      id: '55e2ddb4-12ee-4738-acf5-9f35ad4fae0d',
+      mime_type: 'application/pdf',
+      name: 'BILL-2466.pdf',
+    ),
+    Models::Shared::AccountingAttachment.new(
+      download_url: 'https://grimy-characterization.net',
+      id: '59a88258-e743-46c1-8155-1bda358b5387',
+      mime_type: 'application/pdf',
+      name: 'BILL-2466-1.pdf',
+    ),
+  ],
+  balance_amount: 0.0,
+  bill_number: 'BILL-2466',
   category_ids: [],
   created_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
-  currency: 'AUD',
+  currency: 'USD',
   discount_amount: 0.0,
-  due_at: DateTime.iso8601('2019-08-11T20:52:55.321Z'),
+  due_at: DateTime.iso8601('2019-09-07T23:03:14.104Z'),
   extended_notes: [],
-  id: 'c1508f96-35ec-472c-a901-f0ee469454e4',
+  id: '033ba014-5082-45c2-856f-1d28639c1b99',
   lineitems: [],
   metadata: [],
-  notes: 'Tutamen cilicium infit.',
+  notes: 'Admiratio deporto tutamen cilicium infit amissio ante demulceo.',
+  paid_amount: 0.0,
+  paid_at: DateTime.iso8601('2019-08-15T17:24:28.313Z'),
   payment_collection_method: Models::Shared::PaymentCollectionMethod::CHARGE_AUTOMATICALLY,
   payments: [],
-  posted_at: DateTime.iso8601('2024-04-06T07:02:22.576Z'),
+  posted_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
   purchaseorder_ids: [],
   send: true,
-  status: Models::Shared::AccountingBillStatus::DELETED,
+  status: Models::Shared::AccountingBillStatus::PARTIALLY_PAID,
   sub_total_amount: 0.0,
   tax_amount: 0.0,
-  term: Models::Shared::Term::NET_10,
+  term: Models::Shared::Term::NET_90,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2025-01-31T09:00:56.052Z'),
-  url: 'https://coarse-interviewer.biz/',
+  updated_at: DateTime.iso8601('2020-06-01T11:04:57.928Z'),
+  url: 'https://cluttered-importance.org/bills/BILL-2466',
 ), connection_id: '<id>')
 
 unless res.accounting_bill.nil?
@@ -83,7 +99,7 @@ end
 
 ## get_accounting_bill
 
-Retrieve a bill
+Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -127,7 +143,7 @@ end
 
 ## list_accounting_bills
 
-List all bills
+Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -172,7 +188,7 @@ end
 
 ## patch_accounting_bill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -189,30 +205,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingBillRequest.new(
   accounting_bill: Models::Shared::AccountingBill.new(
-    attachments: [],
-    bill_number: 'vitae',
+    attachments: [
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://puny-foodstuffs.name',
+        id: '47e28818-2f6e-41d9-9ef8-4f7a72a6c602',
+        mime_type: 'application/pdf',
+        name: 'BILL-2466.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://grimy-characterization.net',
+        id: 'c367990e-fc87-453d-b207-e522909fbfde',
+        mime_type: 'application/pdf',
+        name: 'BILL-2466-1.pdf',
+      ),
+    ],
+    balance_amount: 0.0,
+    bill_number: 'BILL-2466',
     category_ids: [],
     created_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
-    currency: 'AUD',
+    currency: 'USD',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2019-08-11T20:52:55.321Z'),
+    due_at: DateTime.iso8601('2019-09-07T23:03:14.104Z'),
     extended_notes: [],
-    id: '1d6afaf7-b2f7-4b88-b0e8-a071286a07b8',
+    id: '39341e04-0e59-4b05-81de-8bf65b0c1ee7',
     lineitems: [],
     metadata: [],
-    notes: 'Tutamen cilicium infit.',
+    notes: 'Admiratio deporto tutamen cilicium infit amissio ante demulceo.',
+    paid_amount: 0.0,
+    paid_at: DateTime.iso8601('2019-08-15T17:24:28.313Z'),
     payment_collection_method: Models::Shared::PaymentCollectionMethod::CHARGE_AUTOMATICALLY,
     payments: [],
-    posted_at: DateTime.iso8601('2024-04-06T07:02:22.604Z'),
+    posted_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
     purchaseorder_ids: [],
     send: true,
-    status: Models::Shared::AccountingBillStatus::DELETED,
+    status: Models::Shared::AccountingBillStatus::PARTIALLY_PAID,
     sub_total_amount: 0.0,
     tax_amount: 0.0,
-    term: Models::Shared::Term::NET_10,
+    term: Models::Shared::Term::NET_90,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2025-01-31T09:00:56.085Z'),
-    url: 'https://coarse-interviewer.biz/',
+    updated_at: DateTime.iso8601('2020-06-01T11:04:57.934Z'),
+    url: 'https://cluttered-importance.org/bills/BILL-2466',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -244,7 +276,7 @@ end
 
 ## remove_accounting_bill
 
-Remove a bill
+Deletes the AccountingBill identified by `id`.
 
 ### Example Usage
 
@@ -286,7 +318,7 @@ end
 
 ## update_accounting_bill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -303,30 +335,46 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingBillRequest.new(
   accounting_bill: Models::Shared::AccountingBill.new(
-    attachments: [],
-    bill_number: 'vitae',
+    attachments: [
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://puny-foodstuffs.name',
+        id: '47e28818-2f6e-41d9-9ef8-4f7a72a6c602',
+        mime_type: 'application/pdf',
+        name: 'BILL-2466.pdf',
+      ),
+      Models::Shared::AccountingAttachment.new(
+        download_url: 'https://grimy-characterization.net',
+        id: 'c367990e-fc87-453d-b207-e522909fbfde',
+        mime_type: 'application/pdf',
+        name: 'BILL-2466-1.pdf',
+      ),
+    ],
+    balance_amount: 0.0,
+    bill_number: 'BILL-2466',
     category_ids: [],
     created_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
-    currency: 'AUD',
+    currency: 'USD',
     discount_amount: 0.0,
-    due_at: DateTime.iso8601('2019-08-11T20:52:55.321Z'),
+    due_at: DateTime.iso8601('2019-09-07T23:03:14.104Z'),
     extended_notes: [],
-    id: '1d6afaf7-b2f7-4b88-b0e8-a071286a07b8',
+    id: '39341e04-0e59-4b05-81de-8bf65b0c1ee7',
     lineitems: [],
     metadata: [],
-    notes: 'Tutamen cilicium infit.',
+    notes: 'Admiratio deporto tutamen cilicium infit amissio ante demulceo.',
+    paid_amount: 0.0,
+    paid_at: DateTime.iso8601('2019-08-15T17:24:28.313Z'),
     payment_collection_method: Models::Shared::PaymentCollectionMethod::CHARGE_AUTOMATICALLY,
     payments: [],
-    posted_at: DateTime.iso8601('2024-04-06T07:02:22.604Z'),
+    posted_at: DateTime.iso8601('2019-08-08T23:03:14.104Z'),
     purchaseorder_ids: [],
     send: true,
-    status: Models::Shared::AccountingBillStatus::DELETED,
+    status: Models::Shared::AccountingBillStatus::PARTIALLY_PAID,
     sub_total_amount: 0.0,
     tax_amount: 0.0,
-    term: Models::Shared::Term::NET_10,
+    term: Models::Shared::Term::NET_90,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2025-01-31T09:00:56.085Z'),
-    url: 'https://coarse-interviewer.biz/',
+    updated_at: DateTime.iso8601('2020-06-01T11:04:57.934Z'),
+    url: 'https://cluttered-importance.org/bills/BILL-2466',
   ),
   connection_id: '<id>',
   id: '<id>',

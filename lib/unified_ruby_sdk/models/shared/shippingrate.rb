@@ -13,33 +13,36 @@ module UnifiedRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
+        # Reference to the carrier
         field :carrier_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('carrier_id') } }
 
         field :currency, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('currency') } }
         # Origin address
         field :from_address, Crystalline::Nilable.new(Models::Shared::PropertyShippingRateFromAddress), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('from_address') } }
-
+        # Unique identifier for this rate object
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
+
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::ShippingMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
         # Multiple packages (alternative to package)
         field :packages, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::ShippingPackage)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('packages') } }
 
         field :rates, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::ShippingRateRate)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('rates') } }
 
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
-
+        # Latest date to ship (from order) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :ship_by_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('ship_by_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Reference to the shipping object (if rate is for existing shipment)
         field :shipment_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('shipment_id') } }
         # Destination address
         field :to_address, Crystalline::Nilable.new(Models::Shared::PropertyShippingRateToAddress), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('to_address') } }
 
-        sig { params(carrier_id: T.nilable(::String), currency: T.nilable(::String), from_address: T.nilable(Models::Shared::PropertyShippingRateFromAddress), id: T.nilable(::String), packages: T.nilable(T::Array[Models::Shared::ShippingPackage]), rates: T.nilable(T::Array[Models::Shared::ShippingRateRate]), raw: T.nilable(T::Hash[Symbol, ::Object]), ship_by_at: T.nilable(::DateTime), shipment_id: T.nilable(::String), to_address: T.nilable(Models::Shared::PropertyShippingRateToAddress)).void }
-        def initialize(carrier_id: nil, currency: nil, from_address: nil, id: nil, packages: nil, rates: nil, raw: nil, ship_by_at: nil, shipment_id: nil, to_address: nil)
+        sig { params(carrier_id: T.nilable(::String), currency: T.nilable(::String), from_address: T.nilable(Models::Shared::PropertyShippingRateFromAddress), id: T.nilable(::String), metadata: T.nilable(T::Array[Models::Shared::ShippingMetadata]), packages: T.nilable(T::Array[Models::Shared::ShippingPackage]), rates: T.nilable(T::Array[Models::Shared::ShippingRateRate]), raw: T.nilable(T::Hash[Symbol, ::Object]), ship_by_at: T.nilable(::DateTime), shipment_id: T.nilable(::String), to_address: T.nilable(Models::Shared::PropertyShippingRateToAddress)).void }
+        def initialize(carrier_id: nil, currency: nil, from_address: nil, id: nil, metadata: nil, packages: nil, rates: nil, raw: nil, ship_by_at: nil, shipment_id: nil, to_address: nil)
           @carrier_id = carrier_id
           @currency = currency
           @from_address = from_address
           @id = id
+          @metadata = metadata
           @packages = packages
           @rates = rates
           @raw = raw
@@ -55,6 +58,7 @@ module UnifiedRubySDK
           return false unless @currency == other.currency
           return false unless @from_address == other.from_address
           return false unless @id == other.id
+          return false unless @metadata == other.metadata
           return false unless @packages == other.packages
           return false unless @rates == other.rates
           return false unless @raw == other.raw

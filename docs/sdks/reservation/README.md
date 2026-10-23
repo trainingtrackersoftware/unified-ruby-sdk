@@ -14,7 +14,7 @@
 
 ## create_commerce_reservation
 
-Create a reservation
+Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
 
 ### Example Usage
 
@@ -32,18 +32,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.reservation.create_commerce_reservation(commerce_reservation: Models::Shared::CommerceReservation.new(
   created_at: DateTime.iso8601('2021-12-14T19:50:31.151Z'),
   end_at: DateTime.iso8601('2022-01-01T22:00:17.868Z'),
-  guest_email: 'Sunny.Strosin77@yahoo.com',
-  guest_name: 'Annette Franecki',
-  guest_phone: '(990) 317-6213',
-  id: '1a177edf-e865-4d48-97fa-a96f8c8c2d4f',
-  item_name: 'Practical Ceramic Shoes',
+  guest_email: 'julien.bartoletti@icloud.com',
+  guest_name: 'Julien Bartoletti',
+  guest_phone: '(728) 596-2620',
+  id: '8fc9ed13-ae4e-4a15-bb40-bbb5b203a787',
+  metadata: [],
   notes: 'Adsum textilis ipsum despecto.',
   size: 10.0,
-  staff_name: 'Vickie Fahey',
   start_at: DateTime.iso8601('2021-12-18T00:40:25.125Z'),
   status: Models::Shared::CommerceReservationStatus::PENDING,
-  updated_at: DateTime.iso8601('2022-12-28T09:01:03.532Z'),
-  url: 'https://cluttered-pine.info/',
+  updated_at: DateTime.iso8601('2023-01-04T07:45:43.823Z'),
+  url: 'https://expensive-gift.org',
 ), connection_id: '<id>')
 
 unless res.commerce_reservation.nil?
@@ -73,7 +72,7 @@ end
 
 ## get_commerce_reservation
 
-Retrieve a reservation
+Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -117,7 +116,7 @@ end
 
 ## list_commerce_reservations
 
-List all reservations
+Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -162,7 +161,7 @@ end
 
 ## patch_commerce_reservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -181,18 +180,17 @@ req = Models::Operations::PatchCommerceReservationRequest.new(
   commerce_reservation: Models::Shared::CommerceReservation.new(
     created_at: DateTime.iso8601('2021-12-14T19:50:31.151Z'),
     end_at: DateTime.iso8601('2022-01-01T22:00:17.868Z'),
-    guest_email: 'Sunny.Strosin77@yahoo.com',
-    guest_name: 'Annette Franecki',
-    guest_phone: '(990) 317-6213',
-    id: 'cf8fcd48-48b2-48a3-a9ba-826de75c34e1',
-    item_name: 'Practical Ceramic Shoes',
+    guest_email: 'julien.bartoletti@icloud.com',
+    guest_name: 'Julien Bartoletti',
+    guest_phone: '(728) 596-2620',
+    id: 'a5c680e7-8a89-412e-9043-134d1481fef3',
+    metadata: [],
     notes: 'Adsum textilis ipsum despecto.',
     size: 10.0,
-    staff_name: 'Vickie Fahey',
     start_at: DateTime.iso8601('2021-12-18T00:40:25.125Z'),
     status: Models::Shared::CommerceReservationStatus::PENDING,
-    updated_at: DateTime.iso8601('2022-12-28T09:01:03.535Z'),
-    url: 'https://cluttered-pine.info/',
+    updated_at: DateTime.iso8601('2023-01-04T07:45:43.827Z'),
+    url: 'https://expensive-gift.org',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -224,7 +222,7 @@ end
 
 ## remove_commerce_reservation
 
-Remove a reservation
+Deletes the CommerceReservation identified by `id`.
 
 ### Example Usage
 
@@ -266,7 +264,7 @@ end
 
 ## update_commerce_reservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -285,18 +283,17 @@ req = Models::Operations::UpdateCommerceReservationRequest.new(
   commerce_reservation: Models::Shared::CommerceReservation.new(
     created_at: DateTime.iso8601('2021-12-14T19:50:31.151Z'),
     end_at: DateTime.iso8601('2022-01-01T22:00:17.868Z'),
-    guest_email: 'Sunny.Strosin77@yahoo.com',
-    guest_name: 'Annette Franecki',
-    guest_phone: '(990) 317-6213',
-    id: 'cf8fcd48-48b2-48a3-a9ba-826de75c34e1',
-    item_name: 'Practical Ceramic Shoes',
+    guest_email: 'julien.bartoletti@icloud.com',
+    guest_name: 'Julien Bartoletti',
+    guest_phone: '(728) 596-2620',
+    id: 'a5c680e7-8a89-412e-9043-134d1481fef3',
+    metadata: [],
     notes: 'Adsum textilis ipsum despecto.',
     size: 10.0,
-    staff_name: 'Vickie Fahey',
     start_at: DateTime.iso8601('2021-12-18T00:40:25.125Z'),
     status: Models::Shared::CommerceReservationStatus::PENDING,
-    updated_at: DateTime.iso8601('2022-12-28T09:01:03.535Z'),
-    url: 'https://cluttered-pine.info/',
+    updated_at: DateTime.iso8601('2023-01-04T07:45:43.827Z'),
+    url: 'https://expensive-gift.org',
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -7,28 +7,39 @@
 
 * [create_genai_agent](#create_genai_agent) - Create an agent
 * [create_genai_embedding](#create_genai_embedding) - Create an embedding
+* [create_genai_memory](#create_genai_memory) - Create a memory
 * [create_genai_organization](#create_genai_organization) - Create an organization
 * [create_genai_prompt](#create_genai_prompt) - Create a prompt
 * [create_genai_task](#create_genai_task) - Create a task
 * [get_genai_agent](#get_genai_agent) - Retrieve an agent
+* [get_genai_memory](#get_genai_memory) - Retrieve a memory
 * [get_genai_model](#get_genai_model) - Retrieve a model
 * [get_genai_organization](#get_genai_organization) - Retrieve an organization
+* [get_genai_skill](#get_genai_skill) - Retrieve a skill
 * [get_genai_task](#get_genai_task) - Retrieve a task
 * [list_genai_agents](#list_genai_agents) - List all agents
+* [list_genai_memories](#list_genai_memories) - List all memories
 * [list_genai_models](#list_genai_models) - List all models
 * [list_genai_organizations](#list_genai_organizations) - List all organizations
+* [list_genai_skills](#list_genai_skills) - List all skills
 * [list_genai_tasks](#list_genai_tasks) - List all tasks
 * [patch_genai_agent](#patch_genai_agent) - Update an agent
+* [patch_genai_memory](#patch_genai_memory) - Update a memory
 * [patch_genai_organization](#patch_genai_organization) - Update an organization
+* [patch_genai_task](#patch_genai_task) - Update a task
 * [remove_genai_agent](#remove_genai_agent) - Remove an agent
+* [remove_genai_memory](#remove_genai_memory) - Remove a memory
 * [remove_genai_organization](#remove_genai_organization) - Remove an organization
+* [remove_genai_skill](#remove_genai_skill) - Remove a skill
 * [remove_genai_task](#remove_genai_task) - Remove a task
 * [update_genai_agent](#update_genai_agent) - Update an agent
+* [update_genai_memory](#update_genai_memory) - Update a memory
 * [update_genai_organization](#update_genai_organization) - Update an organization
+* [update_genai_task](#update_genai_task) - Update a task
 
 ## create_genai_agent
 
-Create an agent
+Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
 
 ### Example Usage
 
@@ -46,11 +57,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.genai.create_genai_agent(genai_agent: Models::Shared::GenaiAgent.new(
   created_at: DateTime.iso8601('2020-12-18T02:23:33.723Z'),
   description: 'Assentator tero sequi.',
-  id: 'eecd9967-8ffb-4fc8-9387-fe795c805bd3',
+  id: '998ddf7d-f663-4008-a6cc-db5c6dc9e8da',
   instructions: 'Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.',
   is_active: false,
   name: 'daughter with',
-  updated_at: DateTime.iso8601('2025-09-20T16:27:57.260Z'),
+  updated_at: DateTime.iso8601('2025-10-17T02:11:22.328Z'),
 ), connection_id: '<id>')
 
 unless res.genai_agent.nil?
@@ -80,7 +91,7 @@ end
 
 ## create_genai_embedding
 
-Create an embedding
+Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
 
 ### Example Usage
 
@@ -104,7 +115,7 @@ res = s.genai.create_genai_embedding(genai_embedding: Models::Shared::GenaiEmbed
   dimension: 423.0,
   embeddings: 'Est.',
   enconding_format: Models::Shared::EncondingFormat::FLOAT,
-  id: 'cca4d4fc-2849-4a2f-a78c-7c28952c326c',
+  id: '59a2d3bc-13ae-40e2-895c-5ea599bf291c',
   max_tokens: 223.0,
   tokens_used: 836.0,
   type: 'classification',
@@ -135,9 +146,73 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## create_genai_memory
+
+Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="createGenaiMemory" method="post" path="/genai/{connection_id}/memory" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.genai.create_genai_memory(genai_memory: Models::Shared::GenaiMemory.new(
+  content: 'Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.',
+  created_at: DateTime.iso8601('2021-10-22T04:14:41.668Z'),
+  id: '30c5b61b-64ce-451b-86ea-0d45e2587196',
+  metadata: [
+    Models::Shared::GenaiMetadata.new(
+      extra_data: {
+
+      },
+      format: Models::Shared::GenaiMetadataFormat::TEXT,
+      id: '7a8ad62d-ba0e-4ce3-8330-56a2647b5b3e',
+      namespace: 'memory',
+      slug: 'cribro',
+      value: 'aiunt',
+    ),
+  ],
+  name: 'sponte.md',
+  type: Models::Shared::GenaiMemoryType::MEMORY,
+  updated_at: DateTime.iso8601('2023-04-26T11:52:14.382Z'),
+  user_identifier: '9d170613-4338-447d-bdb6-8ea96a2d7513',
+), connection_id: '<id>')
+
+unless res.genai_memory.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `genai_memory`                                                                                                                                   | [Models::Shared::GenaiMemory](../../models/shared/genaimemory.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::CreateGenaiMemoryQueryParamFields](../../models/operations/creategenaimemoryqueryparamfields.md)>                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::CreateGenaiMemoryResponse)](../../models/operations/creategenaimemoryresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## create_genai_organization
 
-Create an organization
+Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
 
 ### Example Usage
 
@@ -155,10 +230,10 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.genai.create_genai_organization(genai_organization: Models::Shared::GenaiOrganization.new(
   created_at: DateTime.iso8601('2020-10-27T16:03:47.122Z'),
   description: 'Voluptates abeo subseco.',
-  id: '9942ae74-f1b5-48d6-a941-810141e8c41f',
+  id: '4027f841-e78f-4318-96db-9ef818e025cb',
   is_active: false,
   name: 'officially about',
-  updated_at: DateTime.iso8601('2023-01-15T04:21:51.211Z'),
+  updated_at: DateTime.iso8601('2023-01-27T04:33:26.116Z'),
 ), connection_id: '<id>')
 
 unless res.genai_organization.nil?
@@ -188,7 +263,7 @@ end
 
 ## create_genai_prompt
 
-Create a prompt
+Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
 
 ### Example Usage
 
@@ -204,6 +279,25 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.genai.create_genai_prompt(genai_prompt: Models::Shared::GenaiPrompt.new(
+  answers: [
+    Models::Shared::GenaiAnswer.new(
+      confidence: 0.5_384_309_098_590_165,
+      id: 'TeZpueFB',
+      probabilities: [
+        Models::Shared::GenaiAnswerProbability.new(
+          option: 'veniam',
+          probability: 0.05_683_182_482_607_663,
+        ),
+        Models::Shared::GenaiAnswerProbability.new(
+          option: 'comes',
+          probability: 0.1_404_057_613_108_307,
+        ),
+      ],
+      score: 0.05_974_147_981_032_729,
+      type: Models::Shared::GenaiAnswerType::CHOICE,
+      value: 'summisse',
+    ),
+  ],
   max_tokens: 0.4_677_782_787_475_735,
   mcp_authorization_token: 'f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4',
   mcp_deferred_tools: [],
@@ -211,11 +305,45 @@ res = s.genai.create_genai_prompt(genai_prompt: Models::Shared::GenaiPrompt.new(
   messages: [
     Models::Shared::GenaiContent.new(
       content: 'Aegre repudiandae verecundia facere statua.',
+      images: [],
       role: Models::Shared::Role::ASSISTANT,
     ),
     Models::Shared::GenaiContent.new(
       content: 'Speciosus xiphias soleo trepide crinis.',
+      images: [],
       role: Models::Shared::Role::SYSTEM,
+    ),
+  ],
+  questions: [
+    Models::Shared::GenaiQuestion.new(
+      id: 'KtvbYiEq',
+      instructions: 'Admiratio cura contabesco subvenio venustas architecto vacuus summopere.',
+      options: [
+        'vulnero',
+        'quasi',
+        'tolero',
+      ],
+      type: Models::Shared::GenaiQuestionType::BOOLEAN,
+    ),
+    Models::Shared::GenaiQuestion.new(
+      id: 'oV6IURtv',
+      instructions: 'Celer deleniti ventus ipsam tendo odit.',
+      options: [
+        'nulla',
+        'aspicio',
+        'tero',
+      ],
+      type: Models::Shared::GenaiQuestionType::CHOICE,
+    ),
+    Models::Shared::GenaiQuestion.new(
+      id: '60dBZk2K',
+      instructions: 'Decretum vesica amet repudiandae.',
+      options: [
+        'ducimus',
+        'civis',
+        'alter',
+      ],
+      type: Models::Shared::GenaiQuestionType::BOOLEAN,
     ),
   ],
   responses: [
@@ -252,7 +380,7 @@ end
 
 ## create_genai_task
 
-Create a task
+Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
 
 ### Example Usage
 
@@ -268,16 +396,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.genai.create_genai_task(genai_task: Models::Shared::GenaiTask.new(
-  completed_at: DateTime.iso8601('2025-09-06T13:57:38.078Z'),
+  completed_at: DateTime.iso8601('2025-10-02T21:57:28.603Z'),
   created_at: DateTime.iso8601('2020-10-25T20:19:33.247Z'),
   files_changed: 19.0,
-  id: '968cf408-0894-4133-a538-3598570fa578',
+  id: '2057f194-91c5-4f58-8d24-ab68c5099f5e',
   instructions: 'Benigne canonicus officiis solvo adsidue deleo angustus.',
   lines_added: 244.0,
   lines_deleted: 118.0,
   messages: [
     Models::Shared::GenaiContent.new(
       content: 'Stultus esse cursim stabilis tenetur amet contigo tristis.',
+      images: [],
       role: Models::Shared::Role::ASSISTANT,
     ),
   ],
@@ -285,12 +414,12 @@ res = s.genai.create_genai_task(genai_task: Models::Shared::GenaiTask.new(
   pullrequest_url: 'https://github.com/berenice.satterfield/joshingly-ignorance/pull/383',
   repo_url: 'https://github.com/berenice.satterfield/joshingly-ignorance',
   source_branch_identifier: 'main',
-  started_at: DateTime.iso8601('2024-05-03T13:35:15.218Z'),
+  started_at: DateTime.iso8601('2024-05-22T14:55:37.779Z'),
   status: Models::Shared::GenaiTaskStatus::BLOCKED,
   summary: 'Cur aeternus cogito vesper.',
   target_branch_identifier: 'agent/joshingly-ignorance',
   tokens_used: 2165.0,
-  updated_at: DateTime.iso8601('2023-02-14T14:26:48.799Z'),
+  updated_at: DateTime.iso8601('2023-02-27T01:51:54.808Z'),
   web_url: 'https://inexperienced-adrenalin.biz/',
 ), connection_id: '<id>')
 
@@ -321,7 +450,7 @@ end
 
 ## get_genai_agent
 
-Retrieve an agent
+Retrieves a single GenaiAgent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -363,9 +492,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_genai_memory
+
+Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getGenaiMemory" method="get" path="/genai/{connection_id}/memory/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.genai.get_genai_memory(connection_id: '<id>', id: '<id>')
+
+unless res.genai_memory.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Memory                                                                                                                                 |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetGenaiMemoryQueryParamFields](../../models/operations/getgenaimemoryqueryparamfields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetGenaiMemoryResponse)](../../models/operations/getgenaimemoryresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_genai_model
 
-Retrieve a model
+Retrieves a single GenaiModel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -409,7 +582,7 @@ end
 
 ## get_genai_organization
 
-Retrieve an organization
+Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -451,9 +624,53 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## get_genai_skill
+
+Retrieves a single GenaiSkill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="getGenaiSkill" method="get" path="/genai/{connection_id}/skill/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.genai.get_genai_skill(connection_id: '<id>', id: '<id>')
+
+unless res.genai_skill.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `connection_id`                                                                                                                                  | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `id`                                                                                                                                             | *::String*                                                                                                                                       | :heavy_check_mark:                                                                                                                               | ID of the Skill                                                                                                                                  |
+| `fields_`                                                                                                                                        | T::Array<[Models::Operations::GetGenaiSkillQueryParamFields](../../models/operations/getgenaiskillqueryparamfields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `raw`                                                                                                                                            | *T.nilable(::String)*                                                                                                                            | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[T.nilable(Models::Operations::GetGenaiSkillResponse)](../../models/operations/getgenaiskillresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## get_genai_task
 
-Retrieve a task
+Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -497,7 +714,7 @@ end
 
 ## list_genai_agents
 
-List all agents
+Returns a list of GenaiAgents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -540,9 +757,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_genai_memories
+
+Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listGenaiMemories" method="get" path="/genai/{connection_id}/memory" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListGenaiMemoriesRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.genai.list_genai_memories(request: req)
+
+unless res.genai_memories.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [Models::Operations::ListGenaiMemoriesRequest](../../models/operations/listgenaimemoriesrequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
+
+### Response
+
+**[T.nilable(Models::Operations::ListGenaiMemoriesResponse)](../../models/operations/listgenaimemoriesresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_genai_models
 
-List all models
+Returns a list of GenaiModels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -587,7 +849,7 @@ end
 
 ## list_genai_organizations
 
-List all organizations
+Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -630,9 +892,54 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## list_genai_skills
+
+Returns a list of GenaiSkills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="listGenaiSkills" method="get" path="/genai/{connection_id}/skill" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::ListGenaiSkillsRequest.new(
+  connection_id: '<id>',
+)
+
+res = s.genai.list_genai_skills(request: req)
+
+unless res.genai_skills.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [Models::Operations::ListGenaiSkillsRequest](../../models/operations/listgenaiskillsrequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+
+### Response
+
+**[T.nilable(Models::Operations::ListGenaiSkillsResponse)](../../models/operations/listgenaiskillsresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## list_genai_tasks
 
-List all tasks
+Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -677,7 +984,7 @@ end
 
 ## patch_genai_agent
 
-Update an agent
+Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
 
 ### Example Usage
 
@@ -696,11 +1003,11 @@ req = Models::Operations::PatchGenaiAgentRequest.new(
   genai_agent: Models::Shared::GenaiAgent.new(
     created_at: DateTime.iso8601('2020-12-18T02:23:33.723Z'),
     description: 'Assentator tero sequi.',
-    id: 'e9c89654-7de4-4cb3-9713-6a5249260a61',
+    id: '200aeb7e-786a-4f80-a752-29102cb9d6e3',
     instructions: 'Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.',
     is_active: false,
     name: 'daughter with',
-    updated_at: DateTime.iso8601('2025-09-20T16:27:57.270Z'),
+    updated_at: DateTime.iso8601('2025-10-17T02:11:22.337Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -730,9 +1037,76 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## patch_genai_memory
+
+Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="patchGenaiMemory" method="patch" path="/genai/{connection_id}/memory/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::PatchGenaiMemoryRequest.new(
+  genai_memory: Models::Shared::GenaiMemory.new(
+    content: 'Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.',
+    created_at: DateTime.iso8601('2021-10-22T04:14:41.668Z'),
+    id: 'a49fc703-76bd-475c-8c11-b39d565bef31',
+    metadata: [
+      Models::Shared::GenaiMetadata.new(
+        extra_data: {
+
+        },
+        format: Models::Shared::GenaiMetadataFormat::TEXT,
+        id: '7a8ad62d-ba0e-4ce3-8330-56a2647b5b3e',
+        namespace: 'memory',
+        slug: 'cribro',
+        value: 'aiunt',
+      ),
+    ],
+    name: 'sponte.md',
+    type: Models::Shared::GenaiMemoryType::MEMORY,
+    updated_at: DateTime.iso8601('2023-04-26T11:52:14.387Z'),
+    user_identifier: '9d170613-4338-447d-bdb6-8ea96a2d7513',
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.genai.patch_genai_memory(request: req)
+
+unless res.genai_memory.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [Models::Operations::PatchGenaiMemoryRequest](../../models/operations/patchgenaimemoryrequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[T.nilable(Models::Operations::PatchGenaiMemoryResponse)](../../models/operations/patchgenaimemoryresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## patch_genai_organization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -751,10 +1125,10 @@ req = Models::Operations::PatchGenaiOrganizationRequest.new(
   genai_organization: Models::Shared::GenaiOrganization.new(
     created_at: DateTime.iso8601('2020-10-27T16:03:47.122Z'),
     description: 'Voluptates abeo subseco.',
-    id: 'b1da2f82-66e6-44ab-8556-dccd964b2224',
+    id: 'ed66f586-2ab5-487a-be49-8deb4e64a3d5',
     is_active: false,
     name: 'officially about',
-    updated_at: DateTime.iso8601('2023-01-15T04:21:51.214Z'),
+    updated_at: DateTime.iso8601('2023-01-27T04:33:26.119Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -784,9 +1158,82 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## patch_genai_task
+
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="patchGenaiTask" method="patch" path="/genai/{connection_id}/task/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::PatchGenaiTaskRequest.new(
+  genai_task: Models::Shared::GenaiTask.new(
+    completed_at: DateTime.iso8601('2025-10-02T21:57:28.620Z'),
+    created_at: DateTime.iso8601('2020-10-25T20:19:33.247Z'),
+    files_changed: 19.0,
+    id: '823382d2-5cc7-4686-9940-00d1212c120e',
+    instructions: 'Benigne canonicus officiis solvo adsidue deleo angustus.',
+    lines_added: 244.0,
+    lines_deleted: 118.0,
+    messages: [
+      Models::Shared::GenaiContent.new(
+        content: 'Stultus esse cursim stabilis tenetur amet contigo tristis.',
+        images: [],
+        role: Models::Shared::Role::ASSISTANT,
+      ),
+    ],
+    name: 'connect multi-byte port',
+    pullrequest_url: 'https://github.com/berenice.satterfield/joshingly-ignorance/pull/383',
+    repo_url: 'https://github.com/berenice.satterfield/joshingly-ignorance',
+    source_branch_identifier: 'main',
+    started_at: DateTime.iso8601('2024-05-22T14:55:37.791Z'),
+    status: Models::Shared::GenaiTaskStatus::BLOCKED,
+    summary: 'Cur aeternus cogito vesper.',
+    target_branch_identifier: 'agent/joshingly-ignorance',
+    tokens_used: 2165.0,
+    updated_at: DateTime.iso8601('2023-02-27T01:51:54.816Z'),
+    web_url: 'https://inexperienced-adrenalin.biz/',
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.genai.patch_genai_task(request: req)
+
+unless res.genai_task.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [Models::Operations::PatchGenaiTaskRequest](../../models/operations/patchgenaitaskrequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+
+### Response
+
+**[T.nilable(Models::Operations::PatchGenaiTaskResponse)](../../models/operations/patchgenaitaskresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## remove_genai_agent
 
-Remove an agent
+Deletes the GenaiAgent identified by `id`.
 
 ### Example Usage
 
@@ -826,9 +1273,51 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## remove_genai_memory
+
+Deletes the GenaiMemory identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="removeGenaiMemory" method="delete" path="/genai/{connection_id}/memory/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.genai.remove_genai_memory(connection_id: '<id>', id: '<id>')
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `connection_id`      | *::String*           | :heavy_check_mark:   | ID of the connection |
+| `id`                 | *::String*           | :heavy_check_mark:   | ID of the Memory     |
+
+### Response
+
+**[T.nilable(Models::Operations::RemoveGenaiMemoryResponse)](../../models/operations/removegenaimemoryresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## remove_genai_organization
 
-Remove an organization
+Deletes the GenaiOrganization identified by `id`.
 
 ### Example Usage
 
@@ -868,9 +1357,51 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## remove_genai_skill
+
+Deletes the GenaiSkill identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="removeGenaiSkill" method="delete" path="/genai/{connection_id}/skill/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+res = s.genai.remove_genai_skill(connection_id: '<id>', id: '<id>')
+
+if res.status_code == 200
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `connection_id`      | *::String*           | :heavy_check_mark:   | ID of the connection |
+| `id`                 | *::String*           | :heavy_check_mark:   | ID of the Skill      |
+
+### Response
+
+**[T.nilable(Models::Operations::RemoveGenaiSkillResponse)](../../models/operations/removegenaiskillresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## remove_genai_task
 
-Remove a task
+Deletes the GenaiTask identified by `id`.
 
 ### Example Usage
 
@@ -912,7 +1443,7 @@ end
 
 ## update_genai_agent
 
-Update an agent
+Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
 
 ### Example Usage
 
@@ -931,11 +1462,11 @@ req = Models::Operations::UpdateGenaiAgentRequest.new(
   genai_agent: Models::Shared::GenaiAgent.new(
     created_at: DateTime.iso8601('2020-12-18T02:23:33.723Z'),
     description: 'Assentator tero sequi.',
-    id: 'e9c89654-7de4-4cb3-9713-6a5249260a61',
+    id: '200aeb7e-786a-4f80-a752-29102cb9d6e3',
     instructions: 'Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.',
     is_active: false,
     name: 'daughter with',
-    updated_at: DateTime.iso8601('2025-09-20T16:27:57.270Z'),
+    updated_at: DateTime.iso8601('2025-10-17T02:11:22.337Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -965,9 +1496,76 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## update_genai_memory
+
+Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="updateGenaiMemory" method="put" path="/genai/{connection_id}/memory/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::UpdateGenaiMemoryRequest.new(
+  genai_memory: Models::Shared::GenaiMemory.new(
+    content: 'Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.',
+    created_at: DateTime.iso8601('2021-10-22T04:14:41.668Z'),
+    id: 'a49fc703-76bd-475c-8c11-b39d565bef31',
+    metadata: [
+      Models::Shared::GenaiMetadata.new(
+        extra_data: {
+
+        },
+        format: Models::Shared::GenaiMetadataFormat::TEXT,
+        id: '7a8ad62d-ba0e-4ce3-8330-56a2647b5b3e',
+        namespace: 'memory',
+        slug: 'cribro',
+        value: 'aiunt',
+      ),
+    ],
+    name: 'sponte.md',
+    type: Models::Shared::GenaiMemoryType::MEMORY,
+    updated_at: DateTime.iso8601('2023-04-26T11:52:14.387Z'),
+    user_identifier: '9d170613-4338-447d-bdb6-8ea96a2d7513',
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.genai.update_genai_memory(request: req)
+
+unless res.genai_memory.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [Models::Operations::UpdateGenaiMemoryRequest](../../models/operations/updategenaimemoryrequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
+
+### Response
+
+**[T.nilable(Models::Operations::UpdateGenaiMemoryResponse)](../../models/operations/updategenaimemoryresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## update_genai_organization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -986,10 +1584,10 @@ req = Models::Operations::UpdateGenaiOrganizationRequest.new(
   genai_organization: Models::Shared::GenaiOrganization.new(
     created_at: DateTime.iso8601('2020-10-27T16:03:47.122Z'),
     description: 'Voluptates abeo subseco.',
-    id: 'b1da2f82-66e6-44ab-8556-dccd964b2224',
+    id: 'ed66f586-2ab5-487a-be49-8deb4e64a3d5',
     is_active: false,
     name: 'officially about',
-    updated_at: DateTime.iso8601('2023-01-15T04:21:51.214Z'),
+    updated_at: DateTime.iso8601('2023-01-27T04:33:26.119Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1012,6 +1610,79 @@ end
 ### Response
 
 **[T.nilable(Models::Operations::UpdateGenaiOrganizationResponse)](../../models/operations/updategenaiorganizationresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
+## update_genai_task
+
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="updateGenaiTask" method="put" path="/genai/{connection_id}/task/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::UpdateGenaiTaskRequest.new(
+  genai_task: Models::Shared::GenaiTask.new(
+    completed_at: DateTime.iso8601('2025-10-02T21:57:28.620Z'),
+    created_at: DateTime.iso8601('2020-10-25T20:19:33.247Z'),
+    files_changed: 19.0,
+    id: '823382d2-5cc7-4686-9940-00d1212c120e',
+    instructions: 'Benigne canonicus officiis solvo adsidue deleo angustus.',
+    lines_added: 244.0,
+    lines_deleted: 118.0,
+    messages: [
+      Models::Shared::GenaiContent.new(
+        content: 'Stultus esse cursim stabilis tenetur amet contigo tristis.',
+        images: [],
+        role: Models::Shared::Role::ASSISTANT,
+      ),
+    ],
+    name: 'connect multi-byte port',
+    pullrequest_url: 'https://github.com/berenice.satterfield/joshingly-ignorance/pull/383',
+    repo_url: 'https://github.com/berenice.satterfield/joshingly-ignorance',
+    source_branch_identifier: 'main',
+    started_at: DateTime.iso8601('2024-05-22T14:55:37.791Z'),
+    status: Models::Shared::GenaiTaskStatus::BLOCKED,
+    summary: 'Cur aeternus cogito vesper.',
+    target_branch_identifier: 'agent/joshingly-ignorance',
+    tokens_used: 2165.0,
+    updated_at: DateTime.iso8601('2023-02-27T01:51:54.816Z'),
+    web_url: 'https://inexperienced-adrenalin.biz/',
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.genai.update_genai_task(request: req)
+
+unless res.genai_task.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [Models::Operations::UpdateGenaiTaskRequest](../../models/operations/updategenaitaskrequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+
+### Response
+
+**[T.nilable(Models::Operations::UpdateGenaiTaskResponse)](../../models/operations/updategenaitaskresponse.md)**
 
 ### Errors
 

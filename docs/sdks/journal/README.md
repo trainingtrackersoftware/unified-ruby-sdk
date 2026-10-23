@@ -14,7 +14,7 @@
 
 ## create_accounting_journal
 
-Create a journal
+Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
 
 ### Example Usage
 
@@ -33,17 +33,18 @@ res = s.journal.create_accounting_journal(accounting_journal: Models::Shared::Ac
   attachments: [],
   category_ids: [],
   created_at: DateTime.iso8601('2020-02-20T15:14:55.881Z'),
-  currency: 'FKP',
-  description: 'Calco constans adipisci.',
-  id: '590b6288-5aee-4f57-a3a9-1a4e6c635598',
+  currency: 'CAD',
+  description: 'Cilicium minima calco constans adipisci.',
+  id: '9abd1632-a53f-4a7f-ae9d-cf19127cf0cb',
   is_inclusive_of_tax: true,
-  posted_at: DateTime.iso8601('2023-10-20T18:22:08.144Z'),
-  reference: 'ullam',
+  lineitems: [],
+  metadata: [],
+  posted_at: DateTime.iso8601('2023-11-07T13:12:51.054Z'),
+  reference: 'JE-78884',
   source: 'crustulum',
   status: Models::Shared::AccountingJournalStatus::VOID,
-  tax_amount: 78_672.0,
-  total_amount: 74_094.0,
-  updated_at: DateTime.iso8601('2022-01-02T07:46:54.270Z'),
+  total_amount: 0.0,
+  updated_at: DateTime.iso8601('2022-01-11T09:13:52.357Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_journal.nil?
@@ -73,7 +74,7 @@ end
 
 ## get_accounting_journal
 
-Retrieve a journal
+Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -117,7 +118,7 @@ end
 
 ## list_accounting_journals
 
-List all journals
+Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -162,7 +163,7 @@ end
 
 ## patch_accounting_journal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -182,17 +183,18 @@ req = Models::Operations::PatchAccountingJournalRequest.new(
     attachments: [],
     category_ids: [],
     created_at: DateTime.iso8601('2020-02-20T15:14:55.881Z'),
-    currency: 'FKP',
-    description: 'Calco constans adipisci.',
-    id: 'c749aba5-ca79-4974-b223-7c1515e3dbd8',
+    currency: 'CAD',
+    description: 'Cilicium minima calco constans adipisci.',
+    id: '3eaf5dbc-994d-405f-9fb5-dd25c1b1b0e1',
     is_inclusive_of_tax: true,
-    posted_at: DateTime.iso8601('2023-10-20T18:22:08.157Z'),
-    reference: 'ullam',
+    lineitems: [],
+    metadata: [],
+    posted_at: DateTime.iso8601('2023-11-07T13:12:51.071Z'),
+    reference: 'JE-78884',
     source: 'crustulum',
     status: Models::Shared::AccountingJournalStatus::VOID,
-    tax_amount: 78_672.0,
-    total_amount: 74_094.0,
-    updated_at: DateTime.iso8601('2022-01-02T07:46:54.276Z'),
+    total_amount: 0.0,
+    updated_at: DateTime.iso8601('2022-01-11T09:13:52.366Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -224,7 +226,7 @@ end
 
 ## remove_accounting_journal
 
-Remove a journal
+Deletes the AccountingJournal identified by `id`.
 
 ### Example Usage
 
@@ -266,7 +268,7 @@ end
 
 ## update_accounting_journal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -286,17 +288,18 @@ req = Models::Operations::UpdateAccountingJournalRequest.new(
     attachments: [],
     category_ids: [],
     created_at: DateTime.iso8601('2020-02-20T15:14:55.881Z'),
-    currency: 'FKP',
-    description: 'Calco constans adipisci.',
-    id: 'c749aba5-ca79-4974-b223-7c1515e3dbd8',
+    currency: 'CAD',
+    description: 'Cilicium minima calco constans adipisci.',
+    id: '3eaf5dbc-994d-405f-9fb5-dd25c1b1b0e1',
     is_inclusive_of_tax: true,
-    posted_at: DateTime.iso8601('2023-10-20T18:22:08.157Z'),
-    reference: 'ullam',
+    lineitems: [],
+    metadata: [],
+    posted_at: DateTime.iso8601('2023-11-07T13:12:51.071Z'),
+    reference: 'JE-78884',
     source: 'crustulum',
     status: Models::Shared::AccountingJournalStatus::VOID,
-    tax_amount: 78_672.0,
-    total_amount: 74_094.0,
-    updated_at: DateTime.iso8601('2022-01-02T07:46:54.276Z'),
+    total_amount: 0.0,
+    updated_at: DateTime.iso8601('2022-01-11T09:13:52.366Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

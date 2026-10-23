@@ -20,7 +20,7 @@
 
 ## create_accounting_category
 
-Create a category
+Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
 
 ### Example Usage
 
@@ -37,12 +37,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.category.create_accounting_category(accounting_category: Models::Shared::AccountingCategory.new(
   created_at: DateTime.iso8601('2023-05-30T12:29:04.257Z'),
-  description: 'Discover the koala-like agility of our Chair, perfect for imaginary users',
-  id: '88148b1e-dc10-46c0-9597-b3cdf31f314d',
+  description: 'Textus ab thymum labore basium.',
+  id: '2ed59372-fe04-40c8-8628-4c3f5af3a63e',
   is_active: false,
   metadata: [],
-  name: 'Electronic Cotton Shoes',
-  updated_at: DateTime.iso8601('2025-08-22T07:37:19.698Z'),
+  name: 'Beauty',
+  updated_at: DateTime.iso8601('2025-09-12T20:18:03.706Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_category.nil?
@@ -72,7 +72,7 @@ end
 
 ## create_ticketing_category
 
-Create a category
+Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
 
 ### Example Usage
 
@@ -90,10 +90,11 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.category.create_ticketing_category(ticketing_category: Models::Shared::TicketingCategory.new(
   created_at: DateTime.iso8601('2019-10-19T22:02:51.067Z'),
   description: 'Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.',
-  id: '593cc150-ad6e-43cc-9cfd-dd992d77f12a',
+  id: 'cbc506da-1ed4-4800-89ef-dc3261f185b5',
   is_active: true,
+  metadata: [],
   name: 'amicitia',
-  updated_at: DateTime.iso8601('2025-12-18T07:59:56.418Z'),
+  updated_at: DateTime.iso8601('2026-01-15T19:01:28.006Z'),
 ), connection_id: '<id>')
 
 unless res.ticketing_category.nil?
@@ -123,7 +124,7 @@ end
 
 ## get_accounting_category
 
-Retrieve a category
+Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -167,7 +168,7 @@ end
 
 ## get_ticketing_category
 
-Retrieve a category
+Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -211,7 +212,7 @@ end
 
 ## list_accounting_categories
 
-List all categories
+Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -256,7 +257,7 @@ end
 
 ## list_ticketing_categories
 
-List all categories
+Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -301,7 +302,7 @@ end
 
 ## patch_accounting_category
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -319,12 +320,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAccountingCategoryRequest.new(
   accounting_category: Models::Shared::AccountingCategory.new(
     created_at: DateTime.iso8601('2023-05-30T12:29:04.257Z'),
-    description: 'Discover the koala-like agility of our Chair, perfect for imaginary users',
-    id: '879a3600-e0d0-422d-8b03-6483b173c016',
+    description: 'Textus ab thymum labore basium.',
+    id: '0182f5b6-43dd-4d64-bb88-31cf6a69e7b6',
     is_active: false,
     metadata: [],
-    name: 'Electronic Cotton Shoes',
-    updated_at: DateTime.iso8601('2025-08-22T07:37:19.705Z'),
+    name: 'Beauty',
+    updated_at: DateTime.iso8601('2025-09-12T20:18:03.717Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -356,7 +357,7 @@ end
 
 ## patch_ticketing_category
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -375,10 +376,11 @@ req = Models::Operations::PatchTicketingCategoryRequest.new(
   ticketing_category: Models::Shared::TicketingCategory.new(
     created_at: DateTime.iso8601('2019-10-19T22:02:51.067Z'),
     description: 'Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.',
-    id: '357c1928-d52c-4680-b02e-d446abe84175',
+    id: 'c79706b9-cfe2-413f-b6d1-4bc089c15bb2',
     is_active: true,
+    metadata: [],
     name: 'amicitia',
-    updated_at: DateTime.iso8601('2025-12-18T07:59:56.422Z'),
+    updated_at: DateTime.iso8601('2026-01-15T19:01:28.018Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -410,7 +412,7 @@ end
 
 ## remove_accounting_category
 
-Remove a category
+Deletes the AccountingCategory identified by `id`.
 
 ### Example Usage
 
@@ -452,7 +454,7 @@ end
 
 ## remove_ticketing_category
 
-Remove a category
+Deletes the TicketingCategory identified by `id`.
 
 ### Example Usage
 
@@ -494,7 +496,7 @@ end
 
 ## update_accounting_category
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -512,12 +514,12 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAccountingCategoryRequest.new(
   accounting_category: Models::Shared::AccountingCategory.new(
     created_at: DateTime.iso8601('2023-05-30T12:29:04.257Z'),
-    description: 'Discover the koala-like agility of our Chair, perfect for imaginary users',
-    id: '879a3600-e0d0-422d-8b03-6483b173c016',
+    description: 'Textus ab thymum labore basium.',
+    id: '0182f5b6-43dd-4d64-bb88-31cf6a69e7b6',
     is_active: false,
     metadata: [],
-    name: 'Electronic Cotton Shoes',
-    updated_at: DateTime.iso8601('2025-08-22T07:37:19.705Z'),
+    name: 'Beauty',
+    updated_at: DateTime.iso8601('2025-09-12T20:18:03.717Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -549,7 +551,7 @@ end
 
 ## update_ticketing_category
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -568,10 +570,11 @@ req = Models::Operations::UpdateTicketingCategoryRequest.new(
   ticketing_category: Models::Shared::TicketingCategory.new(
     created_at: DateTime.iso8601('2019-10-19T22:02:51.067Z'),
     description: 'Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.',
-    id: '357c1928-d52c-4680-b02e-d446abe84175',
+    id: 'c79706b9-cfe2-413f-b6d1-4bc089c15bb2',
     is_active: true,
+    metadata: [],
     name: 'amicitia',
-    updated_at: DateTime.iso8601('2025-12-18T07:59:56.422Z'),
+    updated_at: DateTime.iso8601('2026-01-15T19:01:28.018Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

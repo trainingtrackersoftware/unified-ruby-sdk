@@ -14,7 +14,7 @@
 
 ## create_accounting_bankfeedaccount
 
-Create a bankfeedaccount
+Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
 
 ### Example Usage
 
@@ -30,20 +30,20 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.bankfeedaccount.create_accounting_bankfeedaccount(accounting_bankfeedaccount: Models::Shared::AccountingBankfeedaccount.new(
-  account_id: 'baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1',
   account_number: '30369722',
   account_number_last4: '9722',
   account_type: Models::Shared::AccountType::LOAN,
-  balance: 90_358.0,
-  bank_name: 'Weissnat Inc',
+  balance: 49_437.0,
+  bank_name: 'Wells Fargo',
   created_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-  currency: 'SSP',
+  currency: 'AUD',
   feed_start_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-  id: '7532335b-4d11-43d3-acb2-ec773f6d3972',
-  name: 'Corwin, Donnelly and Connelly Savings',
-  routing_number: '667753156',
+  id: '9ff0304a-822b-4e33-9260-a18b0d7dcbc2',
+  metadata: [],
+  name: 'Corwin, Donnelly and Connelly Checking',
+  routing_number: '694667752',
   status: Models::Shared::AccountingBankfeedaccountStatus::ACTIVE,
-  updated_at: DateTime.iso8601('2024-04-12T16:03:10.090Z'),
+  updated_at: DateTime.iso8601('2024-04-24T13:41:42.663Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_bankfeedaccount.nil?
@@ -73,7 +73,7 @@ end
 
 ## get_accounting_bankfeedaccount
 
-Retrieve a bankfeedaccount
+Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -117,7 +117,7 @@ end
 
 ## list_accounting_bankfeedaccounts
 
-List all bankfeedaccounts
+Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -162,7 +162,7 @@ end
 
 ## patch_accounting_bankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -179,20 +179,20 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchAccountingBankfeedaccountRequest.new(
   accounting_bankfeedaccount: Models::Shared::AccountingBankfeedaccount.new(
-    account_id: 'baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1',
     account_number: '30369722',
     account_number_last4: '9722',
     account_type: Models::Shared::AccountType::LOAN,
-    balance: 90_358.0,
-    bank_name: 'Weissnat Inc',
+    balance: 49_437.0,
+    bank_name: 'Wells Fargo',
     created_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-    currency: 'SSP',
+    currency: 'AUD',
     feed_start_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-    id: '60b23ad0-32a2-4590-b9cd-fcf578434bb9',
-    name: 'Corwin, Donnelly and Connelly Savings',
-    routing_number: '667753156',
+    id: '194691c3-3685-4a7d-8885-f8b5fdb930a6',
+    metadata: [],
+    name: 'Corwin, Donnelly and Connelly Checking',
+    routing_number: '694667752',
     status: Models::Shared::AccountingBankfeedaccountStatus::ACTIVE,
-    updated_at: DateTime.iso8601('2024-04-12T16:03:10.095Z'),
+    updated_at: DateTime.iso8601('2024-04-24T13:41:42.669Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -224,7 +224,7 @@ end
 
 ## remove_accounting_bankfeedaccount
 
-Remove a bankfeedaccount
+Deletes the AccountingBankfeedaccount identified by `id`.
 
 ### Example Usage
 
@@ -266,7 +266,7 @@ end
 
 ## update_accounting_bankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -283,20 +283,20 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateAccountingBankfeedaccountRequest.new(
   accounting_bankfeedaccount: Models::Shared::AccountingBankfeedaccount.new(
-    account_id: 'baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1',
     account_number: '30369722',
     account_number_last4: '9722',
     account_type: Models::Shared::AccountType::LOAN,
-    balance: 90_358.0,
-    bank_name: 'Weissnat Inc',
+    balance: 49_437.0,
+    bank_name: 'Wells Fargo',
     created_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-    currency: 'SSP',
+    currency: 'AUD',
     feed_start_at: DateTime.iso8601('2022-10-31T16:42:19.277Z'),
-    id: '60b23ad0-32a2-4590-b9cd-fcf578434bb9',
-    name: 'Corwin, Donnelly and Connelly Savings',
-    routing_number: '667753156',
+    id: '194691c3-3685-4a7d-8885-f8b5fdb930a6',
+    metadata: [],
+    name: 'Corwin, Donnelly and Connelly Checking',
+    routing_number: '694667752',
     status: Models::Shared::AccountingBankfeedaccountStatus::ACTIVE,
-    updated_at: DateTime.iso8601('2024-04-12T16:03:10.095Z'),
+    updated_at: DateTime.iso8601('2024-04-24T13:41:42.669Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

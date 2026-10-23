@@ -13,45 +13,47 @@ module UnifiedRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
+        # employee ID (reference to HrisEmployee)
         field :user_id, ::String, { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('user_id'), required: true } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :approved_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('approved_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # (reference to HrisEmployee)
         field :approver_user_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('approver_user_id') } }
 
         field :comments, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('comments') } }
-
+        # (reference to HrisCompany)
         field :company_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('company_id') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :duration, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('duration') } }
 
         field :duration_type, Crystalline::Nilable.new(Models::Shared::DurationType), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('duration_type'), 'decoder': Utils.enum_from_string(Models::Shared::DurationType, true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :end_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('end_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
 
         field :is_paid, Crystalline::Nilable.new(Crystalline::Boolean.new), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('is_paid') } }
 
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::HrisMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
+        # integration leave-type label before normalization
         field :original_type, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('original_type') } }
 
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
 
         field :reason, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('reason') } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :start_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('start_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :status, Crystalline::Nilable.new(Models::Shared::HrisTimeoffStatus), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('status'), 'decoder': Utils.enum_from_string(Models::Shared::HrisTimeoffStatus, true) } }
 
         field :type, Crystalline::Nilable.new(Models::Shared::HrisTimeoffType), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Shared::HrisTimeoffType, true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
-        sig { params(user_id: ::String, approved_at: T.nilable(::DateTime), approver_user_id: T.nilable(::String), comments: T.nilable(::String), company_id: T.nilable(::String), created_at: T.nilable(::DateTime), duration: T.nilable(::Float), duration_type: T.nilable(Models::Shared::DurationType), end_at: T.nilable(::DateTime), id: T.nilable(::String), is_paid: T.nilable(T::Boolean), original_type: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), reason: T.nilable(::String), start_at: T.nilable(::DateTime), status: T.nilable(Models::Shared::HrisTimeoffStatus), type: T.nilable(Models::Shared::HrisTimeoffType), updated_at: T.nilable(::DateTime)).void }
-        def initialize(user_id:, approved_at: nil, approver_user_id: nil, comments: nil, company_id: nil, created_at: nil, duration: nil, duration_type: nil, end_at: nil, id: nil, is_paid: nil, original_type: nil, raw: nil, reason: nil, start_at: nil, status: nil, type: nil, updated_at: nil)
+        sig { params(user_id: ::String, approved_at: T.nilable(::DateTime), approver_user_id: T.nilable(::String), comments: T.nilable(::String), company_id: T.nilable(::String), created_at: T.nilable(::DateTime), duration: T.nilable(::Float), duration_type: T.nilable(Models::Shared::DurationType), end_at: T.nilable(::DateTime), id: T.nilable(::String), is_paid: T.nilable(T::Boolean), metadata: T.nilable(T::Array[Models::Shared::HrisMetadata]), original_type: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), reason: T.nilable(::String), start_at: T.nilable(::DateTime), status: T.nilable(Models::Shared::HrisTimeoffStatus), type: T.nilable(Models::Shared::HrisTimeoffType), updated_at: T.nilable(::DateTime)).void }
+        def initialize(user_id:, approved_at: nil, approver_user_id: nil, comments: nil, company_id: nil, created_at: nil, duration: nil, duration_type: nil, end_at: nil, id: nil, is_paid: nil, metadata: nil, original_type: nil, raw: nil, reason: nil, start_at: nil, status: nil, type: nil, updated_at: nil)
           @user_id = user_id
           @approved_at = approved_at
           @approver_user_id = approver_user_id
@@ -63,6 +65,7 @@ module UnifiedRubySDK
           @end_at = end_at
           @id = id
           @is_paid = is_paid
+          @metadata = metadata
           @original_type = original_type
           @raw = raw
           @reason = reason
@@ -86,6 +89,7 @@ module UnifiedRubySDK
           return false unless @end_at == other.end_at
           return false unless @id == other.id
           return false unless @is_paid == other.is_paid
+          return false unless @metadata == other.metadata
           return false unless @original_type == other.original_type
           return false unless @raw == other.raw
           return false unless @reason == other.reason

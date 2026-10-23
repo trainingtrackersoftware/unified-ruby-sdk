@@ -14,7 +14,7 @@
 
 ## create_lms_class
 
-Create a class
+Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
 
 ### Example Usage
 
@@ -32,7 +32,7 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.class_.create_lms_class(lms_class: Models::Shared::LmsClass.new(
   created_at: DateTime.iso8601('2020-02-20T14:48:51.845Z'),
   description: 'Anser sperno decerno.',
-  id: 'd8e86285-4d39-43ad-81b4-47162c03c8c3',
+  id: '3d626bb3-633b-41be-ab9a-3ae166742cfe',
   instructors: [],
   languages: [
     'in',
@@ -51,9 +51,10 @@ res = s.class_.create_lms_class(lms_class: Models::Shared::LmsClass.new(
       url: 'https://loremflickr.com/487/921?lock=5127962071241632',
     ),
   ],
+  metadata: [],
   name: 'virtus',
   students: [],
-  updated_at: DateTime.iso8601('2025-07-10T09:08:36.712Z'),
+  updated_at: DateTime.iso8601('2025-08-05T12:30:35.661Z'),
 ), connection_id: '<id>')
 
 unless res.lms_class.nil?
@@ -83,7 +84,7 @@ end
 
 ## get_lms_class
 
-Retrieve a class
+Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -127,7 +128,7 @@ end
 
 ## list_lms_classes
 
-List all classes
+Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -172,7 +173,7 @@ end
 
 ## patch_lms_class
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -191,7 +192,7 @@ req = Models::Operations::PatchLmsClassRequest.new(
   lms_class: Models::Shared::LmsClass.new(
     created_at: DateTime.iso8601('2020-02-20T14:48:51.845Z'),
     description: 'Anser sperno decerno.',
-    id: 'e1649d98-707b-4ad9-a9ea-4ba1ea2b2fb9',
+    id: 'ddee1bcd-4b7e-4da9-b781-6a870fe29650',
     instructors: [],
     languages: [
       'in',
@@ -210,9 +211,10 @@ req = Models::Operations::PatchLmsClassRequest.new(
         url: 'https://loremflickr.com/487/921?lock=5127962071241632',
       ),
     ],
+    metadata: [],
     name: 'virtus',
     students: [],
-    updated_at: DateTime.iso8601('2025-07-10T09:08:36.732Z'),
+    updated_at: DateTime.iso8601('2025-08-05T12:30:35.679Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -244,7 +246,7 @@ end
 
 ## remove_lms_class
 
-Remove a class
+Deletes the LmsClass identified by `id`.
 
 ### Example Usage
 
@@ -286,7 +288,7 @@ end
 
 ## update_lms_class
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -305,7 +307,7 @@ req = Models::Operations::UpdateLmsClassRequest.new(
   lms_class: Models::Shared::LmsClass.new(
     created_at: DateTime.iso8601('2020-02-20T14:48:51.845Z'),
     description: 'Anser sperno decerno.',
-    id: 'e1649d98-707b-4ad9-a9ea-4ba1ea2b2fb9',
+    id: 'ddee1bcd-4b7e-4da9-b781-6a870fe29650',
     instructors: [],
     languages: [
       'in',
@@ -324,9 +326,10 @@ req = Models::Operations::UpdateLmsClassRequest.new(
         url: 'https://loremflickr.com/487/921?lock=5127962071241632',
       ),
     ],
+    metadata: [],
     name: 'virtus',
     students: [],
-    updated_at: DateTime.iso8601('2025-07-10T09:08:36.732Z'),
+    updated_at: DateTime.iso8601('2025-08-05T12:30:35.679Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

@@ -16,7 +16,7 @@
 
 ## create_martech_member
 
-Create a member
+Creates a MarketingMember. Provide the unified MarketingMember fields in the request body; they are mapped to the provider's API. Returns the created MarketingMember.
 
 ### Example Usage
 
@@ -36,28 +36,21 @@ res = s.member.create_martech_member(marketing_member: Models::Shared::Marketing
   created_at: DateTime.iso8601('2022-04-15T15:32:38.496Z'),
   emails: [
     Models::Shared::MarketingEmail.new(
-      email: 'Thalia.Abernathy61@gmail.com',
+      email: 'jude.leffler@hotmail.com',
       type: Models::Shared::MarketingEmailType::HOME,
-    ),
-    Models::Shared::MarketingEmail.new(
-      email: 'Maymie59@hotmail.com',
-      type: Models::Shared::MarketingEmailType::HOME,
-    ),
-    Models::Shared::MarketingEmail.new(
-      email: 'Coty27@hotmail.com',
-      type: Models::Shared::MarketingEmailType::WORK,
     ),
   ],
   first_name: 'Jude',
-  id: 'f753bd50-ca21-4509-b919-a53f54c01bad',
+  id: '270da929-b988-4159-8918-38d7bdde4ce8',
   last_name: 'Leffler',
+  metadata: [],
   name: 'Jude Leffler',
   status: Models::Shared::MarketingMemberStatus::UNSUBSCRIBED,
   tags: [
-    'vinco',
-    'ceno',
+    'adnuo',
+    'verumtamen',
   ],
-  updated_at: DateTime.iso8601('2025-06-17T09:11:18.183Z'),
+  updated_at: DateTime.iso8601('2025-07-10T05:59:16.554Z'),
 ), connection_id: '<id>')
 
 unless res.marketing_member.nil?
@@ -87,7 +80,7 @@ end
 
 ## get_clubs_member
 
-Retrieve a member
+Retrieves a single ClubsMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -131,7 +124,7 @@ end
 
 ## get_martech_member
 
-Retrieve a member
+Retrieves a single MarketingMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -175,7 +168,7 @@ end
 
 ## list_clubs_members
 
-List all members
+Returns a list of ClubsMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -220,7 +213,7 @@ end
 
 ## list_martech_members
 
-List all members
+Returns a list of MarketingMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -265,7 +258,7 @@ end
 
 ## patch_martech_member
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -286,28 +279,21 @@ req = Models::Operations::PatchMartechMemberRequest.new(
     created_at: DateTime.iso8601('2022-04-15T15:32:38.496Z'),
     emails: [
       Models::Shared::MarketingEmail.new(
-        email: 'Thalia.Abernathy61@gmail.com',
+        email: 'jude.leffler@hotmail.com',
         type: Models::Shared::MarketingEmailType::HOME,
-      ),
-      Models::Shared::MarketingEmail.new(
-        email: 'Maymie59@hotmail.com',
-        type: Models::Shared::MarketingEmailType::HOME,
-      ),
-      Models::Shared::MarketingEmail.new(
-        email: 'Coty27@hotmail.com',
-        type: Models::Shared::MarketingEmailType::WORK,
       ),
     ],
     first_name: 'Jude',
-    id: '8a534753-6554-4d78-98b0-1b6ba7be952e',
+    id: '2e8f501b-b93b-4cbe-807d-29c89dba8c62',
     last_name: 'Leffler',
+    metadata: [],
     name: 'Jude Leffler',
     status: Models::Shared::MarketingMemberStatus::UNSUBSCRIBED,
     tags: [
-      'vinco',
-      'ceno',
+      'adnuo',
+      'verumtamen',
     ],
-    updated_at: DateTime.iso8601('2025-06-17T09:11:18.189Z'),
+    updated_at: DateTime.iso8601('2025-07-10T05:59:16.568Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -339,7 +325,7 @@ end
 
 ## remove_martech_member
 
-Remove a member
+Deletes the MarketingMember identified by `id`.
 
 ### Example Usage
 
@@ -381,7 +367,7 @@ end
 
 ## update_martech_member
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -402,28 +388,21 @@ req = Models::Operations::UpdateMartechMemberRequest.new(
     created_at: DateTime.iso8601('2022-04-15T15:32:38.496Z'),
     emails: [
       Models::Shared::MarketingEmail.new(
-        email: 'Thalia.Abernathy61@gmail.com',
+        email: 'jude.leffler@hotmail.com',
         type: Models::Shared::MarketingEmailType::HOME,
-      ),
-      Models::Shared::MarketingEmail.new(
-        email: 'Maymie59@hotmail.com',
-        type: Models::Shared::MarketingEmailType::HOME,
-      ),
-      Models::Shared::MarketingEmail.new(
-        email: 'Coty27@hotmail.com',
-        type: Models::Shared::MarketingEmailType::WORK,
       ),
     ],
     first_name: 'Jude',
-    id: '8a534753-6554-4d78-98b0-1b6ba7be952e',
+    id: '2e8f501b-b93b-4cbe-807d-29c89dba8c62',
     last_name: 'Leffler',
+    metadata: [],
     name: 'Jude Leffler',
     status: Models::Shared::MarketingMemberStatus::UNSUBSCRIBED,
     tags: [
-      'vinco',
-      'ceno',
+      'adnuo',
+      'verumtamen',
     ],
-    updated_at: DateTime.iso8601('2025-06-17T09:11:18.189Z'),
+    updated_at: DateTime.iso8601('2025-07-10T05:59:16.568Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

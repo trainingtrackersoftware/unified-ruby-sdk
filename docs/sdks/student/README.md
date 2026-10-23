@@ -14,7 +14,7 @@
 
 ## create_lms_student
 
-Create a student
+Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
 
 ### Example Usage
 
@@ -31,31 +31,38 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.student.create_lms_student(lms_student: Models::Shared::LmsStudent.new(
   address: Models::Shared::PropertyLmsStudentAddress.new(
-    address1: '94082 Kassandra Camp',
-    address2: 'Apt. 461',
-    city: 'New Ibrahimmouth',
+    address1: '15033 Corwin Circles',
+    city: 'New Craigside',
     country_code: 'US',
-    postal_code: '52851',
-    region: 'Tennessee',
-    region_code: 'NV',
+    postal_code: '73966',
+    region: 'New Jersey',
+    region_code: 'TX',
   ),
   created_at: DateTime.iso8601('2020-03-23T06:59:29.777Z'),
   emails: [
     Models::Shared::LmsEmail.new(),
-    Models::Shared::LmsEmail.new(),
   ],
   first_name: 'Marcella',
-  id: '57a87fad-5a1b-4502-ac37-e71d6bd5ec19',
-  image_url: 'https://avatars.githubusercontent.com/u/36301374',
+  id: '88ab09dc-4d25-47d4-88b5-741857890652',
+  image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg',
   last_name: 'Murazik',
+  metadata: [],
   name: 'Marcella Murazik',
   telephones: [
     Models::Shared::LmsTelephone.new(
-      telephone: '(482) 469-8067',
+      telephone: '(899) 827-6400',
+      type: Models::Shared::LmsTelephoneType::WORK,
+    ),
+    Models::Shared::LmsTelephone.new(
+      telephone: '(487) 213-8236',
+      type: Models::Shared::LmsTelephoneType::FAX,
+    ),
+    Models::Shared::LmsTelephone.new(
+      telephone: '(980) 775-2940',
       type: Models::Shared::LmsTelephoneType::FAX,
     ),
   ],
-  updated_at: DateTime.iso8601('2022-06-20T15:03:55.419Z'),
+  updated_at: DateTime.iso8601('2022-07-01T15:54:34.494Z'),
 ), connection_id: '<id>')
 
 unless res.lms_student.nil?
@@ -85,7 +92,7 @@ end
 
 ## get_lms_student
 
-Retrieve a student
+Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -129,7 +136,7 @@ end
 
 ## list_lms_students
 
-List all students
+Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -174,7 +181,7 @@ end
 
 ## patch_lms_student
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -192,31 +199,38 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchLmsStudentRequest.new(
   lms_student: Models::Shared::LmsStudent.new(
     address: Models::Shared::PropertyLmsStudentAddress.new(
-      address1: '94082 Kassandra Camp',
-      address2: 'Apt. 461',
-      city: 'New Ibrahimmouth',
+      address1: '15033 Corwin Circles',
+      city: 'New Craigside',
       country_code: 'US',
-      postal_code: '52851',
-      region: 'Tennessee',
-      region_code: 'NV',
+      postal_code: '73966',
+      region: 'New Jersey',
+      region_code: 'TX',
     ),
     created_at: DateTime.iso8601('2020-03-23T06:59:29.777Z'),
     emails: [
       Models::Shared::LmsEmail.new(),
-      Models::Shared::LmsEmail.new(),
     ],
     first_name: 'Marcella',
-    id: 'dff1448f-dddf-4fd2-bc4a-5c8fff066a9d',
-    image_url: 'https://avatars.githubusercontent.com/u/36301374',
+    id: '2dc0119d-4ae8-40e0-a92d-24cde92cc24f',
+    image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg',
     last_name: 'Murazik',
+    metadata: [],
     name: 'Marcella Murazik',
     telephones: [
       Models::Shared::LmsTelephone.new(
-        telephone: '(482) 469-8067',
+        telephone: '(899) 827-6400',
+        type: Models::Shared::LmsTelephoneType::WORK,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(487) 213-8236',
+        type: Models::Shared::LmsTelephoneType::FAX,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(980) 775-2940',
         type: Models::Shared::LmsTelephoneType::FAX,
       ),
     ],
-    updated_at: DateTime.iso8601('2022-06-20T15:03:55.426Z'),
+    updated_at: DateTime.iso8601('2022-07-01T15:54:34.501Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -248,7 +262,7 @@ end
 
 ## remove_lms_student
 
-Remove a student
+Deletes the LmsStudent identified by `id`.
 
 ### Example Usage
 
@@ -290,7 +304,7 @@ end
 
 ## update_lms_student
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -308,31 +322,38 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateLmsStudentRequest.new(
   lms_student: Models::Shared::LmsStudent.new(
     address: Models::Shared::PropertyLmsStudentAddress.new(
-      address1: '94082 Kassandra Camp',
-      address2: 'Apt. 461',
-      city: 'New Ibrahimmouth',
+      address1: '15033 Corwin Circles',
+      city: 'New Craigside',
       country_code: 'US',
-      postal_code: '52851',
-      region: 'Tennessee',
-      region_code: 'NV',
+      postal_code: '73966',
+      region: 'New Jersey',
+      region_code: 'TX',
     ),
     created_at: DateTime.iso8601('2020-03-23T06:59:29.777Z'),
     emails: [
       Models::Shared::LmsEmail.new(),
-      Models::Shared::LmsEmail.new(),
     ],
     first_name: 'Marcella',
-    id: 'dff1448f-dddf-4fd2-bc4a-5c8fff066a9d',
-    image_url: 'https://avatars.githubusercontent.com/u/36301374',
+    id: '2dc0119d-4ae8-40e0-a92d-24cde92cc24f',
+    image_url: 'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg',
     last_name: 'Murazik',
+    metadata: [],
     name: 'Marcella Murazik',
     telephones: [
       Models::Shared::LmsTelephone.new(
-        telephone: '(482) 469-8067',
+        telephone: '(899) 827-6400',
+        type: Models::Shared::LmsTelephoneType::WORK,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(487) 213-8236',
+        type: Models::Shared::LmsTelephoneType::FAX,
+      ),
+      Models::Shared::LmsTelephone.new(
+        telephone: '(980) 775-2940',
         type: Models::Shared::LmsTelephoneType::FAX,
       ),
     ],
-    updated_at: DateTime.iso8601('2022-06-20T15:03:55.426Z'),
+    updated_at: DateTime.iso8601('2022-07-01T15:54:34.501Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

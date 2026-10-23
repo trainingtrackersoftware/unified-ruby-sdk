@@ -19,6 +19,7 @@
 * [list_task_comments](#list_task_comments) - List all comments
 * [list_task_projects](#list_task_projects) - List all projects
 * [list_task_tasks](#list_task_tasks) - List all tasks
+* [patch_genai_task](#patch_genai_task) - Update a task
 * [patch_task_comment](#patch_task_comment) - Update a comment
 * [patch_task_project](#patch_task_project) - Update a project
 * [patch_task_task](#patch_task_task) - Update a task
@@ -26,13 +27,14 @@
 * [remove_task_comment](#remove_task_comment) - Remove a comment
 * [remove_task_project](#remove_task_project) - Remove a project
 * [remove_task_task](#remove_task_task) - Remove a task
+* [update_genai_task](#update_genai_task) - Update a task
 * [update_task_comment](#update_task_comment) - Update a comment
 * [update_task_project](#update_task_project) - Update a project
 * [update_task_task](#update_task_task) - Update a task
 
 ## create_genai_task
 
-Create a task
+Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
 
 ### Example Usage
 
@@ -48,16 +50,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.task.create_genai_task(genai_task: Models::Shared::GenaiTask.new(
-  completed_at: DateTime.iso8601('2025-09-06T13:57:38.078Z'),
+  completed_at: DateTime.iso8601('2025-10-02T21:57:28.603Z'),
   created_at: DateTime.iso8601('2020-10-25T20:19:33.247Z'),
   files_changed: 19.0,
-  id: '968cf408-0894-4133-a538-3598570fa578',
+  id: '2057f194-91c5-4f58-8d24-ab68c5099f5e',
   instructions: 'Benigne canonicus officiis solvo adsidue deleo angustus.',
   lines_added: 244.0,
   lines_deleted: 118.0,
   messages: [
     Models::Shared::GenaiContent.new(
       content: 'Stultus esse cursim stabilis tenetur amet contigo tristis.',
+      images: [],
       role: Models::Shared::Role::ASSISTANT,
     ),
   ],
@@ -65,12 +68,12 @@ res = s.task.create_genai_task(genai_task: Models::Shared::GenaiTask.new(
   pullrequest_url: 'https://github.com/berenice.satterfield/joshingly-ignorance/pull/383',
   repo_url: 'https://github.com/berenice.satterfield/joshingly-ignorance',
   source_branch_identifier: 'main',
-  started_at: DateTime.iso8601('2024-05-03T13:35:15.218Z'),
+  started_at: DateTime.iso8601('2024-05-22T14:55:37.779Z'),
   status: Models::Shared::GenaiTaskStatus::BLOCKED,
   summary: 'Cur aeternus cogito vesper.',
   target_branch_identifier: 'agent/joshingly-ignorance',
   tokens_used: 2165.0,
-  updated_at: DateTime.iso8601('2023-02-14T14:26:48.799Z'),
+  updated_at: DateTime.iso8601('2023-02-27T01:51:54.808Z'),
   web_url: 'https://inexperienced-adrenalin.biz/',
 ), connection_id: '<id>')
 
@@ -101,7 +104,7 @@ end
 
 ## create_task_comment
 
-Create a comment
+Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
 
 ### Example Usage
 
@@ -119,10 +122,10 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 res = s.task.create_task_comment(task_comment: Models::Shared::TaskComment.new(
   created_at: DateTime.iso8601('2019-10-12T20:33:37.879Z'),
   has_children: true,
-  id: 'd92b2d9e-8c09-4571-a417-fe7110f8b0bb',
+  id: 'dc3b63d3-a6f9-48e7-a145-4c566e24fc34',
+  metadata: [],
   text: 'Colo ulciscor sublime tabernus.',
-  updated_at: DateTime.iso8601('2021-09-24T21:41:00.583Z'),
-  user_name: 'Santina Abbott',
+  updated_at: DateTime.iso8601('2021-10-03T21:24:08.746Z'),
 ), connection_id: '<id>')
 
 unless res.task_comment.nil?
@@ -152,7 +155,7 @@ end
 
 ## create_task_project
 
-Create a project
+Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
 
 ### Example Usage
 
@@ -172,14 +175,14 @@ res = s.task.create_task_project(task_project: Models::Shared::TaskProject.new(
   description: 'Valetudo aggredior accommodo curiositas vox.',
   has_children: false,
   has_tasks: false,
-  id: 'cc0e16de-8188-4d43-868f-cf9e3787c27c',
+  id: '70b9e689-6f7e-4521-b6d3-eb8f952bbe01',
   metadata: [
     Models::Shared::TaskMetadata.new(
       extra_data: {
 
       },
       format: Models::Shared::TaskMetadataFormat::TEXT,
-      id: 'e83b4005-eac1-4dfa-ae95-4013f93c4c7d',
+      id: '2760b84d-998a-4da9-b093-b614914c3d63',
       namespace: 'custom',
       slug: 'decens',
       value: 'uterque',
@@ -189,14 +192,14 @@ res = s.task.create_task_project(task_project: Models::Shared::TaskProject.new(
 
       },
       format: Models::Shared::TaskMetadataFormat::TEXT,
-      id: '9d196c7e-2d47-4411-8942-a6472f44cb31',
+      id: '85000610-f44a-46d8-9ef5-763e97fb3946',
       namespace: 'custom',
       slug: 'benevolentia',
       value: 'pariatur',
     ),
   ],
   name: 'Garden',
-  updated_at: DateTime.iso8601('2023-10-08T21:27:25.328Z'),
+  updated_at: DateTime.iso8601('2023-10-11T18:49:15.277Z'),
 ), connection_id: '<id>')
 
 unless res.task_project.nil?
@@ -226,7 +229,7 @@ end
 
 ## create_task_task
 
-Create a task
+Creates a TaskTask. Provide the unified TaskTask fields in the request body; they are mapped to the provider's API. Returns the created TaskTask.
 
 ### Example Usage
 
@@ -243,29 +246,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.task.create_task_task(task_task: Models::Shared::TaskTask.new(
   attachment_ids: [],
-  completed_at: DateTime.iso8601('2022-03-25T17:50:24.679Z'),
   created_at: DateTime.iso8601('2019-01-31T08:34:55.626Z'),
-  due_at: DateTime.iso8601('2026-04-26T05:36:40.806Z'),
-  end_at: DateTime.iso8601('2022-10-15T04:39:45.330Z'),
+  due_at: DateTime.iso8601('2025-09-13T10:29:23.803Z'),
   has_children: true,
-  id: 'f0703b97-9544-4c08-a485-22fe3b0af672',
+  id: '5ef11606-3329-4c37-bc57-04d273abf600',
   metadata: [],
-  name: 'Direct Markets Architect',
-  notes: 'Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.',
-  priority: 'LOW',
-  progress: 2.0,
-  start_at: DateTime.iso8601('2022-01-20T15:42:25.624Z'),
-  status: Models::Shared::TaskTaskStatus::IN_PROGRESS,
+  name: 'I\'ll compress the optical IB interface, that should capacitor the JBOD system!',
+  notes: 'Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.',
+  priority: 'MEDIUM',
+  progress: 33.0,
+  start_at: DateTime.iso8601('2025-08-16T00:37:54.841Z'),
+  status: Models::Shared::TaskTaskStatus::OPENED,
   story_points: 0.0,
   tags: [
-    'concido',
-    'rerum',
+    'curis',
+    'crinis',
   ],
-  time_spent: 957.0,
+  time_spent: 5359.0,
   time_spent_unit: 'SECONDS',
-  type: 'tubineus',
-  updated_at: DateTime.iso8601('2019-07-13T15:04:42.986Z'),
-  url: 'https://dismal-silk.net/',
+  type: 'magni',
+  updated_at: DateTime.iso8601('2022-04-07T21:50:33.023Z'),
+  url: 'https://elementary-utilization.net/',
 ), connection_id: '<id>')
 
 unless res.task_task.nil?
@@ -295,7 +296,7 @@ end
 
 ## get_genai_task
 
-Retrieve a task
+Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -339,7 +340,7 @@ end
 
 ## get_task_change
 
-Retrieve a change
+Retrieves a single TaskChange by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -383,7 +384,7 @@ end
 
 ## get_task_comment
 
-Retrieve a comment
+Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -427,7 +428,7 @@ end
 
 ## get_task_project
 
-Retrieve a project
+Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -471,7 +472,7 @@ end
 
 ## get_task_task
 
-Retrieve a task
+Retrieves a single TaskTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -515,7 +516,7 @@ end
 
 ## list_genai_tasks
 
-List all tasks
+Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -560,7 +561,7 @@ end
 
 ## list_task_changes
 
-List all changes
+Returns a list of TaskChanges. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -605,7 +606,7 @@ end
 
 ## list_task_comments
 
-List all comments
+Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -650,7 +651,7 @@ end
 
 ## list_task_projects
 
-List all projects
+Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -695,7 +696,7 @@ end
 
 ## list_task_tasks
 
-List all tasks
+Returns a list of TaskTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -738,9 +739,82 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## patch_genai_task
+
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="patchGenaiTask" method="patch" path="/genai/{connection_id}/task/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::PatchGenaiTaskRequest.new(
+  genai_task: Models::Shared::GenaiTask.new(
+    completed_at: DateTime.iso8601('2025-10-02T21:57:28.620Z'),
+    created_at: DateTime.iso8601('2020-10-25T20:19:33.247Z'),
+    files_changed: 19.0,
+    id: '823382d2-5cc7-4686-9940-00d1212c120e',
+    instructions: 'Benigne canonicus officiis solvo adsidue deleo angustus.',
+    lines_added: 244.0,
+    lines_deleted: 118.0,
+    messages: [
+      Models::Shared::GenaiContent.new(
+        content: 'Stultus esse cursim stabilis tenetur amet contigo tristis.',
+        images: [],
+        role: Models::Shared::Role::ASSISTANT,
+      ),
+    ],
+    name: 'connect multi-byte port',
+    pullrequest_url: 'https://github.com/berenice.satterfield/joshingly-ignorance/pull/383',
+    repo_url: 'https://github.com/berenice.satterfield/joshingly-ignorance',
+    source_branch_identifier: 'main',
+    started_at: DateTime.iso8601('2024-05-22T14:55:37.791Z'),
+    status: Models::Shared::GenaiTaskStatus::BLOCKED,
+    summary: 'Cur aeternus cogito vesper.',
+    target_branch_identifier: 'agent/joshingly-ignorance',
+    tokens_used: 2165.0,
+    updated_at: DateTime.iso8601('2023-02-27T01:51:54.816Z'),
+    web_url: 'https://inexperienced-adrenalin.biz/',
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.task.patch_genai_task(request: req)
+
+unless res.genai_task.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [Models::Operations::PatchGenaiTaskRequest](../../models/operations/patchgenaitaskrequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+
+### Response
+
+**[T.nilable(Models::Operations::PatchGenaiTaskResponse)](../../models/operations/patchgenaitaskresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## patch_task_comment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -759,10 +833,10 @@ req = Models::Operations::PatchTaskCommentRequest.new(
   task_comment: Models::Shared::TaskComment.new(
     created_at: DateTime.iso8601('2019-10-12T20:33:37.879Z'),
     has_children: true,
-    id: '73440994-5b81-4ab7-9441-ec40694d6397',
+    id: '1fff7161-2500-40af-9743-fa2743781a91',
+    metadata: [],
     text: 'Colo ulciscor sublime tabernus.',
-    updated_at: DateTime.iso8601('2021-09-24T21:41:00.585Z'),
-    user_name: 'Santina Abbott',
+    updated_at: DateTime.iso8601('2021-10-03T21:24:08.750Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -794,7 +868,7 @@ end
 
 ## patch_task_project
 
-Update a project
+Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
 
 ### Example Usage
 
@@ -815,14 +889,14 @@ req = Models::Operations::PatchTaskProjectRequest.new(
     description: 'Valetudo aggredior accommodo curiositas vox.',
     has_children: false,
     has_tasks: false,
-    id: 'fd489a85-c972-40fd-aaf9-2d7c6c737ed1',
+    id: '35f554fb-0e2e-4945-8737-cd3a4a354144',
     metadata: [
       Models::Shared::TaskMetadata.new(
         extra_data: {
 
         },
         format: Models::Shared::TaskMetadataFormat::TEXT,
-        id: '0539bb0b-5263-44ef-8147-ac6393fdd8b6',
+        id: 'ee70cb43-dfa1-4406-94e0-baea637a39b4',
         namespace: 'custom',
         slug: 'decens',
         value: 'uterque',
@@ -832,14 +906,14 @@ req = Models::Operations::PatchTaskProjectRequest.new(
 
         },
         format: Models::Shared::TaskMetadataFormat::TEXT,
-        id: '2a317897-0d1f-46b6-831a-e55155eb784d',
+        id: '228519fa-a86a-439f-85fc-d49d98eea736',
         namespace: 'custom',
         slug: 'benevolentia',
         value: 'pariatur',
       ),
     ],
     name: 'Garden',
-    updated_at: DateTime.iso8601('2023-10-08T21:27:25.329Z'),
+    updated_at: DateTime.iso8601('2023-10-11T18:49:15.279Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -871,7 +945,7 @@ end
 
 ## patch_task_task
 
-Update a task
+Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
 
 ### Example Usage
 
@@ -889,29 +963,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchTaskTaskRequest.new(
   task_task: Models::Shared::TaskTask.new(
     attachment_ids: [],
-    completed_at: DateTime.iso8601('2022-03-25T17:50:24.689Z'),
     created_at: DateTime.iso8601('2019-01-31T08:34:55.626Z'),
-    due_at: DateTime.iso8601('2026-04-26T05:36:40.830Z'),
-    end_at: DateTime.iso8601('2022-10-15T04:39:45.342Z'),
+    due_at: DateTime.iso8601('2025-09-13T10:29:23.834Z'),
     has_children: true,
-    id: '907fd4b6-91ec-4eec-8491-5f9677a3e58f',
+    id: 'db0911f8-7b65-45db-a3d8-300a794d41a1',
     metadata: [],
-    name: 'Direct Markets Architect',
-    notes: 'Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.',
-    priority: 'LOW',
-    progress: 2.0,
-    start_at: DateTime.iso8601('2022-01-20T15:42:25.634Z'),
-    status: Models::Shared::TaskTaskStatus::IN_PROGRESS,
+    name: 'I\'ll compress the optical IB interface, that should capacitor the JBOD system!',
+    notes: 'Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.',
+    priority: 'MEDIUM',
+    progress: 33.0,
+    start_at: DateTime.iso8601('2025-08-16T00:37:54.872Z'),
+    status: Models::Shared::TaskTaskStatus::OPENED,
     story_points: 0.0,
     tags: [
-      'concido',
-      'rerum',
+      'curis',
+      'crinis',
     ],
-    time_spent: 957.0,
+    time_spent: 5359.0,
     time_spent_unit: 'SECONDS',
-    type: 'tubineus',
-    updated_at: DateTime.iso8601('2019-07-13T15:04:42.988Z'),
-    url: 'https://dismal-silk.net/',
+    type: 'magni',
+    updated_at: DateTime.iso8601('2022-04-07T21:50:33.038Z'),
+    url: 'https://elementary-utilization.net/',
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -943,7 +1015,7 @@ end
 
 ## remove_genai_task
 
-Remove a task
+Deletes the GenaiTask identified by `id`.
 
 ### Example Usage
 
@@ -985,7 +1057,7 @@ end
 
 ## remove_task_comment
 
-Remove a comment
+Deletes the TaskComment identified by `id`.
 
 ### Example Usage
 
@@ -1027,7 +1099,7 @@ end
 
 ## remove_task_project
 
-Remove a project
+Deletes the TaskProject identified by `id`.
 
 ### Example Usage
 
@@ -1069,7 +1141,7 @@ end
 
 ## remove_task_task
 
-Remove a task
+Deletes the TaskTask identified by `id`.
 
 ### Example Usage
 
@@ -1109,9 +1181,82 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Errors::APIError | 4XX, 5XX         | \*/\*            |
 
+## update_genai_task
+
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="ruby" operationID="updateGenaiTask" method="put" path="/genai/{connection_id}/task/{id}" -->
+```ruby
+require 'unified_ruby_sdk'
+
+Models = ::UnifiedRubySDK::Models
+s = ::UnifiedRubySDK::UnifiedTo.new(
+      security: Models::Shared::Security.new(
+        jwt: '<YOUR_API_KEY_HERE>',
+      ),
+    )
+
+req = Models::Operations::UpdateGenaiTaskRequest.new(
+  genai_task: Models::Shared::GenaiTask.new(
+    completed_at: DateTime.iso8601('2025-10-02T21:57:28.620Z'),
+    created_at: DateTime.iso8601('2020-10-25T20:19:33.247Z'),
+    files_changed: 19.0,
+    id: '823382d2-5cc7-4686-9940-00d1212c120e',
+    instructions: 'Benigne canonicus officiis solvo adsidue deleo angustus.',
+    lines_added: 244.0,
+    lines_deleted: 118.0,
+    messages: [
+      Models::Shared::GenaiContent.new(
+        content: 'Stultus esse cursim stabilis tenetur amet contigo tristis.',
+        images: [],
+        role: Models::Shared::Role::ASSISTANT,
+      ),
+    ],
+    name: 'connect multi-byte port',
+    pullrequest_url: 'https://github.com/berenice.satterfield/joshingly-ignorance/pull/383',
+    repo_url: 'https://github.com/berenice.satterfield/joshingly-ignorance',
+    source_branch_identifier: 'main',
+    started_at: DateTime.iso8601('2024-05-22T14:55:37.791Z'),
+    status: Models::Shared::GenaiTaskStatus::BLOCKED,
+    summary: 'Cur aeternus cogito vesper.',
+    target_branch_identifier: 'agent/joshingly-ignorance',
+    tokens_used: 2165.0,
+    updated_at: DateTime.iso8601('2023-02-27T01:51:54.816Z'),
+    web_url: 'https://inexperienced-adrenalin.biz/',
+  ),
+  connection_id: '<id>',
+  id: '<id>',
+)
+
+res = s.task.update_genai_task(request: req)
+
+unless res.genai_task.nil?
+  # handle response
+end
+
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [Models::Operations::UpdateGenaiTaskRequest](../../models/operations/updategenaitaskrequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+
+### Response
+
+**[T.nilable(Models::Operations::UpdateGenaiTaskResponse)](../../models/operations/updategenaitaskresponse.md)**
+
+### Errors
+
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| Errors::APIError | 4XX, 5XX         | \*/\*            |
+
 ## update_task_comment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -1130,10 +1275,10 @@ req = Models::Operations::UpdateTaskCommentRequest.new(
   task_comment: Models::Shared::TaskComment.new(
     created_at: DateTime.iso8601('2019-10-12T20:33:37.879Z'),
     has_children: true,
-    id: '73440994-5b81-4ab7-9441-ec40694d6397',
+    id: '1fff7161-2500-40af-9743-fa2743781a91',
+    metadata: [],
     text: 'Colo ulciscor sublime tabernus.',
-    updated_at: DateTime.iso8601('2021-09-24T21:41:00.585Z'),
-    user_name: 'Santina Abbott',
+    updated_at: DateTime.iso8601('2021-10-03T21:24:08.750Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1165,7 +1310,7 @@ end
 
 ## update_task_project
 
-Update a project
+Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
 
 ### Example Usage
 
@@ -1186,14 +1331,14 @@ req = Models::Operations::UpdateTaskProjectRequest.new(
     description: 'Valetudo aggredior accommodo curiositas vox.',
     has_children: false,
     has_tasks: false,
-    id: 'fd489a85-c972-40fd-aaf9-2d7c6c737ed1',
+    id: '35f554fb-0e2e-4945-8737-cd3a4a354144',
     metadata: [
       Models::Shared::TaskMetadata.new(
         extra_data: {
 
         },
         format: Models::Shared::TaskMetadataFormat::TEXT,
-        id: '0539bb0b-5263-44ef-8147-ac6393fdd8b6',
+        id: 'ee70cb43-dfa1-4406-94e0-baea637a39b4',
         namespace: 'custom',
         slug: 'decens',
         value: 'uterque',
@@ -1203,14 +1348,14 @@ req = Models::Operations::UpdateTaskProjectRequest.new(
 
         },
         format: Models::Shared::TaskMetadataFormat::TEXT,
-        id: '2a317897-0d1f-46b6-831a-e55155eb784d',
+        id: '228519fa-a86a-439f-85fc-d49d98eea736',
         namespace: 'custom',
         slug: 'benevolentia',
         value: 'pariatur',
       ),
     ],
     name: 'Garden',
-    updated_at: DateTime.iso8601('2023-10-08T21:27:25.329Z'),
+    updated_at: DateTime.iso8601('2023-10-11T18:49:15.279Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -1242,7 +1387,7 @@ end
 
 ## update_task_task
 
-Update a task
+Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
 
 ### Example Usage
 
@@ -1260,29 +1405,27 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateTaskTaskRequest.new(
   task_task: Models::Shared::TaskTask.new(
     attachment_ids: [],
-    completed_at: DateTime.iso8601('2022-03-25T17:50:24.689Z'),
     created_at: DateTime.iso8601('2019-01-31T08:34:55.626Z'),
-    due_at: DateTime.iso8601('2026-04-26T05:36:40.830Z'),
-    end_at: DateTime.iso8601('2022-10-15T04:39:45.342Z'),
+    due_at: DateTime.iso8601('2025-09-13T10:29:23.834Z'),
     has_children: true,
-    id: '907fd4b6-91ec-4eec-8491-5f9677a3e58f',
+    id: 'db0911f8-7b65-45db-a3d8-300a794d41a1',
     metadata: [],
-    name: 'Direct Markets Architect',
-    notes: 'Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.',
-    priority: 'LOW',
-    progress: 2.0,
-    start_at: DateTime.iso8601('2022-01-20T15:42:25.634Z'),
-    status: Models::Shared::TaskTaskStatus::IN_PROGRESS,
+    name: 'I\'ll compress the optical IB interface, that should capacitor the JBOD system!',
+    notes: 'Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.',
+    priority: 'MEDIUM',
+    progress: 33.0,
+    start_at: DateTime.iso8601('2025-08-16T00:37:54.872Z'),
+    status: Models::Shared::TaskTaskStatus::OPENED,
     story_points: 0.0,
     tags: [
-      'concido',
-      'rerum',
+      'curis',
+      'crinis',
     ],
-    time_spent: 957.0,
+    time_spent: 5359.0,
     time_spent_unit: 'SECONDS',
-    type: 'tubineus',
-    updated_at: DateTime.iso8601('2019-07-13T15:04:42.988Z'),
-    url: 'https://dismal-silk.net/',
+    type: 'magni',
+    updated_at: DateTime.iso8601('2022-04-07T21:50:33.038Z'),
+    url: 'https://elementary-utilization.net/',
   ),
   connection_id: '<id>',
   id: '<id>',

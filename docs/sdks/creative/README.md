@@ -14,7 +14,7 @@
 
 ## create_ads_creative
 
-Create a creative
+Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
 
 ### Example Usage
 
@@ -31,15 +31,16 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.creative.create_ads_creative(ads_creative: Models::Shared::AdsCreative.new(
   created_at: DateTime.iso8601('2020-02-17T11:24:51.093Z'),
-  id: '082b8a90-b91f-4b51-bc46-6b47d673a630',
+  id: '7b494a4d-e1ed-4d02-bb74-46560b62deee',
   labels: [
     'coma',
     'accedo',
     'termes',
   ],
+  metadata: [],
   name: 'Brekke, Bradtke and Robel',
   status: Models::Shared::AdsCreativeStatus::PAUSED,
-  updated_at: DateTime.iso8601('2021-06-21T15:50:31.757Z'),
+  updated_at: DateTime.iso8601('2021-06-28T03:59:57.030Z'),
 ), connection_id: '<id>')
 
 unless res.ads_creative.nil?
@@ -69,7 +70,7 @@ end
 
 ## get_ads_creative
 
-Retrieve a creative
+Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -113,7 +114,7 @@ end
 
 ## list_ads_creatives
 
-List all creatives
+Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -158,7 +159,7 @@ end
 
 ## patch_ads_creative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -176,15 +177,16 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchAdsCreativeRequest.new(
   ads_creative: Models::Shared::AdsCreative.new(
     created_at: DateTime.iso8601('2020-02-17T11:24:51.093Z'),
-    id: 'cd134e56-1298-4651-a885-4a59998f4b93',
+    id: '214b3c56-c7cf-43e9-9af4-8c8d883b797f',
     labels: [
       'coma',
       'accedo',
       'termes',
     ],
+    metadata: [],
     name: 'Brekke, Bradtke and Robel',
     status: Models::Shared::AdsCreativeStatus::PAUSED,
-    updated_at: DateTime.iso8601('2021-06-21T15:50:31.764Z'),
+    updated_at: DateTime.iso8601('2021-06-28T03:59:57.039Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -216,7 +218,7 @@ end
 
 ## remove_ads_creative
 
-Remove a creative
+Deletes the AdsCreative identified by `id`.
 
 ### Example Usage
 
@@ -258,7 +260,7 @@ end
 
 ## update_ads_creative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -276,15 +278,16 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateAdsCreativeRequest.new(
   ads_creative: Models::Shared::AdsCreative.new(
     created_at: DateTime.iso8601('2020-02-17T11:24:51.093Z'),
-    id: 'cd134e56-1298-4651-a885-4a59998f4b93',
+    id: '214b3c56-c7cf-43e9-9af4-8c8d883b797f',
     labels: [
       'coma',
       'accedo',
       'termes',
     ],
+    metadata: [],
     name: 'Brekke, Bradtke and Robel',
     status: Models::Shared::AdsCreativeStatus::PAUSED,
-    updated_at: DateTime.iso8601('2021-06-21T15:50:31.764Z'),
+    updated_at: DateTime.iso8601('2021-06-28T03:59:57.039Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

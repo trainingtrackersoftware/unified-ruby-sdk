@@ -14,7 +14,7 @@
 
 ## create_hris_bankaccount
 
-Create a bankaccount
+Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
 
 ### Example Usage
 
@@ -34,12 +34,18 @@ res = s.bankaccount.create_hris_bankaccount(hris_bankaccount: Models::Shared::Hr
   account_number_last4: '3777',
   account_type: Models::Shared::HrisBankaccountAccountType::CHECKING,
   bank_name: 'Huel Group',
+  country_code: 'US',
   created_at: DateTime.iso8601('2019-11-16T16:43:45.976Z'),
-  id: '8861a5c0-e091-4718-8479-aec3dd76bf39',
-  is_primary: false,
-  name: 'Checking Account',
+  currency: 'USD',
+  id: 'a6b56f32-6680-4278-a7eb-42eafc008478',
+  is_primary: true,
+  metadata: [],
+  name: 'Granville Schumm - Checking',
+  priority: 2.0,
   routing_number: '448650724',
-  updated_at: DateTime.iso8601('2025-06-06T22:35:03.395Z'),
+  split_amount: 98.0,
+  split_type: Models::Shared::SplitType::PERCENTAGE,
+  updated_at: DateTime.iso8601('2025-07-02T21:02:53.617Z'),
 ), connection_id: '<id>')
 
 unless res.hris_bankaccount.nil?
@@ -69,7 +75,7 @@ end
 
 ## get_hris_bankaccount
 
-Retrieve a bankaccount
+Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -113,7 +119,7 @@ end
 
 ## list_hris_bankaccounts
 
-List all bankaccounts
+Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -158,7 +164,7 @@ end
 
 ## patch_hris_bankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -179,12 +185,18 @@ req = Models::Operations::PatchHrisBankaccountRequest.new(
     account_number_last4: '3777',
     account_type: Models::Shared::HrisBankaccountAccountType::CHECKING,
     bank_name: 'Huel Group',
+    country_code: 'US',
     created_at: DateTime.iso8601('2019-11-16T16:43:45.976Z'),
-    id: 'a59c46a7-5d4b-45df-98f1-c5935aac4d1f',
-    is_primary: false,
-    name: 'Checking Account',
+    currency: 'USD',
+    id: '0ac397c0-d0a9-4e91-a40f-625e296f11dc',
+    is_primary: true,
+    metadata: [],
+    name: 'Granville Schumm - Checking',
+    priority: 2.0,
     routing_number: '448650724',
-    updated_at: DateTime.iso8601('2025-06-06T22:35:03.403Z'),
+    split_amount: 98.0,
+    split_type: Models::Shared::SplitType::PERCENTAGE,
+    updated_at: DateTime.iso8601('2025-07-02T21:02:53.635Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -216,7 +228,7 @@ end
 
 ## remove_hris_bankaccount
 
-Remove a bankaccount
+Deletes the HrisBankaccount identified by `id`.
 
 ### Example Usage
 
@@ -258,7 +270,7 @@ end
 
 ## update_hris_bankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -279,12 +291,18 @@ req = Models::Operations::UpdateHrisBankaccountRequest.new(
     account_number_last4: '3777',
     account_type: Models::Shared::HrisBankaccountAccountType::CHECKING,
     bank_name: 'Huel Group',
+    country_code: 'US',
     created_at: DateTime.iso8601('2019-11-16T16:43:45.976Z'),
-    id: 'a59c46a7-5d4b-45df-98f1-c5935aac4d1f',
-    is_primary: false,
-    name: 'Checking Account',
+    currency: 'USD',
+    id: '0ac397c0-d0a9-4e91-a40f-625e296f11dc',
+    is_primary: true,
+    metadata: [],
+    name: 'Granville Schumm - Checking',
+    priority: 2.0,
     routing_number: '448650724',
-    updated_at: DateTime.iso8601('2025-06-06T22:35:03.403Z'),
+    split_amount: 98.0,
+    split_type: Models::Shared::SplitType::PERCENTAGE,
+    updated_at: DateTime.iso8601('2025-07-02T21:02:53.635Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

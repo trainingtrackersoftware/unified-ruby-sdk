@@ -20,7 +20,7 @@
 
 ## create_commerce_review
 
-Create a review
+Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
 
 ### Example Usage
 
@@ -36,76 +36,60 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.review.create_commerce_review(commerce_review: Models::Shared::CommerceReview.new(
-  author_avatar_url: 'https://picsum.photos/seed/ix4Br3LA/2245/1245',
-  author_email: 'Cleve_Yundt@hotmail.com',
-  author_location: 'ipsum',
-  author_name: 'Marsha Krajcik',
+  author_avatar_url: 'https://loremflickr.com/7/2660?lock=4279109054086693',
+  author_email: 'nyasia.macgyver@hotmail.com',
+  author_location: 'denique',
+  author_name: 'Nyasia MacGyver',
   comments: [],
   content: 'Taedium thymum adipiscor amicitia cui.',
   created_at: DateTime.iso8601('2019-12-12T18:10:22.988Z'),
-  helpful_votes: 26.0,
-  id: '02f5db4f-c5f4-45d4-83de-ed4324249c6b',
-  is_featured: true,
+  helpful_votes: 66.0,
+  id: '33e41b27-10cf-4b96-a393-9efbcd3c1be0',
+  is_featured: false,
   is_public: true,
   is_verified: false,
   media: [
     Models::Shared::CommerceItemMedia.new(
-      alt: 'Adulescens.',
-      height: 519.0,
-      id: 'bc0bbb45-630e-43e3-9058-4900bd751771',
+      alt: 'Desipio carpo sol laudantium colo.',
+      height: 749.0,
+      id: '49585c8f-4972-4faa-8a1c-5b8efe96d149',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: 'ae79a189-5867-45e3-b100-bc337e4eb45b',
-          slug: 'aggero',
-          value: 'tero',
+          id: 'ae1023b0-2eb4-4ea5-87ec-f1c5a0c73632',
+          slug: 'textor',
+          value: 'quos',
         ),
       ],
-      position: 72.0,
+      position: 29.0,
       type: Models::Shared::CommerceItemMediaType::VIDEO,
-      url: 'https://loremflickr.com/882/1004?lock=7448492654002422',
-      width: 75.0,
+      url: 'https://loremflickr.com/196/2041?lock=5845524773114807',
+      width: 72.0,
     ),
     Models::Shared::CommerceItemMedia.new(
-      alt: 'Pauci timidus sol comburo thema.',
-      height: 297.0,
-      id: 'be3b922b-064a-4961-a4f7-0b9913af17dd',
+      alt: 'Adopto teneo numquam.',
+      height: 957.0,
+      id: '5dcac3f4-0b89-4e09-b590-f097819a2c59',
       metadata: [
         Models::Shared::CommerceMetadata.new(
-          id: 'dfc1e71b-6db1-411c-ad5a-e9bd58a15610',
-          slug: 'vito',
-          value: 'cuppedia',
+          id: 'f42a8516-2b7d-45b4-b6dd-edb18d7195a3',
+          slug: 'bos',
+          value: 'casso',
         ),
       ],
-      position: 61.0,
+      position: 69.0,
       type: Models::Shared::CommerceItemMediaType::IMAGE,
-      url: 'https://picsum.photos/seed/3QDZ8/1208/2171',
-      width: 96.0,
-    ),
-    Models::Shared::CommerceItemMedia.new(
-      alt: 'Cuppedia vestrum patruus.',
-      height: 6.0,
-      id: 'bdc6acf7-156b-4c68-ab9e-05c8a9529d62',
-      metadata: [
-        Models::Shared::CommerceMetadata.new(
-          id: '9de44b66-9394-4ebc-9a6a-04e175c828ac',
-          slug: 'arbitro',
-          value: 'villa',
-        ),
-      ],
-      position: 60.0,
-      type: Models::Shared::CommerceItemMediaType::VIDEO,
-      url: 'https://picsum.photos/seed/ytybC/2616/710',
-      width: 74.0,
+      url: 'https://loremflickr.com/1178/2175?lock=5466640101053206',
+      width: 61.0,
     ),
   ],
   metadata: [],
   rating: 3.0,
   status: Models::Shared::CommerceReviewStatus::APPROVED,
   title: 'Coepi adamo amicitia auxilium toties.',
-  unhelpful_votes: 49.0,
-  updated_at: DateTime.iso8601('2025-07-27T11:40:19.583Z'),
-  url: 'https://excitable-underneath.com',
-  verified_purchase: false,
+  unhelpful_votes: 88.0,
+  updated_at: DateTime.iso8601('2025-08-23T00:16:55.799Z'),
+  url: 'https://diligent-bandwidth.biz',
+  verified_purchase: true,
 ), connection_id: '<id>')
 
 unless res.commerce_review.nil?
@@ -135,7 +119,7 @@ end
 
 ## get_commerce_review
 
-Retrieve a review
+Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -179,7 +163,7 @@ end
 
 ## get_performance_review
 
-Retrieve a review
+Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -223,7 +207,7 @@ end
 
 ## get_social_review
 
-Retrieve a review
+Retrieves a single SocialReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -267,7 +251,7 @@ end
 
 ## list_commerce_reviews
 
-List all reviews
+Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -312,7 +296,7 @@ end
 
 ## list_performance_reviews
 
-List all reviews
+Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -357,7 +341,7 @@ end
 
 ## list_social_reviews
 
-List all reviews
+Returns a list of SocialReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -402,7 +386,7 @@ end
 
 ## patch_commerce_review
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -419,76 +403,60 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchCommerceReviewRequest.new(
   commerce_review: Models::Shared::CommerceReview.new(
-    author_avatar_url: 'https://picsum.photos/seed/ix4Br3LA/2245/1245',
-    author_email: 'Cleve_Yundt@hotmail.com',
-    author_location: 'ipsum',
-    author_name: 'Marsha Krajcik',
+    author_avatar_url: 'https://loremflickr.com/7/2660?lock=4279109054086693',
+    author_email: 'nyasia.macgyver@hotmail.com',
+    author_location: 'denique',
+    author_name: 'Nyasia MacGyver',
     comments: [],
     content: 'Taedium thymum adipiscor amicitia cui.',
     created_at: DateTime.iso8601('2019-12-12T18:10:22.988Z'),
-    helpful_votes: 26.0,
-    id: '77cccd4b-1f4e-44cc-aaa9-471ec6a4c23c',
-    is_featured: true,
+    helpful_votes: 66.0,
+    id: 'a71c13aa-d416-43f6-8ad8-35258e7a6fe8',
+    is_featured: false,
     is_public: true,
     is_verified: false,
     media: [
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Adulescens.',
-        height: 519.0,
-        id: 'f15b9b72-7ae5-48af-b294-cbcd82d8b298',
+        alt: 'Desipio carpo sol laudantium colo.',
+        height: 749.0,
+        id: '71c01db3-0af8-4bc1-a421-12a5e570269b',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'e71a554b-d9d7-4d0a-bad8-120ff1f77d5d',
-            slug: 'aggero',
-            value: 'tero',
+            id: 'a87907e7-6777-432a-a079-cdaff033b9ec',
+            slug: 'textor',
+            value: 'quos',
           ),
         ],
-        position: 72.0,
+        position: 29.0,
         type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://loremflickr.com/882/1004?lock=7448492654002422',
-        width: 75.0,
+        url: 'https://loremflickr.com/196/2041?lock=5845524773114807',
+        width: 72.0,
       ),
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Pauci timidus sol comburo thema.',
-        height: 297.0,
-        id: '4c4e6b8b-d9fc-4cf8-8e65-872edfc9ead5',
+        alt: 'Adopto teneo numquam.',
+        height: 957.0,
+        id: '6568d505-d413-41fd-b64d-3067705e05a3',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '7681e666-83e3-4f01-b1b2-21452f4fd591',
-            slug: 'vito',
-            value: 'cuppedia',
+            id: '864adde6-6719-41ea-8fc8-f1d7c8c545ae',
+            slug: 'bos',
+            value: 'casso',
           ),
         ],
-        position: 61.0,
+        position: 69.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://picsum.photos/seed/3QDZ8/1208/2171',
-        width: 96.0,
-      ),
-      Models::Shared::CommerceItemMedia.new(
-        alt: 'Cuppedia vestrum patruus.',
-        height: 6.0,
-        id: 'd7ff8c18-32da-43f8-a587-f145eab4e89c',
-        metadata: [
-          Models::Shared::CommerceMetadata.new(
-            id: '7d50fabd-7998-459f-8aa4-ac9a3c27460b',
-            slug: 'arbitro',
-            value: 'villa',
-          ),
-        ],
-        position: 60.0,
-        type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://picsum.photos/seed/ytybC/2616/710',
-        width: 74.0,
+        url: 'https://loremflickr.com/1178/2175?lock=5466640101053206',
+        width: 61.0,
       ),
     ],
     metadata: [],
     rating: 3.0,
     status: Models::Shared::CommerceReviewStatus::APPROVED,
     title: 'Coepi adamo amicitia auxilium toties.',
-    unhelpful_votes: 49.0,
-    updated_at: DateTime.iso8601('2025-07-27T11:40:19.627Z'),
-    url: 'https://excitable-underneath.com',
-    verified_purchase: false,
+    unhelpful_votes: 88.0,
+    updated_at: DateTime.iso8601('2025-08-23T00:16:55.843Z'),
+    url: 'https://diligent-bandwidth.biz',
+    verified_purchase: true,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -520,7 +488,7 @@ end
 
 ## patch_social_review
 
-Update a review
+Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
 
 ### Example Usage
 
@@ -567,7 +535,7 @@ end
 
 ## remove_commerce_review
 
-Remove a review
+Deletes the CommerceReview identified by `id`.
 
 ### Example Usage
 
@@ -609,7 +577,7 @@ end
 
 ## update_commerce_review
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -626,76 +594,60 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateCommerceReviewRequest.new(
   commerce_review: Models::Shared::CommerceReview.new(
-    author_avatar_url: 'https://picsum.photos/seed/ix4Br3LA/2245/1245',
-    author_email: 'Cleve_Yundt@hotmail.com',
-    author_location: 'ipsum',
-    author_name: 'Marsha Krajcik',
+    author_avatar_url: 'https://loremflickr.com/7/2660?lock=4279109054086693',
+    author_email: 'nyasia.macgyver@hotmail.com',
+    author_location: 'denique',
+    author_name: 'Nyasia MacGyver',
     comments: [],
     content: 'Taedium thymum adipiscor amicitia cui.',
     created_at: DateTime.iso8601('2019-12-12T18:10:22.988Z'),
-    helpful_votes: 26.0,
-    id: '77cccd4b-1f4e-44cc-aaa9-471ec6a4c23c',
-    is_featured: true,
+    helpful_votes: 66.0,
+    id: 'a71c13aa-d416-43f6-8ad8-35258e7a6fe8',
+    is_featured: false,
     is_public: true,
     is_verified: false,
     media: [
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Adulescens.',
-        height: 519.0,
-        id: 'f15b9b72-7ae5-48af-b294-cbcd82d8b298',
+        alt: 'Desipio carpo sol laudantium colo.',
+        height: 749.0,
+        id: '71c01db3-0af8-4bc1-a421-12a5e570269b',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: 'e71a554b-d9d7-4d0a-bad8-120ff1f77d5d',
-            slug: 'aggero',
-            value: 'tero',
+            id: 'a87907e7-6777-432a-a079-cdaff033b9ec',
+            slug: 'textor',
+            value: 'quos',
           ),
         ],
-        position: 72.0,
+        position: 29.0,
         type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://loremflickr.com/882/1004?lock=7448492654002422',
-        width: 75.0,
+        url: 'https://loremflickr.com/196/2041?lock=5845524773114807',
+        width: 72.0,
       ),
       Models::Shared::CommerceItemMedia.new(
-        alt: 'Pauci timidus sol comburo thema.',
-        height: 297.0,
-        id: '4c4e6b8b-d9fc-4cf8-8e65-872edfc9ead5',
+        alt: 'Adopto teneo numquam.',
+        height: 957.0,
+        id: '6568d505-d413-41fd-b64d-3067705e05a3',
         metadata: [
           Models::Shared::CommerceMetadata.new(
-            id: '7681e666-83e3-4f01-b1b2-21452f4fd591',
-            slug: 'vito',
-            value: 'cuppedia',
+            id: '864adde6-6719-41ea-8fc8-f1d7c8c545ae',
+            slug: 'bos',
+            value: 'casso',
           ),
         ],
-        position: 61.0,
+        position: 69.0,
         type: Models::Shared::CommerceItemMediaType::IMAGE,
-        url: 'https://picsum.photos/seed/3QDZ8/1208/2171',
-        width: 96.0,
-      ),
-      Models::Shared::CommerceItemMedia.new(
-        alt: 'Cuppedia vestrum patruus.',
-        height: 6.0,
-        id: 'd7ff8c18-32da-43f8-a587-f145eab4e89c',
-        metadata: [
-          Models::Shared::CommerceMetadata.new(
-            id: '7d50fabd-7998-459f-8aa4-ac9a3c27460b',
-            slug: 'arbitro',
-            value: 'villa',
-          ),
-        ],
-        position: 60.0,
-        type: Models::Shared::CommerceItemMediaType::VIDEO,
-        url: 'https://picsum.photos/seed/ytybC/2616/710',
-        width: 74.0,
+        url: 'https://loremflickr.com/1178/2175?lock=5466640101053206',
+        width: 61.0,
       ),
     ],
     metadata: [],
     rating: 3.0,
     status: Models::Shared::CommerceReviewStatus::APPROVED,
     title: 'Coepi adamo amicitia auxilium toties.',
-    unhelpful_votes: 49.0,
-    updated_at: DateTime.iso8601('2025-07-27T11:40:19.627Z'),
-    url: 'https://excitable-underneath.com',
-    verified_purchase: false,
+    unhelpful_votes: 88.0,
+    updated_at: DateTime.iso8601('2025-08-23T00:16:55.843Z'),
+    url: 'https://diligent-bandwidth.biz',
+    verified_purchase: true,
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -727,7 +679,7 @@ end
 
 ## update_social_review
 
-Update a review
+Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
 
 ### Example Usage
 

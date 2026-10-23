@@ -25,7 +25,7 @@
 
 ## create_shipping_label
 
-Create a label
+Creates a ShippingLabel. Provide the unified ShippingLabel fields in the request body; they are mapped to the provider's API. Returns the created ShippingLabel.
 
 ### Example Usage
 
@@ -42,16 +42,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.shipping.create_shipping_label(shipping_label: Models::Shared::ShippingLabel.new(
   created_at: DateTime.iso8601('2022-11-18T16:45:38.067Z'),
-  id: '4b2da220-d21b-4dbd-a3b1-db31e52615a1',
+  id: '314a330f-6ac9-4b67-a677-b76c87a60f32',
   is_voided: false,
   label_cost: 40.83_653_403_213_248,
   label_cost_currency: 'USD',
   label_format: Models::Shared::LabelFormat::PNG,
-  label_url: 'https://optimal-meadow.net',
-  service_code: 'GIz',
+  label_url: 'https://labels.example.com/314a330f-6ac9-4b67-a677-b76c87a60f32.pdf',
+  metadata: [],
+  service_code: 'Dzy',
   status: Models::Shared::ShippingLabelStatus::EXCEPTION,
-  tracking_number: 'zYv60FOIBUJ6',
-  updated_at: DateTime.iso8601('2024-04-17T21:07:56.766Z'),
+  tracking_number: 'ZYV60FOIBUJ6',
+  updated_at: DateTime.iso8601('2024-04-29T15:26:46.564Z'),
 ), connection_id: '<id>')
 
 unless res.shipping_label.nil?
@@ -81,7 +82,7 @@ end
 
 ## create_shipping_rate
 
-Create a rate
+Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
 
 ### Example Usage
 
@@ -98,20 +99,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.shipping.create_shipping_rate(shipping_rate: Models::Shared::ShippingRate.new(
   currency: 'USD',
-  id: 'd46a507d-26cf-4d39-ad21-6cd944e9dc9a',
+  id: '30e738c4-c3a5-4e6d-a9f8-811af169af55',
+  metadata: [],
   rates: [
     Models::Shared::ShippingRateRate.new(
-      amount: 54.679_719_475_097_954,
-      base_amount: 76.45_537_888_631_225,
+      amount: 44.72,
+      base_amount: 46.01,
       currency: 'USD',
-      delivery_days: 8.0,
-      description: 'Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.',
-      estimated_days: 10.0,
-      estimated_delivery_end_at: DateTime.iso8601('2024-02-02T10:01:47.057Z'),
-      is_guaranteed: true,
+      delivery_days: 2.0,
+      description: 'Veniam denego vulgo bos turpis pax.',
+      discount_amount: 4.6,
+      estimated_days: 2.0,
+      estimated_delivery_end_at: DateTime.iso8601('2021-09-03T01:03:36.021Z'),
       is_negotiated_rate: true,
-      tax_amount: 2.2_701_712_837_442_756,
-      title: 'Turcotte Inc',
+      tax_amount: 3.31,
+      title: 'Express',
     ),
   ],
 ), connection_id: '<id>')
@@ -143,7 +145,7 @@ end
 
 ## create_shipping_shipment
 
-Create a shipment
+Creates a ShippingShipment. Provide the unified ShippingShipment fields in the request body; they are mapped to the provider's API. Returns the created ShippingShipment.
 
 ### Example Usage
 
@@ -159,18 +161,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
     )
 
 res = s.shipping.create_shipping_shipment(shipping_shipment: Models::Shared::ShippingShipment.new(
-  carrier_name: 'Bogisich, Franey and Koelpin',
   created_at: DateTime.iso8601('2022-09-12T03:11:28.960Z'),
-  id: 'a30ed01b-a455-4d7c-9b5d-862937cc9289',
-  rate_amount: 8.86_546_263_936_907,
+  id: 'a97b9394-530d-4c94-bd61-5ac70a910d7f',
+  is_return: false,
+  lineitems: [],
+  metadata: [],
   rate_currency: 'USD',
-  rate_estimated_days: 8.0,
-  rate_service_name: 'Fisher - Kilback',
-  service_code: 'F7U',
-  shipped_at: DateTime.iso8601('2025-08-26T23:48:12.779Z'),
-  status: Models::Shared::ShippingShipmentStatus::PENDING,
-  tracking_url: 'https://shallow-secrecy.info/',
-  updated_at: DateTime.iso8601('2025-07-05T04:58:28.146Z'),
+  rate_estimated_days: 4.0,
+  rate_service_name: '2nd Day Air',
+  service_code: 'OVERNIGHT',
+  shipped_at: DateTime.iso8601('2022-09-12T07:26:48.479Z'),
+  status: Models::Shared::ShippingShipmentStatus::DELIVERED,
+  updated_at: DateTime.iso8601('2022-11-15T08:48:41.556Z'),
 ), connection_id: '<id>')
 
 unless res.shipping_shipment.nil?
@@ -200,7 +202,7 @@ end
 
 ## get_shipping_carrier
 
-Retrieve a carrier
+Retrieves a single ShippingCarrier by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -244,7 +246,7 @@ end
 
 ## get_shipping_label
 
-Retrieve a label
+Retrieves a single ShippingLabel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -288,7 +290,7 @@ end
 
 ## get_shipping_shipment
 
-Retrieve a shipment
+Retrieves a single ShippingShipment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -332,7 +334,7 @@ end
 
 ## get_shipping_tracking
 
-Retrieve a tracking
+Retrieves a single ShippingTracking by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -376,7 +378,7 @@ end
 
 ## list_shipping_carriers
 
-List all carriers
+Returns a list of ShippingCarriers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -421,7 +423,7 @@ end
 
 ## list_shipping_labels
 
-List all labels
+Returns a list of ShippingLabels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -466,7 +468,7 @@ end
 
 ## list_shipping_shipments
 
-List all shipments
+Returns a list of ShippingShipments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -511,7 +513,7 @@ end
 
 ## list_shipping_trackings
 
-List all trackings
+Returns a list of ShippingTrackings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -556,7 +558,7 @@ end
 
 ## patch_shipping_label
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -574,16 +576,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::PatchShippingLabelRequest.new(
   shipping_label: Models::Shared::ShippingLabel.new(
     created_at: DateTime.iso8601('2022-11-18T16:45:38.067Z'),
-    id: '86fc808d-9c04-467b-ad47-dfb72c80a660',
+    id: '97024063-7323-4504-9028-b82eb5f7ae59',
     is_voided: false,
     label_cost: 40.83_653_403_213_248,
     label_cost_currency: 'USD',
     label_format: Models::Shared::LabelFormat::PNG,
-    label_url: 'https://optimal-meadow.net',
-    service_code: 'GIz',
+    label_url: 'https://labels.example.com/97024063-7323-4504-9028-b82eb5f7ae59.pdf',
+    metadata: [],
+    service_code: 'Dzy',
     status: Models::Shared::ShippingLabelStatus::EXCEPTION,
-    tracking_number: 'zYv60FOIBUJ6',
-    updated_at: DateTime.iso8601('2024-04-17T21:07:56.772Z'),
+    tracking_number: 'ZYV60FOIBUJ6',
+    updated_at: DateTime.iso8601('2024-04-29T15:26:46.573Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -615,7 +618,7 @@ end
 
 ## patch_shipping_shipment
 
-Update a shipment
+Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
 
 ### Example Usage
 
@@ -632,18 +635,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::PatchShippingShipmentRequest.new(
   shipping_shipment: Models::Shared::ShippingShipment.new(
-    carrier_name: 'Bogisich, Franey and Koelpin',
     created_at: DateTime.iso8601('2022-09-12T03:11:28.960Z'),
-    id: 'cced982a-1e2c-49e2-9a90-0780b443a038',
-    rate_amount: 8.86_546_263_936_907,
+    id: 'e395a54b-9c4e-4338-b2a8-841232973ca5',
+    is_return: false,
+    lineitems: [],
+    metadata: [],
     rate_currency: 'USD',
-    rate_estimated_days: 8.0,
-    rate_service_name: 'Fisher - Kilback',
-    service_code: 'F7U',
-    shipped_at: DateTime.iso8601('2025-08-26T23:48:12.854Z'),
-    status: Models::Shared::ShippingShipmentStatus::PENDING,
-    tracking_url: 'https://shallow-secrecy.info/',
-    updated_at: DateTime.iso8601('2025-07-05T04:58:28.218Z'),
+    rate_estimated_days: 4.0,
+    rate_service_name: '2nd Day Air',
+    service_code: 'OVERNIGHT',
+    shipped_at: DateTime.iso8601('2022-09-12T07:26:48.479Z'),
+    status: Models::Shared::ShippingShipmentStatus::DELIVERED,
+    updated_at: DateTime.iso8601('2022-11-15T08:48:41.561Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -675,7 +678,7 @@ end
 
 ## remove_shipping_label
 
-Remove a label
+Deletes the ShippingLabel identified by `id`.
 
 ### Example Usage
 
@@ -717,7 +720,7 @@ end
 
 ## remove_shipping_shipment
 
-Remove a shipment
+Deletes the ShippingShipment identified by `id`.
 
 ### Example Usage
 
@@ -759,7 +762,7 @@ end
 
 ## update_shipping_label
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -777,16 +780,17 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 req = Models::Operations::UpdateShippingLabelRequest.new(
   shipping_label: Models::Shared::ShippingLabel.new(
     created_at: DateTime.iso8601('2022-11-18T16:45:38.067Z'),
-    id: '86fc808d-9c04-467b-ad47-dfb72c80a660',
+    id: '97024063-7323-4504-9028-b82eb5f7ae59',
     is_voided: false,
     label_cost: 40.83_653_403_213_248,
     label_cost_currency: 'USD',
     label_format: Models::Shared::LabelFormat::PNG,
-    label_url: 'https://optimal-meadow.net',
-    service_code: 'GIz',
+    label_url: 'https://labels.example.com/97024063-7323-4504-9028-b82eb5f7ae59.pdf',
+    metadata: [],
+    service_code: 'Dzy',
     status: Models::Shared::ShippingLabelStatus::EXCEPTION,
-    tracking_number: 'zYv60FOIBUJ6',
-    updated_at: DateTime.iso8601('2024-04-17T21:07:56.772Z'),
+    tracking_number: 'ZYV60FOIBUJ6',
+    updated_at: DateTime.iso8601('2024-04-29T15:26:46.573Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -818,7 +822,7 @@ end
 
 ## update_shipping_shipment
 
-Update a shipment
+Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
 
 ### Example Usage
 
@@ -835,18 +839,18 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 req = Models::Operations::UpdateShippingShipmentRequest.new(
   shipping_shipment: Models::Shared::ShippingShipment.new(
-    carrier_name: 'Bogisich, Franey and Koelpin',
     created_at: DateTime.iso8601('2022-09-12T03:11:28.960Z'),
-    id: 'cced982a-1e2c-49e2-9a90-0780b443a038',
-    rate_amount: 8.86_546_263_936_907,
+    id: 'e395a54b-9c4e-4338-b2a8-841232973ca5',
+    is_return: false,
+    lineitems: [],
+    metadata: [],
     rate_currency: 'USD',
-    rate_estimated_days: 8.0,
-    rate_service_name: 'Fisher - Kilback',
-    service_code: 'F7U',
-    shipped_at: DateTime.iso8601('2025-08-26T23:48:12.854Z'),
-    status: Models::Shared::ShippingShipmentStatus::PENDING,
-    tracking_url: 'https://shallow-secrecy.info/',
-    updated_at: DateTime.iso8601('2025-07-05T04:58:28.218Z'),
+    rate_estimated_days: 4.0,
+    rate_service_name: '2nd Day Air',
+    service_code: 'OVERNIGHT',
+    shipped_at: DateTime.iso8601('2022-09-12T07:26:48.479Z'),
+    status: Models::Shared::ShippingShipmentStatus::DELIVERED,
+    updated_at: DateTime.iso8601('2022-11-15T08:48:41.561Z'),
   ),
   connection_id: '<id>',
   id: '<id>',

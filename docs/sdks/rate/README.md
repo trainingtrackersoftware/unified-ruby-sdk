@@ -9,7 +9,7 @@
 
 ## create_shipping_rate
 
-Create a rate
+Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
 
 ### Example Usage
 
@@ -26,20 +26,21 @@ s = ::UnifiedRubySDK::UnifiedTo.new(
 
 res = s.rate.create_shipping_rate(shipping_rate: Models::Shared::ShippingRate.new(
   currency: 'USD',
-  id: 'd46a507d-26cf-4d39-ad21-6cd944e9dc9a',
+  id: '30e738c4-c3a5-4e6d-a9f8-811af169af55',
+  metadata: [],
   rates: [
     Models::Shared::ShippingRateRate.new(
-      amount: 54.679_719_475_097_954,
-      base_amount: 76.45_537_888_631_225,
+      amount: 44.72,
+      base_amount: 46.01,
       currency: 'USD',
-      delivery_days: 8.0,
-      description: 'Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.',
-      estimated_days: 10.0,
-      estimated_delivery_end_at: DateTime.iso8601('2024-02-02T10:01:47.057Z'),
-      is_guaranteed: true,
+      delivery_days: 2.0,
+      description: 'Veniam denego vulgo bos turpis pax.',
+      discount_amount: 4.6,
+      estimated_days: 2.0,
+      estimated_delivery_end_at: DateTime.iso8601('2021-09-03T01:03:36.021Z'),
       is_negotiated_rate: true,
-      tax_amount: 2.2_701_712_837_442_756,
-      title: 'Turcotte Inc',
+      tax_amount: 3.31,
+      title: 'Express',
     ),
   ],
 ), connection_id: '<id>')

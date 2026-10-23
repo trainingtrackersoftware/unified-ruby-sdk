@@ -27,6 +27,7 @@ module UnifiedRubySDK
           WIDTH = new('width')
           HEIGHT = new('height')
           ASSET_URLS = new('asset_urls')
+          CARDS = new('cards')
           LINK_URL = new('link_url')
           URL_TAGS = new('url_tags')
           BODY = new('body')
@@ -42,6 +43,7 @@ module UnifiedRubySDK
           PATH2 = new('path2')
           DATA = new('data')
           LABELS = new('labels')
+          METADATA = new('metadata')
           RAW = new('raw')
         end
       end

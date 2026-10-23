@@ -17,4 +17,12 @@
 | `ACCOUNT_NUMBER_LAST4` | account_number_last4   |
 | `NAME`                 | name                   |
 | `IS_PRIMARY`           | is_primary             |
+| `IBAN`                 | iban                   |
+| `BIC`                  | bic                    |
+| `COUNTRY_CODE`         | country_code           |
+| `CURRENCY`             | currency               |
+| `SPLIT_TYPE`           | split_type             |
+| `SPLIT_AMOUNT`         | split_amount           |
+| `PRIORITY`             | priority               |
+| `METADATA`             | metadata               |
 | `RAW`                  | raw                    |

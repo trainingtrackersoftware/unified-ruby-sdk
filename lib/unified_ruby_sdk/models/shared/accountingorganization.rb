@@ -15,41 +15,43 @@ module UnifiedRubySDK
 
 
         field :address, Crystalline::Nilable.new(Models::Shared::PropertyAccountingOrganizationAddress), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('address') } }
-
+        # Company-wide books close / lock date; transactions on or before this date fall in a closed accounting period (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :books_close_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('books_close_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :created_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('created_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
-
+        # Currency primarily used by the organization, in ISO 4217 format (e.g. U.S. dollars is USD).
         field :currency, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('currency') } }
-
+        # Month of the year when the organization’s fiscal year ends (1 - 12, where January is 1)
         field :fiscal_year_end_month, Crystalline::Nilable.new(::Float), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('fiscal_year_end_month') } }
 
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
-
+        # True for consolidation/elimination entities
         field :is_elimination, Crystalline::Nilable.new(Crystalline::Boolean.new), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('is_elimination') } }
 
         field :legal_name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('legal_name') } }
 
-        field :name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('name') } }
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::AccountingMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
 
+        field :name, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('name') } }
+        # Identifier for tracking and categorizing organizations for reporting or analysis purposes that is defined by the end-customer
         field :organization_code, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('organization_code') } }
 
         field :parent_id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('parent_id') } }
 
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
-
+        # Organization's tax number.  For example, in the U.S., this is an Employer Identification Number (EIN).
         field :tax_number, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('tax_number') } }
 
         field :timezone, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('timezone') } }
-
+        # Entity type within a consolidation hierarchy
         field :type, Crystalline::Nilable.new(Models::Shared::AccountingOrganizationType), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('type'), 'decoder': Utils.enum_from_string(Models::Shared::AccountingOrganizationType, true) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :updated_at, Crystalline::Nilable.new(::DateTime), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('updated_at'), 'decoder': Utils.datetime_from_iso_format(true) } }
 
         field :website, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('website') } }
 
-        sig { params(address: T.nilable(Models::Shared::PropertyAccountingOrganizationAddress), books_close_at: T.nilable(::DateTime), created_at: T.nilable(::DateTime), currency: T.nilable(::String), fiscal_year_end_month: T.nilable(::Float), id: T.nilable(::String), is_elimination: T.nilable(T::Boolean), legal_name: T.nilable(::String), name: T.nilable(::String), organization_code: T.nilable(::String), parent_id: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), tax_number: T.nilable(::String), timezone: T.nilable(::String), type: T.nilable(Models::Shared::AccountingOrganizationType), updated_at: T.nilable(::DateTime), website: T.nilable(::String)).void }
-        def initialize(address: nil, books_close_at: nil, created_at: nil, currency: nil, fiscal_year_end_month: nil, id: nil, is_elimination: nil, legal_name: nil, name: nil, organization_code: nil, parent_id: nil, raw: nil, tax_number: nil, timezone: nil, type: nil, updated_at: nil, website: nil)
+        sig { params(address: T.nilable(Models::Shared::PropertyAccountingOrganizationAddress), books_close_at: T.nilable(::DateTime), created_at: T.nilable(::DateTime), currency: T.nilable(::String), fiscal_year_end_month: T.nilable(::Float), id: T.nilable(::String), is_elimination: T.nilable(T::Boolean), legal_name: T.nilable(::String), metadata: T.nilable(T::Array[Models::Shared::AccountingMetadata]), name: T.nilable(::String), organization_code: T.nilable(::String), parent_id: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), tax_number: T.nilable(::String), timezone: T.nilable(::String), type: T.nilable(Models::Shared::AccountingOrganizationType), updated_at: T.nilable(::DateTime), website: T.nilable(::String)).void }
+        def initialize(address: nil, books_close_at: nil, created_at: nil, currency: nil, fiscal_year_end_month: nil, id: nil, is_elimination: nil, legal_name: nil, metadata: nil, name: nil, organization_code: nil, parent_id: nil, raw: nil, tax_number: nil, timezone: nil, type: nil, updated_at: nil, website: nil)
           @address = address
           @books_close_at = books_close_at
           @created_at = created_at
@@ -58,6 +60,7 @@ module UnifiedRubySDK
           @id = id
           @is_elimination = is_elimination
           @legal_name = legal_name
+          @metadata = metadata
           @name = name
           @organization_code = organization_code
           @parent_id = parent_id
@@ -80,6 +83,7 @@ module UnifiedRubySDK
           return false unless @id == other.id
           return false unless @is_elimination == other.is_elimination
           return false unless @legal_name == other.legal_name
+          return false unless @metadata == other.metadata
           return false unless @name == other.name
           return false unless @organization_code == other.organization_code
           return false unless @parent_id == other.parent_id

@@ -13,25 +13,28 @@ module UnifiedRubySDK
         extend T::Sig
         include Crystalline::MetadataFields
 
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :end_at, ::DateTime, { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('end_at'), required: true, 'decoder': Utils.datetime_from_iso_format(false) } }
-
+        # (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         field :start_at, ::DateTime, { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('start_at'), required: true, 'decoder': Utils.datetime_from_iso_format(false) } }
 
         field :description, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('description') } }
 
         field :id, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('id') } }
 
+        field :metadata, Crystalline::Nilable.new(Crystalline::Array.new(Models::Shared::CalendarMetadata)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('metadata') } }
+
         field :raw, Crystalline::Nilable.new(Crystalline::Hash.new(Symbol, ::Object)), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('raw') } }
 
         field :timezone, Crystalline::Nilable.new(::String), { 'format_json': { 'letter_case': ::UnifiedRubySDK::Utils.field_name('timezone') } }
 
-        sig { params(end_at: ::DateTime, start_at: ::DateTime, description: T.nilable(::String), id: T.nilable(::String), raw: T.nilable(T::Hash[Symbol, ::Object]), timezone: T.nilable(::String)).void }
-        def initialize(end_at:, start_at:, description: nil, id: nil, raw: nil, timezone: nil)
+        sig { params(end_at: ::DateTime, start_at: ::DateTime, description: T.nilable(::String), id: T.nilable(::String), metadata: T.nilable(T::Array[Models::Shared::CalendarMetadata]), raw: T.nilable(T::Hash[Symbol, ::Object]), timezone: T.nilable(::String)).void }
+        def initialize(end_at:, start_at:, description: nil, id: nil, metadata: nil, raw: nil, timezone: nil)
           @end_at = end_at
           @start_at = start_at
           @description = description
           @id = id
+          @metadata = metadata
           @raw = raw
           @timezone = timezone
         end
@@ -43,6 +46,7 @@ module UnifiedRubySDK
           return false unless @start_at == other.start_at
           return false unless @description == other.description
           return false unless @id == other.id
+          return false unless @metadata == other.metadata
           return false unless @raw == other.raw
           return false unless @timezone == other.timezone
           true

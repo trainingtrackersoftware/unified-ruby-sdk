@@ -14,7 +14,7 @@
 
 ## create_accounting_salesorder
 
-Create a salesorder
+Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
 
 ### Example Usage
 
@@ -40,44 +40,35 @@ res = s.salesorder.create_accounting_salesorder(accounting_salesorder: Models::S
     region_code: 'MO',
   ),
   category_ids: [],
-  closed_at: DateTime.iso8601('2023-08-17T22:23:55.028Z'),
+  closed_at: DateTime.iso8601('2023-03-26T00:48:27.181Z'),
   created_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
-  currency: 'ANG',
-  discount_amount: 99.0,
-  employee_user_id: '4a6b8990-c85a-499f-82d0-5011c3c95a0b',
-  fees: [
-    Models::Shared::AccountingFee.new(
-      amount: 519.0,
-      currency: 'XCD',
-      type: Models::Shared::AccountingFeeType::PROMOTION,
-    ),
-  ],
-  fulfillment_type: Models::Shared::FulfillmentType::TAKEOUT,
-  guest_count: 8.0,
-  id: 'd4941a2a-7d44-42b9-90df-3e4a65d79d41',
+  currency: 'USD',
+  discount_amount: 0.0,
+  fees: [],
+  fulfillment_type: Models::Shared::FulfillmentType::OTHER,
+  id: '4637a288-911a-429a-bea4-7dcee1e32f51',
   lineitems: [],
   metadata: [],
-  order_number: '988187',
+  order_number: '832663',
   payments: [],
-  posted_at: DateTime.iso8601('2026-01-13T16:17:32.520Z'),
+  posted_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
   refunded_amount: 0.0,
-  sales_channel: 'Harvey, Collier and Weimann',
-  service_charge_amount: 63.0,
+  sales_channel: 'Wholesale',
+  service_charge_amount: 0.0,
   shipping_address: Models::Shared::PropertyAccountingSalesorderShippingAddress.new(
-    address1: '9878 Bradley Mill',
-    address2: 'Apt. 215',
+    address1: '69878 Bradley Mill',
     city: 'Port Matildestad',
     country_code: 'US',
     postal_code: '07989-2148',
     region: 'Arkansas',
     region_code: 'AK',
   ),
-  status: Models::Shared::AccountingSalesorderStatus::REFUNDED,
+  status: Models::Shared::AccountingSalesorderStatus::PAID,
   subtotal_amount: 0.0,
-  tax_amount: 63.0,
-  tip_amount: 34.0,
+  tax_amount: 0.0,
+  tip_amount: 0.0,
   total_amount: 0.0,
-  updated_at: DateTime.iso8601('2022-02-10T19:50:55.205Z'),
+  updated_at: DateTime.iso8601('2023-03-26T00:48:27.181Z'),
 ), connection_id: '<id>')
 
 unless res.accounting_salesorder.nil?
@@ -107,7 +98,7 @@ end
 
 ## get_accounting_salesorder
 
-Retrieve a salesorder
+Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -151,7 +142,7 @@ end
 
 ## list_accounting_salesorders
 
-List all salesorders
+Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -196,7 +187,7 @@ end
 
 ## patch_accounting_salesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -223,44 +214,35 @@ req = Models::Operations::PatchAccountingSalesorderRequest.new(
       region_code: 'MO',
     ),
     category_ids: [],
-    closed_at: DateTime.iso8601('2023-08-17T22:23:55.042Z'),
+    closed_at: DateTime.iso8601('2023-03-26T00:48:27.199Z'),
     created_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
-    currency: 'ANG',
-    discount_amount: 99.0,
-    employee_user_id: '4a6b8990-c85a-499f-82d0-5011c3c95a0b',
-    fees: [
-      Models::Shared::AccountingFee.new(
-        amount: 519.0,
-        currency: 'XCD',
-        type: Models::Shared::AccountingFeeType::PROMOTION,
-      ),
-    ],
-    fulfillment_type: Models::Shared::FulfillmentType::TAKEOUT,
-    guest_count: 8.0,
-    id: '82afdd80-8627-4a82-80bb-72e1655b3593',
+    currency: 'USD',
+    discount_amount: 0.0,
+    fees: [],
+    fulfillment_type: Models::Shared::FulfillmentType::OTHER,
+    id: '034dfeb1-d580-474c-8283-43e2e41f0d01',
     lineitems: [],
     metadata: [],
-    order_number: '988187',
+    order_number: '832663',
     payments: [],
-    posted_at: DateTime.iso8601('2026-01-13T16:17:32.555Z'),
+    posted_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
     refunded_amount: 0.0,
-    sales_channel: 'Harvey, Collier and Weimann',
-    service_charge_amount: 63.0,
+    sales_channel: 'Wholesale',
+    service_charge_amount: 0.0,
     shipping_address: Models::Shared::PropertyAccountingSalesorderShippingAddress.new(
-      address1: '9878 Bradley Mill',
-      address2: 'Apt. 215',
+      address1: '69878 Bradley Mill',
       city: 'Port Matildestad',
       country_code: 'US',
       postal_code: '07989-2148',
       region: 'Arkansas',
       region_code: 'AK',
     ),
-    status: Models::Shared::AccountingSalesorderStatus::REFUNDED,
+    status: Models::Shared::AccountingSalesorderStatus::PAID,
     subtotal_amount: 0.0,
-    tax_amount: 63.0,
-    tip_amount: 34.0,
+    tax_amount: 0.0,
+    tip_amount: 0.0,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2022-02-10T19:50:55.206Z'),
+    updated_at: DateTime.iso8601('2023-03-26T00:48:27.199Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
@@ -292,7 +274,7 @@ end
 
 ## remove_accounting_salesorder
 
-Remove a salesorder
+Deletes the AccountingSalesorder identified by `id`.
 
 ### Example Usage
 
@@ -334,7 +316,7 @@ end
 
 ## update_accounting_salesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -361,44 +343,35 @@ req = Models::Operations::UpdateAccountingSalesorderRequest.new(
       region_code: 'MO',
     ),
     category_ids: [],
-    closed_at: DateTime.iso8601('2023-08-17T22:23:55.042Z'),
+    closed_at: DateTime.iso8601('2023-03-26T00:48:27.199Z'),
     created_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
-    currency: 'ANG',
-    discount_amount: 99.0,
-    employee_user_id: '4a6b8990-c85a-499f-82d0-5011c3c95a0b',
-    fees: [
-      Models::Shared::AccountingFee.new(
-        amount: 519.0,
-        currency: 'XCD',
-        type: Models::Shared::AccountingFeeType::PROMOTION,
-      ),
-    ],
-    fulfillment_type: Models::Shared::FulfillmentType::TAKEOUT,
-    guest_count: 8.0,
-    id: '82afdd80-8627-4a82-80bb-72e1655b3593',
+    currency: 'USD',
+    discount_amount: 0.0,
+    fees: [],
+    fulfillment_type: Models::Shared::FulfillmentType::OTHER,
+    id: '034dfeb1-d580-474c-8283-43e2e41f0d01',
     lineitems: [],
     metadata: [],
-    order_number: '988187',
+    order_number: '832663',
     payments: [],
-    posted_at: DateTime.iso8601('2026-01-13T16:17:32.555Z'),
+    posted_at: DateTime.iso8601('2022-01-17T16:11:50.310Z'),
     refunded_amount: 0.0,
-    sales_channel: 'Harvey, Collier and Weimann',
-    service_charge_amount: 63.0,
+    sales_channel: 'Wholesale',
+    service_charge_amount: 0.0,
     shipping_address: Models::Shared::PropertyAccountingSalesorderShippingAddress.new(
-      address1: '9878 Bradley Mill',
-      address2: 'Apt. 215',
+      address1: '69878 Bradley Mill',
       city: 'Port Matildestad',
       country_code: 'US',
       postal_code: '07989-2148',
       region: 'Arkansas',
       region_code: 'AK',
     ),
-    status: Models::Shared::AccountingSalesorderStatus::REFUNDED,
+    status: Models::Shared::AccountingSalesorderStatus::PAID,
     subtotal_amount: 0.0,
-    tax_amount: 63.0,
-    tip_amount: 34.0,
+    tax_amount: 0.0,
+    tip_amount: 0.0,
     total_amount: 0.0,
-    updated_at: DateTime.iso8601('2022-02-10T19:50:55.206Z'),
+    updated_at: DateTime.iso8601('2023-03-26T00:48:27.199Z'),
   ),
   connection_id: '<id>',
   id: '<id>',
